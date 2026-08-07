@@ -65,3 +65,10 @@ footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:v
  article th{white-space:normal;word-break:keep-all}
  article td{word-break:break-word}
 }
+
+/* ── 종목 브리핑 (자동 추가) ───────────────────────────── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+.stk .row .tag.stk{color:var(--stk)}
