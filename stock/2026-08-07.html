@@ -6,38 +6,54 @@
 <title>2026-08-07 종목 브리핑</title>
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-/* ── 종목 브리핑 (자동 추가) ───────────────────────────── */
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
 :root{--stk:#f59e0b}
 .tag.stk{color:var(--stk);border-color:#4a3a1a}
 .stk article h1{border-bottom-color:var(--stk)}
 .stk article h2{border-left-color:var(--stk)}
-.stk .row .tag.stk{color:var(--stk)}
 
-/* 모바일에서 표를 카드로 편다.
-   종목 브리핑은 열이 6~9개까지 가는데(종목/첫흐름/충족봉/등락%/대금/근거…)
-   375px 화면에서는 열당 40px 남짓이라 가로 스크롤로도 읽기가 어렵다.
-   게다가 오른쪽에 내용이 더 있다는 표시가 없어서 잘린 줄도 모른다.
-   → 한 행을 한 장의 카드로 세우고, 각 값 앞에 원래 열 이름을 붙인다.
-   .stk 안에서만 바꾸므로 기존 시황(kr) 페이지는 그대로다. */
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
 @media (max-width:640px){
-  .stk article .tw{border:none;border-radius:0;margin:14px 0}
+  .stk article .tw{border:none;margin:14px 0}
   .stk article table{background:none;font-size:14px}
   .stk article thead{display:none}
   .stk article table,.stk article tbody,.stk article tr,.stk article td{
     display:block;width:100%}
   .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
     padding:10px 12px;margin-bottom:10px}
-  .stk article td{border:none;padding:5px 0;display:flex;gap:10px;
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
     align-items:baseline;line-height:1.5}
-  .stk article tr:last-child td{border-bottom:none}
-  .stk article td::before{content:attr(data-l);flex:0 0 5.6em;
-    color:#9aa0a6;font-size:12px;font-weight:600;padding-top:1px}
-  .stk article td:empty{display:none}
-  /* 첫 칸(대개 종목명)은 카드 제목처럼 크게 */
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
   .stk article td:first-child{display:block;font-size:16px;font-weight:700;
-    color:#e8eaed;padding:0 0 6px;margin-bottom:6px;
-    border-bottom:1px solid #262a33}
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
   .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
 }
 </style>
 </head><body class="stk">
@@ -53,123 +69,73 @@
 <p><strong>오늘 새로 점화된 것은 철강(AI 데이터센터용 강재)과 내수 소비재(2Q 실적 서프라이즈) 두 갈래다.</strong></p>
 <blockquote><p><strong>검색 불가</strong> — 웹 검색 없이 첨부 문서(스캐너 + 정보지)만으로 판단했다.</p></blockquote>
 <h2>📊 테마 요약</h2>
-<div class="tw"><table><thead><tr>
-<th>테마</th>
-<th>재료(핵심 뉴스)</th>
-<th>수식충족</th>
-<th>정보지</th>
-<th>신선도</th>
-<th>판단</th>
-</tr></thead><tbody>
-<tr><td data-l="테마">철강</td><td data-l="재료(핵심 뉴스)">&quot;AI 데이터센터 인프라용 강재 공급 확대&quot;(정보지B) / 종목 당일뉴스 0건</td><td data-l="수식충족">3종목</td><td data-l="정보지">철강 관련주 6 + 철강 2</td><td data-l="신선도"><strong>D+0 · 전원 ★첫흐름 · 5일누적 +1.8~<span style="color:#ef4444;font-weight:700">+4.9%</span></strong></td><td data-l="판단"><strong>1순위 · 시작일 추정 08/07</strong></td></tr>
-<tr><td data-l="테마">내수 소비재</td><td data-l="재료(핵심 뉴스)">BGF리테일 2Q 영업익 <span style="color:#ef4444;font-weight:700">+22%</span>·목표가 상향 4곳 / 롯데웰푸드 2Q 영업익 647억 <span style="color:#ef4444;font-weight:700">+88.5%</span></td><td data-l="수식충족"><strong>0종목(둘 다 미충족)</strong></td><td data-l="정보지">-</td><td data-l="신선도">D+0 · 30일급등일수 0 · 5일누적 +2.6/<span style="color:#7dabf8;font-weight:700">-3.0%</span></td><td data-l="판단">2순위 · 재료 최상, 수식 궁합 나쁨</td></tr>
-<tr><td data-l="테마">태양광</td><td data-l="재료(핵심 뉴스)">트럼프 폴리실리콘 15% 관세(12/4 시행)</td><td data-l="수식충족">2종목</td><td data-l="정보지">태양광에너지</td><td data-l="신선도"><strong>실질 D+2(시작 08/05), 신규 아님</strong></td><td data-l="판단">3순위 · 혜인 하나 때문에 올림</td></tr>
-<tr><td data-l="테마">광통신·통신장비</td><td data-l="재료(핵심 뉴스)">美 중국산 광트랜시버 수입금지 검토</td><td data-l="수식충족">3종목</td><td data-l="정보지">광통신</td><td data-l="신선도">D+2(시작 08/05) — 늦음</td><td data-l="판단">눌림만</td></tr>
-<tr><td data-l="테마">2차전지/LFP·리튬</td><td data-l="재료(핵심 뉴스)">엘앤에프 2Q 흑자전환·IBK 목표가 13만원</td><td data-l="수식충족">5종목</td><td data-l="정보지">LFP 양극재</td><td data-l="신선도">D+3~D+5(시작 08/04)</td><td data-l="판단">후반부</td></tr>
-<tr><td data-l="테마">우주항공/스페이스X</td><td data-l="재료(핵심 뉴스)">-</td><td data-l="수식충족">0종목(오늘 미충족)</td><td data-l="정보지">-</td><td data-l="신선도">D+3(시작 08/04) · 5일누적 +47.8/<span style="color:#ef4444;font-weight:700">+42.6%</span></td><td data-l="판단"><strong>제외</strong></td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">철강</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>&quot;AI 데이터센터 인프라용 강재 공급 확대&quot;(정보지B) / 종목 당일뉴스 0건</p><p class="c-p"><span class="c-k">신선도</span><strong>D+0 · 전원 ★첫흐름 · 5일누적 +1.8~<span style="color:#ef4444;font-weight:700">+4.9%</span></strong></p><div class="c-c"><span class="chip"><i>수식충족</i>3종목</span><span class="chip"><i>정보지</i>철강 관련주 6 + 철강 2</span><span class="chip"><i>판단</i><strong>1순위 · 시작일 추정 08/07</strong></span></div></article>
+<article class="card"><h4 class="c-t">내수 소비재</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>BGF리테일 2Q 영업익 <span style="color:#ef4444;font-weight:700">+22%</span>·목표가 상향 4곳 / 롯데웰푸드 2Q 영업익 647억 <span style="color:#ef4444;font-weight:700">+88.5%</span></p><p class="c-p"><span class="c-k">신선도</span>D+0 · 30일급등일수 0 · 5일누적 +2.6/<span style="color:#7dabf8;font-weight:700">-3.0%</span></p><div class="c-c"><span class="chip"><i>수식충족</i><strong>0종목(둘 다 미충족)</strong></span><span class="chip"><i>판단</i>2순위 · 재료 최상, 수식 궁합 나쁨</span></div></article>
+<article class="card"><h4 class="c-t">태양광</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>트럼프 폴리실리콘 15% 관세(12/4 시행)</p><p class="c-p"><span class="c-k">신선도</span><strong>실질 D+2(시작 08/05), 신규 아님</strong></p><div class="c-c"><span class="chip"><i>수식충족</i>2종목</span><span class="chip"><i>정보지</i>태양광에너지</span><span class="chip"><i>판단</i>3순위 · 혜인 하나 때문에 올림</span></div></article>
+<article class="card"><h4 class="c-t">광통신·통신장비</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>美 중국산 광트랜시버 수입금지 검토</p><p class="c-p"><span class="c-k">신선도</span>D+2(시작 08/05) — 늦음</p><div class="c-c"><span class="chip"><i>수식충족</i>3종목</span><span class="chip"><i>정보지</i>광통신</span><span class="chip"><i>판단</i>눌림만</span></div></article>
+<article class="card"><h4 class="c-t">2차전지/LFP·리튬</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>엘앤에프 2Q 흑자전환·IBK 목표가 13만원</p><p class="c-p"><span class="c-k">신선도</span>D+3~D+5(시작 08/04)</p><div class="c-c"><span class="chip"><i>수식충족</i>5종목</span><span class="chip"><i>정보지</i>LFP 양극재</span><span class="chip"><i>판단</i>후반부</span></div></article>
+<article class="card"><h4 class="c-t">우주항공/스페이스X</h4><p class="c-p"><span class="c-k">신선도</span>D+3(시작 08/04) · 5일누적 +47.8/<span style="color:#ef4444;font-weight:700">+42.6%</span></p><div class="c-c"><span class="chip"><i>수식충족</i>0종목(오늘 미충족)</span><span class="chip"><i>판단</i><strong>제외</strong></span></div></article>
+</div>
 <h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
 <h3>철강 (1순위, D+0)</h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>첫흐름</th>
-<th>충족봉</th>
-<th>등락%</th>
-<th>대금</th>
-<th>근거</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">신스틸(162300)</td><td data-l="첫흐름"><strong>★첫흐름</strong></td><td data-l="충족봉">★11봉(12:04)</td><td data-l="등락%">+30.0</td><td data-l="대금">90억</td><td data-l="근거">전일 <strong>562배</strong> / 직전최대 <strong>36.0배</strong> / 종가위치 100·VWAP <span style="color:#ef4444;font-weight:700">+3.9%</span> 최고가마감 / 유통시총 201억 대비 회전 44.7%</td></tr>
-<tr><td data-l="종목">금강철강(053260)</td><td data-l="첫흐름"><strong>★첫흐름</strong></td><td data-l="충족봉">★18봉(12:15)</td><td data-l="등락%">+12.5</td><td data-l="대금">146억</td><td data-l="근거">전일 <strong>187.8배</strong> / 직전최대 5.4배 / 30일급등일수 <strong>0</strong> / 5일누적 +4.9</td></tr>
-<tr><td data-l="종목">넥스틸(092790)</td><td data-l="첫흐름"><strong>★첫흐름</strong></td><td data-l="충족봉">★24봉(12:37)</td><td data-l="등락%">+1.9</td><td data-l="대금"><strong>551억</strong></td><td data-l="근거"><strong>테마 대장(신스틸의 6.1배)</strong> / 전일 29.7배 / 단 종가위치 17·VWAP <span style="color:#7dabf8;font-weight:700">-6.0%</span>로 밀려 마감</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">신스틸(162300)</h4><p class="c-p"><span class="c-k">근거</span>전일 <strong>562배</strong> / 직전최대 <strong>36.0배</strong> / 종가위치 100·VWAP <span style="color:#ef4444;font-weight:700">+3.9%</span> 최고가마감 / 유통시총 201억 대비 회전 44.7%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★11봉(12:04)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>90억</span></div></article>
+<article class="card"><h4 class="c-t">금강철강(053260)</h4><p class="c-p"><span class="c-k">근거</span>전일 <strong>187.8배</strong> / 직전최대 5.4배 / 30일급등일수 <strong>0</strong> / 5일누적 +4.9</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★18봉(12:15)</span><span class="chip"><i>등락%</i>+12.5</span><span class="chip"><i>대금</i>146억</span></div></article>
+<article class="card"><h4 class="c-t">넥스틸(092790)</h4><p class="c-p"><span class="c-k">근거</span><strong>테마 대장(신스틸의 6.1배)</strong> / 전일 29.7배 / 단 종가위치 17·VWAP <span style="color:#7dabf8;font-weight:700">-6.0%</span>로 밀려 마감</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★24봉(12:37)</span><span class="chip"><i>등락%</i>+1.9</span><span class="chip"><i>대금</i><strong>551억</strong></span></div></article>
+</div>
 <ul>
 <li>12:04 → 12:15 → 12:37, <strong>33분 내 3종목 연속 점화</strong>. 3종목 모두 당일뉴스 0건 → 종목 단위로는 <code>재료 미상 — 주가 선행</code>.</li>
 <li>재료 단계 <strong>이력 없음 → 주가 선행 추정</strong>. 3개월 이력은 06/17 &#x27;이란 재건&#x27;·07/23 멕시코 출자·06/23 CB뿐으로, &#x27;AI 데이터센터 강재&#x27;는 <strong>새 축(재탕 아님)</strong>.</li>
 </ul>
 <h3>태양광 (실질 D+2 — 테마 신규 아님)</h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>첫흐름</th>
-<th>충족봉</th>
-<th>등락%</th>
-<th>대금</th>
-<th>근거</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">혜인(003010)</td><td data-l="첫흐름"><strong>★첫흐름</strong></td><td data-l="충족봉">★22봉(10:08)</td><td data-l="등락%">+29.9</td><td data-l="대금">204억</td><td data-l="근거">전일 75.4배·직전최대 28.9배·30일급등일수 0·종가위치 100·VWAP <span style="color:#ef4444;font-weight:700">+3.3%</span> — 숫자는 오늘 최고 수준 D+0 프로필 / 단 <strong>테마 귀속 불명확, 재료 미상 — 확인 필요</strong></td></tr>
-<tr><td data-l="종목">한화솔루션(009830)</td><td data-l="첫흐름"><strong>이전충족 08/05 외4</strong></td><td data-l="충족봉">★20봉(09:08)</td><td data-l="등락%">+11.5</td><td data-l="대금"><strong>6,937억</strong></td><td data-l="근거"><strong>08/05에 이미 충족 → D+2, 오늘 전체 대금 1위</strong> / 5일누적 <span style="color:#ef4444;font-weight:700">+27.2%</span>·종가위치 30·VWAP <span style="color:#7dabf8;font-weight:700">-2.1%</span> 밀려 마감 / 재료는 기대→확정→정책확정으로 단계 상승</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">혜인(003010)</h4><p class="c-p"><span class="c-k">근거</span>전일 75.4배·직전최대 28.9배·30일급등일수 0·종가위치 100·VWAP <span style="color:#ef4444;font-weight:700">+3.3%</span> — 숫자는 오늘 최고 수준 D+0 프로필 / 단 <strong>테마 귀속 불명확, 재료 미상 — 확인 필요</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★22봉(10:08)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>204억</span></div></article>
+<article class="card"><h4 class="c-t">한화솔루션(009830)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/05에 이미 충족 → D+2, 오늘 전체 대금 1위</strong> / 5일누적 <span style="color:#ef4444;font-weight:700">+27.2%</span>·종가위치 30·VWAP <span style="color:#7dabf8;font-weight:700">-2.1%</span> 밀려 마감 / 재료는 기대→확정→정책확정으로 단계 상승</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>이전충족 08/05 외4</strong></span><span class="chip"><i>충족봉</i>★20봉(09:08)</span><span class="chip"><i>등락%</i>+11.5</span><span class="chip"><i>대금</i><strong>6,937억</strong></span></div></article>
+</div>
 <ul>
 <li>혜인의 D+0은 &quot;테마 첫날&quot;이 아니라 <strong>&quot;후발주가 뒤늦게 따라 붙은 첫날&quot;</strong>(대장 한화솔루션의 1/34). 3개월 이력 4건 중 태양광 관련 <strong>0건</strong>이라 정보지의 &#x27;태양광에너지&#x27; 분류 자체가 근거 부족 — <strong>개별주로 보는 게 타당</strong>.</li>
 </ul>
 <h3>광통신·통신장비 (D+2 — 눌림 관찰용)</h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>첫흐름</th>
-<th>충족봉</th>
-<th>등락%</th>
-<th>대금</th>
-<th>근거</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">광전자(017890)</td><td data-l="첫흐름">이전충족 08/05 외1</td><td data-l="충족봉">-</td><td data-l="등락%">+15.0</td><td data-l="대금"><strong>1,755억</strong></td><td data-l="근거"><strong>08/05에 이미 충족 → D+2</strong> / 테마 대장 / 종가위치 59</td></tr>
-<tr><td data-l="종목">오이솔루션(138080)</td><td data-l="첫흐름">이전충족 없음</td><td data-l="충족봉">-</td><td data-l="등락%">+18.5</td><td data-l="대금">430억</td><td data-l="근거">D+2 / 종가위치 81</td></tr>
-<tr><td data-l="종목">한국첨단소재(062970)</td><td data-l="첫흐름"><strong>이전충족 07/15 외1</strong></td><td data-l="충족봉">-</td><td data-l="등락%">+29.9</td><td data-l="대금">118억</td><td data-l="근거"><strong>07/15에 이미 충족 → 첫흐름 아님</strong> / 대금 118억, 대장 광전자의 1/15 = 막내</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">광전자(017890)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/05에 이미 충족 → D+2</strong> / 테마 대장 / 종가위치 59</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/05 외1</span><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금</i><strong>1,755억</strong></span></div></article>
+<article class="card"><h4 class="c-t">오이솔루션(138080)</h4><p class="c-p"><span class="c-k">근거</span>D+2 / 종가위치 81</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 없음</span><span class="chip"><i>등락%</i>+18.5</span><span class="chip"><i>대금</i>430억</span></div></article>
+<article class="card"><h4 class="c-t">한국첨단소재(062970)</h4><p class="c-p"><span class="c-k">근거</span><strong>07/15에 이미 충족 → 첫흐름 아님</strong> / 대금 118억, 대장 광전자의 1/15 = 막내</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>이전충족 07/15 외1</strong></span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>118억</span></div></article>
+</div>
 <h3>2차전지/LFP·리튬 (D+3~D+5 — 후반부, 눌림만)</h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>첫흐름</th>
-<th>충족봉</th>
-<th>등락%</th>
-<th>대금</th>
-<th>근거</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">엘앤에프(066970)</td><td data-l="첫흐름">이전충족 07/10</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금"><strong>1,996억</strong></td><td data-l="근거"><strong>07/10에 이미 충족 → D+19</strong> / 5일누적 <span style="color:#ef4444;font-weight:700">+22.9%</span>로 신규 진입 자리 아님</td></tr>
-<tr><td data-l="종목">엔켐(348370)</td><td data-l="첫흐름">-</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금">363억</td><td data-l="근거">D+3</td></tr>
-<tr><td data-l="종목">코칩(126600)</td><td data-l="첫흐름">-</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금">326억</td><td data-l="근거">D+5</td></tr>
-<tr><td data-l="종목">성일하이텍(365340)</td><td data-l="첫흐름">-</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금">223억</td><td data-l="근거">D+5</td></tr>
-<tr><td data-l="종목">이브이첨단소재(425420)</td><td data-l="첫흐름">-</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금">132억</td><td data-l="근거">D+5 / 종가위치 4%</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">엘앤에프(066970)</h4><p class="c-p"><span class="c-k">근거</span><strong>07/10에 이미 충족 → D+19</strong> / 5일누적 <span style="color:#ef4444;font-weight:700">+22.9%</span>로 신규 진입 자리 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/10</span><span class="chip"><i>대금</i><strong>1,996억</strong></span></div></article>
+<article class="card"><h4 class="c-t">엔켐(348370)</h4><p class="c-p"><span class="c-k">근거</span>D+3</p><div class="c-c"><span class="chip"><i>대금</i>363억</span></div></article>
+<article class="card"><h4 class="c-t">코칩(126600)</h4><p class="c-p"><span class="c-k">근거</span>D+5</p><div class="c-c"><span class="chip"><i>대금</i>326억</span></div></article>
+<article class="card"><h4 class="c-t">성일하이텍(365340)</h4><p class="c-p"><span class="c-k">근거</span>D+5</p><div class="c-c"><span class="chip"><i>대금</i>223억</span></div></article>
+<article class="card"><h4 class="c-t">이브이첨단소재(425420)</h4><p class="c-p"><span class="c-k">근거</span>D+5 / 종가위치 4%</p><div class="c-c"><span class="chip"><i>대금</i>132억</span></div></article>
+</div>
 <h3>개별</h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>첫흐름</th>
-<th>충족봉</th>
-<th>등락%</th>
-<th>대금</th>
-<th>근거</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">한켐(457370)</td><td data-l="첫흐름"><strong>★첫흐름</strong></td><td data-l="충족봉">-</td><td data-l="등락%">+7.4</td><td data-l="대금">187억</td><td data-l="근거">전일 35.7배 / 3개월 뉴스 <strong>0건</strong>·동반 종목 없음 → <code>재료 미상</code>, 단독이라 테마 성립 안 함</td></tr>
-<tr><td data-l="종목">랩지노믹스(084650)</td><td data-l="첫흐름">이전충족 08/04</td><td data-l="충족봉">-</td><td data-l="등락%">-</td><td data-l="대금">119억</td><td data-l="근거"><strong>08/04에 이미 충족 → D+3</strong>, 후발주로 판단</td></tr>
-<tr><td data-l="종목">케이피엠테크(042040)</td><td data-l="첫흐름">-</td><td data-l="충족봉">충족</td><td data-l="등락%">-</td><td data-l="대금"><strong>6.1억</strong></td><td data-l="근거">대금 6.1억 — <strong>매매 불가 수준</strong></td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">한켐(457370)</h4><p class="c-p"><span class="c-k">근거</span>전일 35.7배 / 3개월 뉴스 <strong>0건</strong>·동반 종목 없음 → <code>재료 미상</code>, 단독이라 테마 성립 안 함</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>등락%</i>+7.4</span><span class="chip"><i>대금</i>187억</span></div></article>
+<article class="card"><h4 class="c-t">랩지노믹스(084650)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/04에 이미 충족 → D+3</strong>, 후발주로 판단</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/04</span><span class="chip"><i>대금</i>119억</span></div></article>
+<article class="card"><h4 class="c-t">케이피엠테크(042040)</h4><p class="c-p"><span class="c-k">근거</span>대금 6.1억 — <strong>매매 불가 수준</strong></p><div class="c-c"><span class="chip"><i>충족봉</i>충족</span><span class="chip"><i>대금</i><strong>6.1억</strong></span></div></article>
+</div>
 <h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
-<div class="tw"><table><thead><tr>
-<th>테마</th>
-<th>종목</th>
-<th>왜 미충족으로 보이나</th>
-</tr></thead><tbody>
-<tr><td data-l="테마">내수 소비재</td><td data-l="종목">BGF리테일(282330) <span style="color:#ef4444;font-weight:700">+13.3%</span>·410억</td><td data-l="왜 미충족으로 보이나">G1 1회/G2 45회 — 순매수 쏠림은 있으나 5봉 연속 대금폭발 양봉 미발생. 시총 26,462억 대형주라 분봉 급등 구조가 안 잡히는 게 정상</td></tr>
-<tr><td data-l="테마">내수 소비재</td><td data-l="종목">롯데웰푸드(280360) <span style="color:#ef4444;font-weight:700">+12.2%</span>·160억</td><td data-l="왜 미충족으로 보이나">G1 0회/G2 9회. 전일 13.1배·5일누적 <span style="color:#7dabf8;font-weight:700">-3.0%</span>로 선반영은 없으나 분봉 구조 미형성</td></tr>
-<tr><td data-l="테마">광통신</td><td data-l="종목">빛과전자(041440) <span style="color:#ef4444;font-weight:700">+3.3%</span>·1,361억</td><td data-l="왜 미충족으로 보이나">08/05 외2 이전충족, 5일누적 <span style="color:#ef4444;font-weight:700">+60.2%</span>·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>로 이미 피로</td></tr>
-<tr><td data-l="테마">광통신</td><td data-l="종목">이노인스트루먼트(215790) <strong><span style="color:#7dabf8;font-weight:700">-4.1%</span></strong>·124억</td><td data-l="왜 미충족으로 보이나">07/10 이전충족, 종가위치 0 — <strong>테마 이탈 경고 신호</strong></td></tr>
-<tr><td data-l="테마">2차전지(LFP 양극재)</td><td data-l="종목">동화기업(025900) <span style="color:#ef4444;font-weight:700">+30.0%</span>·281억</td><td data-l="왜 미충족으로 보이나">G2 9회뿐. 상한가 고가마감이나 <strong>D+28로 사이클 밖</strong></td></tr>
-<tr><td data-l="테마">개별</td><td data-l="종목">비큐AI(148780) <strong><span style="color:#7dabf8;font-weight:700">-11.9%</span></strong>·405억</td><td data-l="왜 미충족으로 보이나">3연상 후 첫 음봉, 종가위치 11·VWAP <span style="color:#7dabf8;font-weight:700">-16.5%</span> — <strong>명백한 꼭지 이탈, 접근 금지</strong></td></tr>
-<tr><td data-l="테마">개별</td><td data-l="종목">본느(226340)</td><td data-l="왜 미충족으로 보이나">5일누적 <strong><span style="color:#ef4444;font-weight:700">+149.6%</span></strong>(5연상) — 완전 후반부</td></tr>
-<tr><td data-l="테마">개별</td><td data-l="종목">상상인증권(001290) / 윙입푸드(900340) / 유니켐(011330)</td><td data-l="왜 미충족으로 보이나">각각 수협은행 인수 기대 2연상 / 대표 장내매수 대금 5.3억 / 2연상 대금 3.8억 — <strong>대금 미미, 거래 불가 수준</strong></td></tr>
-<tr><td data-l="테마">우주항공</td><td data-l="종목">스피어(720억) / 에이치브이엠(343억)</td><td data-l="왜 미충족으로 보이나">둘 다 08/04 충족, <strong>오늘 미충족</strong>. 5일누적 +47.8/<span style="color:#ef4444;font-weight:700">+42.6%</span> 후반부</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">내수 소비재</h4><p class="c-p"><span class="c-k">종목</span>BGF리테일(282330) <span style="color:#ef4444;font-weight:700">+13.3%</span>·410억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G1 1회/G2 45회 — 순매수 쏠림은 있으나 5봉 연속 대금폭발 양봉 미발생. 시총 26,462억 대형주라 분봉 급등 구조가 안 잡히는 게 정상</p></article>
+<article class="card"><h4 class="c-t">내수 소비재</h4><p class="c-p"><span class="c-k">종목</span>롯데웰푸드(280360) <span style="color:#ef4444;font-weight:700">+12.2%</span>·160억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G1 0회/G2 9회. 전일 13.1배·5일누적 <span style="color:#7dabf8;font-weight:700">-3.0%</span>로 선반영은 없으나 분봉 구조 미형성</p></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">종목</span>빛과전자(041440) <span style="color:#ef4444;font-weight:700">+3.3%</span>·1,361억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>08/05 외2 이전충족, 5일누적 <span style="color:#ef4444;font-weight:700">+60.2%</span>·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>로 이미 피로</p></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">종목</span>이노인스트루먼트(215790) <strong><span style="color:#7dabf8;font-weight:700">-4.1%</span></strong>·124억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>07/10 이전충족, 종가위치 0 — <strong>테마 이탈 경고 신호</strong></p></article>
+<article class="card"><h4 class="c-t">2차전지(LFP 양극재)</h4><p class="c-p"><span class="c-k">종목</span>동화기업(025900) <span style="color:#ef4444;font-weight:700">+30.0%</span>·281억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G2 9회뿐. 상한가 고가마감이나 <strong>D+28로 사이클 밖</strong></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>비큐AI(148780) <strong><span style="color:#7dabf8;font-weight:700">-11.9%</span></strong>·405억</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>3연상 후 첫 음봉, 종가위치 11·VWAP <span style="color:#7dabf8;font-weight:700">-16.5%</span> — <strong>명백한 꼭지 이탈, 접근 금지</strong></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>본느(226340)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>5일누적 <strong><span style="color:#ef4444;font-weight:700">+149.6%</span></strong>(5연상) — 완전 후반부</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>상상인증권(001290) / 윙입푸드(900340) / 유니켐(011330)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>각각 수협은행 인수 기대 2연상 / 대표 장내매수 대금 5.3억 / 2연상 대금 3.8억 — <strong>대금 미미, 거래 불가 수준</strong></p></article>
+<article class="card"><h4 class="c-t">우주항공</h4><p class="c-p"><span class="c-k">종목</span>스피어(720억) / 에이치브이엠(343억)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>둘 다 08/04 충족, <strong>오늘 미충족</strong>. 5일누적 +47.8/<span style="color:#ef4444;font-weight:700">+42.6%</span> 후반부</p></article>
+</div>
 <h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
 <p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
-<div class="tw"><table><thead><tr>
-<th>테마</th>
-<th>종목</th>
-<th>정보지 사유</th>
-</tr></thead><tbody>
-<tr><td data-l="테마">철강</td><td data-l="종목">아주스틸 · 한국특강 · DSR제강 · 동국산업</td><td data-l="정보지 사유">정보지 &#x27;철강 관련주&#x27;에 있으나 오늘 스캐너 미포착 — <strong>후발주 후보, 내일 반드시 확인</strong></td></tr>
-<tr><td data-l="테마">내수 소비재</td><td data-l="종목">GS리테일 등 편의점/음식료</td><td data-l="정보지 사유">확산 여부 확인 대상</td></tr>
-<tr><td data-l="테마">광통신</td><td data-l="종목">기가레인 · 대한광통신 · 빛샘전자 · CS</td><td data-l="정보지 사유">후발주 후보, 단 테마 자체가 <strong>이미 D+2</strong></td></tr>
-<tr><td data-l="테마">태양광</td><td data-l="종목">OCI홀딩스 · HD현대에너지솔루션 · SDN</td><td data-l="정보지 사유">한화솔루션 D+3 눌림 시 동반 여부 확인 대상</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">철강</h4><p class="c-p"><span class="c-k">정보지 사유</span>정보지 &#x27;철강 관련주&#x27;에 있으나 오늘 스캐너 미포착 — <strong>후발주 후보, 내일 반드시 확인</strong></p><div class="c-c"><span class="chip"><i>종목</i>아주스틸 · 한국특강 · DSR제강 · 동국산업</span></div></article>
+<article class="card"><h4 class="c-t">내수 소비재</h4><p class="c-p"><span class="c-k">정보지 사유</span>확산 여부 확인 대상</p><div class="c-c"><span class="chip"><i>종목</i>GS리테일 등 편의점/음식료</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">정보지 사유</span>후발주 후보, 단 테마 자체가 <strong>이미 D+2</strong></p><div class="c-c"><span class="chip"><i>종목</i>기가레인 · 대한광통신 · 빛샘전자 · CS</span></div></article>
+<article class="card"><h4 class="c-t">태양광</h4><p class="c-p"><span class="c-k">정보지 사유</span>한화솔루션 D+3 눌림 시 동반 여부 확인 대상</p><div class="c-c"><span class="chip"><i>종목</i>OCI홀딩스 · HD현대에너지솔루션 · SDN</span></div></article>
+</div>
 <h2>🔍 내일 확인할 것</h2>
 <ul>
 <li><strong>철강 확산</strong> — 아주스틸·한국특강·동국산업 중 <strong>2개 이상 시가 강세면 진짜</strong> / 하나도 안 붙으면 어제 철강 3종목은 테마가 아니라 개별 수급이다.</li>
@@ -186,21 +152,11 @@
 <hr>
 <h2>② D+0 후보 테마</h2>
 <h3>【1순위】 철강 — AI 데이터센터 인프라용 강재 <code>정보지 확인</code></h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>등락%</th>
-<th><strong>거래대금(억)</strong></th>
-<th>D+N</th>
-<th>오늘충족</th>
-<th>이전충족</th>
-<th>전일배수</th>
-<th>직전최대대비</th>
-<th>5일누적%</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">162300 신스틸</td><td data-l="등락%">+30.0</td><td data-l="거래대금(억)"><strong>90</strong></td><td data-l="D+N"><strong>D+0</strong></td><td data-l="오늘충족">★11봉(12:04)</td><td data-l="이전충족">없음(★첫흐름)</td><td data-l="전일배수"><strong>562배</strong></td><td data-l="직전최대대비"><strong>36.0배</strong></td><td data-l="5일누적%">+1.8</td></tr>
-<tr><td data-l="종목">053260 금강철강</td><td data-l="등락%">+12.5</td><td data-l="거래대금(억)"><strong>146</strong></td><td data-l="D+N"><strong>D+0</strong></td><td data-l="오늘충족">★18봉(12:15)</td><td data-l="이전충족">없음(★첫흐름)</td><td data-l="전일배수"><strong>187.8배</strong></td><td data-l="직전최대대비">5.4배</td><td data-l="5일누적%">+4.9</td></tr>
-<tr><td data-l="종목">092790 넥스틸</td><td data-l="등락%">+1.9</td><td data-l="거래대금(억)"><strong>551</strong></td><td data-l="D+N">-</td><td data-l="오늘충족">★24봉(12:37)</td><td data-l="이전충족">없음(★첫흐름)</td><td data-l="전일배수">29.7배</td><td data-l="직전최대대비">7.6배</td><td data-l="5일누적%">+17.5</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">162300 신스틸</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i><strong>90</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★11봉(12:04)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>전일배수</i><strong>562배</strong></span><span class="chip"><i>직전최대대비</i><strong>36.0배</strong></span><span class="chip"><i>5일누적%</i>+1.8</span></div></article>
+<article class="card"><h4 class="c-t">053260 금강철강</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.5</span><span class="chip"><i>거래대금(억)</i><strong>146</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★18봉(12:15)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>전일배수</i><strong>187.8배</strong></span><span class="chip"><i>직전최대대비</i>5.4배</span><span class="chip"><i>5일누적%</i>+4.9</span></div></article>
+<article class="card"><h4 class="c-t">092790 넥스틸</h4><div class="c-c"><span class="chip"><i>등락%</i>+1.9</span><span class="chip"><i>거래대금(억)</i><strong>551</strong></span><span class="chip"><i>오늘충족</i>★24봉(12:37)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>전일배수</i>29.7배</span><span class="chip"><i>직전최대대비</i>7.6배</span><span class="chip"><i>5일누적%</i>+17.5</span></div></article>
+</div>
 <ul>
 <li><strong>테마 시작일 추정</strong>: <strong>오늘 08/07.</strong> 3종목 모두 <code>★첫흐름</code>이고 이전충족 이력이 전무하다. 30일급등일수도 신스틸 1 / 금강철강 <strong>0</strong> / 넥스틸 1로 사실상 잠자던 종목군이다. 5일누적도 +1.8 / +4.9로 <strong>선반영이 거의 없다.</strong> 이 테마에서 가장 중요한 숫자다.</li>
 <li><strong>동시성 근거</strong>: 충족 시각이 <strong>12:04 → 12:15 → 12:37</strong>로 33분 안에 3종목이 연속 점화됐다. 우연이 아니다. 정보지도 &#x27;철강 관련주&#x27;(6종목) + &#x27;철강&#x27;(2종목)으로 독립 분류했다.</li>
@@ -216,19 +172,10 @@
 </ul>
 <hr>
 <h3>【2순위】 내수 소비재 — 2Q 실적 서프라이즈 <code>추정</code></h3>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>등락%</th>
-<th><strong>거래대금(억)</strong></th>
-<th>D+N</th>
-<th>오늘충족</th>
-<th>이전충족</th>
-<th>전일배수</th>
-<th>5일누적%</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">282330 BGF리테일</td><td data-l="등락%">+13.3</td><td data-l="거래대금(억)"><strong>410</strong></td><td data-l="D+N"><strong>D+0</strong></td><td data-l="오늘충족">미충족(G1:1/G2:45)</td><td data-l="이전충족">없음</td><td data-l="전일배수">3.5배</td><td data-l="5일누적%">+2.6</td></tr>
-<tr><td data-l="종목">280360 롯데웰푸드</td><td data-l="등락%">+12.2</td><td data-l="거래대금(억)"><strong>160</strong></td><td data-l="D+N"><strong>D+0</strong></td><td data-l="오늘충족">미충족(G1:0/G2:9)</td><td data-l="이전충족">없음</td><td data-l="전일배수">13.1배</td><td data-l="5일누적%"><strong>-3.0</strong></td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">282330 BGF리테일</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.3</span><span class="chip"><i>거래대금(억)</i><strong>410</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G1:1/G2:45)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>전일배수</i>3.5배</span><span class="chip"><i>5일누적%</i>+2.6</span></div></article>
+<article class="card"><h4 class="c-t">280360 롯데웰푸드</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.2</span><span class="chip"><i>거래대금(억)</i><strong>160</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G1:0/G2:9)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>전일배수</i>13.1배</span><span class="chip"><i>5일누적%</i><strong>-3.0</strong></span></div></article>
+</div>
 <ul>
 <li><strong>테마 시작일 추정</strong>: <strong>오늘 08/07.</strong> 둘 다 D+0, 30일급등일수 <strong>0</strong>, 5일누적 +2.6 / <strong><span style="color:#7dabf8;font-weight:700">-3.0%</span></strong>. 즉 <strong>직전 5일간 아예 안 움직이던 대형 내수주가 오늘만 튄 것.</strong> 선반영이 없다는 점에서 철강보다도 깨끗하다.</li>
 <li><strong>대장주 / 후발주</strong>: <strong>대장주 = BGF리테일 (410억).</strong> 시총 26,462억으로 체급이 다르고 대금도 2.6배 크다. 롯데웰푸드가 후발/동반주.</li>
@@ -242,17 +189,10 @@
 <hr>
 <h3>【3순위】 태양광 — 트럼프 폴리실리콘 관세 ⚠ <strong>실질 D+2, 신규 아님</strong></h3>
 <p>굳이 3순위에 올린 이유는 <strong>혜인 하나 때문</strong>이다. 테마 자체는 신규가 아니다.</p>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>등락%</th>
-<th><strong>거래대금(억)</strong></th>
-<th>D+N</th>
-<th>오늘충족</th>
-<th>이전충족</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">009830 한화솔루션</td><td data-l="등락%">+11.5</td><td data-l="거래대금(억)"><strong>6,937</strong></td><td data-l="D+N">D+2</td><td data-l="오늘충족">★20봉(09:08)</td><td data-l="이전충족"><strong>08/05 외4</strong></td></tr>
-<tr><td data-l="종목">003010 혜인</td><td data-l="등락%">+29.9</td><td data-l="거래대금(억)">204</td><td data-l="D+N"><strong>D+0</strong></td><td data-l="오늘충족">★22봉(10:08)</td><td data-l="이전충족">없음(★첫흐름)</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">009830 한화솔루션</h4><div class="c-c"><span class="chip"><i>등락%</i>+11.5</span><span class="chip"><i>거래대금(억)</i><strong>6,937</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>★20봉(09:08)</span><span class="chip"><i>이전충족</i><strong>08/05 외4</strong></span></div></article>
+<article class="card"><h4 class="c-t">003010 혜인</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i>204</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★22봉(10:08)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+</div>
 <ul>
 <li><strong>테마 시작일 추정</strong>: <strong>08/05.</strong> 한화솔루션이 08/05 충족(김동관 유증 참여, <span style="color:#ef4444;font-weight:700">+16%</span>)했고 그 이전 충족 이력만 4건 더 있다. 오늘은 <strong>D+2</strong>다.</li>
 <li><strong>대장주 / 후발주</strong>: <strong>대장주 = 한화솔루션 (6,937억, 오늘 전체 1위).</strong> 혜인은 204억 — <strong>34분의 1</strong>. 게다가 혜인의 D+0은 &quot;테마 첫날&quot;이 아니라 <strong>&quot;후발주가 뒤늦게 따라 붙은 첫날&quot;</strong> 이다. 전형적인 원칙 4 사례.</li>
@@ -263,20 +203,13 @@
 <hr>
 <h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
 <p><strong>광통신·통신장비 (테마 시작 08/05, 오늘 D+2)</strong> — 오늘 최대 대금군이지만 <strong>늦었다.</strong></p>
-<div class="tw"><table><thead><tr>
-<th>종목</th>
-<th>등락%</th>
-<th>대금(억)</th>
-<th>D+N</th>
-<th>이전충족</th>
-<th>종가위치%</th>
-</tr></thead><tbody>
-<tr><td data-l="종목">광전자</td><td data-l="등락%">+15.0</td><td data-l="대금(억)">1,755</td><td data-l="D+N">D+2</td><td data-l="이전충족">08/05 외1</td><td data-l="종가위치%">59</td></tr>
-<tr><td data-l="종목">빛과전자</td><td data-l="등락%">+3.3</td><td data-l="대금(억)">1,361</td><td data-l="D+N">-</td><td data-l="이전충족">08/05 외2</td><td data-l="종가위치%">30</td></tr>
-<tr><td data-l="종목">오이솔루션</td><td data-l="등락%">+18.5</td><td data-l="대금(억)">430</td><td data-l="D+N">D+2</td><td data-l="이전충족">없음</td><td data-l="종가위치%">81</td></tr>
-<tr><td data-l="종목">한국첨단소재</td><td data-l="등락%">+29.9</td><td data-l="대금(억)">118</td><td data-l="D+N">D+0</td><td data-l="이전충족">07/15 외1</td><td data-l="종가위치%">100</td></tr>
-<tr><td data-l="종목">이노인스트루먼트</td><td data-l="등락%"><strong>-4.1</strong></td><td data-l="대금(억)">124</td><td data-l="D+N">-</td><td data-l="이전충족">07/10</td><td data-l="종가위치%">0</td></tr>
-</tbody></table></div>
+<div class="cards">
+<article class="card"><h4 class="c-t">광전자</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금(억)</i>1,755</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>이전충족</i>08/05 외1</span><span class="chip"><i>종가위치%</i>59</span></div></article>
+<article class="card"><h4 class="c-t">빛과전자</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>대금(억)</i>1,361</span><span class="chip"><i>이전충족</i>08/05 외2</span><span class="chip"><i>종가위치%</i>30</span></div></article>
+<article class="card"><h4 class="c-t">오이솔루션</h4><div class="c-c"><span class="chip"><i>등락%</i>+18.5</span><span class="chip"><i>대금(억)</i>430</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>81</span></div></article>
+<article class="card"><h4 class="c-t">한국첨단소재</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>118</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>이전충족</i>07/15 외1</span><span class="chip"><i>종가위치%</i>100</span></div></article>
+<article class="card"><h4 class="c-t">이노인스트루먼트</h4><div class="c-c"><span class="chip"><i>등락%</i><strong>-4.1</strong></span><span class="chip"><i>대금(억)</i>124</span><span class="chip"><i>이전충족</i>07/10</span><span class="chip"><i>종가위치%</i>0</span></div></article>
+</div>
 <blockquote><p>대장은 <strong>광전자(1,755억)</strong>. 빛과전자는 5일누적 <span style="color:#ef4444;font-weight:700">+60.2%</span>에 VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>로 이미 피로. 한국첨단소재만 D+0 상한가지만 <strong>07/15 이전충족 이력이 있어 첫흐름 아님</strong> + 대금 118억으로 막내. 이노인스트루먼트가 마이너스로 돌아선 건 <strong>테마 이탈 경고 신호</strong>다.</p></blockquote>
 <p><strong>2차전지/LFP·리튬 (테마 시작 08/04, 오늘 D+3~D+5)</strong> — 후반부. 엘앤에프(1,996억, D+19·07/10 이전충족) / 엔켐(363억, D+3) / 코칩(326억, D+5) / 성일하이텍(223억, D+5) / 이브이첨단소재(132억, 종가위치 4%). 엘앤에프는 대금 1위·2Q 흑자전환·IBK 목표가 13만원으로 재료 단계는 <strong>확정~실적</strong>이나, <strong>5일누적 <span style="color:#ef4444;font-weight:700">+22.9%</span> + D+19</strong>로 신규 진입 자리가 아니다. <strong>눌림만.</strong></p>
 <p><strong>우주항공/스페이스X (08/04 시작, D+3)</strong> — 스피어(720억) / 에이치브이엠(343억). 둘 다 08/04 충족, 오늘 미충족. 5일누적 +47.8 / <span style="color:#ef4444;font-weight:700">+42.6%</span>. <strong>후반부, 제외.</strong></p>
@@ -336,7 +269,7 @@
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
-투자 권유가 아닙니다. 생성 2026-08-08 07:49
+투자 권유가 아닙니다. 생성 2026-08-08 07:59
 </p>
 </article></div>
 </body></html>
