@@ -5,6 +5,41 @@
 <meta name="color-scheme" content="dark">
 <title>2026-08-07 종목 브리핑</title>
 <link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자동 추가) ───────────────────────────── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+.stk .row .tag.stk{color:var(--stk)}
+
+/* 모바일에서 표를 카드로 편다.
+   종목 브리핑은 열이 6~9개까지 가는데(종목/첫흐름/충족봉/등락%/대금/근거…)
+   375px 화면에서는 열당 40px 남짓이라 가로 스크롤로도 읽기가 어렵다.
+   게다가 오른쪽에 내용이 더 있다는 표시가 없어서 잘린 줄도 모른다.
+   → 한 행을 한 장의 카드로 세우고, 각 값 앞에 원래 열 이름을 붙인다.
+   .stk 안에서만 바꾸므로 기존 시황(kr) 페이지는 그대로다. */
+@media (max-width:640px){
+  .stk article .tw{border:none;border-radius:0;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:5px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article tr:last-child td{border-bottom:none}
+  .stk article td::before{content:attr(data-l);flex:0 0 5.6em;
+    color:#9aa0a6;font-size:12px;font-weight:600;padding-top:1px}
+  .stk article td:empty{display:none}
+  /* 첫 칸(대개 종목명)은 카드 제목처럼 크게 */
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    color:#e8eaed;padding:0 0 6px;margin-bottom:6px;
+    border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+}
+</style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
   <a class="home" href="../index.html">← 아카이브</a>
@@ -301,7 +336,7 @@
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
-투자 권유가 아닙니다. 생성 2026-08-08 07:13
+투자 권유가 아닙니다. 생성 2026-08-08 07:38
 </p>
 </article></div>
 </body></html>
