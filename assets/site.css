@@ -29,7 +29,7 @@ article blockquote{background:#171a21;border-left:4px solid #4b5563;border-radiu
  padding:13px 16px;margin:16px 0;color:#c3c8d0;font-size:16px}
 article hr{border:none;border-top:1px solid var(--line);margin:32px 0}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;border-radius:8px;border:1px solid #23262f}
-article table{border-collapse:collapse;width:100%;font-size:15px;background:#161920;min-width:460px}
+article table{border-collapse:collapse;width:100%;font-size:15px;background:#161920}
 article th{background:#1f232c;color:#c9ced6;font-weight:700;text-align:left;padding:10px 12px;border-bottom:1px solid #2b303a}
 article td{padding:10px 12px;border-bottom:1px solid #23262f;vertical-align:top}
 article tr:last-child td{border-bottom:none}
@@ -60,4 +60,8 @@ footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:v
  article h1{font-size:25px}
  article h2{font-size:19px}
  .hero h1{font-size:26px}
+ article table{font-size:12.5px}
+ article th,article td{padding:8px 7px}
+ article th{white-space:normal;word-break:keep-all}
+ article td{word-break:break-word}
 }
