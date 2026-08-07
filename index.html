@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>시황 브리핑 아카이브</title>
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<div class="wrap">
+  <div class="hero">
+    <h1>시황 브리핑 아카이브</h1>
+    <p>주식 유튜버 채널을 매일 수집·요약한 리포트입니다. 한국장은 저녁, 미국장은 아침에 갱신됩니다.</p>
+  </div>
+  <input id="q" type="search" placeholder="날짜나 제목으로 검색 (예: 08-07, 한국장)" autocomplete="off">
+  <div id="list">
+    <div class="day">
+      <h2>2026-08-07</h2>
+      <a class="row" data-k="2026-08-07 한국장 2026-08-07 (금) 한국장 브리핑" href="kr/2026-08-07.html"><span class="tag kr">한국장</span><span class="t">2026-08-07 한국장 브리핑<small>2026-08-07 (금) 한국장 브리핑</small></span><span class="go">열기 →</span></a>
+    </div>
+  </div>
+  <p class="empty" id="none" style="display:none">검색 결과가 없습니다.</p>
+</div>
+<script>
+const q=document.getElementById('q'),list=document.getElementById('list'),none=document.getElementById('none');
+q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();let shown=0;
+  list.querySelectorAll('.day').forEach(d=>{
+    let n=0;
+    d.querySelectorAll('.row').forEach(r=>{
+      const hit=!v||r.dataset.k.includes(v);
+      r.style.display=hit?'':'none';if(hit)n++;
+    });
+    d.style.display=n?'':'none';shown+=n;
+  });
+  none.style.display=shown?'none':'';
+});
+</script>
+</body></html>
