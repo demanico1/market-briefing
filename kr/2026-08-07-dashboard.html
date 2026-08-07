@@ -1,171 +1,154 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta name="viewport" content="width=1320">
-<meta charset="UTF-8">
-<title>2026-08-07 한국장 브리핑</title>
+<html lang="ko"><head>
+<meta name="viewport" content="width=1320"><meta charset="utf-8">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:18px 24px;font-size:13px;line-height:1.45}
-  .up{color:#ef4444}.dn{color:#3b82f6}.mut{color:#9aa0a6}
-  header{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid #262a33;padding-bottom:10px;margin-bottom:14px}
-  header h1{font-size:22px;font-weight:700;letter-spacing:-.5px}
-  header .date{font-size:15px;color:#9aa0a6;font-weight:500}
-  header .badge{margin-left:auto;font-size:12px;color:#9aa0a6;background:#1a1d24;border:1px solid #262a33;border-radius:20px;padding:4px 12px}
-  .grid{display:grid;gap:12px}
-  .card{background:#1a1d24;border:1px solid #23262f;border-radius:10px;padding:12px 14px}
-  .card h3{font-size:11px;color:#9aa0a6;font-weight:600;letter-spacing:.4px;margin-bottom:7px;text-transform:uppercase}
-  .row1{grid-template-columns:1.15fr 1.15fr 1.7fr;margin-bottom:12px}
-  .idx{display:flex;align-items:baseline;gap:10px}
-  .idx .name{font-size:14px;color:#9aa0a6;font-weight:600}
-  .idx .val{font-size:28px;font-weight:700;letter-spacing:-1px}
-  .idx .chg{font-size:14px;font-weight:600}
-  .idx .sub{font-size:11px;color:#9aa0a6;margin-top:4px}
-  .flow{display:flex;gap:8px}
-  .flow div{flex:1;background:#141720;border-radius:7px;padding:7px 9px;text-align:center}
-  .flow .lbl{font-size:11px;color:#9aa0a6;margin-bottom:3px}
-  .flow .amt{font-size:16px;font-weight:700}
-  .macro{display:flex;gap:22px;align-items:center;background:#1a1d24;border:1px solid #23262f;border-radius:10px;padding:9px 14px;margin-bottom:12px;font-size:13px}
-  .macro b{font-size:15px}
-  .macro .k{color:#9aa0a6;margin-right:6px}
-  .oneline{background:linear-gradient(90deg,#1c1f28,#171a21);border:1px solid #2c313d;border-left:3px solid #ef4444;border-radius:10px;padding:13px 16px;margin-bottom:12px}
-  .oneline .k{font-size:11px;color:#9aa0a6;letter-spacing:.4px;margin-bottom:5px}
-  .oneline p{font-size:20px;font-weight:700;letter-spacing:-.6px;line-height:1.32}
-  .row2{grid-template-columns:1.5fr 1.25fr 1.3fr;margin-bottom:12px;align-items:start}
-  ul.pts{list-style:none}
-  ul.pts li{padding:4px 0 4px 15px;position:relative;font-size:12.5px;border-bottom:1px solid #21242c}
-  ul.pts li:last-child{border-bottom:none}
-  ul.pts li:before{content:"";position:absolute;left:2px;top:11px;width:4px;height:4px;border-radius:50%;background:#5b6472}
-  .bar{margin-bottom:8px}
-  .bar:last-child{margin-bottom:0}
-  .bar .t{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px}
-  .bar .t span:last-child{color:#9aa0a6;font-size:11px}
-  .bar .track{height:6px;background:#141720;border-radius:3px;overflow:hidden}
-  .bar .fill{height:100%;border-radius:3px;background:#ef4444}
-  .bar .fill.b{background:#6b7280}
-  .badges{display:flex;flex-wrap:wrap;gap:5px}
-  .bd{font-size:11.5px;padding:3px 8px;border-radius:5px;background:#141720;border:1px solid #262a33}
-  .bd.u{color:#ef4444;border-color:#43242a}
-  .bd.d{color:#3b82f6;border-color:#22314a}
-  .bd strong{font-weight:700;margin-left:4px}
-  .secl{font-size:11px;color:#9aa0a6;margin:7px 0 4px}
-  .row3{grid-template-columns:1fr;margin-bottom:12px}
-  .watch{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-  .watch div{background:#141720;border:1px solid #23262f;border-radius:8px;padding:9px 11px;font-size:12px}
-  .watch .n{color:#ef4444;font-weight:700;font-size:11px;display:block;margin-bottom:3px}
-  footer{border-top:1px solid #262a33;padding-top:9px;font-size:11px;color:#9aa0a6;display:flex;justify-content:space-between;gap:16px}
-</style>
-</head>
-<body>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:26px 30px;width:1920px;height:1080px;overflow:hidden}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.hdr{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+.hdr h1{font-size:32px;font-weight:800;letter-spacing:-.5px}
+.hdr .date{font-size:19px;color:#9aa0a6;font-weight:600}
+.hdr .ch{margin-left:auto;font-size:16px;color:#9aa0a6;background:#1a1d24;padding:6px 14px;border-radius:20px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 18px}
+.grid{display:grid;grid-template-columns:1.55fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.idxrow{display:flex;gap:16px}
+.idx{flex:1;background:#1a1d24;border-radius:12px;padding:14px 18px}
+.idx .n{font-size:15px;color:#9aa0a6;font-weight:700;letter-spacing:1px}
+.idx .v{font-size:40px;font-weight:800;margin-top:2px;letter-spacing:-1px}
+.idx .c{font-size:17px;font-weight:700;margin-top:1px}
+.ttl{font-size:14px;color:#9aa0a6;font-weight:700;letter-spacing:1px;margin-bottom:10px}
+.flow{display:flex;gap:10px}
+.fl{flex:1;background:#12151b;border-radius:8px;padding:9px 6px;text-align:center}
+.fl .l{font-size:13px;color:#9aa0a6}
+.fl .a{font-size:21px;font-weight:800;margin-top:2px}
+.fl .s{font-size:11px;color:#6b7280;margin-top:1px}
+.macro{display:flex;gap:26px;align-items:center;background:#1a1d24;border-radius:12px;padding:12px 20px;margin-bottom:16px;font-size:17px}
+.macro b{font-weight:800}
+.macro .lab{color:#9aa0a6;font-size:15px;margin-right:7px}
+.macro .sep{color:#2a2e37}
+.one{background:linear-gradient(90deg,#1f2430,#1a1d24);border-left:4px solid #ef4444;border-radius:10px;padding:15px 22px;margin-bottom:16px}
+.one .l{font-size:13px;color:#9aa0a6;font-weight:700;letter-spacing:1px}
+.one .t{font-size:25px;font-weight:800;margin-top:4px;letter-spacing:-.5px}
+.cols{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:16px;margin-bottom:16px}
+ul{list-style:none}
+li{font-size:16px;line-height:1.55;padding-left:16px;position:relative;margin-bottom:7px;color:#d5d8dd}
+li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#ef4444}
+.bar{margin-bottom:11px}
+.bar .bl{display:flex;justify-content:space-between;font-size:15px;margin-bottom:4px}
+.bar .bn{color:#e8eaed;font-weight:600}
+.bar .bc{color:#9aa0a6;font-size:13px}
+.bt{height:8px;background:#12151b;border-radius:4px;overflow:hidden}
+.bf{height:100%;background:linear-gradient(90deg,#ef4444,#f97316);border-radius:4px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bg{font-size:15px;padding:6px 12px;border-radius:7px;background:#12151b;font-weight:700}
+.bg.u{color:#ef4444;border:1px solid #40232a}
+.bg.d{color:#3b82f6;border:1px solid #1e3050}
+.bg.n{color:#9aa0a6;border:1px solid #2a2e37}
+.watch{display:flex;gap:12px}
+.w{flex:1;background:#12151b;border-radius:8px;padding:10px 13px}
+.w .d{font-size:13px;color:#ef4444;font-weight:800}
+.w .x{font-size:15px;margin-top:3px;color:#d5d8dd;line-height:1.35}
+.foot{margin-top:14px;font-size:13px;color:#6b7280;display:flex;justify-content:space-between;border-top:1px solid #2a2e37;padding-top:10px}
+</style></head><body>
 
-<header>
+<div class="hdr">
   <h1>한국장 브리핑</h1>
-  <span class="date">2026년 8월 7일 (금)</span>
-  <span class="badge">수집 채널 4 / 9 &nbsp;·&nbsp; 영상 5편</span>
-</header>
+  <div class="date">2026. 08. 07 (금)</div>
+  <div class="ch">수집 채널 6 / 11 · 영상 11건</div>
+</div>
 
-<div class="grid row1">
-  <div class="card">
-    <h3>KOSPI</h3>
-    <div class="idx">
-      <span class="val dn">6,258.77</span>
-      <span class="chg dn">▼ 37.61 (-0.60%)</span>
-    </div>
-    <div class="sub">장중 고가 6,400선 회복 후 반락 · 시가 6,365.07(+1.09%)</div>
+<div class="grid">
+  <div class="idxrow">
+    <div class="idx"><div class="n">KOSPI</div><div class="v dn">6,258.77</div><div class="c dn">▼ 37.61 (-0.60%)</div></div>
+    <div class="idx"><div class="n">KOSDAQ</div><div class="v dn">798.81</div><div class="c dn">▼ 2.86 (-0.36%)</div></div>
   </div>
   <div class="card">
-    <h3>KOSDAQ</h3>
-    <div class="idx">
-      <span class="val dn">798.81</span>
-      <span class="chg dn">▼ 2.86 (-0.36%)</span>
-    </div>
-    <div class="sub">800선 하회 · 코스피 대비 상대 강세 유지</div>
-  </div>
-  <div class="card">
-    <h3>수급 · 코스피 <span class="mut" style="text-transform:none;font-weight:400">(11:13 장중 기준)</span></h3>
+    <div class="ttl">코스피 수급 (억원)</div>
     <div class="flow">
-      <div><div class="lbl">외국인</div><div class="amt dn">-1,603억</div></div>
-      <div><div class="lbl">기관</div><div class="amt up">+3,668억</div></div>
-      <div><div class="lbl">개인</div><div class="amt dn">-1,909억</div></div>
+      <div class="fl"><div class="l">외국인</div><div class="a dn">-8,624</div><div class="s">순매도</div></div>
+      <div class="fl"><div class="l">기관</div><div class="a up">+5,789</div><div class="s">순매수</div></div>
+      <div class="fl"><div class="l">개인</div><div class="a up">+2,669</div><div class="s">순매수</div></div>
     </div>
-    <div class="sub" style="margin-top:6px">코스닥: 개인 <span class="up">+2,588억</span> · 외국인 <span class="dn">-1,688억</span> · 기관 <span class="dn">-978억</span></div>
+  </div>
+  <div class="card">
+    <div class="ttl">코스닥 수급 (억원)</div>
+    <div class="flow">
+      <div class="fl"><div class="l">외국인</div><div class="a dn">-2,539</div><div class="s">순매도</div></div>
+      <div class="fl"><div class="l">기관</div><div class="a dn">-1,030</div><div class="s">순매도</div></div>
+      <div class="fl"><div class="l">개인</div><div class="a up">+3,405</div><div class="s">순매수</div></div>
+    </div>
   </div>
 </div>
 
 <div class="macro">
-  <span><span class="k">원·달러</span><b>1,416.1원</b> <span class="dn">▼7.7</span></span>
-  <span><span class="k">SK하이닉스</span><b class="dn">-4.48%</b></span>
-  <span><span class="k">삼성전자</span><b class="up">+0.43%</b></span>
-  <span class="mut" style="margin-left:auto">개별 종목 등락률은 8/7 오전 11:13 장중 기준</span>
+  <span><span class="lab">원/달러</span><b>1,416.1원</b> <span class="dn">▼7.7</span></span>
+  <span class="sep">|</span>
+  <span><span class="lab">시가</span><b class="up">+1.09%</b> (6,365.07) 갭상승 출발</span>
+  <span class="sep">|</span>
+  <span><span class="lab">장중 고점</span><b>6,415.60</b> → 하락 반전</span>
+  <span class="sep">|</span>
+  <span><span class="lab">NAVER</span><b class="dn">-7.08%</b> 실적 발표</span>
 </div>
 
-<div class="oneline">
-  <div class="k">오늘의 한 줄</div>
-  <p>반도체 강세로 +1% 갭업 출발했지만, 오전 10시 외국인이 매도로 돌아선 순간 하루가 뒤집혔다 — 수급이 실적을 이긴 하루.</p>
+<div class="one">
+  <div class="l">오늘의 한 줄</div>
+  <div class="t">엔비디아 루빈 울트라 HBM 사양 하향 검토 소식에 SK하이닉스가 -4.88%로 밀리며, +1% 갭상승으로 출발한 지수를 마이너스로 끌어내렸다.</div>
 </div>
 
-<div class="grid row2">
+<div class="cols">
   <div class="card">
-    <h3>핵심 포인트</h3>
-    <ul class="pts">
-      <li>고점 대비 되돌림 100p 초과 — 낙폭보다 <b>반락의 모양</b>이 나빴다</li>
-      <li>코스피는 <b>기관</b>이, 코스닥은 <b>개인</b>이 방어 — 지속성은 미지수</li>
-      <li>SK하이닉스 -4.48%가 지수 하락 주도, 삼성전자는 디커플링</li>
-      <li>환율 7.7원 하락에도 외국인 복귀 없음 — 반도체 심리가 수급을 지배</li>
-      <li>주가누르기방지법 후퇴 논란 — 정책 신뢰도 이슈 재점화</li>
+    <div class="ttl">핵심 포인트</div>
+    <ul>
+      <li>상승 출발 → 반도체발 되밀림. 갭을 지키지 못한 하루</li>
+      <li>외국인 코스피 8,624억 순매도, 아직 방향 전환 신호 없음</li>
+      <li>환율은 오히려 7.7원 하락 — 오늘 매도는 매크로가 아닌 반도체 개별 재료</li>
+      <li>삼성전자(+0.22%)와 하이닉스(-4.88%) 디커플링 — HBM 노출도 차이</li>
+      <li>반도체 밖으로의 순환매 진행, 코스닥이 상대적 선방</li>
     </ul>
   </div>
   <div class="card">
-    <h3>채널 합의도</h3>
-    <div class="bar"><div class="t"><span>SK하이닉스가 지수의 급소</span><span>5/5</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
-    <div class="bar"><div class="t"><span>수급 &gt; 펀더멘털</span><span>4/5</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
-    <div class="bar"><div class="t"><span>지금은 방어 · 인내 국면</span><span>4/5</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
-    <div class="bar"><div class="t"><span>삼성전자 주주환원이 남은 촉매</span><span>2/5</span></div><div class="track"><div class="fill b" style="width:40%"></div></div></div>
-    <div class="bar"><div class="t"><span>사이클 종료 아님 (조정 후 회복)</span><span>2/5</span></div><div class="track"><div class="fill b" style="width:40%"></div></div></div>
-    <div class="bar"><div class="t"><span>이미 하락 추세 전환</span><span>2/5</span></div><div class="track"><div class="fill b" style="width:40%"></div></div></div>
+    <div class="ttl">채널 합의도</div>
+    <div class="bar"><div class="bl"><span class="bn">하이닉스 / HBM이 하락 트리거</span><span class="bc">5/6</span></div><div class="bt"><div class="bf" style="width:83%"></div></div></div>
+    <div class="bar"><div class="bl"><span class="bn">지금은 방어 — 현금·관망·축소</span><span class="bc">4/6</span></div><div class="bt"><div class="bf" style="width:67%"></div></div></div>
+    <div class="bar"><div class="bl"><span class="bn">외국인 수급 아직 안 돌았다</span><span class="bc">3/6</span></div><div class="bt"><div class="bf" style="width:50%"></div></div></div>
+    <div class="bar"><div class="bl"><span class="bn">중장기 반도체 사이클은 유효</span><span class="bc">3/6</span></div><div class="bt"><div class="bf" style="width:50%"></div></div></div>
+    <div class="bar"><div class="bl"><span class="bn">삼성 &gt; 하이닉스 상대 선호</span><span class="bc">2/6</span></div><div class="bt"><div class="bf" style="width:33%"></div></div></div>
   </div>
   <div class="card">
-    <h3>종목 · 섹터</h3>
-    <div class="secl">상승</div>
-    <div class="badges">
-      <span class="bd u">삼성전기<strong>+1.79%</strong></span>
-      <span class="bd u">LG에너지솔루션<strong>+1.01%</strong></span>
-      <span class="bd u">삼성전자<strong>+0.43%</strong></span>
+    <div class="ttl">종목 / 섹터</div>
+    <div class="badges" style="margin-bottom:12px">
+      <span class="bg u">삼성전자 +0.22%</span>
+      <span class="bg d">SK하이닉스 -4.88%</span>
+      <span class="bg d">NAVER -7.08%</span>
     </div>
-    <div class="secl">하락</div>
+    <div class="ttl" style="margin-top:4px">유튜버 언급 순환처</div>
     <div class="badges">
-      <span class="bd d">레인보우로보틱스<strong>-7.66%</strong></span>
-      <span class="bd d">SK하이닉스<strong>-4.48%</strong></span>
-      <span class="bd d">SK스퀘어<strong>-3.40%</strong></span>
-      <span class="bd d">알테오젠<strong>-1.87%</strong></span>
-      <span class="bd d">에코프로<strong>-0.96%</strong></span>
-      <span class="bd d">에코프로비엠<strong>-0.68%</strong></span>
+      <span class="bg n">반도체 소부장 ★2</span>
+      <span class="bg n">2차전지</span>
+      <span class="bg n">태양광</span>
+      <span class="bg n">바이오</span>
+      <span class="bg n">우주</span>
+      <span class="bg n">게임 (게임스컴)</span>
     </div>
-    <div class="secl">복수 채널 동시 언급</div>
-    <div class="badges">
-      <span class="bd">SK하이닉스 5회</span>
-      <span class="bd">삼성전자 4회</span>
-      <span class="bd">에코프로 2회</span>
-    </div>
+    <div style="font-size:13px;color:#6b7280;margin-top:11px;line-height:1.5">★ = 복수 채널 동시 언급 · 섹터는 유튜버 발언 기준, 등락률은 확인치</div>
   </div>
 </div>
 
-<div class="grid row3">
-  <div class="card">
-    <h3>내일(8/10 월) 관전 포인트</h3>
-    <div class="watch">
-      <div><span class="n">01 외국인 수급</span>장 초 순매수 → 순매도 전환이 오늘 하락의 방아쇠. 방향 전환 여부가 최우선 변수</div>
-      <div><span class="n">02 SK하이닉스 지지</span>5개 영상 전부가 지목한 지수의 급소. 반등이든 이탈이든 여기서 결정</div>
-      <div><span class="n">03 주주환원 발표</span>삼성전자·SK하이닉스. "남은 유일한 호재"이자 "부진의 근본 원인"으로 동시 지목</div>
-      <div><span class="n">04 코스닥 상대강세</span>낙폭 -0.36%로 코스피(-0.60%) 대비 선방. 개인 자금 유입 지속 여부</div>
-    </div>
+<div class="card">
+  <div class="ttl">다음 주 관전 포인트</div>
+  <div class="watch">
+    <div class="w"><div class="d">최우선</div><div class="x">외국인 순매도 축소 여부</div></div>
+    <div class="w"><div class="d">레벨</div><div class="x">하이닉스 140만원대 지지</div></div>
+    <div class="w"><div class="d">8 / 12</div><div class="x">미국 CPI</div></div>
+    <div class="w"><div class="d">8 / 13</div><div class="x">국내 옵션 만기 — 저점 가능 구간</div></div>
+    <div class="w"><div class="d">8 / 27</div><div class="x">엔비디아 실적</div></div>
+    <div class="w"><div class="d">9 월</div><div class="x">SK하이닉스 HBM 재협상</div></div>
   </div>
 </div>
 
-<footer>
-  <span>수집: 만쥬 · 이효석아카데미(2편) 8/7 &nbsp;|&nbsp; 주덕 · 창원개미 8/6 대체 &nbsp;|&nbsp; 영상없음: 돌팬티 · 홍인기 · 김단테 · 고라니주식 · 주린이놀이터</span>
-  <span>지수·수급 출처: 한국거래소 / 국제뉴스 · 뉴시스 &nbsp;|&nbsp; 원문 리포트: 2026-08-07_한국장_브리핑.md</span>
-</footer>
+<div class="foot">
+  <span>수집 6/11 · 수집됨 11건 (만쥬·주덕2·이효석4·돌팬티·주린이2·전황) · 영상없음 5채널 (창원개미·홍인기·김단테·고라니·소수몽키)</span>
+  <span>원문 리포트 : 2026-08-07_한국장_브리핑.md</span>
+</div>
 
-</body>
-</html>
+</body></html>
