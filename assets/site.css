@@ -14,6 +14,7 @@ header.top .wrap{padding-bottom:0;display:flex;align-items:center;gap:12px}
 header.top .home{font-size:14px;color:var(--mut);white-space:nowrap}
 header.top .tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px;border:1px solid}
 .tag.kr{color:var(--kr);border-color:#4a2429}.tag.us{color:var(--us);border-color:#1f3f2c}
+.tag.stock{color:#f59e0b;border-color:#4a3a1a}
 header.top .dt{font-size:14px;color:var(--mut);margin-left:auto}
 article{font-size:17px}
 article h1{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.3;margin:6px 0 4px;padding-bottom:14px;border-bottom:3px solid var(--kr)}

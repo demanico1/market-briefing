@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>2026-08-08 한국장 브리핑 요약</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;
+       padding:22px 26px;width:1280px;}
+  .sub{color:#9aa0a6}
+  header{display:flex;align-items:flex-end;justify-content:space-between;
+         border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+  header h1{font-size:27px;letter-spacing:-.5px}
+  header h1 span{color:#9aa0a6;font-weight:400;font-size:19px;margin-left:8px}
+  .hmeta{text-align:right;font-size:13px;line-height:1.6;color:#9aa0a6}
+  .badge{display:inline-block;background:#3a2a12;color:#f0b357;border:1px solid #6b4a15;
+         border-radius:5px;padding:3px 9px;font-size:12px;font-weight:600}
+  .grid{display:grid;gap:13px}
+  .card{background:#1a1d24;border:1px solid #262a33;border-radius:10px;padding:14px 16px}
+  .lbl{font-size:12px;color:#9aa0a6;letter-spacing:.4px;margin-bottom:7px;font-weight:600}
+  .down{color:#3b82f6} .up{color:#ef4444} .flat{color:#e8eaed}
+
+  .row1{grid-template-columns:1.5fr 1.5fr 2.6fr;margin-bottom:13px}
+  .idx{display:flex;align-items:baseline;gap:11px}
+  .idx .v{font-size:33px;font-weight:700;letter-spacing:-1px}
+  .idx .d{font-size:15px;font-weight:600}
+  .flowwrap{display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .flow{text-align:center;flex:1}
+  .flow .n{font-size:22px;font-weight:700}
+  .flow .t{font-size:12px;color:#9aa0a6;margin-top:3px}
+
+  .macro{display:flex;gap:26px;align-items:center;background:#1a1d24;border:1px solid #262a33;
+         border-radius:10px;padding:10px 16px;margin-bottom:13px;font-size:14px}
+  .macro b{font-weight:600}
+  .macro .sep{color:#3a3f4a}
+
+  .oneline{background:#161a2c;border:1px solid #2c3557;border-left:4px solid #6b8afd;
+           border-radius:10px;padding:14px 18px;margin-bottom:13px}
+  .oneline .lbl{color:#8fa5ff}
+  .oneline p{font-size:21px;font-weight:600;line-height:1.45}
+  .oneline p em{color:#f0b357;font-style:normal}
+
+  .row2{grid-template-columns:1.25fr 1fr;margin-bottom:13px}
+  ul.pts{list-style:none}
+  ul.pts li{font-size:14px;line-height:1.5;padding:5px 0 5px 15px;position:relative;
+            border-bottom:1px solid #21252e}
+  ul.pts li:last-child{border-bottom:none}
+  ul.pts li:before{content:"▪";position:absolute;left:0;color:#6b8afd}
+
+  .bar{margin-bottom:9px}
+  .bar:last-child{margin-bottom:0}
+  .bar .bt{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+  .bar .bt span:last-child{color:#9aa0a6;font-size:12px}
+  .track{height:7px;background:#23272f;border-radius:4px;overflow:hidden}
+  .fill{height:100%;border-radius:4px;background:#6b8afd}
+  .fill.w{background:#f0b357}
+
+  .row3{grid-template-columns:1.1fr 1fr;margin-bottom:13px}
+  table.st{width:100%;border-collapse:collapse;font-size:14px}
+  table.st td{padding:6px 0;border-bottom:1px solid #21252e}
+  table.st tr:last-child td{border-bottom:none}
+  table.st td:nth-child(2),table.st td:nth-child(3){text-align:right;font-weight:600}
+  .lv{display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+  .lv div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21252e}
+  .lv div:last-child{border-bottom:none}
+  .lv b{font-weight:700}
+
+  .watch{background:#1a1d24;border:1px solid #262a33;border-radius:10px;padding:13px 16px;margin-bottom:12px}
+  .watch ol{margin-left:17px;font-size:13.5px;line-height:1.62;columns:2;column-gap:30px}
+  footer{display:flex;justify-content:space-between;font-size:11.5px;color:#71767d;
+         border-top:1px solid #2a2e37;padding-top:9px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>한국장 브리핑 <span>2026년 8월 8일 (토)</span></h1>
+  <div class="hmeta">
+    <span class="badge">주말 휴장 · 지수는 직전 거래일 8/7(금) 종가</span><br>
+    수집 채널 2/11 · 영상 3건
+  </div>
+</header>
+
+<div class="grid row1">
+  <div class="card">
+    <div class="lbl">KOSPI · 8/7 종가</div>
+    <div class="idx"><span class="v down">6,258.77</span><span class="d down">−37.61 (−0.60%)</span></div>
+  </div>
+  <div class="card">
+    <div class="lbl">KOSDAQ · 8/7 종가</div>
+    <div class="idx"><span class="v down">798.81</span><span class="d down">−2.86 (−0.36%)</span></div>
+  </div>
+  <div class="card">
+    <div class="lbl">코스피 수급 (8/7, 순매수)</div>
+    <div class="flowwrap">
+      <div class="flow"><div class="n down">−8,633억</div><div class="t">외국인</div></div>
+      <div class="flow"><div class="n up">+5,790억</div><div class="t">기관</div></div>
+      <div class="flow"><div class="n up">+2,677억</div><div class="t">개인</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="macro">
+  <span><b>원/달러</b> 1,416.1원 <span class="down">−7.7원</span></span>
+  <span class="sep">|</span>
+  <span><b>7월 코스피</b> <span class="down">−22.19%</span> <span class="sub">(월간 사상 최대 낙폭)</span></span>
+  <span class="sep">|</span>
+  <span><b>7월 저점</b> 5,262.77 <span class="sub">고점 대비 MDD −43.93%</span></span>
+  <span class="sep">|</span>
+  <span><b>저점 대비</b> <span class="up">+18.9%</span> <span class="sub">· 낙폭의 31% 되돌림</span></span>
+</div>
+
+<div class="oneline">
+  <div class="lbl">오늘의 한 줄</div>
+  <p>유일한 쟁점은 <em>"이 반등이 진짜냐"</em> — 오늘 채널들의 답은 <em>아직 아니다, 거래량이 붙지 않았다</em>.</p>
+</div>
+
+<div class="grid row2">
+  <div class="card">
+    <div class="lbl">핵심 포인트</div>
+    <ul class="pts">
+      <li><b>이효석</b> — 반등 진위 판별 4신호: 거래량 / 50% 되돌림 / 저점 구조 / 매물대</li>
+      <li>위쪽 <b>6,500~7,000 매물대</b>가 저항, 아래 <b>7월 저점 5,262</b>가 1차 관문</li>
+      <li><b>홍인기</b> — 매매 규모를 월 4,600억대→19억 수준으로 접고 사실상 관망 <span class="sub">(발언 기준)</span></li>
+      <li>코스피 <b>20일선 회복 실패 + 거래대금 25조원대</b> 위축이 약세 근거 <span class="sub">(발언 기준)</span></li>
+      <li>갭상승 종목 장 초반 추격 금물 — <b>9시 30분 이후 확인 매수</b></li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="lbl">채널 합의도 (수집 3건 기준)</div>
+    <div class="bar"><div class="bt"><span>현 반등 신뢰하지 않음</span><span>3/3</span></div>
+      <div class="track"><div class="fill" style="width:100%"></div></div></div>
+    <div class="bar"><div class="bt"><span>포지션 축소 · 방어적 대응</span><span>3/3</span></div>
+      <div class="track"><div class="fill" style="width:100%"></div></div></div>
+    <div class="bar"><div class="bt"><span>장 초반 급등 추격 금지</span><span>2/3</span></div>
+      <div class="track"><div class="fill" style="width:66%"></div></div></div>
+    <div class="bar"><div class="bt"><span>거래량·거래대금이 관건</span><span>2/3</span></div>
+      <div class="track"><div class="fill" style="width:66%"></div></div></div>
+    <div class="bar"><div class="bt"><span>조건 충족 시 반등 인정 (이견)</span><span>1/3</span></div>
+      <div class="track"><div class="fill w" style="width:33%"></div></div></div>
+  </div>
+</div>
+
+<div class="grid row3">
+  <div class="card">
+    <div class="lbl">반도체가 지수를 흔든 구도 (8/7 종가)</div>
+    <table class="st">
+      <tr><td>SK하이닉스</td><td>1,422,000원</td><td class="down">−4.48%</td></tr>
+      <tr><td>삼성전자</td><td>231,000원</td><td class="up">+0.22%</td></tr>
+      <tr><td class="sub" colspan="3" style="font-size:12.5px;text-align:left">삼성전자는 장중 239,500원까지 올랐다가 되밀림 · 외국인 매도가 두 종목에 집중</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="lbl">주요 레벨 (검증 종가 기준 계산치)</div>
+    <div class="lv">
+      <div><span>50% 되돌림</span><b>≈ 6,870</b></div>
+      <div><span>38.2% 되돌림</span><b>≈ 6,490</b></div>
+      <div><span>현재 (8/7 종가)</span><b class="down">6,258.77</b></div>
+      <div><span>7월 장중 저점</span><b>5,262.77</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="watch">
+  <div class="lbl">다음 거래일(8/10 월) 관전 포인트</div>
+  <ol>
+    <li><b>7월 저점 5,262.77</b> 유효성 — 깨지면 반등 시나리오 무효</li>
+    <li><b>6,490 / 6,500~7,000 매물대</b> 돌파 시 거래량 동반 여부</li>
+    <li><b>거래대금 회복</b> — 25조원대에서 늘지 않으면 반등 계속 의심</li>
+    <li><b>외국인 수급 반전</b> — 반도체 대형주 매도 중단 여부</li>
+    <li><b>미국 금리·달러</b> — 7월 폭락의 원인, 국내 재료보다 우선</li>
+  </ol>
+</div>
+
+<footer>
+  <span>수집: 이효석아카데미(업로드) · 홍인기(업로드+쇼츠) 3건 수집 / 김단테 쇼츠 음성없음 / 그 외 8개 채널 휴장일 영상없음</span>
+  <span>원문: 2026-08-08_한국장_브리핑.md</span>
+</footer>
+
+</body>
+</html>
