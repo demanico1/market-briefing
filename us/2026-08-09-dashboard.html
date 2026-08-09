@@ -19,145 +19,172 @@ addEventListener('DOMContentLoaded',function(){
 <meta charset="utf-8">
 <title>미국장 브리핑 2026-08-09</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:20px 26px;width:1280px}
-.hdr{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #262a33;padding-bottom:10px;margin-bottom:14px}
-.hdr h1{font-size:25px;font-weight:700;letter-spacing:-.5px}
-.hdr h1 span{color:#9aa0a6;font-weight:400;font-size:17px;margin-left:8px}
-.hdr .meta{font-size:12.5px;color:#9aa0a6;text-align:right;line-height:1.5}
-.row{display:flex;gap:12px;margin-bottom:12px}
-.card{background:#1a1d24;border-radius:9px;padding:12px 15px}
-.idx{flex:1;display:flex;align-items:center;justify-content:space-between}
-.idx .nm{font-size:12.5px;color:#9aa0a6;margin-bottom:4px}
-.idx .px{font-size:26px;font-weight:700;letter-spacing:-.5px}
-.idx .pc{font-size:19px;font-weight:700;text-align:right}
-.idx .wk{font-size:11.5px;color:#9aa0a6;text-align:right;margin-top:3px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 26px}
+.wrap{max-width:1840px;margin:0 auto}
+header{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+h1{font-size:27px;font-weight:700;letter-spacing:-.4px}
+.date{font-size:16px;color:#9aa0a6;font-weight:500}
+.sess{font-size:13px;color:#9aa0a6}
+.badge{margin-left:auto;font-size:13px;color:#9aa0a6;background:#1a1d24;border:1px solid #2a2e37;padding:5px 12px;border-radius:20px}
+.idx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:12px}
+.card{background:#1a1d24;border:1px solid #2a2e37;border-radius:11px;padding:14px 18px}
+.card .nm{font-size:13px;color:#9aa0a6;margin-bottom:6px;display:flex;gap:7px;align-items:center}
+.tag{font-size:10px;background:#153524;color:#22c55e;padding:2px 7px;border-radius:9px;font-weight:600}
+.card .v{font-size:31px;font-weight:700;letter-spacing:-1px;line-height:1.05}
+.card .c{font-size:16px;font-weight:600;margin-top:3px}
 .up{color:#22c55e}.dn{color:#ef4444}
-.tag{display:inline-block;font-size:10px;background:#22c55e22;color:#22c55e;border-radius:3px;padding:1px 5px;margin-left:6px;vertical-align:middle}
-.macro{display:flex;gap:0;align-items:stretch;padding:9px 15px}
-.macro div{flex:1;border-right:1px solid #262a33;padding:0 12px;font-size:13px}
-.macro div:last-child{border-right:none}
-.macro b{display:block;color:#9aa0a6;font-size:11px;font-weight:500;margin-bottom:3px}
-.macro s{text-decoration:none;font-size:15px;font-weight:600}
-.oneline{background:linear-gradient(90deg,#1a1d24,#161920);border-left:3px solid #22c55e;border-radius:0 9px 9px 0;padding:13px 18px}
-.oneline .lb{font-size:11px;color:#9aa0a6;margin-bottom:5px;letter-spacing:1px}
-.oneline .tx{font-size:21px;font-weight:700;line-height:1.35;letter-spacing:-.4px}
-.col{display:flex;gap:12px;align-items:stretch}
-.c6{flex:1.15}.c4{flex:1}
-h2{font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:9px;font-weight:600}
-ul.pts{list-style:none}
-ul.pts li{font-size:13.5px;line-height:1.5;padding:4px 0 4px 15px;position:relative;border-bottom:1px solid #20232b}
-ul.pts li:last-child{border-bottom:none}
-ul.pts li:before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:#3f4652}
-.bar{margin-bottom:8px}
-.bar .bt{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:3px}
-.bar .bt em{color:#9aa0a6;font-style:normal;font-size:11.5px}
-.bar .tr{height:6px;background:#22262f;border-radius:3px;overflow:hidden}
-.bar .fl{height:100%;border-radius:3px;background:#3b82f6}
-.badges{display:flex;flex-wrap:wrap;gap:6px}
-.bg{font-size:12px;border-radius:5px;padding:4px 9px;font-weight:600}
-.bgu{background:#22c55e1c;color:#4ade80}
-.bgd{background:#ef44441c;color:#f87171}
-.sub{font-size:11px;color:#9aa0a6;margin:9px 0 5px}
-.ftr{margin-top:12px;padding-top:9px;border-top:1px solid #262a33;display:flex;justify-content:space-between;font-size:11.5px;color:#9aa0a6}
+.macro{display:flex;gap:0;background:#1a1d24;border:1px solid #2a2e37;border-radius:11px;margin-bottom:12px;overflow:hidden}
+.m{flex:1;padding:11px 16px;border-right:1px solid #2a2e37}
+.m:last-child{border-right:none}
+.m .k{font-size:11.5px;color:#9aa0a6;margin-bottom:3px}
+.m .v{font-size:19px;font-weight:700}
+.m .d{font-size:11.5px;color:#9aa0a6;margin-top:1px}
+.hero{background:#1a1d24;border:1px solid #2a2e37;border-left:3px solid #22c55e;border-radius:11px;padding:15px 20px;margin-bottom:12px}
+.hero .lb{font-size:11.5px;color:#9aa0a6;margin-bottom:5px;letter-spacing:.5px}
+.hero .tx{font-size:21px;font-weight:600;line-height:1.4;letter-spacing:-.3px}
+.grid{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-bottom:12px}
+.sec{background:#1a1d24;border:1px solid #2a2e37;border-radius:11px;padding:14px 18px}
+.sec h2{font-size:12px;color:#9aa0a6;font-weight:600;letter-spacing:.7px;margin-bottom:10px;text-transform:uppercase}
+ul{list-style:none}
+li{font-size:14px;line-height:1.5;padding:4.5px 0 4.5px 15px;position:relative;border-bottom:1px solid #22252c}
+li:last-child{border-bottom:none}
+li:before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;background:#4b7bec;border-radius:50%}
+b{color:#fff}
+.bar{margin-bottom:9px}
+.bar:last-child{margin-bottom:0}
+.bl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.bl .n{color:#c5c9ce}
+.bl .c{color:#9aa0a6;font-size:12px;font-variant-numeric:tabular-nums}
+.bt{height:7px;background:#22252c;border-radius:4px;overflow:hidden}
+.bf{height:100%;border-radius:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+.bg{display:flex;flex-wrap:wrap;gap:7px}
+.bd{font-size:13px;padding:5px 11px;border-radius:7px;font-weight:600;white-space:nowrap}
+.bdu{background:#12301f;color:#4ade80;border:1px solid #1d5334}
+.bdd{background:#331618;color:#f87171;border:1px solid #572326}
+.bg .pct{font-weight:400;opacity:.78;margin-left:3px}
+footer{border-top:1px solid #2a2e37;padding-top:10px;display:flex;justify-content:space-between;font-size:11.5px;color:#9aa0a6}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="hdr">
-  <h1>미국장 브리핑<span>2026년 8월 7일(금) 정규장</span></h1>
-  <div class="meta">작성 2026-08-09(일) · 수집 채널 <b style="color:#e8eaed">9/16</b><br>Tier1 4채널 · Tier2 4채널 · 영상 11건</div>
-</div>
+<header>
+  <h1>미국장 브리핑</h1>
+  <span class="date">2026-08-09 (일)</span>
+  <span class="sess">· 대상 세션: 8월 7일(금) 정규장 종료 기준</span>
+  <span class="badge">수집 채널 9 / 16</span>
+</header>
 
-<div class="row">
-  <div class="card idx">
-    <div><div class="nm">S&amp;P 500 <span class="tag">사상 최고</span></div><div class="px">7,757.64</div></div>
-    <div><div class="pc up">+0.62%</div><div class="wk">주간 +3.4%</div></div>
+<div class="idx">
+  <div class="card">
+    <div class="nm">S&amp;P 500 <span class="tag">사상 최고</span></div>
+    <div class="v">7,757.64</div>
+    <div class="c up">+47.68 &nbsp;+0.62%</div>
   </div>
-  <div class="card idx">
-    <div><div class="nm">나스닥 종합</div><div class="px">26,690.62</div></div>
-    <div><div class="pc up">+1.30%</div><div class="wk">주간 +4.9%</div></div>
+  <div class="card">
+    <div class="nm">나스닥 종합 <span class="tag">사상 최고</span></div>
+    <div class="v">26,690.62</div>
+    <div class="c up">+342.26 &nbsp;+1.30%</div>
   </div>
-  <div class="card idx">
-    <div><div class="nm">다우 산업</div><div class="px">54,036.93</div></div>
-    <div><div class="pc up">+0.28%</div><div class="wk">주간 +2.1%</div></div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="card macro" style="flex:1">
-    <div><b>미 10년물</b><s class="dn">4.60% ▼7bp</s></div>
-    <div><b>WTI 유가</b><s class="dn">$77 −0.29%</s><span style="font-size:10.5px;color:#9aa0a6"> (주간 −3.4%)</span></div>
-    <div><b>금 선물</b><s class="up">$4,375.80 +1.77%</s></div>
-    <div><b>은 선물</b><s class="up">$64.69 +5.01%</s></div>
-    <div><b>7월 비농업고용</b><s class="dn">−23,000</s><span style="font-size:10.5px;color:#9aa0a6"> (예상 +83,000)</span></div>
-    <div><b>실업률 / 참가율</b><s>4.1% / 61.4%</s></div>
+  <div class="card">
+    <div class="nm">다우 산업</div>
+    <div class="v">54,036.93</div>
+    <div class="c up">+151.83 &nbsp;+0.28%</div>
   </div>
 </div>
 
-<div class="row">
-  <div class="card oneline" style="flex:1">
-    <div class="lb">오늘의 한 줄</div>
-    <div class="tx">고용이 무너지자 주식이 올랐다 — 금리 <b class="up">인상</b> 시나리오가 지워지며 S&amp;P500 사상 최고 종가. 단, 랠리의 연료는 펀더멘털이 아니라 <b>심리 전환</b>이다.</div>
-  </div>
+<div class="macro">
+  <div class="m"><div class="k">미 10년물 국채</div><div class="v up">4.64%</div><div class="d">발표 직전 4.67% → 장중 저점 4.60%</div></div>
+  <div class="m"><div class="k">달러인덱스 (DXY)</div><div class="v dn">99.56</div><div class="d">-0.37% · 유로 $1.156 (7주 최고)</div></div>
+  <div class="m"><div class="k">WTI 원유 (선물)</div><div class="v dn">약 $77</div><div class="d">약 -0.3% · 주간 -3.4%</div></div>
+  <div class="m"><div class="k">VIX</div><div class="v up">14.90</div><div class="d">-1.65% · 변동성 계속 진정</div></div>
+  <div class="m"><div class="k">금 선물</div><div class="v up">$4,399.70</div><div class="d">+2.33% · 주간 +7%</div></div>
+  <div class="m"><div class="k">러셀 2000</div><div class="v up">3,034.49</div><div class="d">+1.10%</div></div>
 </div>
 
-<div class="col">
-  <div class="card c6">
+<div class="hero">
+  <div class="lb">오늘의 한 줄</div>
+  <div class="tx">7월 고용이 <b>-2.3만 명</b>으로 예상(+8.3만)을 크게 빗나갔지만, 시장은 이를 <b>"연준이 더 올릴 필요가 없다"</b>는 신호로 읽고 S&amp;P500·나스닥을 사상 최고로 밀어올렸다.</div>
+</div>
+
+<div class="grid">
+  <div class="sec">
     <h2>핵심 포인트</h2>
-    <ul class="pts">
-      <li>7월 비농업고용 <b class="dn">−23,000</b>(예상 +83,000). 실업률이 4.1%로 내려간 건 <b>참가율 61.4% 5년래 최저</b> 때문 — 구직 포기의 결과</li>
-      <li>IBD, 나스닥 25,000선 위 <b>팔로우스루 데이(FTD) 성립</b> 선언. 동일가중 S&amp;P(RSP) 신고가로 랠리의 폭 확인</li>
-      <li>자금 이탈이 아니라 <b>섹터 로테이션</b> — 반도체·메모리 → 금융·헬스케어·유틸리티(모두 사상 최고)</li>
-      <li>DRAM 7주 연속 주간 lower high. <b>메모리가 유일하게 남은 약한 고리</b> (Chart Guys 강세 체크리스트 8개 중 1개 미충족)</li>
-      <li>AI 방향은 정면 충돌 — IBD "바이브 시프트, 진입점 없음" vs Meet Kevin "AI 하드웨어 2차 랠리 시작"</li>
-      <li>Michael Burry, <b>Oracle $144.63 · Nebius $211.77 신규 숏</b> — 데이터센터 오프밸런스 부채 지목</li>
+    <ul>
+      <li>비농업 <b>-23,000</b> (예상 +83,000). 6월도 -20,000으로 하향, <b>2개월 누적 수정 -10.3만</b></li>
+      <li>실업률 <b>4.1%</b>로 하락했지만 경제활동참가율 <b>61.4%</b>(5년여 최저) 때문 — 질적으로는 나쁜 숫자</li>
+      <li>임금 전월비 +0.1% / 전년비 +3.2% 모두 예상 하회 → <b>인상 논리가 무너졌다</b></li>
+      <li>주간 등락 <b>나스닥 +5.2% · S&amp;P +3.6% · 다우 +3.0%</b> — 4월 중순 이후 최강</li>
+      <li>다만 펀더멘털이 아닌 <b>심리 전환</b>에서 온 반등이라는 지적 다수. 다음 주 <b>CPI</b>가 시험대</li>
     </ul>
   </div>
+  <div class="sec">
+    <h2>채널 합의도 (수집 9개 채널 기준)</h2>
+    <div class="bar"><div class="bl"><span class="n">약한 고용 → 연준 인상 압력 완화 = 호재</span><span class="c">6 / 9</span></div><div class="bt"><div class="bf" style="width:67%;background:#22c55e"></div></div></div>
+    <div class="bar"><div class="bl"><span class="n">메모리·반도체 조정은 아직 진행 중</span><span class="c">5 / 9</span></div><div class="bt"><div class="bf" style="width:56%;background:#ef4444"></div></div></div>
+    <div class="bar"><div class="bl"><span class="n">AI 캐펙스·AI 하드웨어 투자 지속</span><span class="c">4 / 9</span></div><div class="bt"><div class="bf" style="width:44%;background:#4b7bec"></div></div></div>
+    <div class="bar"><div class="bl"><span class="n">기술적 강세 전환 확인 (FTD · EMA 지지)</span><span class="c">3 / 9</span></div><div class="bt"><div class="bf" style="width:33%;background:#22c55e"></div></div></div>
+    <div class="bar"><div class="bl"><span class="n">중동·호르무즈 유가가 여전한 변수</span><span class="c">3 / 9</span></div><div class="bt"><div class="bf" style="width:33%;background:#eab308"></div></div></div>
+    <div class="bar"><div class="bl"><span class="n">고용 악화는 경기 균열 신호 (약세 반론)</span><span class="c">1 / 9</span></div><div class="bt"><div class="bf" style="width:11%;background:#ef4444"></div></div></div>
+  </div>
+</div>
 
-  <div class="card c4">
-    <h2>채널 합의도 (수집 9채널 기준)</h2>
-    <div class="bar"><div class="bt"><span>고용쇼크가 이날의 전부</span><em>5/9</em></div><div class="tr"><div class="fl" style="width:56%"></div></div></div>
-    <div class="bar"><div class="bt"><span>금리 인상 시나리오 소멸</span><em>4/9</em></div><div class="tr"><div class="fl" style="width:44%"></div></div></div>
-    <div class="bar"><div class="bt"><span>반도체·메모리가 약한 고리</span><em>4/9</em></div><div class="tr"><div class="fl" style="width:44%"></div></div></div>
-    <div class="bar"><div class="bt"><span>랠리 근거는 심리, 펀더멘털 아님</span><em>3/9</em></div><div class="tr"><div class="fl" style="width:33%"></div></div></div>
-    <div class="bar"><div class="bt"><span>금·은 실물자산 강세</span><em>2/9</em></div><div class="tr"><div class="fl" style="width:22%"></div></div></div>
-    <div class="sub">복수 채널 동시 언급 종목</div>
-    <div class="badges">
-      <span class="bg" style="background:#3b82f61c;color:#93c5fd">NVDA 4채널</span>
-      <span class="bg" style="background:#3b82f61c;color:#93c5fd">SPCX 4채널</span>
-      <span class="bg" style="background:#3b82f61c;color:#93c5fd">WDC·메모리 4채널</span>
-      <span class="bg" style="background:#3b82f61c;color:#93c5fd">PLTR 3채널</span>
+<div class="grid2">
+  <div class="sec">
+    <h2>상승 종목</h2>
+    <div class="bg">
+      <span class="bd bdu">DOCS<span class="pct">+81%</span></span>
+      <span class="bd bdu">TEAM<span class="pct">+32.1%</span></span>
+      <span class="bd bdu">TWLO<span class="pct">+29%</span></span>
+      <span class="bd bdu">ABNB<span class="pct">+16%</span></span>
+      <span class="bd bdu">MCHP<span class="pct">+11.7%</span></span>
+      <span class="bd bdu">SPCX<span class="pct">+11%</span></span>
+      <span class="bd bdu">DKNG<span class="pct">+7.5%</span></span>
+      <span class="bd bdu">GH<span class="pct">+7%</span></span>
+      <span class="bd bdu">TTWO<span class="pct">+4%</span></span>
+      <span class="bd bdu">PANW<span class="pct">+1.5%</span></span>
+      <span class="bd bdu">GDX<span class="pct">주간 +21%</span></span>
+      <span class="bd bdu">FCX<span class="pct">주간 +11%</span></span>
+      <span class="bd bdu">SPHR<span class="pct">주간 +11%</span></span>
+      <span class="bd bdu">IGV<span class="pct">주간 +9%</span></span>
     </div>
   </div>
-
-  <div class="card c4">
-    <h2>종목 · 섹터</h2>
-    <div class="sub" style="margin-top:0">상승</div>
-    <div class="badges">
-      <span class="bg bgu">DOCS +81%</span><span class="bg bgu">TEAM +32%</span>
-      <span class="bg bgu">TWLO +29%</span><span class="bg bgu">ABNB +16%</span>
-      <span class="bg bgu">MCHP +11.7%</span><span class="bg bgu">SPCX +11%</span>
-      <span class="bg bgu">DKNG +7.5%</span><span class="bg bgu">TTWO +4%</span>
-    </div>
-    <div class="sub">하락</div>
-    <div class="badges">
-      <span class="bg bgd">QDEL −27.3%</span><span class="bg bgd">TTD −18.1%</span>
-      <span class="bg bgd">RMD −11.3%</span><span class="bg bgd">STX −8%</span>
-      <span class="bg bgd">WDC −5.4%</span>
-    </div>
-    <div class="sub">섹터</div>
-    <div class="badges">
-      <span class="bg bgu">금융 XLF 사상최고</span><span class="bg bgu">유틸리티 사상최고</span>
-      <span class="bg bgu">소프트웨어 IGV +9%</span><span class="bg bgd">DRAM 7주 약세</span>
+  <div class="sec">
+    <h2>하락 종목 · 약세 섹터</h2>
+    <div class="bg">
+      <span class="bd bdd">QDEL<span class="pct">-27.3%</span></span>
+      <span class="bd bdd">TTD<span class="pct">-18.1%</span></span>
+      <span class="bd bdd">RMD<span class="pct">-11.3%</span></span>
+      <span class="bd bdd">STX<span class="pct">-8%</span></span>
+      <span class="bd bdd">WDC<span class="pct">-5.4%</span></span>
+      <span class="bd bdd">SNDK<span class="pct">고점 -50%</span></span>
+      <span class="bd bdd">메모리 / DRAM<span class="pct">7주 연속 주간 lower high</span></span>
+      <span class="bd bdd">NBIS<span class="pct">50일선 거부 · 버리 숏</span></span>
+      <span class="bd bdd">ORCL<span class="pct">버리 숏 $144.63</span></span>
+      <span class="bd bdd">META / TSLA / GOOGL<span class="pct">IBD 약세 분류</span></span>
     </div>
   </div>
 </div>
 
-<div class="ftr">
-  <div>수집 Tier1 6건 · Tier2 5건 · 미수집 7채널(미주은·소수몽키·ZipTrader·FX Evolution·Humbled·Live Traders·Stock Moe 등 8/7 세션 미커버)</div>
-  <div>원문 리포트 · 2026-08-09_미국장_브리핑.md</div>
+<div class="sec" style="margin-bottom:12px">
+  <h2>트레이더 관점 · 종목 이슈</h2>
+  <ul>
+    <li><b>IBD</b> — 화요일 나스닥 +1.3%로 <b>follow-through day 확정</b>. 단 dollar volume 기준으로 봐야 함(저가주 MGN이 거래량 왜곡). 지수 저점이 21일선 위 3일 연속 유지. 관건은 FTD 저점 방어</li>
+    <li><b>The Chart Guys</b> — S&amp;P 주간 EMA12 지지 유지가 최상위 강세 신호. 9월 인상 확률 <b>57% → 37~40%</b>. XLF·XLV 사상 최고권 도달로 rotation 건전. 반도체 바운스는 50% 되돌림 근처</li>
+    <li><b>Ross Cameron</b> — 금요일 <b>-$73,000, 2026년 최대 손실일</b>. DSY 단독 -$52,000(VWAP 거짓 돌파, 200 EMA 저항 후 7.40→5.40 급락). 원인은 FOMO와 과도한 포지션 사이징</li>
+    <li><b>SpaceX</b> — Argus가 Buy 상향(목표 $160)에 +11%. 다만 9.12억 주 락업 해제로 유통 주식 2배 이상 → 변동성 지속 전망</li>
+    <li><b>SK하이닉스</b> — 2031년까지 <b>54.3조 원($38.3B)</b> 용인·청주 신규 팹 투자 승인. 조정 국면에도 HBM/DRAM 증설은 진행</li>
+    <li><b>Meet Kevin (유일한 약세 매크로)</b> — ADP 4만→1.5만→1만 계단식 악화, 참가율 1.1%p(150만 명) 급락, 임금 붕괴를 <b>노동자 교섭력 상실</b>로 해석</li>
+  </ul>
 </div>
 
+<footer>
+  <span>수집: Tier 1 <b>5/8</b> (소수몽키 멤버십 전용 · FX Evolution·ZipTrader 해당 영상 없음) &nbsp;·&nbsp; Tier 2 <b>4/8</b> &nbsp;·&nbsp; 지수·금리·유가·종목 등락률은 TheStreet / CNBC / Yahoo Finance / Schwab 교차 검증</span>
+  <span>원문 리포트: 2026-08-09_미국장_브리핑.md</span>
+</footer>
+
+</div>
 </body>
 </html>
