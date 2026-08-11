@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>2026-08-11 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 30px;width:1280px}
+.hdr{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+.hdr h1{font-size:27px;font-weight:700;letter-spacing:-.5px}
+.hdr h1 span{color:#9aa0a6;font-weight:400;font-size:19px;margin-left:10px}
+.hdr .meta{font-size:13px;color:#9aa0a6;text-align:right;line-height:1.5}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:10px;padding:14px 18px}
+.idx{flex:1;display:flex;align-items:center;justify-content:space-between}
+.idx .nm{font-size:14px;color:#9aa0a6;font-weight:600}
+.idx .pc{font-size:30px;font-weight:700;letter-spacing:-1px}
+.idx .lv{font-size:12px;color:#9aa0a6;margin-top:3px}
+.dn{color:#ef4444}.up{color:#22c55e}
+.macro{display:flex;gap:0;padding:11px 18px;align-items:center}
+.macro .m{flex:1;display:flex;align-items:baseline;gap:9px;border-right:1px solid #2a2e37}
+.macro .m:last-child{border-right:none}
+.macro .mk{font-size:12px;color:#9aa0a6}
+.macro .mv{font-size:17px;font-weight:700}
+.macro .ms{font-size:11px;color:#9aa0a6}
+.oneline{background:#181c2a;border-left:4px solid #6366f1;border-radius:8px;padding:14px 20px;font-size:21px;font-weight:700;line-height:1.42;margin-bottom:14px;letter-spacing:-.4px}
+.cols{display:flex;gap:14px;margin-bottom:14px}
+.c-l{flex:1.35}.c-r{flex:1}
+h2{font-size:13px;color:#9aa0a6;font-weight:700;letter-spacing:.6px;margin-bottom:10px;text-transform:uppercase}
+ul{list-style:none}
+li{font-size:14.5px;line-height:1.55;padding-left:15px;position:relative;margin-bottom:7px}
+li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#6366f1}
+li b{color:#fff}
+.bar{margin-bottom:9px}
+.bl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.bl .bn{color:#9aa0a6;font-size:12px}
+.bt{height:7px;background:#22252d;border-radius:4px;overflow:hidden}
+.bf{height:100%;border-radius:4px;background:linear-gradient(90deg,#6366f1,#818cf8)}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b{font-size:12.5px;padding:4px 9px;border-radius:6px;font-weight:600}
+.bu{background:#12301f;color:#4ade80}
+.bd{background:#331617;color:#f87171}
+.sub{font-size:11.5px;color:#9aa0a6;margin:9px 0 5px;font-weight:600}
+.ftr{border-top:1px solid #2a2e37;padding-top:10px;font-size:12px;color:#9aa0a6;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>미국장 브리핑 <span>2026년 8월 11일 (화) · 8/10(월) 세션</span></h1>
+  <div class="meta">수집 채널 <b style="color:#e8eaed">8 / 16</b> · 항목 14건<br>Tier 1 · 6채널 &nbsp;|&nbsp; Tier 2 · 3채널</div>
+</div>
+
+<div class="row">
+  <div class="card idx"><div><div class="nm">S&amp;P 500</div><div class="lv">≈ 7,750</div></div><div class="pc dn">-0.1%</div></div>
+  <div class="card idx"><div><div class="nm">나스닥 종합</div><div class="lv">≈ 26,610</div></div><div class="pc dn">-0.3%</div></div>
+  <div class="card idx"><div><div class="nm">다우 산업</div><div class="lv">≈ 53,990</div></div><div class="pc dn">-0.1%</div></div>
+</div>
+
+<div class="card macro">
+  <div class="m"><span class="mk">10년물</span><span class="mv up">4.70%</span><span class="ms">장중 +4bp</span></div>
+  <div class="m"><span class="mk">WTI</span><span class="mv up">$82.13</span><span class="ms">+5.1%</span></div>
+  <div class="m"><span class="mk">VIX</span><span class="mv up">15.4</span><span class="ms">장중 +3.6%</span></div>
+  <div class="m"><span class="mk">금</span><span class="mv dn">$4,394</span><span class="ms">장중 -0.1%</span></div>
+</div>
+
+<div class="oneline">호르무즈 재개통 지연 → 유가 +5% 급등. 에너지 독주, 반도체·AI 조정. 지수는 사상 최고 바로 아래 숨 고르기 — 시선은 8/12 CPI로.</div>
+
+<div class="cols">
+  <div class="card c-l">
+    <h2>핵심 포인트</h2>
+    <ul>
+      <li>이란이 호르무즈 개방 조건을 고수 → <b>WTI +5.1%, $82.13</b>. 에너지 섹터 <b>+4.5%</b>로 홀로 독주</li>
+      <li>돈이 반도체 → 소프트웨어로 이동. <b>SMH -2.3% vs IGV +2.3%</b>, 항공 JETS -3.4%</li>
+      <li><b>인텔 $150억 유상증자</b>(200억 확대 추진 보도) → -5%. 애플은 다운그레이드 + 메모리 확보 열세로 -2%</li>
+      <li>트럼프, 차기 연준 의장에 <b>케빈 워시 "100%"</b> 언급. 클리블랜드 연은은 "지금이 행동할 때"</li>
+      <li>7월 고용 <b>-2.3만 명</b>(예상 +8.2만)·실업률 4.1% → 인상 압력 완화, 그러나 유가가 되돌림</li>
+      <li>JP모건, S&amp;P 500 목표 <b>7,800 → 8,000</b> 상향 (AI 캐펙스 수익화 근거)</li>
+    </ul>
+  </div>
+  <div class="card c-r">
+    <h2>채널 합의도</h2>
+    <div class="bar"><div class="bl"><span>AI 인프라 자본 재배치</span><span class="bn">6/8 채널</span></div><div class="bt"><div class="bf" style="width:75%"></div></div></div>
+    <div class="bar"><div class="bl"><span>CPI 전까지 소화 국면</span><span class="bn">5/8 채널</span></div><div class="bt"><div class="bf" style="width:62.5%"></div></div></div>
+    <div class="bar"><div class="bl"><span>하드웨어 &gt; 소프트웨어 로테이션</span><span class="bn">4/8 채널</span></div><div class="bt"><div class="bf" style="width:50%"></div></div></div>
+    <div class="bar"><div class="bl"><span>유가·중동發 인플레 리스크</span><span class="bn">4/8 채널</span></div><div class="bt"><div class="bf" style="width:50%"></div></div></div>
+    <div class="bar"><div class="bl"><span>반도체 조정은 수급 문제</span><span class="bn">3/8 채널</span></div><div class="bt"><div class="bf" style="width:37.5%"></div></div></div>
+    <div class="bar"><div class="bl"><span>레버리지 축소·현금 확보</span><span class="bn">2/8 채널</span></div><div class="bt"><div class="bf" style="width:25%"></div></div></div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+  <h2>종목 / 섹터</h2>
+  <div class="sub">▲ 상승</div>
+  <div class="badges">
+    <span class="b bu">AbCellera +38.2%</span><span class="b bu">Archer ACHR +18.4%</span><span class="b bu">Akamai +7.5%</span>
+    <span class="b bu">Datadog +6.8%</span><span class="b bu">Vertex +6.6%</span><span class="b bu">에너지 XLE +4.5%</span>
+    <span class="b bu">Twilio +3.6%</span><span class="b bu">SpaceX +3%<span style="font-weight:400;opacity:.7"> 프리마켓</span></span><span class="b bu">소프트웨어 IGV +2.3%</span>
+  </div>
+  <div class="sub">▼ 하락</div>
+  <div class="badges">
+    <span class="b bd">Coherent -11.6%</span><span class="b bd">Fox -9.7%</span><span class="b bd">Trade Desk -5.8%</span>
+    <span class="b bd">Verisk -5.7%</span><span class="b bd">First Solar -5.6%</span><span class="b bd">Intel -5%</span>
+    <span class="b bd">Celsius -4.6%</span><span class="b bd">항공 JETS -3.4%</span><span class="b bd">반도체 SMH -2.3%</span>
+    <span class="b bd">Nvidia -2.1%</span><span class="b bd">Apple -2.1%</span>
+  </div>
+</div>
+
+<div class="ftr">
+  <div>수집: 연합인포맥스 · IBD · Yahoo Finance · Bloomberg Tech · ZipTrader · Meet Kevin · Warrior Trading · Ricky Gutierrez &nbsp;|&nbsp; 미수집: 미주은 · 소수몽키 · FX Evolution 외 5</div>
+  <div>2026-08-11_미국장_브리핑.md</div>
+</div>
+
+</body>
+</html>
