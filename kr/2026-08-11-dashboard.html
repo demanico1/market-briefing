@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-08-11 한국장 브리핑</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 28px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.sub{color:#9aa0a6}
+header{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+header h1{font-size:26px;font-weight:700;letter-spacing:-.5px}
+header .date{font-size:17px;color:#9aa0a6;font-weight:600}
+header .cnt{margin-left:auto;font-size:13px;color:#9aa0a6;background:#1a1d24;padding:5px 12px;border-radius:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:12px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:10px;padding:14px 16px}
+.idx .name{font-size:13px;color:#9aa0a6;margin-bottom:5px}
+.idx .val{font-size:30px;font-weight:700;line-height:1.1}
+.idx .chg{font-size:15px;font-weight:600;margin-top:3px}
+.flow .t{font-size:12px;color:#9aa0a6;margin-bottom:8px;letter-spacing:.5px}
+.flow table{width:100%;border-collapse:collapse;font-size:13px}
+.flow td{padding:3px 0}
+.flow td:first-child{color:#9aa0a6;width:52px}
+.flow td.n{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.macro{display:flex;gap:0;background:#1a1d24;border-radius:10px;padding:11px 16px;margin-bottom:14px;font-size:13px}
+.macro div{flex:1;border-right:1px solid #2a2e37}
+.macro div:last-child{border:0}
+.macro span{color:#9aa0a6;margin-right:7px}
+.hero{background:linear-gradient(90deg,#1e2530,#1a1d24);border-left:3px solid #ef4444;border-radius:10px;padding:15px 18px;margin-bottom:14px}
+.hero .lbl{font-size:11px;color:#9aa0a6;letter-spacing:1px;margin-bottom:5px}
+.hero p{font-size:20px;font-weight:600;line-height:1.4}
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-bottom:14px}
+h2{font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:9px;font-weight:600}
+ul{list-style:none}
+ul li{font-size:13.5px;line-height:1.5;padding-left:14px;position:relative;margin-bottom:6px}
+ul li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#4b5563}
+.bar{margin-bottom:9px}
+.bar .r{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:3px}
+.bar .r b{font-weight:600}
+.bar .r span{color:#9aa0a6;font-size:11.5px}
+.track{height:6px;background:#252932;border-radius:3px;overflow:hidden}
+.fill{height:100%;background:#ef4444;border-radius:3px}
+.fill.b{background:#6b7280}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b1{font-size:12.5px;padding:5px 10px;border-radius:6px;background:#2a1c1e;color:#f87171;font-weight:500}
+.b2{font-size:12.5px;padding:5px 10px;border-radius:6px;background:#1a2333;color:#7ba7f0;font-weight:500}
+.watch{background:#1a1d24;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+.watch ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+.watch li{font-size:13px;line-height:1.45;padding-left:20px;position:relative}
+.watch li b{position:absolute;left:0;color:#ef4444;font-size:11px;background:#2a1c1e;width:15px;height:15px;border-radius:3px;text-align:center;line-height:15px;top:2px}
+footer{font-size:11.5px;color:#6b7280;display:flex;justify-content:space-between;border-top:1px solid #2a2e37;padding-top:9px}
+</style></head><body>
+
+<header>
+  <h1>한국장 브리핑</h1>
+  <span class="date">2026. 08. 11 (화)</span>
+  <span class="cnt">수집 채널 8 / 11 · 영상 11건</span>
+</header>
+
+<div class="grid">
+  <div class="card idx"><div class="name">KOSPI</div><div class="val up">6,345.53</div><div class="chg up">▲ 45.87 (+0.73%)</div></div>
+  <div class="card idx"><div class="name">KOSDAQ</div><div class="val up">857.84</div><div class="chg up">▲ 3.37 (+0.39%)</div></div>
+  <div class="card flow">
+    <div class="t">투자자별 순매수 (억원)</div>
+    <table>
+      <tr><td></td><td class="n sub" style="font-size:11.5px">코스피</td><td class="n sub" style="font-size:11.5px">코스닥</td></tr>
+      <tr><td>외국인</td><td class="n up">+450</td><td class="n dn">-3,600</td></tr>
+      <tr><td>기관</td><td class="n up">+305</td><td class="n dn">-966</td></tr>
+      <tr><td>개인</td><td class="n dn">-710</td><td class="n up">+4,351</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="macro">
+  <div><span>원/달러</span><b class="dn">1,416.0원 (-2.4)</b></div>
+  <div><span>VKOSPI</span><b class="dn">61선 (-11%)</b></div>
+  <div><span>코스피 거래대금</span><b>21조 9,403억</b></div>
+  <div><span>8월 초 수출</span><b class="up">213억$ (+45.3%)</b></div>
+  <div><span>반도체 수출</span><b class="up">100억$ (+155%)</b></div>
+</div>
+
+<div class="hero">
+  <div class="lbl">오늘의 한 줄</div>
+  <p>반도체 수출 155% 급증이 삼성전자를 4% 끌어올려 지수를 상승 반전시켰지만, 호르무즈 불확실성이 상단을 눌러 0%대 마감에 그쳤다.</p>
+</div>
+
+<div class="cols">
+  <div class="card">
+    <h2>핵심 포인트</h2>
+    <ul>
+      <li><b>삼성전자·하이닉스 디커플링</b> — 외국인이 삼전 +5,841억 사면서 하이닉스는 -2,956억 순매도. 3개 채널이 독립적으로 '중복상장 이슈'를 원인으로 지목.</li>
+      <li><b>반등이지 추세 전환은 아니다</b> — 주덕·고라니·만쥬 모두 지속성에 유보적. 삼성전자 20일선 회복이 공통 조건.</li>
+      <li><b>프로그램이 만든 지수</b> — 거래대금은 2조 늘었는데 순매수·순매도는 축소. 매수·매도 팽팽한 균형 장세.</li>
+      <li><b>코스피·코스닥 정반대 수급</b> — 코스피는 외인·기관 동반 매수, 코스닥은 개인 홀로 4,351억 방어.</li>
+      <li><b>변동성 진정 국면</b> — VKOSPI 11% 급락해 5월 초 수준 복귀. 7월 사이드카 27회 국면은 지나감.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>채널 합의도</h2>
+    <div class="bar"><div class="r"><b>삼성전자 / 반도체 투톱</b><span>5/8</span></div><div class="track"><div class="fill" style="width:62%"></div></div></div>
+    <div class="bar"><div class="r"><b>추세 전환 아직 아님</b><span>4/8</span></div><div class="track"><div class="fill" style="width:50%"></div></div></div>
+    <div class="bar"><div class="r"><b>반도체 소부장 자금 이동</b><span>3/8</span></div><div class="track"><div class="fill b" style="width:38%"></div></div></div>
+    <div class="bar"><div class="r"><b>중동·유가·금리 리스크</b><span>3/8</span></div><div class="track"><div class="fill b" style="width:38%"></div></div></div>
+    <div class="bar"><div class="r"><b>대형주 변동성 소멸</b><span>2/8</span></div><div class="track"><div class="fill b" style="width:25%"></div></div></div>
+    <div class="bar"><div class="r"><b>코스닥 순환매 지속</b><span>2/8 <i style="color:#f87171;font-style:normal">(이견)</i></span></div><div class="track"><div class="fill b" style="width:25%"></div></div></div>
+  </div>
+</div>
+
+<div class="cols" style="grid-template-columns:1fr 1fr">
+  <div class="card">
+    <h2>강세 종목</h2>
+    <div class="badges">
+      <span class="b1">주성엔지니어링 +12%</span>
+      <span class="b1">원익IPS +6%</span>
+      <span class="b1">삼성전자 +4.13%</span>
+      <span class="b1">제주반도체 +3%대</span>
+      <span class="b1">삼성바이오로직스 +2.55%</span>
+      <span class="b1">SK하이닉스 +0.35%</span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>약세 종목</h2>
+    <div class="badges">
+      <span class="b2">알테오젠 -5.89%</span>
+      <span class="b2">LG에너지솔루션 -3.54%</span>
+      <span class="b2">에코프로 -3~4%</span>
+      <span class="b2">에코프로비엠 -3~4%</span>
+      <span class="b2">현대차 -1.23%</span>
+      <span class="b2">삼성전기 -0.94%</span>
+    </div>
+  </div>
+</div>
+
+<div class="watch">
+  <h2>내일 관전 포인트</h2>
+  <ol>
+    <li><b>1</b>미국 7월 CPI (수요일 밤) — 이번 주 최대 변수, 금리 경로·외국인 포지션 좌우</li>
+    <li><b>2</b>국내 옵션 만기일 (목요일) — 프로그램 수급 되돌림 가능성</li>
+    <li><b>3</b>삼성전자 20일선 회복 여부 — 복수 채널이 명시한 추세 전환 조건</li>
+    <li><b>4</b>호르무즈 해협 협상 진전 — 유가·금리·환율에 동시 연결</li>
+  </ol>
+</div>
+
+<footer>
+  <span>수집 8/11 채널 · 영상 11건 (라이브 2 · 업로드 6 · 쇼츠 3) · 창원개미·홍인기·전황의주식홈트 영상없음</span>
+  <span>2026-08-11_한국장_브리핑.md</span>
+</footer>
+
+</body></html>
