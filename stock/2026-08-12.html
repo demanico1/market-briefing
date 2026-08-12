@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-08-12 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-08-12</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<h2>오늘장 요약</h2>
+<p>08/11 화요일 장마감 기준, 실적 확정 재료가 테마를 끌어올린 하루였다. 상한가는 호남반도체·건설 쪽에서 가장 많이 나왔지만 거래대금이 따라오지 않아(금호건설 대금 30일 11위·직전최대 0.28배) 가격만 튄 재탕으로 판정됐고, 실제 돈은 화장품 ODM·로봇·MLCC로 들어왔다.</p>
+<p>오늘 새로 점화된 것은 <strong>K뷰티 화장품 ODM 2분기 어닝 서프라이즈</strong>이며, 두 번째는 <strong>로봇/피지컬AI(테마는 D+13이지만 비에이치만 오늘 첫 진입)</strong>다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">K뷰티 화장품 ODM</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>08/10~11 2Q 최대 실적 확정, 수출 내년 1위 역전 가능성</p><div class="c-c"><span class="chip"><i>수식충족</i>마녀공장·코스메카·한국화장품제조</span><span class="chip"><i>정보지</i>&#x27;화장품&#x27; 08/11 첫 등장</span><span class="chip"><i>신선도</i><strong>이번 사이클 D+0(오늘)</strong></span><span class="chip"><i>판단</i>1순위. 재료 1→4단계 상승</span></div></article>
+<article class="card"><h4 class="c-t">로봇/피지컬AI</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>대신증권 &quot;비에이치 삼성전자 로봇 참여 추진&quot;, 정부 피지컬AI 정책 첫발</p><div class="c-c"><span class="chip"><i>수식충족</i>비에이치·티엑스알로보틱스</span><span class="chip"><i>정보지</i>&#x27;로봇 관련주&#x27; 오늘 처음</span><span class="chip"><i>신선도</i>테마 D+13 / 비에이치 D+0</span><span class="chip"><i>판단</i>2순위. 표면상 재탕이나 자금은 신규</span></div></article>
+<article class="card"><h4 class="c-t">MLCC 공급난</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>납기 16개월·프리미엄 2~3배 외신 보도, 8월 출하분 가격 인상</p><div class="c-c"><span class="chip"><i>수식충족</i>코칩·한켐</span><span class="chip"><i>정보지</i>&#x27;MLCC 관련주&#x27; 오늘 처음</span><span class="chip"><i>신선도</i><strong>실질 D+2(시작 08/07 추정)</strong></span><span class="chip"><i>판단</i>3순위. 뉴스가 후행한 케이스</span></div></article>
+<article class="card"><h4 class="c-t">호남반도체·건설</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>08/10~11 국무회의, 4년 내 첫 양산·군공항 이전</p><div class="c-c"><span class="chip"><i>수식충족</i>서산·다스코(★첫흐름)</span><span class="chip"><i>정보지</i>—</span><span class="chip"><i>신선도</i>실질 D+8</span><span class="chip"><i>판단</i><strong>제외. 눌림도 보지 말 것</strong></span></div></article>
+<article class="card"><h4 class="c-t">반도체 소부장</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>08/10 SK하이닉스 투자규모 확정</p><div class="c-c"><span class="chip"><i>수식충족</i>지앤비에스에코(★첫흐름) 등</span><span class="chip"><i>정보지</i>&#x27;반도체&#x27; 3일 연속 등장</span><span class="chip"><i>신선도</i>D+1</span><span class="chip"><i>판단</i>눌림 관찰만</span></div></article>
+<article class="card"><h4 class="c-t">게임</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>NHN 2Q 영업익 <span style="color:#ef4444;font-weight:700">+164.1%</span> 역대 최대</p><div class="c-c"><span class="chip"><i>수식충족</i>NHN·위메이드맥스</span><span class="chip"><i>정보지</i>—</span><span class="chip"><i>신선도</i>NHN D+5</span><span class="chip"><i>판단</i>실적 재료 질은 좋으나 진행 중</span></div></article>
+<article class="card"><h4 class="c-t">AI 데이터센터 전력</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>캐터필러 엔비디아 프로젝트 참여·2GW 가스발전기</p><div class="c-c"><span class="chip"><i>수식충족</i>혜인</span><span class="chip"><i>정보지</i>—</span><span class="chip"><i>신선도</i>D+2(실질 시작 08/07)</span><span class="chip"><i>판단</i>재료 확인됨, 눌림 관찰</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>K뷰티 화장품 ODM</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한국화장품제조(003350)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 15.9배 / 11:12 늦은 포착·종가위치 60%·VWAP <span style="color:#7dabf8;font-weight:700">-2.2%</span> → 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>24봉</span><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>대금</i>501억</span></div></article>
+<article class="card"><h4 class="c-t">코스맥스(192820)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 1.9배 / D+0 / 2Q 매출 7,949억·영업익 737억, 미국법인 첫 흑자</p><div class="c-c"><span class="chip"><i>첫흐름</i>없음</span><span class="chip"><i>충족봉</i>없음</span><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금</i>711억</span></div></article>
+<article class="card"><h4 class="c-t">코스메카코리아(241710)</h4><p class="c-p"><span class="c-k">근거</span>07/13에 이미 충족 / 대금 30일 1위·직전최대 5.3배 / 유통 7,013억·회전 19.7% → <strong>실질 대장</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/13(-20일)</span><span class="chip"><i>충족봉</i>2봉</span><span class="chip"><i>등락%</i>+15.2</span><span class="chip"><i>대금</i>1,380억</span></div></article>
+<article class="card"><h4 class="c-t">마녀공장(439090)</h4><p class="c-p"><span class="c-k">근거</span>07/14에 이미 충족 / 대금 30일 2위 / 유통 1,330억·회전 138.6%로 물량 얇음 → 표면 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/14(-19일) 외2</span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+15.7</span><span class="chip"><i>대금</i><strong>1,843억</strong></span></div></article>
+<article class="card"><h4 class="c-t">(참고) 본느(226340)</h4><p class="c-p"><span class="c-k">근거</span>08/06에 이미 충족 / 08/06부터 5연상 누적 <span style="color:#ef4444;font-weight:700">+119.5%</span> → <strong>끝물, 진입 대상 아님</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/06(-2일)</span><span class="chip"><i>충족봉</i>미충족(G1 14)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>1,052억</span></div></article>
+</div>
+<p>※ D+23·D+28은 &quot;한 달 만에 처음&quot;이라는 뜻이며, 이번 사이클의 D+0는 오늘(08/11)로 <strong>추정</strong>된다(1차 사이클 07/07~07/14 추정).</p>
+<h3>로봇 / 피지컬AI</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">비에이치(090460)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 7.5배 / 직전5일누적 <span style="color:#ef4444;font-weight:700">+0.1%</span>(선반영 전무) / 08:06 NXT 프리마켓 <span style="color:#ef4444;font-weight:700">+9.7%</span> 포착 → <strong>대장주</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+20.6</span><span class="chip"><i>대금</i><strong>2,316억</strong></span></div></article>
+<article class="card"><h4 class="c-t">티엑스알로보틱스(484810)</h4><p class="c-p"><span class="c-k">근거</span>08/03에 이미 충족 / 종가위치 23%·VWAP <span style="color:#7dabf8;font-weight:700">-6.8%</span>·직전5일 <span style="color:#7dabf8;font-weight:700">-9.8%</span> → <strong>후발주 아닌 소진주</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/03(-6일) 외3</span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+3.9</span><span class="chip"><i>대금</i>1,407억</span></div></article>
+<article class="card"><h4 class="c-t">아진엑스텍(059120)</h4><p class="c-p"><span class="c-k">근거</span>07/28에 이미 충족 / 대금 30일 1위지만 오늘 충족 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/28(-10일) 외1</span><span class="chip"><i>충족봉</i>없음</span><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>대금</i>574억</span></div></article>
+<article class="card"><h4 class="c-t">져스텍(153890)</h4><p class="c-p"><span class="c-k">근거</span>08/06에 이미 충족 / 직전5일누적 <span style="color:#ef4444;font-weight:700">+39.6%</span> 선반영·D+3 → 눌림 관찰만</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/06(-3일) 외2</span><span class="chip"><i>충족봉</i>미충족(G1 3)</span><span class="chip"><i>등락%</i>+11.4</span><span class="chip"><i>대금</i>367억</span></div></article>
+</div>
+<p>※ 비에이치 등락률 <span style="color:#ef4444;font-weight:700">+20.6%</span>는 NXT 세션종가 18,700 기준(KRX 정규장 종가 18,120 기준 <span style="color:#ef4444;font-weight:700">+16.83%</span>). 정본은 문서 기준.</p>
+<h3>MLCC 공급난</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">코칩(126730)</h4><p class="c-p"><span class="c-k">근거</span>08/07에 이미 충족 / 대금 30일 1위·직전최대 2.1배 / 상한가·VWAP <span style="color:#ef4444;font-weight:700">+11.4%</span> → 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/07(-2일) 외1</span><span class="chip"><i>충족봉</i>29봉</span><span class="chip"><i>등락%</i>+29.7</span><span class="chip"><i>대금</i>681억</span></div></article>
+<article class="card"><h4 class="c-t">한켐(457370)</h4><p class="c-p"><span class="c-k">근거</span>08/07에 이미 충족 / 직전최대 2.5배지만 13:31 고점 후 <span style="color:#7dabf8;font-weight:700">-12.3%</span>, 종가위치 46%·VWAP <span style="color:#7dabf8;font-weight:700">-3.6%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/07(-2일)</span><span class="chip"><i>충족봉</i>10봉</span><span class="chip"><i>등락%</i>+8.7</span><span class="chip"><i>대금</i>468억</span></div></article>
+</div>
+<h3>호남반도체·건설 (제외 대상)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">서산</h4><p class="c-p"><span class="c-k">근거</span>대장이 아니라 <strong>막차 후발주</strong>. 30일급등일수 15회</p><div class="c-c"><span class="chip"><i>첫흐름</i>★첫흐름</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>545억</span></div></article>
+<article class="card"><h4 class="c-t">다스코</h4><p class="c-p"><span class="c-k">근거</span>상동. 실질 D+8, 06/25~07/01 4연상 재탕</p><div class="c-c"><span class="chip"><i>첫흐름</i>★첫흐름</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+10.3</span><span class="chip"><i>대금</i>367억</span></div></article>
+</div>
+<p>※ 금호건설 <span style="color:#ef4444;font-weight:700">+30.0%</span>(1,431억·30일 11위·직전최대 0.28배), 남화토건 <span style="color:#ef4444;font-weight:700">+30.0%</span>(110억·9위·0.17배), 동양파일 <span style="color:#ef4444;font-weight:700">+29.9%</span>(53억·11위·0.10배), 금호전기 <span style="color:#ef4444;font-weight:700">+29.9%</span>(84억) — 상한가지만 30일 최대 대금의 1/4~1/10. <strong>눌림도 보지 말 것.</strong></p>
+<h3>반도체 소부장 (D+1, 눌림 관찰만)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">지앤비에스에코</h4><p class="c-p"><span class="c-k">근거</span>정보지 &#x27;반도체&#x27; 3일 연속 등장(08/07·08/10·08/11) = 진행 중</p><div class="c-c"><span class="chip"><i>첫흐름</i>★첫흐름</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+16.6</span><span class="chip"><i>대금</i>121억</span></div></article>
+<article class="card"><h4 class="c-t">주성엔지니어링</h4><p class="c-p"><span class="c-k">근거</span>오늘 대금 1위지만 30일순위 <strong>6위</strong>·직전최대 0.34배</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+12.2</span><span class="chip"><i>대금</i>5,215억</span></div></article>
+<article class="card"><h4 class="c-t">SFA반도체</h4><p class="c-p"><span class="c-k">근거</span>D+1</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+11.6</span><span class="chip"><i>대금</i>414억</span></div></article>
+<article class="card"><h4 class="c-t">예스티 / 인텍플러스</h4><p class="c-p"><span class="c-k">근거</span>둘 다 D+7</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+14.1 / +10.2</span><span class="chip"><i>대금</i>185억 / 159억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">JW중외제약(001060)</h4><p class="c-p"><span class="c-k">근거</span><strong>D+0</strong> / 대금 30일 1위·직전최대 5.8배·30일급등일수 0 / 통풍 신약 3상 성공, 재료 협의→확정 / <strong>가장 깨끗한 D+0</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금</i>152억</span></div></article>
+<article class="card"><h4 class="c-t">피제이메탈(128660)</h4><p class="c-p"><span class="c-k">근거</span><strong>D+0</strong> / 전일 대비 67.9배(리포트 최대)·직전최대 20.6배·급등일수 0·직전5일 <span style="color:#ef4444;font-weight:700">+4.6%</span> / 완전 신규 자금이나 대금 작고 동반 종목 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+10.7</span><span class="chip"><i>대금</i>129억</span></div></article>
+<article class="card"><h4 class="c-t">바텍(043150)</h4><p class="c-p"><span class="c-k">근거</span>직전최대 11.3배 / ⚠ 충족 1봉뿐 + 포착 시점 순매수 -14억(<span style="color:#7dabf8;font-weight:700">-11.4%</span>) → <strong>신뢰도 낮음</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>1봉</span><span class="chip"><i>등락%</i>+10.7</span><span class="chip"><i>대금</i>178억</span></div></article>
+<article class="card"><h4 class="c-t">시노펙스(025320)</h4><p class="c-p"><span class="c-k">근거</span>D+6 / 인공신장기 허가로 단계 상승했으나 직전5일 <span style="color:#ef4444;font-weight:700">+13.7%</span>·대금 30일 2위·직전최대 0.68배 → <strong>D+0로 승격 안 함</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+12.5</span><span class="chip"><i>대금</i>511억</span></div></article>
+<article class="card"><h4 class="c-t">NHN</h4><p class="c-p"><span class="c-k">근거</span>D+5 / 2Q 영업익 <span style="color:#ef4444;font-weight:700">+164.1%</span> 역대 최대, 대금 30일 1위·5.2배</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>대금</i>1,470억</span></div></article>
+<article class="card"><h4 class="c-t">위메이드맥스 / 위메이드</h4><p class="c-p"><span class="c-k">근거</span>위메이드는 실적 발표 전 기대감만으로 오른 뒤 08:16 고점 후 <span style="color:#7dabf8;font-weight:700">-14.9%</span>, 종가위치 33% → 위험</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+29.9 / +11.0</span><span class="chip"><i>대금</i>344억 / 619억</span></div></article>
+<article class="card"><h4 class="c-t">혜인</h4><p class="c-p"><span class="c-k">근거</span>D+2(실질 시작 08/07) / 대금 30일 1위 / 캐터필러 엔비디아 건 웹 확인, 종가위치 60%</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+19.4</span><span class="chip"><i>대금</i>751억</span></div></article>
+<article class="card"><h4 class="c-t">LK삼양(225190)</h4><p class="c-p"><span class="c-k">근거</span>D+1, 이틀째 상한가 / 국방부 드론 카메라 모듈 / 대금 88억으로 너무 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>88억</span></div></article>
+<article class="card"><h4 class="c-t">모나미(005360)</h4><p class="c-p"><span class="c-k">근거</span><strong>D+18</strong> / 07월 애국테마 기대→기대 재탕, 30일고가대비 <span style="color:#7dabf8;font-weight:700">-56.9%</span> → <strong>제외</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+19.2</span><span class="chip"><i>대금</i>261억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">K뷰티 화장품 ODM</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G1 14 미충족. 08/06부터 5연상 누적 <span style="color:#ef4444;font-weight:700">+119.5%</span>로 이미 소진</p><div class="c-c"><span class="chip"><i>종목</i>본느(226340)</span></div></article>
+<article class="card"><h4 class="c-t">로봇/피지컬AI</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G1 3 미충족. 직전5일누적 <span style="color:#ef4444;font-weight:700">+39.6%</span> 선반영 과다, D+3</p><div class="c-c"><span class="chip"><i>종목</i>져스텍(153890)</span></div></article>
+<article class="card"><h4 class="c-t">로봇/피지컬AI</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족 없음. 이전충족 07/28(-10일), 직전5일 <span style="color:#ef4444;font-weight:700">+13.0%</span></p><div class="c-c"><span class="chip"><i>종목</i>아진엑스텍(059120)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+3, 직전5일누적 <span style="color:#ef4444;font-weight:700">+75.7%</span> 선반영 과다</p><div class="c-c"><span class="chip"><i>종목</i>비큐AI(148780)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+1, 직전5일누적 <span style="color:#ef4444;font-weight:700">+42.0%</span> 선반영 과다</p><div class="c-c"><span class="chip"><i>종목</i>씨이랩(189330)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>장 초반 고가 <span style="color:#ef4444;font-weight:700">+29.9%</span> 후 <span style="color:#7dabf8;font-weight:700">-3.2%</span> 마감, 고점 대비 <span style="color:#7dabf8;font-weight:700">-26%</span> 붕괴한 실패한 급등</p><div class="c-c"><span class="chip"><i>종목</i>레이(228670)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#7dabf8;font-weight:700">-9.9%</span>, 고점 붕괴. 관심 대상 아님</p><div class="c-c"><span class="chip"><i>종목</i>윙입푸드(900340)</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">K뷰티 화장품 ODM</h4><p class="c-p"><span class="c-k">종목</span>한국콜마</p><p class="c-p"><span class="c-k">정보지 사유</span><span style="color:#ef4444;font-weight:700">+22.8%</span>(정보지) / 웹 한국경제 종가 137,100원 <span style="color:#ef4444;font-weight:700">+27.06%</span>, 2Q 영업익 1103억 분기 첫 1000억 돌파. <strong>스캐너 밖 실질 대장 후보</strong></p></article>
+<article class="card"><h4 class="c-t">K뷰티 화장품 ODM</h4><p class="c-p"><span class="c-k">종목</span>실리콘투 / 씨앤씨인터내셔널 / 펌텍코리아 / 달바글로벌</p><p class="c-p"><span class="c-k">정보지 사유</span>정보지 화장품 ∖ 조건검색 = 후발주 후보, 아직 안 움직임</p></article>
+<article class="card"><h4 class="c-t">로봇/피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>디케이티</p><p class="c-p"><span class="c-k">정보지 사유</span>비에이치 관계사, SMT 담당·통합 공급망 — 확산 여부의 핵심 증거</p></article>
+<article class="card"><h4 class="c-t">로봇/피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>에스비비테크 / 로보스타 / TPC로보틱스 / 피아이이</p><p class="c-p"><span class="c-k">정보지 사유</span>정보지 &#x27;로봇 관련주&#x27;(11종목) 구성. 동반 상승 여부가 확인 지표</p></article>
+<article class="card"><h4 class="c-t">LG그룹주</h4><p class="c-p"><span class="c-k">종목</span>(정보지A, 오늘 처음)</p><p class="c-p"><span class="c-k">정보지 사유</span>구광모·젠슨 황 美 회동, 로봇·AI 인프라 협력</p></article>
+<article class="card"><h4 class="c-t">MLCC</h4><p class="c-p"><span class="c-k">종목</span>삼화콘덴서 / 삼성전기 / 지에스아이</p><p class="c-p"><span class="c-k">정보지 사유</span>시총 기준 실질 대장. 웹: 삼화콘덴서 <span style="color:#ef4444;font-weight:700">+18.23%</span> 사상 최고 181,500원 / 지아이에스 수주잔고 180% 증가</p></article>
+<article class="card"><h4 class="c-t">제약</h4><p class="c-p"><span class="c-k">종목</span>샤페론</p><p class="c-p"><span class="c-k">정보지 사유</span>JW중외제약 동반 종목이나 관리종목 이슈로 무관 — 테마 성립 안 함</p></article>
+<article class="card"><h4 class="c-t">전선</h4><p class="c-p"><span class="c-k">종목</span>금호전기 / 대원전선 등</p><p class="c-p"><span class="c-k">정보지 사유</span>피제이메탈과 알루미늄 업종상 연결 <strong>가능성만</strong> 있음 — 근거 부족</p></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>한국콜마·코스맥스 시간외/프리마켓 호가</strong> — 갭업 유지면 테마 확산(D+1 정상 진행), 갭다운이면 실적일 원데이 이벤트 종료. 동시에 코스메카가 오늘 종가 109,400 위를 지키는지.</li>
+<li><strong>코스메카 종가위치 57% 아래로 갭다운 + 대금 오늘의 절반 이하</strong>면 아님. 본느가 하한가로 무너지면 테마 전체 심리가 꺾인다.</li>
+<li><strong>비에이치 프리마켓(08:00~) 대금</strong> — 정규장 종가 18,120 위 시작 + 대금 1,000억 이상 유지면 진짜, 갭다운 후 VWAP 아래 종일 밀리면 대신증권 리포트 원데이. <strong>디케이티 동반 여부가 밸류체인 확산의 결정적 증거.</strong> ⚠ 비에이치는 07/15 회장 지분 고점 매도 후 <span style="color:#7dabf8;font-weight:700">-56%</span> 급락 이력으로 오버행 심리 잔존.</li>
+<li><strong>코칩 상한가 다음날 갭 유지 + 대금 500억 이상</strong>이면 진짜, 한켐이 오늘 저가 8,180 이탈하고 코칩 시초 갭다운이면 D+2 소진. 삼성전기·삼화콘덴서로 확산되면 테마 진짜.</li>
+<li><strong>금호건설·서산 시초가</strong> — 판정 기준은 &#x27;거래대금이 30일 1위로 올라오는가&#x27; 하나. 오늘은 11위였다. 대금이 안 오르면 상한가여도 전량 제외.</li>
+</ul>
+<hr>
+<p>⚠ <strong>미확인 항목</strong>: 한국화장품제조·피제이메탈·바텍의 오늘 급등 사유는 문서·웹 모두에서 개별 재료 확인 안 됨(화장품 테마 동반, 실적 흑자전환 외 추가 재료 없음). MLCC &quot;납기 16개월&quot;은 웹에서 5개월까지만 확인 — 정보지 원문 숫자 검증 안 됨. 바텍-레이 동시 장중 급등은 우연이 아닐 수 있으나 재료 미상·근거 부족. 테마 시작일은 모두 추정치.</p>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 분석 — 2026-08-11 (화) 장마감</h1>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 점화된 것은 <strong>K뷰티 ODM 2분기 어닝 서프라이즈</strong>다. 7월의 &#x27;수출 기대&#x27; 랠리가 08/10~08/11 실적 확정으로 단계가 올라가면서, 코스메카·코스맥스·한국화장품제조가 나란히 <strong>30일 거래대금 1위</strong>를 찍었다. 두 번째는 <strong>로봇/피지컬AI</strong> — 정보지가 오늘 처음 이름을 붙인 테마이고, 비에이치가 대금 2,316억(직전최대 7.5배·직전5일누적 <span style="color:#ef4444;font-weight:700">+0.1%</span>)으로 무혈입성했다. 반면 상한가가 가장 많이 나온 <strong>호남반도체·건설</strong>은 대금 순위가 11위(금호건설)에 그쳐 <strong>가격만 튄 재탕</strong>이다 — 여기 들어가면 늦는다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>【1순위】 K뷰티 화장품 ODM — 2분기 실적 서프라이즈</h3>
+<p>정보지 테마명 그대로: <strong>&quot;화장품&quot;(정규장, 정보지A) — &quot;K뷰티 열풍에 화장품 ODM 3사 나란히 &#x27;최대 실적&#x27; 소식, K화장품 수출 내년 1위 역전 가능성&quot;</strong>. 정보지 <code>최근 등장</code> = <strong>08/11 하루뿐</strong>(누적 3일치 중), <code>화장품(K뷰티)</code>·<code>화장품 관련주</code>도 모두 오늘자 신규.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">439090 마녀공장</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.7</span><span class="chip"><i>거래대금(억)</i><strong>1,843</strong></span><span class="chip"><i>대금30일순위</i>2위</span><span class="chip"><i>직전최대대비</i>1.0배</span><span class="chip"><i>D+N</i>D+23</span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>07/14(-19일)외2</span></div></article>
+<article class="card"><h4 class="c-t">241710 코스메카코리아</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.2</span><span class="chip"><i>거래대금(억)</i><strong>1,380</strong></span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>5.3배</span><span class="chip"><i>D+N</i>D+28</span><span class="chip"><i>오늘충족</i>★2봉</span><span class="chip"><i>이전충족</i>07/13(-20일)</span></div></article>
+<article class="card"><h4 class="c-t">192820 코스맥스</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>거래대금(억)</i>711</span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>1.9배</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">003350 한국화장품제조</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>거래대금(억)</i>501</span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i><strong>15.9배</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★24봉</span><span class="chip"><i>이전충족</i>없음(<strong>★첫흐름</strong>)</span></div></article>
+<article class="card"><h4 class="c-t">(참고) 226340 본느</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>1,052</span><span class="chip"><i>대금30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>7.1배</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>미충족(G1 14)</span><span class="chip"><i>이전충족</i>08/06(-2일)</span></div></article>
+</div>
+<p><strong>테마 시작일 추정</strong>: 1차 사이클은 <strong>07/07~07/14</strong>(마녀공장 07/07·07/08·07/14 충족, 코스메카 07/13 충족 — 07/09 &quot;화장품주 불기둥&quot; 기사와 일치). 그 뒤 <strong>약 4주간 충족 공백</strong>이 있었고, <strong>08/10 코스메카 2분기 실적 공시</strong>를 기점으로 08/11 전 종목이 동시에 재점화. → <strong>이번 사이클의 D+0는 오늘(08/11)이 맞다.</strong> D+23·D+28이라는 숫자는 &quot;한 달 만에 처음&quot;이라는 뜻이지 진행 중이라는 뜻이 아니다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>표면 대장(대금 절대액)</strong>: <strong>마녀공장 1,843억</strong>. 다만 유통시총 1,330억에 회전율 138.6% — 물량이 얇아 대금이 부풀려진 형태다.</li>
+<li><strong>실질 대장(재료 진원)</strong>: <strong>코스메카코리아 1,380억</strong>. 유통시총 7,013억에 회전 19.7%로 <strong>들어온 돈의 질이 다르다.</strong> 오늘 뉴스 9건 중 목표가 상향만 4건, 정보지 재료 문구의 주인공도 이 종목이다. 08/10 실적 공시 → 08/11 리포트 도배 순서도 맞다.</li>
+<li><strong>⚠ 스캐너 밖 실질 대장 후보</strong>: 정보지에만 있는 <strong>한국콜마 <span style="color:#ef4444;font-weight:700">+22.8%</span></strong>(웹: 한국경제 — 종가 13만7100원, <span style="color:#ef4444;font-weight:700">+27.06%</span> / 2Q 영업익 1103억, 분기 첫 1000억 돌파). 조건검색에 안 잡혔지만 <strong>시총·재료 모두 이 테마의 축</strong>이다. 내일 반드시 같이 봐라.</li>
+<li><strong>후발주</strong>: <strong>한국화장품제조</strong>(501억, 오늘이 확인 범위 내 첫 충족, 11:12 늦은 포착, 종가위치 60%·VWAP <span style="color:#7dabf8;font-weight:700">-2.2%</span>) → 전형적 후발주. <strong>본느</strong>는 08/06부터 5연상 누적 <span style="color:#ef4444;font-weight:700">+119.5%</span> — 같은 테마지만 <strong>이미 끝물</strong>, 진입 대상 아님.</li>
+</ul>
+<p><strong>재료 단계</strong>: <code>기대(07/20 &quot;K뷰티 세 번째 전성기&quot;, 07/08 목표가↑) → <strong>실적 반영</strong>(08/10~08/11 2Q 어닝 서프라이즈 확정)</code> — <strong>1단계 → 4단계, 명확한 단계 상승. 실질 신규 재료다.</strong> (웹: 파이낸셜투데이/코스인코리아 — 코스메카 2Q 매출 2,261억 <span style="color:#ef4444;font-weight:700">+39.8%</span>, 스킨케어 <span style="color:#ef4444;font-weight:700">+94.8%</span>; 코스맥스 2Q 매출 7,949억·영업익 737억, 미국법인 창사 첫 흑자전환.) 웹 등락률(코스맥스 <span style="color:#ef4444;font-weight:700">+16.9%</span>)과 문서(<span style="color:#ef4444;font-weight:700">+13.0%</span>) 차이는 문서가 NXT 세션종가 230,000원, 웹이 KRX 종가 210,000원 기준이라 그렇다 — <strong>정본은 문서</strong>.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 한국콜마·코스맥스가 오늘 고가를 지키며 <strong>거래대금 유지</strong>, 코스메카가 신고가 위에서 눌림 후 재상승, 아직 안 움직인 <strong>실리콘투·씨앤씨인터내셔널·펌텍코리아·달바글로벌</strong>로 대금이 번짐(후발주 확산).</li>
+<li>❌ 아님: 코스메카가 종가위치 57%보다 아래로 갭다운 마감하고 대금이 오늘의 절반 이하 → 실적 발표일 원데이 이벤트로 종료. 본느가 하한가로 무너지면 테마 전체 심리가 꺾인다.</li>
+</ul>
+<hr>
+<h3>【2순위】 로봇 / 피지컬AI — 삼성 휴머노이드 밸류체인</h3>
+<p>정보지 <strong>&quot;로봇 관련주&quot;(정보지B, 11종목) — <code>최근 등장: 오늘 처음</code></strong>. 재료 문구: *&quot;정부가 8월부터 공장 제조데이터를 모으기로 하며 피지컬AI 정책이 첫발을 뗐다&quot;*. 여기에 정보지A의 <strong>&quot;LG그룹주&quot;(오늘 처음) — 구광모·젠슨 황 美 회동, 로봇·AI 인프라 협력</strong>이 겹친다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">090460 비에이치</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.6</span><span class="chip"><i>거래대금(억)</i><strong>2,316</strong></span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i><strong>7.5배</strong></span><span class="chip"><i>직전5일누적%</i><strong>+0.1</strong></span><span class="chip"><i>D+N</i>D+7</span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>없음(<strong>★첫흐름</strong>)</span></div></article>
+<article class="card"><h4 class="c-t">484810 티엑스알로보틱스</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.9</span><span class="chip"><i>거래대금(억)</i>1,407</span><span class="chip"><i>대금30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>1.2배</span><span class="chip"><i>직전5일누적%</i>-9.8</span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>08/03(-6일)외3</span></div></article>
+<article class="card"><h4 class="c-t">059120 아진엑스텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>거래대금(억)</i>574</span><span class="chip"><i>대금30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>1.4배</span><span class="chip"><i>직전5일누적%</i>+13.0</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>07/28(-10일)외1</span></div></article>
+<article class="card"><h4 class="c-t">153890 져스텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+11.4</span><span class="chip"><i>거래대금(억)</i>367</span><span class="chip"><i>대금30일순위</i>8위</span><span class="chip"><i>직전최대대비</i>0.2배</span><span class="chip"><i>직전5일누적%</i>+39.6</span><span class="chip"><i>D+N</i>D+3</span><span class="chip"><i>오늘충족</i>미충족(G1 3)</span><span class="chip"><i>이전충족</i>08/06(-3일)외2</span></div></article>
+</div>
+<p><strong>테마 시작일 추정</strong>: <strong>07/21~07/22</strong>(티엑스알 07/21·07/22 충족, 아진엑스텍 07/21 충족 — 07/22 &quot;삼성전자 로봇 승부수에 로봇주 상한가&quot;와 정확히 일치). 즉 <strong>로봇 테마 자체는 D+13 이상의 구테마</strong>다. <strong>그런데 비에이치만 이 사이클에 오늘 처음 들어왔다.</strong> ★첫흐름 + 대금 30일 1위 + 직전최대 <strong>7.5배</strong> + 직전5일누적 <strong><span style="color:#ef4444;font-weight:700">+0.1%</span>(선반영 전무)</strong> = 지시문의 강한 D+0 조건을 그대로 충족한다. <strong>테마는 D+13, 종목은 D+0.</strong></p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주 = 비에이치 (2,316억, 오늘 리포트 전체 2위 대금)</strong>. 전일 대비 18.1배, 08:06 NXT 프리마켓에서 <span style="color:#ef4444;font-weight:700">+9.7%</span>에 이미 포착 — 정규장 시작 전에 돈이 들어왔다.</li>
+<li><strong>티엑스알로보틱스는 후발주가 아니라 소진주</strong>: 대금 1,407억으로 크지만 08:05 고점 이후 종가위치 <strong>23%</strong>, VWAP <strong><span style="color:#7dabf8;font-weight:700">-6.8%</span></strong>, 직전5일누적 <span style="color:#7dabf8;font-weight:700">-9.8%</span>. 08/03에 이미 충족했던 종목이고 오늘은 <strong>팔고 나간 대금</strong>이다. 절대 대장으로 보지 마라.</li>
+<li><strong>져스텍</strong>은 직전5일누적 <span style="color:#ef4444;font-weight:700">+39.6%</span>로 이미 선반영, D+3. 눌림 관찰만.</li>
+</ul>
+<p><strong>재료 단계</strong>: <code>기대(05/27 &quot;로봇 부품 업체로 봐야&quot;, 06/08 신한 목표가 84%↑) → 기대(08/11 대신증권 &quot;삼성전자 로봇 사업 참여 추진&quot;)</code> — <strong>표면상 같은 단계의 재탕이다.</strong> 그러나 지시문 원칙대로 <strong>주가·대금이 먼저</strong>다: 직전최대 7.5배·대금 30일 1위는 앞선 두 번의 리포트 때 나오지 않았던 자금이다. <strong>시장이 이번에 처음 인정했다.</strong> (웹: 한국경제/로봇신문 — 대신증권 보고서, 관계사 디케이티와 함께 무선충전모듈·장축 R/F PCB 공급, 디케이티가 SMT 담당하는 통합 공급망 구축, 2027년 매출 확대 전망.) 문서 <span style="color:#ef4444;font-weight:700">+20.6%</span>(NXT 세션종가 18,700)와 웹 <span style="color:#ef4444;font-weight:700">+16.83%</span>(KRX 18,120)의 차이는 세션 기준 차이다 — <strong>정본은 문서</strong>.</p>
+<p>정책 재료도 실재한다 (웹: 비즈니스포스트/글로벌이코노믹 — 08/10 이재명 대통령 &quot;정부 로봇 구매 규모 대폭 확대하라&quot; 주문, 2030년까지 휴머노이드 700대 포함 1,000대 이상 공공구매, 10대 업종 데이터팩토리 구축).</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 비에이치가 오늘 정규장 종가 18,120 위에서 시작해 <strong>거래대금 1,000억 이상 유지</strong>, 관계사 <strong>디케이티</strong>로 대금이 번짐(밸류체인 확산의 결정적 증거), 정보지 로봇 종목(에스비비테크·로보스타·TPC로보틱스·피아이이)이 동반 상승.</li>
+<li>❌ 아님: 비에이치가 갭다운 후 VWAP 아래에서 종일 밀리고 티엑스알로보틱스가 추가 하락 → 대신증권 리포트 원데이. 비에이치는 <strong>07/15 회장 지분 고점 매도 후 주가 56% 급락</strong> 이력이 있는 종목이라 오버행 심리가 살아있다.</li>
+</ul>
+<hr>
+<h3>【3순위】 MLCC 공급난 — ⚠ 실질 D+2, 위 둘보다 한 단계 약함</h3>
+<p>정보지 <strong>&quot;MLCC 관련주&quot;(정보지B, 7종목)</strong> — *&quot;납기 16개월, 고객이 2~3배 프리미엄 지불&quot;* 외신 보도.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">126730 코칩</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.7</span><span class="chip"><i>거래대금(억)</i><strong>681</strong></span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i><strong>2.1배</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>★29봉</span><span class="chip"><i>이전충족</i>08/07(-2일)외1</span></div></article>
+<article class="card"><h4 class="c-t">457370 한켐</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.7</span><span class="chip"><i>거래대금(억)</i>468</span><span class="chip"><i>대금30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i><strong>2.5배</strong></span><span class="chip"><i>오늘충족</i>★10봉</span><span class="chip"><i>이전충족</i>08/07(-2일)</span></div></article>
+</div>
+<p><strong>테마 시작일 추정</strong>: <strong>08/07</strong> — 두 종목 모두 그날 충족(코칩 33봉, 한켐 26봉). <strong>오늘은 D+2다. 신규 진입일이 아니다.</strong> 다만 <strong>둘 다 직전최대 대비 2배 이상</strong>(2.1배·2.5배)이라 지시문 기준 &#x27;성격이 다른 자금&#x27;이 오늘 새로 들어온 것은 맞다. 정보지도 오늘 처음 테마명을 붙였다. <strong>테마 이름은 오늘 붙었지만 돈은 3일 전에 들어왔다</strong> — 전형적인 &quot;뉴스가 후행한&quot; 케이스.</p>
+<p><strong>대장주 / 후발주</strong>: 대장 = <strong>코칩(681억, 종가 상한가·VWAP <span style="color:#ef4444;font-weight:700">+11.4%</span>)</strong>. 한켐은 468억이지만 13:31 고점 후 <span style="color:#7dabf8;font-weight:700">-12.3%</span> 밀려 종가위치 46%·VWAP <span style="color:#7dabf8;font-weight:700">-3.6%</span> → <strong>오늘 물린 자리</strong>. 스캐너 밖 <strong>삼화콘덴서·삼성전기·지에스아이</strong>가 시총 기준 실질 대장 (웹: 삼화콘덴서 <span style="color:#ef4444;font-weight:700">+18.23%</span>, 사상 최고가 181,500원 / 뉴스버즈 10:20 &quot;지아이에스, MLCC 수주 급증에 캐파 확대, 누적 수주잔고 180% 증가&quot;).</p>
+<p><strong>재료 단계</strong>: <code>기대(06/22 &quot;납기 5개월로 증가&quot;) → <strong>확정</strong>(07월말 삼성전기 등 8월 출하분 가격 인상 통보, 08/11 납기 16개월·프리미엄 2~3배 보도)</code> — <strong>단계 상승, 실질 신규 사이클.</strong> (웹: 글로벌이코노믹/헤럴드경제/TrendForce.) 단 문서의 &quot;16개월&quot;은 웹에서 5개월까지만 확인됐다 — 정보지 원문 숫자는 검증 안 됨.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 코칩이 상한가 다음날 <strong>갭 유지 + 대금 500억 이상</strong>, 삼성전기·삼화콘덴서로 대금이 확산(대형주 확인 = 테마 진짜).</li>
+<li>❌ 아님: 한켐이 오늘 저가 8,180 이탈, 코칩 시초 갭다운 → D+2 소진.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<p><strong>호남반도체·건설 (실질 D+8) — ⚠ 오늘 상한가가 가장 많이 나온 곳이지만 신규 진입 금지</strong> 금호건설 <span style="color:#ef4444;font-weight:700">+30.0%</span>(1,431억) / 남화토건 <span style="color:#ef4444;font-weight:700">+30.0%</span>(110억) / 서산 <span style="color:#ef4444;font-weight:700">+29.9%</span>(545억) / 동양파일 <span style="color:#ef4444;font-weight:700">+29.9%</span>(53억) / 다스코 <span style="color:#ef4444;font-weight:700">+10.3%</span>(367억) / 금호전기 <span style="color:#ef4444;font-weight:700">+29.9%</span>(84억). 재료는 진짜다 (웹: 서울신문/파이낸셜뉴스 — 08/10~11 국무회의, 이 대통령 &quot;속도전 넘어 전격전&quot;, 4년 내 첫 양산, 2028년 중순까지 광주 군공항 이전 지시). <strong>그런데 돈이 안 들어왔다.</strong> 금호건설 대금 30일순위 <strong>11위·직전최대 0.28배</strong>, 남화토건 9위·0.17배, 동양파일 11위·0.10배 — <strong>상한가인데 30일 최대 대금의 1/4~1/10</strong>이다. 30일급등일수도 금호건설 14회, 서산 15회. 06/25~07/01에 이미 4연상으로 다 터진 자리의 <strong>재탕</strong>이다. 서산·다스코가 ★첫흐름이지만 이건 대장이 아니라 <strong>막차 후발주</strong>라는 뜻이다. → 눌림도 보지 마라. <strong>제외.</strong></p>
+<p><strong>반도체 소부장 (D+1)</strong> — 주성엔지니어링 <span style="color:#ef4444;font-weight:700">+12.2%</span>(5,215억, 오늘 대금 1위지만 30일순위 <strong>6위</strong>·직전최대 0.34배) / 예스티 <span style="color:#ef4444;font-weight:700">+14.1%</span>(185억, D+7) / SFA반도체 <span style="color:#ef4444;font-weight:700">+11.6%</span>(414억, D+1) / 인텍플러스 <span style="color:#ef4444;font-weight:700">+10.2%</span>(159억, D+7) / 지앤비에스에코 <span style="color:#ef4444;font-weight:700">+16.6%</span>(121억, ★첫흐름). 정보지 &quot;반도체&quot; <strong>3일 연속 등장(08/07·08/10·08/11)</strong> = 진행 중. 08/10 SK하이닉스 투자규모 확정이 기점. 눌림 관찰만.</p>
+<p><strong>게임 (D+1)</strong> — NHN <span style="color:#ef4444;font-weight:700">+29.8%</span>(1,470억, 2Q 영업익 <span style="color:#ef4444;font-weight:700">+164.1%</span> 역대 최대, 대금 30일 1위·5.2배) / 위메이드맥스 <span style="color:#ef4444;font-weight:700">+29.9%</span>(344억) / 위메이드 <span style="color:#ef4444;font-weight:700">+11.0%</span>(619억, 08:16 고점 후 <span style="color:#7dabf8;font-weight:700">-14.9%</span>, 종가위치 33%). NHN은 실적 확정 재료로 질이 좋으나 D+5. 위메이드는 오늘 <strong>실적 발표 전 기대감</strong>만으로 오른 뒤 밀렸다 — 위험.</p>
+<p><strong>AI 데이터센터 전력 (D+2)</strong> — 혜인 <span style="color:#ef4444;font-weight:700">+19.4%</span>(751억, 대금 30일 1위, 이전충족 08/07). 문서엔 뉴스가 없지만 웹에서 확인됨 (웹: 컨슈머타임스/아주경제 — 캐터필러의 엔비디아 AI 프로젝트 참여·2GW 가스발전기 공급계약, 혜인은 캐터필러 한국 공식딜러). <strong>재료 미상이 아니라 재료 확인됨.</strong> 다만 08/07 <span style="color:#ef4444;font-weight:700">+29.9%</span>가 실질 시작일이라 D+2, 종가위치 60%.</p>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>001060 JW중외제약</strong> <span style="color:#ef4444;font-weight:700">+15.0%</span>(152억) · <strong>D+0</strong> · 대금 30일 1위·직전최대 5.8배 · 30일급등일수 0. <strong>통풍 신약 &#x27;에파미뉴라드&#x27; 다국가 임상 3상 성공</strong> — 재료 단계 <code>협의 → 확정(3상 유효성 입증, 내년 국내 허가 목표)</code>. 뉴스버즈 최초 <strong>00:01</strong>(주간한국)로 장 시작 전 공개 → 뉴스 선행, 주가 후행. <strong>개별주로는 오늘 가장 깨끗한 D+0.</strong> 정보지 &quot;제약 관련주&quot;엔 있으나 동반 종목이 샤페론(관리종목 이슈, 무관)뿐이라 테마 성립 안 함.</li>
+<li><strong>128660 피제이메탈</strong> <span style="color:#ef4444;font-weight:700">+10.7%</span>(129억) · <strong>D+0</strong> · <strong>전일 대비 67.9배(리포트 최대)</strong> · 직전최대 <strong>20.6배</strong> · 30일급등일수 0 · 직전5일누적 <span style="color:#ef4444;font-weight:700">+4.6%</span>. 2Q 영업익 118억 흑자전환. <strong>완전 신규 자금이 들어온 종목</strong>이지만 대금 절대액 129억으로 작고 동반 종목이 없다. 정보지 &#x27;전선 관련주&#x27;(금호전기·대원전선 등)와 알루미늄 업종상 연결 가능성만 있음 — <strong>근거 부족</strong>. 내일 대금이 유지되면 그때 테마화 여부를 본다.</li>
+<li><strong>043150 바텍</strong> <span style="color:#ef4444;font-weight:700">+10.7%</span>(178억) · <strong>D+0</strong> · ★첫흐름 · 직전최대 11.3배 · 2Q 매출 1,214억·영업익 245억. <strong>⚠ 충족 1봉뿐</strong>이고 포착 시점 순매수가 <strong>-14억(<span style="color:#7dabf8;font-weight:700">-11.4%</span>)</strong> — 수급이 오히려 빠져나가는 중에 잡힌 신호다. 신뢰도 낮음. 다만 같은 치과 의료기기인 <strong>레이(228670)</strong>가 오늘 장 초반 고가 <span style="color:#ef4444;font-weight:700">+29.9%</span>를 찍고 <span style="color:#7dabf8;font-weight:700">-3.2%</span>로 마감(대금 전일 41.8배, 30일 1위)한 것과 <strong>동시성</strong>이 있다 — 두 종목 동시 장중 급등은 우연이 아닐 수 있으나 <strong>재료 미상 · 근거 부족</strong>. 레이는 고점 대비 <span style="color:#7dabf8;font-weight:700">-26%</span> 붕괴로 실패한 급등이니 따라가지 마라.</li>
+<li><strong>025320 시노펙스</strong> <span style="color:#ef4444;font-weight:700">+12.5%</span>(511억, D+6) — 국내 최초 인공신장기 식약처 품목허가. 재료 단계 <code>MOU/개발(05~08월) → 승인(08/11)</code>으로 <strong>단계 상승</strong>했으나 D+6에 직전5일누적 <span style="color:#ef4444;font-weight:700">+13.7%</span>, 대금 30일 2위·직전최대 0.68배로 <strong>자금이 안 따라왔다.</strong> 지시문대로 D+0로 승격시키지 않는다.</li>
+<li><strong>225190 LK삼양</strong> <span style="color:#ef4444;font-weight:700">+29.9%</span>(88억, D+1) — 국방부 드론 카메라 모듈 공급, 이틀째 상한가. 우주/드론. 대금 88억으로 너무 작다.</li>
+<li><strong>005360 모나미</strong> <span style="color:#ef4444;font-weight:700">+19.2%</span>(261억, <strong>D+18</strong>) — 광복절 애국소비. 07월 애국테마의 <code>기대→기대</code> 재탕, 30일고가대비 <span style="color:#7dabf8;font-weight:700">-56.9%</span>. <strong>제외.</strong></li>
+<li><strong>148780 비큐AI</strong>(D+3, 직전5일누적 <span style="color:#ef4444;font-weight:700">+75.7%</span>), <strong>189330 씨이랩</strong>(D+1, <span style="color:#ef4444;font-weight:700">+42.0%</span>), <strong>153890 져스텍</strong>(D+3, <span style="color:#ef4444;font-weight:700">+39.6%</span>) — 모두 선반영 과다.</li>
+<li><strong>900340 윙입푸드</strong> <span style="color:#7dabf8;font-weight:700">-9.9%</span>, <strong>228670 레이</strong> <span style="color:#7dabf8;font-weight:700">-3.2%</span> — 고점 붕괴. 관심 대상 아님.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>K뷰티 화장품 ODM (2분기 어닝 서프라이즈). 정보지 &#x27;화장품&#x27; 테마 오늘 첫 등장, D+0 종목 2개(코스맥스·한국화장품제조) 포함, 4종목 전부 대금 30일 1~2위.</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>표면 대장 = 마녀공장 1,843억 (단 유통 1,330억·회전 138.6%로 물량이 얇음) 실질 대장 = 코스메카코리아 1,380억 (재료 진원 + 유통시총 7,013억, 돈의 질이 다름) ⚠ 스캐너 밖 진짜 축 = 한국콜마 <span style="color:#ef4444;font-weight:700">+22.8%</span>(정보지) / <span style="color:#ef4444;font-weight:700">+27.06%</span>(웹: 한국경제)</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>코스메카코리아 · 코스맥스 : 기대(수출 호조) → 실적 반영(2Q 최대 실적 확정). 1→4단계. JW중외제약 : 협의 → 확정(통풍 3상 유효성 입증, 내년 허가 목표). 코칩 · 한켐 : 기대(납기 지연) → 확정(8월 출하분 가격 인상 + 프리미엄 지불). ※ 시노펙스는 단계는 올랐으나(허가 승인) 대금이 안 붙어 D+0로 안 봄.</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>한국화장품제조(501억, 11:12 늦은 포착, 종가위치 60%) — 화장품 후발 서산 · 다스코(★첫흐름이지만 호남반도체 D+8의 막차) 한켐(468억, 고점 후 <span style="color:#7dabf8;font-weight:700">-12.3%</span>, VWAP <span style="color:#7dabf8;font-weight:700">-3.6%</span>) — MLCC 후발 ※ 티엑스알로보틱스(1,407억)는 후발주가 아니라 &#x27;소진주&#x27;. 종가위치 23%·VWAP <span style="color:#7dabf8;font-weight:700">-6.8%</span>.</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>비에이치(2,316억, 로봇 대장, 직전최대 7.5배·선반영 0%) — 2순위 D+0 디케이티(비에이치 관계사, SMT 담당 — 스캐너 밖, 확산 여부의 핵심 증거) 실리콘투 · 씨앤씨인터내셔널 · 펌텍코리아 · 달바글로벌(정보지 화장품 ∖ 조건검색 = 후발주 후보) 삼화콘덴서 · 삼성전기 · 지에스아이(정보지 MLCC ∖ 조건검색) JW중외제약(단독이지만 D+0 조건은 가장 깨끗)</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>주성엔지니어링(D+1, 대금 30일 6위) · SFA반도체(D+1) · NHN(D+5, 실적 확정) · 혜인(D+2) ※ 호남반도체(금호건설·남화토건·동양파일·서산·금호전기)는 눌림도 보지 말 것. 상한가 6개인데 대금 순위가 9~13위 = 돈이 안 들어온 재탕.</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>한국콜마·코스맥스 시간외/프리마켓 호가. 화장품 ODM 대형주가 갭업 유지면</li>
+</ol>
+<p>테마 확산(D+1 정상 진행), 갭다운이면 실적일 원데이 이벤트로 종료. 동시에 코스메카가 오늘 종가 109,400 위를 지키는지.</p>
+<ol>
+<li>비에이치 프리마켓(08:00~) 대금. 오늘 08:06에 이미 <span style="color:#ef4444;font-weight:700">+9.7%</span>로 포착됐던 종목이라</li>
+</ol>
+<p>내일도 프리마켓에서 대금이 붙는지가 진짜/가짜를 가른다. 디케이티 동반 여부 확인.</p>
+<ol>
+<li>금호건설·서산 시초가. 4연상 자리(06/26~07/01)의 재탕인지 진짜 2차 랠리인지는</li>
+</ol>
+<p>&#x27;거래대금이 30일 1위로 올라오는가&#x27; 하나로 판정한다. 오늘은 11위였다. 대금이 안 오르면 상한가여도 전량 제외. ```</p>
+<p><strong>웹 검색</strong>: 사용함(6회). 화장품 ODM 실적·비에이치 로봇 리포트·정부 피지컬AI 정책·호남 반도체 국무회의·MLCC 공급난·혜인 캐터필러 건은 모두 언론 기사로 교차 확인됨. <strong>한국화장품제조·피제이메탈·바텍의 오늘 급등 사유</strong>는 문서에도 웹에서도 개별 재료가 확인되지 않았다 — 화장품 테마 동반(한국화장품제조), 실적 흑자전환(피제이메탈·바텍) 외 추가 재료는 <strong>확인 안 됨</strong>.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>[코스메카코리아, 2분기 매출 2261억원 (파이낸셜투데이)](https://www.ftoday.co.kr/news/articleView.html?idxno=363363)</li>
+<li>[&#x27;만년 3위&#x27;의 반란…K뷰티 ODM 투톱 누른 코스메카코리아 (한국경제)](https://www.hankyung.com/article/202608114308i)</li>
+<li>[코스맥스, 2분기 실적 호조로 52주 최고가 (코스인코리아)](https://www.cosinkorea.com/news/article.html?no=58056)</li>
+<li>[비에이치, 삼성전자 휴머노이드 로봇 공급망 진입 기대에 17% 급등 (한국경제)](https://www.hankyung.com/article/202608114376i)</li>
+<li>[대신증권 &quot;비에이치, 삼성전자 로봇 사업 참여 추진&quot; (로봇신문)](https://www.irobotnews.com/news/articleView.html?idxno=47857)</li>
+<li>[이재명 피지컬AI 맞춰 &quot;정부의 로봇 구매 대폭 늘리라&quot; (비즈니스포스트)](https://www.businesspost.co.kr/BP?command=article_view&amp;num=444472)</li>
+<li>[&#x27;2년 내 착공&#x27; 호남반도체 전격전 (서울신문)](https://www.seoul.co.kr/news/politics/2026/08/11/20260811001004)</li>
+<li>[호남 반도체 클러스터 로드맵…4년내 1차 완공·가동 (파이낸셜뉴스)](https://www.fnnews.com/news/202608111154590990)</li>
+<li>[메모리 슈퍼사이클 같이 올라탄 MLCC…없어서 못 판다 (글로벌이코노믹)](https://www.g-enews.com/article/Industry/2026/07/20260731134437479127fa31d75c_1)</li>
+<li>[[특징주] 혜인, 캐터필러 엔비디아 AI 프로젝트 참여에 상승 (컨슈머타임스)](https://www.cstimes.com/news/articleView.html?idxno=702547)</li>
+</ul>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-08-12 22:54
+</p>
+</article></div>
+</body></html>
