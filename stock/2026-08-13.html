@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-08-13 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-08-13</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-08-13 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>오늘 돈은 <strong>전력기기·AI 데이터센터 인프라</strong>로 다시 크게 몰렸다 — 삼화콘덴서 4,176억(30일 대금 1위)·지엔씨에너지 2,778억·지투파워 792억(전일 73배)·보성파워텍 734억(전일 11.7배)이 동시에 터졌다. 두 번째 축은 <strong>VC·스페이스X 밸류체인</strong>이 09:09~10:51에 나란히 충족한 것, 세 번째는 <strong>로봇·휴머노이드 부품</strong>이 오후 14시대에 동시 점화된 것이다. 다만 <strong>순수 D+0은 거의 없는 날</strong>로, 문서상 D+0은 디알텍(11억)·에이유브랜즈(154억) 둘뿐이며 둘 다 대금이 작고 서로 무관해 테마를 이루지 못한다. 큰 돈이 들어온 종목은 대부분 D+6~D+9, 즉 7월말~8월초 사이클의 2차 파동이다.</p>
+<p><strong>신규 점화</strong>: 순수 D+0 기준으로는 없음. 대신 &#x27;실질 D+0&#x27;(첫흐름 + 대금 신고 + 재료 단계 상승) 2개 — 한라캐스트·지투파워 — 를 보조 기준으로 잡았으며, 이는 엄밀한 D+0이 아니므로 확신도를 한 단계 낮춰야 한다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">로봇·휴머노이드 부품</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>한라캐스트 &quot;미 빅테크서 로봇 부품 또 따냈다&quot;(14:38) / 대동 레인보우로보틱스 공동개발 추진(17:32 <strong>마감 후</strong>)</p><p class="c-p"><span class="c-k">수식충족</span>대동·한라캐스트·삼기</p><p class="c-p"><span class="c-k">신선도</span>한라캐스트 기대→확정 1→3 상승</p><p class="c-p"><span class="c-k">판단</span><strong>1순위 실질 D+0</strong> — 한라캐스트가 ★첫흐름+대금 30일 1위+주가 17분 선행+종가위치 78%</p><div class="c-c"><span class="chip"><i>정보지</i>없음(수집 안 함)</span></div></article>
+<article class="card"><h4 class="c-t">전력기기·AI 데이터센터</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>지투파워 액침형 ESS 국내 최초 CB 인증(12:43) / 삼화콘덴서 전력 인프라 수요 기대(10:36)</p><p class="c-p"><span class="c-k">수식충족</span>삼화콘덴서·지엔씨에너지·지투파워·보성파워텍·비나텍</p><p class="c-p"><span class="c-k">신선도</span>지투파워 기대→확정 1→3 / 삼화 기대→기대 재탕</p><p class="c-p"><span class="c-k">판단</span><strong>2순위 실질 D+0</strong> — 테마 시작일 07/23~07/31 <strong>추정</strong>, 오늘은 D+7~D+9 2차 파동</p><div class="c-c"><span class="chip"><i>정보지</i>없음(수집 안 함)</span></div></article>
+<article class="card"><h4 class="c-t">VC·스페이스X 밸류체인</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>스페이스X IPO 기대감(10:12) / 미래에셋벤처 정책기관 출자펀드 9,000억 돌파 전망(09:33)</p><p class="c-p"><span class="c-k">수식충족</span>미래에셋벤처투자·아주IB투자·SV인베스트먼트·LK삼양</p><p class="c-p"><span class="c-k">신선도</span>기대→기대 <strong>재탕, 신선도 낮음</strong></p><p class="c-p"><span class="c-k">판단</span><strong>D+3 진행 중, 신규 진입 대상 아님</strong> — 시작일 08/10</p><div class="c-c"><span class="chip"><i>정보지</i>없음(수집 안 함)</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>로봇·휴머노이드 부품</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한라캐스트(125490)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 3.8배 / 종가위치 78%·VWAP <span style="color:#ef4444;font-weight:700">+3.2%</span> / 충족 14:21 → 보도 14:38로 <strong>17분 선행</strong> / 실질 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>19봉(14:21)</span><span class="chip"><i>등락%</i>+21.3</span><span class="chip"><i>대금</i>699억</span></div></article>
+<article class="card"><h4 class="c-t">대동(000490)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 전일 30.6배 / 직전최대 2.1배 / 종가위치 43%·VWAP <span style="color:#7dabf8;font-weight:700">-5.6%</span>로 마감 약함 / 로봇 뉴스는 17:32 마감 후 → 11:41 충족은 <strong>재료 미상, 주가 선행</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>2봉(11:41)</span><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>대금</i>735억</span></div></article>
+<article class="card"><h4 class="c-t">삼기(122350)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/04에 이미 충족</strong> / 대금 30일 8위 / 직전최대 0.4배 / 명백한 후발·잔여 반응</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/04</span><span class="chip"><i>충족봉</i>5봉(14:03)</span><span class="chip"><i>등락%</i>+4.2</span><span class="chip"><i>대금</i>194억</span></div></article>
+</div>
+<h3>전력기기·AI 데이터센터 전력 인프라</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">지투파워(388050)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 <strong>24.3배</strong> / 전일 73배 / 상한가 종가위치 100% / 뉴스 12:43 → 충족 13:03로 <strong>선행 아님, 뉴스 반응형</strong> / D+9지만 실질 D+0일 수 있음</p><div class="c-c"><span class="chip"><i>첫흐름</i>오늘 첫 충족(이전충족 없음)</span><span class="chip"><i>충족봉</i>55봉(13:03)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>792억</span></div></article>
+<article class="card"><h4 class="c-t">삼화콘덴서(001820)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/11에 이미 충족</strong>(= 먼저 움직인 종목) / 대금 30일 1위 / 직전최대 2.0배 / 충족 09:30 → 보도 10:36로 주가 선행 / 종가위치 61%·VWAP <span style="color:#7dabf8;font-weight:700">-0.5%</span> / D+9 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/11</span><span class="chip"><i>충족봉</i>1봉(09:30)</span><span class="chip"><i>등락%</i>+17.4</span><span class="chip"><i>대금</i>4,176억</span></div></article>
+<article class="card"><h4 class="c-t">지엔씨에너지(119850)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/04 외 4회 이미 충족</strong>(원조 대장) / 대금 30일 3위 / 직전최대 0.7배로 신규 자금 아님 / 오늘 신규 계약 공시 확인 안 됨 / D+7</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/04 외4</span><span class="chip"><i>충족봉</i>6봉(09:05)</span><span class="chip"><i>등락%</i>+23.4</span><span class="chip"><i>대금</i>2,778억</span></div></article>
+<article class="card"><h4 class="c-t">보성파워텍(006910)</h4><p class="c-p"><span class="c-k">근거</span><strong>07/23에 이미 충족</strong> / 대금 30일 1위 / 직전최대 4.0배 / 전일 11.7배 / 14:24 늦은 충족, 대장의 1/5 대금 → 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/23</span><span class="chip"><i>충족봉</i>27봉(14:24)</span><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>대금</i>734억</span></div></article>
+<article class="card"><h4 class="c-t">비나텍(126340)</h4><p class="c-p"><span class="c-k">근거</span><strong>06/30에 이미 충족</strong> / 대금 30일 2위 / 직전최대 0.7배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 06/30</span><span class="chip"><i>충족봉</i>5봉(08:15)</span><span class="chip"><i>등락%</i>+9.2</span><span class="chip"><i>대금</i>463억</span></div></article>
+</div>
+<h3>VC·스페이스X 밸류체인 (D+3, 신규 진입 대상 아님)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">미래에셋벤처투자(100790)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위, 테마 대장 / 단 <strong>종가위치 11%·VWAP <span style="color:#7dabf8;font-weight:700">-6.4%</span></strong>, 09:22 고점 후 343분간 <span style="color:#7dabf8;font-weight:700">-13.9%</span> 최악 마감 / 충족 09:09 → 보도 09:33로 주가 선행</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>25봉(09:09)</span><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>대금</i>1,195억</span></div></article>
+<article class="card"><h4 class="c-t">SV인베스트먼트(289080)</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 20.5배·전일 37.7배로 자금 성격은 새로움 / 종가위치 17%로 전량 반납</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>37봉(10:51)</span><span class="chip"><i>등락%</i>+3.5</span><span class="chip"><i>대금</i>210억</span></div></article>
+<article class="card"><h4 class="c-t">LK삼양(225190)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/11 외 2회 이미 충족</strong> / 대금 30일 1위 / 종가위치 48% / D+2</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/11 외2</span><span class="chip"><i>충족봉</i>6봉(09:46)</span><span class="chip"><i>등락%</i>+10.1</span><span class="chip"><i>대금</i>406억</span></div></article>
+<article class="card"><h4 class="c-t">아주IB투자(027360)</h4><p class="c-p"><span class="c-k">근거</span><strong>08/10에 이미 충족</strong> / 대금 30일 2위, 대장의 1/4 / 상한가 종가위치 100%이나 등락률상 후발주가 더 세 보이는 전형 / D+3</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/10</span><span class="chip"><i>충족봉</i>27봉(09:09)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>305억</span></div></article>
+</div>
+<h3>개별 (테마 아님)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">디알텍(214680)</h4><p class="c-p"><span class="c-k">첫흐름</span><strong>★첫흐름</strong></p><p class="c-p"><span class="c-k">근거</span><strong>D+0</strong> + 30일급등일수 0 → 지표상 가장 깨끗한 신규 / 단 유통회전 1.6%, 뉴스 10:02 → 충족 10:03 <strong>후행 매수</strong> / 규모상 매매 대상 아님</p><div class="c-c"><span class="chip"><i>충족봉</i>10:03</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i><strong>11억</strong></span></div></article>
+<article class="card"><h4 class="c-t">한화생명(088350)</h4><p class="c-p"><span class="c-k">첫흐름</span><strong>★첫흐름</strong></p><p class="c-p"><span class="c-k">근거</span>2Q 순익 <span style="color:#ef4444;font-weight:700">+355%</span> 어닝서프라이즈 / 충족 09:07 → 보도 09:18로 11분 선행 / 09:10 고가 후 287분간 <span style="color:#7dabf8;font-weight:700">-11.0%</span>, <strong>종가위치 16.5%</strong> / 시총 4.4조, 추격 불가</p><div class="c-c"><span class="chip"><i>충족봉</i>09:07</span><span class="chip"><i>등락%</i>+7.0</span><span class="chip"><i>대금</i>755억</span></div></article>
+<article class="card"><h4 class="c-t">에이유브랜즈(481070)</h4><p class="c-p"><span class="c-k">첫흐름</span><strong>첫흐름 미확인</strong>(29일전 <span style="color:#ef4444;font-weight:700">+11%</span>)</p><p class="c-p"><span class="c-k">근거</span><strong>D+0</strong> / 대금 30일 1위·직전최대 9.6배로 자금 성격은 새로움 / 단 절대액 작고 순매수집중 <strong>2.4%</strong>(사실상 쏠림 없음)가 결정적 약점 / 동반 종목 없음</p><div class="c-c"><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+12.3</span><span class="chip"><i>대금</i>154억</span></div></article>
+<article class="card"><h4 class="c-t">범한퓨얼셀 · 일진하이솔루스</h4><p class="c-p"><span class="c-k">첫흐름</span>범한 — / 일진 <strong>첫흐름 미확인</strong>(24일전 <span style="color:#ef4444;font-weight:700">+28%</span>)</p><p class="c-p"><span class="c-k">근거</span>수소·연료전지 D+9 / 종가위치 40%·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>, 24%·VWAP <span style="color:#7dabf8;font-weight:700">-7.4%</span> / <strong>둘 다 마감 질 나쁨, 눌림 확인 전 진입 금지</strong></p><div class="c-c"><span class="chip"><i>충족봉</i>08:24 / 08:19 프리장</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>379억 / 140억</span></div></article>
+<article class="card"><h4 class="c-t">이노테크(—) · 미래산업(—)</h4><p class="c-p"><span class="c-k">첫흐름</span>이전충족 08/12</p><p class="c-p"><span class="c-k">근거</span>반도체 후공정 D+1 / <strong>08/12에 이미 충족</strong> / 이노테크 직전5일 <span style="color:#ef4444;font-weight:700">+22.1%</span>, 종가위치 57% / 눌림 관찰만</p><div class="c-c"><span class="chip"><i>충족봉</i>이노테크 12:55</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>1,182억 / 202억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">전력기기·AI 데이터센터</h4><p class="c-p"><span class="c-k">종목</span>코칩(126730)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+3.9%</span>, 대금 714억(30일 1위)인데 오늘 미충족 — 돈만 들어오고 아직 안 튄 전형 / 이전충족 08/11 외1 / 직전최대 1.0배</p></article>
+<article class="card"><h4 class="c-t">전력기기·AI 데이터센터</h4><p class="c-p"><span class="c-k">종목</span>덕산하이메탈(077360)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+3.6%</span>, 대금 188억(30일 1위)이나 이전충족 없음 / 직전최대 1.5배 — 동일 성격</p></article>
+<article class="card"><h4 class="c-t">로봇·휴머노이드 부품</h4><p class="c-p"><span class="c-k">종목</span>삼기에너지솔루션즈(419050)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+19.2%</span>, 409억, D+7 / 상반기 역대 최대 매출(15:10) 실적 반응 / 전일 41배지만 직전최대 0.29배·30일 4위 / 삼기와 동반이나 오늘 미충족</p></article>
+<article class="card"><h4 class="c-t">제약·바이오</h4><p class="c-p"><span class="c-k">종목</span>코오롱티슈진(—)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+6, 대금 1,530억이나 08/05 충족 이후 오늘 미충족 = <strong>수급 쏠림 없이 오른 것</strong> / 30일고가대비 <span style="color:#7dabf8;font-weight:700">-73.6%</span>, 직전5일 <span style="color:#ef4444;font-weight:700">+14.4%</span> / 추격 대상 아님</p></article>
+<article class="card"><h4 class="c-t">제약·바이오</h4><p class="c-p"><span class="c-k">종목</span>프로티나(—) · 알지노믹스(—)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>101억(D+3) / 202억 — 진행 중 구간</p></article>
+<article class="card"><h4 class="c-t">범금호그룹주</h4><p class="c-p"><span class="c-k">종목</span>금호건설(—) · 금호전기(—)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>금호건설 오늘 <span style="color:#7dabf8;font-weight:700">-3.8%</span>, 고가 <span style="color:#ef4444;font-weight:700">+20.8%</span>에서 종가위치 5%(위꼬리 <span style="color:#7dabf8;font-weight:700">-21.5%</span>) 물량 털기 / 직전5일 금호건설 <span style="color:#ef4444;font-weight:700">+50.4%</span>·금호전기 <span style="color:#ef4444;font-weight:700">+44.3%</span> / <strong>후반부, 제외</strong></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>씨이랩(—)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+2, 직전5일 <span style="color:#ef4444;font-weight:700">+38.5%</span>, 대금 30일 5위인데 오늘 미충족 — 선반영 큼, 제외</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>져스텍(—)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 883억으로 크나 미충족, 직전5일 <span style="color:#ef4444;font-weight:700">+44.7%</span> 선반영 — 관찰만</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>서흥(008490)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><strong><span style="color:#7dabf8;font-weight:700">-7.3%</span></strong>, 154억 / 08:07 고가 <span style="color:#ef4444;font-weight:700">+20.7%</span> → <span style="color:#7dabf8;font-weight:700">-24.2%</span> 붕괴, 프리장 급등 후 정규장 전량 반납 / 08/10 충족 사이클 종료 신호</p></article>
+<article class="card"><h4 class="c-t">재료 미상</h4><p class="c-p"><span class="c-k">종목</span>이브이첨단소재(131400) · 윈팩(097800) · 엣지파운드리(105550) · 링크드(193250)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>이브이 <span style="color:#ef4444;font-weight:700">+30.0%</span>/102억(D+16, <code>재료 미상 — 주가 선행 추정</code>) / 윈팩 <span style="color:#ef4444;font-weight:700">+29.9%</span>/45억(D+23, 뉴스 0건 <code>재료 미상 — 확인 필요</code>) / 엣지파운드리 <span style="color:#ef4444;font-weight:700">+29.8%</span>/16억·링크드 <span style="color:#ef4444;font-weight:700">+29.7%</span>/28억은 <strong>대금 극소, 품절주·작전 성격, 접근 금지</strong></p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 — 오늘은 증권 정보지를 수집하지 않은 날이다. 테마 분류는 주가·거래대금 동시성과 사업내용으로 직접 묶었으며, 테마 신선도를 외부 검증하지 못했다.</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>한라캐스트</strong> &quot;미 빅테크 로봇 부품 수주&quot;의 실체 — 계약 규모·상대처가 <strong>공시로 확인되면 진짜</strong>, 공시 없이 기사만이면 1일 소재로 끝날 확률이 높다. 종가(10,830) 위 시작 + 대금 300억 이상 유지가 기준, 오늘의 1/3 이하 급감이면 아니다.</li>
+<li><strong>대동</strong>의 마감후(17:32) 레인보우로보틱스 공동개발 뉴스가 갭으로 반영되는지 — <strong>반영되면 로봇 테마가 오늘 D+0으로 확정</strong>, 마감후 호재에도 시가 위 못 지키면 소재 소멸.</li>
+<li><strong>지투파워</strong> CB 인증 후속(인증→수주 공시)이 붙는가 — 상한가 다음날 대금이 오늘 792억의 <strong>절반 이상 유지면 진짜</strong>, 급감하면 인증 1일 소재. 같은 축의 코칩·덕산하이메탈이 내일 충족으로 넘어오면 3차 파동 신호.</li>
+<li><strong>삼화콘덴서</strong>가 종가위치 61%·VWAP <span style="color:#7dabf8;font-weight:700">-0.5%</span>에서 더 밀려 시가 아래 마감하면 전력기기 축은 아니다.</li>
+<li><strong>VC·스페이스X 축의 생사</strong> — 미래에셋벤처투자(종가위치 11%)·SV인베스트먼트(17%)가 갭 하락 출발이면 08/10 사이클 종료(현재 이쪽이 우세). 이 경우 아주IB투자 상한가도 갭 메우기 가능성이 높으니 <strong>절대 추격 금지</strong>. 미래에셋벤처가 종가 17,570 아래로 안 빠지고 스페이스X 상장 일정 확정 뉴스가 나오면 재점화.</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 리포트 분석 — 2026-08-13 (목) 장마감</h1>
+<p>기준일: 2026-08-13 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p><strong>검색 불가</strong> — 이 환경에서는 웹 검색 도구를 실제로 호출하지 않았다(파일·외부조회 없이 주어진 문서만으로 판단하라는 지시에 따름). 따라서 아래 모든 근거는 <strong>문서 내부 데이터(스캐너 표·뉴스 버즈·재료 이력)</strong> 뿐이다. 웹 표기(<code>웹: 매체명</code>)는 하나도 없다.</p></blockquote>
+<blockquote><p><strong>정보지 교차 절 없음</strong> — 오늘은 증권 정보지를 수집하지 않은 날이다. 테마 분류는 주가·거래대금 동시성과 사업내용으로 직접 묶었다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 시장의 돈은 <strong>전력기기·AI 데이터센터 인프라</strong>로 다시 크게 몰렸다 — 삼화콘덴서(4,176억, 30일 대금 1위)·지엔씨에너지(2,778억)·지투파워(792억, 전일 73배)·보성파워텍(734억, 전일 11.7배)이 동시에 터졌고, 이 중 지투파워·보성파워텍·삼화콘덴서가 오늘 대금 30일 1위를 새로 찍었다. 두 번째 축은 <strong>VC·스페이스X 밸류체인</strong>(미래에셋벤처투자 1,195억·아주IB투자 305억·SV인베스트먼트 210억)이 09:09~10:51에 나란히 충족한 것이고, 세 번째로 <strong>로봇·휴머노이드 부품</strong>(한라캐스트 699억 + 대동 735억 + 삼기 194억)이 오후 14시대에 동시 점화됐다. 다만 냉정히 말하면 <strong>오늘은 순수 D+0이 거의 없는 날</strong>이다. 문서가 D+0으로 표기한 종목은 디알텍(대금 11억)·에이유브랜즈(154억) 둘뿐이고 둘 다 대금이 작으며 서로 무관하다. 큰 돈이 들어온 종목은 대부분 D+6~D+9, 즉 7월말~8월초 사이클의 <strong>2차 파동</strong>이다.</p>
+<hr>
+<h2>② D+0 후보 테마 (최대 3개)</h2>
+<h3>테마 1. 전력기기 · AI 데이터센터 전력 인프라 — <strong>오늘이 대금 신고치, 실질 2차 점화</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">001820 삼화콘덴서</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.4</span><span class="chip"><i>거래대금(억)</i><strong>4,176</strong></span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>★1봉(09:30)</span><span class="chip"><i>이전충족</i>08/11</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>2.0배</span></div></article>
+<article class="card"><h4 class="c-t">119850 지엔씨에너지</h4><div class="c-c"><span class="chip"><i>등락%</i>+23.4</span><span class="chip"><i>거래대금(억)</i><strong>2,778</strong></span><span class="chip"><i>D+N</i>D+7</span><span class="chip"><i>오늘충족</i>★6봉(09:05)</span><span class="chip"><i>이전충족</i>08/04 외4</span><span class="chip"><i>30일대금순위</i>3위</span><span class="chip"><i>직전최대대비</i>0.7배</span></div></article>
+<article class="card"><h4 class="c-t">388050 지투파워</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i>792</span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>★55봉(13:03)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i><strong>24.3배</strong></span></div></article>
+<article class="card"><h4 class="c-t">006910 보성파워텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>거래대금(억)</i>734</span><span class="chip"><i>오늘충족</i>★27봉(14:24)</span><span class="chip"><i>이전충족</i>07/23</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>4.0배</span></div></article>
+<article class="card"><h4 class="c-t">126340 비나텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.2</span><span class="chip"><i>거래대금(억)</i>463</span><span class="chip"><i>오늘충족</i>★5봉(08:15)</span><span class="chip"><i>이전충족</i>06/30</span><span class="chip"><i>30일대금순위</i>2위</span><span class="chip"><i>직전최대대비</i>0.7배</span></div></article>
+<article class="card"><h4 class="c-t">126730 코칩</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.9</span><span class="chip"><i>거래대금(억)</i>714</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>08/11 외1</span><span class="chip"><i>30일대금순위</i>1위</span><span class="chip"><i>직전최대대비</i>1.0배</span></div></article>
+<article class="card"><h4 class="c-t">077360 덕산하이메탈</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.6</span><span class="chip"><i>거래대금(억)</i>188</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i>1위</span><span class="chip"><i>직전최대대비</i>1.5배</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>07/23~07/31</strong>. 보성파워텍 07/23 충족, 지엔씨에너지 07/23·07/24·08/03·08/04 충족, 삼화콘덴서·지투파워·범한퓨얼셀·한라캐스트 모두 <code>직전급등 20260731</code>. <strong>오늘은 테마의 D+0이 아니다.</strong> 30일 기준으로는 D+7~D+9 구간의 <strong>2차 파동</strong>이다.</li>
+<li><strong>대장주 / 후발주</strong>: 대장은 <strong>삼화콘덴서(4,176억, 압도적 1위 + 30일 대금 1위 + 08/11 선행충족)</strong>. 2인자가 지엔씨에너지(2,778억, 07/01부터 반복 충족한 원조 대장). <strong>지투파워(792억)는 오늘 처음 충족 + 직전최대 24.3배 + 전일 73배 → 전형적 후발주</strong>지만, &quot;돈의 성격이 완전히 바뀐&quot; 케이스라 후발주 중 가장 강하다. 보성파워텍(734억, 전일 11.7배, 대금 1위)도 후발주 성격.</li>
+<li><strong>추정 재료</strong>: 지투파워 — 액침형 ESS 국내 최초 CB 인증(12:43 최초 보도, 13:48 4건/4ch 버즈). 삼화콘덴서 — 전력 인프라 수요 기대(10:36 3건/2ch), MLCC 초호황. 지엔씨에너지 — AIDC 발전기 공급계약 연쇄(당일 뉴스 없음, 주가 선행).</li>
+<li>⚠ <strong>지투파워는 뉴스가 주가에 앞섰다</strong>: 최초 보도 12:43 → 충족 13:03. 선행 아님, 뉴스 반응형이다. 반대로 <strong>삼화콘덴서는 09:30 충족 → 10:36 첫 보도</strong>로 주가가 앞섰다.</li>
+<li><strong>재료 단계</strong>:</li>
+<li>지투파워 — <code>기대(06/30 KC인증 획득) → 확정(08/13 국내 최초 CB 국제인증)</code> — <strong>단계 상승, 실질 신규 재료. 오늘이 실질 D+0일 수 있다.</strong> (D+N상으로는 D+9이지만 첫 충족 + 대금 24배는 성격이 다른 자금이다.)</li>
+<li>지엔씨에너지 — <code>확정 → 확정</code> 반복(06/10 382억 → 07/02 297억 → 08/04 328억 계약). 재탕은 아니나 <strong>오늘 신규 계약 공시는 확인 안 됨</strong>. 대금도 30일 3위, 직전최대 0.7배로 신규 자금은 아니다.</li>
+<li>삼화콘덴서 — <code>기대 → 기대</code>(05/26 &quot;MLCC 초호황&quot; → 오늘 &quot;전력 인프라 수요 기대&quot;). 재탕이나 <strong>대금이 30일 1위·직전최대 2.0배로 시장이 인정했다.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 지투파워가 갭 상승 후 눌림에서 대금 유지(오늘 792억의 절반 이상), 코칩·덕산하이메탈 같은 미충족 대금 1위 종목이 내일 충족으로 넘어옴 → 테마 3차 파동 확인.</li>
+<li><strong>아님</strong>: 삼화콘덴서가 종가위치 61%·VWAP <span style="color:#7dabf8;font-weight:700">-0.5%</span>에서 더 밀려 시가 아래 마감. 지투파워가 상한가 풀린 뒤 대금 급감 → 인증 뉴스 1일 소재로 종료.</li>
+</ul>
+<hr>
+<h3>테마 2. 로봇 · 휴머노이드 부품 — <strong>오후 동시 점화, 이 중 한라캐스트가 실질 D+0</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">000490 대동</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>거래대금(억)</i><strong>735</strong></span><span class="chip"><i>오늘충족</i>★2봉(11:41)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>2.1배</span></div></article>
+<article class="card"><h4 class="c-t">125490 한라캐스트</h4><div class="c-c"><span class="chip"><i>등락%</i>+21.3</span><span class="chip"><i>거래대금(억)</i>699</span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>★19봉(14:21)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>3.8배</span></div></article>
+<article class="card"><h4 class="c-t">122350 삼기</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.2</span><span class="chip"><i>거래대금(억)</i>194</span><span class="chip"><i>오늘충족</i>★5봉(14:03)</span><span class="chip"><i>이전충족</i>08/04</span><span class="chip"><i>30일대금순위</i>8위</span><span class="chip"><i>직전최대대비</i>0.4배</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 삼기 기준 <strong>06/24~06/26</strong>(휴머노이드 프레임 개발사 선정, 3일 연속 상한가) → 08/04 재점화. 한라캐스트·대동은 이 테마 안에서 <strong>오늘이 첫 충족(★첫흐름)</strong> 이다.</li>
+<li><strong>대장주 / 후발주</strong>: 오늘 대금 최대는 <strong>대동(735억, 전일 30.6배, 30일 대금 1위, ★첫흐름)</strong>. 다만 대동은 로봇 순도가 낮은 농기계 AX 종목이고 종가위치 43%·VWAP <span style="color:#7dabf8;font-weight:700">-5.6%</span>로 마감이 약하다. <strong>테마 순도와 마감 질을 같이 보면 실질 대장은 한라캐스트(699억, 종가위치 78%, VWAP <span style="color:#ef4444;font-weight:700">+3.2%</span>, 저점대비 <span style="color:#ef4444;font-weight:700">+4.1%</span> 반등)</strong> 다. 삼기(194억, 대금 30일 8위, 직전최대 0.4배)는 명백한 후발·잔여 반응.</li>
+<li><strong>추정 재료</strong>: 한라캐스트 — <strong>&quot;미 빅테크서 로봇 부품 또 따냈다&quot;(14:38 한국경제TV, 버즈 14:41 4건/4ch)</strong>. 대동 — 레인보우로보틱스와 농업 로봇 공동 개발 추진(17:32, <strong>장 마감 후 보도</strong>).</li>
+<li>⚠ <strong>한라캐스트는 주가가 뉴스보다 앞섰다</strong>: 충족 14:21 → 고가 14:51 → 보도 14:38/14:41. <strong>17분 선행.</strong> D+0 확신도를 올릴 근거다.</li>
+<li>⚠ <strong>대동의 로봇 뉴스는 17:32, 즉 마감 후다.</strong> 오늘 11:41 충족은 이 뉴스로 설명되지 않는다 → <code>재료 미상 — 주가 선행</code>. <strong>그리고 이 뉴스는 내일(D+1)에 영향을 준다.</strong></li>
+<li><strong>재료 단계</strong>:</li>
+<li>한라캐스트 — <code>기대(05/26 &quot;휴머노이드 밸류체인 진입…퀀텀점프&quot;) → 확정(08/13 &quot;로봇 부품 또 따냈다&quot; = 수주)</code> — <strong>단계 1→3 상승. 실질 신규 재료. D+N은 D+9지만 ★첫흐름 + 대금 30일 1위 + 직전최대 3.8배 → 실질 D+0으로 취급한다.</strong></li>
+<li>대동 — <code>추진/기대 → 추진(08/13 로봇 공동개발 &#x27;추진&#x27;)</code> — 단계 2 수준. 다만 <strong>08/10~08/11 &quot;2분기 최대 매출&quot; 실적이 이미 깔려 있고 오늘 대금 30일 1위</strong>라 시장은 인정했다.</li>
+<li>삼기 — <code>선정(06/24) → 확대(07/02)</code> 이후 신규 없음. 재탕, 신선도 낮음.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 한라캐스트가 오늘 종가(10,830) 위에서 시작해 대금 300억 이상 유지 + 대동이 마감후 로봇 뉴스를 받아 갭 상승. 레인보우로보틱스 등 로봇 대형주가 같이 붙으면 테마 확정.</li>
+<li><strong>아님</strong>: 한라캐스트 &quot;또 따냈다&quot;의 계약 규모가 공시로 확인되지 않고 대금이 오늘의 1/3 이하로 급감. 대동이 마감후 호재에도 시가 위 못 지키면 소재 소멸.</li>
+</ul>
+<hr>
+<h3>테마 3. VC · 스페이스X 밸류체인 — <strong>D+3 진행 중, 신규 진입 대상 아님</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">100790 미래에셋벤처투자</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>거래대금(억)</i><strong>1,195</strong></span><span class="chip"><i>오늘충족</i>★25봉(09:09)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>종가위치%</i><strong>11</strong></span></div></article>
+<article class="card"><h4 class="c-t">027360 아주IB투자</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i>305</span><span class="chip"><i>D+N</i>D+3</span><span class="chip"><i>오늘충족</i>★27봉(09:09)</span><span class="chip"><i>이전충족</i>08/10</span><span class="chip"><i>30일대금순위</i>2위</span><span class="chip"><i>종가위치%</i>100</span></div></article>
+<article class="card"><h4 class="c-t">289080 SV인베스트먼트</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.5</span><span class="chip"><i>거래대금(억)</i>210</span><span class="chip"><i>오늘충족</i>★37봉(10:51)</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span><span class="chip"><i>종가위치%</i><strong>17</strong></span></div></article>
+<article class="card"><h4 class="c-t">225190 LK삼양</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.1</span><span class="chip"><i>거래대금(억)</i>406</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>★6봉(09:46)</span><span class="chip"><i>이전충족</i>08/11 외2</span><span class="chip"><i>30일대금순위</i>1위</span><span class="chip"><i>종가위치%</i>48</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>08/10</strong>. 아주IB투자 08/10 충족, 미래에셋벤처투자 08/10 G1 13회, LK삼양 08/10·08/11 충족, 뉴스도 08/10 &quot;미래에셋벤처·아주IB투자 등 강세…스페이스X 기대감&quot;이 있다. <strong>오늘은 D+3. 명확히 D+0이 아니다.</strong></li>
+<li><strong>대장주 / 후발주</strong>: 대장은 <strong>미래에셋벤처투자(1,195억)</strong>. 단 오늘 <strong>종가위치 11%·VWAP <span style="color:#7dabf8;font-weight:700">-6.4%</span>·09:22 고점 후 343분 동안 <span style="color:#7dabf8;font-weight:700">-13.9%</span> 흘러내린 최악의 마감</strong>이다. 아주IB투자는 상한가 잠금(종가위치 100%)이나 대금 305억으로 4배 작다 → <strong>등락률상 후발주가 더 세 보이는 원칙 4의 전형</strong>. SV인베스트먼트는 직전최대 20.5배·전일 37.7배로 자금 성격은 새롭지만 종가위치 17%로 완전히 밀렸다.</li>
+<li><strong>추정 재료</strong>: 스페이스X IPO 기대감(10:12 4건/4ch 버즈, &quot;[특징주] 스페이스X 관련주 강세⋯아주IB투자 上&quot;). 미래에셋벤처 개별로 정책기관 출자펀드 9,000억 돌파 전망(09:33 버즈, 14:00 머니투데이).</li>
+<li>⚠ <strong>09:09 충족 → 09:33/10:12 보도. 주가가 앞섰다.</strong> 다만 재료 자체는 05/18부터 반복된 것이다.</li>
+<li><strong>재료 단계</strong>: <code>기대 → 기대</code> — <strong>재탕. 신선도 낮음.</strong> 05/18 &quot;스페이스X IPO 앞당겨&quot; → 06/15 &quot;물량 받았는데도 20% 급락&quot; → 08/10 &quot;기대감 반영&quot; → 08/13 동일. 확정 단계(상장일 확정·구체 물량 공시)로 올라간 근거는 문서에 없다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 미래에셋벤처투자가 오늘 종가(17,570) 아래로 안 빠지고 아주IB투자가 상한가 다음날 갭 유지 + 대금 유지. 스페이스X 상장 일정 관련 <strong>확정 뉴스</strong>가 나오면 재점화.</li>
+<li><strong>아님</strong>(현재 이쪽이 우세): 종가위치 11%/17%로 마감한 두 종목이 갭 하락 출발 → 08/10 시작 사이클의 고점 소진 신호. <strong>신규 진입 금지, 눌림만 관찰.</strong></li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>수소·연료전지</strong> — 범한퓨얼셀(379억, D+9), 일진하이솔루스(140억, <code>-</code>)</h4><p class="c-p"><span class="c-k">상태</span>08:24/08:19 프리장 충족 후 종일 흘러내림</p><p class="c-p"><span class="c-k">코멘트</span>범한 종가위치 40%·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>, 일진 24%·VWAP <span style="color:#7dabf8;font-weight:700">-7.4%</span>. <strong>둘 다 마감 질 나쁨. 눌림 확인 전 진입 금지.</strong> 일진은 <code>미확인(24일전 <span style="color:#ef4444;font-weight:700">+28%</span>)</code>이라 첫흐름 단정 불가</p><div class="c-c"><span class="chip"><i>D+N</i>D+9</span></div></article>
+<article class="card"><h4 class="c-t"><strong>제약·바이오</strong> — 코오롱티슈진(1,530억, D+6), 프로티나(101억, D+3), 알지노믹스(202억)</h4><p class="c-p"><span class="c-k">상태</span>티슈진 08/05 충족 이후 오늘 미충족인데 대금은 1,530억</p><p class="c-p"><span class="c-k">코멘트</span>티슈진은 30일고가대비 <strong><span style="color:#7dabf8;font-weight:700">-73.6%</span></strong>, 직전5일 <span style="color:#ef4444;font-weight:700">+14.4%</span>. 오늘 수식 미충족 = 수급 쏠림 없이 오른 것. 추격 대상 아님</p><div class="c-c"><span class="chip"><i>D+N</i>D+3~6</span></div></article>
+<article class="card"><h4 class="c-t"><strong>범금호그룹주</strong> — 금호전기(275억, D+1), 금호건설(5,334억, <code>-</code>)</h4><p class="c-p"><span class="c-k">상태</span>3일 연속 상한가(+29.9/+29.9/+30.0) 후 오늘 금호건설은 <strong><span style="color:#7dabf8;font-weight:700">-3.8%</span>, 고가 <span style="color:#ef4444;font-weight:700">+20.8%</span>에서 종가위치 5%</strong></p><p class="c-p"><span class="c-k">코멘트</span>금호전기 직전5일 <span style="color:#ef4444;font-weight:700">+44.3%</span>, 금호건설 <span style="color:#ef4444;font-weight:700">+50.4%</span>. <strong>후반부. 제외.</strong> 금호건설 5,334억은 오늘 최대 대금이지만 위꼬리 <span style="color:#7dabf8;font-weight:700">-21.5%</span>짜리 물량 털기</p><div class="c-c"><span class="chip"><i>D+N</i>D+1~2</span></div></article>
+<article class="card"><h4 class="c-t"><strong>반도체 후공정</strong> — 이노테크(1,182억, D+1), 미래산업(202억, D+1), 윈팩(45억, D+23)</h4><p class="c-p"><span class="c-k">상태</span>이노테크 08/12·08/13 연속 충족, 직전5일 <span style="color:#ef4444;font-weight:700">+22.1%</span></p><p class="c-p"><span class="c-k">코멘트</span>이노테크는 오늘 12:55 늦은 충족 + 종가위치 57%. <strong>D+1이라 눌림 관찰만.</strong> 08:08 &quot;반도체 챔버 수주 폭증&quot; 버즈가 08/12 시작 근거</p><div class="c-c"><span class="chip"><i>D+N</i>D+1</span></div></article>
+<article class="card"><h4 class="c-t"><strong>씨이랩</strong></h4><p class="c-p"><span class="c-k">상태</span>직전5일 <strong><span style="color:#ef4444;font-weight:700">+38.5%</span></strong>, 대금 30일 5위, 오늘 미충족</p><p class="c-p"><span class="c-k">코멘트</span>선반영 큼. 제외</p><div class="c-c"><span class="chip"><i>D+N</i>D+2</span></div></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>088350 한화생명</strong> (<span style="color:#ef4444;font-weight:700">+7.0%</span>, 755억, ★첫흐름, D+N <code>-</code>)</h4><p class="c-p"><span class="c-k">성격</span>2Q 어닝서프라이즈(순익 <span style="color:#ef4444;font-weight:700">+355%</span>, 09:18부터 17건/5ch 대형 버즈)</p><p class="c-p"><span class="c-k">판단</span><strong>테마 아님, 실적 개별주.</strong> 09:07 충족 → 09:18 보도로 11분 선행했으나 09:10 고가 후 <strong>287분간 <span style="color:#7dabf8;font-weight:700">-11.0%</span> 흘러 종가위치 16.5%</strong>. 시총 4.4조 대형주라 하루 소화. 추격 불가</p></article>
+<article class="card"><h4 class="c-t"><strong>481070 에이유브랜즈</strong> (<span style="color:#ef4444;font-weight:700">+12.3%</span>, 154억, <strong>D+0</strong>)</h4><p class="c-p"><span class="c-k">성격</span>2Q 매출 303억 역대 최대·영업익 <span style="color:#ef4444;font-weight:700">+143%</span></p><p class="c-p"><span class="c-k">판단</span>문서상 D+0 2개 중 하나. 대금 30일 1위 + 직전최대 <strong>9.6배</strong>로 자금 성격은 새롭다. 단 <strong>절대액 154억으로 작고, 첫흐름이 <code>미확인(29일전 <span style="color:#ef4444;font-weight:700">+11%</span>)</code></strong> 이라 확신도를 낮춰야 한다. 순매수집중 <strong>2.4%</strong>(사실상 쏠림 없음)가 결정적 약점. 동반 종목 없음 → 테마 아님</p></article>
+<article class="card"><h4 class="c-t"><strong>214680 디알텍</strong> (<span style="color:#ef4444;font-weight:700">+30.0%</span>, <strong>11억</strong>, <strong>D+0</strong>, ★첫흐름)</h4><p class="c-p"><span class="c-k">성격</span>3분기 만에 흑자(10:02 보도) → 10:03 충족</p><p class="c-p"><span class="c-k">판단</span>D+0 + 30일급등일수 0 + ★첫흐름으로 <strong>지표상 가장 깨끗한 신규</strong>지만 <strong>거래대금 11억, 유통회전 1.6%</strong>. 돈이 없다. 뉴스 10:02 → 충족 10:03으로 <strong>뉴스 후행 매수</strong>. 상한가 잠갔으나 규모상 매매 대상 아님</p></article>
+<article class="card"><h4 class="c-t"><strong>131400 이브이첨단소재</strong> (<span style="color:#ef4444;font-weight:700">+30.0%</span>, 102억, D+16)</h4><p class="c-p"><span class="c-k">성격</span>재료 이력 07/13 무상감자 이후 없음</p><p class="c-p"><span class="c-k">판단</span><code>재료 미상 — 주가 선행 추정</code>. 시총 558억 초소형, 상한가지만 대금 102억·직전최대 0.77배로 신규 자금 아님</p></article>
+<article class="card"><h4 class="c-t"><strong>097800 윈팩</strong> (<span style="color:#ef4444;font-weight:700">+29.9%</span>, <strong>45억</strong>, D+23)</h4><p class="c-p"><span class="c-k">성격</span>뉴스 0건, 3개월 이력 0건</p><p class="c-p"><span class="c-k">판단</span><code>재료 미상 — 확인 필요</code>. 전일 대금 <strong>50.4배·직전최대 11.3배</strong>로 배수는 극단적이나 절대액 45억. 확인 방법: 내일 공시(수주·CB·최대주주 변경) 여부</p></article>
+<article class="card"><h4 class="c-t"><strong>105550 엣지파운드리</strong> (<span style="color:#ef4444;font-weight:700">+29.8%</span>, 16억), <strong>193250 링크드</strong> (<span style="color:#ef4444;font-weight:700">+29.7%</span>, 28억)</h4><p class="c-p"><span class="c-k">성격</span>뉴스 0건, 대금 극소</p><p class="c-p"><span class="c-k">판단</span>상한가지만 <strong>대금 16억/28억</strong>. 엣지파운드리는 10일 중 8일이 <span style="color:#ef4444;font-weight:700">+0.0%</span>(거래 사실상 정지 상태 후 2일 연속 상한가). <strong>품절주·작전 성격. 접근 금지.</strong></p></article>
+<article class="card"><h4 class="c-t"><strong>419050 삼기에너지솔루션즈</strong> (<span style="color:#ef4444;font-weight:700">+19.2%</span>, 409억, D+7)</h4><p class="c-p"><span class="c-k">성격</span>상반기 역대 최대 매출(15:10)</p><p class="c-p"><span class="c-k">판단</span>전일 대금 41배지만 직전최대 0.29배·30일 4위. 삼기(모회사)와 동반이나 오늘 미충족. 실적 반응</p></article>
+<article class="card"><h4 class="c-t"><strong>008490 서흥</strong> (<strong><span style="color:#7dabf8;font-weight:700">-7.3%</span></strong>, 154억)</h4><p class="c-p"><span class="c-k">성격</span>08:07 고가 <span style="color:#ef4444;font-weight:700">+20.7%</span> → 18:10 <span style="color:#7dabf8;font-weight:700">-24.2%</span> 붕괴</p><p class="c-p"><span class="c-k">판단</span><strong>프리장 급등 후 정규장 전량 반납.</strong> 08/10 충족 사이클 종료 신호. 제외</p></article>
+</div>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>없음(순수 D+0 기준). 대신 &#x27;실질 D+0&#x27; 2개를 우선순위로 잡는다. 1순위 로봇·휴머노이드 부품 — 한라캐스트가 ★첫흐름 + 대금 30일 1위 + 재료 단계 기대→확정 + 주가가 뉴스를 17분 선행 + 종가위치 78%/VWAP <span style="color:#ef4444;font-weight:700">+3.2%</span>. 네 조건이 동시에 맞는 유일한 종목이다. 2순위 전력기기·AI 데이터센터 — 지투파워가 ★첫흐름 + 직전최대 24.3배 + KC인증(기대)→CB 국제인증(확정) 단계 상승 + 상한가 종가위치 100%. 단 뉴스(12:43)가 충족(13:03)보다 앞서 선행성은 없다.</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>· 로봇: 명목상 대동 735억. 단 종가위치 43%·VWAP <span style="color:#7dabf8;font-weight:700">-5.6%</span>로 마감이 나쁘고 로봇 순도가 낮다 → 실질 대장은 한라캐스트 699억(마감 질 압도). · 전력기기: 삼화콘덴서 4,176억 (30일 대금 1위, 08/11 선행충족 = 먼저 움직인 종목). · VC/스페이스X: 미래에셋벤처투자 1,195억 (단 종가위치 11%로 최악 마감).</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>· 한라캐스트 : 기대(05/26 밸류체인 진입) → 확정(08/13 미 빅테크 로봇부품 수주) — 1→3 · 지투파워   : 기대(06/30 액침 ESS KC인증) → 확정(08/13 국내최초 CB 국제인증) — 1→3 · 한화생명   : 기대(증권가 목표가) → 실적 반영(2Q 순익 <span style="color:#ef4444;font-weight:700">+355%</span>) — 1→4, 단 마감 붕괴로 매매가치 낮음 · 에이유브랜즈: 기대(해외 성장) → 실적 반영(2Q 역대 최대) — 1→4, 단 대금 154억·순매수집중 2.4%</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>· 보성파워텍(734억, 14:24 늦은 충족, 대장 삼화콘덴서의 1/5 대금) · 삼기(194억, 대금 30일 8위, 직전최대 0.39배 — 로봇 테마 잔여 반응) · 아주IB투자(305억, 상한가지만 대장 미래에셋벤처의 1/4 대금, 08/10 이미 충족) · SV인베스트먼트(210억, 전일 37.7배지만 종가위치 17%로 전량 반납) · 지투파워 — 형식상 후발주(오늘 첫 충족)이나 자금 성격 변화가 커 예외로 승격</p>
+<ul>
+<li>같이 볼 종목 (아직 안 붙은 후발주 후보):</li>
+</ul>
+<p>· 코칩(714억, 대금 30일 1위인데 오늘 미충족·등락 <span style="color:#ef4444;font-weight:700">+3.9%</span>) — 전력기기 축에서 돈만 들어오고 아직 안 튄 전형. 내일 충족 넘어오면 3차 파동 신호. · 덕산하이메탈(188억, 대금 30일 1위, 등락 <span style="color:#ef4444;font-weight:700">+3.6%</span>) — 동일 성격. · 져스텍(883억, 미충족, 직전5일 <span style="color:#ef4444;font-weight:700">+44.7%</span>) — 대금은 큰데 선반영 큼. 관찰만. · 레인보우로보틱스(문서 밖) — 대동 마감후 공동개발 뉴스의 상대방.</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>이노테크(D+1, 직전5일 <span style="color:#ef4444;font-weight:700">+22.1%</span>) / LK삼양(D+2, 직전5일 <span style="color:#ef4444;font-weight:700">+55.6%</span>) / 아주IB투자·프로티나·아이크래프트(D+3) / 코오롱티슈진(D+6, 30일고가대비 <span style="color:#7dabf8;font-weight:700">-73.6%</span>) / 범한퓨얼셀·일진하이솔루스(D+9, 둘 다 종가위치 40%/24%) → 전부 신규 진입 대상 아님. 눌림 확인 후에만.</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>한라캐스트 &quot;미 빅테크 로봇 부품 수주&quot;의 실체 — 계약 규모·상대처가 공시로</li>
+</ol>
+<p>확인되는가. 공시 없이 기사만이면 1일 소재로 끝날 확률이 높다. 동시에 대동의 마감후(17:32) 레인보우로보틱스 공동개발 뉴스가 갭으로 반영되는지 — 반영되면 로봇 테마가 오늘 D+0으로 확정된다.</p>
+<ol>
+<li>지투파워 CB 인증의 후속 — 인증→수주로 이어지는 공시가 붙는가.</li>
+</ol>
+<p>상한가 다음날 대금이 오늘(792억)의 절반 이상 유지되면 진짜, 급감하면 인증 1일 소재. 같은 축의 코칩·덕산하이메탈이 따라 붙는지도 같이 볼 것.</p>
+<ol>
+<li>VC·스페이스X 축의 생사 — 미래에셋벤처투자(종가위치 11%)·SV인베스트먼트(17%)가</li>
+</ol>
+<p>갭 하락으로 출발하면 08/10 사이클은 종료다. 이 경우 아주IB투자 상한가도 다음날 갭 메우기가 나올 가능성이 높으니 절대 추격하지 말 것. ```</p>
+<p><strong>⚠ 이 리포트의 한계 3가지 (판단에 반영할 것)</strong></p>
+<ol>
+<li>정보지 교차 절이 없어 <strong>테마 신선도(오늘 처음 등장인지)를 외부 검증하지 못했다.</strong> 테마 묶기는 전적으로 주가 동시성 + 사업내용 기준이다.</li>
+<li>문서상 D+0 종목 2개(디알텍 11억·에이유브랜즈 154억)는 <strong>둘 다 대금이 작고 서로 무관해 테마를 이루지 못한다.</strong> 그래서 위에서 &#x27;실질 D+0&#x27;(첫흐름 + 대금 신고 + 재료 단계 상승)이라는 보조 기준으로 대체했다 — 이는 원칙 3의 엄밀한 D+0이 아니므로 확신도를 한 단계 낮춰 잡아야 한다.</li>
+<li>일진하이솔루스(<code>미확인 24일전 <span style="color:#ef4444;font-weight:700">+28%</span></code>)·에이유브랜즈(<code>미확인 29일전 <span style="color:#ef4444;font-weight:700">+11%</span></code>)는 <strong>첫흐름 판정 불가</strong>다. 첫흐름으로 단정하지 않았다.</li>
+</ol>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-08-13 21:04
+</p>
+</article></div>
+</body></html>
