@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>2026-08-18 한국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 28px;width:1920px;height:1080px;overflow:hidden}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.muted{color:#9aa0a6}
+header{display:flex;align-items:baseline;gap:18px;border-bottom:2px solid #262a33;padding-bottom:12px;margin-bottom:16px}
+header h1{font-size:34px;font-weight:800;letter-spacing:-.5px}
+header .date{font-size:24px;color:#9aa0a6;font-weight:600}
+header .chips{margin-left:auto;display:flex;gap:10px}
+.chip{background:#1a1d24;border:1px solid #2b303a;border-radius:20px;padding:6px 16px;font-size:15px;color:#9aa0a6}
+.chip b{color:#e8eaed}
+.warn{background:#2a1f10;border:1px solid #5a4415;color:#f0c674;border-radius:8px;padding:7px 14px;font-size:14px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:16px;height:calc(100% - 130px)}
+.col{display:flex;flex-direction:column;gap:14px;min-height:0}
+.card{background:#1a1d24;border:1px solid #262a33;border-radius:12px;padding:16px 18px}
+.card h2{font-size:15px;color:#9aa0a6;font-weight:700;letter-spacing:.5px;margin-bottom:12px;text-transform:uppercase}
+.idx{display:flex;gap:14px}
+.idxbox{flex:1;background:#1a1d24;border:1px solid #262a33;border-radius:12px;padding:14px 18px}
+.idxbox .nm{font-size:15px;color:#9aa0a6;font-weight:600}
+.idxbox .val{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15}
+.idxbox .chg{font-size:19px;font-weight:700}
+.idxbox .rng{font-size:12px;color:#6f757e;margin-top:4px}
+.flow{display:flex;gap:10px}
+.fl{flex:1;background:#12151b;border-radius:9px;padding:10px 12px;text-align:center}
+.fl .k{font-size:13px;color:#9aa0a6;margin-bottom:4px}
+.fl .v{font-size:22px;font-weight:800}
+.fl .s{font-size:11px;color:#6f757e;margin-top:2px}
+.macro{display:flex;flex-wrap:wrap;gap:8px}
+.m{background:#12151b;border-radius:7px;padding:7px 12px;font-size:13.5px;color:#c3c7cd}
+.m b{color:#e8eaed;font-weight:700}
+.oneline{background:linear-gradient(135deg,#1e2129,#191c23);border:1px solid #2f3542;border-left:4px solid #ef4444;border-radius:12px;padding:16px 20px}
+.oneline .lbl{font-size:12px;color:#9aa0a6;letter-spacing:2px;margin-bottom:7px}
+.oneline p{font-size:21px;font-weight:700;line-height:1.45}
+ul.pts{list-style:none}
+ul.pts li{font-size:14.5px;line-height:1.5;padding:7px 0 7px 18px;position:relative;border-bottom:1px solid #22262e;color:#d5d8dd}
+ul.pts li:last-child{border-bottom:none}
+ul.pts li:before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:#4b5563}
+.bar{margin-bottom:9px}
+.bar .t{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:4px}
+.bar .t b{color:#9aa0a6;font-weight:600;font-size:12.5px}
+.track{height:8px;background:#12151b;border-radius:4px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);border-radius:4px}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.bg{border-radius:7px;padding:7px 11px;font-size:13.5px;font-weight:600;background:#12151b;border:1px solid #262a33}
+.bg span{font-weight:800;margin-left:6px}
+.bg.u{border-color:#4a2226}.bg.d{border-color:#1e3355}
+.tmr li{font-size:14px;line-height:1.5;padding:6px 0 6px 18px;position:relative;color:#d5d8dd;border-bottom:1px solid #22262e;list-style:none}
+.tmr li:last-child{border-bottom:none}
+.tmr li:before{content:"▸";position:absolute;left:0;color:#6b7280;font-size:12px;top:7px}
+footer{position:absolute;bottom:12px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:12px;color:#5d636c;border-top:1px solid #22262e;padding-top:9px}
+.breadth{display:flex;gap:10px;margin-top:10px}
+.br{flex:1;background:#12151b;border-radius:8px;padding:8px 10px;font-size:12.5px;color:#9aa0a6;text-align:center}
+.br b{display:block;font-size:16px;margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="warn">⚠️ 조기 실행분 (19:30 KST 생성) — 21시 정규 실행이 이 리포트를 갱신합니다.</div>
+
+<header>
+  <h1>한국장 브리핑</h1>
+  <div class="date">2026. 08. 18 (화)</div>
+  <div class="chips">
+    <div class="chip">수집 채널 <b>6 / 12</b></div>
+    <div class="chip">영상 <b>9건</b></div>
+    <div class="chip">코스피 <b>6거래일 만에 하락</b></div>
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- COL 1 -->
+  <div class="col">
+    <div class="idx">
+      <div class="idxbox">
+        <div class="nm">KOSPI</div>
+        <div class="val dn">6,869.83</div>
+        <div class="chg dn">▼ 108.11 (-1.55%)</div>
+        <div class="rng">장중 고 7,216.62 · 저 6,788.78</div>
+      </div>
+      <div class="idxbox">
+        <div class="nm">KOSDAQ</div>
+        <div class="val dn">834.20</div>
+        <div class="chg dn">▼ 30.45 (-3.52%)</div>
+        <div class="rng">장중 고 872.59 · 저 827.97</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>수급 · 코스피 (억원)</h2>
+      <div class="flow">
+        <div class="fl"><div class="k">외국인</div><div class="v up">+860</div><div class="s">오전 급증 후 축소</div></div>
+        <div class="fl"><div class="k">기관</div><div class="v dn">-7,849</div><div class="s">하락 주도</div></div>
+        <div class="fl"><div class="k">개인</div><div class="v up">+7,312</div><div class="s">지수 방어</div></div>
+      </div>
+      <div class="flow" style="margin-top:10px">
+        <div class="fl"><div class="k">코스닥 외국인</div><div class="v up" style="font-size:18px">+367</div></div>
+        <div class="fl"><div class="k">코스닥 기관</div><div class="v dn" style="font-size:18px">-4,164</div></div>
+        <div class="fl"><div class="k">코스닥 개인</div><div class="v up" style="font-size:18px">+3,892</div></div>
+      </div>
+      <div class="macro" style="margin-top:11px">
+        <div class="m">프로그램(코스피) <b class="dn">-1조 321억</b></div>
+        <div class="m">외국인 K200 선물 <b class="up">+2,240억</b></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>매크로</h2>
+      <div class="macro">
+        <div class="m">원/달러 <b>1,411.8원</b> <span class="dn">-1.2</span> · 10개월 최저</div>
+        <div class="m">美 10년물 <b>4.724%</b></div>
+        <div class="m">美 30년물 <b>5.3103%</b> · 2007년 이후 최고</div>
+        <div class="m">日 10년물 <b>2.935%</b> · 30년 최고</div>
+        <div class="m">WTI 9월물 <b>85달러대 육박</b></div>
+        <div class="m">닛케이225 <b class="dn">-2.54%</b></div>
+      </div>
+      <div class="breadth">
+        <div class="br">코스피 상승/하락<b><span class="up">195</span> / <span class="dn">682</span></b></div>
+        <div class="br">코스닥 상승/하락<b><span class="up">372</span> / <span class="dn">1,288</span></b></div>
+        <div class="br">거래대금<b>29.9조 / 8.1조</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COL 2 -->
+  <div class="col">
+    <div class="oneline">
+      <div class="lbl">오늘의 한 줄</div>
+      <p>장 초반 7,200선을 뚫었던 코스피가 미 장기금리·유가 급등에 오후 내내 흘러내리며 6거래일 만에 하락 마감 — 전형적인 '전강후약'.</p>
+    </div>
+
+    <div class="card" style="flex:1">
+      <h2>핵심 포인트</h2>
+      <ul class="pts">
+        <li>간밤 미 메모리주 강세로 <b>+3.42%</b>까지 급등했다가 하락 반전, 고–저 폭 <b>428p</b>의 극단적 변동성</li>
+        <li>기관 <b>7,849억 순매도</b> + 프로그램 <b>1조 321억 순매도</b>가 오후 낙폭을 키움</li>
+        <li>하락 재료는 전부 해외 금리 — 미 30년물 2007년 이후 최고, 일 10년물 30년 최고</li>
+        <li>미·이란 갈등 지속 → WTI 85달러 육박 → 인플레 기대 자극 → 시장금리 반등의 연쇄</li>
+        <li>지수보다 체감이 훨씬 나빴다 — 코스닥 하락 종목이 상승의 <b>3.5배</b></li>
+        <li>원/달러는 10개월 최저치. 환율 환경 자체는 외국인에 우호적</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>채널 합의도 <span style="text-transform:none;font-weight:400">(시황 채널 5개 기준)</span></h2>
+      <div class="bar"><div class="t"><span>반도체 급등 후 되돌림</span><b>5 / 5</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+      <div class="bar"><div class="t"><span>미 장기금리가 조정 원인</span><b>3 / 5</b></div><div class="track"><div class="fill" style="width:60%"></div></div></div>
+      <div class="bar"><div class="t"><span>중동 · 유가 리스크</span><b>3 / 5</b></div><div class="track"><div class="fill" style="width:60%"></div></div></div>
+      <div class="bar"><div class="t"><span>자금의 신규주 이동</span><b>2 / 5</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+      <div class="bar"><div class="t"><span>남북경협 테마 과열</span><b>2 / 5</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+      <div class="bar" style="margin-bottom:0"><div class="t"><span>조정은 건강한 눌림</span><b>2 / 5</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    </div>
+  </div>
+
+  <!-- COL 3 -->
+  <div class="col">
+    <div class="card">
+      <h2>종목 · 섹터</h2>
+      <div class="badges">
+        <div class="bg u">SK하이닉스 <span class="up">+1.03%</span></div>
+        <div class="bg u">삼성생명 <span class="up">+3.16%</span></div>
+        <div class="bg u">이오테크닉스 <span class="up">+2.48%</span></div>
+        <div class="bg u">심텍 <span class="up">+2.02%</span></div>
+        <div class="bg u">주성엔지니어링 <span class="up">+0.84%</span></div>
+      </div>
+      <div class="badges" style="margin-top:9px">
+        <div class="bg d">삼성전기 <span class="dn">-7.57%</span></div>
+        <div class="bg d">에코프로 <span class="dn">-6.94%</span></div>
+        <div class="bg d">에코프로비엠 <span class="dn">-6.51%</span></div>
+        <div class="bg d">알테오젠 <span class="dn">-5.10%</span></div>
+        <div class="bg d">현대차 <span class="dn">-3.97%</span></div>
+        <div class="bg d">삼성전자 <span class="dn">-2.19%</span></div>
+        <div class="bg d">SK스퀘어 <span class="dn">-1.65%</span></div>
+      </div>
+      <div class="macro" style="margin-top:12px">
+        <div class="m">삼성전자 <b>268,500</b> · 장중 <span class="up">+4.92%</span>까지</div>
+        <div class="m">SK하이닉스 <b>1,662,000</b> · 장중 <span class="up">+8.94%</span>까지</div>
+      </div>
+      <div class="macro" style="margin-top:8px">
+        <div class="m">업종 상승: <b>보험 +2.60%</b> · 운송창고 +1.16%</div>
+        <div class="m">업종 하락: <b class="dn">IT서비스 -5.36%</b> · 증권 -4.09% · 기계장비 -3.90%</div>
+      </div>
+    </div>
+
+    <div class="card" style="flex:1">
+      <h2>복수 채널이 함께 지목한 테마</h2>
+      <ul class="pts">
+        <li><b>삼전닉스</b> — 6개 채널 전부 언급. 급등 후 되돌림의 성격을 두고 해석이 갈림</li>
+        <li><b>남북경협 · 대북주</b> — 주덕 · 고라니 모두 상한가 다수 출현을 짚되 과열 · 관리종목 리스크 경고</li>
+        <li><b>신규 상장주</b> — 고라니는 "4개월 만에 처음으로 시초가 대비 고가 마감"을, 만쥬는 지수주↔신규주 시소 구조를 관찰</li>
+        <li><b>로봇</b> — 8/19 유니트리 상장. 주덕은 오히려 <b>재료 소멸</b> 시점일 수 있다고 경고</li>
+      </ul>
+      <div style="margin-top:12px;padding-top:11px;border-top:1px dashed #2b303a;font-size:13px;color:#9aa0a6;line-height:1.55">
+        <b style="color:#c3c7cd">이견</b> — 주덕 · 고라니는 5거래일 연속 상승 뒤의 건강한 조정으로 보는 반면, 주린이놀이터는 장 전부터 저항대 도달을 근거로 비중 축소를 권했고 김단테는 빅테크 숨은 부채(약 3조 달러)를 구조적 위협으로 지목.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>내일 관전 포인트</h2>
+      <ul class="tmr">
+        <li>美 장기금리 방향 — 10년 4.7%대 · 30년 5.3%대가 시초가를 결정</li>
+        <li>8/20 새벽 FOMC 의사록 + 미 재무부 20년물 국채 입찰</li>
+        <li>필라델피아 반도체지수 — 악재 시 <b>3~4% 갭 하락</b> 대비 (고라니)</li>
+        <li>유니트리 상장(8/19) — 로봇 섹터 재료 실현일</li>
+        <li>삼성전자 <b>26만원선</b> — 주덕이 제시한 기술적 지지선 (종가 268,500)</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>수집 6/12 채널 · 9개 영상 (주덕 2 · 김단테 2 · 만쥬 2 · 고라니주식 · 주린이놀이터 · 투자자 김혜산) &nbsp;|&nbsp; 미수집 6채널은 당일 업로드 없음</div>
+  <div>원문 리포트: 2026-08-18_한국장_브리핑.md &nbsp;|&nbsp; 지수·수급·환율·금리는 KRX/언론 보도 검증치</div>
+</footer>
+
+</body>
+</html>
