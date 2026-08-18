@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>미국장 브리핑 2026-08-18</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;width:1280px;padding:22px 26px}
+.up{color:#22c55e}.dn{color:#ef4444}
+.sub{color:#9aa0a6}
+header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #2a2e37;padding-bottom:12px;margin-bottom:16px}
+header h1{font-size:26px;font-weight:700;letter-spacing:-.5px}
+header h1 span{color:#9aa0a6;font-weight:500;font-size:18px;margin-left:10px}
+.badge{background:#1a1d24;border:1px solid #2a2e37;border-radius:20px;padding:6px 14px;font-size:13px;color:#9aa0a6}
+.idx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:12px}
+.card{background:#1a1d24;border:1px solid #23272f;border-radius:12px;padding:14px 18px}
+.card .n{font-size:13px;color:#9aa0a6;margin-bottom:6px;letter-spacing:.3px}
+.card .v{font-size:29px;font-weight:700;line-height:1.1}
+.card .p{font-size:17px;font-weight:600;margin-top:3px}
+.macro{display:flex;gap:0;background:#1a1d24;border:1px solid #23272f;border-radius:10px;padding:11px 0;margin-bottom:14px}
+.macro div{flex:1;text-align:center;border-right:1px solid #23272f}
+.macro div:last-child{border-right:none}
+.macro .k{font-size:12px;color:#9aa0a6;display:block;margin-bottom:3px}
+.macro .w{font-size:18px;font-weight:700}
+.macro .t{font-size:11px;color:#9aa0a6;display:block;margin-top:2px}
+.one{background:linear-gradient(90deg,#1a1d24,#161920);border-left:3px solid #ef4444;border-radius:8px;padding:14px 18px;font-size:21px;font-weight:600;line-height:1.4;margin-bottom:14px}
+.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-bottom:14px}
+h2{font-size:13px;color:#9aa0a6;letter-spacing:1px;margin-bottom:9px;font-weight:600}
+ul{list-style:none}
+li{font-size:14.5px;line-height:1.65;padding-left:15px;position:relative;margin-bottom:4px}
+li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:#4b5563}
+.bar{margin-bottom:8px}
+.bar .lab{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:3px}
+.bar .lab b{color:#9aa0a6;font-weight:600;font-size:12.5px}
+.track{height:7px;background:#23272f;border-radius:4px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#3b82f6,#60a5fa);border-radius:4px}
+.tick{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.tag{font-size:13px;padding:5px 11px;border-radius:6px;font-weight:600}
+.tg{background:rgba(34,197,94,.13);color:#22c55e;border:1px solid rgba(34,197,94,.28)}
+.tr{background:rgba(239,68,68,.13);color:#ef4444;border:1px solid rgba(239,68,68,.28)}
+.sec{background:#1a1d24;border:1px solid #23272f;border-radius:10px;padding:13px 16px}
+footer{border-top:1px solid #2a2e37;padding-top:10px;font-size:12px;color:#9aa0a6;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>미국장 브리핑 <span>2026년 8월 18일 · 8/17(월) 마감 기준</span></h1>
+  <div class="badge">수집 채널 10 / 16</div>
+</header>
+
+<div class="idx">
+  <div class="card"><div class="n">S&amp;P 500</div><div class="v">7,745.06</div><div class="p dn">▼ 0.52%</div></div>
+  <div class="card"><div class="n">나스닥 종합</div><div class="v">26,644.91</div><div class="p dn">▼ 0.32%</div></div>
+  <div class="card"><div class="n">다우존스</div><div class="v">53,459.78</div><div class="p dn">▼ 0.51% <span style="font-size:13px;font-weight:500">-272.63p</span></div></div>
+</div>
+
+<div class="macro">
+  <div><span class="k">미 10년물</span><span class="w">4.724%</span><span class="t">상승</span></div>
+  <div><span class="k">미 30년물</span><span class="w dn">5.31%</span><span class="t">+5bp · 2007.6 이후 최고</span></div>
+  <div><span class="k">WTI</span><span class="w up">$84.50</span><span class="t">+2.6% · 브렌트 $90 터치</span></div>
+  <div><span class="k">VIX</span><span class="w dn">15.94</span><span class="t">+4.9%</span></div>
+  <div><span class="k">달러인덱스</span><span class="w">-0.18%</span><span class="t">장중 · 2개월 저점권</span></div>
+</div>
+
+<div class="one">유가와 장기금리가 동시에 튀며 3대 지수 동반 하락 — 패닉이 아니라 리스크 프리미엄 재조정이다.</div>
+
+<div class="cols">
+  <div>
+    <h2>핵심 포인트</h2>
+    <ul>
+      <li>미국-이란 <b>양해각서 8/17 만료</b> → 호르무즈 리스크 재점화, 브렌트 장중 $90 터치</li>
+      <li>30년물 5.31%로 <b>2007년 6월 이후 최고</b> — 국가부채·재정적자 우려가 커브 장기 구간을 밀어올림</li>
+      <li>VIX는 15.94에 그침. 공포 확산보다 <b>섹터 로테이션</b> 성격 (기술 → 에너지·해운·금)</li>
+      <li>메모리는 <b>최다 언급 테마(5개 채널)</b>지만 방향은 정반대 — 소수몽키 강세 vs Meet Kevin 경고</li>
+      <li>이번 주 이벤트: <b>수요일 FOMC 의사록</b> + 소매 실적(WMT·TGT·LOW·HD)</li>
+    </ul>
+    <h2 style="margin-top:14px">채널 합의도</h2>
+    <div class="bar"><div class="lab"><span>메모리 · 스토리지</span><b>5/10 채널</b></div><div class="track"><div class="fill" style="width:50%"></div></div></div>
+    <div class="bar"><div class="lab"><span>에너지 · 유가 상승</span><b>4/10 채널</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lab"><span>장기금리 급등 우려</span><b>4/10 채널</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lab"><span>AI 인프라 자본지출</span><b>4/10 채널</b></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lab"><span>9월 연준 동결 기대</span><b>3/10 채널</b></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+  </div>
+
+  <div>
+    <h2>종목 · 섹터</h2>
+    <div class="sec">
+      <div style="font-size:12.5px;color:#22c55e;font-weight:600;margin-bottom:6px">강세</div>
+      <div class="tick">
+        <span class="tag tg">XLE 에너지 +1.4%</span>
+        <span class="tag tg">XOP · OIH · CRAK</span>
+        <span class="tag tg">BOAT 해운</span>
+        <span class="tag tg">GDX 금</span>
+        <span class="tag tg">Amphenol</span>
+        <span class="tag tg">Halozyme</span>
+        <span class="tag tg">SiTime</span>
+        <span class="tag tg">Teradyne</span>
+      </div>
+      <div style="font-size:12.5px;color:#ef4444;font-weight:600;margin:12px 0 6px">약세</div>
+      <div class="tick">
+        <span class="tag tr">NIKE -4.03%</span>
+        <span class="tag tr">Meta 50일선 이탈</span>
+        <span class="tag tr">Tesla 50일선 이탈</span>
+        <span class="tag tr">Amazon</span>
+        <span class="tag tr">Shopify · Adobe</span>
+        <span class="tag tr">ServiceNow</span>
+        <span class="tag tr">Palantir 13F -60%</span>
+      </div>
+    </div>
+    <h2 style="margin-top:14px">이견이 갈린 지점</h2>
+    <div class="sec" style="font-size:13.5px;line-height:1.6">
+      <b style="color:#22c55e">소수몽키·미주은</b> — AI 에이전트 수요로 메모리 구조적 강세, 13F상 MU·MRVL·AMD 기관 매수 확대<br>
+      <b style="color:#ef4444;display:inline-block;margin-top:7px">Meet Kevin</b> — SNDK는 HBM이 아닌 NAND. 판가 15~20% 하락 컨센서스 + 오프밸런스시트 CapEx 리스크
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>수집 11개 항목 / 16개 채널 중 10개 · Tier1 6/8 · Tier2 3/8 · 소수몽키 라이브 멤버십 전용, FX Evolution 채널 중단</span>
+  <span>원문 리포트 · 2026-08-18_미국장_브리핑.md</span>
+</footer>
+
+</body>
+</html>
