@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-08-18 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-08-18</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-08-18 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>거래대금 상위는 반도체·HBM 소부장(HPSP 2,912억, 하나마이크론 2,736억, 이수페타시스 2,415억, 후성 1,895억)이 채웠으나 이들은 직전5일누적 +15~23%에 정보지 등장 3~4일째로 D+0이 아니다. 이 반도체 그룹은 아침 고가 후 종일 흘러내려 전원 VWAP 아래 마감했다. 오늘 새로 켜진 불은 세 개 — <strong>대북·경협주</strong>(트럼프 &quot;김정은이 답했다&quot; 발언), <strong>호르무즈발 해운주</strong>, <strong>삼성전자 광주 HVAC 공장發 액침냉각·데이터센터 공조</strong>로, 모두 정보지 A·B가 오늘 처음 잡은 테마다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>트럼프 &quot;김정은이 답했다, 매우 긍정적&quot; → 북미 정상회담 재개 기대(추정 재료)</p><p class="c-p"><span class="c-k">판단</span>1순위. 단 전 종목 VWAP -5~<span style="color:#7dabf8;font-weight:700">-7.6%</span>, 마감 성격 나쁨</p><div class="c-c"><span class="chip"><i>수식충족</i>6종목 ★첫흐름</span><span class="chip"><i>정보지</i>A·B 오늘 처음</span><span class="chip"><i>신선도</i>신규(이력 없음→신규 이벤트)</span></div></article>
+<article class="card"><h4 class="c-t">해운/호르무즈</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>미-이란 휴전 연장 불발 → 호르무즈해협 사실상 마비(추정 재료)</p><p class="c-p"><span class="c-k">판단</span>2순위. 마감 성격은 대북주보다 훨씬 나음</p><div class="c-c"><span class="chip"><i>수식충족</i>HMM·흥아해운</span><span class="chip"><i>정보지</i>A·B 오늘 처음</span><span class="chip"><i>신선도</i>중간(재료 신규, 종목은 반복 이력)</span></div></article>
+<article class="card"><h4 class="c-t">액침냉각·DC공조</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>삼성전자 광주 AI DC용 HVAC 공장 2,000억 + 오텍캐리어 48MW 냉각 수주(추정 재료)</p><p class="c-p"><span class="c-k">판단</span>3순위. 대장주 대금 30일 4위로 확신도 하향</p><div class="c-c"><span class="chip"><i>수식충족</i>5종목</span><span class="chip"><i>정보지</i>A·B 오늘 처음</span><span class="chip"><i>신선도</i>단계 상승(기대→확정)</span></div></article>
+<article class="card"><h4 class="c-t">반도체·HBM 소부장</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>필라델피아반도체 <span style="color:#ef4444;font-weight:700">+1.64%</span></p><p class="c-p"><span class="c-k">판단</span>D+0 아님. 신규 진입 대상 아님</p><div class="c-c"><span class="chip"><i>수식충족</i>진행 중</span><span class="chip"><i>정보지</i>3~4일째</span><span class="chip"><i>신선도</i>선반영(5일누적 +15~34%)</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>대북·경협 (1순위)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">아난티(025980)</h4><p class="c-p"><span class="c-k">근거</span>대장주. 30일 1위 / 직전최대 27.6배 / 전일 56.1배 / 5일누적 <span style="color:#ef4444;font-weight:700">+1.3%</span> 선반영 없음 / 종가위치 16%·VWAP <span style="color:#7dabf8;font-weight:700">-7.4%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>12봉</span><span class="chip"><i>등락%</i>+13.9</span><span class="chip"><i>대금</i>1,035억</span></div></article>
+<article class="card"><h4 class="c-t">대아티아이(045390)</h4><p class="c-p"><span class="c-k">근거</span>준대장. D+0·30일 1위 / 직전최대 15.5배 / 순매수집중 76.9% / 종가위치 14%·VWAP <span style="color:#7dabf8;font-weight:700">-5.3%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>18봉</span><span class="chip"><i>등락%</i>+14.0</span><span class="chip"><i>대금</i>317억</span></div></article>
+<article class="card"><h4 class="c-t">일신석재(007110)</h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 직전최대 4.1배 / 5일누적 <span style="color:#7dabf8;font-weight:700">-23.9%</span> / 종가위치 0%·VWAP <span style="color:#7dabf8;font-weight:700">-7.6%</span> — 후미</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>29봉</span><span class="chip"><i>등락%</i>+22.2</span><span class="chip"><i>대금</i>113억</span></div></article>
+<article class="card"><h4 class="c-t">신원(009270)</h4><p class="c-p"><span class="c-k">근거</span>2Q 매출 3,099억 사상 최대·영업익 7배 + 대북 이중 재료 / 종가위치 1%·VWAP <span style="color:#7dabf8;font-weight:700">-7.0%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>15봉</span><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>대금</i>133억</span></div></article>
+<article class="card"><h4 class="c-t">제이에스티나(026040)</h4><p class="c-p"><span class="c-k">근거</span>D+0·30일 1위 / 직전최대 5.6배 / 종가위치 37% — 후미</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>3봉</span><span class="chip"><i>등락%</i>+16.4</span><span class="chip"><i>대금</i>99억</span></div></article>
+<article class="card"><h4 class="c-t">부산산업(011390)</h4><p class="c-p"><span class="c-k">근거</span>D+0·30일 1위 / 직전최대 14.7배 — 배수는 좋으나 절대액 최소</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>9봉</span><span class="chip"><i>등락%</i>+17.5</span><span class="chip"><i>대금</i>64억</span></div></article>
+</div>
+<h3>해운 — 호르무즈 (2순위)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">HMM(011200)</h4><p class="c-p"><span class="c-k">근거</span>대장주. 30일 1위 / 직전 6.7배 / 5일누적 <span style="color:#7dabf8;font-weight:700">-2.1%</span> 선반영 없음 / 종가위치 77%·VWAP <span style="color:#ef4444;font-weight:700">+1.2%</span> / G1 18회</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>18봉</span><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금</i>2,322억</span></div></article>
+<article class="card"><h4 class="c-t">흥아해운(003280)</h4><p class="c-p"><span class="c-k">근거</span>D+0·30일 2위 / 종가위치 81%·VWAP <span style="color:#ef4444;font-weight:700">+1.9%</span> / <strong>07/09에 이미 충족</strong> — 완전 신규 아님, 회전율 65.8% 과열</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/09</span><span class="chip"><i>충족봉</i>24봉</span><span class="chip"><i>등락%</i>+12.9</span><span class="chip"><i>대금</i>896억</span></div></article>
+</div>
+<h3>액침냉각·데이터센터 공조 (3순위)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">유니셈(036200)</h4><p class="c-p"><span class="c-k">근거</span>오늘 처음 돈 붙음. 30일 1위 / 직전최대 5.7배 / D+11 / 5일누적 <span style="color:#ef4444;font-weight:700">+18.1%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+14.0</span><span class="chip"><i>대금</i>286억</span></div></article>
+<article class="card"><h4 class="c-t">케이엔솔(053080)</h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 직전최대 12.9배 — 신규 자금 성격 뚜렷</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>16봉</span><span class="chip"><i>등락%</i>+5.5</span><span class="chip"><i>대금</i>119억</span></div></article>
+<article class="card"><h4 class="c-t">오텍(067170)</h4><p class="c-p"><span class="c-k">근거</span>오텍캐리어 48MW DC 냉각 수주 개별 확정 재료 / 종가위치 81%·VWAP <span style="color:#ef4444;font-weight:700">+5.3%</span> / D+5</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>4봉</span><span class="chip"><i>등락%</i>+15.8</span><span class="chip"><i>대금</i>47억</span></div></article>
+<article class="card"><h4 class="c-t">3S(060310)</h4><p class="c-p"><span class="c-k">근거</span>30일 1위·직전최대 5.9배지만 대금 22억 — 최후미</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>12봉</span><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>대금</i>22억</span></div></article>
+<article class="card"><h4 class="c-t">삼성공조(006660)</h4><p class="c-p"><span class="c-k">근거</span>대장주. 종가위치 100%·VWAP <span style="color:#ef4444;font-weight:700">+8.3%</span> 최상급 / <strong>07/06·07/14·07/16에 이미 충족</strong> / 30일 4위·직전최대 0.4배 = 7월에 더 큰 돈 / D+11</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/16 외2</span><span class="chip"><i>충족봉</i>36봉</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>450억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">현대해상(001450)</h4><p class="c-p"><span class="c-k">근거</span>D+0·30일 1위 / 종가위치 83%·VWAP <span style="color:#ef4444;font-weight:700">+2.7%</span> 마감 최상 / 2Q 영업익 5,050억 <span style="color:#ef4444;font-weight:700">+46.9%</span>·배당 재개 가시성 / <strong>동반 보험주가 문서에 없어 테마로 못 묶음</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+11.6</span><span class="chip"><i>대금</i>1,043억</span></div></article>
+<article class="card"><h4 class="c-t">KR모터스(000040)</h4><p class="c-p"><span class="c-k">근거</span>정보지 없음 / 유통시총 101억 초소형 / <strong>재료 미상</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>5봉</span><span class="chip"><i>등락%</i>상한가</span><span class="chip"><i>대금</i>17억</span></div></article>
+<article class="card"><h4 class="c-t">삼미금속(012210)</h4><p class="c-p"><span class="c-k">근거</span>고가 <span style="color:#ef4444;font-weight:700">+26.3%</span>, <strong>14:44 충족 후 15:19까지 <span style="color:#7dabf8;font-weight:700">-22.5%</span> 폭락</strong> / 정보지에도 없음 / 접근 금지</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>-1.4</span><span class="chip"><i>대금</i>대금 1위</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">종목</span>코데즈컴바인(047770)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>상한가지만 대금 34억·직전최대 0.1배 — 돈이 안 들어온 상한가. 이전충족 07/16</p></article>
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">종목</span>좋은사람들(033340)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>상한가지만 대금 13억·직전최대 0.2배. D+1, 이전충족 08/14</p></article>
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">종목</span>인디에프(014990)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>상한가지만 대금 5.2억·직전최대 0.3배. D+21, 이전충족 06/02</p></article>
+<article class="card"><h4 class="c-t">해운/호르무즈</h4><p class="c-p"><span class="c-k">종목</span>STX그린로지스(465770)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+29.9%</span>로 테마 내 최고지만 대금 148억·직전최대 0.3배·30일 7위. D+12, 이전충족 07/21</p></article>
+<article class="card"><h4 class="c-t">해운/호르무즈</h4><p class="c-p"><span class="c-k">종목</span>팬오션(028670)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 389억·직전최대 0.9배·5일누적 <span style="color:#7dabf8;font-weight:700">-4.1%</span>. 이전충족 07/31</p></article>
+<article class="card"><h4 class="c-t">해운/호르무즈</h4><p class="c-p"><span class="c-k">종목</span>대한해운(005880)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+2.0%</span>·대금 126억·직전최대 0.8배. 이전충족 07/06</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>리파인(377450)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+17.9%</span>·282억·직전최대 14.5배. 최대주주 공개매수(17,600원) 재료 확정형 — 차익거래 영역, 추격 대상 아님</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>베뉴지(019010)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+29.8%</span>·268억·직전최대 25.7배. 재료 단계 기대→실적반영 상승이나 D+11</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>마이크로컨텍솔(098120)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+29.9%</span>·418억·30일 1위·직전최대 6.1배인데 <strong>뉴스 0건</strong>. <code>재료 미상 — 주가 선행 추정</code></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>레메디(387690)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+22.8%</span>·880억, 반기 실적 역대 최대. D+12·30일고가대비 <span style="color:#7dabf8;font-weight:700">-60.8%</span> — 이미 크게 터진 뒤</p></article>
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">종목</span>파인디앤씨(049120)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 18억, 직전최대 134.8배지만 절대액 무의미. 순매수집중 12.5%로 질도 나쁨</p></article>
+<article class="card"><h4 class="c-t">반도체·소부장</h4><p class="c-p"><span class="c-k">종목</span>HPSP·하나마이크론·이수페타시스·후성·코리아써키트·티에스이·저스템</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>5일누적 +15~33% 선반영, 전원 VWAP 아래 마감. 눌림 관찰용</p></article>
+<article class="card"><h4 class="c-t">기타 진행중</h4><p class="c-p"><span class="c-k">종목</span>혜인·뱅크웨어글로벌·더본코리아·LB세미콘·인텍플러스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>혜인 D+1(5일 <span style="color:#ef4444;font-weight:700">+55%</span>)·뱅크웨어글로벌 D+4(<span style="color:#ef4444;font-weight:700">+30.9%</span>) 후반부, 더본코리아 D+1(08/14 충족, 종가위치 78%·VWAP <span style="color:#ef4444;font-weight:700">+0.4%</span>)</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">미분류</h4><p class="c-p"><span class="c-k">정보지 사유</span>대금 7,155억 — 정보지엔 있으나 조건검색 미포착, 후발주 후보</p><div class="c-c"><span class="chip"><i>종목</i>인제니아테라퓨틱스</span></div></article>
+<article class="card"><h4 class="c-t">대북/의류 연관</h4><p class="c-p"><span class="c-k">정보지 사유</span><span style="color:#ef4444;font-weight:700">+9.08%</span>, 대북·의류 연관 — 조건검색 미포착</p><div class="c-c"><span class="chip"><i>종목</i>한세실업</span></div></article>
+<article class="card"><h4 class="c-t">미분류</h4><p class="c-p"><span class="c-k">정보지 사유</span><span style="color:#ef4444;font-weight:700">+11.03%</span> — 조건검색 미포착</p><div class="c-c"><span class="chip"><i>종목</i>유니퀘스트</span></div></article>
+<article class="card"><h4 class="c-t">대북·경협</h4><p class="c-p"><span class="c-k">정보지 사유</span>대금 4.8억 — 등락률 상위지만 돈이 없어 &#x27;후발주도 아닌 껍데기&#x27;</p><div class="c-c"><span class="chip"><i>종목</i>차이커뮤니케이션</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>대북 후속</strong> — 회담 일정·장소 등 구체 보도 나오면 진짜(아난티 시초 갭 무리 말고 눌림 대기), 백악관·북측 부인이면 하루살이. 아난티 저가 4,380 위 지지 + 대금 500억 이상 유지 = 진짜 / 대금 300억 밑 급감 + 종가위치 20% 이하 = 가짜</li>
+<li><strong>미-이란 상황</strong> — HMM 22,000원(오늘 저점권) 위 유지 + 대금 1,500억 이상, SCFI·BDI 실제 상승 보도 = 진짜 / 휴전 재개·협상 타결 헤드라인 하나면 07/27 &quot;충돌 멈추자 해운 테마주 우수수&quot; 재현, HMM 대금 800억 이하 = 가짜. 08/14~08/17 증권사 3곳(신한·iM·한국투자) 중립 하향 = 기관 시각은 이미 식음</li>
+<li><strong>삼성전자 광주 HVAC 공장 후속</strong> — 발주처·협력사 실명 보도 + 삼성공조 대금이 오전 중 30일 1위 경신(오늘 4위)이면 신규 자금 확정 / 대금 200억 밑 반토막 + 시초가 아래 마감 = 가짜</li>
+<li><strong>현대해상 동반 보험주</strong> — 삼성화재·DB손보 등 손보 3사가 같이 움직이면 &#x27;금리 상승 보험주&#x27;로 테마 승격. 오늘은 동반주가 문서에 없어 개별주 처리</li>
+<li><strong>마이크로컨텍솔 418억의 정체</strong> — DART 공시 신규 공급계약 여부 + 내일 동반 종목 유무. 뉴스 0건인데 대금 30일 1위·직전최대 6.1배는 설명이 필요한 숫자(현재는 재료 미상)</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 브리핑 — 2026-08-18 (화) 장마감</h1>
+<p>기준일: 2026-08-18 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p><strong>웹 검색: 사용하지 않음.</strong> 문서 내 정보지 교차·뉴스·재료 이력이 충분히 붙어 있어 이 문서만으로 판정했다. 아래 모든 근거는 문서 내부 데이터다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 켜진 불은 <strong>세 개</strong>다. ① <strong>대북·경협주</strong> — 트럼프의 &quot;김정은이 답했다&quot; 발언으로 정보지 두 곳이 <strong>오늘 처음</strong> 잡은 완전 신규 테마, 아난티(1,035억)를 중심으로 6종목이 동시 점화. ② <strong>호르무즈발 해운주</strong> — HMM(2,322억)·흥아해운(896억)이 나란히 D+0/대금 1~2위, 역시 정보지 <strong>오늘 처음</strong>. ③ <strong>삼성전자 광주 HVAC 공장發 액침냉각·데이터센터 공조</strong> — 삼성공조 상한가 포함 4~5종목이 정보지 <strong>오늘 처음</strong>으로 묶였다. 반면 오늘 거래대금 상위를 채운 반도체(HPSP·하나마이크론·이수페타시스·후성)는 <strong>직전5일누적 +15~23%</strong>에 정보지 등장도 3~4일째 — 오늘이 첫날이 아니다. 돈은 크지만 D+0이 아니므로 내 매매 대상이 아니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>【1순위】 대북·경협주 (정보지 확인 — 신규)</h3>
+<p><strong>묶인 종목</strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>025980 아난티</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+13.9</span><span class="chip"><i>거래대금(억)</i><strong>1,035</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>27.6배</span><span class="chip"><i>5일누적%</i>+1.3</span><span class="chip"><i>오늘충족</i>★12봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">045390 대아티아이</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.0</span><span class="chip"><i>거래대금(억)</i>317</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>15.5배</span><span class="chip"><i>5일누적%</i>+2.9</span><span class="chip"><i>오늘충족</i>★18봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">009270 신원</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>거래대금(억)</i>133</span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>12.9배</span><span class="chip"><i>5일누적%</i>+0.5</span><span class="chip"><i>오늘충족</i>★15봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">007110 일신석재</h4><div class="c-c"><span class="chip"><i>등락%</i>+22.2</span><span class="chip"><i>거래대금(억)</i>113</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>4.1배</span><span class="chip"><i>5일누적%</i><strong>-23.9</strong></span><span class="chip"><i>오늘충족</i>★29봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">026040 제이에스티나</h4><div class="c-c"><span class="chip"><i>등락%</i>+16.4</span><span class="chip"><i>거래대금(억)</i>99</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>5.6배</span><span class="chip"><i>5일누적%</i>+7.8</span><span class="chip"><i>오늘충족</i>★3봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">011390 부산산업</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.5</span><span class="chip"><i>거래대금(억)</i>64</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i><strong>14.7배</strong></span><span class="chip"><i>5일누적%</i>+2.3</span><span class="chip"><i>오늘충족</i>★9봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">047770 코데즈컴바인</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>34</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>3위</span><span class="chip"><i>직전최대대비</i>0.1배</span><span class="chip"><i>5일누적%</i>+0.9</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>07/16</span></div></article>
+<article class="card"><h4 class="c-t">033340 좋은사람들</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>13</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>30일순위</i>6위</span><span class="chip"><i>직전최대대비</i>0.2배</span><span class="chip"><i>5일누적%</i>+8.5</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/14</span></div></article>
+<article class="card"><h4 class="c-t">014990 인디에프</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>거래대금(억)</i>5.2</span><span class="chip"><i>D+N</i>D+21</span><span class="chip"><i>30일순위</i>3위</span><span class="chip"><i>직전최대대비</i>0.3배</span><span class="chip"><i>5일누적%</i>+1.1</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>06/02</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 오늘(08/18).</strong> 근거가 세 겹으로 겹친다 — ⓐ 정보지 A·B 모두 <code>대북 관련주</code>/<code>대북주</code> 를 <strong>오늘 처음</strong> 등장으로 기록, ⓑ 대금 규모가 있는 6종목 전부 <strong>★첫흐름 + 대금 30일 1위</strong>, ⓒ 아난티 직전최대대비 <strong>27.6배</strong>, 부산산업 14.7배, 대아티아이 15.5배 — 성격이 완전히 다른 자금이다. 코데즈컴바인·인디에프의 과거 충족(07/16, 06/02)은 다른 사이클의 흔적이지 이 테마의 연속이 아니다(그 사이 30일 조용).</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주 = 아난티(025980)</strong> — 거래대금 1,035억으로 테마 내 압도적 1위(2위 대아티아이의 3.3배). 전일 대비 56.1배, 30일 대금 1위, 직전5일누적 <span style="color:#ef4444;font-weight:700">+1.3%</span>로 선반영 없음. <strong>D+0 조건을 전부 채운 종목.</strong></li>
+<li>준대장 = 대아티아이(317억, 철도·남북철도 연결 관련). D+0 + 대금 1위 + 순매수집중 76.9%.</li>
+<li><strong>후발/잡주 구간</strong> = 코데즈컴바인·좋은사람들·인디에프. 상한가지만 대금이 5~34억뿐이고 직전최대대비 0.1~0.3배 — <strong>돈이 안 들어온 상한가</strong>다. 등락률만 보고 이쪽을 잡으면 원칙 4의 함정에 그대로 빠진다.</li>
+<li>신원(009270)은 성격이 반쯤 다르다. 2분기 사상 최대 매출이라는 <strong>자체 실적 재료</strong>가 09:17 기사로 먼저 나왔고, 대북은 그 위에 얹힌 것(10:27 &quot;사상최대 매출·북미대화 기대감&quot;). 실적+테마 이중 재료.</li>
+</ul>
+<p><strong>추정 재료</strong>: 트럼프 대통령의 &quot;김정은이 답했다, 매우 긍정적&quot; 발언 → 북미 정상회담 재개 기대 (정보지 A·B 공통, 뉴시스 10:00 &quot;북미대화 기대감에 경협주 불기둥&quot;). 재료의 정체는 명확하다.</p>
+<p><strong>재료 단계</strong>: <code>이력 없음 → 신규 이벤트</code> — 일신석재는 3개월 재료 이력이 <strong>오늘 1건뿐</strong>, 부산산업·대아티아이·아난티는 대북 관련 이력이 전무하다. 정치 이벤트형 신규 점화. 재탕 아님.</p>
+<p><strong>⚠ 마감 성격이 나쁘다는 점은 그대로 적어둔다.</strong> 아난티 종가위치 16%·VWAP <span style="color:#7dabf8;font-weight:700">-7.4%</span>, 대아티아이 14%·VWAP <span style="color:#7dabf8;font-weight:700">-5.3%</span>, 일신석재 0%·VWAP <span style="color:#7dabf8;font-weight:700">-7.6%</span>, 신원 1%·VWAP <span style="color:#7dabf8;font-weight:700">-7.0%</span>. <strong>전부 시가 부근 급등 후 종일 흘러내린 형태</strong>다. 재료는 신규지만 오늘 산 사람 대부분이 물려 있다. D+1 반등 시 매물벽이 두껍다는 뜻.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li><strong>진짜</strong>: 아난티가 오늘 저가(4,380) 위에서 지지받으며 거래대금 500억 이상 유지 / 회담 일정·장소 등 <strong>구체적 후속 보도</strong>(단계 상승) / 오늘 대금 하위였던 종목 아닌 <strong>아난티·대아티아이로 돈이 재차 몰림</strong></li>
+<li><strong>가짜</strong>: 아난티 대금이 300억 밑으로 급감 + 종가위치 계속 20% 이하 / 백악관·북측 부인 보도 / 코데즈컴바인 같은 저대금 잡주만 상한가 이어감(수급 없는 껍데기 장세)</li>
+</ul>
+<hr>
+<h3>【2순위】 해운 — 호르무즈 해협 마비 (정보지 확인 — 신규)</h3>
+<p><strong>묶인 종목</strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>011200 HMM</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>거래대금(억)</i><strong>2,322</strong></span><span class="chip"><i>30일순위</i><strong>1위</strong></span><span class="chip"><i>직전최대대비</i>2.2배</span><span class="chip"><i>5일누적%</i>-2.1</span><span class="chip"><i>오늘충족</i>★18봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">003280 흥아해운</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.9</span><span class="chip"><i>거래대금(억)</i>896</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>30일순위</i>2위</span><span class="chip"><i>직전최대대비</i>0.8배</span><span class="chip"><i>5일누적%</i>+1.7</span><span class="chip"><i>오늘충족</i>★24봉</span><span class="chip"><i>이전충족</i><strong>07/09</strong></span></div></article>
+<article class="card"><h4 class="c-t">465770 STX그린로지스</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i>148</span><span class="chip"><i>D+N</i>D+12</span><span class="chip"><i>30일순위</i>7위</span><span class="chip"><i>직전최대대비</i>0.3배</span><span class="chip"><i>5일누적%</i>-7.5</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>07/21</span></div></article>
+<article class="card"><h4 class="c-t">028670 팬오션</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.3</span><span class="chip"><i>거래대금(억)</i>389</span><span class="chip"><i>30일순위</i>3위</span><span class="chip"><i>직전최대대비</i>0.9배</span><span class="chip"><i>5일누적%</i>-4.1</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>07/31</span></div></article>
+<article class="card"><h4 class="c-t">005880 대한해운</h4><div class="c-c"><span class="chip"><i>등락%</i>+2.0</span><span class="chip"><i>거래대금(억)</i>126</span><span class="chip"><i>30일순위</i>3위</span><span class="chip"><i>직전최대대비</i>0.8배</span><span class="chip"><i>5일누적%</i>-0.5</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>07/06</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 재료는 오늘(08/18) 새로 터졌지만, 종목들은 이미 여러 번 반응한 이력이 있다.</strong> 흥아해운 07/09 충족, STX그린로지스 07/21 충족, 팬오션 07/31 충족 — 호르무즈 이슈는 6월부터 반복돼 온 재료다(흥아해운 재료 이력: 06/11 재봉쇄, 07/14 통제, 07/21 후티 봉쇄, 07/27 충돌 멈춤). 즉 <strong>테마 자체는 재탕, 오늘 국면은 신규 점화</strong>라는 이중 구조다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주 = HMM(011200)</strong> — 2,322억, 테마 내 압도적. 전일 6.7배, 30일 대금 1위, <strong>직전5일누적 <span style="color:#7dabf8;font-weight:700">-2.1%</span></strong>(전혀 선반영 안 됨), 종가위치 77% · <strong>VWAP <span style="color:#ef4444;font-weight:700">+1.2%</span></strong>로 오늘 산 사람이 평균적으로 이익 상태. 오늘 충족 18봉 · G1 18회로 수급 밀도도 가장 높다. <strong>마감 성격이 대북주보다 훨씬 낫다.</strong></li>
+<li>흥아해운 — 896억, D+0에 종가위치 81%·VWAP <span style="color:#ef4444;font-weight:700">+1.9%</span>로 마감도 좋다. 다만 <strong>07/09에 이미 충족한 이력</strong>이 있어 완전 신규는 아니고, 회전율 65.8%로 단기 과열.</li>
+<li><strong>STX그린로지스는 전형적 후발주 함정</strong> — 등락률 <span style="color:#ef4444;font-weight:700">+29.9%</span>로 테마 내 최고지만 대금 148억, 직전최대대비 0.3배, 30일 대금 7위. 돈이 안 들어온 상한가다.</li>
+</ul>
+<p><strong>추정 재료</strong>: 미국·이란 휴전 연장 불발 → 호르무즈해협 사실상 마비 (아이뉴스24 09:47, 뉴시스 14:22, 정보지 A·B 공통).</p>
+<p><strong>재료 단계</strong>: <code>긴장(07/13, 07/21) → 재긴장·해협 마비(08/18)</code> — <strong>같은 단계의 반복</strong>에 가깝다. 다만 HMM은 08/13 2분기 영업익 3,541억(<span style="color:#ef4444;font-weight:700">+52%</span>) 실적 확정이 깔려 있고 그 위에 운임 재료가 얹혔다는 점에서, <strong>실적(4단계) + 이벤트 재발</strong>의 조합이다. 순수 재탕은 아니지만 &quot;완전 새 사이클&quot;이라 부르기도 어렵다. — <strong>신선도 중간</strong>.</p>
+<p><strong>⚠ 반대 근거도 적는다.</strong> 08/14~08/17에 증권사 3곳(신한·iM·한국투자)이 <strong>목표주가 도달/투자의견 중립 하향</strong>을 냈다. 오늘 아침 한국경제도 &quot;증권가서 나온 뜻밖의 경고&quot;를 실었다. 기관 시각은 이미 식어 있다.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li><strong>진짜</strong>: HMM이 22,000원(오늘 저점권) 위 유지 + 대금 1,500억 이상 / <strong>SCFI·BDI 운임 지수 실제 상승</strong> 보도 / 미-이란 충돌 격화 후속</li>
+<li><strong>가짜</strong>: 휴전 재개·협상 타결 헤드라인 하나면 07/27(&quot;충돌 멈추자 해운 테마주 우수수&quot;) 그대로 재현 / HMM 대금 800억 이하로 축소</li>
+</ul>
+<hr>
+<h3>【3순위】 액침냉각·데이터센터 공조 (정보지 확인 — 신규)</h3>
+<p><strong>묶인 종목</strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>006660 삼성공조</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i><strong>450</strong></span><span class="chip"><i>D+N</i>D+11</span><span class="chip"><i>30일순위</i>4위</span><span class="chip"><i>직전최대대비</i>0.4배</span><span class="chip"><i>5일누적%</i>+8.3</span><span class="chip"><i>오늘충족</i>★36봉</span><span class="chip"><i>이전충족</i><strong>07/16 외2</strong></span></div></article>
+<article class="card"><h4 class="c-t">036200 유니셈</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.0</span><span class="chip"><i>거래대금(억)</i>286</span><span class="chip"><i>D+N</i>D+11</span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>5.7배</span><span class="chip"><i>5일누적%</i>+18.1</span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">053080 케이엔솔</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.5</span><span class="chip"><i>거래대금(억)</i>119</span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i><strong>12.9배</strong></span><span class="chip"><i>5일누적%</i>+8.0</span><span class="chip"><i>오늘충족</i>★16봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">067170 오텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.8</span><span class="chip"><i>거래대금(억)</i>47</span><span class="chip"><i>D+N</i>D+5</span><span class="chip"><i>30일순위</i>4위</span><span class="chip"><i>직전최대대비</i>0.5배</span><span class="chip"><i>5일누적%</i>+9.9</span><span class="chip"><i>오늘충족</i>★4봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">060310 3S</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>거래대금(억)</i>22</span><span class="chip"><i>30일순위</i>1위</span><span class="chip"><i>직전최대대비</i>5.9배</span><span class="chip"><i>5일누적%</i>+2.6</span><span class="chip"><i>오늘충족</i>★12봉</span><span class="chip"><i>이전충족</i>없음(★첫흐름)</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 재료는 오늘 신규(정보지 A·B 모두 오늘 처음)이지만, 대장주 삼성공조는 이미 07/06·07/14·07/16 세 번 충족했다.</strong> 즉 <strong>이 종목군은 7월 중순에 한 사이클을 이미 돌았고</strong>, 오늘은 삼성전자 광주 HVAC 공장이라는 <strong>새 뉴스로 재점화</strong>된 국면이다. 삼성공조 D+11(직전급등 07/31), 유니셈 D+11도 같은 얘기다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주 = 삼성공조(006660)</strong> — 450억으로 테마 최대, 상한가 + <strong>종가위치 100% · VWAP <span style="color:#ef4444;font-weight:700">+8.3%</span></strong> 로 마감 성격이 오늘 전 종목 중 최상급. 충족 36봉 · G2 250회. <strong>다만 대금 30일 순위가 4위, 직전최대대비 0.4배</strong> — 7월에 더 큰 돈이 들어왔던 종목이라는 뜻. 완전 신규 자금은 아니다.</li>
+<li><strong>오늘 처음 붙은 자금은 오히려 유니셈·케이엔솔·3S</strong> — 셋 다 대금 30일 1위 + 직전최대대비 5.7~12.9배. 다만 절대액이 작다(286/119/22억).</li>
+<li>오텍 — 오텍캐리어 48MW 하이퍼스케일 데이터센터 냉각 수주라는 <strong>개별 확정 재료</strong>를 따로 갖고 있다. 종가위치 81%·VWAP <span style="color:#ef4444;font-weight:700">+5.3%</span>로 마감도 좋다. 대금 47억으로 작은 게 유일한 흠.</li>
+</ul>
+<p><strong>추정 재료</strong>: 삼성전자 광주첨단산단 AI데이터센터용 정밀냉난방공조(HVAC) 공장 2,000억 규모 건립 (정보지 A·B 공통) + 오텍캐리어 48MW급 DC 냉각 수주.</p>
+<p><strong>재료 단계</strong>: <strong><code>기대(07/01 캐리어 협업, 07/09 엔비디아 기대) → 확정(08/10 AI DC 냉각시장 진입 평가, 08/14 전기냉동탑차 101대 공급, 08/18 삼성전자 공장 건립 + 48MW 수주)</code> — 단계 상승. 실질 신규 재료다.</strong> 오텍은 특히 기대 → 수주 확정으로 명확히 올라갔다. 다만 <strong>삼성공조는 대금 순위가 4위에 그쳐 &quot;시장이 아직 7월만큼 인정하진 않았다&quot;</strong> — 지시문 1-1의 단서 그대로, 단계 상승만으로 D+0이라 단정하지 않는다.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li><strong>진짜</strong>: 삼성공조가 상한가 다음날 갭 유지하며 <strong>대금 30일 1위 경신</strong>(오늘 4위 → 1위로 올라오면 신규 자금 확정) / 오텍·케이엔솔로 대금 확산 / 삼성전자 발주처·수주 기업 실명 후속 보도</li>
+<li><strong>가짜</strong>: 삼성공조 대금이 200억 밑으로 반토막 + 시초가 아래 마감 / 정보지 테마가 하루 만에 사라짐</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<p><strong>반도체·HBM 소부장 (정보지 3~4일째 — D+0 아님)</strong> 오늘 거래대금 상위를 다 차지했지만 <strong>직전5일누적이 전부 +15~34%</strong>다. 이미 달렸다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">HPSP</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 40% · VWAP <span style="color:#7dabf8;font-weight:700">-2.7%</span></p><div class="c-c"><span class="chip"><i>대금(억)</i>2,912</span><span class="chip"><i>5일누적%</i>+16.6</span></div></article>
+<article class="card"><h4 class="c-t">하나마이크론</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 <strong>8%</strong> · VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span> (07/20 이전충족)</p><div class="c-c"><span class="chip"><i>대금(억)</i>2,736</span><span class="chip"><i>5일누적%</i>+20.8</span></div></article>
+<article class="card"><h4 class="c-t">이수페타시스</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 44% · VWAP <span style="color:#7dabf8;font-weight:700">-2.1%</span> (07/01 이전충족)</p><div class="c-c"><span class="chip"><i>대금(억)</i>2,415</span><span class="chip"><i>5일누적%</i>+15.1</span></div></article>
+<article class="card"><h4 class="c-t">후성</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 24% · VWAP <span style="color:#7dabf8;font-weight:700">-5.6%</span></p><div class="c-c"><span class="chip"><i>대금(억)</i>1,895</span><span class="chip"><i>5일누적%</i>+22.7</span></div></article>
+<article class="card"><h4 class="c-t">코리아써키트</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 28% · VWAP <span style="color:#7dabf8;font-weight:700">-4.5%</span></p><div class="c-c"><span class="chip"><i>대금(억)</i>1,207</span><span class="chip"><i>5일누적%</i>+15.4</span></div></article>
+<article class="card"><h4 class="c-t">티에스이</h4><p class="c-p"><span class="c-k">마감 성격</span>종가위치 12% · VWAP <span style="color:#7dabf8;font-weight:700">-4.4%</span></p><div class="c-c"><span class="chip"><i>대금(억)</i>731</span><span class="chip"><i>5일누적%</i><strong>+29.6</strong></span></div></article>
+<article class="card"><h4 class="c-t">저스템</h4><p class="c-p"><span class="c-k">마감 성격</span>—</p><div class="c-c"><span class="chip"><i>대금(억)</i>386</span><span class="chip"><i>5일누적%</i><strong>+33.3</strong></span></div></article>
+</div>
+<p><strong>공통 특징: 아침에 고가 찍고 하루 종일 흘러내렸다.</strong> 여섯 종목 모두 VWAP 아래 마감. 필라델피아반도체 <span style="color:#ef4444;font-weight:700">+1.64%</span>라는 외부 재료에 갭으로 반응했다가 물량을 받아낸 전형. <strong>신규 진입 대상 아님.</strong> 굳이 본다면 후성(상반기 영업익 <span style="color:#ef4444;font-weight:700">+123%</span> 확정 실적)·제너셈(2Q <span style="color:#ef4444;font-weight:700">+56.8%</span>) 정도가 실적 뒷받침이 있으나, D+11이라 늦었다.</p>
+<p><strong>기타 진행 중</strong></p>
+<ul>
+<li>혜인 D+1 (5일누적 <strong><span style="color:#ef4444;font-weight:700">+55.0%</span></strong> — 후반부, 제외)</li>
+<li>뱅크웨어글로벌 D+4 (5일누적 <span style="color:#ef4444;font-weight:700">+30.9%</span> — 후반부)</li>
+<li>더본코리아 D+1 (08/14 이미 충족, 2일째. 다만 종가위치 78%·VWAP <span style="color:#ef4444;font-weight:700">+0.4%</span>로 마감은 견조)</li>
+<li>LB세미콘 D+1, 인텍플러스 D+4</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>377450 리파인</strong></h4><p class="c-p"><span class="c-k">내용</span><span style="color:#ef4444;font-weight:700">+17.9%</span>, 282억, 직전최대 <strong>14.5배</strong>. 최대주주 공개매수(주당 17,600원) — <strong>재료 확정형 이벤트</strong>. 테마 아님, 차익거래 영역. 추격 매수 대상 아니다</p></article>
+<article class="card"><h4 class="c-t"><strong>019010 베뉴지</strong></h4><p class="c-p"><span class="c-k">내용</span><span style="color:#ef4444;font-weight:700">+29.8%</span>, 268억, 직전최대 25.7배. 보유 삼성전자·하이닉스 지분가치가 시총 상회. 재료 단계 <code>기대(05/28) → 실적 반영(08/18 상반기 순익 시총 초과)</code> — <strong>단계 상승</strong>. 다만 D+11</p></article>
+<article class="card"><h4 class="c-t"><strong>001450 현대해상</strong></h4><p class="c-p"><span class="c-k">내용</span><span style="color:#ef4444;font-weight:700">+11.6%</span>, 1,043억, <strong>D+0 + 대금 30일 1위 + ★첫흐름</strong>. 목표가 줄상향·배당 재개 가시성·美 30년물 금리 급등. 종가위치 83%·VWAP <span style="color:#ef4444;font-weight:700">+2.7%</span>로 마감 최상. <strong>동반 보험주가 문서에 없어 테마로 못 묶었다</strong> — 내일 삼성화재·DB손보 등 손보 3사가 같이 움직이면 그때 &#x27;금리 상승 보험주&#x27;로 승격</p></article>
+<article class="card"><h4 class="c-t">098120 마이크로컨텍솔</h4><p class="c-p"><span class="c-k">내용</span><span style="color:#ef4444;font-weight:700">+29.9%</span>, 418억, 대금 1위·직전최대 6.1배인데 <strong>뉴스 0건</strong>. <code>재료 미상 — 주가 선행 추정</code>. 반도체 소켓 업체로 반도체 테마 동조 가능성. 확인: 공시(DART) 신규 공급계약 여부, 내일 동반 종목 유무</p></article>
+<article class="card"><h4 class="c-t">012210 삼미금속</h4><p class="c-p"><span class="c-k">내용</span><span style="color:#7dabf8;font-weight:700">-1.4%</span> 마감이지만 고가 <span style="color:#ef4444;font-weight:700">+26.3%</span>, 대금 1위. <strong>14:44 충족 후 15:19까지 <span style="color:#7dabf8;font-weight:700">-22.5%</span> 폭락</strong>. 정보지에도 없음. 전형적 장중 세력 이탈. <strong>접근 금지</strong></p></article>
+<article class="card"><h4 class="c-t">000040 KR모터스</h4><p class="c-p"><span class="c-k">내용</span>상한가·★5봉 충족이지만 대금 <strong>17억</strong>. 정보지 없음. 유통시총 101억 초소형. 재료 미상</p></article>
+<article class="card"><h4 class="c-t">387690 레메디</h4><p class="c-p"><span class="c-k">내용</span><span style="color:#ef4444;font-weight:700">+22.8%</span>, 880억. 반기 실적 역대 최대. 다만 D+12, 30일고가대비 <strong><span style="color:#7dabf8;font-weight:700">-60.8%</span></strong> — 이미 크게 터진 뒤의 종목</p></article>
+</div>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>① 대북·경협 (정보지 A·B 모두 &#x27;오늘 처음&#x27;, 6종목 ★첫흐름+대금 30일 1위 동시 충족) ② 해운/호르무즈 (재료 신규, 종목은 반복 이력 있음 — 신선도 중간) ③ 액침냉각·데이터센터 공조 (재료 단계 상승, 단 대장주 대금순위 4위로 확신도 하향)</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>대북    → 아난티(025980) 1,035억  ※대아티아이 317억의 3.3배, 논란 없는 1위 해운    → HMM(011200) 2,322억     ※흥아해운 896억의 2.6배 액침냉각 → 삼성공조(006660) 450억   ※단, 30일 대금 4위·직전최대 0.4배 = 7월에 더 큰 돈이 들어왔었음</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>오텍(067170)   기대(07/01 캐리어 협업) → 확정(08/18 48MW DC 냉각 수주) — 명확한 1→3 상승 베뉴지(019010) 기대(05/28 지분가치 부각) → 실적반영(08/18 상반기 순익&gt;시총) — 1→4 상승 신원(009270)   기대 → 확정(2Q 매출 3,099억 사상 최대, 영업익 7배) + 대북 이중 재료 현대해상(001450) 기대 → 확정(2Q 영업익 5,050억 <span style="color:#ef4444;font-weight:700">+46.9%</span>, 배당 재개 가시성) — 목표가 줄상향 ※ 반도체 소부장(HPSP·이수페타시스 등)은 단계는 올랐으나 5일누적이 이미 +15~30% = 선반영. 제외.</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>일신석재(007110)   대금 113억, 5일누적 <span style="color:#7dabf8;font-weight:700">-23.9%</span>(어제 <span style="color:#7dabf8;font-weight:700">-14%</span>에서 반등), 종가위치 0% — 대북 후미 제이에스티나(026040) 대금 99억, 종가위치 37% — 대북 후미 부산산업(011390)   대금 64억 — 직전최대 14.7배는 좋으나 절대액 최소 3S(060310)        대금 22억 — 액침냉각 최후미 파인디앤씨(049120)  대금 18억, 직전최대 134.8배지만 절대액 무의미. 순매수집중 12.5%로 질도 나쁨 ※등락률 상위지만 돈이 없어 &#x27;후발주도 아닌 껍데기&#x27;: 코데즈컴바인(34억·직전최대 0.1배), 좋은사람들(13억·0.2배), 인디에프(5.2억·0.3배), 차이커뮤니케이션(4.8억), KR모터스(17억), STX그린로지스(148억·직전최대 0.3배)</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>대아티아이(045390)  대북 준대장, D+0·대금 1위·순매수집중 76.9% 흥아해운(003280)    해운 D+0, 종가위치 81%·VWAP <span style="color:#ef4444;font-weight:700">+1.9%</span> — 마감 성격 우수 유니셈(036200)      액침냉각에서 오늘 처음 돈 붙음(대금 30일 1위·직전최대 5.7배) 케이엔솔(053080)    직전최대 12.9배 — 신규 자금 성격 뚜렷 현대해상(001450)    D+0·대금 1위·VWAP <span style="color:#ef4444;font-weight:700">+2.7%</span>, 동반 보험주 확인되면 테마 승격 마이크로컨텍솔(098120) 재료 미상·대금 418억 — 정체 확인 필요 ※정보지엔 있는데 조건검색 미포착 = 후발주 후보: 인제니아테라퓨틱스(7,155억), 한세실업(<span style="color:#ef4444;font-weight:700">+9.08%</span>, 대북/의류 연관), 유니퀘스트(<span style="color:#ef4444;font-weight:700">+11.03%</span>)</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>HPSP(D+-, 5일 <span style="color:#ef4444;font-weight:700">+16.6%</span>) · 하나마이크론(<span style="color:#ef4444;font-weight:700">+20.8%</span>, 07/20 이전충족) · 이수페타시스(<span style="color:#ef4444;font-weight:700">+15.1%</span>, 07/01 이전충족) 후성(<span style="color:#ef4444;font-weight:700">+22.7%</span>) · 코리아써키트(<span style="color:#ef4444;font-weight:700">+15.4%</span>) · 티에스이(<span style="color:#ef4444;font-weight:700">+29.6%</span>) · 제너셈(D+11) · 유니셈(D+11) 더본코리아(D+1, 08/14 충족) · 혜인(D+1, 5일 <span style="color:#ef4444;font-weight:700">+55%</span>) · 뱅크웨어글로벌(D+4, 5일 <span style="color:#ef4444;font-weight:700">+30.9%</span>) → 전원 VWAP 아래 마감(오늘 산 사람 평균 손실). 반등 시 매물벽 두껍다.</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>대북 후속. 백악관·북측에서 회담 일정/장소 등 &#x27;단계 상승&#x27; 보도가 나왔는가, 아니면 부인인가.</li>
+</ol>
+<p>→ 나왔으면 아난티 시초 갭 무리하지 말고 눌림 대기. 부인이면 테마 전체 하루살이.</p>
+<ol>
+<li>미-이란 상황. 휴전 재개 헤드라인 여부.</li>
+</ol>
+<p>→ 07/27에 &quot;충돌 멈추자 해운 테마주 우수수&quot; 전례가 있다. HMM은 22,000원 이탈 시 근거 소멸.</p>
+<ol>
+<li>삼성전자 광주 HVAC 공장 후속 — 발주처·협력사 실명이 나오는가.</li>
+</ol>
+<ul>
+<li>삼성공조 시초 대금이 오전 중 30일 1위를 넘어서는가(오늘은 4위, 신규 자금 미확정).</li>
+</ul>
+<p>(보너스) 마이크로컨텍솔 418억의 정체 — DART 공시 확인. 뉴스 0건인데 대금 30일 1위·직전최대 6.1배는 설명이 필요한 숫자다. ```</p>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-08-18 21:14
+</p>
+</article></div>
+</body></html>
