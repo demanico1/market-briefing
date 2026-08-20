@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>미국장 브리핑 2026-08-21</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 40px;max-width:1880px;margin:0 auto}
+.hd{display:flex;align-items:baseline;gap:16px;margin-bottom:18px}
+.hd h1{font-size:26px;font-weight:800}
+.hd .date{color:#9aa0a6;font-size:15px}
+.hd .cnt{margin-left:auto;color:#9aa0a6;font-size:14px;background:#1a1d24;padding:6px 14px;border-radius:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px}
+.idx .nm{font-size:14px;color:#9aa0a6;margin-bottom:6px}
+.idx .val{font-size:26px;font-weight:800}
+.idx .chg{font-size:16px;font-weight:700;margin-top:2px}
+.dn{color:#ef4444}.up{color:#22c55e}
+.strip{display:flex;gap:26px;background:#1a1d24;border-radius:12px;padding:12px 20px;margin-bottom:14px;font-size:14px;flex-wrap:wrap}
+.strip b{color:#e8eaed}.strip span{color:#9aa0a6}
+.one{background:#1a1d24;border-left:4px solid #ef4444;border-radius:12px;padding:16px 22px;font-size:21px;font-weight:700;line-height:1.45;margin-bottom:14px}
+.cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-bottom:14px}
+h2{font-size:15px;color:#9aa0a6;margin-bottom:10px;font-weight:700}
+.pts li{list-style:none;padding:6px 0 6px 18px;position:relative;font-size:14.5px;line-height:1.4;border-bottom:1px solid #262a33}
+.pts li:last-child{border-bottom:0}
+.pts li:before{content:"▪";position:absolute;left:0;color:#ef4444}
+.bar{margin-bottom:11px}
+.bar .lb{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.bar .lb span:last-child{color:#9aa0a6}
+.bar .tr{background:#262a33;border-radius:4px;height:9px}
+.bar .fl{background:#3b82f6;height:9px;border-radius:4px}
+.bdg{display:inline-block;padding:5px 11px;border-radius:7px;font-size:13.5px;font-weight:700;margin:0 6px 8px 0}
+.bdg.u{background:rgba(34,197,94,.13);color:#22c55e}
+.bdg.d{background:rgba(239,68,68,.13);color:#ef4444}
+.bdg.n{background:rgba(154,160,166,.15);color:#9aa0a6}
+.sub{font-size:12.5px;color:#9aa0a6;margin-top:4px}
+.ft{color:#9aa0a6;font-size:12.5px;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="hd"><h1>미국장 브리핑</h1><span class="date">2026-08-21 (금) · 8/20 목요일 미국장 마감</span><span class="cnt">수집 채널 7/16</span></div>
+
+<div class="grid3">
+<div class="card idx"><div class="nm">S&amp;P 500</div><div class="val dn">-0.8%</div><div class="chg dn">▼ 하락</div></div>
+<div class="card idx"><div class="nm">나스닥</div><div class="val dn">-1.0%</div><div class="chg dn">▼ 하락</div></div>
+<div class="card idx"><div class="nm">다우</div><div class="val dn">-1.32%</div><div class="chg dn">▼ -703.84p</div></div>
+</div>
+
+<div class="strip">
+<div><span>10년물</span> <b>~4.70%</b> <span>(장중, 반등)</span></div>
+<div><span>30년물</span> <b>5.2%대</b></div>
+<div><span>달러인덱스</span> <b>98.7</b> <span>(3개월 최저 부근)</span></div>
+<div><span>WTI</span> <b>$86.8</b> <span class="up">+2.8%</span></div>
+<div><span>VIX</span> <b>~16</b> <span>(장중)</span></div>
+<div><span>비트코인</span> <b>$71.5K</b> <span class="up">+11%</span></div>
+<div><span>금</span> <b>$4,540대</b></div>
+</div>
+
+<div class="one">재무부 장기채 바이백 개입 효과가 하루 만에 소멸 — 금리·유가 반등에 월마트 쇼크까지 겹치며 3대 지수 동반 하락</div>
+
+<div class="cols">
+<div class="card">
+<h2>핵심 포인트</h2>
+<ul class="pts">
+<li>재무부, 10·20·30년물 바이백 2배 확대 발표 → 효과 하루 만에 소멸, 10년물 4.65% → 4.70% 재반등</li>
+<li>월마트 동일점포 매출 미스로 약 -9%, 4년여 만의 최악 하루 — 소비 둔화 우려 확산</li>
+<li>트럼프, 이란 "ECONOMIC D-DAY" 위협 → WTI 약 1개월 최고치, 인플레 우려 자극</li>
+<li>비트코인 +11% $71K, 6월 이후 첫 $70K 돌파 — 백악관 크립토 서밋 · 숏스퀴즈</li>
+<li>나스닥 8/4 저점 하회 + 전 지수 21일선 이탈 — IBD "매우 강한 약세 신호", 다음주 잭슨홀 · 엔비디아 실적 대기</li>
+</ul>
+</div>
+<div class="card">
+<h2>채널 합의도</h2>
+<div class="bar"><div class="lb"><span>재무부 개입은 임시방편</span><span>5/7</span></div><div class="tr"><div class="fl" style="width:71%"></div></div></div>
+<div class="bar"><div class="lb"><span>단기 약세 · 방어 우위</span><span>4/7</span></div><div class="tr"><div class="fl" style="width:57%"></div></div></div>
+<div class="bar"><div class="lb"><span>암호화폐 모멘텀 강세</span><span>3/7</span></div><div class="tr"><div class="fl" style="width:43%"></div></div></div>
+<div class="bar"><div class="lb"><span>월마트發 소비 둔화</span><span>2/7</span></div><div class="tr"><div class="fl" style="width:29%"></div></div></div>
+<div class="bar"><div class="lb"><span>NVDA 실적이 분수령</span><span>2/7</span></div><div class="tr"><div class="fl" style="width:29%"></div></div></div>
+<div class="sub">이견: 연말 강세 유지(Meet Kevin) vs 방어 우선(IBD·Ricky) vs 미국 약세·중국 강세(연합인포맥스)</div>
+</div>
+<div class="card">
+<h2>종목 / 섹터</h2>
+<div>
+<span class="bdg u">COIN +6.1%</span><span class="bdg u">MSTR +4.6%</span><span class="bdg u">MRK +12.6%</span><span class="bdg u">CF +5.7%</span>
+</div>
+<div>
+<span class="bdg d">WMT -9%</span><span class="bdg d">MRNA -20%대</span><span class="bdg d">AAP -25%</span><span class="bdg d">COTY -18%</span><span class="bdg d">WOLF -11%</span>
+</div>
+<div>
+<span class="bdg n">관심: NVDA 실적</span><span class="bdg n">PLTR</span><span class="bdg n">GH</span><span class="bdg n">FCX</span>
+</div>
+<div class="sub">섹터 로테이션: 에너지·헬스케어·원자재·금 강세 ↔ 반도체·소프트웨어·소비재 약세</div>
+</div>
+</div>
+
+<div class="ft">수집: 연합인포맥스 · IBD · Bloomberg Tech · FX Evolution · Meet Kevin · Ricky Gutierrez · Ross Cameron (7/16 · 소수몽키 라이브는 멤버십 전용, Yahoo 라이브는 자막 없음) · 원문: 2026-08-21_미국장_브리핑.md</div>
+</body>
+</html>
