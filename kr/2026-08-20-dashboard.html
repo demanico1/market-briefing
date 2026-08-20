@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>2026-08-20 한국장 브리핑</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:20px 28px;width:1920px;height:1080px;overflow:hidden}
+.hdr{display:flex;align-items:baseline;gap:16px;margin-bottom:14px}
+.hdr h1{font-size:26px;font-weight:700}
+.hdr .date{color:#9aa0a6;font-size:16px}
+.hdr .cov{margin-left:auto;color:#9aa0a6;font-size:14px;background:#1a1d24;padding:6px 14px;border-radius:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:12px;margin-bottom:12px}
+.card{background:#1a1d24;border-radius:12px;padding:14px 18px}
+.card .lbl{color:#9aa0a6;font-size:13px;margin-bottom:4px}
+.card .val{font-size:30px;font-weight:700}
+.card .chg{font-size:16px;font-weight:600;margin-top:2px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.flow{display:flex;gap:18px;font-size:15px}
+.flow div{flex:1}
+.flow .n{font-size:19px;font-weight:700;margin-top:2px}
+.oneline{background:#1a1d24;border-radius:12px;padding:16px 22px;margin-bottom:12px;font-size:22px;font-weight:600;line-height:1.4;border-left:4px solid #ef4444}
+.cols{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.sec h2{font-size:15px;color:#9aa0a6;margin-bottom:8px;font-weight:600}
+.pts li{list-style:none;font-size:15px;line-height:1.45;margin-bottom:7px;padding-left:14px;position:relative}
+.pts li:before{content:"▸";position:absolute;left:0;color:#ef4444}
+.bar{margin-bottom:8px}
+.bar .t{font-size:13.5px;display:flex;justify-content:space-between;margin-bottom:3px}
+.bar .bg{background:#0f1115;border-radius:4px;height:8px}
+.bar .fill{background:#ef4444;height:8px;border-radius:4px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b{padding:5px 10px;border-radius:8px;font-size:13.5px;font-weight:600;background:#22262f}
+.b.u{color:#ef4444}.b.d{color:#3b82f6}
+.tmr{background:#1a1d24;border-radius:12px;padding:13px 20px;margin-bottom:10px}
+.tmr h2{font-size:15px;color:#9aa0a6;margin-bottom:6px}
+.tmr ul{display:flex;gap:24px;flex-wrap:wrap}
+.tmr li{list-style:none;font-size:14.5px;line-height:1.4}
+.tmr b{color:#ef4444}
+.ftr{color:#9aa0a6;font-size:12.5px;display:flex;gap:20px}
+.macro{display:flex;gap:26px;background:#1a1d24;border-radius:12px;padding:10px 20px;margin-bottom:12px;font-size:14.5px;color:#9aa0a6}
+.macro b{color:#e8eaed}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>한국장 브리핑</h1><span class="date">2026년 8월 20일 (목)</span><span class="cov">수집 채널 9/12 · 영상 11건</span></div>
+
+<div class="grid">
+<div class="card"><div class="lbl">KOSPI</div><div class="val up">6,852.58</div><div class="chg up">▲ 381.41 (+5.89%) · 매수 사이드카</div></div>
+<div class="card"><div class="lbl">KOSDAQ</div><div class="val up">840.89</div><div class="chg up">▲ 16.43 (+1.99%)</div></div>
+<div class="card"><div class="lbl">코스피 수급 (억원)</div><div class="flow">
+<div>외국인<div class="n up">+17,092</div></div>
+<div>기관<div class="n dn">-4,882</div></div>
+<div>개인<div class="n dn">-22,758</div></div>
+</div></div>
+<div class="card"><div class="lbl">코스닥 수급 (억원)</div><div class="flow">
+<div>외국인<div class="n dn">-1,278</div></div>
+<div>기관<div class="n up">+1,123</div></div>
+<div>개인<div class="n up">+10</div></div>
+</div></div>
+</div>
+
+<div class="macro"><span>원·달러 환율 <b class="dn">▼5.1원 (1,300원대)</b></span><span>재료 <b>SK하이닉스 40조 자사주 매입·소각 공시</b></span><span>간밤 <b>모더나 +176% (암백신 임상3상 성공)</b></span></div>
+
+<div class="oneline">하이닉스 40조 축포에 하루 만의 V자 반등 — 외국인 1.7조 순매수, 단 "반도체만" 오른 쏠림 장세</div>
+
+<div class="cols">
+<div class="card sec"><h2>핵심 포인트</h2><ul class="pts">
+<li>SK하이닉스 <b>+12.73%</b> · 삼성전자 <b>+9.49%</b> — 62거래일간 일평균 약 6,400억 기계적 자사주 매수 개시</li>
+<li>삼성전자 추가 주주환원 기대 확산 — "형님이 더 큰 환원" (주덕)</li>
+<li>개인 2.3조 매도 vs 외국인 1.7조 매수 — 전일 투매 물량의 손바뀜</li>
+<li>미 장기국채 바이백 확대로 금리 안정 — 다만 구조적 인플레 경고 여전 (이효석)</li>
+<li>트레이더 진영은 여전히 "지독하게 어려운 장" — 슬럼프·보수 운용 (만쥬·돌팬티)</li>
+</ul></div>
+<div class="card sec"><h2>채널 합의도</h2>
+<div class="bar"><div class="t"><span>하이닉스 40조 주주환원이 핵심 재료</span><span>5/9</span></div><div class="bg"><div class="fill" style="width:56%"></div></div></div>
+<div class="bar"><div class="t"><span>삼성전자 추가 환원 기대</span><span>3/9</span></div><div class="bg"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>반도체 쏠림 — 전면 랠리 아님</span><span>3/9</span></div><div class="bg"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>바이오 모더나 낙수 효과</span><span>3/9</span></div><div class="bg"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>미 장기금리가 최대 변수</span><span>3/9</span></div><div class="bg"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>추세 전환 확신 (vs 신중론 다수)</span><span>1/9</span></div><div class="bg"><div class="fill" style="width:11%"></div></div></div>
+</div>
+<div class="card sec"><h2>종목 / 섹터</h2><div class="badges">
+<span class="b u">SK하이닉스 +12.73%</span>
+<span class="b u">SK스퀘어 +11.85%</span>
+<span class="b u">삼성전자 +9.49%</span>
+<span class="b u">삼성물산 +7.78%</span>
+<span class="b u">알테오젠 +11.86%</span>
+<span class="b u">파마리서치 +5.7%</span>
+<span class="b u">원익IPS +4.21%</span>
+<span class="b u">에코프로비엠 +3.92%</span>
+<span class="b u">SK증권 상한가*</span>
+<span class="b">현대차 +0.85%</span>
+<span class="b">삼성전기 +0.65%</span>
+<span class="b">LG엔솔 +0.14%</span>
+<span class="b d">한화에어로 -0.85%</span>
+</div>
+<div style="color:#9aa0a6;font-size:12px;margin-top:8px">* 채널 발언 기준 (자사주 매입 위탁 수혜)</div>
+</div>
+</div>
+
+<div class="tmr"><h2>내일 관전 포인트</h2><ul>
+<li><b>①</b> 하이닉스 자사주 매수 2일차 — 하방 방어력 검증</li>
+<li><b>②</b> 삼성전자 추가 주주환원 발표 여부 (8월 말 이사회 관측)</li>
+<li><b>③</b> 미 장기금리·FOMC 의사록 여진</li>
+<li><b>④</b> 미-이란 갈등 돌발 변수</li>
+<li><b>⑤</b> 반도체 外 확산 여부 = 추세 판별 기준</li>
+</ul></div>
+
+<div class="ftr"><span>수집: 만쥬 · 주덕×2 · 이효석×3 · 창원개미 · 돌팬티 · 김단테 · 고라니 · 주린이×2 · 김혜산 | 영상없음: 홍인기 · 소수몽키 · 전황</span><span>원문: 2026-08-20_한국장_브리핑.md</span></div>
+</body>
+</html>
