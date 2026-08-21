@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>한국장 브리핑 2026-08-21</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:24px 32px;width:1920px;height:1080px;overflow:hidden}
+.hdr{display:flex;align-items:baseline;gap:18px;margin-bottom:16px}
+.hdr h1{font-size:30px;font-weight:800}
+.hdr .date{font-size:19px;color:#9aa0a6}
+.hdr .badge{margin-left:auto;background:#1a1d24;border:1px solid #2a2e38;border-radius:20px;padding:6px 16px;font-size:15px;color:#9aa0a6}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:14px;padding:18px 22px}
+.card .lbl{font-size:14px;color:#9aa0a6;margin-bottom:6px}
+.card .val{font-size:30px;font-weight:800}
+.card .sub{font-size:15px;margin-top:4px}
+.up{color:#ef4444}.down{color:#3b82f6}.flat{color:#e8eaed}
+.oneliner{background:linear-gradient(90deg,#1a1d24,#20242e);border-left:5px solid #ef4444;border-radius:12px;padding:18px 26px;font-size:23px;font-weight:700;line-height:1.45;margin-bottom:14px}
+.row{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.panel{background:#1a1d24;border-radius:14px;padding:18px 22px}
+.panel h2{font-size:16px;color:#9aa0a6;margin-bottom:12px;font-weight:700}
+.pts li{font-size:16.5px;line-height:1.65;margin-bottom:8px;list-style:none;padding-left:20px;position:relative}
+.pts li:before{content:"▸";position:absolute;left:0;color:#ef4444}
+.bar{margin-bottom:11px}
+.bar .t{font-size:14.5px;margin-bottom:4px;display:flex;justify-content:space-between}
+.bar .t span:last-child{color:#9aa0a6}
+.bar .bg{background:#2a2e38;border-radius:5px;height:10px}
+.bar .fg{background:#ef4444;height:10px;border-radius:5px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bdg{border-radius:8px;padding:7px 12px;font-size:14.5px;font-weight:600}
+.bdg.u{background:rgba(239,68,68,.13);color:#ef4444;border:1px solid rgba(239,68,68,.35)}
+.bdg.d{background:rgba(59,130,246,.13);color:#3b82f6;border:1px solid rgba(59,130,246,.35)}
+.macro{display:flex;gap:26px;background:#1a1d24;border-radius:12px;padding:13px 24px;margin-bottom:14px;font-size:16px}
+.macro b{color:#e8eaed}.macro span{color:#9aa0a6}
+.tomorrow{background:#1a1d24;border:1px solid #2a2e38;border-radius:12px;padding:15px 24px;font-size:16px;line-height:1.6;margin-bottom:12px}
+.tomorrow b{color:#ef4444}
+.foot{font-size:13.5px;color:#9aa0a6}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>📈 한국장 브리핑</h1>
+  <span class="date">2026년 8월 21일 (금)</span>
+  <span class="badge">수집 채널 5/12 · 영상 8건</span>
+</div>
+
+<div class="grid">
+  <div class="card"><div class="lbl">KOSPI</div><div class="val up">6,912.95</div><div class="sub up">▲ 60.37 (+0.88%) — 장중 -1.61%에서 반전</div></div>
+  <div class="card"><div class="lbl">KOSDAQ</div><div class="val down">801.94</div><div class="sub down">▼ 38.95 (-4.63%) — 매도 사이드카 발동</div></div>
+  <div class="card"><div class="lbl">원/달러 환율</div><div class="val down">1,386.5</div><div class="sub down">▼ 6.1원 · 6일 연속 하락, 11개월 최저</div></div>
+  <div class="card"><div class="lbl">수급 (코스닥, 억원)</div><div class="val" style="font-size:21px;line-height:1.5">외인 <span class="down">-2,875</span> · 기관 <span class="down">-3,465</span><br>개인 <span class="up">+6,236</span></div></div>
+</div>
+
+<div class="macro">
+  <div><span>코스피 외국인</span> <b class="down">-1,708억</b> <span>(전기·전자 +2,283억)</span></div>
+  <div><span>美 10y</span> <b>4.70%</b> <span>· 30y</span> <b>5.24%</b></div>
+  <div><span>VKOSPI</span> <b>58.03</b></div>
+  <div><span>나스닥(전일)</span> <b class="down">-1.00%</b> <span>· 다우</span> <b class="down">-1.32%</b></div>
+  <div><span>비트코인</span> <b class="up">+8%대, $78K 탈환</b></div>
+</div>
+
+<div class="oneliner">💰 삼성전자 최대 110조 주주환원 발표 — 삼전·하닉 쌍끌이가 코스피를 급락에서 건져냈지만, 금리 부담에 코스닥은 -4.6% 급락한 극단적 양극화</div>
+
+<div class="row">
+  <div class="panel">
+    <h2>핵심 포인트</h2>
+    <ul class="pts">
+      <li>삼성전자 90~110조 주주환원 (3Q 현금배당 30조) — 전일 하닉 40조에 이은 초대형 환원, 삼전 +3.87% · 삼전우 +8.26%</li>
+      <li>김단테는 "FCF 50% 초과→50% 수준 후퇴"라며 실망 평가 — 장중 기대(140조설)보다 작았던 점이 온도차</li>
+      <li>미 장기금리 재상승 (30y 5.24%) — 베센트 바이백에도 "하루천하", 비반도체 업종 전반 하락</li>
+      <li>코스닥 장중 -5.4%, 800선 간신히 사수 — 외국인 8월 코스닥 순매도 2.3조</li>
+      <li>원화 강세 지속 — 주주환원발 달러 매도 기대 + 역외 원화 베팅</li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h2>채널 합의도</h2>
+    <div class="bar"><div class="t"><span>삼전·하닉 주주환원이 핵심 동력</span><span>5/5</span></div><div class="bg"><div class="fg" style="width:100%"></div></div></div>
+    <div class="bar"><div class="t"><span>미 장기금리가 근본 리스크</span><span>4/5</span></div><div class="bg"><div class="fg" style="width:80%"></div></div></div>
+    <div class="bar"><div class="t"><span>코스닥 약세 지속 전망</span><span>2/5</span></div><div class="bg"><div class="fg" style="width:40%"></div></div></div>
+    <div class="bar"><div class="t"><span>비트코인 급등 = 정책 모멘텀</span><span>2/5</span></div><div class="bg"><div class="fg" style="width:40%"></div></div></div>
+    <div style="font-size:13.5px;color:#9aa0a6;margin-top:10px">이견: 주주환원 평가 — 이효석 "숏의 공포, 게임체인저" vs 김단테 "조건 후퇴, 실망"</div>
+  </div>
+  <div class="panel">
+    <h2>종목 · 섹터</h2>
+    <div class="badges">
+      <span class="bdg u">삼성전자 +3.87%</span>
+      <span class="bdg u">SK하이닉스 +2.31%</span>
+      <span class="bdg u">삼성전자우 +8.26%</span>
+      <span class="bdg u">보험 +6.55%</span>
+      <span class="bdg u">SK증권 +5%대</span>
+      <span class="bdg u">전기·전자 +1.96%</span>
+      <span class="bdg d">의료정밀 -5.42%</span>
+      <span class="bdg d">건설 -5.36%</span>
+      <span class="bdg d">금속 -4.05%</span>
+      <span class="bdg d">기계 -3.85%</span>
+      <span class="bdg d">증권 -2.45%</span>
+    </div>
+    <div style="font-size:13.5px;color:#9aa0a6;margin-top:12px">4개 채널 동시 언급: 삼성전자, SK하이닉스</div>
+  </div>
+</div>
+
+<div class="tomorrow">🔭 <b>다음주 관전 포인트</b> — ① 엔비디아 실적 (8/26) ② 잭슨홀 미팅 (8/27~29) ③ 핫칩스 (8/23~25) ④ 미 장기금리와 베센트 추가 개입 카드 · 24일 대이란 경제압박 발표 ⑤ 삼전·하닉 자사주 실집행 수급</div>
+
+<div class="foot">수집: 주덕(라이브+마감) · 이효석아카데미(3편) · 김단테(쇼츠2) · 주린이놀이터 · 만쥬 | 영상없음: 창원개미·돌팬티·홍인기·고라니·소수몽키(멤버십)·주식홈트·김혜산 | 원문: 2026-08-21_한국장_브리핑.md</div>
+</body>
+</html>
