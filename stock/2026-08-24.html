@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-08-24 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-08-24</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-08-24 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p><strong>웹 검색 미사용</strong> — 주어진 문서(스캐너 표·정보지 교차·뉴스 버즈)만으로 판단. 문서에 없는 사실은 <code>확인 필요</code>로 남김.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>성격이 다른 두 개의 신규 테마가 같은 날 터졌다. <strong>코로나19 재유행</strong>은 D+0 4종목이 동시 점화됐고 08:06~08:09 프리마켓 포착이 첫 특징주 기사(09:24)보다 75분 앞섰다. <strong>한미약품 제넨텍 3.2조 기술수출 확정</strong>은 한미약품 6,163억·한미사이언스 5,166억으로 오늘 자금의 최대 덩어리를 가져갔으나, 뉴스(11:14)가 포착(11:21)보다 7분 빨라 선행성은 없다.</p>
+<p>오늘 새로 점화된 것: <strong>코로나19 재유행 / 한미 비만신약 기술수출 / 웹툰(키다리스튜디오 단독)</strong> 3개. 2차전지·스테이블코인·리벨리온은 D+1 이상이거나 당일 소진형이라 신규 진입 대상이 아니다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>중국 1개월 52만 명 확진 + 국내 3주 입원 2.8배 (추정 재료)</p><p class="c-p"><span class="c-k">판단</span><strong>최우선 D+0.</strong> 프리마켓이 첫 기사보다 75분 선행</p><div class="c-c"><span class="chip"><i>수식충족</i>★ 6종목</span><span class="chip"><i>정보지</i>3개 항목 전부 <code>오늘 처음</code></span><span class="chip"><i>신선도</i>시작일 추정 08/24</span></div></article>
+<article class="card"><h4 class="c-t">한미 비만신약 기술수출</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>제넨텍에 HM17321 최대 3조 1,900억 기술수출 계약 체결(11:14 최초, 34건/4채널)</p><p class="c-p"><span class="c-k">판단</span><strong>자금 최대 D+0.</strong> 단 뉴스 7분 선행 = 공시 정면 매수</p><div class="c-c"><span class="chip"><i>수식충족</i>★ 3종목</span><span class="chip"><i>정보지</i><code>오늘 처음</code></span><span class="chip"><i>신선도</i>시작일 추정 08/24</span></div></article>
+<article class="card"><h4 class="c-t">웹툰</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>韓 주도 웹툰 국제표준 제정(정보지A) + 키다리 자체 이슈</p><p class="c-p"><span class="c-k">판단</span>테마 첫날 아님. 후발주에 돈이 더 들어온 역전 구도</p><div class="c-c"><span class="chip"><i>수식충족</i>★ 1종목</span><span class="chip"><i>정보지</i><code>오늘 처음</code></span><span class="chip"><i>신선도</i>시작일 추정 08/13~08/14(탑코 기준)</span></div></article>
+<article class="card"><h4 class="c-t">2차전지·ESS</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>08/21 삼성디스플레이 지분 4.4조 매각 확정</p><p class="c-p"><span class="c-k">판단</span><strong>신규 진입 아님.</strong> 에코프로비엠만 개별 D+0 성격</p><div class="c-c"><span class="chip"><i>수식충족</i>★ 1종목(에코프로비엠)</span><span class="chip"><i>정보지</i><code>2차전지</code> 08/20 등장</span><span class="chip"><i>신선도</i>진행 중</span></div></article>
+<article class="card"><h4 class="c-t">스테이블코인·가상자산</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">판단</span><strong>후반부. 제외.</strong> 대장만 버티고 뒤가 무너짐</p><div class="c-c"><span class="chip"><i>수식충족</i>○ 위주</span><span class="chip"><i>정보지</i>이전충족 08/20 외2</span><span class="chip"><i>신선도</i>진행 중</span></div></article>
+<article class="card"><h4 class="c-t">리벨리온·AI반도체·창투사</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">판단</span>테마는 신선하나 전 종목 당일 소진형(종가위치 0~25%) → <strong>D+0 후보 제외</strong></p><div class="c-c"><span class="chip"><i>수식충족</i>—</span><span class="chip"><i>정보지</i><code>오늘 처음</code></span><span class="chip"><i>신선도</i>신선</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>코로나19 재유행 — 진단키트·백신·치료제</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>신풍제약(019170)</strong></h4><p class="c-p"><span class="c-k">근거</span>대장주. 30일 대금 1위 / 직전최대 30.2배 / 상한가 종가(종가위치 100%, VWAP <span style="color:#ef4444;font-weight:700">+5.2%</span>) / 시간상으로도 선두</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★52봉(08:09)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>577억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>녹십자엠에스(142280)</strong></h4><p class="c-p"><span class="c-k">근거</span>2군. 전일 대금 104.8배 / 직전최대 18.1배 / 종가위치 65%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★21봉(10:00)</span><span class="chip"><i>등락%</i>+21.1</span><span class="chip"><i>대금</i>290억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>에스디바이오센서(137310)</strong></h4><p class="c-p"><span class="c-k">근거</span>테마 내 최초 포착 시각(08:06) / 단 종가위치 39%, VWAP <span style="color:#7dabf8;font-weight:700">-2.9%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★14봉(08:06)</span><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>대금</i>141억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>휴마시스(205470)</strong></h4><p class="c-p"><span class="c-k">근거</span>후발주. 종가위치 3%, VWAP <span style="color:#7dabf8;font-weight:700">-9.0%</span> — 오전 급등 후 저가권 마감</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★25봉</span><span class="chip"><i>등락%</i>+6.0</span><span class="chip"><i>대금</i>54억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>그린생명과학(114450)</strong></h4><p class="c-p"><span class="c-k">근거</span>후발주. 종가위치 0%, VWAP <span style="color:#7dabf8;font-weight:700">-7.1%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★8봉</span><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>대금</i>37억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>국제약품(002720)</strong></h4><p class="c-p"><span class="c-k">근거</span>후발주. 대금 최소권, 종가위치 36%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★6봉</span><span class="chip"><i>등락%</i>+5.6</span><span class="chip"><i>대금</i>36억</span></div></article>
+</div>
+<h3>한미 비만신약 기술수출 — 제약바이오</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>한미약품(128940)</strong></h4><p class="c-p"><span class="c-k">근거</span>대장주. 30일 대금 1위 / 직전최대 4.8배 / 상한가 종가(종가위치 100%, VWAP <span style="color:#ef4444;font-weight:700">+5.8%</span>) / 재료단계 1→3 상승</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★40봉(11:21)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>6,163억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>한미사이언스(008930)</strong></h4><p class="c-p"><span class="c-k">근거</span>지주사 동반. 전일 대비 48.3배 / 유통회전 50.7% / 종가위치 83%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★36봉(11:26)</span><span class="chip"><i>등락%</i>+23.2</span><span class="chip"><i>대금</i>5,166억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>일동제약(249420)</strong></h4><p class="c-p"><span class="c-k">근거</span>⚠ 소속 불확실 — 08:15 충족은 한미 공시(11:14)보다 3시간 빠름, 시간 순서상 코로나 선행 반응(조코바)으로 보는 게 맞다. 30일 대금 1위(전일 22.8배), 당일 뉴스 0건</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★27봉(08:15)</span><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>대금</i>671억</span></div></article>
+</div>
+<h3>웹툰</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>키다리스튜디오(020120)</strong></h4><p class="c-p"><span class="c-k">근거</span>대장주. 탑코 대비 2.4배 / 30일 대금 1위 / 직전최대 15.2배 / 종가위치 91%, VWAP <span style="color:#ef4444;font-weight:700">+3.6%</span> / 당일 뉴스 0건</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★27봉(09:11)</span><span class="chip"><i>등락%</i>+26.9</span><span class="chip"><i>대금</i>246억</span></div></article>
+</div>
+<h3>2차전지·ESS</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>에코프로비엠(247540)</strong></h4><p class="c-p"><span class="c-k">근거</span>테마 내 유일 D+0. 30일 대금 1위 / 종가위치 93%. 테마 자체는 진행 중이라 개별 관찰</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>1,169억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>한전기술(052690)</strong></h4><p class="c-p"><span class="c-k">근거</span>⚠ <strong>정규장 종가 90,300원(전일 대비 약 <span style="color:#7dabf8;font-weight:700">-1.3%</span>), 애프터마켓(NXT)에서만 <span style="color:#ef4444;font-weight:700">+14%</span> 폭등</strong> — 세션종가 102,900원, 고가 106,200원(18:45). 30일 대금 1위(전일 4.0배), 직전5일 <span style="color:#7dabf8;font-weight:700">-9.0%</span>. <code>재료 미상 — 주가 선행 추정</code>, 뉴스 0건·정보지 미분류 → <strong>테마 성립 여부 판정 불가, 근거 부족</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★14봉(18:37)</span><span class="chip"><i>등락%</i>+12.5(세션종가 기준)</span><span class="chip"><i>대금</i>514억</span></div></article>
+<article class="card"><h4 class="c-t">톱텍(108230)</h4><p class="c-p"><span class="c-k">근거</span>14:09 모비스 미국법인 201억 공급계약 공시(매출 대비 11.78%) → <strong>뉴스 1분 후행 = 공시 반응</strong>. 종가위치 26.8%, VWAP <span style="color:#7dabf8;font-weight:700">-9.0%</span>로 당일 소진</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>★24봉(14:10)</span><span class="chip"><i>등락%</i>+6.8</span><span class="chip"><i>대금</i>169억</span></div></article>
+<article class="card"><h4 class="c-t">오상자이엘(053980)</h4><p class="c-p"><span class="c-k">근거</span>전일 대금 63.2배·직전최대 43.2배지만 종가위치 21%, VWAP <span style="color:#7dabf8;font-weight:700">-6.6%</span>. 동반 종목 없음 → <strong>선행이 아니라 소외 개별주 실패 케이스로 본다</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>★46봉</span><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>대금</i>159억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>수젠텍(253840)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G1 1/G2 1). 다만 D+0·240억·전일 대금 99.2배로 <strong>자금 성격은 대장급</strong> / 종가위치 61%, VWAP <span style="color:#7dabf8;font-weight:700">-0.8%</span></p></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>진매트릭스(109820)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G1 7/G2 3). D+0·39억으로 대금 소액 / 종가위치 31%, VWAP <span style="color:#7dabf8;font-weight:700">-5.8%</span></p></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>셀리드(299660)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>07/30 외2에 이미 충족</strong> — D+2. 자체 백신 이슈로 오늘 테마와 연속성 없음</p></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>랩지노믹스(084650)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/07 외2에 이미 충족</strong> / 종가위치 3%, VWAP <span style="color:#7dabf8;font-weight:700">-7.2%</span></p></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>경남제약(053950)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. 대금 6.9억으로 극소 / 종가위치 26%</p></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">종목</span>아이진(185490)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. 대금 8.6억, <span style="color:#ef4444;font-weight:700">+1.5%</span>로 거의 안 움직임</p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>네오이뮨텍(950220)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/07에 이미 충족</strong> / 직전5일 <span style="color:#ef4444;font-weight:700">+68.5%</span>(이틀 연속 상한가), 고가 <span style="color:#ef4444;font-weight:700">+30.0%</span>→종가 <span style="color:#ef4444;font-weight:700">+7.0%</span>, 종가위치 27.6% = <strong>완전한 후반부, 제외</strong></p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>에스티팜(237690)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. 697억이나 이전충족 없음·D+N 없음 / 종가위치 56%</p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>오름테라퓨틱(475830)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/04에 이미 충족</strong> — D+9, 오늘 편승한 잔가지</p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>보로노이(310210)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/10에 이미 충족</strong> — D+9</p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>동국제약(086450)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/11에 이미 충족</strong></p></article>
+<article class="card"><h4 class="c-t">한미 기술수출</h4><p class="c-p"><span class="c-k">종목</span>앱클론(174900)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <strong>08/10에 이미 충족</strong> — D+9 잔가지</p></article>
+<article class="card"><h4 class="c-t">웹툰</h4><p class="c-p"><span class="c-k">종목</span>탑코미디어(134580)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G1 8). <strong>08/14 외1에 이미 충족</strong> — D+2, 직전5일 <span style="color:#ef4444;font-weight:700">+36.2%</span> / 종가위치 54%, VWAP <span style="color:#7dabf8;font-weight:700">-4.4%</span>로 먼저 오른 쪽이 힘 빠짐</p></article>
+<article class="card"><h4 class="c-t">스테이블코인·가상자산</h4><p class="c-p"><span class="c-k">종목</span>아이티센글로벌(2,968억) / 더즌 / 미투온(201490)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><strong>08/20 외2에 이미 충족</strong> — D+2, 직전5일 <span style="color:#ef4444;font-weight:700">+27.7%</span>. 미투온 종가위치 39%·VWAP <span style="color:#7dabf8;font-weight:700">-5.8%</span>. 우리기술투자 <span style="color:#7dabf8;font-weight:700">-0.8%</span>, 갤럭시아머니트리 <span style="color:#7dabf8;font-weight:700">-3.2%</span>, 비트플래닛 <span style="color:#7dabf8;font-weight:700">-7.9%</span>, 파라택시스이더리움 <span style="color:#7dabf8;font-weight:700">-1.3%</span>로 뒤가 무너짐</p></article>
+<article class="card"><h4 class="c-t">가상자산</h4><p class="c-p"><span class="c-k">종목</span>티사이언티픽(057680)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0이나 대금 16억 극소 + 테마 자체가 후반부</p></article>
+<article class="card"><h4 class="c-t">2차전지</h4><p class="c-p"><span class="c-k">종목</span>롯데에너지머티리얼즈(020150)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 100억(30일 7위), D+N &#x27;-&#x27;</p></article>
+<article class="card"><h4 class="c-t">2차전지·ESS</h4><p class="c-p"><span class="c-k">종목</span>삼성SDI(006400) / 엘앤에프 / 포스코퓨처엠</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>삼성SDI <strong>이전충족 08/07</strong>·D+N &#x27;-&#x27;, 엘앤에프 D+9, 포스코퓨처엠 D+11 → 눌림 대상</p></article>
+<article class="card"><h4 class="c-t">리벨리온·AI반도체</h4><p class="c-p"><span class="c-k">종목</span>솔트룩스(613억) / 미래에셋벤처투자(511억) / 캡스톤파트너스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>전 종목 당일 소진형: 고가 <span style="color:#ef4444;font-weight:700">+29.0%</span>→종가 <span style="color:#ef4444;font-weight:700">+10.3%</span>(종가위치 24.5%), 고가 <span style="color:#ef4444;font-weight:700">+24.1%</span>→종가 <span style="color:#ef4444;font-weight:700">+9.5%</span>(종가위치 0%), 고가 <span style="color:#ef4444;font-weight:700">+29.8%</span>→종가 <span style="color:#ef4444;font-weight:700">+8.6%</span>(종가위치 14%)</p></article>
+<article class="card"><h4 class="c-t">바이오 개별(2차파동)</h4><p class="c-p"><span class="c-k">종목</span>큐리옥스바이오시스템(249억)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+5, 직전5일 <span style="color:#ef4444;font-weight:700">+20.4%</span> — 후반부</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>삼아알미늄(006110)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+21.1%</span>/413억이나 D+9. 동반 종목이 문서에 없어 <strong>테마 판정 불가</strong></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>넥사다이내믹스(351320)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30%</span>/39억, D+3. 150억 3자배정 유상증자 = 개별 수급</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>디케이티(290550)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>14:01 테슬라 로봇 배터리 모듈 양산 개시(확정 재료)인데 고가 <span style="color:#ef4444;font-weight:700">+18.2%</span>→종가 <span style="color:#ef4444;font-weight:700">+1.7%</span>(종가위치 18.6%) — <strong>재료 단계는 올랐지만 시장이 안 받았다</strong></p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>오가닉티코스메틱(900300)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>고가 <span style="color:#ef4444;font-weight:700">+30%</span>→종가 +5~7%, 종가위치 15% — 명백한 이탈</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">LCC 3사 통합</h4><p class="c-p"><span class="c-k">정보지 사유</span>&#x27;LCC 3사 통합 진에어 출범&#x27; — 오늘 처음 나온 테마. 조건검색 미포착, <span style="color:#ef4444;font-weight:700">+10.6%</span>·대금 21억으로 아직 소액 = 안 움직인 후발주 후보</p><div class="c-c"><span class="chip"><i>종목</i>진에어</span></div></article>
+<article class="card"><h4 class="c-t">LCC 3사 통합</h4><p class="c-p"><span class="c-k">정보지 사유</span>정보지에만 있고 조건검색 미포착</p><div class="c-c"><span class="chip"><i>종목</i>에어부산</span></div></article>
+<article class="card"><h4 class="c-t">코로나19 재유행</h4><p class="c-p"><span class="c-k">정보지 사유</span>오늘 안 움직인 후발주 후보(확산 여부 확인 대상)</p><div class="c-c"><span class="chip"><i>종목</i>비엘팜텍</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>한전기술(052690) 애프터마켓 폭등의 정체</strong> — 정규장 <span style="color:#7dabf8;font-weight:700">-1.3%</span>(90,300원) → 애프터 고가 106,200원, 18:37 충족, 대금 514억(30일 1위). 08/24 18시 이후 DART 공시 / 원전 외신 / 비에이치아이·한전KPS·두산에너빌리티 동반 여부. 재료가 문서 어디에도 없어 <strong>내일 갭 여부가 이 종목의 전부</strong>.</li>
+<li><strong>코로나 후속 보도 강도와 확산 폭</strong> — 진짜: 신풍제약 갭 유지 + 대금 300억 이상 유지, 랩지노믹스·아이진·비엘팜텍·경남제약으로 확산. 아니다: 상한가 풀린 채 대금 200억 밑 급감, 오늘 오른 것만 되밀림 → 하루짜리 헤드라인 반응으로 종결.</li>
+<li><strong>한미 기술수출의 확산 범위</strong> — 진짜: 한미약품 갭 후 눌림에서 대금 3,000억+ 유지 + &#x27;K비만약 차기주&#x27;로 확산(문서에 있는 건 일동제약뿐) + 목표가 상향 릴레이. 아니다: 한미 2종목만 오르면 이틀짜리 단일 이벤트. 경영권 분쟁 리스크 상존.</li>
+<li><strong>일동제약(249420)이 D+1로 이어지는지</strong> — 코로나(조코바)+K비만약 두 재료 교집합의 D+0, 당일 뉴스 0건. 이번 리포트의 숨은 자리.</li>
+<li><strong>키다리스튜디오(020120)</strong> — 진짜: 갭 유지 + 대금 150억 이상, 웹툰 3~4번째 종목(미스터블루·디앤씨미디어 등, 오늘 조건검색 밖) 합류, 국제표준 후속 기사. 아니다: 뉴스 없이 대금 반토막이면 개별 수급 이벤트로 종결.</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 브리핑 — 한미 3.2조 기술수출 확정 + 코로나 재유행 동시 점화</h1>
+<p>기준일: 2026-08-24 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p><strong>웹 검색 미사용</strong> — 주어진 문서(스캐너 표·정보지 교차·뉴스 버즈)만으로 판단했습니다. 문서에 없는 사실은 <code>확인 필요</code>로 남겼습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘은 <strong>성격이 다른 두 개의 신규 테마가 같은 날 터졌다.</strong> 하나는 <strong>코로나19 재유행</strong>(정보지 3개 항목 전부 <code>오늘 처음</code>)으로 신풍제약·수젠텍·녹십자엠에스·진매트릭스 등 <strong>D+0 4종목이 동시 점화</strong>됐고, 08:06~08:09 프리마켓 포착이 첫 특징주 기사(09:24)보다 <strong>75분 앞섰다</strong> — 주가가 뉴스를 선행한 전형적 D+0다. 다른 하나는 <strong>한미약품 제넨텍 3.2조 비만신약 기술수출 확정</strong>으로, 한미약품 6,163억·한미사이언스 5,166억이 나란히 <code>D+0</code>+<code>★첫흐름</code>+<code>대금 30일 1위</code>를 찍으며 <strong>오늘 시장 자금의 최대 덩어리</strong>를 가져갔다.</p>
+<p>그 외에 <strong>키다리스튜디오(웹툰)가 조용히 D+0로 점화</strong>됐고, 2차전지·스테이블코인·리벨리온은 D+1 이상이거나 당일 소진형이라 신규 진입 대상이 아니다. 그리고 <strong>한전기술이 정규장 <span style="color:#7dabf8;font-weight:700">-1.3%</span>로 마감한 뒤 애프터마켓에서만 <span style="color:#ef4444;font-weight:700">+14%</span> 폭등(18:37 충족)</strong> 했는데 재료가 문서 어디에도 없다 — 내일 아침 최우선 확인 대상이다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 테마 1. 코로나19 재유행 — 진단키트·백신·치료제</h3>
+<p><strong>정보지 신선도: <code>진단키트 관련주</code> / <code>코로나</code> / <code>제약·바이오(코로나19 재유행 우려)</code> 3개 항목 모두 <code>오늘 처음</code> = 신규 테마 확정</strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>019170 신풍제약</strong></h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+29.9</strong></span><span class="chip"><i>거래대금(억)</i><strong>577</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★52봉(08:09)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>100</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+5.2%</span></span></div></article>
+<article class="card"><h4 class="c-t">142280 녹십자엠에스</h4><div class="c-c"><span class="chip"><i>등락%</i>+21.1</span><span class="chip"><i>거래대금(억)</i>290</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★21봉(10:00)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>65</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+1.7%</span></span></div></article>
+<article class="card"><h4 class="c-t">253840 수젠텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+23.1</span><span class="chip"><i>거래대금(억)</i>240</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G1 1/G2 1)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>61</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-0.8%</span></span></div></article>
+<article class="card"><h4 class="c-t">137310 에스디바이오센서</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>거래대금(억)</i>141</span><span class="chip"><i>오늘충족</i>★14봉(<strong>08:06</strong>)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>39</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-2.9%</span></span></div></article>
+<article class="card"><h4 class="c-t">299660 셀리드</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>103</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i><strong>07/30 외2</strong></span><span class="chip"><i>종가위치%</i>100</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+2.3%</span></span></div></article>
+<article class="card"><h4 class="c-t">205470 휴마시스</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.0</span><span class="chip"><i>거래대금(억)</i>54</span><span class="chip"><i>오늘충족</i>★25봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i><strong>3</strong></span><span class="chip"><i>VWAP대비</i><strong><span style="color:#7dabf8;font-weight:700">-9.0%</span></strong></span></div></article>
+<article class="card"><h4 class="c-t">109820 진매트릭스</h4><div class="c-c"><span class="chip"><i>등락%</i>+11.9</span><span class="chip"><i>거래대금(억)</i>39</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G1 7/G2 3)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>31</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-5.8%</span></span></div></article>
+<article class="card"><h4 class="c-t">084650 랩지노믹스</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.8</span><span class="chip"><i>거래대금(억)</i>39</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/07 외2</span><span class="chip"><i>종가위치%</i>3</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-7.2%</span></span></div></article>
+<article class="card"><h4 class="c-t">114450 그린생명과학</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>거래대금(억)</i>37</span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i><strong>0</strong></span><span class="chip"><i>VWAP대비</i><strong><span style="color:#7dabf8;font-weight:700">-7.1%</span></strong></span></div></article>
+<article class="card"><h4 class="c-t">002720 국제약품</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.6</span><span class="chip"><i>거래대금(억)</i>36</span><span class="chip"><i>오늘충족</i>★6봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>36</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-3.0%</span></span></div></article>
+<article class="card"><h4 class="c-t">053950 경남제약</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.5</span><span class="chip"><i>거래대금(억)</i>6.9</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>26</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-7.2%</span></span></div></article>
+<article class="card"><h4 class="c-t">185490 아이진</h4><div class="c-c"><span class="chip"><i>등락%</i>+1.5</span><span class="chip"><i>거래대금(억)</i>8.6</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>9</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-3.5%</span></span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 08/24 (오늘).</strong> 12종목 중 코로나 재료로 이전충족이 있는 종목은 <strong>없다.</strong> 셀리드(07/30·08/20)와 랩지노믹스(08/07)는 자체 백신·진단 이슈였고, 오늘 테마와 연속성이 없다. 신풍제약의 3개월 재료 이력 <strong>5건 전부가 08/24 코로나 기사</strong>다 — 이 종목에 코로나 재료가 붙은 건 오늘이 처음이다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li><strong>대장주 = 신풍제약 (577억, 테마 내 대금 최대).</strong> 30일 대금 1위, 직전최대 <strong>30.2배</strong>, 상한가 종가 마감(종가위치 100%, VWAP <span style="color:#ef4444;font-weight:700">+5.2%</span>). 08:09 프리마켓 첫 포착으로 <strong>시간상으로도 가장 먼저 움직였다.</strong> 원칙 4의 &quot;대장이 며칠 전 이미 터졌다&quot; 함정에 해당하지 않는다 — 이 테마는 대금 1위와 D+0가 같은 종목이다.</li>
+<li><strong>2군</strong>: 녹십자엠에스(전일 대금 <strong>104.8배</strong>, 직전최대 18.1배 — 자금 성격이 완전히 바뀜), 수젠텍(전일 <strong>99.2배</strong>).</li>
+<li><strong>후발주(오늘 충족했지만 돈이 안 붙음)</strong>: 휴마시스(54억, 종가위치 3%, VWAP <span style="color:#7dabf8;font-weight:700">-9.0%</span>), 그린생명과학(37억, 종가위치 0%), 국제약품(36억). 셋 다 <strong>오전 급등 후 종일 흘러내려 저가권 마감</strong> — 충족 라벨만 보고 따라가면 안 된다.</li>
+<li><strong>추정 재료</strong>: 중국 1개월 52만 명 확진 + 국내 3주 새 입원 2.8배 증가 보도 → 코로나19 재유행 우려 (정보지A·B 동시, <code>오늘 처음</code>).</li>
+<li><strong>재료 단계</strong>: <code>이력 없음 → 신규 재료</code> — 주가 선행. 신풍제약·녹십자엠에스·수젠텍·진매트릭스 모두 3개월 이력에 코로나 관련 항목이 <strong>08/24 이전엔 0건</strong>이다.</li>
+<li><strong>⭐ 선행성 근거</strong>: 에스디바이오센서 <strong>08:06</strong>, 신풍제약 <strong>08:09</strong> 프리마켓 충족 → 첫 특징주 기사 <strong>09:24</strong>(연합뉴스). <strong>주가가 뉴스보다 75분 빨랐다.</strong> 원칙 1에 정확히 부합.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 신풍제약 갭 상승 유지 + 거래대금 300억 이상 유지 / 오늘 안 움직인 후발주(랩지노믹스·아이진·비엘팜텍·경남제약)로 <strong>확산</strong>되는지 / 질병청·언론의 확진·입원 통계 후속 보도가 이어지는지.</li>
+<li><strong>아니다</strong>: 신풍제약이 상한가 풀린 채 대금 200억 밑으로 급감 / 확산 없이 오늘 오른 것들만 되밀림 / 후속 보도 부재. 코로나 테마는 과거에도 <strong>하루짜리 헤드라인 반응</strong>으로 끝난 전례가 많은 유형이니 D+1 아침 대금 확인이 필수다.</li>
+</ul>
+<hr>
+<h3>🥈 테마 2. 한미 비만신약 기술수출 — 제약바이오 (오늘 자금 최대)</h3>
+<p><strong>정보지 신선도: <code>제약바이오(한미약품 기술수출)</code> = <code>오늘 처음</code></strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>128940 한미약품</strong></h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+30.0</strong></span><span class="chip"><i>거래대금(억)</i><strong>6,163</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★40봉(11:21)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>100</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+5.8%</span></span></div></article>
+<article class="card"><h4 class="c-t"><strong>008930 한미사이언스</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+23.2</span><span class="chip"><i>거래대금(억)</i><strong>5,166</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★36봉(11:26)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>83</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+3.8%</span></span></div></article>
+<article class="card"><h4 class="c-t">950220 네오이뮨텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.0</span><span class="chip"><i>거래대금(억)</i>780</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/07</span><span class="chip"><i>종가위치%</i>28</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-5.6%</span></span></div></article>
+<article class="card"><h4 class="c-t">237690 에스티팜</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.7</span><span class="chip"><i>거래대금(억)</i>697</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>56</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+0.8%</span></span></div></article>
+<article class="card"><h4 class="c-t"><strong>249420 일동제약</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>거래대금(억)</i>671</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★27봉(<strong>08:15</strong>)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>72</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+0.8%</span></span></div></article>
+<article class="card"><h4 class="c-t">475830 오름테라퓨틱</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.8</span><span class="chip"><i>거래대금(억)</i>333</span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/04</span><span class="chip"><i>종가위치%</i>72</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+0.3%</span></span></div></article>
+<article class="card"><h4 class="c-t">310210 보로노이</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.3</span><span class="chip"><i>거래대금(억)</i>241</span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/10</span><span class="chip"><i>종가위치%</i>75</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+1.8%</span></span></div></article>
+<article class="card"><h4 class="c-t">086450 동국제약</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.5</span><span class="chip"><i>거래대금(억)</i>215</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/11</span><span class="chip"><i>종가위치%</i>57</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-0.2%</span></span></div></article>
+<article class="card"><h4 class="c-t">174900 앱클론</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>거래대금(억)</i>104</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>08/10</span><span class="chip"><i>종가위치%</i>79</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+0.6%</span></span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 08/24 (오늘).</strong> 한미약품·한미사이언스 모두 이전충족 없음 + <code>★첫흐름</code>. 오름테라퓨틱·보로노이·앱클론은 08/04~08/10에 이미 각자 터진 종목들로 <strong>오늘 편승한 잔가지</strong>다(D+9).</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li><strong>대장주 = 한미약품 (6,163억).</strong> D+0 + 대금 30일 1위 + 직전최대 4.8배 + 상한가 종가(종가위치 100%, VWAP <span style="color:#ef4444;font-weight:700">+5.8%</span>). 이견 없음.</li>
+<li><strong>한미사이언스(5,166억)</strong> 는 지주사 동반. 전일 대비 <strong>48.3배</strong>, 유통회전 50.7% — 자금 유입 강도는 오히려 더 극단적이다.</li>
+<li><strong>후반부 이탈 = 네오이뮨텍.</strong> 대금 780억으로 크지만 <code>직전5일누적 <span style="color:#ef4444;font-weight:700">+68.5%</span></code>(08/21까지 이틀 연속 상한가), 오늘 고가 <span style="color:#ef4444;font-weight:700">+30.0%</span> → 종가 <span style="color:#ef4444;font-weight:700">+7.0%</span>, 종가위치 27.6%. <strong>완전한 후반부. 제외.</strong></li>
+<li><strong>⚠ 일동제약은 이 테마 소속이 아닐 수 있다.</strong> 충족 시각이 <strong>08:15</strong>로 한미 기술수출 공시(11:14~11:26)보다 <strong>3시간 빠르다.</strong> 정보지는 <code>제약바이오(한미)</code>와 <code>제약 관련주</code> 양쪽에 걸었지만, 시간 순서상 <strong>코로나 재유행 쪽 선행 반응</strong>(조코바 보유)으로 보는 게 맞다. 당일 뉴스 0건, D+0, 대금 30일 1위(전일 22.8배) — <strong>두 테마 교집합에 있는 D+0로, 이 테마에서 가장 흥미로운 자리다.</strong></li>
+<li><strong>추정 재료</strong>: 한미약품, 로슈 제넨텍에 비만신약 HM17321 최대 <strong>3조 1,900억 규모 기술수출 계약 체결</strong> (머니투데이·동아일보·연합뉴스 등 34건/4채널, 최초 11:14).</li>
+<li><strong>재료 단계</strong>: <strong>기대(07/24 &quot;AI로 설계한 근육 증가 비만신약&quot;, 08/12 KB증권 &quot;내년 기술이전 주목&quot;) → 확정(08/24 계약 체결·독점권 부여)</strong> — <strong>단계 1→3 상승. 재탕 아님. 실질 신규 재료 확정.</strong> 거래대금도 30일 1위·직전최대 4.8배로 시장이 단계 상승을 인정했다.</li>
+<li><strong>⚠ 선행성 없음</strong>: 포착 11:21 vs 뉴스 최초 11:14 — <strong>뉴스가 7분 먼저</strong>다. 즉 이건 재료 선반영이 아니라 <strong>공시 직후 정면 매수</strong>다. 그래서 D+0이지만 성격은 &#x27;알려진 재료에 자금이 몰린&#x27; 쪽이고, D+2~D+3 추적 시 <strong>차익 매물 타이밍이 코로나 테마보다 빠를 수 있다.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 한미약품 갭 후 눌림에서 대금 3,000억+ 유지 / <strong>&#x27;K비만약 차기주&#x27;로 확산</strong>(08/24 매경 기사가 HK이노엔·일동·동아를 지목 — 이 중 문서에 있는 건 일동제약뿐) / 증권사 목표가 상향 릴레이(하나증권 20:18 기사 이미 나옴).</li>
+<li><strong>아니다</strong>: 한미 2종목만 오르고 제약 전반이 안 따라오면 <strong>이틀짜리 단일 이벤트</strong>. 또한 한미는 경영권 분쟁 리스크(3개월 이력에 반복 등장)가 상존해 재료 소멸 후 되돌림이 빠를 수 있다.</li>
+</ul>
+<hr>
+<h3>🥉 테마 3. 웹툰 — 키다리스튜디오 단독 점화</h3>
+<p><strong>정보지 신선도: <code>웹툰</code> = <code>오늘 처음</code></strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>020120 키다리스튜디오</strong></h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+26.9</strong></span><span class="chip"><i>거래대금(억)</i><strong>246</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★27봉(09:11)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>종가위치%</i>91</span><span class="chip"><i>VWAP대비</i><span style="color:#ef4444;font-weight:700">+3.6%</span></span></div></article>
+<article class="card"><h4 class="c-t">134580 탑코미디어</h4><div class="c-c"><span class="chip"><i>등락%</i>+18.3</span><span class="chip"><i>거래대금(억)</i>102</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>미충족(G1 8)</span><span class="chip"><i>이전충족</i><strong>08/14 외1</strong></span><span class="chip"><i>종가위치%</i>54</span><span class="chip"><i>VWAP대비</i><span style="color:#7dabf8;font-weight:700">-4.4%</span></span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 08/13~08/14 (탑코미디어 기준).</strong> 탑코미디어는 08/13·08/14에 이미 충족했고 <code>직전5일누적 <span style="color:#ef4444;font-weight:700">+36.2%</span></code> — <strong>웹툰 쪽 자금 자체는 이미 열흘 전에 돌기 시작했다.</strong> 오늘이 테마 첫날은 아니다.</li>
+<li><strong>대장주 / 후발주</strong>: 그럼에도 <strong>대장주는 키다리스튜디오(246억)</strong> 로 본다. 거래대금이 탑코의 <strong>2.4배</strong>, 30일 대금 1위, 직전최대 <strong>15.2배</strong>, 종가위치 91%·VWAP <span style="color:#ef4444;font-weight:700">+3.6%</span>로 마감 강도도 압도적이다. 탑코미디어는 D+2에 종가위치 54%·VWAP <span style="color:#7dabf8;font-weight:700">-4.4%</span>로 <strong>먼저 오른 쪽이 이미 힘이 빠진</strong> 구도 — 원칙 4의 정반대 케이스로, 후발주에 돈이 더 들어온 형태다.</li>
+<li><strong>추정 재료</strong>: <code>韓 주도 웹툰 국제표준 제정</code>(정보지A, 오늘 처음) + 키다리 자체 이슈(성인 웹툰 플랫폼 확장·전략적 인수, 2Q 영업익 <span style="color:#ef4444;font-weight:700">+193%</span>). <strong>당일 종목 뉴스 0건 — 정보지가 이름만 붙였고 기사는 안 났다.</strong></li>
+<li><strong>재료 단계</strong>: <code>이력 없음 — 주가 선행 추정</code> (3개월 이력 3건 = 자사주 취득·2Q 실적뿐). 09:11 충족, 당일 기사 없음 → <strong>아직 안 알려진 초기 단계 가능성.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 키다리 갭 유지 + 대금 150억 이상 / 웹툰 3~4번째 종목(미스터블루·디앤씨미디어 등, 오늘 조건검색 밖)이 붙는지 / 국제표준 관련 후속 기사가 실제로 나오는지.</li>
+<li><strong>아니다</strong>: 탑코미디어처럼 이틀 만에 종가위치 무너지고 키다리도 뉴스 없이 대금 반토막이면 <strong>개별 수급 이벤트</strong>로 종결.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 — 눌림 관찰용)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>2차전지·ESS</strong></h4><p class="c-p"><span class="c-k">상태</span>재료(08/21 삼성디스플레이 지분 4.4조 매각 확정)는 금요일 공시, 오늘이 반응 첫날. 그러나 삼성SDI <code>D+N -</code>·<code>이전충족 08/07</code>, 엘앤에프 <strong>D+9</strong>, 포스코퓨처엠 <strong>D+11</strong>. 정보지 <code>2차전지</code>도 08/20 등장 = 진행 중</p><p class="c-p"><span class="c-k">판단</span><strong>신규 진입 아님.</strong> 단 <strong>에코프로비엠은 이 테마 내 유일한 <code>D+0</code>+<code>★첫흐름</code>+대금 30일 1위</strong>(1,169억, 종가위치 93%) — 개별 D+0 성격으로 별도 관찰 가치</p><div class="c-c"><span class="chip"><i>대장주(대금)</i>삼성SDI <strong>6,055억</strong></span></div></article>
+<article class="card"><h4 class="c-t"><strong>스테이블코인·가상자산</strong></h4><p class="c-p"><span class="c-k">상태</span>D+2, 이전충족 <strong>08/20 외2</strong>, <code>직전5일 <span style="color:#ef4444;font-weight:700">+27.7%</span></code>. 더즌 D+2(08/20·08/21 충족), 미투온 종가위치 39%. <strong>우리기술투자 <span style="color:#7dabf8;font-weight:700">-0.8%</span>, 갤럭시아머니트리 <span style="color:#7dabf8;font-weight:700">-3.2%</span>, 비트플래닛 <span style="color:#7dabf8;font-weight:700">-7.9%</span>, 파라택시스이더리움 <span style="color:#7dabf8;font-weight:700">-1.3%</span></strong></p><p class="c-p"><span class="c-k">판단</span><strong>후반부. 제외.</strong> 대장만 버티고 뒤가 무너지는 전형적 말기 구조</p><div class="c-c"><span class="chip"><i>대장주(대금)</i>아이티센글로벌 <strong>2,968억</strong></span></div></article>
+<article class="card"><h4 class="c-t"><strong>리벨리온·AI반도체·창투사</strong></h4><p class="c-p"><span class="c-k">상태</span>정보지 <code>오늘 처음</code>이지만 <strong>전 종목 당일 소진형</strong>: 솔트룩스 고가 <span style="color:#ef4444;font-weight:700">+29.0%</span>→종가 <span style="color:#ef4444;font-weight:700">+10.3%</span>(종가위치 <strong>24.5%</strong>), 미래에셋벤처투자 고가 <span style="color:#ef4444;font-weight:700">+24.1%</span>→종가 <span style="color:#ef4444;font-weight:700">+9.5%</span>(종가위치 <strong>0%</strong>), 캡스톤파트너스 고가 <span style="color:#ef4444;font-weight:700">+29.8%</span>→종가 <span style="color:#ef4444;font-weight:700">+8.6%</span>(종가위치 14%)</p><p class="c-p"><span class="c-k">판단</span><strong>테마는 신선하나 봉이 최악.</strong> 시가 부근 고가 후 종일 흘러내림 = 갭 매도 소화 실패. <strong>D+0 후보에서 제외.</strong> 내일 재점화 시에만 다시 본다</p><div class="c-c"><span class="chip"><i>대장주(대금)</i>솔트룩스 613억 / 미래에셋벤처투자 511억</span></div></article>
+<article class="card"><h4 class="c-t">바이오 개별(2차파동)</h4><p class="c-p"><span class="c-k">상태</span>D+5, <code>직전5일 <span style="color:#ef4444;font-weight:700">+20.4%</span></code></p><p class="c-p"><span class="c-k">판단</span>후반부. 눌림만</p><div class="c-c"><span class="chip"><i>대장주(대금)</i>큐리옥스바이오시스템 249억</span></div></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>🔴 052690 한전기술 (<span style="color:#ef4444;font-weight:700">+12.5%</span> / 514억 / D+0 / ★14봉 / 뉴스 0건 / 정보지에도 없음)</strong> — <strong>오늘 리포트에서 가장 이상한 종목이다.</strong></li>
+<li><strong>KRX 정규장 종가 90,300원(전일 대비 약 <span style="color:#7dabf8;font-weight:700">-1.3%</span>)</strong> 인데 <strong>세션종가는 102,900원.</strong> 최초 충족이 <strong>18:37</strong>, 고가 106,200원이 <strong>18:45</strong>. 즉 <strong>정규장은 약세 마감했고 애프터마켓(NXT)에서만 <span style="color:#ef4444;font-weight:700">+14%</span> 폭등</strong>했다.</li>
+<li>대금 514억(30일 <strong>1위</strong>, 전일 4.0배), <code>직전5일누적 <span style="color:#7dabf8;font-weight:700">-9.0%</span></code>로 선반영 없음, <code>★첫흐름</code>.</li>
+<li><strong><code>재료 미상 — 주가 선행 추정</code>.</strong> 장 마감 후 시간대에 이만한 자금이 들어온 건 <strong>장후 공시나 해외발 뉴스</strong>가 거의 확실하지만, 문서 어디에도 없다(당일뉴스 0건, 정보지 미분류, 뉴스 버즈에도 없음). 원전 동반주도 문서에 수집돼 있지 않아 <strong>테마 성립 여부를 판정할 수 없다 → 근거 부족.</strong></li>
+<li><strong>확인 방법</strong>: ① 08/24 18:00 이후 DART 공시(수주·계약·정정) ② 한수원/UAE·체코 원전 관련 외신 ③ 비에이치아이·한전KPS·두산에너빌리티 등 원전주가 같은 시간대에 동반 급등했는지.</li>
+<li><strong>108230 톱텍 (<span style="color:#ef4444;font-weight:700">+6.8%</span> / 169억 / ★24봉)</strong> — 14:09 모비스 미국법인 <strong>201억 공급계약 공시</strong>(매출액 대비 11.78%) → 14:10 충족. <strong>뉴스 1분 후행 = 공시 반응.</strong> 재료 단계는 <code>확정(수주)</code>이지만 종가위치 <strong>26.8%</strong>, VWAP <strong><span style="color:#7dabf8;font-weight:700">-9.0%</span></strong> 로 당일 소진. 내일 재차 대금 붙는지만 확인.</li>
+<li><strong>053980 오상자이엘 (<span style="color:#ef4444;font-weight:700">+3.3%</span> / 159억 / ★46봉)</strong> — 수식은 잡았는데 정보지에 없는 &#x27;선행 후보&#x27; 자리. 하지만 전일 대금 63.2배·직전최대 <strong>43.2배</strong>로 자금은 터졌는데 <strong>종가위치 21%, VWAP <span style="color:#7dabf8;font-weight:700">-6.6%</span></strong> 로 완전히 되밀렸다. 동반 종목도 없다 → <strong>선행이 아니라 소외 개별주 실패 케이스</strong>로 본다.</li>
+<li><strong>006110 삼아알미늄 (<span style="color:#ef4444;font-weight:700">+21.1%</span> / 413억 / D+9)</strong> — 원자재 랠리·AI인프라 수요(17:51 매경, 고려아연과 동반). 동반 종목이 문서에 없어 테마 판정 불가. D+9라 신규 아님.</li>
+<li><strong>351320 넥사다이내믹스 (<span style="color:#ef4444;font-weight:700">+30%</span> / 39억 / D+3)</strong> — 150억 3자배정 유상증자. 개별 수급.</li>
+<li><strong>290550 디케이티 (<span style="color:#ef4444;font-weight:700">+1.7%</span> / 243억)</strong> — 14:01 &quot;테슬라 로봇 배터리 모듈 이달 양산 개시&quot;(확정 단계 재료)인데 고가 <span style="color:#ef4444;font-weight:700">+18.2%</span> → 종가 <span style="color:#ef4444;font-weight:700">+1.7%</span>(종가위치 18.6%). <strong>재료 단계는 올랐지만 시장이 안 받았다.</strong> 원칙 1-1의 단서 그대로 — 대금이 안 따라오면 D+0이 아니다.</li>
+<li><strong>900300 오가닉티코스메틱 / 950220 네오이뮨텍</strong> — 둘 다 고가 <span style="color:#ef4444;font-weight:700">+30%</span> → 종가 +5~7%, 종가위치 15%/28%. <strong>명백한 이탈.</strong></li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>코로나19 재유행(진단키트·백신·치료제) → 정보지 3개 항목 전부 &#x27;오늘 처음&#x27; + D+0 4종목 동시 + 프리마켓 포착이 첫 기사보다 75분 선행. 소형주 중심이라 D+2~D+3 추적 대상으로 폭이 가장 크다. ※ 자금 절대액 기준 최대 D+0는 &#x27;한미 비만신약 기술수출&#x27;(한미약품 6,163억 + 한미사이언스 5,166억). 단 뉴스가 주가보다 7분 빨랐던 &#x27;공시 정면 매수&#x27;라 소진 속도가 더 빠를 수 있다.</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>신풍제약(019170) — 577억, 30일 대금 1위, 직전최대 30.2배, 상한가 종가(종가위치 100%, VWAP <span style="color:#ef4444;font-weight:700">+5.2%</span>), 08:09 최초 충족으로 시간상으로도 선두. 이전충족 없음 = ★첫흐름. (테마 2의 대장주는 한미약품 128940 — 6,163억, D+0, ★첫흐름, 상한가 마감)</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>· 한미약품(128940): 기대(07/24 AI설계 비만신약 → 08/12 &quot;내년 기술이전 주목&quot;) → 확정(08/24 제넨텍 3.2조 계약 체결) = 단계 1→3 상승. 대금 30일 1위·직전최대 4.8배로 시장이 인정. 실질 신규 재료. · 삼성SDI(006400): 검토 → 확정(08/21 삼성디스플레이 지분 4.4조 매각 공시 → 08/24 ESS 4조 투자 발표) = 재료는 신규지만 D+N &#x27;-&#x27;·이전충족 08/07 → 신규 진입이 아니라 눌림 대상. · 톱텍(108230): 기대 → 확정(모비스 미국법인 201억 수주) — 단, 당일 소진(종가위치 27%)으로 시장 미인정.</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>· 휴마시스(205470) 54억 — 종가위치 3%, VWAP <span style="color:#7dabf8;font-weight:700">-9.0%</span>. 코로나 테마 꼬리 · 그린생명과학(114450) 37억 — 종가위치 0%, VWAP <span style="color:#7dabf8;font-weight:700">-7.1%</span>. 저가 마감 · 국제약품(002720) 36억 — 대금 최소권 · 티사이언티픽(057680) 16억 — D+0이지만 가상자산 테마 자체가 후반부, 대금 극소 · 롯데에너지머티리얼즈(020150) 100억 — 2차전지 D+N &#x27;-&#x27;, 대금 30일 7위 · 미투온(201490) 263억 — 스테이블코인 후반부, 종가위치 39%·VWAP <span style="color:#7dabf8;font-weight:700">-5.8%</span> · 오상자이엘(053980) 159억 — 동반 종목 없음, 종가위치 21%</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>· 일동제약(249420) 671억 D+0 ★27봉 — 08:15 충족으로 한미 공시(11:14)를 3시간 선행. 코로나(조코바) + K비만약 후속주 양쪽에 걸친 교집합. 당일 뉴스 0건. 이번 리포트의 숨은 자리. · 녹십자엠에스(142280) 290억 D+0 — 전일 대금 104.8배, 직전최대 18.1배 · 수젠텍(253840) 240억 D+0 — 전일 대금 99.2배 (수식은 미충족이나 자금 성격은 대장급) · 키다리스튜디오(020120) 246억 D+0 ★첫흐름 — 웹툰, 뉴스 0건 상태의 선행 후보 · 에코프로비엠(247540) 1,169억 D+0 ★첫흐름 — 2차전지 내 유일 D+0, 종가위치 93% · 진에어 / 에어부산 — 정보지에만 있고 조건검색 미포착. &#x27;LCC 3사 통합 진에어 출범&#x27;은 오늘 처음 나온 테마이므로 아직 안 움직인 후발주 후보(진에어 <span style="color:#ef4444;font-weight:700">+10.6%</span>, 대금 21억으로 아직 소액)</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>아이티센글로벌(D+2, 직전5일 <span style="color:#ef4444;font-weight:700">+27.7%</span>) / 더즌(D+2) / 엘앤에프(D+9) / 포스코퓨처엠(D+11) / 삼성SDI(이전충족 08/07) / 큐리옥스바이오시스템(D+5) / 셀리드(D+2) → 리벨리온·AI반도체(솔트룩스·미래에셋벤처투자·캡스톤파트너스)는 테마 자체는 오늘 처음이나 전 종목 종가위치 0~25%의 당일 소진형이라 눌림 대상에서도 제외한다.</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>한전기술(052690) 애프터마켓 폭등의 정체.</li>
+</ol>
+<p>정규장 종가 90,300원(<span style="color:#7dabf8;font-weight:700">-1.3%</span>) → 애프터 고가 106,200원, 18:37 수식 충족, 대금 514억(30일 1위). 08/24 18시 이후 DART 공시 / 원전 관련 외신 / 비에이치아이·한전KPS 등 동반 여부. 문서·정보지·뉴스버즈 어디에도 재료가 없다. 내일 갭 여부가 이 종목의 전부다.</p>
+<ol>
+<li>코로나 후속 보도 강도와 확산 폭.</li>
+</ol>
+<p>신풍제약 갭 유지 + 대금 300억 이상 유지가 1차 조건. 오늘 안 움직인 랩지노믹스·아이진·비엘팜텍·경남제약으로 번지면 진짜 테마, 오늘 오른 것들만 되밀리면 하루짜리 헤드라인 반응으로 종결.</p>
+<ol>
+<li>한미 기술수출의 확산 범위.</li>
+</ol>
+<p>한미약품·한미사이언스 2종목에서 멈추는지, 아니면 &#x27;K비만약 차기주&#x27;(일동제약 등)로 번지는지. 특히 일동제약이 코로나·비만약 두 재료를 동시에 안고 D+1로 이어지는지가 관전 포인트. ```</p>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-08-24 21:28
+</p>
+</article></div>
+</body></html>
