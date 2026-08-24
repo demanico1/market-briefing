@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>미국장 브리핑 2026-08-25</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:20px 28px;font-size:14px}
+.hdr{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.hdr h1{font-size:24px;font-weight:800}
+.hdr .date{color:#9aa0a6;font-size:15px}
+.hdr .cnt{margin-left:auto;color:#9aa0a6;font-size:13px;background:#1a1d24;padding:4px 12px;border-radius:12px}
+.row{display:flex;gap:12px;margin-bottom:12px}
+.card{background:#1a1d24;border-radius:10px;padding:12px 16px;flex:1}
+.idx .nm{color:#9aa0a6;font-size:12px;margin-bottom:2px}
+.idx .v{font-size:21px;font-weight:700}
+.idx .chg{font-size:14px;font-weight:700;margin-left:6px}
+.up{color:#22c55e}.dn{color:#ef4444}
+.macro{display:flex;gap:20px;background:#1a1d24;border-radius:10px;padding:9px 16px;margin-bottom:12px;font-size:13px;color:#9aa0a6;flex-wrap:wrap}
+.macro b{color:#e8eaed}
+.one{background:linear-gradient(90deg,#1a1d24,#22262f);border-left:4px solid #f59e0b;border-radius:10px;padding:13px 18px;font-size:20px;font-weight:700;line-height:1.45;margin-bottom:12px}
+.cols{display:flex;gap:12px;margin-bottom:12px}
+.col{flex:1}
+h2{font-size:13px;color:#9aa0a6;font-weight:700;margin-bottom:8px;letter-spacing:.5px}
+.pts li{list-style:none;padding:5px 0 5px 16px;position:relative;line-height:1.4;font-size:13.5px;border-bottom:1px solid #23262e}
+.pts li:last-child{border-bottom:none}
+.pts li:before{content:"▸";position:absolute;left:0;color:#f59e0b}
+.bar{margin-bottom:9px}
+.bar .lb{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:3px}
+.bar .lb span:last-child{color:#9aa0a6}
+.bar .tr{background:#23262e;border-radius:4px;height:9px}
+.bar .fl{background:#3b82f6;height:9px;border-radius:4px}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.bdg{padding:5px 11px;border-radius:14px;font-size:12.5px;font-weight:600}
+.bu{background:rgba(34,197,94,.14);color:#22c55e;border:1px solid rgba(34,197,94,.35)}
+.bd{background:rgba(239,68,68,.14);color:#ef4444;border:1px solid rgba(239,68,68,.35)}
+.bn{background:rgba(154,160,166,.12);color:#9aa0a6;border:1px solid rgba(154,160,166,.3)}
+.ft{color:#9aa0a6;font-size:12px;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>미국장 브리핑</h1><span class="date">2026-08-25 (화) · 8/24(월) 세션</span><span class="cnt">수집 채널 10/16 · 영상 11건</span></div>
+
+<div class="row">
+  <div class="card idx"><div class="nm">S&amp;P 500</div><span class="v">7,652.86</span><span class="chg dn">-0.28%</span></div>
+  <div class="card idx"><div class="nm">나스닥 종합</div><span class="v">25,980.19</span><span class="chg dn">-0.76%</span></div>
+  <div class="card idx"><div class="nm">다우존스</div><span class="v">53,417.16</span><span class="chg up">+0.26%</span></div>
+</div>
+
+<div class="macro"><span>10년물 <b>4.71%</b></span><span>30년물 <b>5.2%대 (19년 최고권)</b></span><span>WTI <b>$85대 (선물)</b></span><span>금 <b>$4,690대 (선물)</b></span><span>비트코인 <b>$77K</b></span><span>SOXX <b class="dn">-2.7%</b></span></div>
+
+<div class="one">엔비디아 실적(수)·잭슨홀(금)을 앞두고 반도체는 팔리지만, 자금은 소비·여행·금·비트코인으로 도는 중 — 하락이 아닌 로테이션 국면</div>
+
+<div class="cols">
+  <div class="card col">
+    <h2>핵심 포인트</h2>
+    <ul class="pts">
+      <li>반도체 매도 주도 하락: 마이크론 -5.8%, 엔비디아 7거래일 연속 하락(-1.0%, $214.72)</li>
+      <li>재무부 채권 개입('베센트 풋')이 새 유동성 변수 — TGA 1조 달러 바이백 재원 보도에 낙폭 축소</li>
+      <li>이란 전면 제재 'Operation Economic Outcast' 발표 + 미-캐나다 협상 결렬, 시장 영향 아직 제한적</li>
+      <li>IBD: 나스닥 50일선 하회 vs 동일가중 RSP 사상 최고가 직전 — "두 개의 시장"</li>
+      <li>메모리 비용 급증으로 엔비디아 서버가격 15%+ 인상 전망 (블룸버그)</li>
+    </ul>
+  </div>
+  <div class="card col" style="max-width:340px">
+    <h2>채널 합의도</h2>
+    <div class="bar"><div class="lb"><span>NVDA 실적·잭슨홀이 관건</span><span>6/10</span></div><div class="tr"><div class="fl" style="width:60%"></div></div></div>
+    <div class="bar"><div class="lb"><span>재무부 개입 = 핵심 변수</span><span>5/10</span></div><div class="tr"><div class="fl" style="width:50%"></div></div></div>
+    <div class="bar"><div class="lb"><span>반도체 단기 과열 해소</span><span>4/10</span></div><div class="tr"><div class="fl" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lb"><span>장기금리 = 최대 리스크</span><span>4/10</span></div><div class="tr"><div class="fl" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lb"><span>금·코인·소비주 로테이션</span><span>3/10</span></div><div class="tr"><div class="fl" style="width:30%"></div></div></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card">
+    <h2>강세 / 상승</h2>
+    <div class="badges"><span class="bdg bu">브링커 +3.2%</span><span class="bdg bu">시네마크 +5%</span><span class="bdg bu">익스피디아·여행주</span><span class="bdg bu">비자·마스터카드</span><span class="bdg bu">금 광산주</span><span class="bdg bu">비트코인 주간 +25%*</span><span class="bdg bu">우주주 (ZipTrader)</span></div>
+  </div>
+  <div class="card">
+    <h2>약세 / 하락</h2>
+    <div class="badges"><span class="bdg bd">마이크론 -5.8%</span><span class="bdg bd">AMD -3%대</span><span class="bdg bd">브로드컴 -2%대</span><span class="bdg bd">SOXX -2.7%</span><span class="bdg bd">엔비디아 7일 연속↓</span><span class="bdg bd">알리바바 -8%대</span><span class="bdg bn">코어위브·MSTR 경고</span></div>
+  </div>
+</div>
+
+<div class="ft">Tier1 7/8 + Tier2 3/8 수집 (미주은·Chart Guys 등 6개 채널 신규 영상 없음) · *FX Evolution 발언 기준 · 원문: 2026-08-25_미국장_브리핑.md</div>
+</body>
+</html>
