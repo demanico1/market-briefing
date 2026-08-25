@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>미국장 브리핑 2026-08-26</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 30px;max-width:1880px;margin:0 auto}
+.hdr{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.hdr h1{font-size:26px;font-weight:800}
+.hdr .date{color:#9aa0a6;font-size:15px}
+.hdr .cnt{margin-left:auto;background:#1a1d24;border-radius:16px;padding:5px 14px;font-size:13px;color:#9aa0a6}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.idx .nm{font-size:13px;color:#9aa0a6;margin-bottom:5px}
+.idx .val{font-size:25px;font-weight:800}
+.idx .chg{font-size:16px;font-weight:700;margin-top:3px}
+.up{color:#22c55e}.dn{color:#ef4444}
+.strip{display:flex;gap:26px;background:#1a1d24;border-radius:12px;padding:11px 20px;margin-bottom:14px;font-size:14px;flex-wrap:wrap}
+.strip b{color:#e8eaed}.strip span{color:#9aa0a6}
+.one{background:linear-gradient(135deg,#1a1d24,#22262f);border-radius:12px;padding:17px 22px;margin-bottom:14px;font-size:21px;font-weight:700;line-height:1.45;border-left:4px solid #22c55e}
+.grid{display:flex;gap:14px}
+.col{flex:1;display:flex;flex-direction:column;gap:14px}
+h2{font-size:15px;color:#9aa0a6;font-weight:700;margin-bottom:10px;letter-spacing:.4px}
+.pts li{list-style:none;padding:5px 0 5px 20px;position:relative;font-size:14.5px;line-height:1.45}
+.pts li:before{content:"▸";position:absolute;left:2px;color:#22c55e}
+.bar{margin-bottom:9px}
+.bar .lb{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.bar .lb span:last-child{color:#9aa0a6}
+.bar .tr{background:#0f1115;border-radius:5px;height:9px}
+.bar .fl{background:#22c55e;height:9px;border-radius:5px}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.bg{padding:6px 11px;border-radius:8px;font-size:13.5px;font-weight:700}
+.bgu{background:rgba(34,197,94,.13);color:#22c55e}
+.bgd{background:rgba(239,68,68,.13);color:#ef4444}
+.ft{margin-top:14px;color:#9aa0a6;font-size:12.5px;display:flex;justify-content:space-between}
+.sm{font-size:11.5px;color:#9aa0a6;font-weight:400}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>미국장 브리핑</h1><span class="date">2026-08-26 (화요일 8/25 세션)</span><span class="cnt">수집 채널 9/16</span></div>
+
+<div class="row">
+<div class="card idx"><div class="nm">S&amp;P500</div><div class="val">7,677.28</div><div class="chg up">▲ +0.32%</div></div>
+<div class="card idx"><div class="nm">나스닥</div><div class="val">기술·헬스케어 주도</div><div class="chg up">▲ +0.6%</div></div>
+<div class="card idx"><div class="nm">다우</div><div class="val">53,579.94</div><div class="chg up">▲ +0.30% (+160pt)</div></div>
+</div>
+
+<div class="strip">
+<div><span>10년물 금리</span> <b>4.625%</b> <b class="up">▼7bp</b></div>
+<div><span>WTI(장중)</span> <b>$82대</b> <b class="dn">▼3%대</b></div>
+<div><span>금 현물</span> <b>$4,641</b> <span>15주 최고</span></div>
+<div><span>비트코인(장중)</span> <b>$80K 돌파</b> <span>5월 이후 처음, 7일 +20%</span></div>
+</div>
+
+<div class="one">엔비디아 실적(수요일)·PCE·잭슨홀을 앞두고 금리·유가 하락에 기댄 갭 상승 — 상승분의 97.5%가 개장 갭, 장중 추가 동력은 없었다.</div>
+
+<div class="grid">
+<div class="col">
+<div class="card"><h2>핵심 포인트</h2><ul class="pts">
+<li>10년물 4.625%로 하락 — 재무부, 약 $1조 일반계정 활용 국채매입 확대 검토 보도</li>
+<li>엔비디아 +2%로 7일 연속 하락 마감, 시총 $4,000억 반납 후 실적 D-1</li>
+<li>이란 제재가 군사행동 대신 경제압박으로 — 전쟁 프리미엄 풀리며 유가 급락</li>
+<li>모더나 +14.4% 흑색종 백신 3상 성공, mRNA 오늘의 랠리 주도</li>
+<li>금 15주 최고·비트코인 $80K — '달러 디베이스먼트' 헤지 수요 확산</li>
+</ul></div>
+<div class="card"><h2>채널 합의도</h2>
+<div class="bar"><div class="lb"><span>엔비디아 실적이 단기 방향 결정</span><span>5/9</span></div><div class="tr"><div class="fl" style="width:56%"></div></div></div>
+<div class="bar"><div class="lb"><span>재무부 개입(돈풀기)發 금리 하락</span><span>4/9</span></div><div class="tr"><div class="fl" style="width:44%"></div></div></div>
+<div class="bar"><div class="lb"><span>금·비트코인 대체자산 강세</span><span>4/9</span></div><div class="tr"><div class="fl" style="width:44%"></div></div></div>
+<div class="bar"><div class="lb"><span>잭슨홀(워시 의장) 경계</span><span>3/9</span></div><div class="tr"><div class="fl" style="width:33%"></div></div></div>
+</div>
+</div>
+<div class="col">
+<div class="card"><h2>종목/섹터</h2><div class="badges">
+<span class="bg bgu">MRNA +14.4%</span>
+<span class="bg bgu">SMCI +9.4%</span>
+<span class="bg bgu">HOOD +8.2%</span>
+<span class="bg bgu">CDW +7.2%</span>
+<span class="bg bgu">AMD +5%</span>
+<span class="bg bgu">NVDA +2%</span>
+<span class="bg bgu">반도체 +1.7%</span>
+<span class="bg bgu">XBI +3%</span>
+<span class="bg bgd">ALB -5.9%</span>
+<span class="bg bgd">DKS -30.7%</span>
+<span class="bg bgd">에너지 약세</span>
+</div></div>
+<div class="card"><h2>채널 톤</h2><ul class="pts">
+<li><b>강세</b> — Chart Guys(크립토 돌파), Ross Cameron(스몰캡 모멘텀)</li>
+<li><b>중립·신중</b> — IBD(신중한 랠리, 브로커주 매수신호), Yahoo(선별 강세), Bloomberg</li>
+<li><b>구조적 경계</b> — 소수몽키(달리오 재정위기 경고), FX Evolution(신용·인플레 리스크)</li>
+</ul></div>
+</div>
+</div>
+
+<div class="ft"><span>Tier1 6/8 · Tier2 3/8 수집 (인포맥스·미주은 영상없음, 소수몽키 라이브 멤버십 전용, Meet Kevin 자막없음)</span><span>원문: 2026-08-26_미국장_브리핑.md</span></div>
+</body>
+</html>
