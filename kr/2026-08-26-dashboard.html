@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>한국장 브리핑 2026-08-26</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:22px 28px;width:1920px;height:1080px;overflow:hidden}
+.sub{color:#9aa0a6}
+header{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+header h1{font-size:26px;font-weight:800}
+header .date{font-size:17px;color:#9aa0a6}
+header .badge{margin-left:auto;background:#1a1d24;border:1px solid #2a2e38;border-radius:20px;padding:6px 14px;font-size:14px;color:#9aa0a6}
+.grid{display:grid;grid-template-columns:1fr 1fr 1.25fr 1.15fr;gap:14px}
+.card{background:#1a1d24;border:1px solid #262b35;border-radius:12px;padding:16px 18px}
+.up{color:#ef4444}.down{color:#3b82f6}.flat{color:#9aa0a6}
+.idx .name{font-size:15px;color:#9aa0a6;margin-bottom:6px}
+.idx .val{font-size:34px;font-weight:800}
+.idx .chg{font-size:17px;font-weight:700;margin-top:2px}
+.flow .row{display:flex;justify-content:space-between;font-size:16px;padding:5px 0;border-bottom:1px solid #23272f}
+.flow .row:last-child{border-bottom:none}
+.flow b{font-weight:700}
+.macro{display:flex;gap:26px;align-items:center;font-size:16px}
+.macro .item b{font-size:19px}
+.oneline{grid-column:1/5;background:linear-gradient(90deg,#1a1d24,#1c2028);border-left:4px solid #ef4444;font-size:22px;font-weight:700;line-height:1.45;padding:18px 22px}
+h2{font-size:16px;color:#9aa0a6;font-weight:700;margin-bottom:10px;letter-spacing:.5px}
+.points li{font-size:16.5px;line-height:1.65;margin-left:20px;margin-bottom:7px}
+.consensus .bar-row{margin-bottom:11px}
+.consensus .lbl{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:4px}
+.consensus .track{background:#23272f;border-radius:4px;height:10px}
+.consensus .fill{background:#ef4444;height:10px;border-radius:4px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bdg{border-radius:8px;padding:7px 11px;font-size:14.5px;font-weight:600;border:1px solid #2a2e38}
+.bdg.u{background:#2a1518;color:#ef8888}.bdg.d{background:#141c2a;color:#7fa8ef}.bdg.f{background:#20242c;color:#9aa0a6}
+.tomorrow li{font-size:15.5px;line-height:1.6;margin-left:20px;margin-bottom:5px}
+footer{margin-top:14px;font-size:13.5px;color:#9aa0a6;display:flex;gap:24px}
+.row2{display:grid;grid-template-columns:1.6fr 1fr 1.15fr;gap:14px;margin-top:14px}
+</style>
+</head>
+<body>
+<header>
+  <h1>한국장 브리핑</h1>
+  <span class="date">2026년 8월 26일 (수)</span>
+  <span class="badge">수집 채널 6 / 12</span>
+</header>
+
+<div class="grid">
+  <div class="card idx">
+    <div class="name">KOSPI</div>
+    <div class="val up">6,808.21</div>
+    <div class="chg up">▲ 65.47 (+0.97%)</div>
+  </div>
+  <div class="card idx">
+    <div class="name">KOSDAQ</div>
+    <div class="val down">826.87</div>
+    <div class="chg down">▼ 0.28 (−0.03%)</div>
+  </div>
+  <div class="card flow">
+    <h2>코스피 수급 (순매수)</h2>
+    <div class="row"><span>외국인</span><b class="down">−1,162억</b></div>
+    <div class="row"><span>기관</span><b class="up">+2조 이상</b></div>
+    <div class="row"><span>개인</span><b class="down">−2조 2,413억</b></div>
+  </div>
+  <div class="card macro">
+    <div class="item"><div class="sub" style="font-size:14px">원/달러 환율</div><b>1,384.80원</b> <span class="down" style="font-size:14px">▼1.30</span></div>
+  </div>
+
+  <div class="oneline">외국인 매도 1,162억으로 급감 + 기관 2조 매수 → 코스피 6,800선 회복.<br><span style="font-size:18px;color:#c9ccd2;font-weight:600">내일 새벽 엔비디아 실적이 반도체·지수 방향의 분수령.</span></div>
+</div>
+
+<div class="row2">
+  <div class="card points">
+    <h2>핵심 포인트</h2>
+    <ul>
+      <li>전약후강 — NVDA 경계감에 하락 출발 후 오후 반도체 수급 개선으로 반전</li>
+      <li>외국인 최근 1주 6조+ 순매도 → 오늘 1,162억으로 급축소, 장 후반 대형주 매수 전환</li>
+      <li>삼성전자 +1.75% (261,500원) · SK하이닉스 +0.60% (1,688,000원) — 자사주 매입이 하방 방어</li>
+      <li>원전·전력기기 강세 지속 — 두산에너빌리티 +4.46%, AI 전력수요 베팅 확산 (김단테·주덕)</li>
+      <li>코스닥은 중소형 2차전지 약세로 보합 — 개인 홀로 순매수</li>
+    </ul>
+  </div>
+  <div class="card consensus">
+    <h2>채널 합의도</h2>
+    <div class="bar-row"><div class="lbl"><span>엔비디아 실적 = 분수령</span><span>3/6</span></div><div class="track"><div class="fill" style="width:50%"></div></div></div>
+    <div class="bar-row"><div class="lbl"><span>자사주 매입 하방 방어</span><span>2/6</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+    <div class="bar-row"><div class="lbl"><span>수급(외인·기관) 추종 대응</span><span>2/6</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+    <div class="bar-row"><div class="lbl"><span>원전·전력 인프라 강세</span><span>2/6</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+  </div>
+  <div class="card">
+    <h2>종목 / 섹터</h2>
+    <div class="badges">
+      <span class="bdg u">삼성전자 +1.75%</span>
+      <span class="bdg u">SK하이닉스 +0.60%</span>
+      <span class="bdg u">두산에너빌리티 +4.46%</span>
+      <span class="bdg u">HD현대일렉트릭 +1.3%</span>
+      <span class="bdg f">LG에너지솔루션 0.00%</span>
+      <span class="bdg d">현대차 −0.83%</span>
+      <span class="bdg d">POSCO홀딩스 −1.20%</span>
+      <span class="bdg d">기아 −2.59%</span>
+    </div>
+    <h2 style="margin-top:14px">내일 관전 포인트</h2>
+    <ul class="tomorrow">
+      <li>엔비디아 실적 (27일 새벽, 옵션 내재변동 ±5%)</li>
+      <li>외국인 매도 축소 → 순매수 전환 여부</li>
+      <li>금요일 잭슨홀 · SK하이닉스 임금협상 표결</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <span>수집: 주린이놀이터 · 이효석아카데미 · 만쥬 · 김단테 · 주덕(쇼츠) · 김혜산 | 영상없음: 창원개미·돌팬티·홍인기·고라니·소수몽키 | 전황 라이브 진행중</span>
+  <span>원문: 2026-08-26_한국장_브리핑.md</span>
+</footer>
+</body>
+</html>
