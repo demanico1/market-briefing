@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>한국장 브리핑 2026-08-27</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 40px;width:1280px}
+.hdr{display:flex;align-items:baseline;gap:16px;margin-bottom:18px}
+.hdr h1{font-size:26px;font-weight:800}
+.hdr .date{font-size:16px;color:#9aa0a6}
+.hdr .cnt{margin-left:auto;font-size:14px;color:#9aa0a6;background:#1a1d24;padding:6px 14px;border-radius:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px}
+.card .lbl{font-size:13px;color:#9aa0a6;margin-bottom:6px}
+.card .val{font-size:30px;font-weight:800}
+.card .chg{font-size:15px;font-weight:700;margin-top:2px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.flow{display:flex;gap:22px;align-items:center}
+.flow .item{flex:1}
+.flow .item .who{font-size:13px;color:#9aa0a6}
+.flow .item .amt{font-size:20px;font-weight:800;margin-top:4px}
+.macro{background:#1a1d24;border-radius:12px;padding:12px 20px;font-size:15px;color:#e8eaed;display:flex;gap:34px;margin-bottom:14px}
+.macro b{color:#9aa0a6;font-weight:500;margin-right:8px;font-size:13px}
+.oneline{background:linear-gradient(135deg,#1a1d24,#232838);border-radius:12px;padding:18px 24px;font-size:21px;font-weight:700;line-height:1.45;margin-bottom:14px;border-left:4px solid #ef4444}
+.cols{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin-bottom:14px}
+.panel{background:#1a1d24;border-radius:12px;padding:16px 20px}
+.panel h2{font-size:15px;color:#9aa0a6;margin-bottom:10px;font-weight:600}
+.panel ul{list-style:none}
+.panel li{font-size:15px;line-height:1.5;padding:4px 0 4px 16px;position:relative}
+.panel li:before{content:"▸";position:absolute;left:0;color:#ef4444}
+.bar-row{display:flex;align-items:center;gap:10px;margin:7px 0}
+.bar-row .t{width:230px;font-size:14px}
+.bar-row .track{flex:1;background:#0f1115;border-radius:4px;height:16px}
+.bar-row .fill{background:#ef4444;height:16px;border-radius:4px}
+.bar-row .n{width:64px;font-size:13px;color:#9aa0a6;text-align:right}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bdg{padding:6px 12px;border-radius:8px;font-size:14px;font-weight:700}
+.bdg.up{background:rgba(239,68,68,.14)}
+.bdg.dn{background:rgba(59,130,246,.14)}
+.tomorrow{background:#1a1d24;border-radius:12px;padding:14px 20px;margin-bottom:12px}
+.tomorrow h2{font-size:15px;color:#9aa0a6;margin-bottom:8px;font-weight:600}
+.tomorrow span{display:inline-block;margin-right:26px;font-size:15px}
+.foot{font-size:13px;color:#9aa0a6}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>한국장 브리핑</h1>
+  <span class="date">2026년 8월 27일 (목)</span>
+  <span class="cnt">수집 채널 8/12 · 영상 10건</span>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="lbl">KOSPI</div>
+    <div class="val up">6,912.37</div>
+    <div class="chg up">▲ 104.16 (+1.53%)</div>
+  </div>
+  <div class="card">
+    <div class="lbl">KOSDAQ</div>
+    <div class="val up">837.65</div>
+    <div class="chg up">▲ 10.78 (+1.30%)</div>
+  </div>
+  <div class="card">
+    <div class="lbl">코스피 수급 (순매수)</div>
+    <div class="flow">
+      <div class="item"><div class="who">외국인</div><div class="amt up">+1,456억</div></div>
+      <div class="item"><div class="who">기관</div><div class="amt up">+1,814억</div></div>
+      <div class="item"><div class="who">개인</div><div class="amt dn">-1조 9,120억</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="macro">
+  <span><b>원/달러</b>1,380.9원 (-3.9)</span>
+  <span><b>한은 기준금리</b>연 3.00% (+0.25%p · 2연속 인상)</span>
+  <span><b>코스피 시가</b>6,996.12 (+2.76%) → 상승폭 반납</span>
+</div>
+
+<div class="oneline">엔비디아 호실적으로 7,000선을 넘보던 코스피, 한은 2연속 금리 인상에 상승폭 절반을 반납하며 +1.53% 마감</div>
+
+<div class="cols">
+  <div class="panel">
+    <h2>핵심 포인트</h2>
+    <ul>
+      <li>엔비디아 분기 매출 960억 달러, 컨센서스 상회 — 메모리 수요 신호로 해석 (이효석·김단테)</li>
+      <li>한은 기준금리 2.75%→3.00%, 발표 직후 코스닥 일시 하락 전환</li>
+      <li>삼전·하이닉스 자사주 매입이 지수 하단 지지 — 하이닉스 매입은 11월까지 (돌팬티)</li>
+      <li>외국인은 이익 "지속성" 증명을 요구 — 단기 급등엔 보수적 시각도 (김효진 박사)</li>
+      <li>트럼프 전력망 국가비상사태 → 전력기기·전선 수혜 재료 (주덕)</li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h2>채널 합의도</h2>
+    <div class="bar-row"><div class="t">엔비디아發 반도체 강세</div><div class="track"><div class="fill" style="width:63%"></div></div><div class="n">5/8 채널</div></div>
+    <div class="bar-row"><div class="t">삼전·하닉 자사주 수급</div><div class="track"><div class="fill" style="width:38%"></div></div><div class="n">3/8 채널</div></div>
+    <div class="bar-row"><div class="t">금리 인상 부담</div><div class="track"><div class="fill" style="width:25%"></div></div><div class="n">2/8 채널</div></div>
+    <div class="bar-row"><div class="t">AI 캐펙스·부채 경계론</div><div class="track"><div class="fill" style="width:13%"></div></div><div class="n">1/8 채널</div></div>
+  </div>
+</div>
+
+<div class="cols">
+  <div class="panel">
+    <h2>종목/섹터</h2>
+    <div class="badges">
+      <span class="bdg up">SK하이닉스 +2.49%</span>
+      <span class="bdg up">삼성전자 +1.72%</span>
+      <span class="bdg up">삼성전기 +4.13%</span>
+      <span class="bdg up">LG에너지솔루션 +5.56%</span>
+      <span class="bdg up">한화에어로 +5.80%</span>
+      <span class="bdg up">전기·전자 +2.62%</span>
+      <span class="bdg dn">현대차 -2.45%</span>
+      <span class="bdg dn">삼성물산 -3.10%</span>
+      <span class="bdg dn">유통 -2.36%</span>
+      <span class="bdg dn">전기·가스 -2.05%</span>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>내일 관전 포인트</h2>
+    <ul>
+      <li>엔비디아 효과 지속 — 미국 본장·필라델피아 반도체지수</li>
+      <li>2연속 금리 인상 소화 — 성장주·코스닥 반응</li>
+      <li>삼전·하이닉스 자사주 매입 수급 지속 여부</li>
+    </ul>
+  </div>
+</div>
+
+<div class="foot">수집: 주덕·이효석(3편)·돌팬티·홍인기·김단테·주린이놀이터·소수몽키·만쥬 | 영상없음: 창원개미·고라니·전황·김혜산 | 원문: 2026-08-27_한국장_브리핑.md</div>
+</body>
+</html>
