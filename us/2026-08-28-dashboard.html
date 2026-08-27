@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>2026-08-28 미국장 브리핑 요약</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 40px;width:1920px;height:1080px;overflow:hidden}
+.muted{color:#9aa0a6}
+.header{display:flex;align-items:baseline;gap:18px;margin-bottom:18px}
+.header h1{font-size:30px;font-weight:800}
+.header .date{font-size:19px;color:#9aa0a6}
+.badge{background:#1a1d24;border:1px solid #2a2e38;border-radius:20px;padding:4px 14px;font-size:15px;color:#9aa0a6}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px}
+.idx .name{font-size:16px;color:#9aa0a6;margin-bottom:4px}
+.idx .val{font-size:30px;font-weight:800}
+.idx .chg{font-size:20px;font-weight:700;margin-left:10px}
+.up{color:#22c55e}.down{color:#ef4444}
+.strip{display:flex;gap:26px;background:#1a1d24;border-radius:12px;padding:12px 22px;margin-bottom:16px;font-size:17px}
+.strip b{font-size:18px}
+.oneline{font-size:23px;font-weight:700;line-height:1.45;background:#1a1d24;border-left:5px solid #22c55e;border-radius:12px;padding:16px 22px;margin-bottom:16px}
+.cols{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px}
+h2{font-size:18px;color:#9aa0a6;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.points li{font-size:17.5px;line-height:1.5;margin-bottom:9px;list-style:none;padding-left:20px;position:relative}
+.points li::before{content:"▪";position:absolute;left:0;color:#22c55e}
+.bar-row{margin-bottom:11px}
+.bar-label{display:flex;justify-content:space-between;font-size:15.5px;margin-bottom:4px}
+.bar-bg{background:#0f1115;border-radius:5px;height:11px}
+.bar-fill{background:linear-gradient(90deg,#16a34a,#22c55e);height:11px;border-radius:5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border-radius:8px;padding:6px 11px;font-size:15.5px;font-weight:600}
+.tag.up{background:rgba(34,197,94,.13);border:1px solid rgba(34,197,94,.45)}
+.tag.down{background:rgba(239,68,68,.13);border:1px solid rgba(239,68,68,.45)}
+.tag.flat{background:#232733;border:1px solid #2a2e38;color:#9aa0a6}
+.footer{margin-top:14px;font-size:14.5px;color:#9aa0a6;display:flex;justify-content:space-between}
+.sub{font-size:14px;color:#9aa0a6;margin-top:8px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>미국장 브리핑</h1>
+  <div class="date">2026-08-28 (금) · 대상: 8/27(목) 미국 정규장</div>
+  <div class="badge">수집 채널 11/16</div>
+</div>
+
+<div class="grid">
+  <div class="card idx"><div class="name">S&amp;P 500</div><span class="val">7,739.03</span><span class="chg up">▲ +0.83%</span></div>
+  <div class="card idx"><div class="name">나스닥 종합</div><span class="val">26,548.90</span><span class="chg up">▲ +1.60%</span></div>
+  <div class="card idx"><div class="name">다우존스</div><span class="val">53,664.73</span><span class="chg up">▲ +0.38%</span></div>
+</div>
+
+<div class="strip">
+  <span>미 10년물 <b>4.67%</b> <span class="down">(+2bp)</span></span>
+  <span>WTI <b>$82.9</b> <span class="up">(+1%대)</span></span>
+  <span>VIX <b>15.21</b> <span class="up">(−1.55%)</span></span>
+  <span>비트코인 <b>$80.8K</b> <span class="up">(+3.2%)</span></span>
+</div>
+
+<div class="oneline">🔥 엔비디아 "FY28 매출 +70%" 가이던스가 AI 둔화 우려 정면 돌파, NVDA +9.6% · CRM +21.3% — 그러나 다우 30종목 중 23개 하락한 '소수 집중 랠리'. 오늘 밤 잭슨홀 워시 의장 연설이 분수령.</div>
+
+<div class="cols">
+  <div class="card">
+    <h2>핵심 포인트</h2>
+    <ul class="points">
+      <li>NVDA Q2 매출 $96.2B(+106%), FY28 성장 가이던스 +70%로 컨센(44~45%) 대폭 상회 — "유일한 제약은 공급"</li>
+      <li>세일즈포스 +21.3% 폭등(2020년 8월 이후 최대) — Agentforce + Anthropic 협력. CRWD +20.5%, PANW +12.8% 동반 급등</li>
+      <li>상승 종목은 소수: 다우 23/30 하락, S&P 상승 종목 한때 156/503 — 좁은 랠리 경고(IBD·Fool)</li>
+      <li>해맥 연은 총재 "지금 금리 올려야" 매파 발언 + 뜨거운 인플레 지표 → 잭슨홀 경계감</li>
+      <li>메모리 가격 급등 → 하이닉스·마이크론 수혜 구도(4개 채널) · 반도체 관세 준비 보도</li>
+      <li>마감 후: MRVL 가이던스 상회, ADSK 가이던스 미달 하락, AFRM 상승 (채널 발언 기준)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>채널 합의도</h2>
+    <div class="bar-row"><div class="bar-label"><span>엔비디아 실적·가이던스</span><span>11/11</span></div><div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>AI 소프트웨어 수익화(CRM 등)</span><span>6/11</span></div><div class="bar-bg"><div class="bar-fill" style="width:55%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>좁은 랠리·수급 경계</span><span>4/11</span></div><div class="bar-bg"><div class="bar-fill" style="width:36%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>메모리 가격 급등 수혜</span><span>4/11</span></div><div class="bar-bg"><div class="bar-fill" style="width:36%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>잭슨홀·금리 리스크</span><span>3/11</span></div><div class="bar-bg"><div class="bar-fill" style="width:27%"></div></div></div>
+    <div class="sub">톤: 강세 7 · 중립 2 · 약세 2 (Yahoo 매도의견 인터뷰, 인포맥스 한국장)</div>
+  </div>
+  <div class="card">
+    <h2>종목/섹터</h2>
+    <div class="tags">
+      <span class="tag up">NVDA +9.6%</span>
+      <span class="tag up">CRM +21.3%</span>
+      <span class="tag up">CRWD +20.5%</span>
+      <span class="tag up">PANW +12.8%</span>
+      <span class="tag up">MSFT +1.7%</span>
+      <span class="tag up">TSLA +2.8%</span>
+      <span class="tag up">사이버보안 HACK</span>
+      <span class="tag up">소프트웨어 IGV</span>
+      <span class="tag up">바이오텍 소형주</span>
+      <span class="tag down">META −0.8%</span>
+      <span class="tag down">AMZN −1.7%</span>
+      <span class="tag down">ADSK 시간외↓</span>
+      <span class="tag flat">MRVL 시간외 발표</span>
+      <span class="tag flat">하이닉스·마이크론 (메모리)</span>
+    </div>
+    <div class="sub">주요 레벨(채널 발언): NVDA 227.92/236 저항 · QQQ 지지 700~705 · S&P 선물 지지 7,500 · 나스닥 되돌림 28,729</div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>수집: Tier1 8채널 중 8 대응(일부 대체·마감 전 방송) + Tier2 3채널 · 미수집 5채널(영상없음)</span>
+  <span>원문: 2026-08-28_미국장_브리핑.md</span>
+</div>
+</body>
+</html>
