@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>미국장 브리핑 2026-08-29</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:24px 32px;width:1920px;height:1080px;overflow:hidden}
+.sub{color:#9aa0a6}
+.up{color:#22c55e}.dn{color:#ef4444}
+header{display:flex;align-items:baseline;gap:16px;margin-bottom:18px}
+header h1{font-size:28px;font-weight:800}
+header .date{font-size:18px;color:#9aa0a6}
+header .cnt{margin-left:auto;font-size:15px;color:#9aa0a6;background:#1a1d24;padding:6px 14px;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px}
+.idx .name{font-size:15px;color:#9aa0a6;margin-bottom:4px}
+.idx .val{font-size:30px;font-weight:800}
+.idx .chg{font-size:18px;font-weight:700;margin-left:8px}
+.macro{background:#1a1d24;border-radius:12px;padding:10px 20px;display:flex;gap:28px;font-size:15px;margin-bottom:16px;flex-wrap:wrap}
+.macro b{color:#e8eaed;font-weight:600}
+.oneline{background:linear-gradient(90deg,#1a1d24,#20242e);border-left:4px solid #f59e0b;border-radius:12px;padding:16px 22px;font-size:22px;font-weight:700;line-height:1.45;margin-bottom:16px}
+.cols{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px}
+h2{font-size:16px;color:#9aa0a6;font-weight:700;margin-bottom:10px;letter-spacing:.5px}
+.pts li{list-style:none;font-size:15.5px;line-height:1.5;margin-bottom:9px;padding-left:18px;position:relative}
+.pts li:before{content:"▸";position:absolute;left:0;color:#f59e0b}
+.bar{margin-bottom:11px}
+.bar .lbl{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:4px}
+.bar .track{height:9px;background:#0f1115;border-radius:5px}
+.bar .fill{height:9px;border-radius:5px;background:#3b82f6}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{padding:6px 12px;border-radius:8px;font-size:13.5px;font-weight:700}
+.b-up{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.35)}
+.b-dn{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35)}
+.b-nt{background:rgba(148,163,184,.12);color:#cbd5e1;border:1px solid rgba(148,163,184,.3)}
+.sect{margin-top:14px}
+footer{position:absolute;bottom:20px;left:32px;right:32px;display:flex;justify-content:space-between;font-size:13px;color:#9aa0a6;border-top:1px solid #23262e;padding-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <h1>미국장 브리핑</h1>
+  <span class="date">2026-08-29 (8/28 금요일 세션 마감)</span>
+  <span class="cnt">수집 채널 10/16</span>
+</header>
+
+<div class="grid">
+  <div class="card idx"><div class="name">S&amp;P 500</div><span class="val">7,711.47</span><span class="chg dn">-0.25%</span></div>
+  <div class="card idx"><div class="name">나스닥</div><span class="val">26,402.42</span><span class="chg dn">-0.52%</span></div>
+  <div class="card idx"><div class="name">다우</div><span class="val">53,559.34</span><span class="chg dn">-0.02%</span></div>
+</div>
+
+<div class="macro">
+  <span>10년물 금리 <b>4.68%</b></span>
+  <span>달러인덱스 <b>99.13</b></span>
+  <span>WTI <b>$83.38</b></span>
+  <span>VIX <b>14.47</b></span>
+  <span>금 <b class="dn">$4,504.90 (-3.4%)</b></span>
+  <span>비트코인 <b class="dn">$77,583 (-3.2%)</b></span>
+  <span>러셀 2000 <b class="dn">-1.30%</b></span>
+</div>
+
+<div class="oneline">워시 의장의 첫 잭슨홀 연설이 매파로 해석되며 갭업 출발한 시장이 하락 반전 — 9월 '금리 인상' 확률 약 50% 반영, 소프트웨어로만 자금이 돌았다.</div>
+
+<div class="cols">
+  <div class="card">
+    <h2>핵심 포인트</h2>
+    <ul class="pts">
+      <li>워시: "인플레 둔화 불충분(PCE 3.7%), 2% 목표는 확고" — 인하 기대 차단, 추가 긴축 여지</li>
+      <li>목요일 NVDA +8.7% 랠리 하루 만에 반전 — 반도체가 지수 하락 주도, S&amp;P는 주간으론 상승</li>
+      <li>반도체→소프트웨어 로테이션: CRM(목 +22.6%)·NOW·MSFT·PLTR 상대강세</li>
+      <li>매파 충격에 금 -3.4%·비트코인 -3.2% 동반 급락, 소형주(러셀 -1.3%) 언더퍼폼</li>
+      <li>PYPL -12.7% (어드벤트 $500억 인수 무산) · AI 캐펙스, 부채 조달 국면 진입 경고</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>채널 합의도</h2>
+    <div class="bar"><div class="lbl"><span>잭슨홀 매파 해석 · 인하 후퇴</span><span>5/10</span></div><div class="track"><div class="fill" style="width:50%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>소프트웨어 강세 (CRM·NOW)</span><span>4/10</span></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>NVDA 반전·반도체 경계</span><span>4/10</span></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>AI 캐펙스 지속가능성 의문</span><span>3/10</span></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>월·화 확인 전 관망 권고</span><span>3/10</span></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+    <div class="sect">
+      <h2>이견</h2>
+      <ul class="pts">
+        <li>반도체: 구조적 강세(블룸버그) vs 기술적 경고(IBD)</li>
+        <li>금: 디베이스먼트 강세론 vs 당일 -3.4% 급락</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h2>종목 / 섹터</h2>
+    <div class="badges" style="margin-bottom:12px">
+      <span class="badge b-up">CRM +22.6%(목)</span>
+      <span class="badge b-up">NOW 로테이션 수혜</span>
+      <span class="badge b-up">DKNG +4.3%</span>
+      <span class="badge b-up">BE 펠로시 매수</span>
+      <span class="badge b-nt">PLTR 상대강도</span>
+      <span class="badge b-nt">MSFT 안정</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-dn">NVDA 반전 -4.5%(장중)</span>
+      <span class="badge b-dn">PYPL -12.7%</span>
+      <span class="badge b-dn">IREN -12.5%</span>
+      <span class="badge b-dn">MSTR 급락</span>
+      <span class="badge b-dn">금·BTC 급락</span>
+      <span class="badge b-dn">IWM -1.3%</span>
+    </div>
+    <div class="sect">
+      <h2>트레이더 레벨</h2>
+      <ul class="pts">
+        <li>QQQ: 콜저항 $720 / 풋지지 $700, 715 붕괴 시 갭다운</li>
+        <li>SPY: 8/4 팔로스루 저점(~760) 핵심 지지</li>
+        <li>IWM 채널 이탈 · Webby RSI 35 경고</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>수집: Tier1 8채널 중 8곳 시도·전부 대표영상 확보(소수몽키 라이브는 멤버십 전용) · Tier2 8채널 중 2곳 수집 · 자막없음 2 · 영상없음 4</span>
+  <span>원문: 2026-08-29_미국장_브리핑.md</span>
+</footer>
+</body>
+</html>
