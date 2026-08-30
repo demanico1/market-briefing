@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="UTF-8">
+<title>미국장 브리핑 2026-08-31</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:24px 32px;width:1280px}
+.hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.hdr h1{font-size:26px;font-weight:800}
+.hdr .date{color:#9aa0a6;font-size:15px}
+.hdr .cnt{color:#9aa0a6;font-size:14px}
+.badge{background:#1a1d24;border-radius:6px;padding:2px 10px}
+.idx{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.card{background:#1a1d24;border-radius:10px;padding:14px 18px}
+.card .nm{color:#9aa0a6;font-size:13px;margin-bottom:4px}
+.card .v{font-size:24px;font-weight:800}
+.card .chg{font-size:15px;font-weight:700;margin-left:8px}
+.card .wk{color:#9aa0a6;font-size:12px;margin-top:3px}
+.dn{color:#ef4444}.up{color:#22c55e}
+.macro{display:flex;gap:10px;margin-bottom:14px;font-size:13px}
+.macro div{background:#1a1d24;border-radius:8px;padding:7px 14px;color:#9aa0a6}
+.macro b{color:#e8eaed;font-weight:700}
+.one{background:linear-gradient(90deg,#1a1d24,#161a26);border-left:4px solid #ef4444;border-radius:8px;padding:14px 18px;font-size:21px;font-weight:700;line-height:1.45;margin-bottom:14px}
+.one .sub{display:block;font-size:13px;color:#9aa0a6;font-weight:400;margin-top:4px}
+.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-bottom:14px}
+.sec{background:#1a1d24;border-radius:10px;padding:14px 18px}
+.sec h2{font-size:14px;color:#9aa0a6;margin-bottom:10px;letter-spacing:.5px}
+.pts li{list-style:none;font-size:14.5px;line-height:1.5;margin-bottom:8px;padding-left:14px;position:relative}
+.pts li:before{content:"▸";position:absolute;left:0;color:#ef4444}
+.bar{margin-bottom:9px}
+.bar .lbl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px}
+.bar .lbl span:last-child{color:#9aa0a6}
+.bar .tr{background:#0f1115;border-radius:4px;height:9px}
+.bar .fl{background:#3b82f6;height:9px;border-radius:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{border-radius:6px;padding:5px 11px;font-size:13px;font-weight:600}
+.tup{background:rgba(34,197,94,.13);color:#22c55e}
+.tdn{background:rgba(239,68,68,.13);color:#ef4444}
+.tnt{background:rgba(154,160,166,.15);color:#c8ccd2}
+.ft{color:#9aa0a6;font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>🇺🇸 미국장 브리핑 <span class="date">2026-08-31 (월) · 8/28(금) 세션</span></h1>
+  <div class="cnt"><span class="badge">수집 채널 12/16</span></div>
+</div>
+
+<div class="idx">
+  <div class="card"><div class="nm">S&amp;P 500</div><div><span class="v">7,711.76</span><span class="chg dn">-0.25%</span></div><div class="wk">주간 +0.5%</div></div>
+  <div class="card"><div class="nm">나스닥</div><div><span class="v">26,402.42</span><span class="chg dn">-0.52%</span></div><div class="wk">주간 +0.9%</div></div>
+  <div class="card"><div class="nm">다우</div><div><span class="v">53,559.99</span><span class="chg dn">-0.02%</span></div><div class="wk">주간 +0.5% · 3주 만의 상승</div></div>
+</div>
+
+<div class="macro">
+  <div>10년물 <b>4.73%</b></div>
+  <div>달러인덱스 <b>99.68</b> <span class="up">+0.52%</span></div>
+  <div>WTI <b>$83.44</b> <span class="dn">주간 -5%</span></div>
+  <div>VIX <b>14.43</b> 연중 최저권</div>
+  <div>9월 인상 확률 <b class="dn">57%</b></div>
+</div>
+
+<div class="one">워시 잭슨홀 데뷔 연설 '매파' 해석에 9월 인상 확률 57% 급등 — 반도체 ↓ 소프트웨어 ↑ 로테이션 속 지수는 소폭 하락, 주간은 상승
+<span class="sub">"올여름 물가 지표 개선이 기저 추세 개선을 뜻하진 않는다" — 케빈 워시, 잭슨홀 첫 기조연설</span></div>
+
+<div class="cols">
+  <div class="sec"><h2>핵심 포인트</h2><ul class="pts">
+    <li>워시 "물가 안정이 최우선" — 베선트 재무장관의 완화 요구에 정면 반박</li>
+    <li>엔비디아 목 +8.7% 급등 후 이틀 연속 하락(주간 +1%), SMH 주간 -3%</li>
+    <li>소프트웨어 실적 서프라이즈: CRM·CRWD 주간 급등, 로테이션의 수혜처</li>
+    <li>PayPal -13% (Advent/Stripe 500억弗 인수 철회) · 마벨 -10.3% (가이던스 실망)</li>
+    <li>VIX 14선 저변동성 + 9월 계절성 → 변동성 확대 경계 목소리 다수</li>
+  </ul></div>
+  <div class="sec"><h2>채널 합의도</h2>
+    <div class="bar"><div class="lbl"><span>잭슨홀 매파 해석·9월 인상 리스크</span><span>9/12</span></div><div class="tr"><div class="fl" style="width:75%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>반도체→소프트웨어 로테이션</span><span>6/12</span></div><div class="tr"><div class="fl" style="width:50%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>9~10월 계절적 변동성 경고</span><span>5/12</span></div><div class="tr"><div class="fl" style="width:42%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>대형주(MAGS)가 지수 지탱</span><span>4/12</span></div><div class="tr"><div class="fl" style="width:33%"></div></div></div>
+    <div class="bar"><div class="lbl"><span>저가 매수(Buy the dip) 기회론</span><span>3/12</span></div><div class="tr"><div class="fl" style="width:25%"></div></div></div>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="sec"><h2>종목 / 섹터</h2><div class="tags">
+    <span class="tag tup">소프트웨어 CRM·CRWD ↑</span>
+    <span class="tag tup">아마존 ↑</span>
+    <span class="tag tup">금융 사상최고가권</span>
+    <span class="tag tdn">NVDA 이틀째 ↓</span>
+    <span class="tag tdn">PYPL -13%</span>
+    <span class="tag tdn">MRVL -10.3%</span>
+    <span class="tag tdn">러셀2000 -1.4%</span>
+    <span class="tag tnt">PLTR 강세·숏 논쟁</span>
+    <span class="tag tnt">META 지지선 매수론</span>
+  </div></div>
+  <div class="sec"><h2>이번 주 체크포인트</h2><ul class="pts">
+    <li>9/2 브로드컴 실적 · 델/팔로알토/스노우플레이크 실적</li>
+    <li>9월 중순 FOMC — 인상이면 사이클 전환</li>
+    <li>버리 숏 확대(PLTR·반도체) — 고평가 논쟁 재점화</li>
+  </ul></div>
+</div>
+
+<div class="ft">수집: Tier1 7/8 (소수몽키 멤버십 전용) · Tier2 5/8 · 원문: 2026-08-31_미국장_브리핑.md</div>
+</body>
+</html>
