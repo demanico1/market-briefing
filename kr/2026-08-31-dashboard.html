@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>한국장 브리핑 2026-08-28</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:24px 32px;max-width:1880px;margin:0 auto}
+.hdr{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+.hdr h1{font-size:26px;font-weight:800}
+.hdr .date{font-size:16px;color:#9aa0a6}
+.hdr .badge{margin-left:auto;background:#1a1d24;border:1px solid #2a2e38;border-radius:20px;padding:6px 14px;font-size:13px;color:#9aa0a6}
+.notice{background:#2a2013;border:1px solid #5c4a1e;color:#f0c674;border-radius:10px;padding:8px 14px;font-size:13px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:12px}
+.card{background:#1a1d24;border-radius:12px;padding:14px 16px}
+.card .lbl{font-size:12px;color:#9aa0a6;margin-bottom:4px}
+.card .val{font-size:24px;font-weight:800}
+.card .sub{font-size:13px;margin-top:2px}
+.up{color:#ef4444}.dn{color:#3b82f6}.neu{color:#e8eaed}
+.oneliner{background:#1a1d24;border-radius:12px;padding:16px 20px;font-size:21px;font-weight:700;line-height:1.4;margin-bottom:12px;border-left:4px solid #ef4444}
+.row2{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.panel{background:#1a1d24;border-radius:12px;padding:14px 16px}
+.panel h2{font-size:14px;color:#9aa0a6;font-weight:700;margin-bottom:10px}
+.pt{font-size:14px;line-height:1.55;padding:3px 0 3px 14px;position:relative}
+.pt:before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:#5f6672}
+.bar{margin-bottom:9px}
+.bar .t{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px}
+.bar .t span:last-child{color:#9aa0a6}
+.bar .track{background:#0f1115;border-radius:4px;height:8px}
+.bar .fill{background:#8b5cf6;height:8px;border-radius:4px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{border-radius:7px;padding:5px 10px;font-size:13px;font-weight:600}
+.tag.u{background:#3a1519;color:#f87171}.tag.d{background:#12233d;color:#60a5fa}.tag.n{background:#252a34;color:#c8cdd6}
+.macro{display:flex;gap:24px;background:#1a1d24;border-radius:12px;padding:10px 18px;font-size:14px;margin-bottom:12px;color:#c8cdd6}
+.macro b{color:#e8eaed}
+.foot{font-size:12px;color:#9aa0a6;margin-top:4px}
+.tmr{background:#141a26;border:1px solid #223050;border-radius:12px;padding:12px 16px;margin-bottom:10px}
+.tmr h2{font-size:14px;color:#7ea6e0;font-weight:700;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>한국장 브리핑</h1><span class="date">2026-08-28 (금) 세션 · 08-31 조기 실행분</span><span class="badge">수집 채널 9/12</span></div>
+<div class="notice">⚠️ 조기 실행분 — 21시 정규 실행이 이 리포트를 갱신합니다.</div>
+
+<div class="grid">
+<div class="card"><div class="lbl">KOSPI</div><div class="val dn">6,788.88</div><div class="sub dn">▼ 123.49 (-1.79%)</div></div>
+<div class="card"><div class="lbl">KOSDAQ</div><div class="val up">838.41</div><div class="sub up">▲ 0.76 (+0.09%)</div></div>
+<div class="card"><div class="lbl">외국인 (코스피)</div><div class="val dn">-1조 7,585억</div><div class="sub">순매도</div></div>
+<div class="card"><div class="lbl">기관 (코스피)</div><div class="val dn">-2,841억</div><div class="sub">순매도</div></div>
+<div class="card"><div class="lbl">개인 (코스피)</div><div class="val up">+4,241억</div><div class="sub">순매수</div></div>
+<div class="card"><div class="lbl">원/달러</div><div class="val neu">1,372.5</div><div class="sub dn">▼ 8.4원 (원화 강세)</div></div>
+</div>
+
+<div class="oneliner">잭슨홀 매파 충격 대기 속 외국인 1.8조 매도 폭탄 — 반도체 투톱 급락에 코스피 6,700선 턱걸이, 자사주 매입은 "방어막"일 뿐</div>
+
+<div class="row2">
+<div class="panel"><h2>핵심 포인트</h2>
+<div class="pt">삼성전자 -3.38%(25.7만) · SK하이닉스 -4.45%(165.3만) — 외국인 매도 집중</div>
+<div class="pt">케빈 워시 잭슨홀 매파 연설 → 9월 금리 인상 확률 급등 (채널 발언 기준 35%→60%)</div>
+<div class="pt">삼전·하이닉스 자사주 매입은 급락 방어용, 상승 동력은 아님 (복수 채널)</div>
+<div class="pt">반도체→화장품 순환매: 한국콜마 신고가, 코스맥스 강세</div>
+<div class="pt">반도체·데이터센터 관세 확대 검토 + 중국 CXMT 추격 = 월요일 반도체 약세 출발 우세</div>
+</div>
+<div class="panel"><h2>채널 합의도</h2>
+<div class="bar"><div class="t"><span>잭슨홀 매파 → 금리 부담</span><span>4/9</span></div><div class="track"><div class="fill" style="width:44%"></div></div></div>
+<div class="bar"><div class="t"><span>자사주 매입 = 방어용</span><span>3/9</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>반도체 숨고르기·순환매</span><span>3/9</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>박스권 · 무리하지 않기</span><span>3/9</span></div><div class="track"><div class="fill" style="width:33%"></div></div></div>
+<div class="bar"><div class="t"><span>반도체 관세 리스크</span><span>2/9</span></div><div class="track"><div class="fill" style="width:22%"></div></div></div>
+</div>
+<div class="panel"><h2>종목 / 섹터</h2>
+<div class="tags">
+<span class="tag d">삼성전자 -3.38%</span>
+<span class="tag d">SK하이닉스 -4.45%</span>
+<span class="tag u">한국콜마 신고가</span>
+<span class="tag u">코스맥스</span>
+<span class="tag u">두산에너빌리티</span>
+<span class="tag u">알테오젠</span>
+<span class="tag n">화장품 순환매</span>
+<span class="tag n">원전</span>
+<span class="tag n">스테이블코인</span>
+<span class="tag n">바이오 (코스닥 지탱)</span>
+</div>
+</div>
+</div>
+
+<div class="tmr"><h2>월요일(9/1 주간) 관전 포인트</h2>
+<div class="pt">반도체 약세 출발 가능성 — 금요일 미장 엔비디아 -4.6% (채널 발언 기준), 낙폭 제한 여부 관건</div>
+<div class="pt">자사주 매수세 vs 외국인 매도 힘겨루기 · 9/2 베이지북·ADP·브로드컴 실적 · 9/4 미 고용지표</div>
+</div>
+
+<div class="foot">수집 9/12 (창원개미·고라니 영상없음, 소수몽키 멤버십 전용) · 원문: 2026-08-31_한국장_브리핑.md</div>
+</body>
+</html>
