@@ -153,6 +153,8 @@
 <li><strong>직전일 폴백 미적용</strong>: 폴백 대상 채널인 창원개미(최신 8/25)·고라니주식(최신 라이브 8/18)은 직전 거래일 8/28에도 영상이 없어 대체가 불가능했다. 8/25 이전 영상은 세션과 거리가 멀어 사용하지 않고 영상없음으로 기록했다.</li>
 <li><strong>소수몽키 라이브 접근 불가</strong>: <code>/streams</code> 4건이 전부 멤버십 전용이라 자막을 받을 수 없었다. 일반 업로드(8/27)로 대체했다.</li>
 <li><strong>이효석 예정 라이브 스킵</strong>: <code>/streams</code>의 "9월엔 주식 투자를 어떻게 해야할까?"는 실행 시점 기준 7시간 뒤 시작 예정이며 다시보기도 제공되지 않아 제외했다.</li>
+<li><strong>발행 경로 문제와 우회</strong>: <code>publish.sh</code>는 deploy_key를 <code>/tmp/dk</code>로 복사한 뒤 <code>chmod 600</code>을 거는데, 이 서버의 <code>/tmp</code>에서는 chmod가 적용되지 않아 SSH가 키를 거부했다. 스크립트는 조용히 HTTPS로 폴백했고, Git Credential Manager가 응답 없는 인증 창을 띄우며 push가 무한 대기에 빠졌다. 지시대로 <code>_tools</code> 스크립트는 수정하지 않고, deploy_key를 사용자 홈(<code>~/.ssh/</code>)으로 복사해 <code>icacls</code>로 본인 읽기 전용으로 제한한 뒤 SSH로 직접 push해 해결했다. 같은 문제가 매 실행 반복되므로 <code>publish.sh</code>의 키 경로를 홈 아래로 옮기는 수정을 권장한다.</li>
+<li><strong><code>python3</code> 미동작</strong>: 이 서버의 <code>python3</code>는 Microsoft Store 스텁이라 아무것도 실행하지 않는다(<code>python</code>만 정상). <code>_tools</code> 스크립트들이 <code>python3</code>를 호출하므로, 스크립트를 고치는 대신 <code>python</code>으로 넘기는 임시 shim을 PATH 앞에 두고 실행했다.</li>
 <li><strong>수치 검증</strong>: 지수·수급·환율·종목 등락률은 전부 언론 보도로 교차검증했고, 자막에만 있는 수치는 본문에 "채널 발언 기준"으로 표기하거나 버렸다. 자동자막이 삼성전자 주가를 "160만원"으로 인식하는 등 오인식이 확인되어 해당 부분은 명시적으로 지적해 두었다.</li>
 </ul>
 <p><strong>참고 출처</strong> — <a target="_blank" rel="noopener" href="https://www.hankyung.com/article/2026082897216">한국경제</a> · <a target="_blank" rel="noopener" href="https://www.ajunews.com/view/20260828160204213">아주경제 마감시황</a> · <a target="_blank" rel="noopener" href="http://www.iminju.net/news/articleView.html?idxno=168738">민주신문</a> · <a target="_blank" rel="noopener" href="https://www.businesskorea.co.kr/news/articleView.html?idxno=275775">Businesskorea</a> · <a target="_blank" rel="noopener" href="https://biz.heraldcorp.com/article/10849972">헤럴드경제(잭슨홀)</a> · <a target="_blank" rel="noopener" href="https://www.ajunews.com/view/20260828135923924">아주경제(워시 연설)</a> · <a target="_blank" rel="noopener" href="https://www.vegastooza.com/post/us-stock-market-wrap-2026-08-28">미국 증시 마감</a></p>
@@ -285,8 +287,8 @@
 <tr>
 <td><strong>GitHub 발행</strong></td>
 <td>—</td>
-<td>아래 갱신</td>
-<td>—</td>
+<td><strong>성공 (HTTP 200)</strong></td>
+<td><a target="_blank" rel="noopener" href="https://demanico1.github.io/market-briefing/kr/2026-08-31.html">kr/2026-08-31.html</a></td>
 </tr>
 <tr>
 <td><strong>카카오톡 발송</strong></td>
