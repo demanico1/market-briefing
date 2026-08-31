@@ -330,11 +330,27 @@
 <tbody>
 <tr>
 <td>GitHub 발행</td>
-<td>대기 (STEP 5c에서 갱신)</td>
+<td><strong>성공</strong> — PUSH_RESULT=ok, HTTP_STATUS=200 · <a target="_blank" rel="noopener" href="https://demanico1.github.io/market-briefing/kr/2026-08-31.html">kr/2026-08-31.html</a></td>
 </tr>
 <tr>
-<td>카카오톡 발송</td>
-<td>대기 (STEP 6에서 갱신)</td>
+<td>GitHub 인증</td>
+<td>deploy_key(SSH) 인증 실패 → HTTPS 폴백으로 발행 성공. 키 점검 필요(발행 자체엔 영향 없음)</td>
+</tr>
+<tr>
+<td>카카오톡 — 피드 카드</td>
+<td><strong>성공</strong> (<code>result_code:0</code>) · 요약 PNG 업로드 3200x1828, https 변환 적용</td>
+</tr>
+<tr>
+<td>카카오톡 — 텍스트</td>
+<td><strong>성공</strong> (<code>result_code:0</code>) · 167자 / 한도 190자</td>
+</tr>
+<tr>
+<td>카카오 토큰</td>
+<td>갱신 성공. 새 refresh_token 미발급 → 기존 값 유지 (정상)</td>
+</tr>
+<tr>
+<td>이미지 렌더</td>
+<td>요약 PNG 1600x914(0.29MB) · 전문 PNG 860px폭(3.39MB, 카톡 5MB 한도 내)</td>
 </tr>
 </tbody>
 </table></div>
