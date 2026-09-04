@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-09-04 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-09-04</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-09-04 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>가장 큰 돈이 몰린 곳은 로봇·휴머노이드(로보티즈 9,277억, 에스피지 2,193억, 원익 1,458억, 원익홀딩스 1,451억)였으나 D+18~D+23으로 오늘이 첫날이 아니다. 반도체도 정보지 8일째(D+18~D+24) 진행 중 테마이며, 가상자산은 위꼬리 마감으로 무너졌다. 오늘 새로 켜진 재료는 두 개 — 금융위의 <strong>주식·채권·펀드 토큰화 허용 정책 발표</strong>(웹: 한국경제·머니투데이 09/04)와 <strong>스페이스X 주가 6.4% 급등·시총 2조달러 회복</strong>(웹: 머니투데이 09/04 06:52)이고, 둘 다 정보지 <code>최근 등장</code>이 오늘 처음이다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">토큰증권(STO)·전통금융 토큰화</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>금융위 09/04 토큰증권 협의체 3차 회의, 주식·채권·펀드로 확대·2027/02/04 단계 시행 (확정)</p><p class="c-p"><span class="c-k">수식충족</span>쿠콘·한화투자증권·NHN KCP</p><p class="c-p"><span class="c-k">신선도</span><strong>세부 재료 D+0 / 결제·가상자산 큰 줄기로는 08/20 시작 D+11</strong></p><p class="c-p"><span class="c-k">판단</span>1순위. 기대→확정 단계 2→3 상승</p><div class="c-c"><span class="chip"><i>정보지</i>오늘 처음</span></div></article>
+<article class="card"><h4 class="c-t">스페이스X·우주항공</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>스페이스X 주가 6.4% 급등, 시총 2조달러 회복 (확정)</p><p class="c-p"><span class="c-k">수식충족</span>에이치브이엠·알멕</p><p class="c-p"><span class="c-k">신선도</span>D+18 (8월초 08/04~08/10 테마의 재점화)</p><p class="c-p"><span class="c-k">판단</span>2순위. 기대→기대 재탕, 뉴스가 3시간 선행</p><div class="c-c"><span class="chip"><i>정보지</i>오늘 처음</span></div></article>
+<article class="card"><h4 class="c-t">로봇 부품 &#x27;실주문(PO)&#x27; 라인</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>제이에스링크 북미 로봇 부품사 첫 양산 PO 수주 (정보지, 09/04 건 자체는 웹 미확인)</p><p class="c-p"><span class="c-k">수식충족</span>한라캐스트·제이에스링크·한국피아이엠·디케이티·하이젠알앤엠</p><p class="c-p"><span class="c-k">신선도</span>D+14~D+24, 소그룹 시작 07/22~08/14</p><p class="c-p"><span class="c-k">판단</span>3순위. <strong>추정·확신도 중</strong>, D+0으로 단정 안 함</p><div class="c-c"><span class="chip"><i>정보지</i>—</span></div></article>
+<article class="card"><h4 class="c-t">로봇·휴머노이드</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원익로보틱스 3,500억 투자 유치(웹) + 로보티즈 흑자전환</p><p class="c-p"><span class="c-k">수식충족</span>로보티즈·에스피지·원익 등</p><p class="c-p"><span class="c-k">신선도</span>D+18~D+23</p><p class="c-p"><span class="c-k">판단</span>진행 중. 신규 진입 자리 아님</p><div class="c-c"><span class="chip"><i>정보지</i>08/19부터 계속</span></div></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>연준 월러 이사 비둘기 발언, 금리 우려 완화 (정보지)</p><p class="c-p"><span class="c-k">수식충족</span>한미반도체 외</p><p class="c-p"><span class="c-k">신선도</span>D+18~D+24</p><p class="c-p"><span class="c-k">판단</span>진행 중</p><div class="c-c"><span class="chip"><i>정보지</i>8일째</span></div></article>
+<article class="card"><h4 class="c-t">가상자산·비트코인</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>비트코인 8만1000달러 돌파</p><p class="c-p"><span class="c-k">수식충족</span>위지트</p><p class="c-p"><span class="c-k">신선도</span>D+9~D+11</p><p class="c-p"><span class="c-k">판단</span>위꼬리 마감. <strong>붙지 마라</strong></p><div class="c-c"><span class="chip"><i>정보지</i>—</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>토큰증권(STO)·전통금융 토큰화</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">NHN KCP(060250)</h4><p class="c-p"><span class="c-k">근거</span>이전충족 없음 / 30일 대금 4위 / 대금이 대장의 1/4이라 후발주 판정</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>1봉</span><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>대금</i>184억</span></div></article>
+<article class="card"><h4 class="c-t">쿠콘(294570)</h4><p class="c-p"><span class="c-k">근거</span>08/28에 이미 충족 / D+5 / 고가에서 −9.2% 밀림, 종가위치 23%, VWAP −1.9% → 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/28(-5일)외2</span><span class="chip"><i>충족봉</i>6봉</span><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>대금</i>646억</span></div></article>
+<article class="card"><h4 class="c-t">한화투자증권(003530)</h4><p class="c-p"><span class="c-k">근거</span>08/20에 이미 충족 / 30일 대금 1위 / 충족 1봉뿐, 두나무 지분 스토리라 STO보다 비트코인 반등 쪽</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/20(-11일)</span><span class="chip"><i>충족봉</i>1봉</span><span class="chip"><i>등락%</i>+9.0</span><span class="chip"><i>대금</i>379억</span></div></article>
+</div>
+<h3>스페이스X·우주항공</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">알멕(354320)</h4><p class="c-p"><span class="c-k">근거</span>이전충족 없음 / D+18 / 30일 대금 1위·직전최대 2.5배 / 종가위치 80%·저점대비 <span style="color:#ef4444;font-weight:700">+4.2%</span> / 대금이 대장보다 작아 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>3봉</span><span class="chip"><i>등락%</i>+20.1</span><span class="chip"><i>대금</i>94억</span></div></article>
+<article class="card"><h4 class="c-t">에이치브이엠(295310)</h4><p class="c-p"><span class="c-k">근거</span>08/10에 이미 충족 → 소그룹 대장주 / D+18 / 30일 대금 10위</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/10(-18일)외1</span><span class="chip"><i>충족봉</i>10봉</span><span class="chip"><i>등락%</i>+14.1</span><span class="chip"><i>대금</i>139억</span></div></article>
+<article class="card"><h4 class="c-t">한미반도체(042700)</h4><p class="c-p"><span class="c-k">근거</span><strong>기계 태그 오탐으로 본다 — 우주 자금 아님</strong> / 당일뉴스 0건, 재료 이력은 HBM·TC본더 / 반도체 8일째, 종가위치 98%</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/31(-24일)</span><span class="chip"><i>충족봉</i>10봉</span><span class="chip"><i>등락%</i>+9.0</span><span class="chip"><i>대금</i>3,526억</span></div></article>
+</div>
+<h3>로봇 부품 &#x27;실주문(PO)&#x27; 라인 — 추정·확신도 중</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">제이에스링크(127120)</h4><p class="c-p"><span class="c-k">근거</span>이전충족 없음이나 D+20 → 사이클 시작 아님, 후발주 / 30일 대금 2위·직전최대 0.9배로 <strong>직전 최대 미돌파, D+0 단정 안 함</strong> / 순매수집중 16.1% / 09/04 PO 수주 건 자체는 웹 미확인</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>11봉</span><span class="chip"><i>등락%</i>+11.9</span><span class="chip"><i>대금</i>262억</span></div></article>
+<article class="card"><h4 class="c-t">디케이티(290550)</h4><p class="c-p"><span class="c-k">근거</span>이전충족 없음 / D+24 / 08/19 북미 LFP ESS BMS 첫 출하=확정 / 09/04 당일 개별 재료는 웹 미확인</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>5봉</span><span class="chip"><i>등락%</i>+16.7</span><span class="chip"><i>대금</i>108억</span></div></article>
+<article class="card"><h4 class="c-t">하이젠알앤엠(160190)</h4><p class="c-p"><span class="c-k">근거</span>이전충족 없음 / D+18 / 재료는 기대(휴머노이드 과제) — 확정 아님 / 13:42 포착 후 4분 만에 −8.8%, 순매수집중 6.1%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>14봉</span><span class="chip"><i>등락%</i>+14.4</span><span class="chip"><i>대금</i>124억</span></div></article>
+<article class="card"><h4 class="c-t">한라캐스트(125490)</h4><p class="c-p"><span class="c-k">근거</span>08/13·08/14에 이미 충족 → 소그룹 대장주 / 08/13 &quot;美 빅테크서 로봇 부품 또 따냄&quot;=확정</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/14(-14일)외1</span><span class="chip"><i>충족봉</i>9봉</span><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>대금</i>326억</span></div></article>
+<article class="card"><h4 class="c-t">한국피아이엠(448900)</h4><p class="c-p"><span class="c-k">근거</span>07/22에 이미 충족 / D+14 / 08/19 수주잔고 <span style="color:#ef4444;font-weight:700">+18.9%</span>=실적</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/22(-31일)</span><span class="chip"><i>충족봉</i>11봉</span><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>대금</i>119억</span></div></article>
+</div>
+<h3>로봇·휴머노이드 (진행 중 · 눌림 관찰용)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">로보티즈</h4><p class="c-p"><span class="c-k">근거</span>07/22에 이미 충족 / D+23 / 30일 대금 1위·직전최대 2.5배, 순매수집중 72%, 종가위치 85%·VWAP <span style="color:#ef4444;font-weight:700">+3.1%</span> — 대장은 맞지만 초입 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/22</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+22.9</span><span class="chip"><i>대금</i>9,277억</span></div></article>
+<article class="card"><h4 class="c-t">원익홀딩스</h4><p class="c-p"><span class="c-k">근거</span>08/03에 이미 충족 / D+18 / 상한가</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/03</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>1,451억</span></div></article>
+<article class="card"><h4 class="c-t">에스피지</h4><p class="c-p"><span class="c-k">근거</span>08/03에 이미 충족 / D+23 / 5일누적 −15.8%</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/03 외3</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금</i>2,193억</span></div></article>
+<article class="card"><h4 class="c-t">원익</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족 / D+1 / 5일누적 <span style="color:#ef4444;font-weight:700">+37.9%</span>·회전율 149%, 13:50 고점 포착 후 −10.9% → 후반부</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/03 외3</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+17.1</span><span class="chip"><i>대금</i>1,458억</span></div></article>
+<article class="card"><h4 class="c-t">TPC로보틱스</h4><p class="c-p"><span class="c-k">근거</span>09/02에 이미 충족 / D+2 / 종가위치 100%지만 대금 70억뿐</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/02</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>70억</span></div></article>
+<article class="card"><h4 class="c-t">로보스타</h4><p class="c-p"><span class="c-k">근거</span>08/12에 이미 충족 / 5일누적 −17.3%</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/12 외2</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+9.6</span><span class="chip"><i>대금</i>675억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">유유제약</h4><p class="c-p"><span class="c-k">근거</span>전일 대금 66.4배·직전최대 18.1배로 극단적 신규 자금 / 그러나 고가 <span style="color:#ef4444;font-weight:700">+19.1%</span>·종가위치 9%·VWAP −6.7%·순매수집중 0.1%, 14:18 포착 4분 만에 전량 반납 / 당일뉴스 0건, <strong>웹에서도 급등 사유·공시 확인 안 됨 → 재료 미상, 매수 대상 제외</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+0.9</span><span class="chip"><i>대금</i>116억</span></div></article>
+<article class="card"><h4 class="c-t">칩스앤미디어(094360)</h4><p class="c-p"><span class="c-k">근거</span>30일 대금 1위·직전최대 2.1배 / <strong>15:53 시간외 포착(정규장 아님)</strong>, 뉴스 15:42로 11분 선행 / 정규장 재확인 필요</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>115억</span></div></article>
+<article class="card"><h4 class="c-t">디케이티 계열 외 — 디와이씨</h4><p class="c-p"><span class="c-k">근거</span>문서상 유일한 <code>D+0</code> 종목 / 30일 대금 1위·직전최대 1.7배 / 10:08 &quot;로보틱스로 사업 확대&quot;(이데일리) / <strong>규모가 없어 실전 대상 아님</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>D+0</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금</i><strong>8.2억</strong></span></div></article>
+<article class="card"><h4 class="c-t">명신산업</h4><p class="c-p"><span class="c-k">근거</span>전일 대금 37.5배·30일 1위 / 08:07 NXT 프리마켓 <span style="color:#ef4444;font-weight:700">+12.6%</span> 포착 → 주가가 먼저 / 웹 사유는 2분기 실적 개선+기관 6거래일 연속 순매수이나 사후 설명 성격 / 종가위치 40%·VWAP −3.6%로 약함</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 정보 없음(★충족 17봉)</span><span class="chip"><i>충족봉</i>17봉</span><span class="chip"><i>등락%</i>+9.65(종가)</span><span class="chip"><i>대금</i>726억</span></div></article>
+<article class="card"><h4 class="c-t">큐리언트</h4><p class="c-p"><span class="c-k">근거</span>11:15 포착 → 13:53 1,016억 유상증자 공시 / D+18·5일누적 −19.2% / 증자는 수급상 악재, 종가위치 80%로 버팀</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 정보 없음(★충족)</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+14.0</span><span class="chip"><i>대금</i>229억</span></div></article>
+<article class="card"><h4 class="c-t">위지트</h4><p class="c-p"><span class="c-k">근거</span>순매수집중 −8.0% / 고가 <span style="color:#ef4444;font-weight:700">+30%</span>에서 종가 <span style="color:#ef4444;font-weight:700">+8.5%</span>로 완전 반납, 종가위치 18%</p><div class="c-c"><span class="chip"><i>첫흐름</i>★충족</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+8.5</span><span class="chip"><i>대금</i>96억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 수식 미충족인데 대금은 727억으로 최대·30일 1위 — 08/20 선행 충족한 <strong>대장주 패턴</strong>(원칙 4)</p><div class="c-c"><span class="chip"><i>종목</i>헥토파이낸셜(234340)</span></div></article>
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+8.4%</span>, 722억, 이전충족 08/24(-9일)외2</p><div class="c-c"><span class="chip"><i>종목</i>아이티센글로벌(124500)</span></div></article>
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+6.0%</span>, 405억, 이전충족 08/20(-11일)</p><div class="c-c"><span class="chip"><i>종목</i>카카오페이(377300)</span></div></article>
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+6.0%</span>, 197억, 이전충족 08/21(-10일)외3</p><div class="c-c"><span class="chip"><i>종목</i>다날(064260)</span></div></article>
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+8.3%</span>, 대금 39억으로 작음 / 그러나 30일 대금 1위·직전최대 1.7배, 금융위 소식이 직접 사유로 붙은 <strong>테마 순도 최고</strong></p><div class="c-c"><span class="chip"><i>종목</i>아톤(158430)</span></div></article>
+<article class="card"><h4 class="c-t">스페이스X·우주항공</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+14.4%</span>, 대금 15억뿐 / D+18, 30일 대금 2위</p><div class="c-c"><span class="chip"><i>종목</i>링크솔루션(474650)</span></div></article>
+<article class="card"><h4 class="c-t">가상자산</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+8.9%</span>/955억, 종가위치 9%·고점 대비 −8.5% 위꼬리</p><div class="c-c"><span class="chip"><i>종목</i>우리기술투자</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>+D+4, 202억 / FDA 임상 2a상 승인(09:22, 1상 생략), 종가위치 100%이나 5일누적 <span style="color:#ef4444;font-weight:700">+26.6%</span></p><div class="c-c"><span class="chip"><i>종목</i>페니트리움바이오</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">가상자산</h4><p class="c-p"><span class="c-k">정보지 사유</span><span style="color:#ef4444;font-weight:700">+10.9%</span>/204억 — 비트코인 8만1000달러 돌파</p><div class="c-c"><span class="chip"><i>종목</i>갤럭시아머니트리</span></div></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>494억 — 연준 월러 이사 비둘기 발언, 금리 우려 완화</p><div class="c-c"><span class="chip"><i>종목</i>피에스케이홀딩스</span></div></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>270억 — 동일</p><div class="c-c"><span class="chip"><i>종목</i>인텍플러스</span></div></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>반도체 테마 8일째</p><div class="c-c"><span class="chip"><i>종목</i>로체시스템즈</span></div></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>반도체 테마 8일째</p><div class="c-c"><span class="chip"><i>종목</i>사피엔반도체</span></div></article>
+<article class="card"><h4 class="c-t">토큰증권(STO)</h4><p class="c-p"><span class="c-k">정보지 사유</span>08/20 헥토·한화투자·카카오페이와 동시 충족 — 테마 시작일 추정 근거</p><div class="c-c"><span class="chip"><i>종목</i>핑거</span></div></article>
+<article class="card"><h4 class="c-t">로봇</h4><p class="c-p"><span class="c-k">정보지 사유</span>정보지가 &#x27;로봇 관련주&#x27;로 태그했으나 당일 재료·이력과 안 맞아 <strong>기계 태그 오탐으로 처리</strong></p><div class="c-c"><span class="chip"><i>종목</i>아크릴</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">정보지 사유</span>셋 다 고가 대비 −13~−22% 붕괴 / 라온피플은 &#x27;피지컬 AI&#x27; 국책사업 선정(09:33)에도 종가 <span style="color:#ef4444;font-weight:700">+3.3%</span>(고가 <span style="color:#ef4444;font-weight:700">+27.3%</span>) — <strong>접근 금지</strong></p><div class="c-c"><span class="chip"><i>종목</i>레메디 / 라온피플 / 에이프로젠바이오로직</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>토큰증권 후속</strong> — 헥토파이낸셜이 727억 이상 대금을 유지하며 갭 없이 버티고 증권사·장외거래소 인가 후속 보도가 나오면 진짜 / 쿠콘처럼 시초 급등 후 종가위치 20%대로 밀리면 정책 발표 하루 반응</li>
+<li><strong>비트코인 8만1000달러 유지 여부</strong> — 되밀리면 결제주 전체가 같이 죽는다(오늘 상승분에 코인이 섞여 있다)</li>
+<li><strong>원익로보틱스 3,500억 투자 유치의 원문 공시·조건</strong>(신주 발행가·투자자) — 확인되면 로봇은 D+18에서도 한 번 더 갈 근거 / 루머성이면 오늘 상한가 두 종목이 갭하락</li>
+<li><strong>알멕·에이치브이엠 실제 공급계약 공시</strong> — 나오거나 소그룹 합산 대금이 오늘의 250억을 넘으면 진짜 / 국내 수주 없이 미국장에서 스페이스X가 되밀리면 하루로 끝</li>
+<li><strong>제이에스링크 공급계약 체결 공시(DART)</strong> — 정식 공시가 뜨고 대금이 오늘의 262억을 넘으면 진짜(현재 직전최대 0.9배로 미돌파) / 칩스앤미디어는 시간외 충족이라 정규장 재확인 필요</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 브리핑 — 로봇 재점화 · 토큰증권 신규 점화</h1>
+<p>기준일: 2026-09-04 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 12회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 <strong>새로 켜진 재료는 두 개</strong>다 — 금융위의 <strong>주식·채권·펀드 토큰화 허용 정책 발표</strong>(웹: 한국경제·머니투데이, 09/04)와 <strong>스페이스X 주가 6.4% 급등·시총 2조달러 회복</strong>(웹: 머니투데이 09/04 06:52). 둘 다 정보지 <code>최근 등장</code>이 <strong>오늘 처음</strong>이다. 가장 돈이 크게 움직인 로봇·휴머노이드(로보티즈 9,277억, 에스피지 2,193억, 원익 1,458억, 원익홀딩스 1,451억)는 <strong>오늘이 첫날이 아니다</strong> — D+18~D+23이고 정보지에도 08/19부터 계속 나온 진행 중 테마다. 다만 문서에 없던 새 사실이 하나 있다: <strong>원익로보틱스 3,500억 투자 유치</strong>(웹: 잡포스트)가 오늘 원익 3형제 상한가·로봇 동반랠리의 실제 방아쇠였다. 따라서 <strong>D+0으로 새로 잡을 자리는 로봇이 아니라 토큰증권·우주항공 쪽</strong>이다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1순위. 토큰증권(STO)·전통금융 토큰화 — <strong>정책 확정 재료, 정보지 오늘 처음</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">234340 헥토파이낸셜</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.5</span><span class="chip"><i>거래대금(억)</i><strong>727</strong></span><span class="chip"><i>D+N</i>D+5</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>08/20(-11일)외1</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span></div></article>
+<article class="card"><h4 class="c-t">124500 아이티센글로벌</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>거래대금(억)</i>722</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>08/24(-9일)외2</span><span class="chip"><i>30일대금순위</i>5위</span></div></article>
+<article class="card"><h4 class="c-t">294570 쿠콘</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>거래대금(억)</i>646</span><span class="chip"><i>D+N</i>D+5</span><span class="chip"><i>오늘충족</i>★6봉</span><span class="chip"><i>이전충족</i>08/28(-5일)외2</span><span class="chip"><i>30일대금순위</i>3위</span></div></article>
+<article class="card"><h4 class="c-t">377300 카카오페이</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.0</span><span class="chip"><i>거래대금(억)</i>405</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>08/20(-11일)</span><span class="chip"><i>30일대금순위</i>6위</span></div></article>
+<article class="card"><h4 class="c-t">003530 한화투자증권</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.0</span><span class="chip"><i>거래대금(억)</i>379</span><span class="chip"><i>오늘충족</i>★1봉</span><span class="chip"><i>이전충족</i>08/20(-11일)</span><span class="chip"><i>30일대금순위</i><strong>1위</strong></span></div></article>
+<article class="card"><h4 class="c-t">064260 다날</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.0</span><span class="chip"><i>거래대금(억)</i>197</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>08/21(-10일)외3</span><span class="chip"><i>30일대금순위</i>12위</span></div></article>
+<article class="card"><h4 class="c-t">060250 NHN KCP</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.4</span><span class="chip"><i>거래대금(억)</i>184</span><span class="chip"><i>오늘충족</i><strong>★첫흐름</strong> 1봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i>4위</span></div></article>
+<article class="card"><h4 class="c-t">158430 아톤</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>거래대금(억)</i>39</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i><strong>1위</strong> (직전최대 1.7배)</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>08/20</strong>. 헥토파이낸셜·한화투자증권·카카오페이·핑거가 같은 날 동시 충족했다. 결제·가상자산이라는 큰 줄기로 보면 오늘은 <strong>D+11</strong>이지 D+0이 아니다.</li>
+<li><strong>⚠ 그런데 &#x27;토큰증권 제도화&#x27;라는 세부 재료만 떼어 보면 오늘이 1일차다.</strong> 금융위가 09/04 예탁결제원에서 민·관 합동 토큰증권 협의체 3차 회의를 열고, 조각투자에 머물던 토큰증권을 <strong>주식·채권·펀드까지 확대</strong>하며 2027/02/04부터 단계 시행한다고 발표했다(웹: 한국경제·머니투데이·블록미디어). 증권사·장외거래소는 <strong>별도 인가 없이</strong> 기존 자본시장법 인가로 취급 가능하다는 대목이 핵심이다.</li>
+<li><strong>대장주 / 후발주</strong>:</li>
+<li><strong>대장주 = 헥토파이낸셜(727억)</strong>. 거래대금 절대액 최대이자 <strong>30일 대금 1위</strong>, 그리고 08/20에 이미 충족했던 종목이다. 오늘 수식은 미충족인데 돈은 가장 많이 들어왔다 — 원칙 4의 전형적인 대장주 패턴이다.</li>
+<li><strong>오늘 충족했지만 후발주로 판단</strong>: <strong>쿠콘</strong>(646억, 08:00 프리마켓 포착 후 고가에서 −9.2% 밀림, 종가위치 23%, VWAP −1.9%), <strong>한화투자증권</strong>(충족 1봉뿐, 379억, 두나무 지분 스토리라 STO보다 비트코인 반등 쪽), <strong>NHN KCP</strong>(184억, ★첫흐름이지만 대금이 대장의 1/4).</li>
+<li><strong>가장 순수한 반응주 = 아톤</strong>. 대금은 39억으로 작지만 <strong>30일 대금 1위 + 직전최대 1.7배</strong>이고, 웹에서 유일하게 &quot;금융위 주식·채권·펀드 토큰 허용 소식&quot;이 직접 사유로 붙은 종목이다(웹: 이투데이). 규모가 작아 대장은 못 되지만 <strong>테마 순도는 가장 높다.</strong></li>
+<li><strong>추정 재료</strong>: 확정. 위 금융위 발표(웹). 여기에 비트코인 8만1000달러 돌파(정보지)가 겹쳐 결제주 전반으로 매수세가 확산됐다(웹: 잡포스트).</li>
+<li><strong>재료 단계</strong>: <code>기대(08/20~08/28 스테이블코인 입법 기대감) → 확정(09/04 금융당국 정책방향 발표)</code> — <strong>단계 2→3 상승. 실질 신규 사이클의 시작으로 볼 근거가 있다.</strong> 대금이 이를 뒷받침한다(헥토·한화투자·아톤 모두 30일 대금 1위).</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜: 헥토파이낸셜이 <strong>727억 이상 대금을 유지</strong>하면서 갭 없이 밀리지 않는 것 / 증권사·장외거래소 인가 관련 후속 보도가 나오고 아톤·NHN KCP 같은 순수 STO주로 대금이 번지는 것</li>
+<li>❌ 아님: 오늘 쿠콘처럼 시초 급등 후 종가위치 20%대로 밀리는 패턴이 반복되면 정책 발표 하루 반응으로 끝난 것. 특히 비트코인이 되밀리면 결제주 전체가 같이 죽는다(오늘 상승분에 코인이 섞여 있다)</li>
+</ul>
+<hr>
+<h3>🥈 2순위. 스페이스X·우주항공 — <strong>정보지 오늘 처음, 다만 뉴스가 주가보다 먼저</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">042700 한미반도체</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.0</span><span class="chip"><i>거래대금(억)</i><strong>3,526</strong></span><span class="chip"><i>오늘충족</i>★10봉</span><span class="chip"><i>이전충족</i>07/31(-24일)</span><span class="chip"><i>30일대금순위</i>5위</span></div></article>
+<article class="card"><h4 class="c-t">295310 에이치브이엠</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.1</span><span class="chip"><i>거래대금(억)</i>139</span><span class="chip"><i>D+N</i>D+18</span><span class="chip"><i>오늘충족</i>★10봉</span><span class="chip"><i>이전충족</i>08/10(-18일)외1</span><span class="chip"><i>30일대금순위</i>10위</span></div></article>
+<article class="card"><h4 class="c-t">354320 알멕</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.1</span><span class="chip"><i>거래대금(억)</i>94</span><span class="chip"><i>D+N</i>D+18</span><span class="chip"><i>오늘충족</i><strong>★첫흐름</strong> 3봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i><strong>1위</strong> (직전최대 2.5배)</span></div></article>
+<article class="card"><h4 class="c-t">474650 링크솔루션</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.4</span><span class="chip"><i>거래대금(억)</i>15</span><span class="chip"><i>D+N</i>D+18</span><span class="chip"><i>오늘충족</i>—</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일대금순위</i>2위</span></div></article>
+</div>
+<ul>
+<li><strong>⚠ 한미반도체는 이 테마에서 빼고 읽어라.</strong> 정보지가 스페이스X 관련주로 태그했지만 당일뉴스 0건이고, 재료 이력은 전부 HBM·TC본더다. 3,526억은 반도체 반등 자금이지 우주 자금이 아니다. <strong>기계 태그 오탐으로 본다.</strong> 이걸 대장주로 삼으면 원칙 4를 거꾸로 적용하는 셈이 된다.</li>
+<li><strong>테마 시작일 추정</strong>: <strong>08/04~08/10</strong>. 에이치브이엠이 08/04·08/10에 이미 충족했고, 알멕·에이치브이엠·링크솔루션 셋 다 <code>직전급등 20260810</code> / <code>D+18</code>로 정확히 겹친다. <strong>우주항공은 8월 초에 한 번 돌았던 테마의 재점화다.</strong></li>
+<li><strong>대장주 / 후발주</strong>: 순수 우주항공 소그룹 안에서 <strong>거래대금 최대는 에이치브이엠(139억)</strong>이고, 이 종목이 <strong>08/10에 먼저 충족</strong>했다 → 대장주. <strong>알멕(94억)은 ★첫흐름 + 30일 대금 1위 + 직전최대 2.5배</strong>로 오늘 신규 자금이 가장 선명하지만, 대금 절대액이 대장보다 작으므로 <strong>후발주로 판정한다.</strong> 단 알멕은 종가위치 80%·저점대비 <span style="color:#ef4444;font-weight:700">+4.2%</span> 반등으로 마감 체력이 셋 중 가장 좋다.</li>
+<li><strong>추정 재료</strong>: 확정. 스페이스X 주가 6.4% 급등, 두 달 만에 시총 2조달러 회복(웹: 머니투데이 09/04 06:52). 스페이스X는 06/12 나스닥 상장(공모가 135달러 → 첫 거래 150달러) 이후 2분기 매출 <span style="color:#ef4444;font-weight:700">+92%</span>를 낸 상태다(웹: 파이낸셜뉴스·머니투데이).</li>
+<li><strong>⚠ 선행 아님</strong>: 최초 보도 <strong>06:52</strong> vs 알멕 포착 <strong>09:48</strong>, 에이치브이엠 <strong>09:20</strong>. <strong>뉴스가 3시간 먼저 나왔다.</strong> 원칙 1의 &quot;주가 선행&quot; 케이스가 아니라 해외 뉴스에 따라붙은 반응이다. 그만큼 D+0 확신도는 1순위 테마보다 한 단계 낮다.</li>
+<li><strong>재료 단계</strong>: <code>기대(06/12 에이치브이엠 &quot;스페이스X 상장 수혜&quot;) → 기대(09/04 해외 주가 급등)</code> — <strong>같은 단계의 반복, 재탕에 가깝다.</strong> 국내 기업의 수주·납품 확정 소식은 없다. 알멕의 30일 대금 1위만이 시장이 새로 인정했다는 유일한 증거다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜: 알멕 또는 에이치브이엠에서 <strong>실제 공급계약 공시</strong>(에이치브이엠은 06/19·06/25 슈퍼알로이 공급계약 전례가 있다)가 나오는 것 / 링크솔루션·한국항공우주 등으로 대금이 번지며 소그룹 합산 대금이 오늘의 250억을 넘는 것</li>
+<li>❌ 아님: 미국장에서 스페이스X가 되밀리면 하루짜리로 끝난다. 국내 수주 재료 없이 해외 주가만 보고 붙은 자리다</li>
+</ul>
+<hr>
+<h3>🥉 3순위. 로봇 부품 &#x27;실주문(PO)&#x27; 라인 — <strong>추정 · 확신도 중</strong></h3>
+<blockquote><p>로봇 테마 전체는 D+0이 아니지만, 그 안에서 <strong>기대가 아니라 실제 발주로 단계가 올라간 종목만</strong> 따로 묶었다. 원칙 1-1에 해당하는 자리다.</p></blockquote>
+<div class="cards">
+<article class="card"><h4 class="c-t">125490 한라캐스트</h4><p class="c-p"><span class="c-k">재료 단계</span>08/13 &quot;美 빅테크서 로봇 부품 또 따냄&quot; = 확정</p><div class="c-c"><span class="chip"><i>등락%</i>+8.3</span><span class="chip"><i>거래대금(억)</i><strong>326</strong></span><span class="chip"><i>오늘충족</i>★9봉</span><span class="chip"><i>이전충족</i>08/14(-14일)외1</span></div></article>
+<article class="card"><h4 class="c-t">127120 제이에스링크</h4><p class="c-p"><span class="c-k">재료 단계</span><strong>오늘 북미 로봇 부품사 첫 양산 PO 수주 = 확정</strong></p><div class="c-c"><span class="chip"><i>등락%</i>+11.9</span><span class="chip"><i>거래대금(억)</i>262</span><span class="chip"><i>D+N</i>D+20</span><span class="chip"><i>오늘충족</i><strong>★첫흐름</strong> 11봉</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">448900 한국피아이엠</h4><p class="c-p"><span class="c-k">재료 단계</span>08/19 수주잔고 <span style="color:#ef4444;font-weight:700">+18.9%</span> = 실적</p><div class="c-c"><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>거래대금(억)</i>119</span><span class="chip"><i>D+N</i>D+14</span><span class="chip"><i>오늘충족</i>★11봉</span><span class="chip"><i>이전충족</i>07/22(-31일)</span></div></article>
+<article class="card"><h4 class="c-t">290550 디케이티</h4><p class="c-p"><span class="c-k">재료 단계</span>08/19 북미 LFP ESS BMS 첫 출하 = 확정</p><div class="c-c"><span class="chip"><i>등락%</i>+16.7</span><span class="chip"><i>거래대금(억)</i>108</span><span class="chip"><i>D+N</i>D+24</span><span class="chip"><i>오늘충족</i><strong>★첫흐름</strong> 5봉</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">160190 하이젠알앤엠</h4><p class="c-p"><span class="c-k">재료 단계</span>기대(휴머노이드 과제) — 확정 아님</p><div class="c-c"><span class="chip"><i>등락%</i>+14.4</span><span class="chip"><i>거래대금(억)</i>124</span><span class="chip"><i>D+N</i>D+18</span><span class="chip"><i>오늘충족</i><strong>★첫흐름</strong> 14봉</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>07/22</strong>(한국피아이엠 충족) → <strong>08/13~08/14</strong>(한라캐스트 2일 연속 충족). 소그룹으로서는 <strong>이미 3주 이상 된 흐름</strong>이다. 오늘이 D+0이 아니라는 뜻이다.</li>
+<li><strong>대장주 / 후발주</strong>: <strong>대장주 = 한라캐스트(326억)</strong>, 이미 08/13·08/14에 충족한 이력이 있다. <strong>제이에스링크(262억)는 ★첫흐름이지만 D+20</strong>이라 오늘이 사이클 시작이 아니다 — <strong>후발주</strong>로 본다. 하이젠알앤엠·디케이티도 ★첫흐름이나 대금 100억대로 작다.</li>
+<li><strong>추정 재료</strong>: 제이에스링크는 <strong>북미 로봇 부품사로부터 고성능 희토류 영구자석(NdFeB) 첫 양산 PO 수주</strong>(정보지, 뉴스버즈 11:04 4건/3ch). 웹에서는 이 종목의 충남 예산 연 1,000톤 플랜트 시생산과 미국 콜럼버스 공장(2억2,300만달러) 건설이 확인된다(웹: 파이낸셜뉴스·더벨) — <strong>PO 수주 자체가 그 라인의 첫 실물 매출이라는 맥락은 성립한다.</strong> 다만 09/04 수주 건 자체는 웹에서 별도 확인 안 됨.</li>
+<li><strong>재료 단계</strong>: <code>기대(07/07 유증으로 영구자석 투자 확대) → 확정(09/04 첫 양산 PO)</code> — <strong>단계 1→3 상승. D+20이지만 실질적으로는 새 사이클의 시작(실질 D+0)일 수 있다.</strong></li>
+<li><strong>⚠ 하지만 시장은 아직 절반만 인정했다.</strong> 제이에스링크 30일 대금순위 <strong>2위</strong>, 직전최대 0.9배 — 원칙 1-1 단서대로 <strong>거래대금이 직전 최대를 못 넘었으므로 재료 단계 상승만으로 D+0이라 단정하지 않는다.</strong> 순매수집중도 16.1%로 낮다.</li>
+<li><strong>뉴스 vs 주가</strong>: 보도 <strong>11:04</strong> vs 포착 <strong>11:09</strong> — 5분 차이. 사실상 동시, 선행 아님.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜: 제이에스링크 <strong>공급계약 체결 공시(DART)</strong> 가 정식으로 뜨고 대금이 오늘의 262억을 넘는 것 / 한라캐스트가 대장 자리에서 대금을 유지하는 것</li>
+<li>❌ 아님: 오늘 하이젠알앤엠처럼 13:42 포착 후 4분 만에 −8.8% 꺾이는(순매수집중 6.1%) 패턴이면 로봇 랠리에 묻어간 것일 뿐이다</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 — 눌림 관찰용)</h2>
+<h3>로봇·휴머노이드 — <strong>오늘 가장 셌지만 D+18~D+23. 신규 진입 자리 아님</strong></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">로보티즈</h4><div class="c-c"><span class="chip"><i>등락%</i>+22.9</span><span class="chip"><i>대금(억)</i><strong>9,277</strong></span><span class="chip"><i>D+N</i>D+23</span><span class="chip"><i>5일누적%</i>−6.5</span><span class="chip"><i>이전충족</i>07/22</span></div></article>
+<article class="card"><h4 class="c-t">에스피지</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금(억)</i>2,193</span><span class="chip"><i>D+N</i>D+23</span><span class="chip"><i>5일누적%</i>−15.8</span><span class="chip"><i>이전충족</i>08/03 외3</span></div></article>
+<article class="card"><h4 class="c-t">원익</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.1</span><span class="chip"><i>대금(억)</i>1,458</span><span class="chip"><i>D+N</i><strong>D+1</strong></span><span class="chip"><i>5일누적%</i><strong>+37.9</strong></span><span class="chip"><i>이전충족</i>09/03 외3</span></div></article>
+<article class="card"><h4 class="c-t">원익홀딩스</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>1,451</span><span class="chip"><i>D+N</i>D+18</span><span class="chip"><i>5일누적%</i>−15.3</span><span class="chip"><i>이전충족</i>08/03</span></div></article>
+<article class="card"><h4 class="c-t">로보스타</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.6</span><span class="chip"><i>대금(억)</i>675</span><span class="chip"><i>5일누적%</i>−17.3</span><span class="chip"><i>이전충족</i>08/12 외2</span></div></article>
+<article class="card"><h4 class="c-t">TPC로보틱스</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>70</span><span class="chip"><i>D+N</i><strong>D+2</strong></span><span class="chip"><i>5일누적%</i>+5.1</span><span class="chip"><i>이전충족</i>09/02</span></div></article>
+</div>
+<ul>
+<li><strong>오늘의 진짜 방아쇠는 원익로보틱스 3,500억 투자 유치다</strong>(웹: 잡포스트). 문서에는 이 뉴스가 없다 — 원익·원익홀딩스 둘 다 <code>당일뉴스 없음</code>인데 상한가/<span style="color:#ef4444;font-weight:700">+17%</span>가 나온 이유가 이것이다. 여기에 로보티즈 2분기 흑자전환·중국 매출 급증·KB 리포트가 겹쳤다(문서 + 웹: 이데일리·중앙이코노미뉴스).</li>
+<li><strong>대장주는 명확히 로보티즈(9,277억, 30일 대금 1위, 직전최대 2.5배)</strong>다. 08:08에 <span style="color:#ef4444;font-weight:700">+8.7%</span>에서 포착돼 순매수집중 72%로 마감했고 종가위치 85%·VWAP <span style="color:#ef4444;font-weight:700">+3.1%</span>로 체력도 가장 좋다. <strong>하지만 07/22에 이미 충족한 종목이고 D+23이다. 대장은 맞지만 초입은 아니다.</strong></li>
+<li><strong>원익은 D+1 + 직전5일누적 <span style="color:#ef4444;font-weight:700">+37.9%</span> + 회전율 149%.</strong> 오늘 13:50 고점 포착 후 −10.9% 밀렸다. 후반부다. 눌림만 본다.</li>
+<li>TPC로보틱스는 <span style="color:#ef4444;font-weight:700">+30%</span> 상한가·종가위치 100%지만 D+2이고 대금이 70억뿐이다. 09/02에 이미 충족했다.</li>
+</ul>
+<h3>가상자산·비트코인 (D+9~D+11)</h3>
+<p>우리기술투자 <span style="color:#ef4444;font-weight:700">+8.9%</span>/955억(미충족, 종가위치 9%, 고점 −8.5%), 위지트 <span style="color:#ef4444;font-weight:700">+8.5%</span>/96억(★충족이나 <strong>순매수집중 −8.0%</strong>, 고가 <span style="color:#ef4444;font-weight:700">+30%</span>에서 종가 <span style="color:#ef4444;font-weight:700">+8.5%</span>로 완전 반납, 종가위치 18%), 갤럭시아머니트리 <span style="color:#ef4444;font-weight:700">+10.9%</span>/204억. <strong>오늘 전형적인 위꼬리 마감이다. 붙지 마라.</strong></p>
+<h3>반도체 (정보지 8일째 · D+18~D+24)</h3>
+<p>한미반도체 3,526억(★충족, 종가위치 98%로 가장 깔끔), 피에스케이홀딩스 494억, 인텍플러스 270억, 로체시스템즈, 사피엔반도체. 재료는 연준 월러 이사의 비둘기 발언에 따른 금리 우려 완화(정보지). <strong>테마 자체는 이미 8일째다.</strong></p>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>유유제약(★첫흐름, 116억, 전일 대금 66.4배·직전최대 18.1배)</strong> — 숫자만 보면 가장 극단적인 신규 자금이다. 그런데 <strong>당일등락 <span style="color:#ef4444;font-weight:700">+0.9%</span>, 고가 <span style="color:#ef4444;font-weight:700">+19.1%</span>, 종가위치 9%, VWAP −6.7%, 순매수집중 0.1%.</strong> 14:18에 포착돼 4분 만에 고점을 찍고 전부 반납했다. 당일뉴스 0건, <strong>웹에서도 09/04 급등 사유·공시 확인 안 됨</strong>(DART·언론 모두). 로봇 도입(09/01)·탈모 급여 확대 정도의 묵은 재료뿐이다. → <strong>재료 미상. 수급이 들어왔다가 그대로 빠진 자리이므로 매수 대상에서 제외한다.</strong></li>
+<li><strong>명신산업(★충족 17봉, 726억, 전일 대금 37.5배, 30일 1위)</strong> — 정보지가 &quot;급등 이유 파악되지 않음&quot;으로 남긴 종목. 웹 확인 결과 <strong>2분기 실적 개선 + 기관 6거래일 연속 순매수</strong>가 사유로 보도됐다(웹: 잡포스트). 다만 이는 사후 설명 성격이고, 08:07 NXT 프리마켓에서 <span style="color:#ef4444;font-weight:700">+12.6%</span>로 포착됐다 → <strong>주가가 먼저 움직였다.</strong> 핫스탬핑 차체부품·북미 고객사 로보택시 확대 수혜 스토리와 연결된다. 마감은 종가위치 40%·VWAP −3.6%로 약하다.</li>
+<li><strong>디와이씨</strong> — 문서상 <strong>유일한 <code>D+0</code> 종목</strong>(<span style="color:#ef4444;font-weight:700">+15.0%</span>, 30일 대금 1위, 직전최대 1.7배). 하지만 <strong>거래대금 8.2억.</strong> 10:08 &quot;자동차·방산 넘어 로보틱스로 사업 확대&quot;(이데일리) — 로봇 테마 말단의 초소형주다. <strong>D+0 라벨은 붙지만 규모가 없어 실전 대상이 아니다.</strong></li>
+<li><strong>칩스앤미디어(★첫흐름, 115억, 30일 1위, 직전최대 2.1배)</strong> — 15:53 시간외 포착. 뉴스버즈 <strong>15:42</strong> &quot;허깅페이스 마이크로덕, 中 록칩 생태계에 핵심 IP 공급&quot;(재탕 표시) → <strong>뉴스가 11분 먼저.</strong> 웹으로 록칩 단독 비디오IP 공급·디로보틱스 로열티 매출이 확인된다(웹: 중앙이코노미뉴스·AI타임스). 로봇용 반도체 IP라는 점에서 로봇 테마와 연결선이 있다. <strong>정규장이 아닌 시간외 충족이라 다음날 정규장 재확인이 필요하다.</strong></li>
+<li><strong>큐리언트(★충족, 229억)</strong> — 11:15 포착 → 13:53 <strong>1,016억 유상증자 공시.</strong> 증자 공시에도 <span style="color:#ef4444;font-weight:700">+14.0%</span>, 종가위치 80%로 버텼다. 다만 D+18이고 직전5일누적 −19.2%다. 증자는 수급상 악재이므로 다음날 되밀림 여부부터 본다.</li>
+<li><strong>페니트리움바이오(미충족, 202억, D+4)</strong> — FDA 임상 2a상 승인(09:22, 1상 생략). 종가위치 100%로 마감했으나 이미 5일누적 <span style="color:#ef4444;font-weight:700">+26.6%</span>.</li>
+<li><strong>레메디·라온피플·에이프로젠바이오로직</strong> — 셋 다 고가 대비 −13~−22%로 무너진 자리. 라온피플은 &#x27;피지컬 AI&#x27; 국책사업 선정(09:33)에도 종가 <span style="color:#ef4444;font-weight:700">+3.3%</span>(고가 <span style="color:#ef4444;font-weight:700">+27.3%</span>). <strong>접근 금지.</strong></li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>토큰증권(STO)·전통금융 토큰화 — 금융위 09/04 정책 발표로 재료가 &#x27;기대→확정&#x27;으로 올라간 유일한 자리. 단, 결제·가상자산 큰 줄기로는 08/20 시작(D+11)이므로 &#x27;세부 재료 D+0 / 테마 D+11&#x27;로 이중 표기해 관리할 것.</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>헥토파이낸셜(234340) — 727억, 30일 대금 1위, 08/20 선행 충족. 오늘은 미충족. (참고: 순도 최고는 아톤(158430) 39억, 30일 대금 1위·직전최대 1.7배)</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>① 제이에스링크(127120) 기대(07/07 영구자석 유증) → 확정(09/04 북미 첫 양산 PO) ② 헥토파이낸셜·쿠콘·아톤 기대(08/20 스테이블코인 입법) → 확정(09/04 토큰증권 정책) ③ 디케이티(290550) 기대(07/13 휴머노이드 배터리 정조준) → 확정(08/19 북미 첫 출하)</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>쿠콘(646억, 대장 헥토의 89%·종가위치 23%) / NHN KCP(184억, 첫흐름이나 대금 1/4) 알멕(94억, 첫흐름·대금1위이나 대장 에이치브이엠 139억보다 작음) 제이에스링크(262억, 첫흐름이나 D+20·대장 한라캐스트 326억보다 작음) 한화투자증권(충족 1봉뿐, STO보다 두나무·비트코인 성격)</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>아톤(158430) — STO 순도 최고, 대금 작아 선행 신호로만 에이치브이엠(295310) / 링크솔루션(474650) — 우주항공 소그룹, 수주 공시 대기 한라캐스트(125490) — 로봇 부품 PO 라인 대장 칩스앤미디어(094360) — 시간외 첫흐름, 정규장 재확인 필요</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>로보티즈(D+23·9,277억, 종가위치 85%·VWAP <span style="color:#ef4444;font-weight:700">+3.1%</span> — 체력은 최상이나 초입 아님) 에스피지(D+23) / 원익홀딩스(D+18) / 원익(D+1·5일누적 <span style="color:#ef4444;font-weight:700">+37.9%</span>, 후반부) 한미반도체(반도체 8일째, 종가위치 98%)</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>토큰증권 후속 — 증권사·장외거래소 인가 관련 보도, 금융위 세부안 일정.</li>
+</ol>
+<p>헥토파이낸셜이 727억 대금을 유지하는지, 아톤·NHN KCP로 번지는지. 동시에 비트코인 8만1000달러 유지 여부(빠지면 결제주 전체가 같이 죽는다).</p>
+<ol>
+<li>원익로보틱스 3,500억 투자 유치의 원문 공시·조건(신주 발행가·투자자).</li>
+</ol>
+<p>이게 확인되면 로봇은 D+18에서도 한 번 더 갈 근거가 생기고, 루머성이면 오늘 상한가 두 종목이 갭하락한다.</p>
+<ol>
+<li>알멕·에이치브이엠에 스페이스X 관련 실제 공급계약 공시가 붙는지.</li>
+</ol>
+<p>해외 주가만으로 붙은 자리라, 국내 수주 없이 미국장이 되밀리면 하루로 끝난다. ```</p>
+<hr>
+<h3>📎 데이터 대조 메모</h3>
+<ul>
+<li>웹 숫자는 <strong>전부 장중 시세</strong>라 문서(장마감 정본)와 다르다. 명신산업 웹 <span style="color:#ef4444;font-weight:700">+11.84%</span>(장중) vs 문서 <span style="color:#ef4444;font-weight:700">+9.65%</span>(종가), 헥토파이낸셜 웹 13.03%(15:06) vs 문서 <span style="color:#ef4444;font-weight:700">+13.48%</span>, 로보티즈 웹 <span style="color:#ef4444;font-weight:700">+20.12%</span>(11:17) vs 문서 <span style="color:#ef4444;font-weight:700">+22.94%</span>. <strong>판단은 전부 문서 숫자로 했다.</strong></li>
+<li>웹에서도 확인 안 된 것: 유유제약 09/04 급등 사유·공시 / 하이젠알앤엠·디케이티의 09/04 당일 개별 재료 / 제이에스링크 09/04 PO 수주 건 자체(사업 맥락만 확인).</li>
+<li>정보지가 한미반도체를 &#x27;스페이스X 관련주&#x27;로, 아크릴을 &#x27;로봇 관련주&#x27;로 태그했으나 둘 다 당일 재료·이력과 맞지 않아 <strong>기계 태그 오탐으로 처리</strong>했다.</li>
+</ul>
+<p>Sources:</p>
+<ul>
+<li>[주식·채권·펀드도 토큰화한다…내년 2월부터 순차 확대 (한국경제)](https://www.hankyung.com/article/2026090438386)</li>
+<li>[조각투자 넘어 주식·채권까지 토큰화…내년 2월 첫발 (머니투데이)](https://www.mt.co.kr/stock/2026/09/04/2026090322291636782)</li>
+<li>[토큰증권, 조각투자 넘어 주식·채권·펀드로 (블록미디어)](https://www.blockmedia.co.kr/archives/1136005)</li>
+<li>[[특징주] 아톤, 금융위 주식·채권·펀드 토큰 허용 소식에 상승세 (이투데이)](https://www.etoday.co.kr/news/view/2621925)</li>
+<li>[헥토파이낸셜 13% 급등…스테이블코인 결제 기대에 2만5000원 돌파 (잡포스트)](https://www.job-post.co.kr/news/articleView.html?idxno=226255)</li>
+<li>[스페이스X 주가 6.4% 급등…두 달만에 시총 2조달러 회복 (머니투데이)](https://www.mt.co.kr/world/2026/09/04/2026090406522078386)</li>
+<li>[스페이스X 상장 D-데이…월가는 2조달러 찍었다 (파이낸셜뉴스)](https://www.fnnews.com/news/202606120647222681)</li>
+<li>[원익홀딩스 2만2500원 &#x27;상한가&#x27;…3500억 투자 유치에 로봇株 불붙었다 (잡포스트)](https://www.job-post.co.kr/news/articleView.html?idxno=226230)</li>
+<li>[&#x27;흑자전환&#x27; 로보티즈 강세에 국내 로봇주 &#x27;동반 랠리&#x27; (이데일리)](https://edaily.co.kr/News/Read?mediaCodeNo=257&amp;newsId=03014326645576840)</li>
+<li>[로보티즈 주가, 9월 4일 장중 298,500원 20.12% 상승 (중앙이코노미뉴스)](https://www.joongangenews.com/news/articleView.html?idxno=545611)</li>
+<li>[명신산업 11.84% 급등…기관 6거래일 연속 매수 (잡포스트)](https://www.job-post.co.kr/news/articleView.html?idxno=226256)</li>
+<li>[칩스앤미디어, 허깅페이스 &#x27;마이크로덕&#x27; 中 록칩 생태계에 핵심 IP 공급 (중앙이코노미뉴스)](https://www.joongangenews.com/news/articleView.html?idxno=545670)</li>
+<li>[허깅페이스 소형 로봇 &#x27;마이크로덕&#x27; 초반 흥행…중국 록칩 NPU 탑재 (AI타임스)](https://www.aitimes.com/news/articleView.html?idxno=214763)</li>
+<li>[제이에스링크 &quot;유전체 매출속 자석 양산으로 하반기 성장 기대&quot; (파이낸셜뉴스)](https://www.fnnews.com/news/202505151752018770)</li>
+<li>[[i-point]제이에스링크, 미 희토류 영구자석 공장 건설 &#x27;속도&#x27; (더벨)](https://m.thebell.co.kr/m/newsview.asp?svccode=&amp;newskey=202510270830014580101939)</li>
+<li>[하이젠알앤엠, 81억 규모 &#x27;고중량 작업용 휴머노이드&#x27; 과제 주관기관 선정 (로봇신문)](https://www.irobotnews.com/news/articleView.html?idxno=48222)</li>
+<li>[스페이스X 테마, 우주산업 기대감 재확산…국내 우주항공주 강세 (한국경제)](https://www.hankyung.com/amp/202605195415a)</li>
+</ul>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-09-04 21:27
+</p>
+</article></div>
+</body></html>
