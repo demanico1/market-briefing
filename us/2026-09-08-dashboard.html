@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>미국장 브리핑 2026-09-08</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1280px; height:720px; overflow:hidden;
+    background:#0f1115; color:#e8eaed;
+    font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;
+    padding:20px 24px;
+  }
+  .hdr { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:12px; }
+  .hdr .t { font-size:26px; font-weight:700; letter-spacing:-.5px; }
+  .hdr .t span { color:#9aa0a6; font-weight:400; font-size:19px; margin-left:8px; }
+  .hdr .n { font-size:13px; color:#9aa0a6; }
+  .banner {
+    background:#241a1a; border-left:4px solid #ef4444; border-radius:6px;
+    padding:9px 14px; margin-bottom:12px; font-size:14px; line-height:1.45;
+  }
+  .banner b { color:#ff8a8a; }
+  .banner .sub { color:#9aa0a6; font-size:12.5px; }
+
+  .idx { display:flex; gap:12px; margin-bottom:10px; }
+  .card {
+    flex:1; background:#1a1d24; border-radius:8px; padding:12px 16px;
+  }
+  .card .lbl { font-size:12.5px; color:#9aa0a6; margin-bottom:5px; }
+  .card .val { font-size:27px; font-weight:700; letter-spacing:-.5px; }
+  .card .chg { font-size:14px; margin-top:3px; }
+  .dn { color:#ef4444; } .up { color:#22c55e; }
+
+  .macro {
+    display:flex; gap:26px; background:#1a1d24; border-radius:8px;
+    padding:9px 16px; margin-bottom:12px; font-size:13px; align-items:center;
+  }
+  .macro i { font-style:normal; color:#9aa0a6; margin-right:6px; }
+  .macro b { font-weight:600; }
+  .macro .sep { color:#2c313a; }
+
+  .oneline {
+    background:#151a22; border-left:4px solid #22c55e; border-radius:6px;
+    padding:12px 16px; font-size:20px; font-weight:600; line-height:1.4;
+    margin-bottom:12px; letter-spacing:-.3px;
+  }
+
+  .cols { display:flex; gap:12px; }
+  .col { background:#1a1d24; border-radius:8px; padding:12px 15px; }
+  .c1 { flex:1.35; } .c2 { flex:1; }
+  .ttl { font-size:12.5px; color:#9aa0a6; font-weight:600; margin-bottom:8px;
+         letter-spacing:.4px; text-transform:uppercase; }
+  ul { list-style:none; }
+  li { font-size:13.5px; line-height:1.5; margin-bottom:7px; padding-left:14px;
+       position:relative; }
+  li:before { content:"▪"; position:absolute; left:0; color:#4b5563; }
+  li b { color:#fff; }
+
+  .bar { margin-bottom:8px; }
+  .bar .r { display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px; }
+  .bar .r span:last-child { color:#9aa0a6; }
+  .track { height:6px; background:#252932; border-radius:3px; overflow:hidden; }
+  .fill { height:100%; border-radius:3px; }
+
+  .badges { display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+  .b {
+    font-size:12px; padding:4px 9px; border-radius:5px;
+    background:#252932; color:#cfd3d8;
+  }
+  .b.g { background:#14331f; color:#7ee2a0; }
+  .b.r { background:#3a1a1c; color:#ffa0a0; }
+  .b.y { background:#332c14; color:#e8cf7e; }
+
+  .foot { margin-top:10px; font-size:11.5px; color:#7b8189; display:flex;
+          justify-content:space-between; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="t">2026년 9월 8일 (화) <span>미국장 브리핑</span></div>
+  <div class="n">수집 채널 7 / 16 · 영상 20건</div>
+</div>
+
+<div class="banner">
+  🛑 <b>노동절 휴장 — 닷새째. 오늘 밤 22:30(KST) 재개장.</b>
+  9/7(월)은 노동절로 뉴욕증시·채권시장 전일 휴장. 직전 마감 세션은 여전히 9/4(금)이다.
+  <span class="sub">모든 지수 시세는 9월 4일(금) 종가 기준.</span>
+</div>
+
+<div class="idx">
+  <div class="card">
+    <div class="lbl">S&amp;P 500 · 9/4 종가</div>
+    <div class="val">7,718.60</div>
+    <div class="chg dn">-29.11 (-0.38%)</div>
+  </div>
+  <div class="card">
+    <div class="lbl">나스닥 종합 · 9/4 종가</div>
+    <div class="val">26,506.99</div>
+    <div class="chg dn">-77.07 (-0.29%)</div>
+  </div>
+  <div class="card">
+    <div class="lbl">다우 · 9/4 종가</div>
+    <div class="val">53,414.25</div>
+    <div class="chg dn">-271.86 (-0.51%)</div>
+  </div>
+</div>
+
+<div class="macro">
+  <div><i>10년물</i><b>4.79%</b></div><div class="sep">|</div>
+  <div><i>WTI</i><b>$91.48</b> <span style="color:#22c55e">→ $91.98 (9/7)</span></div><div class="sep">|</div>
+  <div><i>VIX</i><b>14.52</b></div><div class="sep">|</div>
+  <div><i>연방기금</i><b>3.50~3.75%</b></div><div class="sep">|</div>
+  <div><i>9월 인상확률</i><b>48~58%</b></div><div class="sep">|</div>
+  <div><i>재개장 선물</i><b><span style="color:#22c55e">NDX +0.9%</span> · SPX +0.3% · <span style="color:#ef4444">DOW -0.2%</span></b></div>
+</div>
+
+<div class="oneline">
+  뉴욕이 나흘 쉬는 동안 아시아가 먼저 답을 냈다 — 아스트라발 메모리 랠리로 코스피 +4.61%.
+  관건은 뉴욕이 따라갈지, 금리·유가 청구서를 먼저 볼지다.
+</div>
+
+<div class="cols">
+  <div class="col c1">
+    <div class="ttl">핵심 포인트</div>
+    <ul>
+      <li><b>방아쇠는 오픈AI 아스트라(9/3 공개).</b> 스타게이트 텍사스에서 GPU 10만 개 이상으로 훈련, 40만 개 추가 가동. 젠슨 황 "AGI가 도래했다".</li>
+      <li><b>9/4 지수는 빠졌는데 메모리만 올랐다.</b> 샌디스크 장중 +8%, 마이크론 +4~5%대. 그 흐름이 9/7 아시아에서 폭발 — <b>코스피 +4.61%, SK하이닉스 +8.26%</b>.</li>
+      <li><b>인하가 아니라 인상 논쟁이다.</b> 8월 고용 +16.2만(예상 5.3만), 실업률 4.1%. 연준은 9/17까지 블랙아웃 — 이번 주 시장을 달래줄 통로가 없다.</li>
+      <li><b>유가는 6주 최고권.</b> 미·이란 해상 충돌 재점화, 호르무즈 통항 13→6척. CPI 나오는 주에 불리한 조합.</li>
+      <li><b>이번 주 관문:</b> 9/9 애플 이벤트 · 9/10 PPI+오라클·어도비 실적 · <b>9/11 CPI</b> · 9/15~16 FOMC.</li>
+    </ul>
+  </div>
+
+  <div class="col c2">
+    <div class="ttl">채널 합의도 (시황 4채널)</div>
+    <div class="bar">
+      <div class="r"><span>9월 중순까지 방향성 부재</span><span>4/4</span></div>
+      <div class="track"><div class="fill" style="width:100%;background:#22c55e"></div></div>
+    </div>
+    <div class="bar">
+      <div class="r"><span>아스트라 = 메모리 수요 구조적 증가</span><span>3/4</span></div>
+      <div class="track"><div class="fill" style="width:75%;background:#22c55e"></div></div>
+    </div>
+    <div class="bar">
+      <div class="r"><span>금리 상승은 성장의 증거</span><span>2/4</span></div>
+      <div class="track"><div class="fill" style="width:50%;background:#e8cf7e"></div></div>
+    </div>
+    <div class="bar">
+      <div class="r"><span>9월 조정을 경계</span><span>1/4</span></div>
+      <div class="track"><div class="fill" style="width:25%;background:#ef4444"></div></div>
+    </div>
+    <div class="ttl" style="margin-top:12px">톤</div>
+    <div class="badges">
+      <span class="b g">강세 3</span>
+      <span class="b y">중립 1</span>
+      <span class="b r">신중·약세 2</span>
+    </div>
+    <div class="ttl" style="margin-top:12px">종목 · 섹터</div>
+    <div class="badges">
+      <span class="b g">샌디스크</span>
+      <span class="b g">마이크론</span>
+      <span class="b g">엔비디아</span>
+      <span class="b g">SK하이닉스 +8.26%</span>
+      <span class="b g">삼성전자 +5.68%</span>
+      <span class="b r">테슬라 -5.92%</span>
+      <span class="b y">오라클 (9/10)</span>
+      <span class="b y">어도비 (9/10)</span>
+      <span class="b y">애플 (9/9)</span>
+      <span class="b">노보 노디스크</span>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <div>수집 7/16채널 · 20건 — 연합인포맥스(라이브·쇼츠 10건 묶음 포함) · 미주은 · 소수몽키 · Yahoo Finance · Ricky · Meet Kevin · Stock Moe / 미국 채널은 휴장으로 신규 시황 없음</div>
+  <div>2026-09-08_미국장_브리핑.md</div>
+</div>
+
+</body>
+</html>
