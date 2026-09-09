@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-09-09 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-09-09</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-09-09 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>코스피는 97.12포인트(1.4%) 오른 7051.64로 마감했다. 오늘 돈이 가장 많이 들어간 곳은 광통신(대한광통신 4,540억)·원전(우리기술 5,413억)·정유(SK이노베이션 5,373억)지만, 대금 상위 테마 상당수는 09/07~09/08 시작으로 이미 D+1~D+2 구간이다. 마감 성격이 나쁜 종목이 많았다(빛과전자 종가위치 17%, 국순당 23%, 윙입푸드 0%).</p>
+<p>오늘 새로 점화된 것은 <strong>국제유가 100달러 돌파에 따른 정유→석유화학 확산</strong>(롯데케미칼·대한유화 D+0)이다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">정유·석유화학</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>브렌트 11월물 $100.02 마감, 7/24 이후 첫 100달러 돌파</p><p class="c-p"><span class="c-k">정보지</span><code>석유화학</code>·<code>유가</code>·<code>정유/석유화학</code> 3개 오늘 처음</p><p class="c-p"><span class="c-k">신선도</span>기대(09/01) → <strong>확정(09/09)</strong></p><p class="c-p"><span class="c-k">판단</span><strong>1순위 D+0</strong> — 시작일 추정 09/01이나 석화 확산은 오늘 처음</p><div class="c-c"><span class="chip"><i>수식충족</i>SK이노베이션·롯데케미칼</span></div></article>
+<article class="card"><h4 class="c-t">양자암호·양자컴퓨팅</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>美 상무부, 디웨이브·리게티·퀀티넘 3사 총 3억달러 최종계약 + 정부 소수지분 취득</p><p class="c-p"><span class="c-k">정보지</span><code>양자암호 관련주</code>·<code>양자컴퓨터</code> 오늘 처음</p><p class="c-p"><span class="c-k">신선도</span>기대(08/28) → <strong>확정(09/09)</strong></p><p class="c-p"><span class="c-k">판단</span><strong>2순위</strong> — 시작일 추정 08/28, 달력상 D+8이나 실질 D+0으로 판단</p><div class="c-c"><span class="chip"><i>수식충족</i>엑스게이트·우리로·우리넷·케이씨에스</span></div></article>
+<article class="card"><h4 class="c-t">항암신약 &#x27;페니트리움&#x27;</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>페니트리움바이오 &#x27;가짜내성 극복&#x27; 기전 1차 연구결과 발표</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>기대(06~07월) → <strong>확정(09/04→09/09)</strong></p><p class="c-p"><span class="c-k">판단</span><strong>3순위</strong> — 시작일 추정 09/04, 페니트리움바이오는 D+2</p><div class="c-c"><span class="chip"><i>수식충족</i>현대바이오·페니트리움바이오</span></div></article>
+<article class="card"><h4 class="c-t">광통신·통신장비</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>코닝-버라이즌 광섬유 장기공급계약(2027~2032, 8,000만 마일 이상)</p><p class="c-p"><span class="c-k">정보지</span><code>통신장비/5G/광통신</code> 오늘 처음</p><p class="c-p"><span class="c-k">신선도</span>기대(08/05) → <strong>확정(09/09)</strong></p><p class="c-p"><span class="c-k">판단</span><strong>D+1</strong> — 재료는 새로워도 진입 타이밍 아님, 눌림 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>대한광통신·빛과전자·머큐리·우리넷·쏘닉스</span></div></article>
+<article class="card"><h4 class="c-t">원전·가스터빈(대미투자)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>—</p><p class="c-p"><span class="c-k">판단</span>D+1~D+2 — 눌림 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>우리기술·삼미금속</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력망(AI DC)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>—</p><p class="c-p"><span class="c-k">판단</span>D+2 — 대한전선은 후발</p><div class="c-c"><span class="chip"><i>수식충족</i>가온전선·대한전선</span></div></article>
+<article class="card"><h4 class="c-t">연료전지</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>—</p><p class="c-p"><span class="c-k">판단</span>D+2, 5일누적 <span style="color:#ef4444;font-weight:700">+14.0%</span> — 후반부</p><div class="c-c"><span class="chip"><i>수식충족</i>(두산퓨얼셀 미충족)</span></div></article>
+<article class="card"><h4 class="c-t">철강(알래스카 LNG)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>—</p><p class="c-p"><span class="c-k">판단</span>D+4~ , 신스틸 5일누적 <span style="color:#ef4444;font-weight:700">+46.3%</span> — <strong>제외 구간</strong></p><div class="c-c"><span class="chip"><i>수식충족</i>금강철강·신스틸</span></div></article>
+<article class="card"><h4 class="c-t">2차전지(탈중국 ESS)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>—</p><p class="c-p"><span class="c-k">정보지</span>—</p><p class="c-p"><span class="c-k">신선도</span>—</p><p class="c-p"><span class="c-k">판단</span>D+1</p><div class="c-c"><span class="chip"><i>수식충족</i>(엘앤에프 미충족)</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>정유·석유화학 (1순위 ⭐최우선)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">롯데케미칼(011170)</h4><p class="c-p"><span class="c-k">근거</span>D+0 / 대금 30일 1위 / 직전최대 2.4배 / 직전5일누적 <span style="color:#7dabf8;font-weight:700">-4.1%</span> / 종가위치 94% — 문서 내 가장 깨끗한 D+0</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★8봉</span><span class="chip"><i>등락%</i>+18.1</span><span class="chip"><i>대금</i>646억</span></div></article>
+<article class="card"><h4 class="c-t">SK이노베이션(096770)</h4><p class="c-p"><span class="c-k">근거</span>09/01에 이미 충족 / D+22 / 테마 내 대금 최대 — 정유 사이클 후반부</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/01</span><span class="chip"><i>충족봉</i>★1봉</span><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금</i>5,373억</span></div></article>
+</div>
+<p>※ 롯데케미칼 포착 13:57 vs 최초 관련 기사 13:49 → <strong>뉴스가 8분 앞섬. 선행 아님, 동시성.</strong></p>
+<h3>양자암호·양자컴퓨팅 (2순위)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">우리넷(115440)</h4><p class="c-p"><span class="c-k">근거</span>D+27 / 전일 28.8배·직전최대 9.3배 / 단 테마 내 대금 3위 → <strong>후발주 성격</strong> / 종가위치 44%·VWAP <span style="color:#7dabf8;font-weight:700">-5.0%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★19봉</span><span class="chip"><i>등락%</i>+12.2</span><span class="chip"><i>대금</i>220억</span></div></article>
+<article class="card"><h4 class="c-t">엑스게이트(356680)</h4><p class="c-p"><span class="c-k">근거</span>07/28에 이미 충족 / 테마 내 대금 최대(30일 1위) / 전일 9.7배 / 종가위치 51%·VWAP <span style="color:#7dabf8;font-weight:700">-1.5%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 07/28</span><span class="chip"><i>충족봉</i>★20봉</span><span class="chip"><i>등락%</i>+8.7</span><span class="chip"><i>대금</i>680억</span></div></article>
+<article class="card"><h4 class="c-t">우리로(046970)</h4><p class="c-p"><span class="c-k">근거</span>08/28에 이미 충족 / D+8 / 등락률 1등(상한가 100%) — 선행 후 재점화</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/28</span><span class="chip"><i>충족봉</i>★6봉</span><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>대금</i>380억</span></div></article>
+<article class="card"><h4 class="c-t">케이씨에스(115500)</h4><p class="c-p"><span class="c-k">근거</span>08/28에 이미 충족 / 종가위치 33%·VWAP <span style="color:#7dabf8;font-weight:700">-1.6%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/28</span><span class="chip"><i>충족봉</i>★7봉</span><span class="chip"><i>등락%</i>+4.6</span><span class="chip"><i>대금</i>34억</span></div></article>
+</div>
+<p>※ ⚠ 우리로 외 3종목 모두 VWAP 아래 마감 — <strong>오후에 물량이 나왔다.</strong></p>
+<h3>항암신약 &#x27;페니트리움&#x27; 계열 (3순위)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">현대바이오(048410)</h4><p class="c-p"><span class="c-k">근거</span>D+21 / 대금 30일 1위 / 직전최대 4.5배 / 전일 17.9배 / 직전5일누적 <span style="color:#7dabf8;font-weight:700">-1.9%</span> — 조용하다 오늘만 튄 신규 유입 / 단 재료 주체는 페니트리움바이오 → 후발주 성격</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★31봉</span><span class="chip"><i>등락%</i>+13.9</span><span class="chip"><i>대금</i>724억</span></div></article>
+<article class="card"><h4 class="c-t">페니트리움바이오(187660)</h4><p class="c-p"><span class="c-k">근거</span>D+2(09/07 직전급등) / 5일누적 <span style="color:#ef4444;font-weight:700">+17.3%</span> / 상한가·종가위치 100% / 재료 주체</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★28봉</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>298억</span></div></article>
+</div>
+<p>※ 현대바이오 당일뉴스 0건, 포착 10:18 → <strong>주가 선행 가능성이 남는다.</strong> 웹의 &#x27;제프티 임상 기대&#x27; 보도는 <strong>정확한 보도 시각을 확인하지 못했다.</strong> ※ ⚠ 현대바이오 고점 7,730 → 종가 7,130으로 <span style="color:#7dabf8;font-weight:700">-7.8%</span> 밀림, 종가위치 62%.</p>
+<h3>광통신·통신장비 (D+1 — 진입 자리 아님)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">머큐리</h4><p class="c-p"><span class="c-k">근거</span>포착 09:12 vs 보도 10:02 → <strong>주가 50분 선행</strong> / 단 대금 작아 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>158억</span></div></article>
+<article class="card"><h4 class="c-t">쏘닉스</h4><p class="c-p"><span class="c-k">근거</span>대금 최소 — 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>13억</span></div></article>
+<article class="card"><h4 class="c-t">대한광통신</h4><p class="c-p"><span class="c-k">근거</span>09/08에 이미 충족 / 30일간 6회 충족 → D+1 / 종가위치 45%·VWAP <span style="color:#7dabf8;font-weight:700">-0.6%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/08 외 5회</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>4,540억</span></div></article>
+<article class="card"><h4 class="c-t">빛과전자</h4><p class="c-p"><span class="c-k">근거</span>09/08에 이미 충족 / 30일간 5회 / 종가위치 17%·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-14.6%</span>(★눌림)</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/08</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>2,800억</span></div></article>
+</div>
+<p>※ 우리넷도 광통신 후발주로 함께 분류됨(위 양자 절 참조, 포착 09:10 vs 09:15 보도로 5분 선행). ※ ⚠ 웹의 우리넷 &quot;24% 급등&quot;은 <strong>장중 시세</strong>. 문서 기준 종가 <span style="color:#ef4444;font-weight:700">+12.2%</span> — <strong>정본은 문서.</strong></p>
+<h3>그 외 진행중 테마 (D+1~ 눌림 관찰)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">대한전선</h4><p class="c-p"><span class="c-k">근거</span>전선 대장 가온전선(4,459억, 이전충족 09/07)보다 늦음 → 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>1,262억</span></div></article>
+<article class="card"><h4 class="c-t">우리기술</h4><p class="c-p"><span class="c-k">근거</span>09/08에 이미 충족 / 원전·가스터빈 D+1</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/08</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>5,413억</span></div></article>
+<article class="card"><h4 class="c-t">가온전선</h4><p class="c-p"><span class="c-k">근거</span>09/07에 이미 충족 / 전선 D+2</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/07 외 2</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>4,459억</span></div></article>
+<article class="card"><h4 class="c-t">삼미금속</h4><p class="c-p"><span class="c-k">근거</span>원전·가스터빈 / 5일누적 <span style="color:#ef4444;font-weight:700">+19.2%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>상한가</span><span class="chip"><i>대금</i>2,336억</span></div></article>
+<article class="card"><h4 class="c-t">금강철강</h4><p class="c-p"><span class="c-k">근거</span>철강 09/03 시작 D+4~ / 5일누적 <span style="color:#ef4444;font-weight:700">+22.2%</span> — 제외 구간</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>1,346억</span></div></article>
+<article class="card"><h4 class="c-t">신스틸</h4><p class="c-p"><span class="c-k">근거</span>철강 / 5일누적 <span style="color:#ef4444;font-weight:700">+46.3%</span> — <strong>제외 권장</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>1,068억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">국순당(043650)</h4><p class="c-p"><span class="c-k">근거</span>전일 62배·직전최대 30.7배 / CXL 팹리스 파네시아 지분 보유 / ⚠ 보도는 09/08자·포착 13:49로 반나절 늦음 / 종가위치 23%·VWAP <span style="color:#7dabf8;font-weight:700">-7.2%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-15.7%</span>(★눌림) → <strong>추격 대상 아님</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+5.6</span><span class="chip"><i>대금</i>107억</span></div></article>
+<article class="card"><h4 class="c-t">유일로보틱스(388720)</h4><p class="c-p"><span class="c-k">근거</span>SK온과 휴머노이드용 전고체 배터리 개발(16:01 기사) / 포착 16:09로 <strong>기사 8분 뒤·NXT 시간외 구간 → 주가 선행 아님</strong> / SK온 협력 건 웹 확인 안 됨</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+15.1</span><span class="chip"><i>대금</i>218억</span></div></article>
+<article class="card"><h4 class="c-t">에스엠벡셀(010580)</h4><p class="c-p"><span class="c-k">근거</span>D+1 / 美 기업과 LMR 배터리 개발(11:14) / 5일누적 <span style="color:#ef4444;font-weight:700">+17.9%</span> 선반영 / 최대주주 89% 돌파(자진 상폐 기대)가 진짜 동력일 수 있음</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+21.2</span><span class="chip"><i>대금</i>488억</span></div></article>
+<article class="card"><h4 class="c-t">써니전자(004770)</h4><p class="c-p"><span class="c-k">근거</span>KX그룹 경영권 분쟁(09/03) / 전일 8.1배 / 고점 <span style="color:#ef4444;font-weight:700">+25.2%</span> → 종가 <span style="color:#ef4444;font-weight:700">+4.6%</span> 반납, VWAP <span style="color:#7dabf8;font-weight:700">-7.0%</span> / 재료 단계 변화 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+4.6</span><span class="chip"><i>대금</i>485억</span></div></article>
+<article class="card"><h4 class="c-t">금강공업(014280)</h4><p class="c-p"><span class="c-k">근거</span>전일 91.3배지만 종가위치 42%·VWAP <span style="color:#7dabf8;font-weight:700">-4.7%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-12.1%</span>(★눌림) — 철강 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>—</span></div></article>
+<article class="card"><h4 class="c-t">윙입푸드(900340)</h4><p class="c-p"><span class="c-k">근거</span>중국 내수 회복 + 나스닥 상장 추진 / 고가 <span style="color:#ef4444;font-weight:700">+29.2%</span> → <strong>종가위치 0%·VWAP <span style="color:#7dabf8;font-weight:700">-8.9%</span>, 최악의 마감</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>대금</i>43억</span></div></article>
+<article class="card"><h4 class="c-t">삼일제약</h4><p class="c-p"><span class="c-k">근거</span>D+0이나 대금 20억 미만·당일뉴스 0건 → <code>재료 미상 — 근거 부족</code></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>15억</span></div></article>
+<article class="card"><h4 class="c-t">블루엠텍</h4><p class="c-p"><span class="c-k">근거</span>D+0이나 대금 20억 미만·당일뉴스 0건 → <code>재료 미상 — 근거 부족</code></p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>16억</span></div></article>
+<article class="card"><h4 class="c-t">세종텔레콤</h4><p class="c-p"><span class="c-k">근거</span>D+0이나 대금 20억 미만·당일뉴스 0건 / 5일누적 <span style="color:#ef4444;font-weight:700">+12.0%</span> 선반영</p><div class="c-c"><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>충족봉</i>—</span><span class="chip"><i>등락%</i>—</span><span class="chip"><i>대금</i>6.4억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">정유·석유화학</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G2만 71회 — 수급이 아직 얇은 동반주 / 단 D+0 + 대금 30일 1위 + 직전최대 1.8배, <span style="color:#ef4444;font-weight:700">+15.4%</span>·187억·종가위치 94%</p><div class="c-c"><span class="chip"><i>종목</i>대한유화(006650)</span></div></article>
+<article class="card"><h4 class="c-t">연료전지</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(이전충족 09/07 외 2) / 4,344억이나 5일누적 <span style="color:#ef4444;font-weight:700">+14.0%</span>·종가위치 29% — 후반부</p><div class="c-c"><span class="chip"><i>종목</i>두산퓨얼셀</span></div></article>
+<article class="card"><h4 class="c-t">2차전지(탈중국 ESS)</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족 / 2,469억, D+1</p><div class="c-c"><span class="chip"><i>종목</i>엘앤에프</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>수식 미충족 / <span style="color:#ef4444;font-weight:700">+29.9%</span>, 범LG가 인수(10:24) / 대금 14억으로 유동성 없음</p><div class="c-c"><span class="chip"><i>종목</i>더코디(224060)</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">AI/로봇</h4><p class="c-p"><span class="c-k">정보지 사유</span>4,644억 / 조건검색 밖 후발 후보 — 정보지에만 등장</p><div class="c-c"><span class="chip"><i>종목</i>로보티즈</span></div></article>
+<article class="card"><h4 class="c-t">원전</h4><p class="c-p"><span class="c-k">정보지 사유</span>214억 / 조건검색 밖 후발 후보</p><div class="c-c"><span class="chip"><i>종목</i>우진</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>브렌트 100달러 유지 여부</strong> — 유지 + 롯데케미칼 종가 67,800원 위 시작 + 대한유화 미충족→충족 전환이면 진짜. 금호석유·이수화학·LG화학이 붙으면 확산. 100달러 깨지고 롯데케미칼 갭하락이면 하루짜리, 무효 기준은 갭 전체 되메움 자리 <strong>약 60,000선</strong>(시가 57,400 → 종가 67,800).</li>
+<li><strong>양자 3사(디웨이브·리게티·퀀티넘) 미국 밤 시세</strong> — 상승이면 엑스게이트·우리넷이 오늘 고점 <strong>13,450 / 9,300</strong> 회복하는지 확인. 미국이 밀리면 오늘 마감 성격(종가위치 33~51%) 그대로 이틀째 매도 확률 높음. VWAP(대략 8,630 / 12,800) 아래에서 놀면 하루짜리 뉴스 반응.</li>
+<li><strong>광통신은 &#x27;진입&#x27;이 아니라 &#x27;이탈&#x27; 관점</strong> — 대한광통신이 종가 <strong>14,960</strong>과 VWAP 부근을 지키는지만 본다. 깨지면 09/08~09/09 이틀치 물량이 한꺼번에 나온다.</li>
+<li><strong>바이오</strong> — 페니트리움바이오 상한가 잔량 유지·연속 상한 + 현대바이오 종가 <strong>7,130</strong> 위 유지면 진짜. 현대바이오가 시가 <strong>6,200</strong> 아래로 밀리면 하루짜리 동조 매수. 09/14 예고된 글로벌 심포지엄 후속 자료는 재점화 근거.</li>
+<li><strong>현대바이오 관련 후속 공시(DART)가 밤사이 떴는지</strong> — 오늘 당일뉴스 0건이라 주가 선행이었는지 여기서 갈린다.</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 브리핑 — 2026-09-09 (수) 장마감</h1>
+<p>기준일: 2026-09-09 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 12회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 켜진 불은 <strong>국제유가 100달러 돌파에 따른 정유→석유화학 확산</strong>이다. 롯데케미칼·대한유화가 나란히 <code>D+0</code>(30일 내 첫 급등)로 잡혔고, 롯데케미칼은 <code>★첫흐름 + 대금 30일 1위 + 직전5일누적 <span style="color:#7dabf8;font-weight:700">-4.1%</span></code>로 이 문서에서 가장 깨끗한 D+0이다. 두 번째는 <strong>양자암호</strong> — 정보지 3곳이 오늘 처음 이름 붙였고, 재료가 08/28의 &#x27;투자 추진&#x27;(기대)에서 오늘 &#x27;3억달러 최종계약·지분 취득&#x27;(확정)으로 단계가 올라갔다. 반면 오늘 돈이 가장 많이 들어간 <strong>광통신(대한광통신 4,540억·빛과전자 2,800억)은 09/08이 시작일인 D+1</strong>로, 신규 진입 자리가 아니라 눌림 관찰 자리다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>1순위. 정유·석유화학 — 국제유가 100달러 돌파 ⭐최우선</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">096770 SK이노베이션</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>거래대금(억)</i><strong>5,373</strong></span><span class="chip"><i>D+N</i>D+22</span><span class="chip"><i>오늘충족</i>★1봉</span><span class="chip"><i>이전충족</i>09/01(-6일)외1</span><span class="chip"><i>첫흐름</i>이전충족 09/01</span><span class="chip"><i>종가위치</i>99%</span></div></article>
+<article class="card"><h4 class="c-t">011170 롯데케미칼</h4><div class="c-c"><span class="chip"><i>등락%</i>+18.1</span><span class="chip"><i>거래대금(억)</i>646</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★8봉</span><span class="chip"><i>이전충족</i>—</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>종가위치</i>94%</span></div></article>
+<article class="card"><h4 class="c-t">006650 대한유화</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.4</span><span class="chip"><i>거래대금(억)</i>187</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G2 71)</span><span class="chip"><i>이전충족</i>—</span><span class="chip"><i>첫흐름</i>—</span><span class="chip"><i>종가위치</i>94%</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 09/01</strong> (SK이노베이션 충족 = 美·이란 교전 재개로 정유주 첫 파동). 단 그때는 <strong>정유만</strong> 움직였고, <strong>석유화학(롯데케미칼·대한유화)으로 번진 것은 오늘이 처음</strong>이다. 정보지에서도 <code>석유화학</code>·<code>유가</code>·<code>정유/석유화학</code> 세 항목이 모두 <strong>오늘 처음</strong> 등장했다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주: SK이노베이션 (5,373억, 테마 내 최대)</strong>. 다만 09/01에 이미 충족했고 D+22 — 정유 사이클로는 후반부다.</li>
+<li><strong>오늘의 신규 진입주: 롯데케미칼</strong>. 대금 절대액은 SK이노의 1/8이지만 <code>D+0</code>·<code>대금 30일 1위</code>·<code>직전최대 2.4배</code>·<code>직전5일누적 <span style="color:#7dabf8;font-weight:700">-4.1%</span></code> 4개가 동시에 맞는 유일한 종목이다. 후발주라기보다 <strong>테마가 옆으로 확장되면서 새로 붙은 첫 종목</strong>으로 본다.</li>
+<li>대한유화는 수식 미충족(G2만 71회)이지만 D+0 + 대금 30일 1위 + 직전최대 1.8배. <strong>수급이 아직 얇은 동반주.</strong></li>
+</ul>
+<p><strong>추정 재료</strong></p>
+<ul>
+<li>브렌트유 11월물이 9일 오후 배럴당 <strong>$100.02</strong>로 마감, 7월 24일 이후 첫 100달러 돌파. 호르무즈 美·이란 보복 공방 + 홍해 사우디-후티 충돌이 원인 (웹: 헤럴드경제·더페어).</li>
+<li>롯데케미칼은 유가 외에 <strong>국내외 사업재편 기대</strong>가 겹쳤다 — HD현대케미칼이 롯데대산석화를 흡수합병해 &#x27;H&amp;L어드밴스드&#x27;로 출범, 롯데케미칼·HD현대오일뱅크가 각 50% 보유 (웹: 파이낸셜뉴스).</li>
+<li>문서 기준 롯데케미칼 포착 13:57 vs 당일 최초 관련 기사 13:49(서울경제) → <strong>뉴스가 8분 앞섬. 선행 아님, 동시성.</strong></li>
+</ul>
+<p><strong>재료 단계: 기대(09/01 &quot;유가 급등 우려&quot;) → 확정(09/09 브렌트 100달러 실제 돌파)</strong> — 단계 상승. 여기에 롯데케미칼은 <strong>사업재편 = MOU/승인(09/04 LG화학·롯데케미칼 구조조정 랠리) → 통합법인 출범(확정)</strong> 이 겹친 이중 재료. <strong>실질 신규 재료로 판단한다.</strong></p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 브렌트 100달러 유지 + 롯데케미칼이 종가 67,800원(오늘 종가) 위에서 시작하고 <strong>대한유화가 오늘 미충족→충족으로 넘어오면</strong> 테마가 살아있는 것. 여기에 금호석유·이수화학·LG화학 등 <strong>오늘 이 표에 없던 석화주가 붙으면 확산 국면</strong>.</li>
+<li>❌ 아님: 유가가 100달러 아래로 되밀리고 롯데케미칼이 갭하락 출발 → 유가 원샷 이벤트로 종료. 오늘 시가 57,400 → 종가 67,800의 <strong>갭 전체가 되메워지는 자리(약 60,000선)</strong> 가 무효 기준.</li>
+</ul>
+<hr>
+<h3>2순위. 양자암호 / 양자컴퓨팅 — 美 정부 지분투자 확정</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">356680 엑스게이트</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.7</span><span class="chip"><i>거래대금(억)</i><strong>680</strong></span><span class="chip"><i>오늘충족</i>★20봉</span><span class="chip"><i>이전충족</i>07/28(-30일)</span><span class="chip"><i>첫흐름</i>이전충족 07/28</span></div></article>
+<article class="card"><h4 class="c-t">046970 우리로</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>거래대금(억)</i>380</span><span class="chip"><i>D+N</i>D+8</span><span class="chip"><i>오늘충족</i>★6봉</span><span class="chip"><i>이전충족</i>08/28(-8일)</span><span class="chip"><i>첫흐름</i>이전충족 08/28</span></div></article>
+<article class="card"><h4 class="c-t">115440 우리넷</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.2</span><span class="chip"><i>거래대금(억)</i>220</span><span class="chip"><i>D+N</i>D+27</span><span class="chip"><i>오늘충족</i>★19봉</span><span class="chip"><i>이전충족</i>—</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">115500 케이씨에스</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.6</span><span class="chip"><i>거래대금(억)</i>34</span><span class="chip"><i>오늘충족</i>★7봉</span><span class="chip"><i>이전충족</i>08/28(-8일)</span><span class="chip"><i>첫흐름</i>이전충족 08/28</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 08/28</strong> (우리로·케이씨에스가 같은 날 동시 충족 — 미 정부 양자컴 투자 &#x27;추진&#x27; 보도 시점). 오늘은 그로부터 <strong>8거래일째</strong>로, 달력상 D+0은 아니다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주: 엑스게이트 (680억, 테마 내 최대)</strong>. 순수 양자보안·PQC 종목이고 30일 대금 1위, 전일 9.7배. 다만 이전충족 07/28로 이 테마에서 가장 먼저 움직였던 종목이다.</li>
+<li>우리로(380억)는 등락률 1등(상한가)이지만 대금은 절반. 08/28에 이미 충족 → <strong>선행 후 재점화</strong>.</li>
+<li><strong>우리넷은 오늘이 ★첫흐름</strong>이지만 대금 220억으로 테마 내 3위. 원칙 4대로 <strong>후발주 성격</strong>으로 본다. 다만 전일 대비 <strong>28.8배·직전최대 9.3배</strong>는 성격이 완전히 다른 자금이 들어왔다는 뜻이라 무시하면 안 된다.</li>
+</ul>
+<p><strong>추정 재료</strong>: 美 상무부가 디웨이브퀀텀·리게티컴퓨팅·퀀티넘 3사와 각 1억달러씩 <strong>총 3억달러 지원 최종 계약을 체결</strong>, 무상 보조금이 아니라 <strong>정부가 의결권 없는 소수 지분을 직접 취득</strong>하는 조건 포함 (웹: 서울경제·이데일리·머니투데이). 우리넷은 PTN 광전송장비 + 양자암호통신 모듈 공급사 (웹: 머니투데이).</p>
+<p><strong>재료 단계: 기대(08/28 &quot;3조원 지원 추진·지분투자 검토&quot;) → 확정(09/09 3억달러 최종계약 체결·지분 취득)</strong> — <strong>1→3 단계 상승. 달력상 D+8이지만 실질적으로 새 사이클의 시작(실질 D+0)으로 판단한다.</strong> 정보지 <code>양자암호 관련주</code>·<code>양자컴퓨터</code> 두 항목이 <strong>오늘 처음</strong> 잡힌 것도 같은 방향이다.</p>
+<p><strong>⚠ 마감 성격이 약하다</strong>: 우리넷 종가위치 44%·VWAP <span style="color:#7dabf8;font-weight:700">-5.0%</span>, 엑스게이트 51%·VWAP <span style="color:#7dabf8;font-weight:700">-1.5%</span>, 케이씨에스 33%·VWAP <span style="color:#7dabf8;font-weight:700">-1.6%</span>. 우리로만 상한가 잠금(100%). <strong>오후에 물량이 나왔다.</strong></p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 우리로가 상한가 다음날 갭 유지 + <strong>엑스게이트가 오늘 고점 13,450 회복</strong>. 조건검색 밖의 큐에스아이·아이씨티케이 등 순수 양자 종목이 새로 붙으면 확산.</li>
+<li>❌ 아님: 우리넷·엑스게이트가 오늘 VWAP(각각 대략 8,630 / 12,800 수준) 아래에서 놀면 오늘 고점 매수자가 다 물린 것 → 하루짜리 뉴스 반응.</li>
+</ul>
+<hr>
+<h3>3순위. 항암 신약 &#x27;페니트리움&#x27; 계열 — 2종목 동시</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">048410 현대바이오</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.9</span><span class="chip"><i>거래대금(억)</i><strong>724</strong></span><span class="chip"><i>D+N</i>D+21</span><span class="chip"><i>오늘충족</i>★31봉</span><span class="chip"><i>이전충족</i>—</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>5일누적%</i>-1.9</span></div></article>
+<article class="card"><h4 class="c-t">187660 페니트리움바이오</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i>298</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>★28봉</span><span class="chip"><i>이전충족</i>—</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>5일누적%</i>+17.3</span></div></article>
+</div>
+<p><strong>테마 시작일 추정: 09/04</strong> (페니트리움바이오 미국 임상 2a상 승인 → 09/07 급등 → 직전급등일 09/07). 페니트리움바이오는 <strong>오늘이 D+2</strong>로 이미 이틀 지났다.</p>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>거래대금 절대액은 현대바이오(724억)가 페니트리움바이오(298억)의 2.4배.</strong> 원칙 4대로면 현대바이오가 대장주다.</li>
+<li>그러나 <strong>재료의 주체는 페니트리움바이오</strong>(자체 연구결과 발표)이고, 먼저 움직인 것도 페니트리움바이오다(09/07 <span style="color:#ef4444;font-weight:700">+14.7%</span>, 5일누적 <span style="color:#ef4444;font-weight:700">+17.3%</span>). 현대바이오는 관계사로 <strong>오늘 처음 붙은 후발주 성격</strong>.</li>
+<li>판정: <strong>테마 시작은 페니트리움바이오(09/04~09/07), 오늘 자금이 넘어간 곳은 현대바이오.</strong> 현대바이오는 <code>대금 30일 1위 + 직전최대 4.5배 + 전일 17.9배 + 직전5일누적 <span style="color:#7dabf8;font-weight:700">-1.9%</span></code> — <strong>조용하다가 오늘만 튄 전형적 신규 유입 패턴</strong>이라 D+0 성격이 강하다.</li>
+</ul>
+<p><strong>추정 재료</strong>: 페니트리움바이오사이언스가 차세대 표적항암제 &#x27;다락손라십&#x27;과 자사 후보물질 &#x27;페니트리움&#x27;을 환자 유래 폐암·난소암 오가노이드에서 비교 평가한 1차 연구결과 발표 — <strong>암세포 주변 섬유아세포(물리적 장벽)를 해체해 기존 표적항암제 전달력을 높이는 &#x27;가짜내성 극복&#x27; 기전 확인</strong> (웹: 와이드경제·중앙이코노미뉴스). 현대바이오는 웹에서 &#x27;제프티 임상 기대&#x27;로 상승했다는 보도가 있으나 <strong>정확한 보도 시각을 확인하지 못했다</strong> (웹: 잡포스트). 문서 기준 현대바이오 <strong>당일뉴스 0건</strong>, 포착 10:18 → <strong>주가 선행 가능성이 남는다.</strong></p>
+<p><strong>재료 단계: 기대(06~07월 &quot;美 2상 준비&quot;, &quot;IND 제출 준비&quot;) → 확정(09/04 임상 2a상 승인 → 09/09 비교연구 1차 결과 확인)</strong> — 단계 상승, 실질 신규.</p>
+<p><strong>⚠ 주의</strong>: 두 종목 다 종가위치가 페니트리움바이오 100%(상한가)·현대바이오 62%로 갈렸고, 현대바이오는 고점 7,730 → 종가 7,130으로 <span style="color:#7dabf8;font-weight:700">-7.8%</span> 밀렸다. 바이오 임상 재료는 후속 데이터 없이 하루 만에 식는 경우가 많다.</p>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜: 페니트리움바이오 상한가 잔량 유지·연속 상한 + 현대바이오가 오늘 종가 7,130 위 유지. 09/14로 예고된 <strong>글로벌 심포지엄</strong>(문서 08/03 기사) 관련 후속 자료가 나오면 재점화 근거.</li>
+<li>❌ 아님: 현대바이오가 오늘 시가 6,200 아래로 되밀리면 하루짜리 동조 매수였던 것.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 — 눌림 관찰용)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>광통신 / 통신장비</strong></h4><p class="c-p"><span class="c-k">대장주(대금)</span><strong>대한광통신 4,540억</strong> (이전충족 09/08 외 5회)</p><p class="c-p"><span class="c-k">상태</span>오늘 돈이 가장 많이 들어왔지만 <strong>신규 진입 자리 아님</strong></p><div class="c-c"><span class="chip"><i>시작일</i>09/08 (직전 파동은 07/31·08/05)</span><span class="chip"><i>오늘 위치</i><strong>D+1</strong></span></div></article>
+<article class="card"><h4 class="c-t">원전·가스터빈(대미투자)</h4><p class="c-p"><span class="c-k">대장주(대금)</span><strong>우리기술 5,413억</strong> (이전충족 09/08)</p><p class="c-p"><span class="c-k">상태</span>삼미금속 2,336억 상한가, 5일누적 <span style="color:#ef4444;font-weight:700">+19.2%</span></p><div class="c-c"><span class="chip"><i>시작일</i>09/07~09/08</span><span class="chip"><i>오늘 위치</i>D+1~D+2</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력망(AI DC)</h4><p class="c-p"><span class="c-k">대장주(대금)</span><strong>가온전선 4,459억</strong> (이전충족 09/07 외 2)</p><p class="c-p"><span class="c-k">상태</span>대한전선 1,262억이 오늘 ★첫흐름 = 후발</p><div class="c-c"><span class="chip"><i>시작일</i>09/07</span><span class="chip"><i>오늘 위치</i>D+2</span></div></article>
+<article class="card"><h4 class="c-t">연료전지</h4><p class="c-p"><span class="c-k">대장주(대금)</span><strong>두산퓨얼셀 4,344억</strong> (미충족, 이전충족 09/07 외 2)</p><p class="c-p"><span class="c-k">상태</span>5일누적 <span style="color:#ef4444;font-weight:700">+14.0%</span>, 종가위치 29% — 후반부</p><div class="c-c"><span class="chip"><i>시작일</i>09/07</span><span class="chip"><i>오늘 위치</i>D+2</span></div></article>
+<article class="card"><h4 class="c-t">철강(알래스카 LNG)</h4><p class="c-p"><span class="c-k">대장주(대금)</span>금강철강 1,346억 / 신스틸 1,068억</p><p class="c-p"><span class="c-k">상태</span>신스틸 5일누적 <span style="color:#ef4444;font-weight:700">+46.3%</span>, 금강철강 <span style="color:#ef4444;font-weight:700">+22.2%</span> — <strong>제외 구간</strong></p><div class="c-c"><span class="chip"><i>시작일</i><strong>09/03</strong></span><span class="chip"><i>오늘 위치</i>D+4~</span></div></article>
+<article class="card"><h4 class="c-t">2차전지(탈중국 ESS)</h4><p class="c-p"><span class="c-k">대장주(대금)</span>엘앤에프 2,469억 (미충족)</p><p class="c-p"><span class="c-k">상태</span>롯데EM·이노메트리·한빛레이저 동반</p><div class="c-c"><span class="chip"><i>시작일</i>09/08</span><span class="chip"><i>오늘 위치</i>D+1</span></div></article>
+</div>
+<p><strong>광통신에 대해 한 마디 더</strong> — 오늘 코닝-버라이즌 광섬유 장기공급계약(2027~2032, 8,000만 마일 이상, 수십억달러) 체결 소식이 재료다 (웹: 이투데이·매일신문·kr.investing.com). 정보지 <code>통신장비/5G/광통신</code>은 <strong>오늘 처음</strong>이고 재료 단계도 <strong>기대(08/05 中부품 수입금지 추진) → 확정(계약 체결)</strong> 로 올라갔다. 하지만 <strong>대한광통신은 30일간 6회, 빛과전자는 5회 충족했고 오늘도 이전충족 09/08이 붙어 있다.</strong> 원칙 3대로 D+1이다.</p>
+<ul>
+<li>더 결정적으로 <strong>마감이 나쁘다</strong>: 빛과전자 종가위치 17%·VWAP <span style="color:#7dabf8;font-weight:700">-5.1%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-14.6%</span>(★눌림), 대한광통신 45%·VWAP <span style="color:#7dabf8;font-weight:700">-0.6%</span>. 오늘 아침에 산 사람 대부분이 물렸다.</li>
+<li>오늘 ★첫흐름으로 잡힌 <strong>머큐리(158억)·우리넷(220억)·쏘닉스(13억)</strong> 는 전부 대금이 작다 → <strong>후발주.</strong> 머큐리는 포착 09:12인데 최초 관련 보도가 10:02(웹: 이투데이)로 <strong>주가가 50분 선행</strong>했고, 우리넷도 포착 09:10 vs 09:15 보도(웹: 머니투데이)로 5분 선행했다. 선행은 맞지만 대금이 대장을 못 이긴다.</li>
+<li>⚠ 웹의 우리넷 &quot;24% 급등&quot;은 <strong>장중 시세</strong>다. 문서 기준 종가는 <span style="color:#ef4444;font-weight:700">+12.2%</span> — <strong>정본은 문서</strong>다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>국순당 (043650)</strong> <span style="color:#ef4444;font-weight:700">+5.6%</span> / 107억 / <strong>★첫흐름</strong> — 전일 대비 <strong>62배</strong>, 직전최대 <strong>30.7배</strong>. 술 회사가 이렇게 움직인 이유는 <strong>CXL 팹리스 파네시아 지분 보유</strong>다. 파네시아가 메타와 공동으로 CXL + 광통신으로 AI 데이터센터 전체를 하나의 칩처럼 묶는 구조를 네이처 자매지 NREE에 게재했다는 소식 (웹: 정보통신신문·디일렉·와우테일). <strong>⚠ 다만 이 보도는 09/08자</strong>이고, 오늘 국순당 포착은 13:49로 반나절 늦다. 장중 22%까지 올랐다가(웹: CBC뉴스) <strong>종가위치 23%·VWAP <span style="color:#7dabf8;font-weight:700">-7.2%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-15.7%</span>(★눌림)</strong> 로 마감 — 들어온 돈이 그날 다 빠졌다. <strong>추격 대상 아님.</strong></li>
+<li><strong>써니전자 (004770)</strong> <span style="color:#ef4444;font-weight:700">+4.6%</span> / 485억 / 전일 8.1배 — KX그룹 경영권 분쟁(09/03). 고점 <span style="color:#ef4444;font-weight:700">+25.2%</span>에서 종가 <span style="color:#ef4444;font-weight:700">+4.6%</span>로 반납, VWAP <span style="color:#7dabf8;font-weight:700">-7.0%</span>. 재료 단계 변화 없음.</li>
+<li><strong>에스엠벡셀 (010580)</strong> <span style="color:#ef4444;font-weight:700">+21.2%</span> / 488억 / D+1 — 美 기업과 차세대 LMR 배터리 개발 협력(11:14 이데일리, 문서). 08/28 전고체 → 09/09 LMR로 <strong>재료가 이어지는 중</strong>이지만 5일누적 <span style="color:#ef4444;font-weight:700">+17.9%</span>로 이미 선반영. 최대주주 지분 89% 돌파(자진 상폐 기대)가 진짜 동력일 수 있음.</li>
+<li><strong>유일로보틱스 (388720)</strong> <span style="color:#ef4444;font-weight:700">+15.1%</span> / 218억 / <strong>★첫흐름</strong> — SK온과 휴머노이드용 전고체 배터리 개발(16:01 전자신문, 문서). 포착이 16:09로 <strong>기사 8분 뒤</strong>, NXT 시간외 구간이다. <strong>주가 선행 아님.</strong> 웹에서 SK온-유일로보틱스 협력 건은 별도 확인이 안 됐다.</li>
+<li><strong>더코디 (224060)</strong> <span style="color:#ef4444;font-weight:700">+29.9%</span> — 범LG가 인수(10:24 전자신문). 대금 14억으로 유동성 없음. 수식 미충족.</li>
+<li><strong>윙입푸드 (900340)</strong> <span style="color:#ef4444;font-weight:700">+10.4%</span> / 43억 — 중국 내수 회복 + 나스닥 상장 추진 (웹: 와이드경제). <strong>종가위치 0%, VWAP <span style="color:#7dabf8;font-weight:700">-8.9%</span></strong> — 고가 <span style="color:#ef4444;font-weight:700">+29.2%</span>에서 저가 마감. 최악의 마감.</li>
+<li><strong>엠젠솔루션·삼일제약·세종텔레콤·블루엠텍</strong> — 삼일제약(15억)·세종텔레콤(6.4억)·블루엠텍(16억)은 <code>D+0</code>으로 잡혔지만 <strong>거래대금이 20억 미만</strong>이라 판단 근거가 못 된다. 셋 다 당일뉴스 0건, <code>재료 미상 — 근거 부족</code>. 세종텔레콤은 5일누적 <span style="color:#ef4444;font-weight:700">+12.0%</span>로 이미 선반영.</li>
+<li><strong>금강공업 (014280)</strong> — 전일 <strong>91.3배</strong>라는 극단적 대금 증가에 눈이 가지만, 종가위치 42%·VWAP <span style="color:#7dabf8;font-weight:700">-4.7%</span>·고점대비 <span style="color:#7dabf8;font-weight:700">-12.1%</span>(★눌림). 철강 후발주.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>정유·석유화학 (국제유가 브렌트 100달러 돌파 + 롯데케미칼 사업재편) → 정보지 &#x27;석유화학&#x27;·&#x27;유가&#x27;·&#x27;정유/석유화학&#x27; 3개 항목 모두 오늘 처음 등장</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>SK이노베이션 5,373억. 단 D+22·이전충족 09/01 → 정유 사이클로는 후반부. 오늘 새로 붙은 핵심은 롯데케미칼(646억, D+0, ★첫흐름, 대금 30일 1위, 5일누적 <span style="color:#7dabf8;font-weight:700">-4.1%</span>)</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>· 우리로·우리넷·엑스게이트 — 기대(08/28 지분투자 검토) → 확정(09/09 3억달러 계약 체결·지분 취득) · 현대바이오·페니트리움바이오 — 기대(임상 준비) → 확정(09/04 2a상 승인 → 09/09 비교연구 결과) · 대한광통신·RF머트리얼즈 등 광통신 — 기대(08/05 中규제 추진) → 확정(코닝-버라이즌 계약 체결) ※ 단 광통신은 09/08이 시작일 → 재료는 새로워도 진입 타이밍은 D+1</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>머큐리(158억)·우리넷(220억)·쏘닉스(13억)·라이콤(125억)·오이솔루션(186억) → 광통신 대장 대한광통신(4,540억)·빛과전자(2,800억)의 1/20 수준 대한전선(1,262억, ★첫흐름) → 전선 대장 가온전선(4,459억, 이전충족 09/07)보다 늦음 현대바이오 → 대금은 크지만 재료 주체는 페니트리움바이오(09/04 선행) 금강공업·동일스틸럭스 → 철강 대장 금강철강(1,346억, 09/03 시작)의 후발</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>대한유화(187억, D+0, 수식 미충족·G2만 71회 — 내일 충족으로 넘어오는지가 관건) 엑스게이트(680억, 양자 테마 대금 최대 — 우리로만 보다가 놓치기 쉬움) 조건검색 밖 후발 후보: 로보티즈(4,644억, AI/로봇, 정보지에만 등장)·우진(214억, 원전)</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>대한광통신·빛과전자(D+1, 둘 다 VWAP 아래 마감 — 되돌림 확인 후에만) 우리기술·삼미금속(원전·가스터빈, D+1~D+2) 가온전선·두산퓨얼셀(D+2) 금강철강·신스틸·TCC스틸(철강, 09/03 시작 D+4~ / 신스틸 5일누적 <span style="color:#ef4444;font-weight:700">+46.3%</span> → 제외 권장)</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>브렌트유가 100달러 위에 남아 있는가. 남아 있으면 롯데케미칼·대한유화 갭 유지 여부,</li>
+</ol>
+<p>그리고 오늘 이 표에 없던 석화주(금호석유·이수화학·LG화학)가 붙는지 = 확산 신호. 100달러가 깨지면 유가 테마는 하루짜리로 종료.</p>
+<ol>
+<li>양자 3사(디웨이브·리게티·퀀티넘)의 미국 밤 시세. 추가 상승이면 엑스게이트·우리넷이</li>
+</ol>
+<p>오늘 고점(13,450 / 9,300)을 회복하는지 본다. 미국이 밀리면 오늘 마감 성격(종가위치 33~51%) 그대로 이틀째 매도로 이어질 확률이 높다.</p>
+<ol>
+<li>광통신은 &#x27;진입&#x27;이 아니라 &#x27;이탈&#x27; 관점. 대한광통신이 오늘 종가 14,960과 VWAP 부근을</li>
+</ol>
+<p>지키는지만 본다. 여기가 깨지면 09/08~09/09 이틀치 물량이 한꺼번에 나온다. 동시에 현대바이오 관련 후속 공시(DART)가 밤사이 떴는지 — 오늘 당일뉴스 0건이라 주가 선행이었는지 여기서 갈린다. ```</p>
+<hr>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>[롯데케미칼, 국내외 사업재편 기대 속 18%대 급등 — 파이낸셜뉴스](https://www.fnnews.com/news/202609091509259801)</li>
+<li>[호르무즈·홍해 동시에 불붙었다…브렌트유 다시 100달러 넘었다 — 헤럴드경제](https://biz.heraldcorp.com/article/10868129)</li>
+<li>[호르무즈 막히고 홍해도 불안…국제유가 다시 100달러 시대 — 더페어](https://www.thefairnews.co.kr/news/articleView.html?idxno=87565)</li>
+<li>[3억弗 주고 지분 받은 美 정부…디웨이브 등 양자컴 주가 일제 상승 — 서울경제](https://www.sedaily.com/article/20088839)</li>
+<li>[미 정부 양자컴퓨터기업 투자에… 한국 양자 관련주도 오름세 — 머니투데이](https://www.mt.co.kr/stock/2026/09/09/2026090914353031694)</li>
+<li>[우리넷, 24% 급등…美 훈풍에 국내 광통신주 동반 강세 — 머니투데이](https://www.mt.co.kr/stock/2026/09/09/2026090909155722700)</li>
+<li>[[특징주] 버라이즌·코닝 광섬유 계약…머큐리 등 광통신株 급등 — 이투데이](https://www.etoday.co.kr/news/view/2623452)</li>
+<li>[美 광통신주 호재에 국내도 훈풍…머큐리·RF머트리얼즈 20%대 급등 — 매일신문](https://www.imaeil.com/page/view/2026090910134136541)</li>
+<li>[[특징주] 페니트리움바이오, &#x27;가짜내성&#x27; 극복 항암 기전 확인 소식에 상한가 직행 — 와이드경제](https://www.widedaily.com/news/articleView.html?idxno=300853)</li>
+<li>[페니트리움바이오 주가, 9월 9일 상한가 7,420원 29.95% 상승 마감 — 중앙이코노미뉴스](https://www.joongangenews.com/news/articleView.html?idxno=546980)</li>
+<li>[현대바이오 7천원대 급등…제프티 임상 기대에 장중 23% 치솟아 — 잡포스트](https://www.job-post.co.kr/news/articleView.html?idxno=226855)</li>
+<li>[파네시아, 메타와 CXL 기반 AI DC 구조 공동 제시 — 정보통신신문](https://www.koit.co.kr/news/articleView.html?idxno=208914)</li>
+<li>[파네시아, 美 메타와 네이처에 CXL 기반 AI 데이터센터 구조 제안 — 와우테일](https://wowtale.net/2026/09/08/264140/)</li>
+<li>[[속보] 국순당 22%대 급등 4470원…정적 VI 해제 후 강세 지속 — CBC뉴스](https://www.cbci.co.kr/news/articleView.html?idxno=605238)</li>
+<li>[[특징주] 윙입푸드, 중국 내수 소비 회복 기대감과 나스닥 상장 추진 소식에 급등세 — 와이드경제](https://www.widedaily.com/news/articleView.html?idxno=300814)</li>
+<li>[[스팟] 코스피 97.12포인트(1.4%) 오른 7051.64 마감 — 머니투데이](https://www.mt.co.kr/stock/2026/09/09/2026090915334931960)</li>
+</ul>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-09-09 21:37
+</p>
+</article></div>
+</body></html>
