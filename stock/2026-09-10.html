@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-09-10 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-09-10</span>
+</div></header>
+<div class="wrap"><article>
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-09-10 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>오늘 거래대금 상위는 유가·정유(흥구석유 3,265억), 반도체(주성엔지니어링 1.13조), 로봇(로보티즈 5,982억)이 차지했으나 이들은 전부 09/02~09/08에 이미 시작된 D+2~D+8 테마다. 돈은 거기 있지만 초입은 거기가 아니다. 유가·도시가스 갈래는 오전 고점 후 종일 흘러내린 당일 소진형 마감(대성에너지 VWAP <span style="color:#7dabf8;font-weight:700">-6.7%</span>, 극동유화 <span style="color:#7dabf8;font-weight:700">-7.0%</span>)이었다.</p>
+<p>오늘 처음 켜진 불은 셋 — ①13:16 HD현대중공업 1조722억 발전엔진·SMR 시설투자 공시(조선 엔진기자재), ②샘표 자사주 30% 소각 + 중동발 곡물가 우려(사료), ③유가 100달러 돌파의 2차 확산(도시가스·윤활유).</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">발전엔진·SMR / 조선 엔진기자재</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>HD현대중공업 1조722억 시설투자 공시(9/10, 발전엔진 8,336억+SMR 2,386억)</p><p class="c-p"><span class="c-k">판단</span>★최우선. 테마 시작일 추정 09/10. 뉴스 선행·주가 후행(원칙 1의 예외)</p><div class="c-c"><span class="chip"><i>수식충족</i>2종목</span><span class="chip"><i>정보지</i>오늘 처음</span><span class="chip"><i>신선도</i>이력 없음 → 확정 (명백한 신규)</span></div></article>
+<article class="card"><h4 class="c-t">곡물·사료 (사료 갈래)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>FAO 8월 세계곡물가격지수 116.3p(<span style="color:#ef4444;font-weight:700">+2.2%</span>, 2개월 연속·24년 5월 이후 최고) + 호르무즈 물류 우려</p><p class="c-p"><span class="c-k">판단</span>테마 시작일 추정 09/02→09/03, 오늘은 2차 점화. 단 한일사료·신송홀딩스 기준으론 실질 D+0. 마감 성격 나쁨</p><div class="c-c"><span class="chip"><i>수식충족</i>3종목</span><span class="chip"><i>정보지</i>오늘 처음(<code>사료 관련주</code>는 09/02 1회)</span><span class="chip"><i>신선도</i>기대 → 기대 (재탕)</span></div></article>
+<article class="card"><h4 class="c-t">곡물·사료 (샘표 갈래)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>샘표 자사주 86만32주(29.92%) 소각 결정, 소각일 9/11</p><p class="c-p"><span class="c-k">판단</span>재료가 곡물이 아닌 지배구조·주주환원. 정보지의 &#x27;대두 관련주&#x27; 분류는 사후 이름붙이기. 9/11 재료 소멸 리스크</p><div class="c-c"><span class="chip"><i>수식충족</i>1종목</span><span class="chip"><i>정보지</i>오늘 처음</span><span class="chip"><i>신선도</i>확정</span></div></article>
+<article class="card"><h4 class="c-t">도시가스·윤활유 (유가 2차 확산)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>브렌트 11월물 101.21달러(<span style="color:#ef4444;font-weight:700">+3.36%</span>), WTI 10월물 100달러 돌파</p><p class="c-p"><span class="c-k">판단</span>본류는 D+6~D+8로 신규 진입 대상 아님. 오늘 새로 붙은 건 도시가스·윤활유 갈래뿐. 전 종목 마감 성격 최악</p><div class="c-c"><span class="chip"><i>수식충족</i>3종목</span><span class="chip"><i>신선도</i>기대 → 기대 (재탕, 신선도 최하)</span></div></article>
+<article class="card"><h4 class="c-t">반도체 검사·소부장 (D+2~D+3)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>정보지 <code>반도체</code> 8일째 등장</p><p class="c-p"><span class="c-k">판단</span>돈은 가장 크지만 초입 아님. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>8일째</span></div></article>
+<article class="card"><h4 class="c-t">로봇·피지컬AI (D+1~D+4)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>포항시·경북도·뉴로메카 로봇 파운드리 MOU(1,800억, 체결일 9/9)</p><p class="c-p"><span class="c-k">판단</span>⚠ 정보지 정정 — 재료 기준 D+1. 주체 뉴로메카 <span style="color:#ef4444;font-weight:700">+1.1%</span>·대금 62억(30일 17위)로 시장이 사지 않음</p><div class="c-c"><span class="chip"><i>정보지</i>오늘 처음 표시</span></div></article>
+<article class="card"><h4 class="c-t">AI 전력·연료전지 (D+1)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>HD현대 SMR과 같은 &#x27;AI 데이터센터 전력&#x27; 카테고리</p><p class="c-p"><span class="c-k">판단</span>범한퓨얼셀 1,438억, 이전충족 09/09외2. 테마 1이 살아나면 같이 볼 것</p></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>발전엔진·SMR / 조선 엔진기자재</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">케이에스피(073010)</h4><p class="c-p"><span class="c-k">근거</span>전일 123.4배 / 30일 대금 1위 / 직전최대 18.8배, D+28. 탄력 기준 실질 주도주, 크랭크샤프트 직결</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>19봉 (13:43)</span><span class="chip"><i>등락%</i>+20.1</span><span class="chip"><i>대금</i>209억</span></div></article>
+<article class="card"><h4 class="c-t">HD현대마린솔루션(443060)</h4><p class="c-p"><span class="c-k">근거</span>30일 대금 1위, 실질 대장. 단 시총 10.3조·유통회전 1.6%로 탄력 제한, 종가위치 56%·VWAP <span style="color:#7dabf8;font-weight:700">-0.4%</span> 중립 마감</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>9봉 (14:09)</span><span class="chip"><i>등락%</i>+7.1</span><span class="chip"><i>대금</i>681억</span></div></article>
+</div>
+<h3>곡물·사료 — 사료 갈래</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한일사료(005860)</h4><p class="c-p"><span class="c-k">근거</span>전일 51.9배 / 30일 대금 1위 / 직전최대 10.8배. 사료 갈래 대장, 실질 D+0. 단 고가 <span style="color:#ef4444;font-weight:700">+17.4%</span>→종가 <span style="color:#ef4444;font-weight:700">+3.3%</span>, 종가위치 19%·VWAP <span style="color:#7dabf8;font-weight:700">-5.4%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>22봉 (10:23)</span><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>대금</i>244억</span></div></article>
+<article class="card"><h4 class="c-t">신송홀딩스(006880)</h4><p class="c-p"><span class="c-k">근거</span>전일 47.8배 / 30일 대금 1위, 실질 D+0. 단 한일사료 244억의 1/4로 후발, 종가위치 27%·VWAP <span style="color:#7dabf8;font-weight:700">-5.0%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>13봉 (09:28)</span><span class="chip"><i>등락%</i>+7.5</span><span class="chip"><i>대금</i>66억</span></div></article>
+<article class="card"><h4 class="c-t">대주산업(003310)</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족 → 오늘이 첫날 아님. 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/03</span><span class="chip"><i>충족봉</i>5봉</span><span class="chip"><i>등락%</i>+2.7</span><span class="chip"><i>대금</i>17억</span></div></article>
+</div>
+<h3>곡물·사료 — 샘표 갈래(재료 별개)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">샘표식품(248170)</h4><p class="c-p"><span class="c-k">근거</span>D+0. 종가위치 100%·VWAP <span style="color:#ef4444;font-weight:700">+5.7%</span>(자사주 소각 재료의 힘). 단 재료가 곡물 아님, 소각일 9/11</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>6봉 (09:23)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>494억</span></div></article>
+</div>
+<h3>도시가스·윤활유 (유가 2차 확산)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">대성에너지(117580)</h4><p class="c-p"><span class="c-k">근거</span>전일 43.5배 / 직전최대 25.3배. 도시가스 갈래 대장. 단 종가위치 19%·VWAP <span style="color:#7dabf8;font-weight:700">-6.7%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>32봉 (09:17)</span><span class="chip"><i>등락%</i>+4.5</span><span class="chip"><i>대금</i>398억</span></div></article>
+<article class="card"><h4 class="c-t">극동유화(014530)</h4><p class="c-p"><span class="c-k">근거</span>윤활유 갈래 첫 충족. 종가위치 16%·VWAP <span style="color:#7dabf8;font-weight:700">-7.0%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>29봉 (10:16)</span><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>대금</i>238억</span></div></article>
+<article class="card"><h4 class="c-t">지에스이(053050)</h4><p class="c-p"><span class="c-k">근거</span>09/02에 이미 충족 → 오늘이 첫날 아님. 종가위치 25%·VWAP <span style="color:#7dabf8;font-weight:700">-4.9%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/02</span><span class="chip"><i>충족봉</i>9봉 (10:16)</span><span class="chip"><i>등락%</i>+5.9</span><span class="chip"><i>대금</i>85억</span></div></article>
+<article class="card"><h4 class="c-t">*(참고) 흥구석유(024060)*</h4><p class="c-p"><span class="c-k">근거</span>09/01·09/02에 이미 충족, D+6. 테마 전체 대장(시총 2,177억·회전 220.9%)이나 신규 진입 대상 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/02외1</span><span class="chip"><i>충족봉</i>22봉</span><span class="chip"><i>등락%</i>+20.0</span><span class="chip"><i>대금</i>3,265억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">고영(098460)</h4><p class="c-p"><span class="c-k">근거</span>30일 대금 1위 / 직전5일 <span style="color:#7dabf8;font-weight:700">-2.4%</span> / 종가위치 92%·VWAP <span style="color:#ef4444;font-weight:700">+2.4%</span>. 오늘 유일하게 &quot;조용하다 튀어서 안 밀리고 끝난&quot; 종목. 등락 <span style="color:#ef4444;font-weight:700">+5.7%</span>라 D+N은 <code>-</code>(급등일 아님). <strong>당일뉴스 없음, 웹에서도 개별 재료 확인 안 됨 → 재료 미상, 주가 선행 추정.</strong> 내일 확인 1순위</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>09:09 충족</span><span class="chip"><i>등락%</i>+5.7</span><span class="chip"><i>대금</i>1,233억</span></div></article>
+<article class="card"><h4 class="c-t">퀄리타스반도체(432720)</h4><p class="c-p"><span class="c-k">근거</span>뉴스 14:07 대비 주가 4시간 40분 선행. 코아시아세미 20억 IP 라이선스 계약(공시 13:38), 이력 없음 → 확정. 단 대금 158억으로 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>09:24 충족</span><span class="chip"><i>대금</i>158억</span></div></article>
+<article class="card"><h4 class="c-t">피아이이(452450)</h4><p class="c-p"><span class="c-k">근거</span>D+28. 세미콘 타이완(09/02) 재탕. 종가위치 50%·VWAP <span style="color:#7dabf8;font-weight:700">-4.7%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>대금</i>284억</span></div></article>
+<article class="card"><h4 class="c-t">중앙첨단소재(051980)</h4><p class="c-p"><span class="c-k">근거</span>GTX-B 101억 계약에도 종가 <span style="color:#7dabf8;font-weight:700">-2.6%</span>, 종가위치 4%. 충족했다고 다 되는 게 아니라는 사례</p><div class="c-c"><span class="chip"><i>충족봉</i>13:21 충족</span><span class="chip"><i>등락%</i>-2.6</span><span class="chip"><i>대금</i>112억</span></div></article>
+<article class="card"><h4 class="c-t">에스투더블유(488280)</h4><p class="c-p"><span class="c-k">근거</span>D+10, 09/09 등에 이미 4번 충족. 시간외 충족 → 정규장 신호 아님. 신규 진입 대상 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/09외3</span><span class="chip"><i>충족봉</i>NXT 16:44(시간외)</span><span class="chip"><i>대금</i>817억</span></div></article>
+<article class="card"><h4 class="c-t">다우기술(023590)</h4><p class="c-p"><span class="c-k">근거</span><strong>재료 미상 — 문서·웹 모두 확인 안 됨.</strong> 충족 1봉 + 시간외 → 신호 약함. 무시</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>1봉, 16:01 NXT(시간외)</span><span class="chip"><i>대금</i>175억</span></div></article>
+<article class="card"><h4 class="c-t">마이크로투나노(424980)</h4><p class="c-p"><span class="c-k">근거</span>웹에서도 급등 사유 확인 안 됨. <strong>금액이 작아 판단 불가</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>대금</i>21억</span></div></article>
+<article class="card"><h4 class="c-t">알파칩스(117670)</h4><p class="c-p"><span class="c-k">근거</span>관계사 포스텍 CPO 부품 기사 14:32 대비 7분 선행. <strong>금액이 작아 판단 불가</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>14:25 충족</span><span class="chip"><i>대금</i>24억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">발전엔진·SMR</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 776억으로 절대액 1위지만 <span style="color:#7dabf8;font-weight:700">-3.7%</span> 하락 = 테마 반응이 아님(지주사 차익실현)</p><div class="c-c"><span class="chip"><i>종목</i>HD현대(267250)</span></div></article>
+<article class="card"><h4 class="c-t">발전엔진·SMR</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+2.4%</span>, 263억. 충족 0 + 이전충족 09/02외3 → 다른 사이클에서 이미 돈 종목, 오늘은 후발</p><div class="c-c"><span class="chip"><i>종목</i>태웅(044490)</span></div></article>
+<article class="card"><h4 class="c-t">발전엔진·SMR</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+5.8%</span>, 245억. 충족 0 + 이전충족 08/26외1 → 오늘은 후발</p><div class="c-c"><span class="chip"><i>종목</i>씨피시스템(413630)</span></div></article>
+<article class="card"><h4 class="c-t">곡물·사료</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+0.7%</span>, 48억. 오늘충족·이전충족 모두 없음</p><div class="c-c"><span class="chip"><i>종목</i>고려산업(002140)</span></div></article>
+<article class="card"><h4 class="c-t">곡물·사료</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+3.2%</span>, 45억. 오늘충족 없음, 이전충족 09/02(-6일) → 사료 갈래 첫 자극 종목</p><div class="c-c"><span class="chip"><i>종목</i>미래생명자원(218150)</span></div></article>
+<article class="card"><h4 class="c-t">곡물·사료</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30.0%</span>, 25억. D+0이나 오늘충족·이전충족 모두 없음</p><div class="c-c"><span class="chip"><i>종목</i>샘표(007540)</span></div></article>
+<article class="card"><h4 class="c-t">도시가스·윤활유</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+4.1%</span>, 113억. 오늘충족·이전충족 모두 없음</p><div class="c-c"><span class="chip"><i>종목</i>SK가스(018670)</span></div></article>
+<article class="card"><h4 class="c-t">유가·정유 본류</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>1,018억. D+N이 <code>D+0</code>으로 찍혔으나 <strong>이전충족 09/02 있음 → 첫날 아님.</strong> 흥구석유(3,265억)의 후발. 종가위치 33%·VWAP <span style="color:#7dabf8;font-weight:700">-6.2%</span></p><div class="c-c"><span class="chip"><i>종목</i>한국석유</span></div></article>
+<article class="card"><h4 class="c-t">유가·해운 본류</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>2,000억, 이전충족 09/02외1. 종가위치 30%·VWAP <span style="color:#7dabf8;font-weight:700">-5.2%</span></p><div class="c-c"><span class="chip"><i>종목</i>흥아해운</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0·<span style="color:#ef4444;font-weight:700">+30%</span>지만 <strong>대금 24억 = 거의 거래 없이 상한가.</strong> 신호로 쓸 수 없음</p><div class="c-c"><span class="chip"><i>종목</i>원익피앤이(217820)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+1, 103억, 직전5일 <span style="color:#ef4444;font-weight:700">+82.4%</span>. 4일 연속 상한가 = 후반부. <strong>제외</strong></p><div class="c-c"><span class="chip"><i>종목</i>더코디(224060)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+1, 736억, 직전5일 <span style="color:#ef4444;font-weight:700">+50.6%</span>. 후반부, 종가위치 32%</p><div class="c-c"><span class="chip"><i>종목</i>페니트리움바이오(187660)</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+1, 502억, 이전충족 09/09 → 어제가 시작일</p><div class="c-c"><span class="chip"><i>종목</i>머큐리(100590)</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">반도체 검사·소부장</h4><p class="c-p"><span class="c-k">종목</span>주성엔지니어링</p><p class="c-p"><span class="c-k">정보지 사유</span>대금 11,337억. 이전충족 09/08, 오늘은 4봉뿐 → 초입 아님</p></article>
+<article class="card"><h4 class="c-t">반도체 검사·소부장</h4><p class="c-p"><span class="c-k">종목</span>티에스이</p><p class="c-p"><span class="c-k">정보지 사유</span>2,712억, D+3, 이전충족 08/18. HBM4/4E 프로브카드</p></article>
+<article class="card"><h4 class="c-t">반도체 검사·소부장</h4><p class="c-p"><span class="c-k">종목</span>테라뷰 / 티에프이 / GST / 사피엔반도체 / 엑시콘</p><p class="c-p"><span class="c-k">정보지 사유</span>289억(D+2) / 353억(D+19) / 225억 / 61억 / 90억</p></article>
+<article class="card"><h4 class="c-t">로봇·피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>로보티즈</p><p class="c-p"><span class="c-k">정보지 사유</span>5,982억, 30일 3위, 직전5일 <span style="color:#ef4444;font-weight:700">+28.1%</span></p></article>
+<article class="card"><h4 class="c-t">로봇·피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>에스피지 / 원익 / 삼현 / 씨메스로보틱스</p><p class="c-p"><span class="c-k">정보지 사유</span>1,968억 / 1,314억 / 1,073억(D+4, 이전충족 09/07) / 724억</p></article>
+<article class="card"><h4 class="c-t">로봇·피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>유일로보틱스 / 클로봇 / 나우로보틱스</p><p class="c-p"><span class="c-k">정보지 사유</span>540억(이전충족 09/09) / 492억 / 350억(이전충족 09/04)</p></article>
+<article class="card"><h4 class="c-t">로봇·피지컬AI</h4><p class="c-p"><span class="c-k">종목</span>뉴로메카</p><p class="c-p"><span class="c-k">정보지 사유</span>포항 로봇 파운드리 MOU 당사자이나 <span style="color:#ef4444;font-weight:700">+1.1%</span>·대금 62억(30일 17위) — 시장이 그 재료를 사지 않음. <strong>테마 근거로 쓰지 말 것</strong></p></article>
+<article class="card"><h4 class="c-t">유가·정유·해운 본류</h4><p class="c-p"><span class="c-k">종목</span>STX그린로지스</p><p class="c-p"><span class="c-k">정보지 사유</span>198억</p></article>
+<article class="card"><h4 class="c-t">AI 전력·연료전지</h4><p class="c-p"><span class="c-k">종목</span>범한퓨얼셀</p><p class="c-p"><span class="c-k">정보지 사유</span>1,438억, 직전5일 <span style="color:#ef4444;font-weight:700">+37.3%</span>, 이전충족 09/09외2</p></article>
+<article class="card"><h4 class="c-t">발전엔진·SMR</h4><p class="c-p"><span class="c-k">종목</span>현진소재</p><p class="c-p"><span class="c-k">정보지 사유</span>엔진 기자재 후발주 후보로 언급</p></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>케이에스피(073010) 09:00~09:30</strong> — 3,350원 위 시가 유지 &amp; 오전 대금 200억 이상이면 진짜, 동시에 태웅·씨피시스템 등 엔진 기자재 후발이 붙으면 테마 확정. 시가가 종가 아래 + 대금 절반 이하면 공시 하루짜리 반응.</li>
+<li><strong>한일사료(005860) 시가</strong> — 오늘 VWAP ≈2,630원(종가 대비 <span style="color:#ef4444;font-weight:700">+5.6%</span>)을 회복하며 대금 200억 이상 유지하면 진짜(고려산업·미래생명자원까지 붙으면 확산). 2,490원 아래 시작 + 대금 100억 미만이면 곡물 갈래는 하루짜리.</li>
+<li><strong>유가주 갭 소진 여부</strong> — 브렌트 101.21달러/WTI 100달러 돌파로 마감 후에도 유가가 더 올랐는데 흥구석유·한국석유가 시가 아래로 밀리면 유가 테마 D+8 종료 신호. 반대로 대성에너지가 시가 위를 지키면 도시가스 2차 확산 유효.</li>
+<li><strong>고영(098460)</strong> — 자금 패턴은 가장 깨끗(★첫흐름·대금 30일 1위·직전5일 <span style="color:#7dabf8;font-weight:700">-2.4%</span>·종가위치 92%·VWAP <span style="color:#ef4444;font-weight:700">+2.4%</span>)하나 <strong>재료 미상</strong>. 확인 1순위.</li>
+<li><strong>샘표(007540)·샘표식품(248170)</strong> — 9/11이 소각일. 소각 당일 재료 소멸 리스크를 감안할 것.</li>
+<li><strong>HD현대마린솔루션(443060)</strong> — 종가위치 56%·VWAP <span style="color:#7dabf8;font-weight:700">-0.4%</span> 중립 마감. 대형주 특성상 D+1에 확인 후 붙어도 늦지 않다.</li>
+</ul>
+<h2>📋 상세 분석</h2>
+<h1>당일 수급·테마 브리핑 — 2026-09-10 (목) 장마감</h1>
+<p>기준일: 2026-09-10 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 12회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 <strong>처음</strong> 켜진 불은 셋이다. ①13:16 HD현대중공업 1조722억 발전엔진·SMR 시설투자 공시로 조선·엔진기자재가 오후장에 튀었고, ②샘표 자사주 30% 소각 공시가 장류를 상한가로 밀어올리는 동시에 중동발 곡물가 우려로 사료주가 별도로 붙었으며, ③유가 100달러 돌파의 <strong>2차 확산</strong>으로 도시가스·윤활유가 처음 충족을 냈다.</p>
+<p>반면 오늘 거래대금 상위를 차지한 유가·정유(흥구석유 3,265억), 반도체(주성엔지니어링 1.13조), 로봇(로보티즈 5,982억)은 <strong>전부 09/02~09/08에 이미 시작된 D+2~D+8 테마</strong>다. 돈은 거기 있지만 초입은 거기가 아니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>테마 1. 발전엔진·SMR — 조선 엔진기자재 ★최우선</h3>
+<p>정보지 <code>차세대 전력(SMR)</code>·<code>발전엔진·SMR</code>·<code>조선 관련주</code> 모두 <strong>오늘 처음</strong> 등장.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">HD현대마린솔루션 443060</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.1</span><span class="chip"><i>거래대금(억)</i><strong>681</strong></span><span class="chip"><i>오늘충족</i>★9봉 (14:09)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">HD현대 267250</h4><div class="c-c"><span class="chip"><i>등락%</i>-3.7</span><span class="chip"><i>거래대금(억)</i>776</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">태웅 044490</h4><div class="c-c"><span class="chip"><i>등락%</i>+2.4</span><span class="chip"><i>거래대금(억)</i>263</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>09/02(-6일)외3</span></div></article>
+<article class="card"><h4 class="c-t">씨피시스템 413630</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.8</span><span class="chip"><i>거래대금(억)</i>245</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>08/26(-11일)외1</span></div></article>
+<article class="card"><h4 class="c-t"><strong>케이에스피 073010</strong></h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+20.1</strong></span><span class="chip"><i>거래대금(억)</i><strong>209</strong></span><span class="chip"><i>D+N</i>D+28</span><span class="chip"><i>오늘충족</i>★19봉 (13:43)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 오늘 09/10.</strong> HD현대중공업 신규시설투자 공시 13:16 → 케이에스피 충족 13:43, HD현대마린솔루션 충족 14:09. 이번 건은 <strong>뉴스가 먼저, 주가가 후행</strong>이다(원칙 1의 예외). 그래도 테마 자체는 오늘이 첫날이다.</li>
+<li><strong>대장주 / 후발주</strong>: 거래대금 절대액 1위는 HD현대(776억)이나 <strong><span style="color:#7dabf8;font-weight:700">-3.7%</span> 하락 = 테마 반응이 아니다</strong>(지주사 차익실현). 실질 대장은 <strong>HD현대마린솔루션 681억</strong>(30일 대금 1위·★첫흐름). 단 시총 10.3조·유통회전 1.6% → 탄력은 제한.</li>
+</ul>
+<p><strong>탄력 대장은 케이에스피</strong>다. 대금 209억으로 작지만 <strong>전일 123.4배 · 30일 대금 1위 · 직전최대 18.8배</strong> — 성격이 완전히 다른 자금이 처음 들어왔다. 태웅·씨피시스템은 대금은 비슷하나 충족 0 + 이전충족이 09/02·08/26 → 이미 다른 사이클에서 돈 종목, 오늘은 후발.</p>
+<ul>
+<li><strong>추정 재료</strong>: HD현대중공업, 발전엔진 신규 생산기지 8,336억 + SMR 주기기 제작 전용공장 2,386억, 총 <strong>1조722억 시설투자 공시</strong>(9/10) (웹: 머니투데이·EBN). 울주 온산에 연산 3GW 힘센엔진 기지, <strong>엔진 조립·시운전 공장과 크랭크샤프트 가공 공장·엔진 블록 주조 공장</strong> 조성 (웹: 머니투데이) — 케이에스피(크랭크샤프트)가 직결되는 지점이 여기다. SMR 공장은 2029 상반기 완공 목표, HD현대는 미국 테라파워 &#x27;나트륨&#x27; 상용화 협력 진행 중 (웹: 이슈투데이).</li>
+<li><strong>재료 단계</strong>: <code>이력 없음 → 확정(시설투자 공시, 09/10)</code> — 기대·MOU 단계를 건너뛴 <strong>자본지출 확정. 명백한 신규 재료.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 케이에스피가 3,350원 위에서 시가 형성 + 오전 대금 200억 이상. 태웅·현진소재·씨피시스템 등 엔진 기자재 후발주가 같이 붙으면 테마 확정.</li>
+<li><strong>아님</strong>: 케이에스피 시가가 종가 아래 + 대금 절반 이하. 공시 하루짜리 반응으로 끝난 것.</li>
+<li>HD현대마린솔루션은 종가위치 56%·VWAP <span style="color:#7dabf8;font-weight:700">-0.4%</span>로 중립 마감 — 대형주 특성상 D+1에 확인 후 붙어도 늦지 않다.</li>
+</ul>
+<hr>
+<h3>테마 2. 곡물·사료 + 대두 — 중동발 식량안보</h3>
+<p>정보지 <code>곡물/사료</code>·<code>대두 관련주</code> 모두 <strong>오늘 처음</strong>. <code>사료 관련주</code>는 09/02 1회.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">샘표식품 248170</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i><strong>494</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★6봉 (09:23)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t"><strong>한일사료 005860</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>거래대금(억)</i><strong>244</strong></span><span class="chip"><i>오늘충족</i>★22봉 (10:23)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">신송홀딩스 006880</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.5</span><span class="chip"><i>거래대금(억)</i>66</span><span class="chip"><i>오늘충족</i>★13봉 (09:28)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">고려산업 002140</h4><div class="c-c"><span class="chip"><i>등락%</i>+0.7</span><span class="chip"><i>거래대금(억)</i>48</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">미래생명자원 218150</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.2</span><span class="chip"><i>거래대금(억)</i>45</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>09/02(-6일)</span></div></article>
+<article class="card"><h4 class="c-t">샘표 007540</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>25</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">대주산업 003310</h4><div class="c-c"><span class="chip"><i>등락%</i>+2.7</span><span class="chip"><i>거래대금(억)</i>17</span><span class="chip"><i>오늘충족</i>★5봉</span><span class="chip"><i>이전충족</i>09/03(-5일)</span></div></article>
+</div>
+<p><strong>⚠ 이 묶음은 재료가 둘이다. 섞으면 틀린다.</strong></p>
+<ul>
+<li><strong>샘표 + 샘표식품</strong> = 모회사 샘표의 <strong>자사주 86만32주(발행주식 29.92%) 소각 결정</strong>, 소각일 9/11 (웹: 한국경제·이투데이). 지배구조·주주환원 재료지 곡물이 아니다. 정보지가 샘표식품을 &#x27;대두 관련주&#x27;로 넣은 건 사후 이름붙이기다.</li>
+<li><strong>한일사료·신송홀딩스·대주산업·미래생명자원·고려산업</strong> = 곡물가. FAO 8월 세계곡물가격지수 116.3p, 전월비 <span style="color:#ef4444;font-weight:700">+2.2%</span>로 <strong>2개월 연속 상승, 2024년 5월 이후 최고</strong> (웹: 푸드투데이·축산신문). 여기에 호르무즈 봉쇄로 비료·곡물 물류 우려가 겹쳤다.</li>
+</ul>
+<ul>
+<li><strong>테마 시작일 추정: 09/02</strong> (미래생명자원 충족) → 09/03 (대주산업 충족). 즉 사료 갈래의 첫 자극은 8일 전이다. <strong>오늘은 2차 점화</strong>다. 다만 한일사료·신송홀딩스는 ★첫흐름 + 30일 대금 1위 + 전일 <strong>51.9배 / 47.8배</strong> → 그 두 종목 기준으로는 <strong>실질 D+0</strong>.</li>
+<li><strong>대장주 / 후발주</strong>: 절대액 1위 샘표식품(494억)은 재료가 다르므로 사료 테마 대장이 아니다. <strong>사료 갈래 대장 = 한일사료(244억, 전일 51.9배, 직전최대 10.8배)</strong>. 신송홀딩스(66억)·대주산업(17억)은 후발. 대주산업은 09/03 이전충족이 있어 오늘 처음이 아니다.</li>
+<li><strong>재료 단계</strong>: <code>기대(09/02 곡물 수급 차질 우려) → 기대(09/10 식량안보 불안)</code> — <strong>같은 단계 반복 = 재탕.</strong> 단 거래대금이 30일 1위·40~50배로 뛰었으므로 <strong>시장은 새 자금으로 인정했다.</strong> 재료는 헌 것, 돈은 새 것.</li>
+<li><strong>⚠ 마감 성격이 나쁘다</strong>: 한일사료 고가 <span style="color:#ef4444;font-weight:700">+17.4%</span>인데 종가 <span style="color:#ef4444;font-weight:700">+3.3%</span>, 종가위치 19%·VWAP <span style="color:#7dabf8;font-weight:700">-5.4%</span>. 신송홀딩스 종가위치 27%·VWAP <span style="color:#7dabf8;font-weight:700">-5.0%</span>. <strong>오전에 산 사람 대부분 물렸다.</strong> 반면 샘표식품은 종가위치 100%·VWAP <span style="color:#ef4444;font-weight:700">+5.7%</span> (자사주 소각 재료의 힘).</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 한일사료가 오늘 VWAP(≈2,630원, 종가 대비 <span style="color:#ef4444;font-weight:700">+5.6%</span>) 위로 회복하며 대금 200억 이상 유지. 고려산업·미래생명자원까지 대금이 붙으면 테마 확산.</li>
+<li><strong>아님</strong>: 한일사료 시가가 2,490 아래 + 대금 100억 미만 → 유가 스파이크에 딸려온 하루짜리.</li>
+<li>샘표·샘표식품은 <strong>9/11이 소각일</strong>이다. 소각 당일 재료 소멸 리스크를 감안할 것.</li>
+</ul>
+<hr>
+<h3>테마 3. 도시가스·윤활유 — 유가 100달러의 2차 확산 (본류는 D+6)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>대성에너지 117580</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+4.5</span><span class="chip"><i>거래대금(억)</i><strong>398</strong></span><span class="chip"><i>오늘충족</i>★32봉 (09:17)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">극동유화 014530</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.3</span><span class="chip"><i>거래대금(억)</i>238</span><span class="chip"><i>오늘충족</i>★29봉 (10:16)</span><span class="chip"><i>이전충족</i><strong>없음 ★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">SK가스 018670</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>거래대금(억)</i>113</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">지에스이 053050</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.9</span><span class="chip"><i>거래대금(억)</i>85</span><span class="chip"><i>오늘충족</i>★9봉 (10:16)</span><span class="chip"><i>이전충족</i>09/02(-6일)</span></div></article>
+<article class="card"><h4 class="c-t">*(참고) 흥구석유 024060*</h4><div class="c-c"><span class="chip"><i>등락%</i>*+20.0*</span><span class="chip"><i>거래대금(억)</i>*3,265*</span><span class="chip"><i>D+N</i>*D+6*</span><span class="chip"><i>오늘충족</i>*★22봉*</span><span class="chip"><i>이전충족</i>*09/02외1*</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 09/01~09/02.</strong> 흥구석유 09/01·09/02, 한국석유·중앙에너비스·지에스이 전부 09/02 충족. <strong>본류는 D+6~D+8, 신규 진입 대상이 아니다.</strong> 오늘 새로 붙은 건 도시가스·윤활유 갈래뿐이다.</li>
+<li><strong>대장주 / 후발주</strong>: 테마 전체 대장은 압도적으로 <strong>흥구석유 3,265억</strong>(시총 2,177억, 회전 220.9%) — 이미 09/01에 먼저 충족했다. 한국석유는 D+N이 <code>D+0</code>으로 찍혔지만 <strong>이전충족 09/02가 있으므로 첫날이 아니다.</strong> 오늘 D+0 라벨만 보고 한국석유를 초입으로 읽으면 틀린다. 도시가스 갈래 대장은 <strong>대성에너지(398억, 전일 43.5배, 직전최대 25.3배)</strong>.</li>
+<li><strong>추정 재료</strong>: 브렌트 11월물 <strong>101.21달러(<span style="color:#ef4444;font-weight:700">+3.36%</span>)</strong>, WTI 10월물 100달러 돌파 — 5월 이후 최고. 중동전이 호르무즈→홍해→사우디 에너지시설로 확대, 걸프 해역 유조선 피격 (웹: 머니투데이·헤럴드경제). 가스주 동반 급등도 확인 (웹: 이투데이 「중동발 리스크 고조에 가스 관련株 상승세」).</li>
+<li><strong>재료 단계</strong>: <code>기대 → 기대</code> — <strong>재탕, 신선도 최하.</strong> 흥구석유 3개월 이력만 봐도 07/08·07/14·07/20·07/24·08/11·09/02에 같은 헤드라인이 6번 반복됐다.</li>
+<li><strong>⚠ 오늘 마감 성격이 전 종목 최악이다</strong>: 대성에너지 종가위치 19%·VWAP <span style="color:#7dabf8;font-weight:700">-6.7%</span>, 극동유화 16%·<span style="color:#7dabf8;font-weight:700">-7.0%</span>, 지에스이 25%·<span style="color:#7dabf8;font-weight:700">-4.9%</span>, 한국석유 33%·<span style="color:#7dabf8;font-weight:700">-6.2%</span>, 흥아해운 30%·<span style="color:#7dabf8;font-weight:700">-5.2%</span>. 오전 고점 후 종일 흘러내린 <strong>당일 소진형</strong>. D+2~D+3 추적 대상으로는 세 테마 중 가장 약하다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li><strong>진짜</strong>: 장 마감 후에도 유가가 더 올랐다(브렌트 101.21달러 정산). 그럼에도 갭업 시가를 지키고 <strong>대성에너지가 시가 위에서 버티면</strong> 2차 확산 유효.</li>
+<li><strong>아님</strong>: 유가가 더 올랐는데도 흥구석유·한국석유가 시가 아래로 밀리면 <strong>재료 소진 확정</strong> → 유가 테마 전체 종료로 읽고 손 뗀다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 — 눌림 관찰용)</h2>
+<ul>
+<li><strong>반도체 검사·소부장 (D+2~D+3)</strong> — 정보지 <code>반도체</code> 8일째 등장. 주성엔지니어링 <strong>11,337억</strong>(이전충족 09/08, 오늘은 4봉뿐), 티에스이 <strong>2,712억</strong>(D+3, 이전충족 08/18, HBM4/4E 프로브카드), 테라뷰 289억(D+2), 티에프이 353억(D+19), GST 225억, 사피엔반도체 61억, 엑시콘 90억. 돈은 가장 크지만 초입이 아니다.</li>
+<li><strong>로봇·피지컬AI (D+1~D+4)</strong> — 로보티즈 <strong>5,982억</strong>(30일 3위, 직전5일 <span style="color:#ef4444;font-weight:700">+28.1%</span>), 에스피지 1,968억, 원익 1,314억, 삼현 1,073억(D+4, 이전충족 09/07), 씨메스로보틱스 724억, 유일로보틱스 540억(이전충족 09/09), 클로봇 492억, 나우로보틱스 350억(이전충족 09/04).</li>
+</ul>
+<p><strong>⚠ 정보지 정정</strong>: <code>피지컬 AI 로봇 파운드리</code>가 &#x27;오늘 처음&#x27;으로 표시됐지만, 실제 포항시·경북도·뉴로메카 투자 MOU 체결일은 <strong>9월 9일</strong>이다 (웹: 아주경제·경북일보, 1,800억 규모·11월 착공·2027년 12월 준공). 재료 기준으로 오늘은 <strong>D+1</strong>이다. 게다가 정작 주체인 뉴로메카는 <span style="color:#ef4444;font-weight:700">+1.1%</span>, 대금 62억, 30일 대금 17위 — <strong>시장은 이 재료로 사지 않았다.</strong> 테마명만 오늘 붙었을 뿐 D+0이 아니다.</p>
+<ul>
+<li><strong>유가·정유·해운 본류 (D+6~D+8)</strong> — 위 테마 3 참조. 흥아해운 2,000억(이전충족 09/02외1), STX그린로지스 198억.</li>
+<li><strong>AI 전력·연료전지 (D+1)</strong> — 범한퓨얼셀 1,438억, 직전5일 <span style="color:#ef4444;font-weight:700">+37.3%</span>, 이전충족 09/09외2. HD현대 SMR과 같은 &#x27;AI 데이터센터 전력&#x27; 카테고리. 테마 1이 살아나면 같이 볼 것.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>고영 098460</strong></h4><p class="c-p"><span class="c-k">성격</span>★첫흐름, 30일 대금 1위, 직전5일 <strong><span style="color:#7dabf8;font-weight:700">-2.4%</span></strong>, 09:09 충족, <strong>종가위치 92%·VWAP <span style="color:#ef4444;font-weight:700">+2.4%</span></strong></p><p class="c-p"><span class="c-k">판단</span><strong>오늘 유일하게 &quot;조용하다 튀어서 안 밀리고 끝난&quot; 종목.</strong> 등락 <span style="color:#ef4444;font-weight:700">+5.7%</span>라 D+N은 <code>-</code>(급등일 아님)이지만 자금 패턴은 초입이다. 당일뉴스 없음, 웹에서도 개별 재료 확인 안 됨 → <strong>재료 미상, 주가 선행 추정.</strong> 3D 검사장비 + 뇌수술 의료로봇, 06/12 스페이스X 공급망 진입 이력. 내일 확인 1순위</p><div class="c-c"><span class="chip"><i>대금(억)</i><strong>1,233</strong></span></div></article>
+<article class="card"><h4 class="c-t">퀄리타스반도체 432720</h4><p class="c-p"><span class="c-k">성격</span>★첫흐름, 충족 09:24 → 뉴스 14:07</p><p class="c-p"><span class="c-k">판단</span><strong>주가가 뉴스보다 4시간 40분 선행.</strong> 코아시아세미 20억 IP 라이선스 계약(공시 13:38). 재료 단계 <code>이력 없음 → 확정</code> = 실질 신규. 단 대금 158억으로 작다</p><div class="c-c"><span class="chip"><i>대금(억)</i>158</span></div></article>
+<article class="card"><h4 class="c-t">에스투더블유 488280</h4><p class="c-p"><span class="c-k">성격</span>D+10, 이전충족 09/09외3</p><p class="c-p"><span class="c-k">판단</span>오픈AI 사이버보안 이니셔티브 &#x27;데이브레이크&#x27; 합류. 이미 4번째 충족 + NXT 16:44(시간외) 충족 → 정규장 신호 아님. 신규 진입 대상 아님</p><div class="c-c"><span class="chip"><i>대금(억)</i>817</span></div></article>
+<article class="card"><h4 class="c-t">원익피앤이 217820</h4><p class="c-p"><span class="c-k">성격</span>D+0, <span style="color:#ef4444;font-weight:700">+30%</span></p><p class="c-p"><span class="c-k">판단</span>현대차·기아–LG엔솔 사용후배터리 ESS(UBESS) 실증 (웹: 이투데이). <strong>대금 24억 = 거의 거래 없이 상한가.</strong> D+0이지만 신호로 쓸 수 없다</p><div class="c-c"><span class="chip"><i>대금(억)</i><strong>24</strong></span></div></article>
+<article class="card"><h4 class="c-t">더코디 224060</h4><p class="c-p"><span class="c-k">성격</span>D+1, 직전5일 <strong><span style="color:#ef4444;font-weight:700">+82.4%</span></strong></p><p class="c-p"><span class="c-k">판단</span>범LG가 인수 예정. 4일 연속 상한가 = 후반부. <strong>제외</strong></p><div class="c-c"><span class="chip"><i>대금(억)</i>103</span></div></article>
+<article class="card"><h4 class="c-t">피아이이 452450</h4><p class="c-p"><span class="c-k">성격</span>★첫흐름 D+28</p><p class="c-p"><span class="c-k">판단</span>세미콘 타이완(09/02) 재탕. 종가위치 50%·VWAP <span style="color:#7dabf8;font-weight:700">-4.7%</span></p><div class="c-c"><span class="chip"><i>대금(억)</i>284</span></div></article>
+<article class="card"><h4 class="c-t">페니트리움바이오 187660</h4><p class="c-p"><span class="c-k">성격</span>D+1, 직전5일 <span style="color:#ef4444;font-weight:700">+50.6%</span></p><p class="c-p"><span class="c-k">판단</span>후반부. 종가위치 32%</p><div class="c-c"><span class="chip"><i>대금(억)</i>736</span></div></article>
+<article class="card"><h4 class="c-t">머큐리 100590</h4><p class="c-p"><span class="c-k">성격</span>D+1, 이전충족 09/09</p><p class="c-p"><span class="c-k">판단</span>북미 광케이블·AI 데이터센터. 어제가 시작일</p><div class="c-c"><span class="chip"><i>대금(억)</i>502</span></div></article>
+<article class="card"><h4 class="c-t">다우기술 023590</h4><p class="c-p"><span class="c-k">성격</span>★첫흐름 <strong>1봉</strong>, 16:01 NXT</p><p class="c-p"><span class="c-k">판단</span><strong>재료 미상 — 문서·웹 모두 확인 안 됨.</strong> 충족 1봉 + 시간외 → 신호 약함. 무시</p><div class="c-c"><span class="chip"><i>대금(억)</i>175</span></div></article>
+<article class="card"><h4 class="c-t">마이크로투나노 424980 / 알파칩스 117670</h4><p class="c-p"><span class="c-k">성격</span>★첫흐름</p><p class="c-p"><span class="c-k">판단</span>대금 20억대. 웹에서도 급등 사유 확인 안 됨(알파칩스는 관계사 포스텍 CPO 부품 기사 14:32, 충족 14:25로 7분 선행). <strong>금액이 작아 판단 불가</strong></p><div class="c-c"><span class="chip"><i>대금(억)</i>21 / 24</span></div></article>
+<article class="card"><h4 class="c-t">중앙첨단소재 051980</h4><p class="c-p"><span class="c-k">성격</span>충족 13:21 → <strong>종가 <span style="color:#7dabf8;font-weight:700">-2.6%</span>, 종가위치 4%</strong></p><p class="c-p"><span class="c-k">판단</span>GTX-B 101억 계약에도 실패. 충족했다고 다 되는 게 아니라는 사례</p><div class="c-c"><span class="chip"><i>대금(억)</i>112</span></div></article>
+</div>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마:</li>
+</ul>
+<p>발전엔진·SMR / 조선 엔진기자재 (HD현대중공업 1조722억 시설투자 공시, 09/10) — 정보지 오늘 처음 + 재료가 &#x27;확정&#x27; 단계 + 케이에스피 대금 전일 123배</p>
+<ul>
+<li>그 테마의 대장주 (거래대금 최대):</li>
+</ul>
+<p>HD현대마린솔루션 681억 (★첫흐름, 30일 대금 1위) — 단 시총 10.3조로 탄력 제한 탄력 기준 실질 주도주는 케이에스피 209억 (전일 123.4배, 직전최대 18.8배, 크랭크샤프트 직결) ※ HD현대 776억은 대금 1위지만 <span style="color:#7dabf8;font-weight:700">-3.7%</span>라 테마 반응 아님</p>
+<ul>
+<li>재료 단계가 올라간 종목 (실질 신규):</li>
+</ul>
+<p>케이에스피 / HD현대마린솔루션 — 이력 없음 → 확정(시설투자 공시) 퀄리타스반도체 — 이력 없음 → 확정(IP 라이선스 계약), 주가가 뉴스보다 4시간 40분 선행 샘표 / 샘표식품 — 자사주 30% 소각 결정(확정). 단 소각일이 9/11이라 재료 소멸 임박</p>
+<ul>
+<li>오늘 잡혔지만 후발주로 판단되는 종목:</li>
+</ul>
+<p>신송홀딩스(66억) — 한일사료 244억의 1/4. 사료 갈래 후발 한국석유(1,018억) — D+N이 D+0으로 찍혔으나 이전충족 09/02 있음. 흥구석유(3,265억)의 후발 대주산업 / 지에스이 — 이전충족 09/03·09/02. 오늘이 첫날 아님 피아이이 / 마이크로투나노 / 알파칩스 — 반도체 D+2~3 사이클의 소형 후발</p>
+<ul>
+<li>같이 볼 종목:</li>
+</ul>
+<p>고영 098460 — 테마 없는 단독이지만 오늘 자금 패턴이 가장 깨끗(★첫흐름·대금 30일 1위· 직전5일 <span style="color:#7dabf8;font-weight:700">-2.4%</span>·종가위치 92%·VWAP <span style="color:#ef4444;font-weight:700">+2.4%</span>). 재료 미상, 확인 필요 한일사료 005860 — 곡물 갈래 대장. 단 VWAP <span style="color:#7dabf8;font-weight:700">-5.4%</span>로 마감 성격 나쁨 대성에너지 117580 — 유가 2차 확산 갈래 대장. 단 VWAP <span style="color:#7dabf8;font-weight:700">-6.7%</span> 태웅 / 씨피시스템 / 범한퓨얼셀 — 테마 1이 이틀째 가면 붙을 후발 후보</p>
+<ul>
+<li>진행중이라 눌림만 볼 종목:</li>
+</ul>
+<p>주성엔지니어링(11,337억, 09/08 시작) · 티에스이(2,712억, D+3) 로보티즈(5,982억) · 삼현(1,073억, D+4) · 에스피지(1,968억) 흥구석유(3,265억, D+6) · 흥아해운(2,000억) ※ 뉴로메카는 포항 로봇 파운드리 MOU 당사자인데 <span style="color:#ef4444;font-weight:700">+1.1%</span>·대금 62억(30일 17위) — 시장이 그 재료를 사지 않았다. 테마 근거로 쓰지 말 것</p>
+<ul>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>케이에스피(073010) 09:00~09:30 — 3,350원 위 시가 유지 &amp; 오전 대금 200억 이상인가.</li>
+</ol>
+<p>동시에 태웅·씨피시스템 등 엔진 기자재 후발이 붙는가. 붙으면 D+1 추격 유효</p>
+<ol>
+<li>한일사료(005860) 시가 — 오늘 VWAP ≈2,630원(종가 대비 <span style="color:#ef4444;font-weight:700">+5.6%</span>)을 회복하는가.</li>
+</ol>
+<p>못 넘고 2,490원 아래로 시작하면 곡물 갈래는 하루짜리로 정리</p>
+<ol>
+<li>유가주 갭 소진 여부 — 브렌트 101.21달러 / WTI 100달러 돌파로 마감 후에도 유가가</li>
+</ol>
+<p>더 올랐다. 그런데도 흥구석유·한국석유가 시가 아래로 밀리면 유가 테마 D+8 종료 신호. 반대로 대성에너지가 시가 위를 지키면 도시가스 2차 확산 유효 ```</p>
+<p><strong>Sources</strong></p>
+<ul>
+<li>[HD현대重, 발전엔진·SMR 1조 투자 — 파이낸셜뉴스](https://www.fnnews.com/news/202609101834187832)</li>
+<li>[정기선의 승부수…HD현대, 발전용 엔진과 SMR에 1조원 쓴다 — 머니투데이](https://www.mt.co.kr/industry/2026/09/10/2026091015312191134)</li>
+<li>[HD현대중공업, AI 전력시장 정조준...엔진·SMR에 1조 투자 — EBN](https://www.ebn.co.kr/news/articleView.html?idxno=1723771)</li>
+<li>[[오늘의 주요 공시·10일] HD현대중공업, SMR 제작 전용 공장 건립 — 세이프머니](https://www.safemoney.co.kr/news/articleView.html?idxno=30574)</li>
+<li>[샘표, 자사주 30% 소각 결정에 상한가 — 한국경제](https://www.hankyung.com/article/2026091056426)</li>
+<li>[[급등락주 짚어보기] 샘표, 자사주 30% 소각에 &#x27;상한가&#x27;⋯ESS 협력 호재에 원익피앤이 上 — 이투데이](https://www.etoday.co.kr/news/view/2624193)</li>
+<li>[샘표식품 주가 상한가…샘표 &#x27;자사주 30% 소각&#x27;에 계열사까지 불붙었다 — 잡포스트](https://www.job-post.co.kr/news/articleView.html?idxno=227018)</li>
+<li>[[특징주] 중동발 리스크 고조에 가스 관련株 상승세 — 이투데이](https://www.etoday.co.kr/news/view/2623907)</li>
+<li>[유가 다시 100달러 돌파…국채금리까지 증시 압박[뉴욕마감] — 머니투데이](https://www.mt.co.kr/world/2026/09/10/2026091005583082882)</li>
+<li>[호르무즈 건너 홍해까지 불길… 국제유가 100달러 돌파 — 머니투데이](https://www.mt.co.kr/world/2026/09/10/2026090919553977662)</li>
+<li>[포항 영일만산단에 1800억 규모 &#x27;피지컬 AI 로봇 파운드리&#x27; 구축 — 아주경제](https://www.ajunews.com/view/20260910143147109)</li>
+<li>[포항 영일만산단에 1800억원 규모 &#x27;AI 로봇 파운드리&#x27; 추진 — 경북일보](https://www.kyongbuk.co.kr/news/articleView.html?idxno=4083856)</li>
+<li>[[푸드투데이] 세계식량가격 2달 연속 상승](https://www.foodtoday.or.kr/news/article.html?no=207764)</li>
+<li>[두 달째 &#x27;꿈틀&#x27;…국제 곡물 가격 일제히 올랐다 — 돼지와사람](https://www.pigpeople.net/news/article.html?no=19920)</li>
+<li>[피아이이, &#x27;세미콘 타이완 2026&#x27; 참가…유리기판 검사 솔루션 공개 — 이데일리](https://www.edaily.co.kr/News/Read?newsId=02938886645576184)</li>
+</ul>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-09-11 00:00
+</p>
+</article></div>
+</body></html>
