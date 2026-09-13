@@ -20,10 +20,24 @@
 
 name: rebuild-index
 
+# ⚠ push 트리거를 믿지 마라 — 안전망이 필요하다
+#
+#   이 PC에서 push 해도 **이 워크플로가 안 걸렸다** (실측 3회).
+#   같은 push 로 GitHub 자체 `pages build and deployment` 는 정상 실행됐고,
+#   `workflow_dispatch` 수동 실행도 정상이었다. 즉 Actions 자체는 멀쩡한데
+#   **push 이벤트가 사용자 워크플로를 깨우지 못한다.** 원인은 특정하지 못했다
+#   (커밋 author 가 GitHub 계정에 연결돼 있지 않다 — `author: null` — 는 점이
+#    걸리지만 확증은 없다). 서버는 SSH deploy key 로 push 하므로 다를 수 있다.
+#
+#   → push 는 그대로 두되, **30분마다 도는 schedule 을 안전망으로 깐다.**
+#     push 가 걸리면 즉시, 안 걸려도 30분 안에 인덱스가 복구된다.
+#     공개 저장소라 Actions 사용료는 없고, 한 번 실행에 20초쯤 걸린다.
 on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -35,8 +49,9 @@ permissions:
 
 jobs:
   rebuild:
-    # 봇이 올린 커밋이면 아무것도 하지 않는다 (무한 루프 차단)
-    if: github.actor != 'github-actions[bot]'
+    # 봇이 올린 커밋이면 아무것도 하지 않는다 (무한 루프 차단).
+    # schedule 로 들어온 실행은 actor 가 봇이 아니므로 정상 진행된다.
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
