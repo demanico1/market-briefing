@@ -1,0 +1,63 @@
+# 아카이브 인덱스 자동 복구
+#
+# 왜 필요한가 (2026-09-13)
+# ------------------------
+# index.html 은 발행할 때마다 통째로 다시 만들어지는데, 그걸 만드는 publish.py 가
+# 여러 대(이 PC, 서버 PC)에 **사본으로 흩어져 있고 동기화 장치가 없다.**
+# 서버 사본이 scan 을 모르는 옛 버전이라, 9/13 미국장 브리핑이 나가면서
+# 9/12 에 올린 스캔 목록이 인덱스에서 통째로 사라졌다.
+# (파일은 남아 있었고 링크만 없어져 사이트에서 안 보였다)
+#
+# → push 될 때마다 GitHub 이 저장소 내용 그대로 목록을 다시 만든다.
+#   어느 PC가 어떤 버전으로 올리든 최종 인덱스는 항상 옳다. **서버는 손댈 필요 없다.**
+#
+# 무한 루프 방지
+# --------------
+# 이 워크플로가 만드는 커밋은 index.html 만 건드린다. 그래서 트리거에서
+# index.html 을 빼두면(paths-ignore) 자기 커밋으로 자신이 다시 돌지 않는다.
+
+name: rebuild-index
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'index.html'          # ← 자기 커밋으로 재실행되는 것을 막는 핵심
+      - 'assets/**'           # site.css 는 publish.py 소관, 여기서 안 만든다
+      - '.github/**'
+      - '_site_tools/**'
+      - 'README.md'
+  workflow_dispatch:          # 수동 실행 (복구용)
+
+# 한국장·미국장이 연달아 발행될 때 두 실행이 겹쳐 push 가 충돌하지 않게 한다
+concurrency:
+  group: rebuild-index
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 인덱스 목록 재생성
+        run: python _site_tools/build_index.py .
+
+      - name: 바뀐 게 있으면 커밋
+        run: |
+          if git diff --quiet index.html; then
+            echo "변경 없음 — 커밋하지 않는다"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "index: 저장소 내용으로 목록 재생성 (자동)"
+          git push
