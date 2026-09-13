@@ -3,33 +3,29 @@
 # 왜 필요한가 (2026-09-13)
 # ------------------------
 # index.html 은 발행할 때마다 통째로 다시 만들어지는데, 그걸 만드는 publish.py 가
-# 여러 대(이 PC, 서버 PC)에 **사본으로 흩어져 있고 동기화 장치가 없다.**
+# 여러 대(이 PC, 서버 PC)에 사본으로 흩어져 있고 동기화 장치가 없다.
 # 서버 사본이 scan 을 모르는 옛 버전이라, 9/13 미국장 브리핑이 나가면서
 # 9/12 에 올린 스캔 목록이 인덱스에서 통째로 사라졌다.
 # (파일은 남아 있었고 링크만 없어져 사이트에서 안 보였다)
 #
 # → push 될 때마다 GitHub 이 저장소 내용 그대로 목록을 다시 만든다.
-#   어느 PC가 어떤 버전으로 올리든 최종 인덱스는 항상 옳다. **서버는 손댈 필요 없다.**
+#   어느 PC가 어떤 버전으로 올리든 최종 인덱스는 항상 옳다. 서버는 손댈 필요 없다.
 #
 # 무한 루프 방지
 # --------------
-# 이 워크플로가 만드는 커밋은 index.html 만 건드린다. 그래서 트리거에서
-# index.html 을 빼두면(paths-ignore) 자기 커밋으로 자신이 다시 돌지 않는다.
+# 처음엔 paths-ignore 로 막으려 했는데 **push 트리거 자체가 안 걸렸다**
+# (경로 필터가 아닌 다른 이유. 실측으로 두 번 확인).
+# 그래서 경로 필터를 쓰지 않고, **봇이 만든 커밋이면 job 을 건너뛴다.**
+# 봇 커밋도 트리거는 되지만 즉시 끝나므로 루프가 돌지 않는다.
 
 name: rebuild-index
 
 on:
   push:
-    branches: [main]
-    paths-ignore:
-      - 'index.html'          # ← 자기 커밋으로 재실행되는 것을 막는 핵심
-      - 'assets/**'           # site.css 는 publish.py 소관, 여기서 안 만든다
-      - '.github/**'
-      - '_site_tools/**'
-      - 'README.md'
-  workflow_dispatch:          # 수동 실행 (복구용)
+    branches:
+      - main
+  workflow_dispatch:
 
-# 한국장·미국장이 연달아 발행될 때 두 실행이 겹쳐 push 가 충돌하지 않게 한다
 concurrency:
   group: rebuild-index
   cancel-in-progress: false
@@ -39,6 +35,8 @@ permissions:
 
 jobs:
   rebuild:
+    # 봇이 올린 커밋이면 아무것도 하지 않는다 (무한 루프 차단)
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
