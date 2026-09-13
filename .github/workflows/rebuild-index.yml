@@ -36,6 +36,12 @@ on:
   push:
     branches:
       - main
+  # ★ page_build — push 트리거가 안 먹을 때의 대체 경로.
+  #   Pages 배포는 push 마다 확실히 돈다 (실측: 모든 push 에서 실행됐다).
+  #   그 배포가 끝나면 page_build 이벤트가 뜬다. 즉 **push 와 사실상 같은 시점**에
+  #   워크플로를 깨울 수 있다. push 트리거가 고쳐지면 둘 다 걸리지만,
+  #   두 번째 실행은 바꿀 게 없어 즉시 끝난다 (커밋 안 함).
+  page_build:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
@@ -51,6 +57,9 @@ jobs:
   rebuild:
     # 봇이 올린 커밋이면 아무것도 하지 않는다 (무한 루프 차단).
     # schedule 로 들어온 실행은 actor 가 봇이 아니므로 정상 진행된다.
+    #   봇 커밋으로 들어온 push 는 건너뛴다 (무한 루프 차단).
+    #   page_build / schedule / 수동 실행은 그대로 진행한다 — 이쪽은 바꿀 게 없으면
+    #   커밋을 안 하므로 루프가 돌지 않는다.
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
