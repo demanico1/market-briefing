@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script>
+<meta charset="utf-8">
+<title>2026-09-16 한국장 브리핑</title>
+</head>
+<body style="margin:0;padding:0;background:#0f1115;font-family:-apple-system,'Malgun Gothic','Segoe UI',sans-serif;color:#e8eaed;">
+<div style="width:1280px;padding:26px 30px 22px 30px;box-sizing:border-box;">
+
+  <!-- HEADER -->
+  <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #2a2f3a;padding-bottom:12px;margin-bottom:16px;">
+    <div>
+      <span style="font-size:27px;font-weight:700;letter-spacing:-0.5px;">한국장 브리핑</span>
+      <span style="font-size:19px;color:#9aa0a6;margin-left:12px;">2026년 9월 16일 (수)</span>
+    </div>
+    <div style="font-size:14px;color:#9aa0a6;">수집 채널 <b style="color:#e8eaed;">7</b>/13 · 분석 영상 9편</div>
+  </div>
+
+  <!-- INDEX + FLOW ROW -->
+  <div style="display:flex;gap:12px;margin-bottom:12px;">
+
+    <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;width:236px;box-sizing:border-box;border-left:3px solid #ef4444;">
+      <div style="font-size:13px;color:#9aa0a6;margin-bottom:5px;">KOSPI</div>
+      <div style="font-size:30px;font-weight:700;color:#ef4444;line-height:1.1;">6,717.97</div>
+      <div style="font-size:15px;color:#ef4444;margin-top:3px;">▲ 90.71 (+1.37%)</div>
+    </div>
+
+    <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;width:236px;box-sizing:border-box;border-left:3px solid #ef4444;">
+      <div style="font-size:13px;color:#9aa0a6;margin-bottom:5px;">KOSDAQ</div>
+      <div style="font-size:30px;font-weight:700;color:#ef4444;line-height:1.1;">815.98</div>
+      <div style="font-size:15px;color:#ef4444;margin-top:3px;">▲ 3.57 (+0.44%)</div>
+    </div>
+
+    <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;flex:1;box-sizing:border-box;">
+      <div style="font-size:13px;color:#9aa0a6;margin-bottom:7px;">수급 · 코스피</div>
+      <div style="display:flex;gap:26px;">
+        <div>
+          <div style="font-size:12px;color:#9aa0a6;">외국인</div>
+          <div style="font-size:21px;font-weight:700;color:#3b82f6;">-1조 6,825억</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#9aa0a6;">기관</div>
+          <div style="font-size:21px;font-weight:700;color:#ef4444;">+1조 2,104억</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#9aa0a6;">거래대금</div>
+          <div style="font-size:21px;font-weight:700;color:#e8eaed;">15.9조</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACRO STRIP -->
+  <div style="background:#161920;border-radius:8px;padding:9px 18px;margin-bottom:14px;font-size:14px;color:#c8ccd2;">
+    <b style="color:#9aa0a6;font-size:12px;letter-spacing:0.5px;">MACRO</b>
+    <span style="margin-left:14px;">원/달러 <b style="color:#e8eaed;">1,368.6원</b></span>
+    <span style="color:#3a3f4a;margin:0 10px;">|</span>
+    <span>미 10년물 <b style="color:#f59e0b;">5.01%</b> <span style="color:#9aa0a6;font-size:12px;">(장중 5.04%, 2007년 7월來 최고)</span></span>
+    <span style="color:#3a3f4a;margin:0 10px;">|</span>
+    <span>WTI <b style="color:#f59e0b;">$100 돌파</b></span>
+    <span style="color:#3a3f4a;margin:0 10px;">|</span>
+    <span>FOMC 25bp 인상 <b style="color:#e8eaed;">92% 반영</b> <span style="color:#9aa0a6;font-size:12px;">(9/17 새벽)</span></span>
+  </div>
+
+  <!-- HEADLINE -->
+  <div style="background:#1a1d24;border-radius:10px;padding:16px 20px;margin-bottom:14px;border-left:3px solid #f59e0b;">
+    <div style="font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:6px;">오늘의 한 줄</div>
+    <div style="font-size:21px;font-weight:600;line-height:1.45;">4거래일 연속 하락을 끊었지만 외국인은 여전히 1조 6천억을 팔았다 —<br>추세 전환이 아니라 <span style="color:#ef4444;">기관의 반도체 방어전</span>이다.</div>
+  </div>
+
+  <!-- TWO COLUMN -->
+  <div style="display:flex;gap:12px;margin-bottom:12px;">
+
+    <!-- LEFT: key points -->
+    <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;flex:1.35;box-sizing:border-box;">
+      <div style="font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:9px;">핵심 포인트</div>
+      <div style="font-size:14px;line-height:1.62;">
+        <div style="margin-bottom:6px;"><span style="color:#ef4444;font-weight:700;">1</span> &nbsp;반도체가 유일한 엔진 — SK하이닉스 <b style="color:#ef4444;">+4.08%</b>, 삼성전자 <b style="color:#ef4444;">+2.01%</b>, 반도체 업종 <b style="color:#ef4444;">+3.01%</b></div>
+        <div style="margin-bottom:6px;"><span style="color:#ef4444;font-weight:700;">2</span> &nbsp;하이닉스–인텔 미국 내 메모리 생산 협력 = 관세·공급망 리스크 동시 완화 <span style="color:#9aa0a6;">(주덕·김단테)</span></div>
+        <div style="margin-bottom:6px;"><span style="color:#ef4444;font-weight:700;">3</span> &nbsp;금리 5%가 최대 부담이라는 데는 전 채널 이견 없음 — 해석만 갈림</div>
+        <div style="margin-bottom:6px;"><span style="color:#3b82f6;font-weight:700;">4</span> &nbsp;⚔ <b>정면 충돌</b> — 주덕 "AI 사이클 초중반, 조정은 기회" vs 소수몽키 "드러켄밀러 포지션 80% 축소, 후반부"</div>
+        <div><span style="color:#3b82f6;font-weight:700;">5</span> &nbsp;만쥬 "장세 바뀌었나? <b>아직 아닌 걸로</b>" — 거래대금은 여전히 테마주로 분산</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: consensus -->
+    <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;width:310px;box-sizing:border-box;">
+      <div style="font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:10px;">채널 방향성 <span style="font-size:11px;">(5개 집계)</span></div>
+      <div style="font-size:13px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>강세</span><span style="color:#9aa0a6;">2 · 주덕 김단테</span></div>
+        <div style="background:#0f1115;border-radius:3px;height:9px;"><div style="width:40%;height:9px;background:#ef4444;border-radius:3px;"></div></div>
+      </div>
+      <div style="font-size:13px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>중립</span><span style="color:#9aa0a6;">2 · 이효석 소수몽키</span></div>
+        <div style="background:#0f1115;border-radius:3px;height:9px;"><div style="width:40%;height:9px;background:#9aa0a6;border-radius:3px;"></div></div>
+      </div>
+      <div style="font-size:13px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>신중·약세</span><span style="color:#9aa0a6;">1 · 만쥬</span></div>
+        <div style="background:#0f1115;border-radius:3px;height:9px;"><div style="width:20%;height:9px;background:#3b82f6;border-radius:3px;"></div></div>
+      </div>
+      <div style="font-size:11px;color:#9aa0a6;margin-top:9px;line-height:1.4;">원칙 채널(김혜산)·급등 카탈로그(주린희)는 집계 제외</div>
+    </div>
+  </div>
+
+  <!-- STOCKS -->
+  <div style="background:#1a1d24;border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+    <div style="font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:9px;">종목 · 테마 &nbsp;<span style="font-size:11px;color:#6b7280;">★ = 복수 채널 동시 언급 / 종목명은 주린희 채널 발언 기준</span></div>
+    <div style="line-height:2.0;">
+      <span style="background:#2d1517;color:#fca5a5;border:1px solid #7f1d1d;border-radius:5px;padding:4px 10px;font-size:13px;margin-right:6px;">★ 광통신 <span style="color:#9aa0a6;font-size:11px;">주덕·주린희·만쥬</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">기가레인 <span style="color:#ef4444;">上</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">에이스테크 <span style="color:#ef4444;">上</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">대한광통신</span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">빛샘전자</span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">LS에코에너지</span>
+    </div>
+    <div style="line-height:2.0;">
+      <span style="background:#2d1517;color:#fca5a5;border:1px solid #7f1d1d;border-radius:5px;padding:4px 10px;font-size:13px;margin-right:6px;">★ 보안 <span style="color:#9aa0a6;font-size:11px;">주덕·주린희·만쥬</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">아이티센피엔에스 <span style="color:#ef4444;">上 2일</span></span>
+      <span style="background:#2d1517;color:#fca5a5;border:1px solid #7f1d1d;border-radius:5px;padding:4px 10px;font-size:13px;margin:0 6px;">★ 반도체 <span style="color:#9aa0a6;font-size:11px;">4개 채널</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">SK하이닉스 <span style="color:#ef4444;">+4.08%</span></span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;">삼성전자 <span style="color:#ef4444;">+2.01%</span></span>
+    </div>
+    <div style="line-height:2.0;">
+      <span style="color:#9aa0a6;font-size:12px;margin-right:6px;">그 외 상한가</span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">큐라티스</span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">뷰티스킨</span>
+      <span style="background:#23262e;color:#e8eaed;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:12px;">미트온</span>
+      <span style="color:#9aa0a6;font-size:12px;margin-right:6px;">약세</span>
+      <span style="background:#152131;color:#93c5fd;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">조선 -2.05%</span>
+      <span style="background:#152131;color:#93c5fd;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">건설 -1.98%</span>
+      <span style="background:#152131;color:#93c5fd;border-radius:5px;padding:4px 9px;font-size:13px;margin-right:5px;">현대차 -1.36%</span>
+      <span style="background:#152131;color:#93c5fd;border-radius:5px;padding:4px 9px;font-size:13px;">원전 <span style="font-size:11px;">(한미 발표 22일 연기)</span></span>
+    </div>
+  </div>
+
+  <!-- TOMORROW -->
+  <div style="background:#1a1d24;border-radius:10px;padding:13px 18px;margin-bottom:12px;">
+    <div style="font-size:12px;color:#9aa0a6;letter-spacing:1px;margin-bottom:7px;">내일 관전 포인트</div>
+    <div style="font-size:14px;line-height:1.6;">
+      <b style="color:#f59e0b;">9/17 새벽 FOMC</b> — 인상 여부가 아니라 점도표·추가 인상 시그널 &nbsp;<span style="color:#3a3f4a;">|</span>&nbsp;
+      <b style="color:#f59e0b;">10년물 5.1~5.2%</b> 진입 여부가 위험자산 분기점 &nbsp;<span style="color:#3a3f4a;">|</span>&nbsp;
+      <b style="color:#f59e0b;">9/18</b> 일본은행 결정 + 선물옵션 동시만기 &nbsp;<span style="color:#3a3f4a;">|</span>&nbsp;
+      <b style="color:#f59e0b;">외국인 순매수 전환</b> 없이는 반등 확인 불가 &nbsp;<span style="color:#3a3f4a;">|</span>&nbsp;
+      광통신·보안 테마 2일차 피로도
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="font-size:11.5px;color:#9aa0a6;line-height:1.55;border-top:1px solid #2a2f3a;padding-top:9px;">
+    <b style="color:#c8ccd2;">수집 현황</b> · 수집됨 7 (만쥬·주덕·이효석아카데미·김단테·소수몽키·김혜산·주린희) · 영상없음 5 (창원개미·돌팬티·홍인기·고라니주식·주린이놀이터) · 진행중 라이브 스킵 1 (전황의 주식홈트) · 소수몽키 라이브는 멤버십 전용
+    <br>지수·수급·환율·금리는 언론 보도 교차검증. 개별 종목·테마 사유는 채널 발언 기준이며 검증된 등락률만 수치로 표기.
+  </div>
+
+</div>
+</body>
+</html>
