@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-09-21</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-09-21 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -148,7 +172,10 @@
 <li><strong>인벤테라</strong> — MRI 조영제 3상 성공이 16:41 마감 후 발표라 <strong>내일 반영될 재료</strong>. 단 오늘 이미 D+4이고 고가 <span style="color:#ef4444;font-weight:700">+30%</span>에서 <span style="color:#7dabf8;font-weight:700">-15%</span> 밀려 마감.</li>
 </ul>
 <p>⚠ <strong>데이터 한계</strong>: 티이엠씨·그린리소스·이지케어텍·시선AI·뉴로핏·에스피시스템스는 충족 이력 신뢰구간이 4~5일뿐이다. <code>★첫흐름</code>·<code>D+0</code>이 실제로 30일 첫 급등인지 확정하기엔 구간이 짧아, 이 종목들은 D+0 확신도를 한 단계 낮춰서 보는 게 맞다.</p>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 브리핑 — 2026-09-21 (월) 장마감</h1>
 <p>기준일: 2026-09-21 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p>🌐 웹 확인 11회</p></blockquote>
@@ -290,10 +317,17 @@
 <p>공시가 나오면 2차, 안 나오면 오늘이 고점일 가능성 ```</p>
 <p><strong>⚠ 오늘 데이터 한계 한 가지</strong>: 티이엠씨·그린리소스·이지케어텍·시선AI·뉴로핏·에스피시스템스는 충족 이력 신뢰구간이 4~5일뿐이다. <code>★첫흐름</code>·<code>D+0</code> 이 실제로 30일 첫 급등인지 확정하려면 구간이 짧다. 이 종목들은 D+0 확신도를 한 단계 낮춰서 보는 게 맞다.</p>
 <p><strong>출처(웹)</strong>: [아시아경제 — 심평원 AI 영상판독 심사 첫 적용](https://view.asiae.co.kr/article/2026090110305894717) · [이데일리 — 심평원 AI 심사 첫 적용, AI의료 &#x27;조용한 수혜&#x27;](https://edaily.co.kr/News/Read?mediaCodeNo=257&amp;newsId=01187366645582088) · [핀포인트뉴스 — 의료기기주 강세, 스카이랩스 29%↑](https://www.pinpointnews.co.kr/news/articleView.html?idxno=489086) · [CBC뉴스 — 의료AI 관련주 들썩](https://www.cbci.co.kr/news/articleView.html?idxno=608679) · [이투데이 — HLB 리픽투 FDA 조건부 수용, 25일 허가심사 목표](https://www.etoday.co.kr/news/view/2627912) · [아시아투데이 — HLB 담관암 신약 25일 미 허가 판가름](https://www.asiatoday.co.kr/kn/view.php?key=20260921010007814) · [뉴스프라임 — 티이엠씨 재활용 네온가스 동시 수주](https://www.newsprime.co.kr/news/article/?no=748499) · [디지털투데이 — 시선에이아이 8회차 CB 50억 발행](https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=702201) · [잡포스트 — 와이씨 19.14% 급등, 2분기 영업이익 3배](https://www.job-post.co.kr/news/articleView.html?idxno=228568) · [핀포인트뉴스 — 검사·패키징 장비주 매수세](https://www.pinpointnews.co.kr/news/articleView.html?idxno=489007) · [잡포스트 — 해치텍 14.82% 상승](https://www.job-post.co.kr/news/articleView.html?idxno=228570)</p>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-09-21 22:13
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

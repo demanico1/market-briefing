@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-08-25</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-08-25 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p>웹 검색 사용 안 함 — 첨부 문서(스캐너 표 + 정보지 교차 + 뉴스 버즈)만으로 판단. 문서에서 확인 안 되는 항목은 <code>근거 부족</code>으로 남김.</p></blockquote>
@@ -144,7 +168,10 @@
 <li><strong>신라젠</strong> — 상한가 마감 다음날 갭 유지 여부가 전부. 08/19·08/20 선충족이 있어 첫날 급등 되돌림 리스크 최대.</li>
 <li><strong>금호에이치티 / 넥슨게임즈</strong> — 금호에이치티는 재료 미상 상한가라 공시(최대주주 변경·유증·신사업)·금호전기 등 계열 동반 여부 확인 필요 / 넥슨게임즈는 포착 13:49로 늦은 약한 신호, 내일 대금 재유입 여부로만 판정.</li>
 </ul>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 브리핑 — 2026-08-25 (화) 장마감</h1>
 <p>기준일: 2026-08-25 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p><strong>웹 검색 사용 안 함</strong> — 이번 분석은 첨부 문서(스캐너 표 + 정보지 교차 + 뉴스 버즈)만으로 판단했다. 문서 내 뉴스·정보지·버즈 데이터가 D+0 후보의 재료를 이미 특정할 수 있는 수준이라, 외부 근거로 빈칸을 메울 필요가 없었다. 문서에서 확인 안 되는 항목은 그대로 <code>근거 부족</code>으로 남겨둔다.</p></blockquote>
@@ -295,10 +322,17 @@
 <li>한화·신라젠 시초가 — 한화는 118,100원(종가)과 100,600원(시초) 사이 어디서 여는가,</li>
 </ol>
 <p>신라젠은 상한가 마감 다음날 갭 유지 여부. 둘 다 첫날 급등의 되돌림 리스크가 최대다. ```</p>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-08-25 21:00
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

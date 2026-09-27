@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-08-07</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <h2>오늘장 요약</h2>
 <p>오늘(08/07)은 미국 정책 재료 2건(트럼프 폴리실리콘 15% 관세 12/4 시행 → 태양광, 美 중국산 광트랜시버 수입금지 검토 → 광통신·통신장비)이 동시에 터진 날이다. 다만 이 둘은 08/05에 이미 시작된 흐름의 <strong>D+2</strong>로, 대장주들은 이미 밀려 마감했다. 대금 상위는 한화솔루션 6,937억·엘앤에프 1,996억·광전자 1,755억으로 진행 중 테마에 쏠렸다.</p>
@@ -144,7 +168,10 @@
 <li><strong>내수 소비재 확산</strong> — GS리테일 등 편의점/음식료 3~4종목으로 번지고 BGF리테일 52주 신고가 돌파 후 유지면 진짜 / 실적 당일 소화로 끝나고 익일 갭하락이면 1일짜리 실적 이벤트. 단 두 종목 모두 <strong>수식 미충족</strong>이라 D+2~D+3 수익폭은 제한적일 수 있다.</li>
 <li><strong>한화솔루션(009830) 33,900 지지</strong> — 지지 후 재상승이면 D+3 눌림 매수 구간 / 이탈 시 테마 종료.</li>
 </ul>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h2>① 오늘 한 줄 결론</h2>
 <p>오늘(08/07)은 <strong>미국 정책 재료 2건이 동시에 터진 날</strong>이다. 트럼프 폴리실리콘 15% 관세(12/4 시행) → 태양광, 그리고 美 중국산 광트랜시버 수입금지 검토 → 광통신·통신장비. 다만 이 둘은 <strong>08/05에 이미 시작된 흐름의 D+2</strong>이고, 오늘 새로 점화된 것은 <strong>철강(AI 데이터센터 강재)</strong> 과 <strong>내수 소비재(2Q 실적 서프라이즈)</strong> 두 갈래다.</p>
 <p><code>D+0</code> 7종목 중 신스틸·금강철강이 철강으로, BGF리테일·롯데웰푸드가 내수소비재로 깔끔하게 묶인다. 혜인은 정보지가 &#x27;태양광에너지&#x27;로 분류했으나 태양광 대장 한화솔루션이 이미 D+2라 후발주 성격이다.</p>
@@ -266,10 +293,17 @@
 <li>혜인의 재료 정체 — 캐터필라 데이터센터 발전기/AI인프라 관련</li>
 </ol>
 <p>공시·기사가 실제로 있는지. 있으면 D+0 최상급 프로필로 격상, 없으면 상한가 1회성 개별주로 강등 ```</p>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-08-08 07:59
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

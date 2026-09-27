@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-09-02</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-09-02 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -148,7 +172,10 @@
 <li><strong>정유(흥구석유 024060)</strong>: 유가 90달러 위 + 갭하락 없이 11,570원 지지면 연장 / <strong>시초가 갭하락 시 종료 확정(현재 유력)</strong>. 도우인시스는 09/03 정규장 시초가 20,000원 위 개장 여부가 전부</li>
 <li>⚠ 폭락장에선 등락률이 거짓말을 한다. 상한가 6종목 중 셋은 대금 5억 이하, 반대로 대원제약(18.4배)·경동제약(23.7배)·SY동아(55.6배)는 지표 최상급인데 종가위치 1%·5%·3%. <strong><code>30일대금순위</code>·<code>직전최대대비</code>만 보면 세 번 틀린다 — 종가위치·VWAP대비를 함께 봐야 하는 날.</strong></li>
 </ul>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 브리핑 — 2026-09-02 (수) 장마감</h1>
 <p>기준일: 2026-09-02 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p>🌐 웹 확인 12회</p></blockquote>
@@ -326,10 +353,17 @@
 <li>[ISC, &#x27;제2의 HBM&#x27; 테스트 소켓 납품…메모리 3사 SOCAMM 개발 — EBN](https://www.ebn.co.kr/news/articleView.html?idxno=1653348)</li>
 <li>[HBM4 테스트 시간 증가에 소켓 업계 &#x27;화색&#x27; — 디일렉](https://www.thelec.kr/news/articleView.html?idxno=52502)</li>
 </ul>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-09-03 02:45
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

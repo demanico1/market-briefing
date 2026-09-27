@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-09-01</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-09-01 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -137,7 +161,10 @@
 <li><strong>라온텍</strong>: 고객사·규모를 밝힌 정식 공시 또는 광통신 밸류체인(대한광통신·오이솔루션·이노인스트루먼트) 확산이면 진짜 / 대금 50억 밑이면 1일 재료로 종료.</li>
 </ul>
 <blockquote><p>⚠ 익일(09/02) 탈모주 조정 보도가 검색에 잡혔으나 인용된 주가 수치가 09/01 종가와 정합하지 않아 근거로 쓰지 않았다.</p></blockquote>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 브리핑 — D+0 탐색</h1>
 <p>기준일: 2026-09-01 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p>🌐 웹 확인 12회</p></blockquote>
@@ -276,10 +303,17 @@
 <li>[CBC뉴스 — 라온텍, FLCoS 마이크로디스플레이 개발 계약 (확정 31억 + 조건부 15억)](https://www.cbci.co.kr/news/articleView.html?idxno=586851)</li>
 <li>[메리츠증권 리포트 브리핑 — 라온텍 &#x27;탐방노트: 광통신 사업 현황&#x27;](https://news.nate.com/view/20260513n07892)</li>
 </ul>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-09-02 08:21
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

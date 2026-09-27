@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-08-21</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-08-21 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -152,7 +176,10 @@
 <li><strong>희토류·비철금속</strong> — 진짜: 유니온머티리얼 대금 100억 돌파 + 국일신동·티플랙스 동반 상한가권 진입, 그때가 진짜 D+0 / 아니다: 전 종목 대금 한 자릿수 억 회귀 → 하루짜리 소음, 폐기.</li>
 <li><strong>투자사(창투사) 시간외 재료 / 삼성전자 주주환원</strong> — 시간외 엔비디아·리벨리온 재료가 월요일 정규장으로 넘어오는지, 삼성전자 주주환원 규모(&quot;최대 110조&quot;) 확정 시 삼성그룹주·증권주(SK증권 D+2 눌림) 파급 여부.</li>
 </ul>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 브리핑 — D+0 탐색</h1>
 <p>기준일: 2026-08-21 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p><strong>웹 검색: 미수행</strong> (운영 규칙상 첨부 문서만 사용). 아래 모든 근거는 이 리포트 내부 데이터다. 문서 밖 사실은 쓰지 않았다.</p></blockquote>
@@ -270,10 +297,17 @@
 <li><strong>삼성전자 주주환원 규모 확정 여부</strong> — 뉴스 버즈 압도적 1위(96건/4ch, &quot;최대 110조&quot;). 스캐너 대상엔 삼성전자가 없어 직접 판단 불가이나, 확정 발표 시 삼성그룹주·증권주(SK증권 D+2 눌림)로 파급된다.</li>
 </ol>
 <blockquote><p><strong>데이터 한계 명시</strong>: 웹 검색 미사용. 소마젠·제넥신·제테마·위지트는 수식 충족 이력 신뢰범위가 <strong>6~7일</strong>뿐이라 <code>★첫흐름</code> 을 30일 전체로 확대 해석하면 안 된다. 이노메트리도 신뢰범위 17일이다. 인제니아테라퓨틱스는 직전 누적봉 753개로 2000봉 지표 자체가 신뢰불가다.</p></blockquote>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-08-22 05:12
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

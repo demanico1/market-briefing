@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-09-15</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-09-15 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -161,7 +185,10 @@
 <li><strong>LS머트리얼즈(417200)</strong>: DART 공시(수주·증설) 및 UC/ESS·전력기기 쪽 동반 종목(LS일렉트릭 등) 움직임 — 재료 미상 상태 해소 여부.</li>
 </ul>
 <p><strong>분석 한계</strong> — 원익홀딩스·SFA·SFA반도체·에스비비테크·한컴라이프케어·링크솔루션은 <code>첫흐름 = 미확인</code>이며 첫 충족으로 단정하지 않았다. 등락률·거래대금은 전부 스캐너 표(키움) 기준이고, 웹 시세와 소수점 차이가 있으나(예: 오상헬스케어 대금 웹 277억 vs 문서 320억 — 세션 범위 차이) 문서를 정본으로 유지했다.</p>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 분석 — 2026-09-15 (화) 장마감</h1>
 <p>기준일: 2026-09-15 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p>🌐 웹 확인 12회</p></blockquote>
@@ -347,10 +374,17 @@
 </ul>
 <hr>
 <p><strong>출처 (웹 확인분)</strong> [파이낸셜뉴스 — 11월 양자보안체계 구축 의무화, PQC·KCMVP 인증 3곳](https://www.fnnews.com/news/202609151040447685) · [파이낸셜뉴스 — 로봇株, 정부 제조AI 확산안·中 로봇 규제 기대](https://www.fnnews.com/news/202609151400426632) · [뉴스핌 — 제조AI 확산·中 로봇 규제에 로봇株 급등](https://www.newspim.com/news/view/20260915000409) · [한국데이터경제신문 — PQC KCMVP 인증 3곳, 공공 342개 의무화](https://www.dataeconomy.co.kr/news/articleView.html?idxno=41698) · [잡포스트 — 아톤 6310원 상한가](https://www.job-post.co.kr/news/articleView.html?idxno=227652) · [잡포스트 — 삼현 5만2700원 상한가](https://www.job-post.co.kr/news/articleView.html?idxno=227646) · [메디파나뉴스 — 9/15 제약·바이오 변동, 이뮨온시아·엔젠바이오 상한가](https://www.medipana.com/news/articleView.html?idxno=417669) · [금강일보 — 엔젠바이오 상한가](https://www.ggilbo.com/news/articleView.html?idxno=1181888) · [금강일보 — 한국정보인증 급등](https://www.ggilbo.com/news/articleView.html?idxno=1181862) · [보안뉴스 — 엑스게이트와 양자 기술](https://m.boannews.com/html/detail.html?idx=135361) · [데이터투자 — SDT·무림P&amp;P 지분 7%](https://www.datatooza.com/article/202604161142243932e80ea65769_80)</p>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-09-16 02:47
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

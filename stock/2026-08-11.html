@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-08-11</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <h2>오늘장 요약</h2>
 <p>2분기 실적 발표가 몰린 날이었고, 시장은 반도체에서 <strong>화장품 ODM → 로봇 → 헬스케어</strong>로 순환매를 돌렸다. 정보지 기준 <code>오늘 처음</code> 등장한 신규 테마는 5개(화장품·MLCC·호남반도체/건설·위메이드 그룹주·삼성 로봇·휴머노이드)이나, 주가·거래대금이 함께 신규로 붙은 것은 <strong>화장품</strong>과 <strong>로봇(비에이치)</strong> 둘뿐이다.</p>
@@ -139,7 +163,10 @@
 <li><strong>[본느] 08/06~08/11 사이 DART 공시·최대주주 변경·감자/유증 유무 확인</strong> — 6연상 재료 미상 상태.</li>
 </ul>
 <blockquote><p>※ &#x27;오늘 상한가지만 사지 말 것&#x27;: 금호전기(대금 84억·직전최대 0.04배), 한탑(대금 15억), 본느(6연상·5일누적 <span style="color:#ef4444;font-weight:700">+119.5%</span>), 남화토건·동양파일(대금 100억 미만).</p></blockquote>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>당일 수급·테마 분석 — 2026-08-11 (화) 장마감</h1>
 <blockquote><p><strong>웹 검색: 사용함</strong> (6회). 웹 출처는 <code>(웹: 매체명)</code> 으로 표기했고, 등락률·거래대금은 전부 문서(스캐너 표)를 정본으로 썼다.</p></blockquote>
 <blockquote><p>숫자 차이 한 건: 웹은 비에이치 <strong><span style="color:#ef4444;font-weight:700">+16.83%</span> / 18,120원</strong>으로 보도(웹: 한국경제) — 이는 문서의 <code>KRX종가(15:30) 18,120</code>과 일치한다. 스캐너 표의 <strong><span style="color:#ef4444;font-weight:700">+20.6%</span> / 18,700원</strong>은 NXT 세션종가(19:59) 기준이며, 본 분석은 문서 기준을 쓴다.</p></blockquote>
@@ -311,10 +338,17 @@
 <li>[한국경제 — &#x27;호남 반도체&#x27; 스치기만 해도 터졌다…주가 30% 폭등 (06/29)](https://www.hankyung.com/article/2026062931426)</li>
 <li>[아시아경제 — 호남 반도체 투자 수혜주 옥석 찾기…테마주도 기승 (06/30)](https://view.asiae.co.kr/article/2026063009484309001)</li>
 </ul>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-08-11 23:07
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>

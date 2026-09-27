@@ -55,6 +55,29 @@
   .stk .card{padding:12px 13px}
   .stk .card .c-t{font-size:16px}
 }
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
 </style>
 </head><body class="stk">
 <header class="top"><div class="wrap">
@@ -63,6 +86,7 @@
   <span class="dt">2026-08-26</span>
 </div></header>
 <div class="wrap"><article>
+<section class="sum" id="summary">
 <h1>오늘의 브리핑</h1>
 <p>기준일: 2026-08-26 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <h2>오늘장 요약</h2>
@@ -146,7 +170,10 @@
 <li><strong>휴온스글로벌(084110) 정규장 갭</strong> — 상한가 지표가 시간외(17:21 충족)에서 나온 것이라 정규장 갭을 직접 확인할 것. 니어스랩(417030)은 봉 데이터 부족으로 D+0 판정 자체가 신뢰불가.</li>
 <li><strong>자연과환경(043910)·빛과전자(069540)</strong> — 자연과환경은 08/27 장 초반 대금 재유입 여부 및 4대강/환경복원 관련 정부 발표 유무(재료 미상, 주가 선행 추정) / 빛과전자는 광통신 동반주 출현 여부만 체크.</li>
 </ul>
-<h2>📋 상세 분석</h2>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
 <h1>📅 당일 수급·테마 브리핑 — 2026-08-26 (수) 장마감</h1>
 <p>기준일: 2026-08-26 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
 <blockquote><p><strong>웹 검색: 사용하지 않음(검색 불가 환경으로 처리).</strong> 이 문서 데이터만으로 판단했다. 문서에 없는 뉴스·이벤트는 지어내지 않았다.</p></blockquote>
@@ -295,10 +322,17 @@
 <li>컴투스 &#x27;제우스&#x27; 앱마켓 <strong>매출</strong> 순위 — 인기 1위는 다운로드일 뿐이다. 매출 10위권 진입 실패 시 출시일 고점 확정</li>
 </ol>
 <p>※ 보너스: 휴온스글로벌은 상한가 지표가 시간외(17:21 충족)에서 나온 것이라 정규장 갭을 직접 확인할 것. 니어스랩은 봉 데이터 부족으로 D+0 판정 자체가 신뢰불가 ```</p>
+</div>
+</details>
 <hr>
 <p style="color:#9aa0a6;font-size:13px">
 자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
 투자 권유가 아닙니다. 생성 2026-08-26 22:05
 </p>
 </article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
 </body></html>
