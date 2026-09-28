@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-09-28 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-09-28</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-09-28_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-09-28 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>원문에 종목코드가 없어 종목명만 적었다.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>코스피는 <span style="color:#7dabf8;font-weight:700">-2.70%</span> 급락했다(웹: 인포스탁데일리). 원문은 급락 원인으로 美 국채금리를 들었다. 그런데도 코스닥 중소형은 테마별로 강하게 갈렸고, HLB그룹 전체가 상한가였다. 오늘 새로 점화된 흐름은 <strong>태양광(한화솔루션 3,795억, 30일 1위, 처음 <span style="color:#ef4444;font-weight:700">+10%</span> 넘은 날)</strong>이다. 테마 시작은 09/23이라 거래일상 2일차지만 성격이 바뀐 날이다. 재료 단계가 올라간 쪽은 <strong>HLB그룹주(리픽투 FDA 허가 확정)</strong>다. 의료AI는 신규가 아니며, 09/18부터 진행 중인 테마에 후발주가 붙은 모양이다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">태양광</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>美 모듈가 W당 0.27→0.38달러(<span style="color:#ef4444;font-weight:700">+40.7%</span>), Section 232 12/4 시행 앞둠</p><p class="c-p"><span class="c-k">수식충족</span>한화솔루션·보원케미칼·HD현대에너지솔루션·신성이엔지</p><p class="c-p"><span class="c-k">정보지</span>B &#x27;태양광 관련주&#x27; 오늘 처음 / A &#x27;태양광&#x27; 09/23 등장</p><div class="c-c"><span class="chip"><i>신선도</i>시작 09/23, 거래일상 2일차</span><span class="chip"><i>판단</i>최우선. 기대→판가 상승 실측으로 반 단계 상승</span></div></article>
+<article class="card"><h4 class="c-t">HLB그룹주</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>리픽투 FDA 허가(9/23 현지), 4분기 美 출시 예정</p><p class="c-p"><span class="c-k">수식충족</span>HLB펩 1종목(16억)</p><p class="c-p"><span class="c-k">정보지</span>A 오늘 처음</p><div class="c-c"><span class="chip"><i>신선도</i>재료 기준 사실상 D+0</span><span class="chip"><i>판단</i>기대→확정. 점상으로 잠겨 진입 불가</span></div></article>
+<article class="card"><h4 class="c-t">SNT그룹 자사주 소각</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>SNT모티브 10.2%(690억)·SNT홀딩스 8.63%(640억) 소각, 10/12 예정</p><p class="c-p"><span class="c-k">수식충족</span>SNT모티브·SNT다이내믹스</p><p class="c-p"><span class="c-k">정보지</span>오늘 처음</p><div class="c-c"><span class="chip"><i>신선도</i>순수 D+0</span><span class="chip"><i>판단</i>약한 D+0(대금 100억 미만), 지속성 약함</span></div></article>
+<article class="card"><h4 class="c-t">의료AI</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>섹터 동반 강세, 루닛 스톡홀름 수주</p><p class="c-p"><span class="c-k">수식충족</span>원문에 충족 여부 미표기</p><p class="c-p"><span class="c-k">정보지</span>09/21·09/23 등장</p><div class="c-c"><span class="chip"><i>신선도</i>시작 09/18</span><span class="chip"><i>판단</i>진행 중. 후발주만 붙음</span></div></article>
+<article class="card"><h4 class="c-t">유리기판</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>엔비디아 검토(웹: 서울경제)</p><p class="c-p"><span class="c-k">수식충족</span>에프엔에스테크(★첫흐름, 30억)</p><p class="c-p"><span class="c-k">정보지</span>A 오늘 처음</p><div class="c-c"><span class="chip"><i>신선도</i>09/07 시작 테마의 재점화</span><span class="chip"><i>판단</i>D+0 목록에서 제외</span></div></article>
+<article class="card"><h4 class="c-t">2차전지 소재</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>재료 미상</p><p class="c-p"><span class="c-k">수식충족</span>에코프로비엠·코스모신소재</p><div class="c-c"><span class="chip"><i>신선도</i>급등일 아님</span><span class="chip"><i>판단</i>근거 부족, 관찰만</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>태양광</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">신성이엔지</h4><p class="c-p"><span class="c-k">근거</span>대금 68억뿐. 장후 기사가 AI 데이터센터 냉각 쪽이라 태양광과 결이 다름 → 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>3봉</span><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>대금</i>68억</span></div></article>
+<article class="card"><h4 class="c-t">한화솔루션</h4><p class="c-p"><span class="c-k">근거</span>09/23에 이미 충족 / 대금 30일 1위, 직전최대 1.9배 / 종가위치 96%, VWAP <span style="color:#ef4444;font-weight:700">+4.0%</span> → 대장주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/23</span><span class="chip"><i>충족봉</i>14봉(09:09)</span><span class="chip"><i>등락%</i>+17.3</span><span class="chip"><i>대금</i>3,795억</span></div></article>
+<article class="card"><h4 class="c-t">보원케미칼</h4><p class="c-p"><span class="c-k">근거</span>09/23에 이미 충족 / 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/23 외 1</span><span class="chip"><i>충족봉</i>19봉</span><span class="chip"><i>등락%</i>+13.6</span><span class="chip"><i>대금</i>229억</span></div></article>
+<article class="card"><h4 class="c-t">HD현대에너지솔루션</h4><p class="c-p"><span class="c-k">근거</span>09/09에 이미 충족 / 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/09</span><span class="chip"><i>충족봉</i>2봉</span><span class="chip"><i>등락%</i>+4.7</span><span class="chip"><i>대금</i>617억</span></div></article>
+</div>
+<h3>HLB그룹주</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">HLB펩</h4><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>1봉</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>16억</span><span class="chip"><i>근거</i>대금 16억으로 작아 후발주 판정 (D+22)</span></div></article>
+</div>
+<h3>SNT그룹 자사주 소각</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">SNT모티브</h4><p class="c-p"><span class="c-k">근거</span>대금 최대, 소각 당사자 → 대장주 / 공시 12:03 → 포착 13:05~13:12</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>3봉</span><span class="chip"><i>등락%</i>+6.9</span><span class="chip"><i>대금</i>92억</span></div></article>
+<article class="card"><h4 class="c-t">SNT다이내믹스</h4><p class="c-p"><span class="c-k">근거</span>등락률은 최고지만 대금이 작아 동반 종목</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>5봉</span><span class="chip"><i>등락%</i>+13.1</span><span class="chip"><i>대금</i>79억</span></div></article>
+</div>
+<h3>유리기판</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">에프엔에스테크</h4><p class="c-p"><span class="c-k">근거</span>대금 30억 → 후발주. 테마 자체가 09/07 시작의 재점화</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i>원문 미표기</span><span class="chip"><i>대금</i>30억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">디케이락</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위, 직전최대 2.9배 / 뉴스 09:07 → 포착 14:29 / 글로벌 장비사 A사 인증 확정</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i>+17.7</span><span class="chip"><i>대금</i>151억</span></div></article>
+<article class="card"><h4 class="c-t">현대바이오랜드</h4><p class="c-p"><span class="c-k">근거</span>직전최대 60.6배 / FDA 510(k) 확정 / 기사 시각 웹에서 확인 안 됨 → 선행 판정 불가 / 종가위치 57%</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i>+13.8</span><span class="chip"><i>대금</i>324억</span></div></article>
+<article class="card"><h4 class="c-t">TKG휴켐스</h4><p class="c-p"><span class="c-k">근거</span>애프터마켓 <span style="color:#ef4444;font-weight:700">+10%</span>대(15:52, 18,020원) → NXT 종가 16,370원으로 전부 반납 / 원인 웹에서도 확인 안 됨 / 종가위치 8% → 버려도 되는 흔적</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i>+1.0(정규장)</span><span class="chip"><i>대금</i>101억</span></div></article>
+<article class="card"><h4 class="c-t">한솔테크닉스</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족 / 반도체(프로브카드) 재료라 원문이 태양광 묶음에서 제외</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/03</span><span class="chip"><i>충족봉</i>1봉</span><span class="chip"><i>등락%</i>+7.0</span><span class="chip"><i>대금</i>287억</span></div></article>
+</div>
+<h3>2차전지 소재</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">에코프로비엠</h4><p class="c-p"><span class="c-k">근거</span>급등일 아님, 대금 순위 7~16위권 / 재료 미상, 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문 미표기</span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i><span style="color:#ef4444;font-weight:700">+5%</span> 안팎</span><span class="chip"><i>대금</i>917억</span></div></article>
+<article class="card"><h4 class="c-t">코스모신소재</h4><p class="c-p"><span class="c-k">근거</span>위와 같음</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문 미표기</span><span class="chip"><i>충족봉</i>원문 미표기</span><span class="chip"><i>등락%</i><span style="color:#ef4444;font-weight:700">+5%</span> 안팎</span><span class="chip"><i>대금</i>원문 미표기</span></div></article>
+</div>
+<blockquote><p><strong>원문에 충족 여부가 표기되지 않은 종목(표에 넣지 않음)</strong></p></blockquote>
+<blockquote><p>- 의료AI D+0 후발주: 셀바스헬스케어(117억)·딥노이드(45억)·씨어스(272억)·파로스아이바이오·인성정보</p></blockquote>
+<blockquote><p>- 의료AI 진행 중: 레메디(1,800억, D+1)·루닛(1,403억, D+3, 종가위치 51%)·쓰리빌리언(1,387억, D+1)</p></blockquote>
+<blockquote><p>- 금강공업: <span style="color:#ef4444;font-weight:700">+11.0%</span>, 378억, D+0, 윗꼬리 큼(종가위치 45%)</p></blockquote>
+<blockquote><p>- 매드업: <span style="color:#ef4444;font-weight:700">+16.0%</span>, 1,050억, D+10. 원인은 웹에서도 확인 안 됨, 주가 선행 추정</p></blockquote>
+<blockquote><p>- 서진시스템: <span style="color:#ef4444;font-weight:700">+12.9%</span>, 1,153억, D+20. 미확인(20일전 <span style="color:#ef4444;font-weight:700">+11%</span>)이라 첫흐름 미확인. 목표가 상향 재탕</p></blockquote>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">태양광</h4><p class="c-p"><span class="c-k">종목</span>OCI홀딩스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+12.6%</span>, 2,600억(2등). G1 3회에 그침. 이전충족 09/23 외 2</p></article>
+<article class="card"><h4 class="c-t">HLB그룹주</h4><p class="c-p"><span class="c-k">종목</span>HLB</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30.0%</span> 점상, 347억(30일 20위). 점상으로 잠김. 미충족 사유는 원문에 없음. 이전충족 09/21</p></article>
+<article class="card"><h4 class="c-t">HLB그룹주</h4><p class="c-p"><span class="c-k">종목</span>HLB이노베이션</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30.0%</span>, 252억. G1 4회에 그침</p></article>
+<article class="card"><h4 class="c-t">HLB그룹주</h4><p class="c-p"><span class="c-k">종목</span>HLB제약·HLB제넥스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30.0%</span>·<span style="color:#ef4444;font-weight:700">+29.8%</span>, 각 30억. 대부분 개장과 동시에 점상 잠김</p></article>
+<article class="card"><h4 class="c-t">HLB그룹주</h4><p class="c-p"><span class="c-k">종목</span>HLB생명과학·파나진·테라퓨틱스·글로벌·바이오스텝</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>+29.8~30.0%, 5~9억. 점상 잠김</p></article>
+<article class="card"><h4 class="c-t">SNT그룹</h4><p class="c-p"><span class="c-k">종목</span>SNT홀딩스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+5.5%</span>, 26억. G2 7회에 그침</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">호남반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>9/29 메가프로젝트 3차 회의 수혜 후보. <span style="color:#ef4444;font-weight:700">+14.99%</span>(정보지 값, 구간 미기재, 정본 아님)</p><div class="c-c"><span class="chip"><i>종목</i>남광토건</span></div></article>
+<article class="card"><h4 class="c-t">호남반도체</h4><p class="c-p"><span class="c-k">정보지 사유</span>9/29 메가프로젝트 3차 회의 수혜 후보</p><div class="c-c"><span class="chip"><i>종목</i>동양파일</span></div></article>
+<article class="card"><h4 class="c-t">PCB/기판</h4><p class="c-p"><span class="c-k">정보지 사유</span>오늘 처음 등장</p><div class="c-c"><span class="chip"><i>종목</i>뉴프렉스</span></div></article>
+<article class="card"><h4 class="c-t">정유</h4><p class="c-p"><span class="c-k">정보지 사유</span>정보지 언급</p><div class="c-c"><span class="chip"><i>종목</i>흥구석유</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>태양광</strong>: 한화솔루션이 KRX 종가 33,350 위에서 출발하고 오전 대금 1,500억 이상이면 진짜다. OCI홀딩스가 함께 버티고 HD현대에너지솔루션이 <span style="color:#ef4444;font-weight:700">+5%</span> 이상 붙으면 더 좋다. 반대로 30,400(오늘 시가) 쪽으로 밀리는 대량 음봉이 나오거나, OCI만 버티고 한화가 밀리면 아니다.</li>
+<li><strong>HLB</strong>: 2연속 상한가이거나, 잠김이 풀려도 시가 <span style="color:#ef4444;font-weight:700">+10%</span> 이상에서 대금이 347억을 크게 넘기면 진짜다. 시가 갭 뒤 장대 음봉이 나오거나 소형 계열사부터 무너지면 아니다. &#x27;담관암 시장이 좁다&#x27;는 지적이 매물로 이어지는지도 본다.</li>
+<li><strong>SNT</strong>: 다른 지주·저PBR 종목으로 자사주 소각 흐름이 번지는지 본다. 안 번지면 하루짜리로 처리한다.</li>
+<li><strong>지수·정보지</strong>: 코스피 <span style="color:#7dabf8;font-weight:700">-2.70%</span>의 원인인 美 국채금리 흐름을 본다. 9/29 회의 수혜 후보(남광토건·동양파일)가 조건검색에 들어오는지도 확인한다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-09-28 (월) [장마감]</h1>
+<p>기준일: 2026-09-28 (월) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>코스피가 <span style="color:#7dabf8;font-weight:700">-2.70%</span> 급락했다(웹: 인포스탁데일리). 그런데도 코스닥 중소형은 테마별로 강하게 갈렸다. 오늘 새로 움직인 돈 가운데 가장 큰 것은 <strong>태양광(한화솔루션 3,795억, 30일 대금 1위, 처음 <span style="color:#ef4444;font-weight:700">+10%</span> 넘은 날)</strong>이다. 두 번째는 <strong>HLB그룹주(담관암 신약 &#x27;리픽투&#x27; FDA 허가 확정, 재료 단계 상승)</strong>로, 그룹 전체가 상한가였다. 의료AI는 신규가 아니라 09/18부터 진행 중인 테마에 오늘 후발주(셀바스헬스케어·딥노이드·씨어스 등 D+0)가 붙은 모양이다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. 태양광 — 美 모듈·폴리실리콘 가격 상승</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>한화솔루션</strong></h4><p class="c-p"><span class="c-k">이전충족</span>09/23</p><div class="c-c"><span class="chip"><i>등락%</i>+17.3</span><span class="chip"><i>거래대금(억)</i><strong>3,795</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★14봉 (09:09)</span></div></article>
+<article class="card"><h4 class="c-t">OCI홀딩스</h4><p class="c-p"><span class="c-k">이전충족</span>09/23 외 2 (08/04·08/10)</p><div class="c-c"><span class="chip"><i>등락%</i>+12.6</span><span class="chip"><i>거래대금(억)</i>2,600</span><span class="chip"><i>D+N</i>D+29</span><span class="chip"><i>오늘충족</i>미충족 (G1 3회)</span></div></article>
+<article class="card"><h4 class="c-t">HD현대에너지솔루션</h4><p class="c-p"><span class="c-k">이전충족</span>09/09</p><div class="c-c"><span class="chip"><i>등락%</i>+4.7</span><span class="chip"><i>거래대금(억)</i>617</span><span class="chip"><i>오늘충족</i>★2봉</span></div></article>
+<article class="card"><h4 class="c-t">보원케미칼</h4><p class="c-p"><span class="c-k">이전충족</span>09/23 외 1</p><div class="c-c"><span class="chip"><i>등락%</i>+13.6</span><span class="chip"><i>거래대금(억)</i>229</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>★19봉</span></div></article>
+<article class="card"><h4 class="c-t">신성이엔지</h4><p class="c-p"><span class="c-k">이전충족</span>없음</p><div class="c-c"><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>거래대금(억)</i>68</span><span class="chip"><i>오늘충족</i>★3봉 (★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">한솔테크닉스</h4><p class="c-p"><span class="c-k">이전충족</span>09/03 — 태양광보다 반도체(프로브카드) 재료. 묶음에서 제외하는 게 맞음</p><div class="c-c"><span class="chip"><i>등락%</i>+7.0</span><span class="chip"><i>거래대금(억)</i>287</span><span class="chip"><i>오늘충족</i>★1봉</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>09/23</strong>. 한화솔루션·OCI홀딩스·보원케미칼이 모두 09/23에 이미 충족했다(한화 <span style="color:#ef4444;font-weight:700">+7.1%</span>, OCI <span style="color:#ef4444;font-weight:700">+9.8%</span>, 보원 <span style="color:#ef4444;font-weight:700">+11.6%</span>). 09/24~26은 추석 휴장이었으므로, 테마 기준으로는 <strong>거래일상 2일차</strong>다. 다만 대장인 한화솔루션은 오늘이 30일 만에 처음 <span style="color:#ef4444;font-weight:700">+10%</span>를 넘은 날이다(D+0, 30일 급등일수 0). 직전 5일 누적이 <span style="color:#ef4444;font-weight:700">+6.4%</span>에 그쳐 선반영도 작다. → <strong>&#x27;2일차지만 성격이 바뀐 날&#x27;</strong>로 본다. 정보지에서도 &#x27;태양광 관련주&#x27;(정보지B)는 <strong>오늘 처음</strong>, &#x27;태양광&#x27;(정보지A)은 09/23 한 번 등장했다.</li>
+<li><strong>대장주 / 후발주</strong>: 대장주는 <strong>한화솔루션</strong>이다. 대금이 가장 크고(3,795억), 09/23에 먼저 충족했으며, 종가위치 96%·VWAP <span style="color:#ef4444;font-weight:700">+4.0%</span>로 고가권에서 마감했다. 2등은 OCI홀딩스(2,600억, 오늘 미충족). 보원케미칼(229억)·신성이엔지(68억)·HD현대에너지솔루션은 <strong>후발주</strong>다. 신성이엔지는 ★첫흐름이지만 대금이 68억뿐이고, 장후 기사도 AI 데이터센터 냉각 쪽이라 태양광과는 결이 다르다.</li>
+<li><strong>추정 재료</strong>: 미국 모듈 중간가가 8/7 정책 발표 전 W당 0.27달러에서 0.38달러로 약 40.7% 올랐다(웹: 파이낸셜뉴스·뉴스핌). 하나증권은 &quot;12월 4일 Section 232 시행을 앞두고 가격 상승이 이어질 수 있다&quot;고 봤다(웹: 파이낸셜뉴스).</li>
+<li>뉴스·주가 순서: 첫 기사가 07:09(웹: 파이낸셜뉴스)에 나왔고 스캐너 포착은 09:09다. <strong>뉴스가 먼저 나온 뒤 주가가 따라온 형태</strong>라 &#x27;주가 선행&#x27;은 아니다.</li>
+<li><strong>재료 단계</strong>: 기대(08/07 관세 반사이익) → 기대(09/23 &quot;국가안보 전략자산&quot;) → <strong>판가 상승 실측(09/28)</strong>. 정책 기대가 실제 가격 데이터로 바뀌었다는 점에서 <strong>반 단계 상승</strong>이다. 거래대금(30일 1위, 직전최대 1.9배)이 이를 받쳐준다. 다만 실적 반영(4단계)은 아니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜: 한화솔루션이 오늘 KRX 종가(33,350) 위에서 출발하고, 오전 대금 1,500억 이상을 유지. OCI홀딩스가 함께 버팀. HD현대에너지솔루션이 <span style="color:#ef4444;font-weight:700">+5%</span> 이상 따라붙음.</li>
+<li>❌ 아님: 시가 갭 이후 30,400(오늘 시가) 방향으로 밀리는 대량 음봉. OCI만 버티고 한화는 밀리는 분리 흐름.</li>
+</ul>
+<h3>🥈 2. HLB그룹주 — 리픽투 美 FDA 허가</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>HLB</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0 (점상)</span><span class="chip"><i>거래대금(억)</i><strong>347</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/21 (8봉)</span></div></article>
+<article class="card"><h4 class="c-t">HLB이노베이션</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>252</span><span class="chip"><i>D+N</i>D+10</span><span class="chip"><i>오늘충족</i>미충족 (G1 4회)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">HLB제약</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>30</span><span class="chip"><i>D+N</i>D+3</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/01 외 1</span></div></article>
+<article class="card"><h4 class="c-t">HLB제넥스</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>거래대금(억)</i>30</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">HLB펩</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>16</span><span class="chip"><i>D+N</i>D+22</span><span class="chip"><i>오늘충족</i>★1봉 (★첫흐름)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">HLB생명과학·파나진·테라퓨틱스·글로벌·바이오스텝</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8~30.0</span><span class="chip"><i>거래대금(억)</i>5~9</span><span class="chip"><i>D+N</i>D+0~D+7</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>테라퓨틱스 07/21, 글로벌 07/15</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 이 재료 기준으로는 <strong>오늘이 사실상 D+0</strong>이다. FDA 승인이 9/23 현지시간에 나왔고(웹: 뉴스핌), 추석 휴장 뒤 첫 거래일이 오늘이다. HLB의 09/21 충족은 승인 기대감에 먼저 들어온 수급이다. 정보지A의 &#x27;HLB그룹주&#x27;는 <strong>오늘 처음</strong> 등장했다.</li>
+<li><strong>대장주 / 후발주</strong>: 대장주는 <strong>HLB</strong>다(347억, 그룹 내 최대, 09/21에 먼저 충족). 오늘 충족한 종목은 <strong>HLB펩(대금 16억)</strong> 하나인데, 대금이 작아 <strong>후발주</strong>로 판정한다. 대부분 개장과 동시에 점상한가로 잠겨서, HLB 대금은 30일 중 20위에 그쳤다. <strong>잠겨서 대금이 작은 것이지 관심이 약한 게 아니다.</strong> 대신 오늘은 사실상 진입할 수 없는 자리였다.</li>
+<li><strong>추정 재료</strong>: 엘레바의 리픽투가 FGFR2 융합 담관암 2차 치료제로 FDA 승인을 받았다. 4분기 미국 출시 예정이다. 국내사가 NDA를 직접 제출해 받은 첫 허가다(웹: SBS Biz·뉴스핌). 뉴스는 03:19에 먼저 나왔다(문서).</li>
+<li><strong>재료 단계</strong>: <strong>기대 → 확정(승인)</strong> — 단계 상승, 실질 신규 재료다. 문서 이력에도 07/15 &#x27;HLB 연속 하한가&#x27;가 있어, 과거 실패 이력이 있는 재료가 이번에 확정으로 뒤집혔다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜: HLB가 2연속 상한가이거나, 잠김이 풀려도 시가 <span style="color:#ef4444;font-weight:700">+10%</span> 이상에서 대량 거래로 버팀. 거래대금이 오늘(347억)을 크게 넘으며 30일 순위권 진입.</li>
+<li>❌ 아님: 시가 갭 이후 장대 음봉(허가 = 재료 소멸로 소화). 지분 가치가 작은 소형 계열사부터 먼저 무너짐.</li>
+<li>투자 포인트는 &#x27;담관암 시장이 좁다&#x27;는 지적(웹: 이데일리 13:47 기사 제목, 문서 목록)이 D+1 매물로 연결되는지다.</li>
+</ul>
+<h3>🥉 3. SNT그룹 자사주 소각 (약한 D+0)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>SNT모티브</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+6.9</span><span class="chip"><i>거래대금(억)</i><strong>92</strong></span><span class="chip"><i>오늘충족</i>★3봉 (★첫흐름)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">SNT다이내믹스</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.1</span><span class="chip"><i>거래대금(억)</i>79</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★5봉 (★첫흐름)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">SNT홀딩스</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.5</span><span class="chip"><i>거래대금(억)</i>26</span><span class="chip"><i>오늘충족</i>미충족 (G2 7회)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: <strong>09/28</strong>. 세 종목 모두 이전충족이 없고, 정보지에서도 <strong>오늘 처음</strong>이다. 순수한 D+0다.</li>
+<li><strong>대장주 / 후발주</strong>: 대장주는 <strong>SNT모티브</strong>다(대금 92억 최대, 자사주 소각 당사자). SNT다이내믹스는 등락률은 가장 높지만 대금이 더 작아 동반 종목으로 본다.</li>
+<li><strong>추정 재료</strong>: SNT모티브는 자사주 전량 270만6천주(발행주식의 10.2%, 690억)를 소각하고, SNT홀딩스는 640억 규모(8.63%)를 소각한다. 소각 예정일은 10/12다(웹: 머니투데이·디지털투데이). 텔레그램 최초 공시가 12:03, 스캐너 포착은 13:05~13:12다. <strong>공시가 먼저 나온 뒤 주가가 반응</strong>했다.</li>
+<li><strong>재료 단계</strong>: 이력 없음 → 확정(이사회 결의). 주주환원 이벤트형이라 <strong>지속성은 약하다.</strong></li>
+<li><strong>판단</strong>: D+0 조건(이전충족 없음·대금 1~2위)은 맞는다. 하지만 <strong>절대 대금이 100억 미만</strong>이라 &#x27;약한 D+0&#x27;로 본다. 주도 테마로 크기는 어렵다.</li>
+<li><strong>다음 거래일 확인 조건</strong>: 다른 지주·저PBR 종목으로 자사주 소각 흐름이 번지는지 확인한다. 안 번지면 하루짜리로 처리한다.</li>
+</ul>
+<blockquote><p>제외한 후보: <strong>유리기판</strong>(정보지A에서 &#x27;오늘 처음&#x27;, 엔비디아가 검토 중이라는 재료(웹: 서울경제)). 한빛레이저 D+11(이전충족 09/07·08·09), 켐트로닉스 이전충족 09/07·09/17로 <strong>이미 09/07에 시작된 테마의 재점화</strong>다. 그래서 D+0 목록에서 뺐다. 오늘 ★첫흐름인 에프엔에스테크는 대금 30억으로 후발주다.</p></blockquote>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>의료AI</strong></h4><p class="c-p"><span class="c-k">대장 (대금)</span>레메디 1,800억 (D+1) · 루닛 1,403억 (D+3) · 쓰리빌리언 1,387억 (D+1)</p><p class="c-p"><span class="c-k">메모</span>정보지에서 09/21·09/23에 이미 등장. 셀바스헬스케어(117억)·딥노이드(45억)·씨어스(272억)·파로스아이바이오·인성정보의 D+0은 <strong>후발주</strong>다. 씨어스·셀바스는 개별 재료 없이 섹터에 동반한 흐름이다(웹: 머니투데이). 루닛 스톡홀름 수주는 &#x27;수주&#x27; 확정 단계지만 이미 D+3이고 종가위치 51%로 윗꼬리가 길다</p><div class="c-c"><span class="chip"><i>시작일</i><strong>09/18</strong> (루닛·뷰노·쓰리빌리언 충족)</span></div></article>
+<article class="card"><h4 class="c-t">비만·탈모 바이오</h4><p class="c-p"><span class="c-k">대장 (대금)</span>한국비엔씨 638억 (D+8)</p><p class="c-p"><span class="c-k">메모</span>비만치료제 동물시험 체중 <span style="color:#7dabf8;font-weight:700">-30%</span>(기대 단계), 로킷헬스케어 탈모 동물시험. 로킷은 종가위치 15%로 약함</p><div class="c-c"><span class="chip"><i>시작일</i>08/31</span></div></article>
+<article class="card"><h4 class="c-t">양자암호·보안</h4><p class="c-p"><span class="c-k">대장 (대금)</span>아이씨티케이 628억 (D+5)</p><p class="c-p"><span class="c-k">메모</span>직전 5일 누적 <span style="color:#ef4444;font-weight:700">+32.7%</span>로 후반부. 케이씨에스는 동반 종목</p><div class="c-c"><span class="chip"><i>시작일</i>09/11</span></div></article>
+<article class="card"><h4 class="c-t">유리기판</h4><p class="c-p"><span class="c-k">대장 (대금)</span>한빛레이저 342억 (D+11)</p><p class="c-p"><span class="c-k">메모</span>위에 적은 대로 재점화</p><div class="c-c"><span class="chip"><i>시작일</i>09/07</span></div></article>
+<article class="card"><h4 class="c-t">제약 개별</h4><p class="c-p"><span class="c-k">대장 (대금)</span>동국생명과학 1,096억 (D+2) · 이뮨온시아 961억 (D+7) · 삼익제약 1,200억 (D+7)</p><p class="c-p"><span class="c-k">메모</span>신규 재료 없음. 순환매</p><div class="c-c"><span class="chip"><i>시작일</i>09/14~22</span></div></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>디케이락</strong> (<span style="color:#ef4444;font-weight:700">+17.7%</span>, 151억, D+0, ★첫흐름): 글로벌 반도체 장비사 A사 품질인증을 최종 획득했다(웹: 파이낸셜뉴스 09:07). 포착은 14:29로 <strong>뉴스가 먼저</strong>다. 재료 단계는 이력 없음 → 확정. 대금 30일 1위(직전최대 2.9배)로 성격이 바뀐 자금이 들어왔다. 동반 종목이 없어 개별주다.</li>
+<li><strong>금강공업</strong> (<span style="color:#ef4444;font-weight:700">+11.0%</span>, 378억, D+0): 알래스카 LNG 1단계 API 5L 가스강관 공급 자격을 확보했다(웹: 문서 텔레그램 12:15, 포착 12:20으로 거의 동시). 자격 확보는 수주 전 단계다. 고점 대비 <span style="color:#7dabf8;font-weight:700">-11.1%</span>, 종가위치 45%로 <strong>윗꼬리가 크다</strong>. 오늘 LNG 강관 동반주는 조건검색에 없었다.</li>
+<li><strong>현대바이오랜드</strong> (<span style="color:#ef4444;font-weight:700">+13.8%</span>, 324억, D+0, ★첫흐름, 직전최대 60.6배): 치과 골이식재 &#x27;리보힐&#x27;이 FDA 510(k) 승인을 받았다(현지 9/25, 웹: 뉴스프라임·네이트). 기사가 올라온 시각은 <strong>웹에서 확인 안 됨</strong>이라 선행 여부는 판정하지 못했다. 재료 단계는 이력 없음 → 확정(승인). 자금 성격 변화는 가장 크지만 종가위치 57%로 눌려서 마감했다.</li>
+<li><strong>매드업</strong> (<span style="color:#ef4444;font-weight:700">+16.0%</span>, 1,050억, D+10): 문서에도 뉴스가 없고, <strong>웹에서도 원인 확인 안 됨</strong>(시세 기사만 나옴). 대금 30일 1위라 규모는 크지만 이전충족이 09/07·09/23으로 진행 중이다. 재료 미상, 주가 선행 추정.</li>
+<li><strong>TKG휴켐스</strong> (★첫흐름, <span style="color:#ef4444;font-weight:700">+1.0%</span>, 101억): 정규장이 끝난 뒤 애프터마켓에서 <span style="color:#ef4444;font-weight:700">+10%</span>대로 튀었다(웹: 뉴스통, 15:52 기준 18,020원). 그러나 NXT 종가는 16,370원으로 <strong>급등분을 전부 반납</strong>했다. <strong>원인은 웹에서도 확인 안 됨.</strong> 종가위치 8%라 버려도 되는 흔적이다.</li>
+<li><strong>서진시스템</strong> (<span style="color:#ef4444;font-weight:700">+12.9%</span>, 1,153억, D+20): SK증권이 목표가를 7만원으로 올렸다(기대 단계, 문서). 이력에 목표가 상향이 반복돼 재탕이다. &#x27;미확인(20일전 <span style="color:#ef4444;font-weight:700">+11%</span>)&#x27;이라 첫흐름으로 단정하지 않는다.</li>
+<li><strong>2차전지 소재 동반 반등</strong> (에코프로비엠 917억·엘앤에프 897억·코스모신소재·롯데에너지머티리얼즈, 전부 <span style="color:#ef4444;font-weight:700">+5%</span> 안팎, D+N &#x27;-&#x27;): 충족 2종목(에코프로비엠·코스모신소재)이 함께 움직였지만 급등일이 아니고 대금 순위도 7~16위다. <strong>재료 미상, 근거 부족.</strong> 테마로 올리지 않고 관찰만 한다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 태양광 (美 모듈·폴리실리콘 가격 상승, Section 232 12/4 시행 앞둠) — 테마 시작은 09/23, 대장주가 처음 <span style="color:#ef4444;font-weight:700">+10%</span> 넘은 날</li>
+<li>그 테마의 대장주 (거래대금 최대): 한화솔루션 (3,795억, 30일 1위, 09/23 먼저 충족) / 2등 OCI홀딩스 (2,600억)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): HLB (기대→FDA 승인 확정), 현대바이오랜드 (→FDA 510k 승인), 디케이락 (→글로벌 장비사 퀄 획득), SNT모티브 (→자사주 소각 결의)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: HLB펩 (16억, HLB그룹 내), 신성이엔지·보원케미칼 (태양광), 셀바스헬스케어·딥노이드·씨어스 (의료AI), 에프엔에스테크 (유리기판)</li>
+<li>같이 볼 종목: OCI홀딩스·HD현대에너지솔루션 (태양광 동반 확인), HLB·HLB이노베이션 (잠김 해제 후 대금), SNT모티브</li>
+<li>진행중이라 눌림만 볼 종목: 레메디·루닛·쓰리빌리언 (의료AI), 아이씨티케이, 한국비엔씨, 한빛레이저·켐트로닉스, 동국생명과학</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>한화솔루션이 KRX 종가 33,350 위에서 시작하는지, OCI홀딩스·HD현대에너지솔루션이 함께 붙는지 (태양광 2일차 확인)</li>
+<li>HLB 점상 2일차인지 잠김 해제인지 — 해제되면 대금이 30일 순위권으로 들어오고 시가 위에서 버티는지</li>
+<li>코스피 <span style="color:#7dabf8;font-weight:700">-2.70%</span>의 원인인 美 국채금리 흐름 (웹: 인포스탁데일리). 오늘 정보지에만 있던 9/29 메가프로젝트 3차 회의 수혜 후보(남광토건·동양파일, 호남반도체)가 조건검색에 들어오는지</li>
+</ol>
+<p>```</p>
+<p><strong>정보지 기준 후발 후보 (정보지 ∖ 조건검색)</strong>: 남광토건(<span style="color:#ef4444;font-weight:700">+14.99%</span>)·동양파일(호남반도체, 9/29 회의), 뉴프렉스(PCB/기판, 오늘 처음), 흥구석유(정유). 수치는 정보지 값이라 정본이 아니다.</p>
+<hr>
+<p>Sources:</p>
+<ul>
+<li>[현대바이오랜드 FDA 승인 — 뉴스프라임](https://www.newsprime.co.kr/news/article/?no=749086) · [네이트](https://news.nate.com/view/20260928n20961)</li>
+<li>[TKG휴켐스 애프터마켓 급등 — 뉴스통](https://www.newstong.co.kr/view3.aspx?seq=14710641)</li>
+<li>[디케이락 글로벌 장비사 인증 — 파이낸셜뉴스](https://www.fnnews.com/news/202609280907096713)</li>
+<li>[SNT모티브 자사주 소각 — 머니투데이](https://www.mt.co.kr/stock/2026/09/28/2026092815585349517) · [SNT홀딩스 — 디지털투데이](https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=703203) · [SNT모티브 — 디지털투데이](https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=703204)</li>
+<li>[의료AI주 동반 강세 — 머니투데이](https://www.mt.co.kr/stock/2026/09/28/2026092809432480095)</li>
+<li>[매드업 시세 — 톱스타뉴스](https://www.topstarnews.net/news/articleView.html?idxno=16223748)</li>
+<li>[美 태양광 가격 20% — 파이낸셜뉴스](https://www.fnnews.com/news/202609280709394722) · [한화솔루션 13%↑ — 뉴스핌](https://www.newspim.com/news/view/20260928000231)</li>
+<li>[엔비디아 유리기판 검토 — 서울경제](https://www.sedaily.com/article/20094690)</li>
+<li>[HLB 리픽투 FDA 허가 — SBS Biz](https://biz.sbs.co.kr/article/20000336633) · [뉴스핌](https://www.newspim.com/news/view/20260928000708)</li>
+<li>[0928 마감체크 코스피 <span style="color:#7dabf8;font-weight:700">-2.70%</span> — 인포스탁데일리](https://www.infostockdaily.co.kr/news/articleView.html?idxno=218150)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-09-28 22:28
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
