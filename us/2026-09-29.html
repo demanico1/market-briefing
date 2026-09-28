@@ -378,7 +378,7 @@
 <li><strong>IBD 「Investing with IBD」(e1gG6YVB070)는 46시간 뒤 예정된 미방송 라이브</strong>여서 제외했다. 목록 최상단에 있었고 제목만 보면 당일물처럼 보였다.</li>
 <li><strong>소수몽키 데일리 라이브는 멤버십 전용</strong>으로 메타데이터 단계에서 차단됐다. 공개 업로드만 수집했다.</li>
 <li><strong>FX Evolution은 이번에도 특정하지 못했다.</strong> 지시문 URL(<code>user/FXEvolution</code>, <code>@FXEvolution</code>)과 <code>externalId</code> 조회 모두 동명의 3D 애니메이션 채널(<code>UCKMz0n4pcf4HrDGnTdqiB9Q</code>)로 연결된다. URL 파싱 문제가 아니라 동명이인 문제다. <strong>지시문의 채널 URL을 교정해야 한다.</strong></li>
-<li><strong>자막 다운로드에서 HTTP 429가 광범위하게 발생</strong>했다. 한 차례 재시도(간격 9초)로 일부를 복구했고, TIER 1 미확보분은 음성 전사로 우회를 시도했다. TIER 2는 지시문대로 전사하지 않고 자막없음으로 기록했다.</li>
+<li><strong>자막 다운로드에서 HTTP 429가 광범위하게 발생</strong>했다. 한 차례 재시도(간격 9초)로 일부를 복구했고, TIER 1 미확보분은 음성 전사로 우회했다(IBD 사이버보안 편 복구 성공). Yahoo 「Market Hang」(59분)은 전사가 시간 예산을 넘겨 중단했고, Yahoo 「Daily Market Coverage」(119분)는 애초에 전사 대상에서 제외했다 — Yahoo는 같은 날 「The 8:30」과 쇼츠로 이미 커버됐다. TIER 2는 지시문대로 전사하지 않고 자막없음으로 기록했다.</li>
 </ul>
 <hr />
 <h2>수집 현황</h2>
@@ -474,7 +474,7 @@
 <td>Yahoo Finance</td>
 <td>1</td>
 <td>라이브</td>
-<td>자막없음(429)</td>
+<td>자막없음(429·전사 시간초과)</td>
 <td>Nvidia launches AI safety platform, adds $150B buyback… | Market Hang</td>
 </tr>
 <tr>
@@ -579,15 +579,15 @@
 <td><strong>GitHub 발행</strong></td>
 <td>—</td>
 <td>—</td>
-<td>(발행 후 기록)</td>
-<td></td>
+<td><strong>성공</strong> (PUSH_RESULT=ok · HTTP 200)</td>
+<td>https://demanico1.github.io/market-briefing/us/2026-09-29.html</td>
 </tr>
 <tr>
 <td><strong>카카오톡 발송</strong></td>
 <td>—</td>
 <td>—</td>
-<td>(발송 후 기록)</td>
-<td></td>
+<td><strong>성공</strong> (피드 카드 result_code:0 / 텍스트 result_code:0)</td>
+<td>요약 PNG 업로드 2560×2048 포함</td>
 </tr>
 </tbody>
 </table></div>
