@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-09-30 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-09-30</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-09-30_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-09-30 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>원문에는 지수·수급 수치가 없습니다. 흐름은 알래스카 LNG 강관·철강에 몰렸고, 나머지 테마(반도체·유리기판, 광통신, 전고체/LMR, 연료전지)는 이미 진행 중이던 테마입니다. 오늘 새로 점화된 테마는 <strong>알래스카 LNG 강관·철강</strong> 하나입니다. 다만 09/03에 한 번 터졌던 테마라서 <strong>재점화형 D+0(4번째 파동)</strong>입니다.</p>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">알래스카 LNG 강관·철강</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>트럼프 대미투자 2,000억불 중 알래스카 LNG 540억불, 발표 10/1 04:30(KST). 보도는 09/29부터 있었음</p><p class="c-p"><span class="c-k">정보지</span>3곳 &#x27;오늘 처음&#x27; (정보지B &#x27;철강&#x27;은 09/22·23에도 등장)</p><p class="c-p"><span class="c-k">판단</span>최우선 D+0. 재료는 기대→구체화 단계이고, 韓 정부가 &#x27;추후 협의&#x27;로 분류해 확정은 아님. 실질 신규 사이클 가능성 &#x27;중간&#x27;</p><div class="c-c"><span class="chip"><i>수식충족</i>7종목</span><span class="chip"><i>신선도</i>09/03 시작, 4차 재점화</span></div></article>
+<article class="card"><h4 class="c-t">전고체 / LMR</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>LG엔솔 각형 LMR (정보지)</p><p class="c-p"><span class="c-k">정보지</span>언급</p><p class="c-p"><span class="c-k">판단</span>진행 중. 한농화성은 후발</p><div class="c-c"><span class="chip"><i>수식충족</i>한농화성 ★첫흐름</span><span class="chip"><i>신선도</i>09/29 시작 (D+1)</span></div></article>
+<article class="card"><h4 class="c-t">반도체 / 유리기판 소재</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문에 당일 재료 확인 안 됨</p><p class="c-p"><span class="c-k">정보지</span>10일째</p><p class="c-p"><span class="c-k">판단</span>진행 중. 와이씨켐·지앤비에스 에코는 D+0이지만 후발</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>신선도</i>09/17 전후</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>AT&amp;T·코닝</p><p class="c-p"><span class="c-k">정보지</span>5일째</p><p class="c-p"><span class="c-k">판단</span>진행 중. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>신선도</i>09/08~09/16</span></div></article>
+<article class="card"><h4 class="c-t">연료전지 / AI 전력</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>블룸에너지 <span style="color:#ef4444;font-weight:700">+10.8%</span></p><p class="c-p"><span class="c-k">정보지</span>&#x27;오늘 처음&#x27;</p><p class="c-p"><span class="c-k">판단</span>진행 중이라 D+0 아님</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>신선도</i>09/09 시작</span></div></article>
+<article class="card"><h4 class="c-t">5G 인프라</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>中 5G 인프라 780조 투자</p><p class="c-p"><span class="c-k">정보지</span>&#x27;오늘 처음&#x27;</p><p class="c-p"><span class="c-k">판단</span>동반 종목이 없어 개별주로 분류</p><div class="c-c"><span class="chip"><i>수식충족</i>글로벌에스엠 1종목</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>알래스카 LNG 강관·철강</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">휴스틸</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위, 직전최대 3.2배, 5일누적 -5.2. 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★13봉 (12:54)</span><span class="chip"><i>등락%</i>+11.2</span><span class="chip"><i>대금</i>255억</span></div></article>
+<article class="card"><h4 class="c-t">TCC스틸</h4><p class="c-p"><span class="c-k">근거</span><strong>대장주.</strong> 09/03에 이미 충족. 대금 30일 1위, 직전최대 1.8배, 2위 대비 1.75배, 상한가 마감</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/09 외1 (09/03)</span><span class="chip"><i>충족봉</i>★10봉 (08:08)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>1,285억</span></div></article>
+<article class="card"><h4 class="c-t">금강철강</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족. 대금 3위, 직전최대 0.5배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/11 외2 (09/03)</span><span class="chip"><i>충족봉</i>★2봉</span><span class="chip"><i>등락%</i>+23.6</span><span class="chip"><i>대금</i>734억</span></div></article>
+<article class="card"><h4 class="c-t">KBI동양철관</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족. 대금 30일 1위, 직전최대 2.1배, 상한가 마감</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/03</span><span class="chip"><i>충족봉</i>★51봉</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>250억</span></div></article>
+<article class="card"><h4 class="c-t">동일스틸럭스</h4><p class="c-p"><span class="c-k">근거</span>09/03에 이미 충족. 대금이 작음, 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/09 외1 (09/03)</span><span class="chip"><i>충족봉</i>★22봉</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>56억</span></div></article>
+<article class="card"><h4 class="c-t">신스틸</h4><p class="c-p"><span class="c-k">근거</span>09/22에 이미 충족. 종가위치 33%로 약함, 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/22 외3</span><span class="chip"><i>충족봉</i>★10봉</span><span class="chip"><i>등락%</i>+9.5</span><span class="chip"><i>대금</i>176억</span></div></article>
+<article class="card"><h4 class="c-t">화성밸브</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인이라 확신도 낮음. 대금 30일 1위, 직전최대 1.5배, 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인 (23일 전 <span style="color:#ef4444;font-weight:700">+25%</span>)</span><span class="chip"><i>충족봉</i>★7봉</span><span class="chip"><i>등락%</i>+17.2</span><span class="chip"><i>대금</i>126억</span></div></article>
+</div>
+<h3>전고체 / LMR</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한농화성</h4><p class="c-p"><span class="c-k">근거</span>진행 중 테마(09/29 시작)의 후발. 대장은 이수스페셜티케미컬 2,086억</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>50억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한온시스템</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위, 직전최대 5.7배, 5일누적 -5.0. 삼성證 목표가 4,000→4,500원, Zoox 공급 개시. 단독 D+0 중 가장 강함</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>09:08 포착</span><span class="chip"><i>등락%</i>+10.3</span><span class="chip"><i>대금</i>824억</span></div></article>
+<article class="card"><h4 class="c-t">글로벌에스엠</h4><p class="c-p"><span class="c-k">근거</span>직전최대 70배. 뉴스(09:45)가 포착보다 먼저. 고가 <span style="color:#ef4444;font-weight:700">+30%</span>에서 종가위치 49%, ★눌림</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>10:13 포착</span><span class="chip"><i>등락%</i>+14.5</span><span class="chip"><i>대금</i>111억</span></div></article>
+<article class="card"><h4 class="c-t">헬릭스미스</h4><p class="c-p"><span class="c-k">근거</span>직전최대 8.8배. 노스랜드 상업화 개시(기사 시각 미확인). 대금이 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>+18.5</span><span class="chip"><i>대금</i>86억</span></div></article>
+<article class="card"><h4 class="c-t">아리바이오홀딩스</h4><p class="c-p"><span class="c-k">근거</span>합병 철회 악재(웹 대조 없음) 뒤 반등. 테마 아님</p><div class="c-c"><span class="chip"><i>충족봉</i>저점 반등 충족</span><span class="chip"><i>등락%</i>-13.5</span><span class="chip"><i>대금</i>130억</span></div></article>
+</div>
+<p>참고: 원문에 오늘 충족봉이 적혀 있지 않은 종목은 위 표에서 뺐습니다.</p>
+<ul>
+<li>진행 중 테마: 이수스페셜티케미컬(09/29 충족), 나인테크(★눌림), 와이씨켐(<span style="color:#ef4444;font-weight:700">+16.7%</span>, 146억), 지앤비에스 에코(202억)</li>
+<li>개별: 노브랜드(09/29 충족, ★눌림), 아스테라시스(09/28 충족), 빅웨이브로보틱스(신규상장이라 지표 신뢰 불가)</li>
+</ul>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">알래스카 LNG 강관·철강</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0, <span style="color:#ef4444;font-weight:700">+22.9%</span>, 386억, 대금 30일 1위·1.7배지만 오늘 미충족. 이전충족 09/22 외1</p><div class="c-c"><span class="chip"><i>종목</i>하이스틸</span></div></article>
+<article class="card"><h4 class="c-t">알래스카 LNG 강관·철강</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0, <span style="color:#ef4444;font-weight:700">+11.2%</span>, 381억. 직전최대 0.3배로 약함. 이전충족 09/22 외1</p><div class="c-c"><span class="chip"><i>종목</i>넥스틸</span></div></article>
+<article class="card"><h4 class="c-t">알래스카 LNG 강관·철강</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+6.7%</span> / <span style="color:#ef4444;font-weight:700">+7.9%</span>, 104억 / 82억. 둘 다 대금 30일 1위지만 미충족</p><div class="c-c"><span class="chip"><i>종목</i>세아제강 / 세아제강지주</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">철강/강관 · 알래스카 LNG(철강)</h4><p class="c-p"><span class="c-k">정보지 사유</span>3곳 &#x27;오늘 처음&#x27; 분류</p><div class="c-c"><span class="chip"><i>종목</i>원문에 종목 미특정</span></div></article>
+<article class="card"><h4 class="c-t">연료전지</h4><p class="c-p"><span class="c-k">정보지 사유</span>&#x27;오늘 처음&#x27; 분류 (원문 판단: 09/09부터 진행 중)</p><div class="c-c"><span class="chip"><i>종목</i>원문에 종목 미특정</span></div></article>
+<article class="card"><h4 class="c-t">5G 인프라</h4><p class="c-p"><span class="c-k">정보지 사유</span>&#x27;오늘 처음&#x27; 분류</p><div class="c-c"><span class="chip"><i>종목</i>원문에 종목 미특정</span></div></article>
+<article class="card"><h4 class="c-t">전고체 / LMR</h4><p class="c-p"><span class="c-k">정보지 사유</span>LG엔솔 각형 LMR 재료</p><div class="c-c"><span class="chip"><i>종목</i>원문에 종목 미특정</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">정보지 사유</span>시총 미달 상폐 제도 관련</p><div class="c-c"><span class="chip"><i>종목</i>노브랜드</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>10/1 04:30 트럼프 발표 본문:</strong> 540억불이 &#x27;확정&#x27;이고 한국 정부가 참여 확정 쪽 멘트를 내면 진짜(3단계 진입)입니다. 산업부가 &#x27;추후 협의 유지&#x27;로 선을 그으면 아닙니다. 10/01자 기사 제목은 확인했지만 본문은 확인 안 됐습니다.</li>
+<li><strong>TCC스틸:</strong> 시초 갭을 지키고 첫 30분 대금이 오늘(1,285억)의 50% 이상이면서 VWAP을 유지하면 진짜입니다. 갭상승 뒤 음봉(재료 소멸형)이면 강관 전체를 제외합니다.</li>
+<li><strong>상한가 종목(KBI동양철관·동일스틸럭스):</strong> NXT 프리마켓 호가와 시가가 약하면 하이스틸·휴스틸 등 D+0 후발도 보류합니다.</li>
+<li><strong>하이스틸·휴스틸:</strong> D+1에 VWAP 위를 유지하면 진짜, 유지하지 못하면 아닙니다.</li>
+<li><strong>한온시스템(단독 D+0 최강)·세아제강(30일 1위, 후발 여지):</strong> 같이 볼 종목입니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-09-30 (수) [장마감]</h1>
+<p>기준일: 2026-09-30 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 움직인 테마는 <strong>알래스카 LNG 강관·철강 하나뿐</strong>입니다. 정보지 3곳이 모두 &#x27;오늘 처음&#x27;으로 짚었고, 충족 종목도 가장 많습니다(6~7개). 다만 같은 종목들이 <strong>09/03에 이미 한 번 터졌습니다.</strong> 그래서 완전히 새로운 테마가 아니라 <strong>재료가 구체화되면서 다시 불붙은 D+0</strong>으로 봐야 합니다. 나머지(반도체·유리기판, 광통신, 전고체/LMR, 연료전지)는 모두 이미 진행 중인 테마입니다. 한온시스템·글로벌에스엠·헬릭스미스는 D+0 첫흐름이지만 같이 움직인 종목이 없어서 개별주입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 알래스카 LNG — 강관·철강 (재점화형 D+0)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>TCC스틸</strong></h4><p class="c-p"><span class="c-k">비고</span>30일 대금 1위·직전최대 1.8배, 상한가로 마감</p><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i><strong>1,285</strong></span><span class="chip"><i>D+N</i>D+13</span><span class="chip"><i>오늘충족</i>★10봉 (08:08)</span><span class="chip"><i>이전충족</i>09/09 외1 (09/03)</span></div></article>
+<article class="card"><h4 class="c-t">금강철강</h4><p class="c-p"><span class="c-k">비고</span>대금 3위·직전최대 0.5배</p><div class="c-c"><span class="chip"><i>등락%</i>+23.6</span><span class="chip"><i>거래대금(억)</i>734</span><span class="chip"><i>D+N</i>D+13</span><span class="chip"><i>오늘충족</i>★2봉</span><span class="chip"><i>이전충족</i>09/11 외2 (09/03)</span></div></article>
+<article class="card"><h4 class="c-t">하이스틸</h4><p class="c-p"><span class="c-k">비고</span>30일 1위·1.7배, 5일누적 -0.1</p><div class="c-c"><span class="chip"><i>등락%</i>+22.9</span><span class="chip"><i>거래대금(억)</i>386</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/22 외1</span></div></article>
+<article class="card"><h4 class="c-t">넥스틸</h4><p class="c-p"><span class="c-k">비고</span>직전최대 0.3배로 약함</p><div class="c-c"><span class="chip"><i>등락%</i>+11.2</span><span class="chip"><i>거래대금(억)</i>381</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/22 외1</span></div></article>
+<article class="card"><h4 class="c-t">휴스틸</h4><p class="c-p"><span class="c-k">비고</span>30일 1위·3.2배, 5일누적 -5.2</p><div class="c-c"><span class="chip"><i>등락%</i>+11.2</span><span class="chip"><i>거래대금(억)</i>255</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★13봉 (12:54)</span><span class="chip"><i>이전충족</i><strong>없음 (★첫흐름)</strong></span></div></article>
+<article class="card"><h4 class="c-t">KBI동양철관</h4><p class="c-p"><span class="c-k">비고</span>30일 1위·2.1배, 상한가로 마감</p><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>250</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★51봉</span><span class="chip"><i>이전충족</i>09/03</span></div></article>
+<article class="card"><h4 class="c-t">신스틸</h4><p class="c-p"><span class="c-k">비고</span>종가위치 33%로 약함</p><div class="c-c"><span class="chip"><i>등락%</i>+9.5</span><span class="chip"><i>거래대금(억)</i>176</span><span class="chip"><i>오늘충족</i>★10봉</span><span class="chip"><i>이전충족</i>09/22 외3</span></div></article>
+<article class="card"><h4 class="c-t">화성밸브</h4><p class="c-p"><span class="c-k">비고</span>30일 1위·1.5배</p><div class="c-c"><span class="chip"><i>등락%</i>+17.2</span><span class="chip"><i>거래대금(억)</i>126</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★7봉</span><span class="chip"><i>이전충족</i>없음 (미확인, 23일 전 <span style="color:#ef4444;font-weight:700">+25%</span>)</span></div></article>
+<article class="card"><h4 class="c-t">세아제강 / 세아제강지주</h4><p class="c-p"><span class="c-k">비고</span>둘 다 30일 1위</p><div class="c-c"><span class="chip"><i>등락%</i>+6.7 / +7.9</span><span class="chip"><i>거래대금(억)</i>104 / 82</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">동일스틸럭스</h4><p class="c-p"><span class="c-k">비고</span>대금이 작음</p><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i>56</span><span class="chip"><i>D+N</i>D+15</span><span class="chip"><i>오늘충족</i>★22봉</span><span class="chip"><i>이전충족</i>09/09 외1 (09/03)</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 09/03.</strong> TCC스틸·KBI동양철관·금강철강·동일스틸럭스·부국철강이 09/03에 함께 충족했습니다. 당시 재료는 &quot;트럼프 알래스카 발언&quot;입니다. 이후 09/09(2차), 09/22(3차: 하이스틸·넥스틸·신스틸)를 거쳐 <strong>오늘이 4번째 파동</strong>입니다.</li>
+<li>정보지는 &#x27;철강/강관&#x27;·&#x27;알래스카 LNG(철강)&#x27;을 오늘 처음으로 분류했습니다. 하지만 정보지B의 &#x27;철강&#x27;은 09/22·09/23에도 등장했습니다.</li>
+<li>결론: <strong>순수 D+0은 아니고, 재료가 구체화되면서 다시 불붙은 것입니다.</strong></li>
+<li><strong>대장주: TCC스틸.</strong> 대금이 1,285억으로 2위 금강철강의 1.75배입니다. 30일 대금 1위이고, 08:08 프리마켓에서 가장 먼저 포착됐으며, 09/03 충족 이력도 있습니다.</li>
+<li><strong>후발주:</strong></li>
+<li>휴스틸: 12:54 포착, 255억</li>
+<li>화성밸브: 126억</li>
+<li>동일스틸럭스: 56억</li>
+<li>신스틸: 종가위치 33%</li>
+<li>등락률은 KBI동양철관·동일스틸럭스가 <span style="color:#ef4444;font-weight:700">+30%</span>로 가장 높지만, 대금은 TCC스틸의 1/5 이하입니다.</li>
+<li><strong>추정 재료:</strong></li>
+<li>트럼프 대통령이 한국의 대미투자 2,000억 달러를 발표할 예정이고, 그중 알래스카 LNG 540억 달러가 포함된다는 소식입니다(웹: 헤럴드경제·세계일보).</li>
+<li>발표 시각은 한국시간 10/1 04:30입니다(웹: 헤럴드경제).</li>
+<li>이 보도는 <strong>09/29 오후부터 이미 나와 있었습니다</strong>(웹: 헤럴드경제 09/29자). 오늘 강관주 기사는 09:25 이후입니다(웹: 머니투데이·뉴스1·이투데이).</li>
+<li>즉 <strong>뉴스가 먼저, 주가가 나중</strong>입니다. 주가가 선행한 움직임이 아니라 이벤트를 앞둔 선취매입니다.</li>
+<li><strong>재료 단계: 기대(09/03 &quot;트럼프 알래스카 한마디&quot;) → 구체화(09/30 &quot;540억불·발표 일시 확정&quot;)</strong></li>
+<li>1단계에서 2단계 가까이로 올라갔습니다.</li>
+<li>다만 한국 정부는 알래스카 LNG를 <strong>&#x27;추후 협의&#x27; 대상으로 분류해 둔 상태</strong>입니다. &quot;하이 리스크 사업&quot;이라는 발언도 있었습니다(웹: 서울신문·SBS Biz·한국일보). 그래서 <strong>&#x27;확정(3단계)&#x27;은 아닙니다.</strong></li>
+<li>대금은 받쳐줍니다. KBI동양철관 2.1배, 휴스틸 3.2배, TCC스틸 1.8배로 모두 30일 1위입니다. <strong>실질 신규 사이클 가능성은 &#x27;중간&#x27;</strong>으로 봅니다.</li>
+<li><strong>장 마감 후:</strong> 10/01자로 &quot;알래스카 LNG에 540억 달러… 트럼프, 韓 대미투자 …&quot; 기사가 검색됩니다(웹: 서울신문). 발표가 실제로 나온 것으로 보이지만, <strong>제목만 확인했고 본문은 확인 안 됨</strong>입니다.</li>
+<li><strong>다음 거래일 확인 조건:</strong></li>
+<li>✅ 진짜인 경우</li>
+<li>발표 후에도 TCC스틸이 시초 갭을 지키면서 대금이 오늘의 50% 이상 들어옴</li>
+<li>한국 정부가 참여 확정 쪽 멘트를 냄 → 3단계 진입</li>
+<li>하이스틸·휴스틸이 D+1에 VWAP 위를 유지함</li>
+<li>❌ 아닌 경우</li>
+<li>발표 직후 갭상승 뒤 음봉 (재료 소멸)</li>
+<li>산업부가 &#x27;추후 협의 유지&#x27;로 선을 그음</li>
+<li>상한가 종목(KBI동양철관·동일스틸럭스)의 시가가 약함</li>
+</ul>
+<h3>🥈 D+0 테마 추가 후보 — <strong>근거 부족 (해당 없음)</strong></h3>
+<ul>
+<li><strong>정보지 &#x27;연료전지&#x27; (오늘 처음):</strong> 범한퓨얼셀은 09/09에 이미 충족·상한가를 기록했습니다. 비나텍·LS머트리얼즈도 09/15~16에 충족했습니다. 진행 중인 테마로 보고 ③으로 보냅니다.</li>
+<li><strong>정보지 &#x27;5G 인프라&#x27; (오늘 처음):</strong> 글로벌에스엠 한 종목뿐입니다. RFHIC·RF머트리얼즈·머큐리는 +1~2%로 같이 움직이지 않았습니다. 개별주로 ④에 넣습니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 · 눌림 관찰용)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">전고체 / LMR 배터리</h4><p class="c-p"><span class="c-k">대장 (거래대금)</span>이수스페셜티케미컬 2,086억 (D+1, 09/29 충족)</p><p class="c-p"><span class="c-k">메모</span>나인테크 722억은 ★눌림, 에코앤드림 125억. 정보지에 LG엔솔 각형 LMR 재료. 한농화성은 후발주</p><div class="c-c"><span class="chip"><i>시작</i>09/29</span><span class="chip"><i>오늘 D+0 종목 (후발)</i>한농화성 50억 (★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">반도체 / 유리기판 소재</h4><p class="c-p"><span class="c-k">대장 (거래대금)</span>후성 1,453억 · 태성 1,035억 · SKC 769억</p><p class="c-p"><span class="c-k">메모</span>레이저쎌 D+2, 에이팩트·한양디지텍 D+5. D+0 두 종목은 진행 중 테마의 후발</p><div class="c-c"><span class="chip"><i>시작</i>09/17 전후 (정보지 10일째)</span><span class="chip"><i>오늘 D+0 종목 (후발)</i>와이씨켐 146억, 지앤비에스 에코 202억</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">대장 (거래대금)</span>빛샘전자 1,624억 (D+8) · 성호전자 1,608억 (D+6)</p><p class="c-p"><span class="c-k">메모</span>AT&amp;T·코닝 재료. 빛샘전자는 종가위치 40%·★눌림</p><div class="c-c"><span class="chip"><i>시작</i>09/08~09/16 (정보지 5일째)</span><span class="chip"><i>오늘 D+0 종목 (후발)</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">연료전지 / AI 전력</h4><p class="c-p"><span class="c-k">대장 (거래대금)</span>비나텍 624억 · 범한퓨얼셀 567억 · LS머트리얼즈 559억</p><p class="c-p"><span class="c-k">메모</span>블룸에너지 <span style="color:#ef4444;font-weight:700">+10.8%</span> 재료. 범한퓨얼셀은 종가위치 28%로 약함</p><div class="c-c"><span class="chip"><i>시작</i>09/09</span><span class="chip"><i>오늘 D+0 종목 (후발)</i>없음</span></div></article>
+</div>
+<ul>
+<li>와이씨켐·지앤비에스 에코는 D+0이고 대금 30일 1위입니다. 하지만 <strong>당일 재료 기사를 웹에서도 확인 못 했습니다</strong>(지앤비에스 에코는 웹에서도 확인 안 됨). 속한 테마가 10일째라서 신규로 보지 않습니다.</li>
+<li>참고: &#x27;와이씨 9/30 <span style="color:#ef4444;font-weight:700">+2.67%</span>&#x27; 기사(웹: 톱스타뉴스)는 와이씨켐이 아닌 다른 종목이라 제외했습니다. 문서 기준 와이씨켐은 <span style="color:#ef4444;font-weight:700">+16.7%</span>입니다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>한온시스템</strong></h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>D+0 · ★첫흐름 · 30일 1위 · 직전최대 <strong>5.7배</strong> · 5일누적 -5.0</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>삼성증권이 목표가 4,000→4,500원으로 상향. Zoox 로보택시 열관리 공급 개시, 전력그리드 열관리 언급(웹: 아주경제 08:03). 포착 09:08로 <strong>리포트가 먼저</strong>. 재료 단계는 기대→실행(공급 개시)으로 상승. <strong>단독 D+0 중 가장 강함</strong></p><div class="c-c"><span class="chip"><i>등락%</i>+10.3</span><span class="chip"><i>대금(억)</i><strong>824</strong></span></div></article>
+<article class="card"><h4 class="c-t">글로벌에스엠</h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>D+0 · ★첫흐름 · 직전최대 70배</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>中 5G 인프라 780조 투자 + 화웨이향 부품(웹: 머니투데이 09:45·뉴스핌). 포착 10:13으로 <strong>뉴스가 먼저</strong>. 고가 <span style="color:#ef4444;font-weight:700">+30%</span> → 종가 49%, ★눌림</p><div class="c-c"><span class="chip"><i>등락%</i>+14.5</span><span class="chip"><i>대금(억)</i>111</span></div></article>
+<article class="card"><h4 class="c-t">헬릭스미스</h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>D+0 · ★첫흐름 · 직전최대 8.8배</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>中 노스랜드 &#x27;세도밍지&#x27; 상업화 개시(웹: 메디코파마, 기사 시각 미확인). 5월 허가 이후 상업화 단계로 상승. 대금이 작음</p><div class="c-c"><span class="chip"><i>등락%</i>+18.5</span><span class="chip"><i>대금(억)</i>86</span></div></article>
+<article class="card"><h4 class="c-t">노브랜드</h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>09/29 충족 (D+1 성격)</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>시총 미달 상폐 제도 관련(정보지). ★눌림, 종가 <span style="color:#7dabf8;font-weight:700">-13%</span></p><div class="c-c"><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>대금(억)</i>265</span></div></article>
+<article class="card"><h4 class="c-t">아스테라시스</h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>09/28 충족</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>재료 미상. 고가 <span style="color:#ef4444;font-weight:700">+26.8%</span> → 종가 28%로 크게 밀림</p><div class="c-c"><span class="chip"><i>등락%</i>+7.3</span><span class="chip"><i>대금(억)</i>109</span></div></article>
+<article class="card"><h4 class="c-t">아리바이오홀딩스</h4><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>합병 철회 악재(웹 대조 없음, 문서 뉴스 버즈) 뒤 저점 반등 충족. 테마 아님</p><div class="c-c"><span class="chip"><i>등락%</i>-13.5</span><span class="chip"><i>대금(억)</i>130</span></div></article>
+<article class="card"><h4 class="c-t">빅웨이브로보틱스</h4><p class="c-p"><span class="c-k">D+N / 첫흐름</span>D+1</p><p class="c-p"><span class="c-k">재료 · 뉴스 시각 vs 포착</span>신규상장주. 2000봉 지표 신뢰 불가</p><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>4,634</span></div></article>
+</div>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 알래스카 LNG 강관·철강 (정보지 3곳 &#x27;오늘 처음&#x27;. 단 09/03 시작 → 4차 재점화형 D+0)</li>
+<li>그 테마의 대장주 (거래대금 최대): TCC스틸 1,285억 (30일 1위·1.8배, 08:08 최초 포착, 09/03 이전충족)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 강관군(기대→구체화, 단 韓 정부 &#x27;추후협의&#x27;라 확정 아님) / 한온시스템(목표가→Zoox 공급 개시) / 헬릭스미스(허가→상업화 개시)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 휴스틸·화성밸브·동일스틸럭스·신스틸(강관) / 한농화성(전고체) / 와이씨켐·지앤비에스 에코(반도체 소재)</li>
+<li>같이 볼 종목: 하이스틸(D+0·386억·미충족) · KBI동양철관(D+0·상한가) · 휴스틸(★첫흐름·3.2배) · 세아제강(30일 1위, 후발 여지) · 한온시스템(단독 D+0 최강)</li>
+<li>진행중이라 눌림만 볼 종목: 이수스페셜티케미컬·나인테크(D+1) · 빛샘전자·성호전자(광통신) · 후성·태성·SKC(유리기판) · 범한퓨얼셀·비나텍(연료전지)</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>10/1 04:30 트럼프 발표 본문 — 알래스카 LNG 540억불이 &#x27;확정&#x27;인지, 한국 정부(산업부)가 &#x27;추후 협의&#x27;를 유지하는지</li>
+<li>TCC스틸 시초 갭 이후 첫 30분 대금·VWAP 유지 여부 (재료 소멸형 음봉이면 강관 전체 제외)</li>
+<li>상한가 마감 종목(KBI동양철관·동일스틸럭스)의 NXT 프리마켓 호가 — 약하면 하이스틸·휴스틸 등 D+0 후발도 보류</li>
+</ol>
+<p>```</p>
+<hr>
+<p>Sources:</p>
+<ul>
+<li>[한국경제 — 트럼프, 알래스카 LNG 韓 투자 발표 가능성에…](https://www.hankyung.com/article/2026093036786)</li>
+<li>[뉴스핌 — 美 알래스카 LNG 투자 기대에 강관주 강세](https://www.newspim.com/news/view/20260930000353)</li>
+<li>[이투데이 — 알래스카 LNG 투자 발표 기대에 철강·강관주](https://www.etoday.co.kr/news/view/2630703)</li>
+<li>[머니투데이 — &quot;한국, 알래스카 LNG 투자&quot; 트럼프 예고에...강관주](https://www.mt.co.kr/stock/2026/09/30/2026093009252218032)</li>
+<li>[헤럴드경제 — 트럼프, 1일 오전 4시30분 대미투자 발표](https://biz.heraldcorp.com/article/10889299)</li>
+<li>[헤럴드K — 트럼프, 이르면 30일 알래스카 LNG 韓투자 (09/29)](https://www.heraldk.com/article/2026092915085407065)</li>
+<li>[세계일보 — 트럼프, 내일 韓 대미투자 발표할 듯](https://www.segye.com/newsView/20260930508147)</li>
+<li>[서울신문 — 트럼프 &#x27;추후 협의&#x27; 알래스카 LNG 투자 발표하나](https://www.seoul.co.kr/news/international/2026/09/30/20260930500162)</li>
+<li>[서울신문 — 알래스카 LNG에 540억 달러… (10/01)](https://www.seoul.co.kr/news/international/2026/10/01/20261001001002)</li>
+<li>[SBS Biz — 韓, 알래스카 LNG &#x27;추가 검토&#x27;](https://biz.sbs.co.kr/article/20000337579)</li>
+<li>[한국일보 — 선거 조급한 트럼프, &#x27;추후 협의&#x27; 알래스카 LNG](https://www.hankookilbo.com/news/article/A2026093011230000887)</li>
+<li>[아주경제 — 삼성證 &quot;한온시스템, 신사업 성장동력 가시화&quot;](https://www.ajunews.com/view/20260930080314145)</li>
+<li>[EBN — 한온시스템, 신사업 성장 기대에 10%대](https://www.ebn.co.kr/news/articleView.html?idxno=1726150)</li>
+<li>[머니투데이 — 中 780조 5G 인프라…글로벌에스엠](https://www.mt.co.kr/stock/2026/09/30/2026093009453595456)</li>
+<li>[뉴스핌 — 글로벌에스엠 &quot;中 3조8000억위안 정보인프라 투자&quot;](https://www.newspim.com/news/view/20260930000331)</li>
+<li>[메디코파마 — 헬릭스미스 기술 도입한 노스랜드, 中 유전자치료제 상업화](https://www.medicopharma.co.kr/news/articleView.html?idxno=69597)</li>
+<li>[톱스타뉴스 — 와이씨 주가 9월 30일 (와이씨켐과 다른 종목, 제외)](https://www.topstarnews.net/news/articleView.html?idxno=16229528)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-09-30 21:39
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
