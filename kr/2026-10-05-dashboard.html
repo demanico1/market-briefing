@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-05 한국장 브리핑 요약</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 34px;width:1280px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.hd h1{font-size:28px}.hd .sub{color:#9aa0a6;font-size:15px}
+.hol{background:#2a2414;border:1px solid #a16207;color:#fcd34d;border-radius:10px;padding:9px 16px;font-size:15px;margin-bottom:14px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:14px 18px;flex:1}
+.lbl{color:#9aa0a6;font-size:13px;margin-bottom:4px}
+.big{font-size:28px;font-weight:700}.chg{font-size:17px;font-weight:600;margin-left:6px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.flow{display:flex;justify-content:space-between;font-size:14.5px;margin-top:5px;white-space:nowrap;gap:8px}
+.one{font-size:21px;line-height:1.5;font-weight:600;background:#1a1d24;border-left:5px solid #ef4444;border-radius:10px;padding:14px 18px;margin-bottom:14px}
+ul{padding-left:20px;line-height:1.6;font-size:15px}
+h3{font-size:15px;color:#9aa0a6;margin-bottom:8px}
+.tag{display:inline-block;background:#374151;color:#e8eaed;border-radius:5px;font-size:11.5px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:4px 6px;border-bottom:1px solid #2a2f38;text-align:left;vertical-align:top}
+th{color:#9aa0a6;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.b{background:#252a33;border-radius:7px;padding:5px 9px;font-size:13.5px}
+.foot{color:#9aa0a6;font-size:13px;margin-top:4px}
+</style></head><body>
+<div class="hd"><h1>2026-10-05 (월) 한국장 브리핑</h1><div class="sub">수집 채널 4/13 · 영상 4건 (시황성 1건)</div></div>
+<div class="hol">🔒 휴장 — 개천절 대체공휴일. 수치는 직전 거래일 10/2(금) 종가 기준 · 다음 거래일 <b>내일 10/6(화)</b> · 10/9(목) 한글날도 휴장</div>
+
+<div class="row">
+ <div class="card"><div class="lbl">KOSPI (10/2 종가)</div><span class="big">7,003.74</span><span class="chg up">▲ 0.46%</span><div class="foot">+32.39p</div></div>
+ <div class="card"><div class="lbl">KOSDAQ (10/2 종가)</div><span class="big">893.29</span><span class="chg dn">▼ 0.11%</span><div class="foot">−1.00p</div></div>
+ <div class="card"><div class="lbl">코스피 수급 10/2 (한경 15:38 잠정)</div>
+  <div class="flow"><span>외국인 <b class="dn">−1,367억</b></span><span>기관 <b class="up">+3,813억</b></span></div>
+  <div class="flow"><span>개인 <b class="dn">−1조7,205억</b></span><span>기타법인 <b class="up">+1조4,829억</b></span></div></div>
+ <div class="card"><div class="lbl">오늘 휴장 중 아시아 (10/5)</div><div style="font-size:15.5px;line-height:1.6">닛케이 <b>69,946.86</b> <b class="up">+2.40%</b><br>대만 <b>49,712.04</b> <b class="up">+2.55%</b> 사상 최고<br>달러-원 <b>1,344.00</b> <b class="dn">−6.60원</b> (거래 6,200만$)</div></div>
+</div>
+
+<div class="one">한국이 쉬는 사이 아시아 반도체가 또 달렸다 — 닛케이 +2.4%·대만 사상 최고·TSMC 신고가. 그런데 국내는 원화 강세로 3Q 영업익 컨센서스 −2.03%, 감소분 92%가 삼성·하이닉스. 화요일은 '따라잡기 vs 실적 하향'.</div>
+
+<div class="row">
+ <div class="card" style="flex:1.4"><h3>핵심 포인트</h3><ul>
+  <li>EWY 금요일 <b class="up">+3.10%</b> + 오늘 아시아 랠리 → 화요일 갭 출발 여지 확대</li>
+  <li>3Q 컨센서스(233곳) 255.2조, 한 달 새 −2.03% · 삼성 113.1→109.5조, 하이닉스 78.8→77.5조</li>
+  <li>상향: HD현대 +12.9% · SK이노 +18.3% · S-Oil +6.4% · 삼성전기 +5.1% / 하향: 증권(미래에셋 −24.9%)</li>
+  <li>아람코 피격에도 WTI <b class="dn">−0.91%</b> (90.28$, 야후 21시) · 미 10년 5.261%(−1.3bp)</li>
+  <li>달러인덱스 102.531 터치(작년 4월 이후 최고) · 일본 30년물 4.2246% 사상 최고</li>
+ </ul></div>
+ <div class="card"><h3>'한국 소외'를 보는 두 축 <span class="tag">톤 표본 1 · 합의도 생략</span></h3>
+  <table><tr><th>따라잡기</th><th>발목</th></tr>
+  <tr><td>해외 반도체 신고가</td><td>투톱 실적 눈높이↓</td></tr>
+  <tr><td>원화 강세=환차익</td><td>원화 강세=이익 감소</td></tr>
+  <tr><td>美 10월 인상 기대 후퇴</td><td>10년물 5.26%대</td></tr></table>
+  <div class="foot">만쥬: "세계는 신고가, 코스피만 소외 — 박스권, 소액으로 기다려라" · 김혜산(집계 제외): "하이닉스 소외는 시장 할인 탓"</div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="card" style="flex:1.4"><h3>종목·업종 (만쥬 언급 + 한경 컨센서스 · 야후 검증)</h3><div class="badges">
+  <span class="b">에스투더블유 15,360원 <b class="up">+2.88%</b> (10/2)</span><span class="b">엑스게이트 18,790원 <b class="up">+3.53%</b> (10/2)</span>
+  <span class="b">보안주 — 해킹 이슈 (만쥬, 매수 권유성)</span><span class="b">조선·정유 이익 추정 ↑</span><span class="b">증권 어닝쇼크 우려</span>
+ </div></div>
+ <div class="card"><h3>10/6(화) 관전 포인트</h3><ul>
+  <li>아시아 갭을 지키나 vs 10/8 삼성 잠정실적</li><li>오늘 밤 美 ISM 서비스업 → 10년물 5.34% 고점</li><li>달러-원 1,340원 지지 여부</li><li>보안·금융주 해킹 반영 · 10/7 금융위</li></ul></div>
+</div>
+<div class="foot">수집: 만쥬 라이브 1 · 돌팬티 1(비시황) · 홍인기 쇼츠 1 · 김혜산 쇼츠 1 = 4건 | 영상없음(휴장): 주덕·이효석·창원개미·김단테·고라니·주린이놀이터·소수몽키·전황·주린희 | 출처: 한국경제·연합인포맥스·Yahoo Finance</div>
+</body></html>
