@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-06 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-06</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-06_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-06 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>코스닥 대형주가 일제히 강세였고 코스닥이 910선을 탈환했습니다. 수급 주체(외국인·기관)는 원문에 없고, 케이씨텍만 &quot;확인할 것&quot;으로 남아 있습니다. 정보지는 미수집이라 판단은 스캐너, 문서 안 뉴스, 웹 기사로만 했습니다. <strong>오늘 새로 점화된 것은 &#x27;금융권 AI 해킹 → 사이버보안&#x27;입니다.</strong> 섹터로는 2차 사이클이지만 재료는 신규라 실질 D+0입니다. 다만 10/02에 보안주 다수가 이미 +5~9% 올라 주가가 먼저 움직인 흔적이 있습니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 16종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>주성엔지니어링</strong> — 최대 <strong>276.5억</strong> · <strong>10시 07분</strong> · 20억↑ 봉 130개 · 반도체 장비 / 코스닥 대형주 (추정, 지수성)</li>
+<li>🔥 <strong>엑스게이트</strong> — 최대 <strong>151.5억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 16개 · 사이버보안 (금융권 AI 해킹)</li>
+<li>🔥 <strong>HLB</strong> — 최대 <strong>148.6억</strong> · <strong>9시 24분</strong> · 20억↑ 봉 59개 · HLB그룹</li>
+<li>🔥 <strong>이수페타시스</strong> — 최대 <strong>100.7억</strong> · <strong>9시 05분</strong> · 20억↑ 봉 31개 · 반도체 장비 / 코스닥 대형주 (추정, 지수성)</li>
+<li>🔥 <strong>에스투더블유</strong> — 최대 <strong>87.1억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 8개 · 사이버보안</li>
+<li>🔥 <strong>샌즈랩</strong> — 최대 <strong>67.5억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 4개 · 사이버보안</li>
+<li>🔥 <strong>아이씨티케이</strong> — 최대 <strong>61.0억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 2개 · 사이버보안</li>
+<li>🔥 <strong>심텍</strong> — 최대 <strong>60.8억</strong> · <strong>9시 51분</strong> · 20억↑ 봉 27개 · 반도체 장비</li>
+<li>🔥 <strong>라온시큐어</strong> — 최대 <strong>55.2억</strong> · <strong>11시 21분</strong> · 20억↑ 봉 10개 · 사이버보안</li>
+<li>🔥 <strong>지니언스</strong> — 최대 <strong>52.8억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 2개 · 사이버보안</li>
+<li>🔥 <strong>드림시큐리티</strong> — 최대 <strong>50.8억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 2개 · 사이버보안 (금융권 AI 해킹)</li>
+<li>🔥 <strong>안랩</strong> — 최대 <strong>46.9억</strong> · <strong>8시 11분 NXT 프리</strong> · 20억↑ 봉 15개 · 사이버보안 (금융권 AI 해킹)</li>
+<li>🔥 <strong>한컴</strong> — 최대 <strong>38.9억</strong> · <strong>8시 16분 NXT 프리</strong> · 20억↑ 봉 3개 · 개별</li>
+<li>🔥 <strong>아톤</strong> — 최대 <strong>31.3억</strong> · <strong>13시 53분</strong> · 20억↑ 봉 4개 · 사이버보안 (금융권 AI 해킹)</li>
+<li>🔥 <strong>제이앤티씨</strong> — 최대 <strong>23.6억</strong> · <strong>19시 21분 NXT 애프터</strong> · 20억↑ 봉 1개 · 개별</li>
+<li>🔥 <strong>한컴위드</strong> — 최대 <strong>21.3억</strong> · <strong>10시 16분</strong> · 20억↑ 봉 1개 · 사이버보안 (금융권 AI 해킹)</li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">사이버보안 (금융권 AI 해킹)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>금융권 AI 에이전트 의심 연쇄 해킹, 금감원 공격 IP 28개 특정·500여 곳 통보, 국감 질타</p><p class="c-p"><span class="c-k">신선도</span>재료 신규 / 섹터 2차 (본 사이클 09/11~09/16)</p><p class="c-p"><span class="c-k">판단</span>1순위. 대장 안랩. 엄밀한 D+0은 안랩·케이씨에스·이글루</p><div class="c-c"><span class="chip"><i>수식충족</i>10종목</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">반도체 장비 / 코스닥 대형주</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>코스닥 대형주 일제 강세. 케이씨텍은 재료 미상, 주가 선행 추정</p><p class="c-p"><span class="c-k">신선도</span>낮음 (기대 → 기대, 재탕)</p><p class="c-p"><span class="c-k">판단</span>2순위(약함), 지수성 추정. 대장 주성엔지니어링</p><div class="c-c"><span class="chip"><i>수식충족</i>2종목</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">HLB그룹</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>리보세라닙 제조시설 FDA 실사 VAI 마무리 → NDA 재제출 준비 (&#x27;청신호&#x27; 단계, 허가 확정 아님)</p><p class="c-p"><span class="c-k">신선도</span>D+4~5</p><p class="c-p"><span class="c-k">판단</span>후반부라 신규 진입하지 않음</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>당일 신규 재료는 웹에서도 확인 안 됨 (국산화 선정은 09/08 재료)</p><p class="c-p"><span class="c-k">신선도</span>D+10~13</p><p class="c-p"><span class="c-k">판단</span>눌림 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">개별 (제이앤티씨)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>유리기판 핵심기술 개발, 미국 고객사 검증 완료 (디일렉 17:19)</p><p class="c-p"><span class="c-k">신선도</span>MOU(09/22) → 기술·검증 완료 (수주 확정 아님)</p><p class="c-p"><span class="c-k">판단</span>가장 깔끔한 개별 D+0</p><div class="c-c"><span class="chip"><i>수식충족</i>1종목</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>사이버보안 (금융권 AI 해킹)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>안랩</strong><br><strong>46.9억</strong><br><strong>8시 11분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span>09/17에 이미 충족. 원문은 재료 신규라 D+0으로 판정 / 30일 1위 / 직전최대 8.0배 / 08:14 포착이 첫 기사 08:55보다 먼저 / 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17 외1</span><span class="chip"><i>충족봉</i>3봉(08:14)</span><span class="chip"><i>등락%</i>+17.3</span><span class="chip"><i>대금</i>1,807억</span></div></article>
+<article class="card"><h4 class="c-t">케이씨에스</h4><p class="c-p"><span class="c-k">근거</span>09/28에 이미 충족. 원문 판정 D+0 / 30일 1위 / 직전최대 2.4배 / 후발이지만 같이 볼 종목 / 당일 개별 기사 없음, 동반 추정</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/28 외1</span><span class="chip"><i>충족봉</i>9봉(12:25)</span><span class="chip"><i>등락%</i>+19.1</span><span class="chip"><i>대금</i>515억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>아톤</strong><br><strong>31.3억</strong><br><strong>13시 53분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/15에 이미 충족 / D+12 / 30일 1위 / 1.9배 / 부대장, STO 성격 섞임. 웹 <span style="color:#ef4444;font-weight:700">+26.36%</span>는 NXT 애프터 종가 차이로 보임</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/15</span><span class="chip"><i>충족봉</i>41봉(11:48)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>1,317억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>엑스게이트</strong><br><strong>151.5억</strong><br><strong>9시 02분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/23에 이미 충족 / 30일 6위 / 0.5배 / 종가위치 20%, VWAP <span style="color:#7dabf8;font-weight:700">-2.9%</span>로 대장 자격 떨어짐</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/23 외2</span><span class="chip"><i>충족봉</i>8봉(09:07)</span><span class="chip"><i>등락%</i>+9.1</span><span class="chip"><i>대금</i>1,556억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>한컴위드</strong><br><strong>21.3억</strong><br><strong>10시 16분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/15에 이미 충족 / D+12 / 30일 1위 / 1.2배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/15 외1</span><span class="chip"><i>충족봉</i>7봉(10:17)</span><span class="chip"><i>등락%</i>+12.6</span><span class="chip"><i>대금</i>806억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>드림시큐리티</strong><br><strong>50.8억</strong><br><strong>9시 02분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/14에 이미 충족 / 30일 4위 / 0.4배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/14</span><span class="chip"><i>충족봉</i>7봉(09:15)</span><span class="chip"><i>등락%</i>+8.6</span><span class="chip"><i>대금</i>575억</span></div></article>
+<article class="card"><h4 class="c-t">에스피소프트</h4><p class="c-p"><span class="c-k">근거</span>09/02에 이미 충족 / D+14 / 4위 / 0.6배 / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/02</span><span class="chip"><i>충족봉</i>5봉(14:03)</span><span class="chip"><i>등락%</i>+16.0</span><span class="chip"><i>대금</i>389억</span></div></article>
+<article class="card"><h4 class="c-t">케이사인</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인 / D+14 / 30일 1위 / 4.3배 / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>없음(미확인)</span><span class="chip"><i>충족봉</i>7봉(14:49)</span><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금</i>152억</span></div></article>
+<article class="card"><h4 class="c-t">한국첨단소재</h4><p class="c-p"><span class="c-k">근거</span>09/16에 이미 충족 / D+12 / 4위 / 0.1배 / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/16 외3</span><span class="chip"><i>충족봉</i>7봉(09:07)</span><span class="chip"><i>등락%</i>+10.5</span><span class="chip"><i>대금</i>142억</span></div></article>
+<article class="card"><h4 class="c-t">모니터랩</h4><p class="c-p"><span class="c-k">근거</span>09/14에 이미 충족 / D+14 / 2위 / 0.8배 / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/14</span><span class="chip"><i>충족봉</i>3봉(09:09)</span><span class="chip"><i>등락%</i>+12.4</span><span class="chip"><i>대금</i>78억</span></div></article>
+</div>
+<h3>반도체 장비 / 코스닥 대형주 (추정, 지수성)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>주성엔지니어링</strong><br><strong>276.5억</strong><br><strong>10시 07분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/08에 이미 충족. 원문 D+0이지만 진행 중 상승의 가속 / 30일 2위 / 직전최대 0.8배 / 5일 누적 <span style="color:#ef4444;font-weight:700">+13.8%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/10 외1 (09/08)</span><span class="chip"><i>충족봉</i>19봉(09:17)</span><span class="chip"><i>등락%</i>+19.4</span><span class="chip"><i>대금</i>9,521억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>이수페타시스</strong><br><strong>100.7억</strong><br><strong>9시 05분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/21에 이미 충족 / 30일 1위 / 1.0배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/21</span><span class="chip"><i>충족봉</i>12봉(09:10)</span><span class="chip"><i>등락%</i>+9.1</span><span class="chip"><i>대금</i>3,443억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>한컴</strong><br><strong>38.9억</strong><br><strong>8시 16분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 직전최대 3.1배 / 재료 미상, 주가 선행 추정 / 해킹 테마 동반 가능성은 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>08:13 프리마켓 포착</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>407억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>동화약품</strong></h4><p class="c-p"><span class="c-k">근거</span>전일 268배 / 메디쎄이 FDA 510(k) (11:28)로 뉴스가 먼저 / 고점 대비 <span style="color:#7dabf8;font-weight:700">-11.3%</span>로 하루짜리 성격</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>13:14 포착</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>338억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>덕우전자</strong></h4><p class="c-p"><span class="c-k">근거</span>&#x27;첫 충족&#x27;일 뿐 사이클 시작은 10/01 상한가(46시리즈 수주) / 고점 대비 <span style="color:#7dabf8;font-weight:700">-15.6%</span> → 제외</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>원문 미기재</span></div></article>
+<article class="card"><h4 class="c-t"><strong>아티스트스튜디오</strong></h4><p class="c-p"><span class="c-k">근거</span>뚜렷한 개별 호재 없음 / 대금이 너무 작아 제외</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>상한가</span><span class="chip"><i>대금</i>25억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>제이앤티씨</strong><br><strong>23.6억</strong><br><strong>19시 21분</strong><br>NXT 애프터</h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 5일 <span style="color:#7dabf8;font-weight:700">-8.3%</span> / 뉴스 17:19가 먼저 / 상승분 대부분이 애프터 구간 (KRX 종가 22,950원, 애프터 종가 26,350원) → 정규장 확인은 내일</p><div class="c-c"><span class="chip"><i>첫흐름</i>D+0 (이전충족 원문 미기재)</span><span class="chip"><i>충족봉</i>19:24 (NXT 애프터)</span><span class="chip"><i>등락%</i>+20.6</span><span class="chip"><i>대금</i>774억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<p>원문에는 미충족 사유가 따로 적혀 있지 않습니다. 아래는 원문 수치만 옮긴 것입니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>이글루</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / D+0, 이전충족 없음 / 30일 1위 / 4.1배 / 112억 / 동반 추정 (원문은 같이 볼 종목)</p></article>
+<article class="card hot"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>라온시큐어</strong><br><strong>55.2억</strong><br><strong>11시 21분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / 상한가 +30.0 / 808억 / 0.5배 / D+13 재점화</p></article>
+<article class="card hot"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>샌즈랩</strong><br><strong>67.5억</strong><br><strong>9시 02분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / 상한가 +30.0 / 582억 / 0.7배 / D+13</p></article>
+<article class="card hot"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>에스투더블유</strong><br><strong>87.1억</strong><br><strong>9시 02분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / +16.3 / 1,180억 / 0.7배 / D+7</p></article>
+<article class="card hot"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>지니언스</strong><br><strong>52.8억</strong><br><strong>9시 02분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / +20.1 / 558억 / 1.0배 / D+13</p></article>
+<article class="card hot"><h4 class="c-t">사이버보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>아이씨티케이</strong><br><strong>61.0억</strong><br><strong>9시 02분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / +14.5 / 541억 / 0.9배 / D+5</p></article>
+<article class="card"><h4 class="c-t">반도체 장비</h4><p class="c-p"><span class="c-k">종목</span>케이씨텍</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>G2 58회 (원문 D+0) / +15.5 / 654억 / 30일 1위 / 1.0배 / 장비 테마 내 후발 / 재료 미상</p></article>
+<article class="card hot"><h4 class="c-t">반도체 장비</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>심텍</strong> (60.8억 · 9시 51분) · 와이씨 · 티에스이 · 네패스아크</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / 직전최대 0.6 · 0.4 · 0.2 · 1.1배</p></article>
+<article class="card hot"><h4 class="c-t">HLB그룹</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>HLB</strong><br><strong>148.6억</strong><br><strong>9시 24분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>사유 원문 미기재 / 4,992억 / 이전충족 09/29 / D+4~5</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>모비릭스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>충족 여부 원문 미기재 / D+0 상한가, 11억 / 자사주 공시(17:18)가 고가(16:37)보다 늦음 / 초소형이라 제외</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (정보지 미수집)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>안랩</strong>: 진짜면 83,800원 위, VWAP 위 유지 + 대금 1,000억 이상 재유입. 아니면 83,800원 이탈.</li>
+<li><strong>보안 테마 지속성</strong>: 진짜면 이글루·케이씨에스가 시가 이후 재충족하고 해킹 후속 보도(피해 확정, 당국 대책)가 이어짐. 아니면 라온시큐어·샌즈랩이 갭 뒤 시가부터 밀리거나, 대금이 오늘의 절반 아래로 줄어 하루짜리 사건 테마로 끝남.</li>
+<li><strong>제이앤티씨</strong>: 정규장 시가가 KRX 종가 22,950원 대비 갭을 유지하는지 확인. 애프터 종가는 26,350원.</li>
+<li><strong>반도체 장비</strong>: 진짜면 케이씨텍이 대금 1위를 유지하며 다른 장비주로 확산(장비 테마로 격상). 아니면 코스닥 지수가 쉴 때 같이 꺼짐.</li>
+<li><strong>케이씨텍 재료 확인</strong>: 삼성·SK 증설/CMP 장비 발주 기사, 외국인·기관 순매수 주체.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 D+0 브리핑 — 2026-10-06 (화) [장마감]</h1>
+<p>기준일: 2026-10-06 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<blockquote><p>📰 이 리포트에는 정보지 교차 절이 없습니다(정보지 미수집). 판단은 스캐너 데이터, 문서 안 뉴스, 웹 기사로만 했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 터진 재료는 <strong>금융권 AI 해킹 사태로 인한 사이버보안주 재점화</strong> 하나입니다. 돈의 중심은 <strong>안랩</strong>입니다. 1,807억, 30일 대금 1위, 직전 최대의 8.0배, D+0입니다. 다만 보안 섹터는 이미 09/11~09/16에 한 번 터졌습니다. 그래서 <strong>섹터로는 2차 사이클, 재료로는 신규</strong>인 실질 D+0입니다. 10/02에 보안주 다수가 이미 +5~9% 움직여서, 주가가 하루 먼저 움직인 흔적도 있습니다. 반도체 장비(주성엔지니어링·케이씨텍)도 D+0이 찍혔습니다. 하지만 코스닥 대형주 전반이 오른 날이라 <strong>지수성 성격이 강한 약한 D+0</strong>입니다. HLB그룹은 D+4~5로 진행 중입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1순위: 금융권 AI 해킹 → 사이버보안 (2차 사이클, 재료는 신규)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>안랩</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+17.3</span><span class="chip"><i>대금(억)</i><strong>1,807</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>3봉(08:14)</span><span class="chip"><i>이전충족</i>09/17 외1</span><span class="chip"><i>30일순위 / 직전최대</i><strong>1위 / 8.0배</strong></span></div></article>
+<article class="card"><h4 class="c-t">엑스게이트</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.1</span><span class="chip"><i>대금(억)</i>1,556</span><span class="chip"><i>오늘충족</i>8봉(09:07)</span><span class="chip"><i>이전충족</i>09/23 외2</span><span class="chip"><i>30일순위 / 직전최대</i>6위 / 0.5배</span></div></article>
+<article class="card"><h4 class="c-t">아톤</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>1,317</span><span class="chip"><i>D+N</i>D+12</span><span class="chip"><i>오늘충족</i>41봉(11:48)</span><span class="chip"><i>이전충족</i>09/15</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.9배</span></div></article>
+<article class="card"><h4 class="c-t">에스투더블유</h4><div class="c-c"><span class="chip"><i>등락%</i>+16.3</span><span class="chip"><i>대금(억)</i>1,180</span><span class="chip"><i>D+N</i>D+7</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/14 외3</span><span class="chip"><i>30일순위 / 직전최대</i>3위 / 0.7배</span></div></article>
+<article class="card"><h4 class="c-t">라온시큐어</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>808</span><span class="chip"><i>D+N</i>D+13</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/15 외3 (최초 08/28)</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.5배</span></div></article>
+<article class="card"><h4 class="c-t">한컴위드</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.6</span><span class="chip"><i>대금(억)</i>806</span><span class="chip"><i>D+N</i>D+12</span><span class="chip"><i>오늘충족</i>7봉(10:17)</span><span class="chip"><i>이전충족</i>09/15 외1</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.2배</span></div></article>
+<article class="card"><h4 class="c-t">샌즈랩</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>582</span><span class="chip"><i>D+N</i>D+13</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/16</span><span class="chip"><i>30일순위 / 직전최대</i>3위 / 0.7배</span></div></article>
+<article class="card"><h4 class="c-t">드림시큐리티</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.6</span><span class="chip"><i>대금(억)</i>575</span><span class="chip"><i>오늘충족</i>7봉(09:15)</span><span class="chip"><i>이전충족</i>09/14</span><span class="chip"><i>30일순위 / 직전최대</i>4위 / 0.4배</span></div></article>
+<article class="card"><h4 class="c-t">지니언스</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.1</span><span class="chip"><i>대금(억)</i>558</span><span class="chip"><i>D+N</i>D+13</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/14</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.0배</span></div></article>
+<article class="card"><h4 class="c-t">아이씨티케이</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.5</span><span class="chip"><i>대금(억)</i>541</span><span class="chip"><i>D+N</i>D+5</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/28 외2</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.9배</span></div></article>
+<article class="card"><h4 class="c-t"><strong>케이씨에스</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+19.1</span><span class="chip"><i>대금(억)</i>515</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>9봉(12:25)</span><span class="chip"><i>이전충족</i>09/28 외1</span><span class="chip"><i>30일순위 / 직전최대</i><strong>1위 / 2.4배</strong></span></div></article>
+<article class="card"><h4 class="c-t">에스피소프트</h4><div class="c-c"><span class="chip"><i>등락%</i>+16.0</span><span class="chip"><i>대금(억)</i>389</span><span class="chip"><i>D+N</i>D+14</span><span class="chip"><i>오늘충족</i>5봉(14:03)</span><span class="chip"><i>이전충족</i>09/02</span><span class="chip"><i>30일순위 / 직전최대</i>4위 / 0.6배</span></div></article>
+<article class="card"><h4 class="c-t">케이사인</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.0</span><span class="chip"><i>대금(억)</i>152</span><span class="chip"><i>D+N</i>D+14</span><span class="chip"><i>오늘충족</i>7봉(14:49)</span><span class="chip"><i>이전충족</i>없음(미확인)</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 4.3배</span></div></article>
+<article class="card"><h4 class="c-t">한국첨단소재</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.5</span><span class="chip"><i>대금(억)</i>142</span><span class="chip"><i>D+N</i>D+12</span><span class="chip"><i>오늘충족</i>7봉(09:07)</span><span class="chip"><i>이전충족</i>09/16 외3</span><span class="chip"><i>30일순위 / 직전최대</i>4위 / 0.1배</span></div></article>
+<article class="card"><h4 class="c-t"><strong>이글루</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+13.1</span><span class="chip"><i>대금(억)</i>112</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i><strong>1위 / 4.1배</strong></span></div></article>
+<article class="card"><h4 class="c-t">모니터랩</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.4</span><span class="chip"><i>대금(억)</i>78</span><span class="chip"><i>D+N</i>D+14</span><span class="chip"><i>오늘충족</i>3봉(09:09)</span><span class="chip"><i>이전충족</i>09/14</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.8배</span></div></article>
+</div>
+<p><strong>테마 시작일 추정</strong></p>
+<ul>
+<li>보안 섹터 자체: 08/27~08/28(에스투더블유·라온시큐어 충족)에 시작했고, 본 사이클은 <strong>09/11~09/16</strong>입니다. 대부분이 D+12~14인 게 그 근거입니다.</li>
+<li>&#x27;금융권 해킹&#x27; 재료로 다시 붙은 것: 10/02에 라온 +7.5, 지니언스 +9.1, 에스투더블유 +9.4, 한싹 +9.6, 드림 <span style="color:#ef4444;font-weight:700">+6.8%</span>가 이미 움직였습니다. 오늘 폭발했습니다.</li>
+<li>금융권 연쇄 해킹은 10/05에 이미 국감 쟁점으로 보도됐습니다(웹: 아주경제).</li>
+<li>결론: <strong>섹터는 D+N이 길지만, 오늘이 &#x27;해킹 재료&#x27;의 첫 대폭발일</strong>입니다. 엄밀한 D+0 종목은 <strong>안랩·케이씨에스·이글루</strong> 3개입니다. 셋 다 30일 대금 1위입니다.</li>
+</ul>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li><strong>대장주: 안랩.</strong> 테마 내 대금이 최대(1,807억)이고, 직전 최대의 8배라 성격이 다른 자금입니다.</li>
+<li>08:14 프리마켓에서 <span style="color:#ef4444;font-weight:700">+21%</span>로 가장 먼저 포착됐습니다.</li>
+<li>뉴스 첫 기사는 08:55(서울경제)입니다. 주가가 뉴스보다 앞섰습니다.</li>
+<li>등락률 대장은 상한가를 간 라온시큐어·샌즈랩입니다(웹: 이투데이, 상한가 6개 중 2개). 하지만 대금이 각각 808억, 582억이고 둘 다 D+13 재점화라 대장으로 보지 않습니다.</li>
+<li>아톤(1,317억, 41봉)은 대금 2위권입니다. 다만 D+12이고 STO 성격이 섞여 있어 <strong>부대장</strong>으로 봅니다.</li>
+<li>웹(톱스타뉴스)은 <span style="color:#ef4444;font-weight:700">+26.36%</span>·6,950원으로 보도했습니다. 문서 정본은 <span style="color:#ef4444;font-weight:700">+30.0%</span>·7,150원입니다. NXT 애프터 종가 차이로 보입니다.</li>
+<li><strong>후발주(오후 늦게 충족 + 대금 작음)</strong>: 케이사인(14:49, 152억), 에스피소프트(14:03, 389억), 케이씨에스(12:25, 515억).</li>
+<li>케이씨에스는 D+0에 대금 1위라 후발이어도 <strong>같이 볼 종목</strong>입니다.</li>
+<li>엑스게이트(1,556억)는 대금은 크지만 종가위치 20%, VWAP <span style="color:#7dabf8;font-weight:700">-2.9%</span>로 고점에서 밀렸습니다. 대장 자격이 떨어집니다.</li>
+</ul>
+<p><strong>추정 재료</strong></p>
+<ul>
+<li>금융권(은행·증권·카드·보험·인터넷은행) AI 에이전트 의심 해킹이 연쇄로 발생했습니다.</li>
+<li>금감원이 공격 IP 28개를 특정하고 500여 금융사에 보안 취약정보를 통보했습니다(웹: 서울신문).</li>
+<li>국감에서 과기정통부 대응도 질타받았습니다(웹: 파이낸셜뉴스 16:24).</li>
+<li>문서 안 뉴스도 &#x27;금융권 해킹&#x27;, &#x27;ARTEX AI&#x27;로 일치합니다.</li>
+<li>이글루·케이씨에스는 당일 개별 기사가 없습니다(웹에서도 확인 안 됨). 같은 해킹 재료로 동반한 것으로 추정합니다.</li>
+</ul>
+<p><strong>재료 단계</strong></p>
+<ul>
+<li>안랩: &#x27;AI보안 전환·투자&#x27;(09/16, 기대) → &#x27;금융권 실제 해킹 사고&#x27;(10/06). <strong>기대에서 실수요 촉발 사건으로 바뀐 것이라 실질 신규 재료</strong>입니다.</li>
+<li>아직 수주나 계약 같은 &#x27;확정&#x27; 단계는 아닙니다.</li>
+<li>양자암호 계열(엑스게이트·드림·케이씨에스 등): 09월은 &#x27;양자암호 기대&#x27;였고 오늘은 &#x27;해킹 수요&#x27;입니다. <strong>재료가 갈아탄 것이지 같은 단계의 재탕은 아닙니다.</strong> 그래도 이 종목들의 D+N은 깁니다.</li>
+</ul>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜인 신호</li>
+<li>안랩이 VWAP 위를 유지하고 오늘 장중 저점 83,800원 위에서 대금 1,000억 이상 재유입</li>
+<li>이글루·케이씨에스 같은 D+0 소형주가 시가 이후 재충족</li>
+<li>해킹 후속 보도(피해 규모, 당국 보안 강화 대책) 이어짐</li>
+<li>❌ 아닌 신호</li>
+<li>상한가주(라온시큐어·샌즈랩)가 갭 뒤 시가부터 밀림</li>
+<li>안랩 83,800원 이탈</li>
+<li>대금이 오늘의 절반 아래로 급감 → 하루짜리 사건 테마</li>
+</ul>
+<hr>
+<h3>🥈 2순위(약함): 반도체 장비 / 코스닥 대형주 (추정, 지수성)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>주성엔지니어링</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+19.4</span><span class="chip"><i>대금(억)</i><strong>9,521</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>19봉(09:17)</span><span class="chip"><i>이전충족</i>09/10 외1 (09/08)</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.8배</span></div></article>
+<article class="card"><h4 class="c-t">이수페타시스</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.1</span><span class="chip"><i>대금(억)</i>3,443</span><span class="chip"><i>오늘충족</i>12봉(09:10)</span><span class="chip"><i>이전충족</i>09/21</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.0배</span></div></article>
+<article class="card"><h4 class="c-t">심텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.0</span><span class="chip"><i>대금(억)</i>3,226</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/22 외1</span><span class="chip"><i>30일순위 / 직전최대</i>5위 / 0.6배</span></div></article>
+<article class="card"><h4 class="c-t"><strong>케이씨텍</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+15.5</span><span class="chip"><i>대금(억)</i>654</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족(G2 58회)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.0배</span></div></article>
+<article class="card"><h4 class="c-t">와이씨</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.3</span><span class="chip"><i>대금(억)</i>631</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/21</span><span class="chip"><i>30일순위 / 직전최대</i>6위 / 0.4배</span></div></article>
+<article class="card"><h4 class="c-t">티에스이</h4><div class="c-c"><span class="chip"><i>등락%</i>+7.1</span><span class="chip"><i>대금(억)</i>455</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/10</span><span class="chip"><i>30일순위 / 직전최대</i>11위 / 0.2배</span></div></article>
+<article class="card"><h4 class="c-t">네패스아크</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.3</span><span class="chip"><i>대금(억)</i>152</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.1배</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 주성엔지니어링의 첫 충족은 09/08입니다. 09/30~10/01 기사는 &#x27;시총 순위 상승&#x27;이었고, 직전 5일 누적도 <span style="color:#ef4444;font-weight:700">+13.8%</span>입니다. <strong>이미 진행 중인 상승의 가속</strong>이지 첫날은 아닙니다.</li>
+<li><strong>대장주: 주성엔지니어링</strong>(9,521억, 압도적)입니다. 케이씨텍은 대금이 1/15 수준이라 후발입니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>코스닥 대형주 일제 강세, 코스닥 910선 탈환(문서 뉴스·웹: 서울신문).</li>
+<li>케이씨텍은 &quot;특별한 공시 없이 15%대 급등&quot;으로 보도됐습니다(웹: 재경일보). <strong>재료 미상, 주가 선행으로 추정합니다.</strong> 확인할 것: 삼성·SK 증설/CMP 장비 발주 기사, 외국인·기관 순매수 주체.</li>
+<li><strong>재료 단계</strong>: 기대 → 기대(시총 순위·업황 훈풍). 재탕이고 신선도는 낮습니다.</li>
+<li><strong>확신이 약한 이유</strong>: 주성엔지니어링 직전최대 0.8배, 이수페타시스 1.0배입니다. 새로운 성격의 자금이 아닙니다.</li>
+<li><strong>다음 거래일</strong></li>
+<li>✅ 케이씨텍이 대금 1위를 유지하고 다른 장비주로 확산되면 장비 테마로 격상합니다.</li>
+<li>❌ 코스닥 지수가 쉬면 같이 꺼질 가능성이 높습니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 — 눌림 관찰용)</h2>
+<ul>
+<li><strong>HLB그룹 (D+4~5, 시작 09/28~29)</strong>: 대장은 HLB(4,992억, 미충족, 이전충족 09/29)입니다. HLB제약 상한가(D+4, 5일 <span style="color:#ef4444;font-weight:700">+42%</span>), HLB생명과학·HLB바이오스텝·HLB테라퓨틱스도 올랐습니다.</li>
+<li>재료: 리보세라닙 제조시설 FDA 실사 VAI(자발적 시정 권고) 마무리 → NDA 재제출 준비(뉴스버즈 09:00, 웹: 이투데이). 허가 &#x27;확정&#x27;이 아니라 &#x27;청신호&#x27; 단계입니다.</li>
+<li>후반부라 신규 진입하지 않습니다.</li>
+<li><strong>광통신 (빛과전자 D+13, 센서뷰 D+10)</strong>: 빛과전자 1,656억, 첫 충족 09/08입니다.</li>
+<li>당일 신규 재료는 웹에서도 확인 안 됩니다. 검색된 &#x27;국산화 사업 선정&#x27;은 09/08 재료입니다.</li>
+<li>센서뷰는 고점 대비 <span style="color:#7dabf8;font-weight:700">-11.5%</span> 눌림입니다.</li>
+<li><strong>우주항공</strong>: 비츠로넥스텍(이전충족 10/02, 고점 대비 <span style="color:#7dabf8;font-weight:700">-12.6%</span>), 에이치브이엠(소재 품귀 기사 08:28, 웹·버즈: 프라임경제, 고점 대비 <span style="color:#7dabf8;font-weight:700">-12.4%</span>). 둘 다 밀린 마감입니다.</li>
+<li><strong>철강</strong>: TCC스틸 D+3(957억), 대한제강(이전충족 10/01).</li>
+<li><strong>기타 진행</strong>: 삼천당제약 D+2(1,642억), 원일티엔아이 D+1(원전, 5일 <span style="color:#ef4444;font-weight:700">+53.7%</span>), 하이젠알앤엠 D+9(로봇), 네오티스 D+7, 알멕 D+6(재료 미상), 카페24 D+2.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>제이앤티씨 (D+0, <span style="color:#ef4444;font-weight:700">+20.6%</span>, 774억, 30일 1위, 5일 <span style="color:#7dabf8;font-weight:700">-8.3%</span>)</strong>: 오늘 D+0 중 가장 깔끔한 개별 신호입니다.</li>
+<li>재료: 디일렉 기사 &quot;12시간을 분 단위로 단축…유리기판 핵심기술 개발&quot;(뉴스버즈 최초 17:19, 웹: 디일렉). 2mm TGV 기판의 구리 충진 시간을 분 단위로 단축했고, 미국 반도체 고객사 검증을 마쳤다는 내용입니다.</li>
+<li>충족은 19:24(NXT 애프터)라 <strong>뉴스가 먼저, 주가가 나중</strong>입니다. KRX 종가는 22,950원이고 상승분 대부분이 애프터에서 나왔습니다.</li>
+<li>재료 단계: MOU(09/22) → 기술 개발과 고객 검증 완료. 한 단계 올랐지만 수주 확정은 아닙니다.</li>
+<li>동반 종목이 없어 테마가 아닌 개별로 분류합니다. 내일 정규장에서 22,950원 대비 갭이 유지되는지가 관건입니다.</li>
+<li><strong>동화약품 (★첫흐름, 338억, 전일 268배)</strong>: 자회사 메디쎄이 경추 케이지 FDA 510(k) 인증입니다(웹: 뉴데일리, 버즈 최초 11:28).</li>
+<li>포착이 13:14라 <strong>뉴스가 먼저</strong>입니다. 종가는 고점 대비 <span style="color:#7dabf8;font-weight:700">-11.3%</span>로, 하루짜리 뉴스 반응 성격입니다.</li>
+<li><strong>한컴 (★첫흐름, 407억, 30일 1위, 직전최대 3.1배)</strong>: 08:13 프리마켓 포착입니다. 당일 기사(AI페스타 13:17, NDR 17:36)는 모두 주가보다 늦습니다.</li>
+<li>웹에서도 원인 확인이 안 됩니다. <strong>재료 미상 — 주가 선행 추정.</strong></li>
+<li>안랩(08:14)과 시각이 겹치고 모회사 한컴위드가 보안주라 해킹 테마 동반일 가능성이 있지만 <strong>근거 부족</strong>입니다.</li>
+<li><strong>덕우전자 (★첫흐름이지만 실제로는 진행 중)</strong>: 10/01에 46시리즈 배터리 부품 수주로 상한가를 갔습니다(웹: 데일리머니). 문서상 최근10일 +29.9, +17.9와도 일치합니다.</li>
+<li>&#x27;첫 충족&#x27;일 뿐 사이클 시작은 10/01이고, 오늘은 고점 대비 <span style="color:#7dabf8;font-weight:700">-15.6%</span>입니다. 제외합니다.</li>
+<li><strong>아티스트스튜디오 (★첫흐름, 상한가, 대금 25억)</strong>: &quot;뚜렷한 개별 호재 없이&quot; 상한가로 보도됐습니다(웹: 잡포스트). 대금이 너무 작아 제외합니다.</li>
+<li><strong>모비릭스 (D+0, 상한가, 11억)</strong>: 60억 자사주 신탁(17:18)은 고가(16:37) 이후에 나왔습니다. 초소형이라 제외합니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 금융권 AI 해킹 → 사이버보안 (섹터는 2차 사이클, 재료는 신규 = 실질 D+0)</li>
+<li>그 테마의 대장주 (거래대금 최대): 안랩 1,807억 (D+0 · 30일 1위 · 직전최대 8.0배 · 08:14 포착이 첫 기사 08:55보다 먼저)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 안랩 (AI보안 기대 → 실제 금융권 해킹 사고), 제이앤티씨 (MOU → 기술개발·고객 검증 완료, 개별)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 케이사인(14:49·152억), 에스피소프트(14:03·389억), 모니터랩, 한국첨단소재, 케이씨텍(장비 테마 내 후발)</li>
+<li>같이 볼 종목: 케이씨에스(D+0·1위·2.4배), 이글루(D+0·1위·4.1배), 아톤(부대장 1,317억), 제이앤티씨(개별 D+0)</li>
+<li>진행중이라 눌림만 볼 종목: HLB·HLB제약(D+4~5), 라온시큐어·샌즈랩·지니언스(D+13), 빛과전자·센서뷰, 주성엔지니어링, 덕우전자, 비츠로넥스텍</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>금융권 해킹 후속 보도 — 피해 확정·당국 대책(금감원 500여곳 통보 이후) 이어지는지</li>
+<li>안랩 프리마켓(08:00~) 대금·가격: 83,800원 위, VWAP 위 유지 여부</li>
+<li>제이앤티씨 정규장 시가 — 애프터 종가 26,350원 vs KRX 종가 22,950원 갭 유지 여부</li>
+</ol>
+<p>```</p>
+<hr>
+<p>Sources:</p>
+<ul>
+<li>[이투데이 — 급등락주 짚어보기: 사이버 보안·HLB 그룹주 동반 강세](https://www.etoday.co.kr/news/view/2632960)</li>
+<li>[서울신문 — AI 해커, 28개 IP로 금융권 공격…금감원 500여곳 통보](https://www.seoul.co.kr/news/economy/2026/10/06/20261006500289)</li>
+<li>[파이낸셜뉴스 — 금융권 해킹, 과기정통부 대응 질타](https://www.fnnews.com/news/202610061624102618)</li>
+<li>[아주경제 — 연쇄 해킹, 국감 쟁점으로](https://www.ajunews.com/view/20261005144529702)</li>
+<li>[머니투데이 — 사이버보안주 상한가 &#x27;터치&#x27;](https://www.mt.co.kr/stock/2026/10/06/2026100611191188419)</li>
+<li>[톱스타뉴스 — 아톤 10월 6일 애프터마켓](https://www.topstarnews.net/news/articleView.html?idxno=16239484)</li>
+<li>[디일렉 — 제이앤티씨, 유리기판 핵심기술 개발](https://www.thelec.kr/news/articleView.html?idxno=63298)</li>
+<li>[뉴데일리 — 메디쎄이 FDA 510(k) 인증](https://biz.newdaily.co.kr/site/data/html/2026/10/06/2026100600137.html)</li>
+<li>[재경일보 — 케이씨텍, 특별한 공시 없이 15%대 급등](https://news.jkn.co.kr/post/1009507)</li>
+<li>[서울신문 — 코스닥 대형주 일제히 강세, 주성엔지니어링 16%대](https://www.seoul.co.kr/news/economy/securities/2026/10/06/20261006500128)</li>
+<li>[데일리머니 — 덕우전자 상한가(46시리즈 수주)](http://www.thedailymoney.com/news/articleView.html?idxno=1146502)</li>
+<li>[잡포스트 — 아티스트스튜디오 상한가](https://www.job-post.co.kr/news/articleView.html?idxno=230856)</li>
+<li>[중앙이코노미뉴스 — 빛과전자 10월 6일 장중](https://www.joongangenews.com/news/articleView.html?idxno=552732)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-06 21:21
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
