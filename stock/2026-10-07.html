@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-07 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-07</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-07_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-07 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>원문에는 지수와 수급 정보가 없습니다. 정보지를 수집하지 않은 날이라 주가·뉴스·뉴스 버즈만으로 판단했고, 웹에서는 당일 기사를 거의 확인하지 못했습니다. 오늘 새로 점화된 테마는 <strong>&#x27;서울 부지 자산주&#x27;(추정)</strong> 4종목입니다. 09:43~09:45 사이에 동시에 충족했고, 4종목 모두 D+0·대금 30일 1위·뉴스 0건입니다. 그다음은 <strong>러시아 페스트 우려에 따른 감염병·진단주 재점화</strong>입니다. 장 마감 뒤에는 <strong>한미사이언스가 비만신약 품목허가 재료로 애프터마켓에서 급등</strong>했고, 정규장 반영은 내일이 처음입니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 8종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>삼미금속</strong> — 최대 <strong>48.5억</strong> · <strong>10시 52분</strong> · 20억↑ 봉 26개 · 개별</li>
+<li>🔥 <strong>신풍제약</strong> — 최대 <strong>46.6억</strong> · <strong>8시 03분 NXT 프리</strong> · 20억↑ 봉 8개 · 러시아 페스트 → 감염병·진단</li>
+<li>🔥 <strong>삼표시멘트</strong> — 최대 <strong>45.8억</strong> · <strong>9시 45분</strong> · 20억↑ 봉 7개 · 서울 부지 자산주 (추정)</li>
+<li>🔥 <strong>국제약품</strong> — 최대 <strong>40.4억</strong> · <strong>9시 03분</strong> · 20억↑ 봉 2개 · 러시아 페스트 → 감염병·진단</li>
+<li>🔥 <strong>케이씨텍</strong> — 최대 <strong>40.1억</strong> · <strong>11시 43분</strong> · 20억↑ 봉 12개 · 반도체 장비 (진행 중)</li>
+<li>🔥 <strong>한미사이언스</strong> — 최대 <strong>27.2억</strong> · <strong>19시 55분 NXT 애프터</strong> · 20억↑ 봉 5개 · GLP-1 비만신약 품목허가 (장후 재료·조건부)</li>
+<li>🔥 <strong>비아트론</strong> — 최대 <strong>26.5억</strong> · <strong>17시 35분 NXT 애프터</strong> · 20억↑ 봉 1개 · 개별</li>
+<li>🔥 <strong>녹십자엠에스</strong> — 최대 <strong>21.3억</strong> · <strong>9시 31분</strong> · 20억↑ 봉 3개 · 러시아 페스트 → 감염병·진단</li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">서울 부지 자산주 (<code>추정</code>)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>재료 미상, 주가 선행 추정 (과거 터미널·성수동 부지 개발 이력). 근거 부족</p><p class="c-p"><span class="c-k">신선도</span>4종목 전원 D+0</p><p class="c-p"><span class="c-k">판단</span>최우선 D+0. 대장 삼표시멘트</p><div class="c-c"><span class="chip"><i>수식충족</i>4종목</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">러시아 페스트 → 감염병·진단</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>러시아 페스트균 유출 의심, 미국도 주시 (웹 미확인)</p><p class="c-p"><span class="c-k">신선도</span>8/24 코로나 테마 종목군의 재점화. 진짜 D+0은 국제약품·국전뿐</p><p class="c-p"><span class="c-k">판단</span>이벤트성이라 지속력 낮음</p><div class="c-c"><span class="chip"><i>수식충족</i>5종목</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">GLP-1 비만신약 품목허가 (<code>장후 재료·조건부</code>)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>한미 비만신약 품목허가 (에페글레나타이드 추정)</p><p class="c-p"><span class="c-k">신선도</span>D+29지만 실질 D+0 가능. 정규장 반영은 내일 처음</p><p class="c-p"><span class="c-k">판단</span>재료 단계 상승. 다만 아직 대금 30일 3위·직전최대 0.2배</p><div class="c-c"><span class="chip"><i>수식충족</i>1종목 (18:07)</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">금융권 AI 해킹 → 보안</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문 미기재</p><p class="c-p"><span class="c-k">신선도</span>10/06 상한가 이후 이틀째</p><p class="c-p"><span class="c-k">판단</span>후반부. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">반도체 장비</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문 미기재</p><p class="c-p"><span class="c-k">신선도</span>D+1</p><p class="c-p"><span class="c-k">판단</span>고점 대비 <span style="color:#7dabf8;font-weight:700">-10%</span>. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>케이씨텍 ★첫흐름</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>장후 CB 발행</p><p class="c-p"><span class="c-k">신선도</span>10/06 충족 이후 이틀째</p><p class="c-p"><span class="c-k">판단</span>약세 전환 주의</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">비만·제약</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문 미기재</p><p class="c-p"><span class="c-k">신선도</span>직전5일 <span style="color:#ef4444;font-weight:700">+45.9%</span></p><p class="c-p"><span class="c-k">판단</span>후반부</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">HLB 그룹 (간암 FDA)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>간암 FDA</p><p class="c-p"><span class="c-k">신선도</span>09/29 첫 충족, D+1</p><p class="c-p"><span class="c-k">판단</span>연속 상한가. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">K뷰티</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문 미기재</p><p class="c-p"><span class="c-k">신선도</span>D+3 (이전충족 09/11)</p><p class="c-p"><span class="c-k">판단</span>진행 중</p><div class="c-c"><span class="chip"><i>수식충족</i>원문 미기재</span><span class="chip"><i>정보지</i>없음</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<p>※ 원문에 종목코드가 없어서 종목명만 적었습니다.</p>
+<h3>서울 부지 자산주 (<code>추정</code>)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>삼표시멘트</strong><br><strong>45.8억</strong><br><strong>9시 45분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0 대장. 대금 30일 1위, 직전최대 50.0배, 나머지 셋 합계(421억)의 3.7배</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>30봉 (09:45)</span><span class="chip"><i>등락%</i>+16.0</span><span class="chip"><i>대금</i>1,564억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>천일고속</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0. 직전최대 11.3배지만 대금이 작음. 품절주 효과로 보이는 후발 동조</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>22봉 (09:44)</span><span class="chip"><i>등락%</i>+30.0 상한가</span><span class="chip"><i>대금</i>44억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>동양고속</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0. 직전최대 6.4배. 후발 동조</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>24봉 (09:43)</span><span class="chip"><i>등락%</i>+30.0 상한가</span><span class="chip"><i>대금</i>28억</span></div></article>
+<article class="card"><h4 class="c-t">대성산업</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인. 직전최대 8.7배. 부지와의 연결고리가 가장 약해 별개 재료일 수 있음</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인 (16일 전 <span style="color:#ef4444;font-weight:700">+10%</span>)</span><span class="chip"><i>충족봉</i>20봉 (09:44)</span><span class="chip"><i>등락%</i>+19.9</span><span class="chip"><i>대금</i>349억</span></div></article>
+</div>
+<h3>러시아 페스트 → 감염병·진단</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">국전</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인. D+0, 직전최대 7.6배, 뉴스 0건. 정체가 불분명한 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인 (23일 전 <span style="color:#ef4444;font-weight:700">+19%</span>)</span><span class="chip"><i>충족봉</i>21봉 (09:08)</span><span class="chip"><i>등락%</i>+18.2</span><span class="chip"><i>대금</i>469억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>국제약품</strong><br><strong>40.4억</strong><br><strong>9시 03분</strong></h4><p class="c-p"><span class="c-k">근거</span>원문 D+0이지만 08/24에 이미 충족. 3세 지분 증여 재료가 섞임. 대금 기준 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 08/24</span><span class="chip"><i>충족봉</i>9봉 (09:17)</span><span class="chip"><i>등락%</i>+29.9 상한가</span><span class="chip"><i>대금</i>265억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>신풍제약</strong><br><strong>46.6억</strong><br><strong>8시 03분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span>D+25. 08/24에 이미 충족. 대금 30일 1위, 대장. 08:07 포착으로 뉴스(09:15)보다 먼저 움직임</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/11 외 3 (08/24 최초)</span><span class="chip"><i>충족봉</i>22봉 (08:07)</span><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금</i>1,341억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>녹십자엠에스</strong><br><strong>21.3억</strong><br><strong>9시 31분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+29. 09/03에 이미 충족. 회전율 162%, 사실상 공동 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17 외 1 (09/03)</span><span class="chip"><i>충족봉</i>24봉 (09:23)</span><span class="chip"><i>등락%</i>+29.9 상한가</span><span class="chip"><i>대금</i>884억</span></div></article>
+<article class="card"><h4 class="c-t">대원제약</h4><p class="c-p"><span class="c-k">근거</span>09/02에 이미 충족. 뉴스보다 먼저 움직임</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/02</span><span class="chip"><i>충족봉</i>15봉 (08:15)</span><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>대금</i>143억</span></div></article>
+</div>
+<h3>GLP-1 비만신약 품목허가 (<code>장후 재료·조건부</code>)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>한미사이언스</strong><br><strong>27.2억</strong><br><strong>19시 55분</strong><br>NXT 애프터</h4><p class="c-p"><span class="c-k">등락%</span>+14.9 (NXT 애프터마켓 구간, 정규장 아님)</p><p class="c-p"><span class="c-k">근거</span>D+29. 09/08에 이미 충족했지만 실질 D+0 가능. 정규장 종가 58,100원 → 애프터마켓 66,200원. 정규장 반영은 내일 처음. 대금 30일 3위, 직전최대 0.2배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/08 외 1</span><span class="chip"><i>충족봉</i>30봉 (18:07, 장후)</span><span class="chip"><i>대금</i>942억</span></div></article>
+</div>
+<h3>반도체 장비 (진행 중)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>케이씨텍</strong><br><strong>40.1억</strong><br><strong>11시 43분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+1 (10/06 <span style="color:#ef4444;font-weight:700">+15.5%</span>). 대금 1위지만 종가위치 52%. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>원문 미기재 (고점 대비 <span style="color:#7dabf8;font-weight:700">-10%</span>)</span><span class="chip"><i>대금</i>2,270억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>SAMG엔터</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0. 티니핑 미국 타겟 매장 입점(웹 미확인). 포착이 기사(09:35)보다 빠름. 동반 종목 없는 강한 개별주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재 (09:14)</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>357억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>비아트론</strong><br><strong>26.5억</strong><br><strong>17시 35분</strong><br>NXT 애프터</h4><p class="c-p"><span class="c-k">근거</span>D+0. 삼성전기향 유리기판 공동개발(웹 미확인). 뉴스(16:43)가 먼저. 직전5일 <span style="color:#ef4444;font-weight:700">+23.5%</span>로 선반영</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재 (16:50)</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>399억</span></div></article>
+<article class="card"><h4 class="c-t"><strong>인벤티지랩</strong></h4><p class="c-p"><span class="c-k">근거</span>유럽 제약사 공동연구 계약(10:41 기사). 고가 <span style="color:#ef4444;font-weight:700">+23%</span>에서 밀림. 한미 테마로 묶기엔 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>7봉 (10:50)</span><span class="chip"><i>등락%</i>+8.1</span><span class="chip"><i>대금</i>240억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>삼미금속</strong><br><strong>48.5억</strong><br><strong>10시 52분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+N <code>-</code>. 재료가 기대(09/07)에서 납품 개시로 상승했지만 직전최대 0.8배로 대금이 뒷받침하지 않음. 뉴스(09:41)가 먼저</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문 미기재</span><span class="chip"><i>충족봉</i>원문 미기재 (09:57)</span><span class="chip"><i>등락%</i>+9.6</span><span class="chip"><i>대금</i>2,444억</span></div></article>
+<article class="card"><h4 class="c-t">BGF에코머티리얼즈</h4><p class="c-p"><span class="c-k">근거</span>자사주 소각·KNW 편입 공시와 동시에 포착. 이벤트성</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문 미기재</span><span class="chip"><i>충족봉</i>원문 미기재 (17:22)</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>118억</span></div></article>
+<article class="card"><h4 class="c-t">그린생명과학</h4><p class="c-p"><span class="c-k">근거</span>뉴스 0건. 페스트 동조 가능성은 있으나 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문 미기재</span><span class="chip"><i>충족봉</i>원문 미기재 (09:29)</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>151억</span></div></article>
+</div>
+<ul>
+<li>원문에 충족 여부가 적혀 있지 않은 종목: 알파칩스(82억, 100% 무상증자, 이벤트성), 위메이드맥스(473억, D+14, 뉴스 없음, <code>재료 미상</code>)</li>
+<li>진행 중 테마 가운데 충족 여부가 원문에 없는 종목: 라온시큐어(3,048억), 빛과전자(2,580억), 삼천당제약(2,606억), HLB바이오스텝(306억), 한국화장품제조(992억)</li>
+</ul>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">러시아 페스트 → 감염병·진단</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>원문은 &#x27;미충족&#x27;이라고만 표기하고 이유는 적지 않음. <span style="color:#ef4444;font-weight:700">+9.6%</span>, 160억, 이전충족 09/23 외 2</p><div class="c-c"><span class="chip"><i>종목</i>셀리드</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (오늘은 정보지 미수집일)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>서울 부지 자산주의 공통 재료</strong></li>
+<li>진짜: 서울시나 회사가 부지 관련 기사·공시를 냄, 삼표시멘트가 고가 8,450원을 다시 시도하며 대금 1,000억 이상 유지, 고속 2사가 상한가 유지 또는 재진입</li>
+<li>아니다: 조회공시 답변이 &quot;확정된 사항 없음&quot;, 삼표시멘트가 저점 7,680원 이탈 → 단순 순환매로 강등</li>
+<li><strong>고속버스 2사</strong>: 시가에 밀려 상한가가 풀린 뒤 대금 없이 하락하면 아니다</li>
+<li><strong>러시아 페스트</strong></li>
+<li>진짜: 러시아·미국 보건당국의 공식 발표, 녹십자엠에스·국제약품이 상한가에서 출발하거나 유지</li>
+<li>아니다: 유출설 부인 보도, 신풍제약이 저점 10,300원 이탈, 2시간 안에 상한가 2종목 동반 이탈</li>
+<li><strong>한미 비만신약 허가</strong> (정규장 반영은 내일 처음)</li>
+<li>진짜: 정규장 시초가가 애프터마켓 66,200원 위, 한미약품(목록 밖)과 한미사이언스가 대금 1위 회복, 비만 관련주로 동반 확산</li>
+<li>아니다: 시초가가 66,200원 아래에서 출발하고 회복하지 못함 (이미 반영이 끝났다는 신호)</li>
+<li><strong>대성산업이 묶인 이유</strong>: 부지 연결고리가 가장 약함. 같은 재료인지 별개 재료인지 확인</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-10-07 (수) [장마감]</h1>
+<p>기준일: 2026-10-07 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 9회 — 기준일 당일 기사는 검색에서 거의 잡히지 않았습니다. 웹에서 확인한 것은 과거 재료 이력뿐이고, 당일 재료는 문서 안의 뉴스와 뉴스 버즈로 판단했습니다.</p></blockquote>
+<blockquote><p>📰 정보지 교차 절이 없습니다. 오늘은 정보지를 수집하지 않은 날로 보고, 주가·뉴스·뉴스 버즈만으로 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 점화된 것은 <strong>&#x27;서울 부지 자산주&#x27;(추정)</strong> 4종목입니다. 천일고속·동양고속·대성산업·삼표시멘트가 <strong>09:43~09:45 사이 3분 안에 동시에 충족</strong>했고, 4종목 모두 D+0, 대금 30일 1위, 당일 뉴스 0건입니다. 재료가 아직 알려지지 않은 주가 선행형으로 보입니다. 두 번째는 <strong>러시아 페스트 유출 우려로 움직인 감염병·진단주</strong>입니다. 8/24 코로나 테마 때 움직였던 종목군이 새 재료로 다시 붙었습니다. 장 마감 뒤에는 <strong>한미사이언스가 &#x27;국산 비만신약 품목허가&#x27; 재료로 애프터마켓에서 급등</strong>했습니다. 내일 정규장에서 확인할 1순위입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. 서울 부지 자산주 — 고속터미널·시멘트공장 부지 개발 (<code>추정</code>)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>삼표시멘트</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+16.0</span><span class="chip"><i>거래대금(억)</i><strong>1,564</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★첫흐름 30봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>09:45</span><span class="chip"><i>직전5일%</i>+1.7</span><span class="chip"><i>직전최대</i><strong>50.0배</strong></span></div></article>
+<article class="card"><h4 class="c-t">대성산업</h4><div class="c-c"><span class="chip"><i>등락%</i>+19.9</span><span class="chip"><i>거래대금(억)</i>349</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>20봉 (미확인 16일전 <span style="color:#ef4444;font-weight:700">+10%</span>)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>09:44</span><span class="chip"><i>직전5일%</i>+4.3</span><span class="chip"><i>직전최대</i>8.7배</span></div></article>
+<article class="card"><h4 class="c-t">천일고속</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0 상한가</span><span class="chip"><i>거래대금(억)</i>44</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★첫흐름 22봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>09:44</span><span class="chip"><i>직전5일%</i>-2.8</span><span class="chip"><i>직전최대</i>11.3배</span></div></article>
+<article class="card"><h4 class="c-t">동양고속</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0 상한가</span><span class="chip"><i>거래대금(억)</i>28</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★첫흐름 24봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>09:43</span><span class="chip"><i>직전5일%</i>+4.4</span><span class="chip"><i>직전최대</i>6.4배</span></div></article>
+</div>
+<ul>
+<li><strong>동시성</strong>: 사전테마는 넷 다 다릅니다(여행운수 2, 시멘트, 가스). 그런데 <strong>4종목이 09:43~09:45, 3분 안에 동시에 충족</strong>했습니다. 분류가 달라도 같이 움직였으니 한 테마로 봅니다(원칙 2).</li>
+<li><strong>테마 시작일</strong>: <strong>오늘(10/07)입니다.</strong> 4종목 모두 이전충족이 없습니다. 최근 10일 등락도 모두 ±5% 안에서 조용했습니다. 강한 D+0 조건(D+0 + 대금 30일 1위 + 직전5일 낮음)을 <strong>4종목 모두 충족</strong>합니다.</li>
+<li><strong>대장주: 삼표시멘트(1,564억).</strong> 대금이 나머지 셋을 합친 것(421억)의 3.7배이고, 직전최대의 50배가 들어왔습니다. 성격이 다른 자금입니다.</li>
+<li>고속버스 2종목은 상한가지만 대금이 각각 44억, 28억에 불과합니다. 유통시총 360억대의 품절주 효과로 보이며, 후발 동조로 판단합니다.</li>
+<li><strong>추정 재료</strong>: <code>재료 미상 — 주가 선행 추정</code>.</li>
+<li>문서: 4종목 모두 당일 뉴스 0건, 뉴스 버즈에도 없습니다.</li>
+<li>웹: 오늘 기사는 확인되지 않았습니다.</li>
+<li>웹에서 확인한 과거 이력은 이렇습니다.</li>
+<li>천일고속·동양고속: 2025년 11~12월 서울고속버스터미널 복합개발 기대로 연속 상한가 (웹: SBS Biz, 다음/뉴스)</li>
+<li>삼표시멘트: 2026년 2월 성수동 부지 개발 기대로 3거래일 연속 상한가 (웹: 뉴시스)</li>
+<li>그래서 &#x27;서울 도심 부지 개발&#x27; 같은 공통 재료로 추정합니다. <strong>다만 근거 부족입니다.</strong></li>
+<li>확인 방법:</li>
+<li>10/07 서울시 도시계획위원회·사전협상 결과 발표가 있었는지</li>
+<li>부동산·자산재평가 관련 정책 발표가 있었는지</li>
+<li>DART 조회공시 요구와 답변이 있었는지</li>
+<li>대성산업이 묶인 이유. 대성산업은 부지 연결고리가 가장 약해서 별개 재료일 수 있습니다.</li>
+<li><strong>재료 단계</strong>: <code>이력 없음(최근 3개월) — 주가 선행 추정</code>. 문서의 3개월 이력에 부지 관련 기사가 없습니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우:</li>
+<li>장 시작 전·장중에 서울시나 회사의 부지 관련 기사·공시가 나옴</li>
+<li>삼표시멘트가 오늘 고가 8,450원 근처를 다시 시도하면서 대금 1,000억 이상 유지</li>
+<li>고속 2종목이 상한가를 유지하거나 장중에 재진입</li>
+<li>❌ 아닌 경우:</li>
+<li>조회공시 답변이 &quot;확정된 사항 없음&quot;으로 나옴</li>
+<li>삼표시멘트가 오늘 저점 7,680원을 이탈</li>
+<li>고속 2종목이 시가에 밀려 상한가가 풀린 뒤 대금 없이 하락</li>
+</ul>
+<h3>🥈 2. 러시아 페스트(흑사병) 유출 우려 — 감염병·진단·원료의약</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>신풍제약</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>거래대금(억)</i><strong>1,341</strong></span><span class="chip"><i>D+N</i>D+25</span><span class="chip"><i>오늘충족</i>22봉</span><span class="chip"><i>이전충족</i>09/11 외 3 (08/24 최초)</span><span class="chip"><i>포착</i>08:07</span></div></article>
+<article class="card"><h4 class="c-t">녹십자엠에스</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9 상한가</span><span class="chip"><i>거래대금(억)</i>884</span><span class="chip"><i>D+N</i>D+29</span><span class="chip"><i>오늘충족</i>24봉</span><span class="chip"><i>이전충족</i>09/17 외 1 (09/03)</span><span class="chip"><i>포착</i>09:23</span></div></article>
+<article class="card"><h4 class="c-t">국전</h4><div class="c-c"><span class="chip"><i>등락%</i>+18.2</span><span class="chip"><i>거래대금(억)</i>469</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>21봉 (미확인 23일전 <span style="color:#ef4444;font-weight:700">+19%</span>)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>09:08</span></div></article>
+<article class="card"><h4 class="c-t">국제약품</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9 상한가</span><span class="chip"><i>거래대금(억)</i>265</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>9봉</span><span class="chip"><i>이전충족</i>08/24</span><span class="chip"><i>포착</i>09:17</span></div></article>
+<article class="card"><h4 class="c-t">셀리드</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.6</span><span class="chip"><i>거래대금(억)</i>160</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/23 외 2</span></div></article>
+<article class="card"><h4 class="c-t">대원제약</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.1</span><span class="chip"><i>거래대금(억)</i>143</span><span class="chip"><i>오늘충족</i>15봉</span><span class="chip"><i>이전충족</i>09/02</span><span class="chip"><i>포착</i>08:15</span></div></article>
+</div>
+<ul>
+<li><strong>주가 선행 여부</strong>:</li>
+<li>문서의 페스트 관련 첫 기사는 09:15(뉴스 버즈)와 09:24입니다.</li>
+<li>그런데 신풍제약은 08:07, 대원제약은 08:15, 국전은 09:08에 이미 충족했습니다. 주가가 뉴스보다 먼저 움직였습니다.</li>
+<li><strong>테마 시작일</strong>: 감염병 테마로 보면 <strong>8/24(코로나 재유행 기사)</strong> 에 이미 한 번 터졌습니다. 그날 신풍제약·국제약품이 충족했습니다. 오늘은 <strong>같은 종목군이 새 재료로 다시 점화된 날</strong>입니다. D+0이 진짜인 종목은 국제약품과 국전뿐입니다.</li>
+<li><strong>대장주: 신풍제약(1,341억, 대금 30일 1위).</strong></li>
+<li>상한가 강도로는 녹십자엠에스(884억, 회전율 162%)가 사실상 공동 대장입니다.</li>
+<li>국제약품은 상한가지만 대금이 265억이고 3세 지분 증여 재료가 섞여 있습니다. 대금 기준으로 후발입니다.</li>
+<li>국전은 뉴스가 0건인데 대금이 469억(직전최대 7.6배) 들어왔습니다. 정체가 분명하지 않은 후발주입니다.</li>
+<li><strong>추정 재료</strong>: 러시아 페스트균 유출 의심, 미국도 주시 (문서: 서울경제·연합뉴스·뉴스1 등). 웹에서는 확인 안 됨.</li>
+<li><strong>재료 단계</strong>: <code>코로나 재유행 기대(08/24) → 페스트 우려(10/07)</code> — 같은 &#x27;감염병 공포&#x27; 단계에서 소재만 바뀐 것입니다. 단계가 올라간 게 아니라 <strong>새로운 이벤트성 재료</strong>입니다. 이벤트성이라 지속력은 낮게 봅니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우:</li>
+<li>러시아·미국 보건당국의 확진·확산 공식 발표</li>
+<li>진단키트 수출 문의 기사</li>
+<li>녹십자엠에스·국제약품이 상한가에서 출발하거나 유지</li>
+<li>❌ 아닌 경우:</li>
+<li>유출설 부인 보도</li>
+<li>신풍제약이 오늘 저점 10,300원 이탈</li>
+<li>2시간 안에 상한가 2종목 동반 이탈. 이벤트 테마는 이틀째 소멸이 흔합니다.</li>
+</ul>
+<h3>🥉 3. 국산 GLP-1 비만신약 품목허가 — 한미 (<code>장후 재료 · 조건부</code>)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">한미사이언스</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.9 (애프터마켓)</span><span class="chip"><i>거래대금(억)</i>942</span><span class="chip"><i>D+N</i>D+29</span><span class="chip"><i>오늘충족</i>30봉</span><span class="chip"><i>이전충족</i>09/08 외 1</span><span class="chip"><i>포착</i><strong>18:07</strong></span></div></article>
+<article class="card"><h4 class="c-t">인벤티지랩 (참고)</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.1</span><span class="chip"><i>거래대금(억)</i>240</span><span class="chip"><i>오늘충족</i>★첫흐름 7봉</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>포착</i>10:50</span></div></article>
+</div>
+<ul>
+<li><strong>주가 선행 여부</strong>: 18:07 포착이 기사(아시아경제 18:17, 뉴스핌 18:36)보다 10~30분 빨랐습니다. 주가가 선행했습니다.</li>
+<li><strong>테마 시작일</strong>: 오늘 18:07입니다. 정규장 종가는 58,100원이고, NXT 애프터마켓에서 66,200원까지 올랐습니다. <strong>정규장 반영은 내일이 처음입니다.</strong></li>
+<li><strong>대장주: 한미사이언스.</strong> 인벤티지랩은 유럽 제약사 공동연구 계약이라는 별개 재료로 오전에 움직였습니다. 같은 테마로 묶기에는 근거가 부족합니다.</li>
+<li><strong>추정 재료</strong>: 비만신약 품목허가 (문서: 뉴스 버즈의 뉴스핌 기사). 에페글레나타이드로 추정합니다. 이 약은 식약처 신속심사 대상으로 지정된 뒤 허가를 신청했고, 국내 개발 GLP-1이 상업화에 성공하는 첫 사례가 됩니다 (웹: 데일리팜).</li>
+<li><strong>재료 단계</strong>: <code>허가 신청·기대 → 품목허가(확정)</code> — <strong>단계 상승, 실질 신규 재료입니다.</strong> D+29지만 <strong>실질 D+0 가능성이 있습니다.</strong></li>
+<li>⚠ 단, 대금 30일 3위에 직전최대 0.2배라 아직 시장이 인정했다고 볼 수 없습니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우:</li>
+<li>한미약품(목록 밖)과 한미사이언스가 정규장 시초가부터 대금 1위를 회복</li>
+<li>비만 관련주(펩타이드·제형 플랫폼)로 동반 확산</li>
+<li>❌ 아닌 경우:</li>
+<li>정규장 시초가가 애프터마켓 가격(66,200원) 아래에서 출발하고 회복하지 못함. 이미 반영이 끝났다는 신호입니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">금융권 AI 해킹 → 보안</h4><p class="c-p"><span class="c-k">상태</span>10/06 상한가 후 이틀째. 직전5일 <span style="color:#ef4444;font-weight:700">+32.6%</span>. 후반부 진입</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>라온시큐어 (3,048억, 대금 1위)</span></div></article>
+<article class="card"><h4 class="c-t">반도체 장비</h4><p class="c-p"><span class="c-k">상태</span>10/06 <span style="color:#ef4444;font-weight:700">+15.5%</span>에 이어 D+1. 대금은 1위지만 종가위치 52%로 고점에서 <span style="color:#7dabf8;font-weight:700">-10%</span> 밀림</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>케이씨텍 (2,270억, ★첫흐름)</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">상태</span>10/06 충족에 이어 이틀째. 고가 <span style="color:#ef4444;font-weight:700">+19.6%</span>에서 <span style="color:#ef4444;font-weight:700">+2.2%</span>로 마감, 장후 CB 발행. 약세 전환 주의</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>빛과전자 (2,580억)</span></div></article>
+<article class="card"><h4 class="c-t">비만·제약</h4><p class="c-p"><span class="c-k">상태</span>직전5일 <span style="color:#ef4444;font-weight:700">+45.9%</span>. 오늘 <span style="color:#7dabf8;font-weight:700">-0.8%</span>로 고가 대비 <span style="color:#7dabf8;font-weight:700">-13.6%</span>. 후반부</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>삼천당제약 (2,606억)</span></div></article>
+<article class="card"><h4 class="c-t">HLB 그룹 (간암 FDA)</h4><p class="c-p"><span class="c-k">상태</span>09/29 첫 충족, 10/06에 이어 연속 상한가. D+1</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>HLB바이오스텝 (306억)</span></div></article>
+<article class="card"><h4 class="c-t">K뷰티</h4><p class="c-p"><span class="c-k">상태</span>D+3. 이전충족 09/11</p><div class="c-c"><span class="chip"><i>종목 (대금)</i>한국화장품제조 (992억)</span></div></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>SAMG엔터</strong> (357억, D+0, ★첫흐름): 티니핑 미국 타겟 매장 입점. 포착 09:14가 첫 기사 09:35보다 빨라 주가가 선행했습니다. 웹에서는 타겟 입점 기사를 찾지 못했습니다. 동반 종목이 없는 강한 개별 D+0입니다.</li>
+<li><strong>삼미금속</strong> (2,444억): 가스터빈 블레이드 납품 개시. 재료 단계는 기대(09/07) → 납품 개시로 올라갔지만, 등락 <span style="color:#ef4444;font-weight:700">+9.6%</span>로 D+N이 <code>-</code>이고 직전최대 0.8배입니다. 이번에는 뉴스가 먼저(09:41)였고 포착이 뒤(09:57)였습니다.</li>
+<li><strong>비아트론</strong> (399억, D+0, ★첫흐름):</li>
+<li>재료: 삼성전기향 유리기판 공동개발. 뉴스 버즈 16:43 기사 뒤 16:50에 포착돼 뉴스가 먼저였습니다. 웹에서는 확인 안 됨.</li>
+<li>직전5일 <span style="color:#ef4444;font-weight:700">+23.5%</span>로 이미 선반영됐습니다.</li>
+<li>케이씨텍과 같은 &#x27;반도체 장비&#x27;로 볼 수는 있지만 시간대가 달라 묶지 않았습니다.</li>
+<li><strong>BGF에코머티리얼즈</strong> (118억): 자사주 소각에 KNW 편입(반도체 소재). 17:22 공시와 동시에 포착됐습니다. 이벤트성입니다.</li>
+<li><strong>알파칩스</strong> (82억): 100% 무상증자. 이벤트성입니다.</li>
+<li><strong>위메이드맥스</strong> (473억, D+14): 뉴스가 없습니다. <code>재료 미상</code> 이고, 게임주 동반 종목도 없습니다.</li>
+<li><strong>인벤티지랩</strong> (240억): 유럽 제약사 공동연구 계약(10:41 기사 → 10:50 포착). 고가 <span style="color:#ef4444;font-weight:700">+23%</span>에서 <span style="color:#ef4444;font-weight:700">+8%</span>로 밀렸습니다.</li>
+<li><strong>그린생명과학</strong> (151억): 뉴스 0건. 09:29 포착이라 페스트 동조일 가능성이 있지만 근거 부족입니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 서울 부지 자산주(추정) — 삼표시멘트·대성산업·천일고속·동양고속, 09:43~09:45 동시 점화, 전원 D+0·대금 1위·뉴스 0건(주가 선행)</li>
+<li>그 테마의 대장주 (거래대금 최대): 삼표시멘트 1,564억 (직전최대 50배)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 한미사이언스(허가 신청 → 품목허가, 장후·대금 미확인), 삼미금속(기대 → 납품 개시, 대금 미뒷받침)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 동양고속·천일고속(상한가지만 28·44억), 국제약품(상한가지만 265억 — 페스트 대장은 신풍제약·녹십자엠에스), 국전</li>
+<li>같이 볼 종목: 녹십자엠에스·신풍제약(페스트), 한미약품(목록 밖, 비만신약 본체), SAMG엔터(개별 D+0)</li>
+<li>진행중이라 눌림만 볼 종목: 라온시큐어, 케이씨텍, 빛과전자, 삼천당제약, HLB바이오스텝</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>삼표시멘트·고속버스 2사·대성산업의 공통 재료 — 서울시 부지 개발 발표나 조회공시가 있는지. 없으면 단순 순환매로 강등</li>
+<li>러시아 페스트 — 공식 확인인지 루머 부인인지. 녹십자엠에스·국제약품 상한가 유지 여부</li>
+<li>한미 비만신약 허가 — 정규장 시초가가 애프터마켓 66,200원 위인지. 한미약품 대금이 붙는지</li>
+</ol>
+<p>```</p>
+<p>Sources:</p>
+<ul>
+<li>[서울 고속버스터미널 천지개벽…&#x27;이 회사&#x27; 7일 연속 상한가 (SBS Biz)](https://biz.sbs.co.kr/amp/article/20000275216)</li>
+<li>[고속버스株, 고속터미널 복합개발 타고 질주…동양고속 상한가 (다음)](https://v.daum.net/v/20251205111018682)</li>
+<li>[3거래일째 급등한 삼표시멘트…&#x27;성수동 재개발&#x27; 모멘텀 어디까지 (뉴시스)](https://www.newsis.com/view/NISX20260203_0003501253)</li>
+<li>[국내 개발 첫 GLP-1 비만약 나올까...한미약품, 허가 신청 (데일리팜)](https://m.dailypharm.com/user/news/334068)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-07 21:39
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
