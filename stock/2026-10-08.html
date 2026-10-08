@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-08 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-08</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-08_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-08 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>삼성전자 3분기 잠정실적이 나온 날이었습니다. 머니투데이 기사 제목은 &quot;분기 영업익 100조&quot;였습니다. 그런데도 코스피는 약했고 외국인은 9거래일째 팔았습니다. 대형주에서 빠진 돈이 코스닥 반도체 소부장으로 옮겨간 그림입니다. <strong>테마 단위 신규 점화는 없습니다.</strong> 이미 진행 중이던 반도체 소부장이 늦게 오른 종목으로 퍼진 날입니다. 저스템·제너셈·에프엔에스테크가 종목 단위 D+0이었고, 알루미늄의 알루코는 애프터마켓에서 ★첫흐름으로 충족했습니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 4종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>두산테스나</strong> — 최대 <strong>53.9억</strong> · <strong>10시 34분</strong> · 20억↑ 봉 18개 · 반도체 소부장</li>
+<li>🔥 <strong>고영</strong> — 최대 <strong>43.1억</strong> · <strong>10시 04분</strong> · 20억↑ 봉 7개 · 반도체 소부장</li>
+<li>🔥 <strong>저스템</strong> — 최대 <strong>24.5억</strong> · <strong>9시 50분</strong> · 20억↑ 봉 1개 · 반도체 소부장</li>
+<li>🔥 <strong>삼아알미늄</strong> — 최대 <strong>20.3억</strong> · <strong>10시 01분</strong> · 20억↑ 봉 1개 · 알루미늄(비철)</li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">반도체 소부장(전공정 장비·후공정·검사)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>삼성전자 3Q 실적과 외국인 대형주 매도에 따른 코스닥 소부장 쏠림. 종목별 원인 기사는 웹 미확인</p><p class="c-p"><span class="c-k">판단</span>테마 시작 09/22~30 추정, 테마로는 약 D+6~12. D+0은 종목 단위에서만</p><div class="c-c"><span class="chip"><i>수식충족</i>5종목(★첫흐름 1)</span><span class="chip"><i>정보지</i>없음</span><span class="chip"><i>신선도</i>낮음(재탕·무소식)</span></div></article>
+<article class="card"><h4 class="c-t">알루미늄(비철)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>삼아알미늄 ESS 양극박·AI 데이터센터(재탕). LME 4년 고점 보도는 날짜 불일치로 근거 약함. 알루코 재료는 웹 미확인</p><p class="c-p"><span class="c-k">판단</span>최소 10/02부터 진행(D+2~4). 알루코는 주가가 먼저 움직인 첫흐름으로 추정</p><div class="c-c"><span class="chip"><i>수식충족</i>2종목(★첫흐름 1)</span><span class="chip"><i>정보지</i>없음</span><span class="chip"><i>신선도</i>낮음</span></div></article>
+<article class="card"><h4 class="c-t">HLB 그룹(FDA 간암 신약)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>FDA 간암 신약</p><p class="c-p"><span class="c-k">판단</span>09/29부터 진행 중. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 종목별 충족 표기 없음</span><span class="chip"><i>정보지</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">고속버스(고터 재개발)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>고터 재개발. 2025년 11~12월에도 같은 재료로 연속 상한가</p><p class="c-p"><span class="c-k">판단</span>10/07 시작(D+1). 종가위치 68%로 밀림</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 종목별 충족 표기 없음</span><span class="chip"><i>정보지</i>없음</span><span class="chip"><i>신선도</i>재탕</span></div></article>
+<article class="card"><h4 class="c-t">삼기 계열·ESS/배터리</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>&quot;ESS 확대&quot; 보도 08:58, 포착 09:06으로 뉴스가 먼저</p><p class="c-p"><span class="c-k">판단</span>진행 중. 고점 대비 9~13% 밀린 종목 있음</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 종목별 충족 표기 없음</span><span class="chip"><i>정보지</i>없음</span><span class="chip"><i>신선도</i>재탕</span></div></article>
+<article class="card"><h4 class="c-t">동국산업(휴머노이드 추정)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>&quot;북미 핵심고객 테스트 완료&quot; 버즈 1건, 웹 미확인</p><p class="c-p"><span class="c-k">판단</span>09/14부터 진행(D+3)</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 종목별 충족 표기 없음</span><span class="chip"><i>정보지</i>없음</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<p>원문에 종목코드가 없어서 코드는 적지 않았습니다.</p>
+<h3>반도체 소부장</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">뉴파워프라즈마</h4><p class="c-p"><span class="c-k">근거</span>30일 3위 / 직전최대 0.6배. 대금이 약해 원문은 후발주로 판단. 당일 기사·공시 웹 미확인, 주가가 먼저 움직인 것으로 추정</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>5봉(10:07)</span><span class="chip"><i>등락%</i>+6.1</span><span class="chip"><i>대금</i>210억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>두산테스나</strong><br><strong>53.9억</strong><br><strong>10시 34분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/07 에 이미 충족, D+2. 대장(대금 최대, 30일 1위) / 직전최대 1.7배. 고점 대비 <span style="color:#7dabf8;font-weight:700">-7.8%</span>, 종가위치 55%</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/07 (직전급등 10/06)</span><span class="chip"><i>충족봉</i>8봉(10:34)</span><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금</i>2,418억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>저스템</strong><br><strong>24.5억</strong><br><strong>9시 50분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/30·09/22 에 이미 충족. 원문은 30일 만의 첫 <span style="color:#ef4444;font-weight:700">+10%</span>로 D+0 판정, 2선 주도. 30일 1위 / 직전최대 1.5배. 재료는 재탕</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/30, 09/22</span><span class="chip"><i>충족봉</i>10봉(09:41)</span><span class="chip"><i>등락%</i>+10.9</span><span class="chip"><i>대금</i>694억</span></div></article>
+<article class="card"><h4 class="c-t">제너셈</h4><p class="c-p"><span class="c-k">근거</span>10/07 에 이미 충족(전날), 후발. 30일 2위 / 직전최대 0.9배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/07</span><span class="chip"><i>충족봉</i>4봉(10:03)</span><span class="chip"><i>등락%</i>+11.7</span><span class="chip"><i>대금</i>137억</span></div></article>
+<article class="card"><h4 class="c-t">에프엔에스테크</h4><p class="c-p"><span class="c-k">근거</span>09/28 에 이미 충족, 후발. 30일 1위 / 직전최대 3.7배로 대금 성격이 바뀜. 주가가 먼저 움직인 것으로 추정</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/28</span><span class="chip"><i>충족봉</i>6봉(09:45)</span><span class="chip"><i>등락%</i>+14.2</span><span class="chip"><i>대금</i>110억</span></div></article>
+</div>
+<h3>알루미늄(비철)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">알루코</h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 직전최대 18.1배, 30일 급등일수 0. 충족은 정규장이 아니라 애프터마켓. 종가위치 46%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-4.0%</span>로 마감 약함. 재료 웹 미확인</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>19봉(16:24, 애프터마켓 NXT)</span><span class="chip"><i>등락%</i>+7.2</span><span class="chip"><i>대금</i>186억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>삼아알미늄</strong><br><strong>20.3억</strong><br><strong>10시 01분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/02 에 이미 충족, D+2. 대장, 30일 1위 / 직전최대 1.7배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/02, 09/28, 08/27</span><span class="chip"><i>충족봉</i>15봉(10:07)</span><span class="chip"><i>등락%</i>+14.8</span><span class="chip"><i>대금</i>703억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">반도체 소부장</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>고영</strong><br><strong>43.1억</strong><br><strong>10시 04분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 없음. <span style="color:#ef4444;font-weight:700">+3.2%</span>로 상승폭이 작지만 대금 1,583억(30일 1위 / 1.3배)으로 돈은 큼</p></article>
+<article class="card"><h4 class="c-t">반도체 소부장</h4><p class="c-p"><span class="c-k">종목</span>미코</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 없음. <span style="color:#ef4444;font-weight:700">+6.6%</span>, 387억(30일 3위 / 0.6배). 이전충족 09/22, 09/09</p></article>
+<article class="card"><h4 class="c-t">반도체 소부장</h4><p class="c-p"><span class="c-k">종목</span>에이팩트</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 없음. <span style="color:#ef4444;font-weight:700">+9.0%</span>, 205억(30일 4위 / 0.8배). 직전 5일 <span style="color:#ef4444;font-weight:700">+21.8%</span>로 선반영</p></article>
+<article class="card"><h4 class="c-t">알루미늄(비철)</h4><p class="c-p"><span class="c-k">종목</span>알멕</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 없음(G2 16회). <span style="color:#ef4444;font-weight:700">+14.9%</span>, 213억(30일 2위 / 0.8배), D+2</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음. 오늘은 정보지를 수집하지 않은 날입니다.</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>두산테스나</strong></li>
+<li>진짜: 대금 2,000억 이상을 유지하며 <span style="color:#ef4444;font-weight:700">+1%</span> 이상으로 버팀.</li>
+<li>아니다: 오늘처럼 장중 고점에서 밀리며(고점 대비 <span style="color:#7dabf8;font-weight:700">-7.8%</span>) 음봉. 대장이 꺾이면 저스템·제너셈·에프엔에스테크의 D+0은 무효.</li>
+<li><strong>저스템</strong></li>
+<li>진짜: 대금 600억 이상으로 30일 1위를 유지하고 고점 21,600원 근처를 지킴.</li>
+<li>아니다: D+0 3종목이 함께 <span style="color:#7dabf8;font-weight:700">-5%</span> 이상 밀리면 확산이 끝난 것.</li>
+<li><strong>알루코</strong> (충족이 애프터마켓이었으므로 정규장에서 확인)</li>
+<li>진짜: 정규장에서 애프터마켓 고점 1,956원을 넘고, 대금 200억 이상으로 30일 1위를 유지.</li>
+<li>아니다: 1,790원 아래로 밀리고 대금이 50억 미만. 그러면 애프터마켓 단발성.</li>
+<li>장 전에 상승 원인 공시·기사(오늘 웹 미확인)와 프리마켓 대금도 볼 것.</li>
+<li><strong>삼아알미늄</strong>: 700억대 대금으로 상승을 이어가는지.</li>
+<li><strong>외국인 매도 지속 여부</strong>: 삼성전자 3Q 잠정실적 이후에도 대형주 약세·코스닥 소부장 쏠림 구도가 유지되는지.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<p>문서 분석과 웹 검색 10회를 마쳤고, 결과를 정리했습니다.</p>
+<h1>당일 D+0 테마 브리핑 — 2026-10-08 (목) [장마감]</h1>
+<p>기준일: 2026-10-08 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 10회</p></blockquote>
+<blockquote><p>📰 이 리포트에는 정보지 교차 절이 없습니다. 정보지는 수집하지 않은 날로 보고 주가·대금·뉴스만으로 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘은 테마 전체가 처음 터진 날이 아닙니다. <strong>이미 진행 중이던 반도체 소부장 랠리가 아직 안 올랐던 종목으로 퍼진 날</strong>입니다. 저스템·제너셈·에프엔에스테크가 30일 만에 처음 <span style="color:#ef4444;font-weight:700">+10%</span>를 넘었습니다(D+0). 하지만 돈은 D+2인 두산테스나(2,418억)에 가장 많이 들어갔고, 이 테마는 9월 말부터 움직이고 있었습니다. 두 번째 후보는 <strong>알루미늄</strong>입니다. 삼아알미늄이 3번째 충족을 기록했고, 알루코가 ★첫흐름(대금이 직전 최대의 18.1배)으로 뒤따라 붙었습니다. HLB 그룹, 고속버스, 삼기 계열은 모두 D+1 이상이라 진행 중인 테마입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. 반도체 소부장(전공정 장비·후공정·검사) — 늦게 오른 종목으로 확산 (테마 자체는 진행 중)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>두산테스나</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금(억)</i><strong>2,418</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>8봉(10:34)</span><span class="chip"><i>이전충족</i>09/07, 직전급등 10/06</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.7배</span><span class="chip"><i>비고</i><strong>대장 (대금 최대)</strong></span></div></article>
+<article class="card"><h4 class="c-t">고영</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.2</span><span class="chip"><i>대금(억)</i>1,583</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.3배</span><span class="chip"><i>비고</i>미충족이지만 돈은 큼</span></div></article>
+<article class="card"><h4 class="c-t"><strong>저스템</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+10.9</span><span class="chip"><i>대금(억)</i><strong>694</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>10봉(09:41)</span><span class="chip"><i>이전충족</i>09/30, 09/22</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.5배</span><span class="chip"><i>비고</i>가장 강한 D+0</span></div></article>
+<article class="card"><h4 class="c-t">미코</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.6</span><span class="chip"><i>대금(억)</i>387</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>09/22, 09/09</span><span class="chip"><i>30일순위 / 직전최대</i>3위 / 0.6배</span><span class="chip"><i>비고</i>동반</span></div></article>
+<article class="card"><h4 class="c-t">뉴파워프라즈마</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.1</span><span class="chip"><i>대금(억)</i>210</span><span class="chip"><i>오늘충족</i>5봉(10:07) <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>3위 / 0.6배</span><span class="chip"><i>비고</i>첫흐름이지만 대금이 약함</span></div></article>
+<article class="card"><h4 class="c-t">에이팩트</h4><div class="c-c"><span class="chip"><i>등락%</i>+9.0</span><span class="chip"><i>대금(억)</i>205</span><span class="chip"><i>오늘충족</i>없음</span><span class="chip"><i>이전충족</i>09/17</span><span class="chip"><i>30일순위 / 직전최대</i>4위 / 0.8배</span><span class="chip"><i>비고</i>직전5일 <span style="color:#ef4444;font-weight:700">+21.8%</span> (선반영)</span></div></article>
+<article class="card"><h4 class="c-t"><strong>제너셈</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+11.7</span><span class="chip"><i>대금(억)</i>137</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>4봉(10:03)</span><span class="chip"><i>이전충족</i><strong>10/07</strong></span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.9배</span><span class="chip"><i>비고</i>후발</span></div></article>
+<article class="card"><h4 class="c-t"><strong>에프엔에스테크</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+14.2</span><span class="chip"><i>대금(억)</i>110</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>6봉(09:45)</span><span class="chip"><i>이전충족</i>09/28</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / <strong>3.7배</strong></span><span class="chip"><i>비고</i>후발. 대금 성격은 바뀜</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 09/22~09/30.</strong></li>
+<li>문서 근거: 저스템·미코가 09/22에 충족했고, 에프엔에스테크가 09/28, 저스템이 09/30에 충족했습니다. 두산테스나의 직전 급등일은 10/06입니다.</li>
+<li>웹 근거: 반도체 장비주 강세 보도가 09/30에 있었고(웹: 뉴스1/다음), &quot;코스닥 일주일새 8% 급등… 반도체 소부장&quot; 기사가 10/06에 나왔습니다(웹: 머니투데이).</li>
+<li>따라서 <strong>테마로 보면 D+0이 아닙니다(약 D+6~12).</strong> D+0은 종목 단위에서만 해당합니다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li><strong>대장주는 두산테스나</strong>입니다. 대금 2,418억으로 2위 종목의 약 3.5배이고, 30일 대금순위 1위입니다.</li>
+<li>오늘 D+0인 저스템(694억)은 대금이 그 3분의 1 수준이라 2선 주도주로 봅니다.</li>
+<li><strong>제너셈(137억)과 에프엔에스테크(110억)는 후발주</strong>로 판정합니다. 제너셈은 바로 전날(10/07)에 이미 충족했고, 두 종목 모두 대금 규모가 작습니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>문서상 당일 뉴스는 전 종목 &quot;없음&quot;입니다.</li>
+<li>웹: 오늘(10/08) 삼성전자 3분기 잠정실적이 나왔고, &quot;분기 영업익 100조&quot;라는 머니투데이 기사 제목이 있습니다(웹: 머니투데이). 컨센서스는 영업이익 108조, DS(반도체) 부문 100조 이상 추정이었습니다(웹: 다음/딜사이트).</li>
+<li>같은 기사 제목에 &quot;코스피 약세, 외국인 9거래일째 매도&quot;가 있습니다. 대형주는 약했고 돈이 코스닥 소부장으로 옮겨간 그림입니다.</li>
+<li>개별 종목 단위로 원인을 다룬 기사는 웹에서 확인되지 않았습니다.</li>
+<li><strong>뉴파워프라즈마(★첫흐름)</strong>: 당일 기사·공시가 웹에서 확인되지 않았습니다. 주가가 먼저 움직인 것으로 추정합니다.</li>
+<li><strong>재료 단계</strong></li>
+<li>저스템: 실적·목표가(08/13~09/01, 실적 반영) 이후 새 재료가 없습니다. <strong>재탕, 신선도 낮음.</strong></li>
+<li>제너셈: 09/07 공급계약 체결(확정) 이후 새 재료가 없습니다. <strong>확정 → 무소식.</strong></li>
+<li>에프엔에스테크: 07/14 유리기판 공동개발(협의 단계) 이후 이력이 없습니다. <strong>주가가 먼저 움직인 것으로 추정.</strong></li>
+<li>두산테스나: 10/06 &quot;테슬라 AI5 수주 가시화&quot;(기대 단계)입니다.</li>
+<li>단계가 올라간 종목은 없습니다. 오늘 오른 이유는 개별 재료보다 업종 전체로 돈이 들어온 쪽입니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우: 두산테스나가 2,000억 이상 대금을 유지하며 <span style="color:#ef4444;font-weight:700">+1%</span> 이상으로 버팁니다. 그리고 저스템이 30일 대금순위 1위를 유지하며(대금 600억 이상) 고점(21,600원) 근처를 지킵니다.</li>
+<li>❌ 아닌 경우: 두산테스나가 오늘처럼 장중 고점에서 밀리는 흐름(고점 대비 <span style="color:#7dabf8;font-weight:700">-7.8%</span>, 종가위치 55%)을 반복하며 음봉으로 끝납니다. D+0 3종목이 동반 <span style="color:#7dabf8;font-weight:700">-5%</span> 이상 밀리면 확산이 끝난 것으로 봅니다.</li>
+</ul>
+<h3>🥈 2. 알루미늄(비철) — 알루코가 첫흐름으로 합류</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>삼아알미늄</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+14.8</span><span class="chip"><i>대금(억)</i><strong>703</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>15봉(10:07)</span><span class="chip"><i>이전충족</i>10/02, 09/28, 08/27</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 1.7배</span></div></article>
+<article class="card"><h4 class="c-t">알멕</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.9</span><span class="chip"><i>대금(억)</i>213</span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>없음 (G2 16회)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.8배</span></div></article>
+<article class="card"><h4 class="c-t"><strong>알루코</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+7.2</span><span class="chip"><i>대금(억)</i>186</span><span class="chip"><i>오늘충족</i>19봉(16:24) <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i><strong>1위 / 18.1배</strong></span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 삼아알미늄이 08/27·09/28·10/02에 이미 충족했으므로, 테마는 <strong>최소 10/02부터 진행 중</strong>입니다(D+2~D+4).</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>대장주는 <strong>삼아알미늄</strong>(703억, 여러 차례 충족)입니다.</li>
+<li><strong>알루코는 후발주</strong>입니다. 다만 성격이 다릅니다.</li>
+<li>30일급등일수가 0입니다. 30일 안에 고가 <span style="color:#ef4444;font-weight:700">+10%</span>를 넘은 날이 없었다는 뜻이라 첫흐름이 확정입니다.</li>
+<li>대금이 직전 최대의 18.1배로, 그동안 없던 성격의 돈이 처음 들어왔습니다.</li>
+<li>다만 충족이 <strong>16:24 애프터마켓(NXT)</strong>이었고, 종가위치 46%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-4.0%</span>로 마감이 약했습니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>문서: 알루코 당일 뉴스 없음. 최근 이력은 07월 지배구조 기사 2건뿐입니다.</li>
+<li><strong>알루코 당일 기사·공시는 웹에서 확인되지 않았습니다.</strong> 주가가 먼저 움직인 것으로 추정합니다.</li>
+<li>알루미늄 가격 강세 보도는 웹에 있습니다. LME 재고 감소로 4년 고점이라는 내용입니다(웹: alcircle). 그러나 기사 날짜 표기가 맞지 않아 <strong>10/08 당일 가격과 연결한 근거로는 약합니다.</strong></li>
+<li>삼아알미늄의 재료는 ESS 양극박과 AI 데이터센터입니다(문서 이력 08/24~09/22).</li>
+<li><strong>재료 단계</strong></li>
+<li>삼아알미늄: 기대(08/24) → 수주가 핵심 동력이라는 증권사 분석(08/25) → 증설 결정 예고(08/31) → 숨은 수혜주(09/22, 다시 기대). <strong>기대 → 기대, 재탕.</strong></li>
+<li>알루코: <strong>이력 없음 — 주가가 먼저 움직인 것으로 추정.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우: 알루코가 정규장에서 오늘 애프터마켓 고점(1,956원) 위로 올라서고, 대금 200억 이상으로 30일 순위 1위를 유지합니다. 그리고 삼아알미늄이 700억대 대금으로 상승을 이어갑니다.</li>
+<li>❌ 아닌 경우: 알루코가 정규장에서 1,790원 아래로 밀리고 대금이 50억 미만으로 줄어듭니다. 그러면 애프터마켓 한때의 단발성 움직임으로 봅니다.</li>
+</ul>
+<blockquote><p>3번째 D+0 후보는 <strong>근거 부족</strong>으로 두지 않았습니다. 오늘 D+0 종목 3개는 모두 반도체 1개 테마 안에 있습니다.</p></blockquote>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>HLB 그룹 (FDA 간암 신약)</strong></h4><p class="c-p"><span class="c-k">종목 (대금순)</span>HLB바이오스텝 329억 D+1 상한가 · HLB테라퓨틱스 303억 · HLB글로벌 130억 D+2 상한가 · HLB제넥스 121억 D+2 · HLB파나진 113억 D+2 상한가</p><p class="c-p"><span class="c-k">판정</span>09/29부터 진행 중. HLB제넥스는 사전테마가 &#x27;반도체&#x27;로 붙어 있지만, 오늘은 HLB 그룹주로 움직였습니다. 바이오스텝은 직전5일 <span style="color:#ef4444;font-weight:700">+42%</span>라 후반부입니다. 상한가 3개 종목은 내일 시초가 흐름만 봅니다.</p></article>
+<article class="card"><h4 class="c-t"><strong>고속버스 (고터 재개발)</strong></h4><p class="c-p"><span class="c-k">종목 (대금순)</span>천일고속 532억 D+1 · 동양고속 525억 D+1</p><p class="c-p"><span class="c-k">판정</span>10/07 시작입니다. 웹: 같은 재료로 2025년 11~12월에 이미 연속 상한가가 있었습니다(웹: 헤럴드경제·위키트리). <strong>재탕 재료</strong>이고, 오늘은 정규장 종가위치 68%로 밀리며 마감했습니다.</p></article>
+<article class="card"><h4 class="c-t"><strong>삼기 계열 · ESS/배터리</strong></h4><p class="c-p"><span class="c-k">종목 (대금순)</span>한빛레이저 968억 · 피노 746억 D+3 · 삼기에너지솔루션즈 540억 D+8 상한가 · 삼기 381억 · 나인테크 369억</p><p class="c-p"><span class="c-k">판정</span>삼기 두 종목은 09/22~23에 함께 충족했다가 오늘 다시 불붙었습니다. 버즈상 &quot;ESS 확대&quot; 첫 보도가 08:58, 포착이 09:06이라 <strong>뉴스가 먼저</strong>였습니다. 재료는 기대 → 기대(재탕)입니다. 한빛레이저·삼기·나인테크는 장중 고점 대비 9~13% 밀려 마감했습니다.</p></article>
+<article class="card"><h4 class="c-t">동국산업 (휴머노이드 추정)</h4><p class="c-p"><span class="c-k">종목 (대금순)</span>1,048억 D+3</p><p class="c-p"><span class="c-k">판정</span>버즈 09:46 &quot;북미 핵심고객 테스트 완료&quot; 1건뿐이고, <strong>웹에서 확인되지 않았습니다.</strong> 09/14부터 진행 중입니다.</p></article>
+<article class="card"><h4 class="c-t">헬릭스미스</h4><p class="c-p"><span class="c-k">종목 (대금순)</span>196억 D+5</p><p class="c-p"><span class="c-k">판정</span>CAR-T 전임상 뉴스(문서 13:55)가 있지만 후반부라 제외합니다.</p></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>덕산넵코어스</strong>: 대금 2,400억, <span style="color:#7dabf8;font-weight:700">-3.6%</span>. 문서상 일봉이 6일치뿐이고 직전 누적봉 경고가 있어 최근 상장 종목으로 추정합니다. 공모 관련 정보는 웹에 플랫폼 글로만 있고 언론 기사로는 확인되지 않았습니다. 장중 고점에서 <span style="color:#7dabf8;font-weight:700">-17%</span> 밀려 마감했습니다. 제외합니다.</li>
+<li><strong>본느</strong>: 장중 <span style="color:#ef4444;font-weight:700">+29.9%</span>까지 갔다가 <span style="color:#ef4444;font-weight:700">+1.9%</span>로 마감했습니다(과대낙폭). 관리종목 이력이 있습니다. 제외합니다.</li>
+<li><strong>보원케미칼(D+7), 일신방직, 더코디</strong>: 단발성 움직임입니다. 제외합니다.</li>
+<li><strong>에스엠벡셀</strong>: 이전충족이 09/08~09으로 오래됐고, 오늘은 고점 대비 <span style="color:#7dabf8;font-weight:700">-11%</span> 밀려 마감했습니다. 제외합니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 반도체 소부장 확산 (종목 단위 D+0 3개 / 테마 단위로는 09/22~30 시작한 진행 중 테마)</li>
+<li>그 테마의 대장주 (거래대금 최대): 두산테스나 (2,418억, D+2) — 2선 주도는 저스템 (694억, D+0, 대금 30일 1위)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 없음 (근거 부족). 알루코는 재료 이력 없음 → 주가 선행 첫흐름</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 제너셈(137억, 10/07 선충족), 에프엔에스테크(110억), 뉴파워프라즈마(210억), 알루코(186억, 애프터마켓 충족)</li>
+<li>같이 볼 종목: 저스템 · 알루코 · 미코 · 고영(미충족 1,583억 — 테마 동반 여부)</li>
+<li>진행중이라 눌림만 볼 종목: 두산테스나, 삼아알미늄, HLB바이오스텝·HLB파나진·HLB글로벌, 천일고속·동양고속, 피노, 삼기에너지솔루션즈</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>삼성전자 3Q 잠정실적 이후 외국인 매도 지속 여부 — 대형주 약세·코스닥 소부장 쏠림 구도가 유지되는지</li>
+<li>알루코 당일 상승 원인 공시·기사 (오늘 기준 웹에서 확인 안 됨) + 프리마켓 대금</li>
+<li>두산테스나 2,000억대 대금 유지 여부 — 대장이 꺾이면 저스템·제너셈·에프엔에스테크 D+0는 무효</li>
+</ol>
+<p>```</p>
+<p>장 마감 후 나온 반도체 테마 관련 새 뉴스는 웹에서 확인되지 않았습니다.</p>
+<p>Sources:</p>
+<ul>
+<li>[머니투데이 — 삼성전자 분기 영업익 100조에도 코스피 약세…外人은 9거래일째 매도 (10/08)](https://www.mt.co.kr/stock/2026/10/08/2026100809271937732)</li>
+<li>[머니투데이 — 코스닥 일주일새 8% 급등…반도체 소부장 (10/06)](https://www.mt.co.kr/stock/2026/10/06/2026100615394182283)</li>
+<li>[다음 — 반도체 장비주 &#x27;들썩&#x27;…코스닥 시총 순위 지각변동 (09/30)](https://v.daum.net/v/20260930162058249)</li>
+<li>[다음 — 삼성전자, 분기 영업이익 100조 시대 &#x27;예약&#x27;](https://v.daum.net/v/VyOfLuwa5b)</li>
+<li>[딜사이트 — 삼성전자 3분기 영업이익 100조 돌파 전망](https://dealsite.co.kr/articles/169894)</li>
+<li>[위키트리 — 천일·동양고속 3일 연속 상한가…강남 &#x27;고터&#x27; 재개발 호재](https://www.wikitree.co.kr/articles/1096634)</li>
+<li>[헤럴드경제 — 고터 재개발에 천일고속 8연속 상한가](https://www.heraldk.com/article/2025120123163849884)</li>
+<li>[alcircle — LME aluminium](https://www.alcircle.com/news/lme-aluminium-hits-usd-2-786-indicating-a-rise-or-rally-ahead-115784)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-09 05:03
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
