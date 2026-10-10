@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-11 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 36px;width:1280px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.hd h1{font-size:30px}.hd .s{color:#9aa0a6;font-size:16px}
+.banner{background:#3a2a10;border:1px solid #f59e0b;color:#fcd34d;border-radius:10px;padding:10px 16px;font-size:16px;margin-bottom:14px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:14px 18px;flex:1}
+.idx .n{color:#9aa0a6;font-size:15px}.idx .v{font-size:28px;font-weight:700;margin-top:4px}.idx .c{font-size:20px;font-weight:700}
+.up{color:#22c55e}.dn{color:#ef4444}
+.macro{background:#1a1d24;border-radius:12px;padding:10px 18px;font-size:16px;color:#e8eaed;margin-bottom:14px}
+.macro b{color:#9aa0a6;font-weight:400;margin-right:4px}.macro span{margin-right:22px}
+.one{font-size:22px;font-weight:700;line-height:1.45;background:#1a1d24;border-left:5px solid #f59e0b;border-radius:10px;padding:14px 18px;margin-bottom:14px}
+h2{font-size:17px;color:#9aa0a6;margin-bottom:8px}
+ul{padding-left:20px}li{font-size:16px;line-height:1.5;margin-bottom:6px}
+.cal td{font-size:15px;padding:4px 8px;border-bottom:1px solid #2a2e37}.cal td:first-child{color:#f59e0b;white-space:nowrap}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bd{background:#252a33;border-radius:8px;padding:6px 10px;font-size:15px}
+.ft{color:#9aa0a6;font-size:13px;margin-top:6px}
+</style></head><body>
+<div class="hd"><h1>2026-10-11 (일) 미국장 브리핑 · 주말판</h1><div class="s">수집 채널 4/16 · Tier1 4/8 · Tier2 0/8</div></div>
+<div class="banner">🛑 주말 휴장 — 지수·금리·유가는 10/9(금) 종가 · 10/12(월) 콜럼버스의 날: 주식 정상 개장, 채권시장 휴장</div>
+<div class="row">
+<div class="card idx"><div class="n">S&amp;P 500</div><div class="v">7,811.54</div><div class="c up">+0.59%</div></div>
+<div class="card idx"><div class="n">나스닥 종합</div><div class="v">27,366.17</div><div class="c up">+0.64%</div></div>
+<div class="card idx"><div class="n">다우존스</div><div class="v">51,654.95</div><div class="c up">+0.83%</div></div>
+<div class="card idx"><div class="n">필라델피아 반도체 · 주간</div><div class="v">12,572.42</div><div class="c dn">-4.30%</div></div>
+</div>
+<div class="macro"><span><b>10년물</b>5.243% (+1.0bp)</span><span><b>달러인덱스</b>102.23</span><span><b>WTI</b>$91.85 (+0.39%)</span><span><b>브렌트</b>$104.72</span><span><b>VIX</b>14.84</span><span><b>10월 인상확률</b>17.2%</span></div>
+<div class="one">주말에 새로 생긴 변수 두 개 — 이란 "호르무즈 초대형 유조선 기뢰 충돌" 발표, 미국의 ICC 기관 전체 제재. 금요일 정산가는 둘 다 모른다. 이번 주는 은행 실적 → CPI → PPI → 워시 대담.</div>
+<div class="row">
+<div class="card" style="flex:1.25"><h2>핵심 포인트</h2><ul>
+<li><b>호르무즈 기뢰</b> (토, 이란 IRGC 발표·미확인) — 금요일 시장을 진정시킨 "러시아 경유 480만t"과 반대 방향 재료</li>
+<li><b>S&amp;P 사상 최고 종가 7,818.93까지 7pt</b> — 그러나 반도체는 주간 -4.30%로 빠진 좁은 랠리</li>
+<li><b>CPI의 질문은 "인상 여부"</b> — 10월 동결 82.3% · 인상 17.2%, 연말 추가 인상 80%대</li>
+<li><b>스타벅스–치폴레 합병설</b> — 인수자 SBUX 이틀 연속 하락(-2.64%), Yahoo "성사 가능성 매우 낮음"</li>
+<li><b>3분기 EPS +29.6%</b> 예상(팩트셋), 선행 PER 22배 → 19배</li>
+</ul></div>
+<div class="card"><h2>이번 주 캘린더 (ET)</h2><table class="cal">
+<tr><td>12 월</td><td>채권 휴장 · 트럼프 4일 유세 시작</td></tr>
+<tr><td>13 화</td><td>JPM·GS·WFC·C·JNJ·UNH 실적 · 월러</td></tr>
+<tr><td>14 수</td><td>9월 CPI (예상 +0.6%, 근원 +0.2%) · MS·BAC</td></tr>
+<tr><td>15 목</td><td>PPI · 소매판매 · USB·PNC·SCHW 실적</td></tr>
+<tr><td>16 금</td><td>산업생산 · 워시 IMF 대담 (KST 12:30)</td></tr>
+</table></div>
+</div>
+<div class="row">
+<div class="card"><h2>종목 배지 (10/9 종가 기준)</h2><div class="badges">
+<span class="bd">SBUX <span class="dn">-2.64%</span></span><span class="bd">CMG <span class="dn">-3.34%</span></span><span class="bd">AAPL <span class="dn">-1.11%</span> 부품 감축설</span><span class="bd">TSM <span class="dn">-1.02%</span> 주간 -6.7%</span><span class="bd">VZ <span class="dn">-8.75%</span></span><span class="bd">T <span class="dn">-9.81%</span></span><span class="bd">TMUS <span class="dn">-13.27%</span></span><span class="bd">ABBV 헬스케어 역행 (IBD)</span>
+</div></div>
+<div class="card" style="flex:.8"><h2>채널 합의도</h2><div style="font-size:16px;line-height:1.5">생략 — 유효 시황 표본 2개(연합인포맥스·미주은). 이견: 미주은 "TSMC 수렴 후 상향 돌파" vs 인포맥스 "금리·환율 중력에 반도체 주가 못 간다"</div></div>
+</div>
+<div class="ft">수집: 연합인포맥스(쇼츠 5·업로드 1) · 미주은 쇼츠 · IBD 쇼츠 · Yahoo 업로드(음성전사) / Tier2 4편 429 · 원문: 2026-10-11_미국장_브리핑.md</div>
+</body></html>
