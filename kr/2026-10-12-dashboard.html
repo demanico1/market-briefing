@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-12 한국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 36px;width:1280px}
+.hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.hdr h1{font-size:30px}.hdr .sub{color:#9aa0a6;font-size:16px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.lbl{color:#9aa0a6;font-size:14px;margin-bottom:6px}
+.big{font-size:32px;font-weight:700}.chg{font-size:18px;font-weight:600;margin-top:4px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.flow{display:flex;justify-content:space-between;font-size:17px;margin-top:6px}
+.one{font-size:22px;font-weight:700;line-height:1.5;background:#1a1d24;border-left:5px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-bottom:14px}
+ul{padding-left:20px;line-height:1.65;font-size:16px}
+.bar{display:flex;height:26px;border-radius:6px;overflow:hidden;margin:10px 0 6px;font-size:13px;font-weight:700}
+.bar div{display:flex;align-items:center;justify-content:center}
+.legend{color:#9aa0a6;font-size:13px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.b{background:#252932;border-radius:8px;padding:6px 10px;font-size:14px}
+.foot{color:#9aa0a6;font-size:13px;margin-top:6px}
+.macro{color:#c9ccd1;font-size:15px;line-height:1.6}
+</style></head><body>
+<div class="hdr"><h1>2026-10-12 (월) 한국장 브리핑</h1><div class="sub">수집 채널 4/13 · 한글날 연휴 직후</div></div>
+
+<div class="row">
+ <div class="card"><div class="lbl">KOSPI</div><div class="big dn">6,384.24</div><div class="chg dn">▼ 241.69p (-3.65%)</div></div>
+ <div class="card"><div class="lbl">KOSDAQ</div><div class="big dn">849.19</div><div class="chg dn">▼ -4.83%</div></div>
+ <div class="card" style="flex:1.3"><div class="lbl">유가증권 수급 (한경 15:38, 잠정)</div>
+  <div class="flow"><span>외국인</span><span class="dn">-2조190억</span></div>
+  <div class="flow"><span>기관</span><span class="dn">-1,110억</span></div>
+  <div class="flow"><span>개인</span><span class="up">+1조4,670억</span></div></div>
+ <div class="card" style="flex:1.3"><div class="lbl">매크로</div><div class="macro">원·달러 <b>1,335.1원</b> (-7.7원, 종가 연저점)<br>국고 3년 3.921% (-6.2bp) · 10년 4.306% (-8.9bp)<br>美 10년물 5.2420% (휴장 중 4bp↓)<br>외국인 5거래일 연속 순매도 (5일간 약 10조)</div></div>
+</div>
+
+<div class="one">연휴 사이 터진 오픈AI 매출 논란에 코스피 -3.65%, 6,400선 붕괴 — 자사주 매입 끝난 삼성·하이닉스 -4%대, 돈은 호남 반도체 클러스터 테마로만</div>
+
+<div class="row">
+ <div class="card" style="flex:1.6"><div class="lbl">핵심 포인트</div><ul>
+  <li><b>오픈AI ARR 200억달러 하향 보도</b> + 3분기 실적 피크아웃 경계 + 중동(후티) — 9/2 이후 최대 낙폭</li>
+  <li><b>"매수 주체가 없다"</b> — 삼성전자 자사주 매입 종료·하이닉스 이번 주 종료 예정(주덕·김단테)</li>
+  <li><b>주식만 빠졌다</b> — 원화 연저점, 외국인 국채선물 대량 매수로 국고 10년 -8.9bp</li>
+  <li><b>호남 반도체 클러스터</b> 상한가 3종(유신·서산·금호전기) — 최태원 회장 광주 방문(주린희·주덕·한경)</li>
+  <li>코스닥 소부장·2차전지·바이오·로봇 두 자릿수 급락 — 리노공업 -11.15%, 에코프로비엠 -10.25%</li></ul></div>
+ <div class="card"><div class="lbl">채널 톤 합의도 (시황 2채널)</div>
+  <div class="bar"><div style="width:50%;background:#6b7280">중립~약강세 1</div><div style="width:50%;background:#3b82f6">약세 1</div></div>
+  <div class="legend">약세: 주덕(신용 반대매매 경계) / 중립~약한 강세: 김단테(박스권 하단 반등 여지)<br>제외: 김혜산(원칙)·주린희(종목 카탈로그)</div>
+  <div class="lbl" style="margin-top:14px">내일(10/13) 관전 포인트</div><ul style="font-size:15px">
+  <li>6,400 회복 vs 신용 반대매매</li>
+  <li>외국인 6거래일 연속 매도 여부</li>
+  <li>수 ASML 실적·美 CPI, 목 TSMC 실적</li>
+  <li>한은 10/22 금통위 앞 국고 3년 3.9%대</li></ul></div>
+</div>
+
+<div class="card" style="margin-bottom:10px"><div class="lbl">종목 배지</div><div class="badges">
+ <span class="b">삼성전자 <span class="dn">-4.39%</span></span><span class="b">SK하이닉스 <span class="dn">-4.52%</span></span>
+ <span class="b">SK스퀘어 <span class="dn">-6.29%</span></span><span class="b">효성중공업 <span class="dn">-10.10%</span></span>
+ <span class="b">두산에너빌리티 <span class="dn">-8.33%</span></span><span class="b">LG전자 <span class="dn">-7.88%</span></span>
+ <span class="b">에코프로비엠 <span class="dn">-10.25%</span></span><span class="b">리노공업 <span class="dn">-11.15%</span></span>
+ <span class="b">유신 <span class="up">+29.87%</span></span><span class="b">서산 <span class="up">+30.00%</span></span>
+ <span class="b">금호전기 <span class="up">+29.93%</span></span><span class="b">금호건설 <span class="up">+20.29%</span></span>
+ <span class="b">한화머시너리앤서비스홀딩스 <span class="up">+24.01%</span></span><span class="b">팬오션 <span class="up">+6.97%</span></span>
+ <span class="b">윙스풋 <span class="dn">-29.96%</span></span>
+</div></div>
+<div class="foot">수집: 주덕 · 김단테 · 김혜산 · 주린희 (4/13) | 영상없음: 만쥬(홍보만) · 이효석아카데미 · 창원개미 · 돌팬티 · 홍인기 · 고라니주식 · 주린이놀이터 · 소수몽키 · 전황 | 출처: 한국경제 · 연합인포맥스 · 야후</div>
+</body></html>
