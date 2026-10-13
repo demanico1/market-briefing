@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-13 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-13</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-13_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-13 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>📰 오늘은 정보지를 수집하지 않은 날입니다. 뉴스와 주가만으로 판단했습니다. 원문에 종목코드가 없어 종목명만 적었습니다.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>반도체 대형주가 급락한 &#x27;폭락장&#x27;이었습니다. 돈이 가장 많이 몰린 곳은 <strong>호남 반도체 테마(금호전기 4,211억 등)</strong>입니다. 다만 10/12에 시작한 테마라 오늘은 D+1입니다. 나머지 돈도 이미 진행 중인 바이오(페스트, 10/07 시작)와 보안(라온시큐어, 10/06 시작)에 머물렀습니다. <strong>신규 점화 없음.</strong> 확실한 D+0 테마가 없는 날입니다. 오늘 처음 함께 움직인 자동차 전장 부품(세코닉스·삼화전기)은 2종목뿐이고 대금이 100억~197억이라 <strong>약한 D+0(추정)</strong>입니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 8종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>서산</strong> — 최대 <strong>164.3억</strong> · <strong>9시 13분</strong> · 20억↑ 봉 16개 · 호남 반도체 (D+1, 시작 10/12)</li>
+<li>🔥 <strong>금호전기</strong> — 최대 <strong>115.9억</strong> · <strong>9시 13분</strong> · 20억↑ 봉 49개 · 호남 반도체 (D+1, 시작 10/12)</li>
+<li>🔥 <strong>금호건설</strong> — 최대 <strong>78.3억</strong> · <strong>9시 29분</strong> · 20억↑ 봉 22개 · 호남 반도체</li>
+<li>🔥 <strong>라온시큐어</strong> — 최대 <strong>66.2억</strong> · <strong>9시 16분</strong> · 20억↑ 봉 34개 · 보안 (시작 10/06)</li>
+<li>🔥 <strong>광주신세계</strong> — 최대 <strong>37.6억</strong> · <strong>8시 09분 NXT 프리</strong> · 20억↑ 봉 3개 · 호남 반도체 (D+1, 시작 10/12)</li>
+<li>🔥 <strong>동양고속</strong> — 최대 <strong>33.4억</strong> · <strong>9시 12분</strong> · 20억↑ 봉 1개 · 개별</li>
+<li>🔥 <strong>유신</strong> — 최대 <strong>25.4억</strong> · <strong>9시 23분</strong> · 20억↑ 봉 1개 · 호남 반도체</li>
+<li>🔥 <strong>국제약품</strong> — 최대 <strong>21.4억</strong> · <strong>14시 45분</strong> · 20억↑ 봉 1개 · 페스트·바이오</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>세코닉스</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/13</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>3,890</strong></span><span class="chip"><i>손절 -2%</i>3,810</span><span class="chip"><i>익절 +10%</i>4,280</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+6.0%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 남화산업(<span style="color:#ef4444;font-weight:700">+11%</span>) · 케이씨텍(<span style="color:#ef4444;font-weight:700">+12%</span>) · HC보광산업(<span style="color:#ef4444;font-weight:700">+14%</span>) · 동화약품(<span style="color:#ef4444;font-weight:700">+15%</span>) · 한컴(<span style="color:#ef4444;font-weight:700">+15%</span>) · 도화엔지니어링(<span style="color:#ef4444;font-weight:700">+16%</span>) · 리메드(<span style="color:#ef4444;font-weight:700">+28%</span>) · 덕우전자(<span style="color:#ef4444;font-weight:700">+40%</span>) · 인벤티지랩(<span style="color:#ef4444;font-weight:700">+44%</span>)</li>
+<li>제외: SAMG엔터(급등 <span style="color:#ef4444;font-weight:700">+23%</span>) · 하이퍼코퍼레이션(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>오늘 끝남: 세나테크놀로지 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span></li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 60회 · 익절 <strong>32%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.81%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+109%</span></li>
+<li>실시간만: 아직 없음</li>
+<li>제외된 것 (확인용) — 급등: 15회 · 익절 <strong>20%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.30%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+4%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 21회 33% · 업황 17회 35% · 정책 31회 10% · 따라가기 16회 19% · 자본 5회 0% · 사건 2회 50% · 모름 15회 27%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<ul>
+<li>기준가까지 10% 넘게 남은 10종목: 드림시큐리티 · 모니터랩 · 한컴위드 · 대원제약 · 신풍제약 · 위메이드맥스 · 한국화장품제조 · 본느 · 에스엠벡셀 · 희림</li>
+<li>제외: 서산(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>오늘 끝남: 라온시큐어 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 두산테스나 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 금호전기 선돌파</li>
+<li>재충족 급등 제외: 58회 · 익절 <strong>26%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.00%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+58%</span> (실시간 아직 없음) · 급등: 9회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-20%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">자동차 전장 부품</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>세코닉스: 차량용 광학부품 재평가·엔비디아 자율주행(발행 시각 미확인). 삼화전기: 재료 미상</p><p class="c-p"><span class="c-k">수식충족</span>2종목 (12:31·13:31)</p><p class="c-p"><span class="c-k">신선도</span>세코닉스 기대→기대 재탕, 삼화전기 주가 선행 추정</p><p class="c-p"><span class="c-k">판단</span>약한 D+0 <code>추정</code>, 확신도 중하. 한 테마로 묶기엔 근거 부족</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">호남 반도체</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>최태원 &#x27;호남 반도체 팹&#x27; &quot;최대한 빨리&quot;(10/12)</p><p class="c-p"><span class="c-k">수식충족</span>금호전기·서산·광주신세계·일신방직·HC보광산업 등</p><p class="c-p"><span class="c-k">신선도</span>재탕 (06월·08/13 → 10/12). 착공·투자안 미확정</p><p class="c-p"><span class="c-k">판단</span>D+1. 2일차에 분화 시작. 신규 진입 안 함, 눌림만 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">페스트·진단·바이오</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문에 핵심 뉴스 없음 (국제약품만 오너 3세 승계 기사 별도)</p><p class="c-p"><span class="c-k">수식충족</span>원문: 국제약품 10/07·10/08 충족</p><p class="c-p"><span class="c-k">신선도</span>후반부</p><p class="c-p"><span class="c-k">판단</span>D+3~4. 제외</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">보안 (금융권 AI 해킹)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>당일 뉴스 없음</p><p class="c-p"><span class="c-k">수식충족</span>라온시큐어 2봉</p><p class="c-p"><span class="c-k">신선도</span>진행 중</p><p class="c-p"><span class="c-k">판단</span>10/06 시작. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>자동차 전장 부품 (<code>추정</code>)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>세코닉스</strong></h4><p class="c-p"><span class="c-k">근거</span>직전최대 33.5배. 직전5일 <span style="color:#7dabf8;font-weight:700">-2.4%</span>. 이전 충족 없음. 먼저 충족, 신선도가 더 높음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>11봉 (12:31)</span><span class="chip"><i>등락%</i>+13.4</span><span class="chip"><i>대금</i>100억</span></div></article>
+<article class="card"><h4 class="c-t">삼화전기</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인. 10/01 G2 36회. 직전최대 2.3배. 대금 기준 대장 후보</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인 (18일 전 <span style="color:#ef4444;font-weight:700">+17%</span>)</span><span class="chip"><i>충족봉</i>21봉 (13:31)</span><span class="chip"><i>등락%</i>+18.8</span><span class="chip"><i>대금</i>197억</span></div></article>
+</div>
+<h3>호남 반도체 (D+1, 시작 10/12)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>HC보광산업</strong></h4><p class="c-p"><span class="c-k">근거</span>고가 <span style="color:#ef4444;font-weight:700">+25.8%</span>. 10/12에 이미 <span style="color:#ef4444;font-weight:700">+12.6%</span> → 2일차 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>13봉</span><span class="chip"><i>등락%</i>+9.9</span><span class="chip"><i>대금</i>163억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>금호전기</strong><br><strong>115.9억</strong><br><strong>9시 13분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/12에 이미 충족. 대장(대금 1위). 고가 <span style="color:#ef4444;font-weight:700">+26.2%</span>에서 종가위치 9%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-10%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/12 · 09/18</span><span class="chip"><i>충족봉</i>18봉</span><span class="chip"><i>등락%</i>-0.5</span><span class="chip"><i>대금</i>4,211억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>서산</strong><br><strong>164.3억</strong><br><strong>9시 13분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/12에 이미 충족. 이틀 연속 상한가, 종가위치 100%</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/03 · 10/12 G2</span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>884억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>광주신세계</strong><br><strong>37.6억</strong><br><strong>8시 09분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span>10/12에 이미 충족. 고점 대비 <span style="color:#7dabf8;font-weight:700">-13%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/12</span><span class="chip"><i>충족봉</i>22봉</span><span class="chip"><i>등락%</i>+0.3</span><span class="chip"><i>대금</i>464억</span></div></article>
+<article class="card"><h4 class="c-t">일신방직</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인. 프리장에서 고점을 찍고 계속 밀림</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전 충족 미확인</span><span class="chip"><i>충족봉</i>7봉</span><span class="chip"><i>등락%</i>-2.1</span><span class="chip"><i>대금</i>232억</span></div></article>
+</div>
+<h3>보안 (시작 10/06)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>라온시큐어</strong><br><strong>66.2억</strong><br><strong>9시 16분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/07에 이미 충족. 직전5일 <span style="color:#ef4444;font-weight:700">+47.6%</span>. 당일 뉴스 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/07</span><span class="chip"><i>충족봉</i>2봉</span><span class="chip"><i>등락%</i>원문 미기재</span><span class="chip"><i>대금</i>2,685억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>하이퍼코퍼레이션</strong></h4><p class="c-p"><span class="c-k">근거</span>D+26. 대금이 26억뿐인 단독 움직임. 사전테마 &#x27;신약&#x27;은 잘못 분류된 것으로 봄. 재료 미상</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문 미기재</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>26억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">호남 반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>금호건설</strong><br><strong>78.3억</strong><br><strong>9시 29분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족 없음(10/12 충족). <span style="color:#7dabf8;font-weight:700">-11.3%</span>, 2,067억(대금 2위)</p></article>
+<article class="card hot"><h4 class="c-t">호남 반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>유신</strong><br><strong>25.4억</strong><br><strong>9시 23분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족 없음. <span style="color:#7dabf8;font-weight:700">-5.1%</span>, 415억. 10/12 상한가</p></article>
+<article class="card"><h4 class="c-t">호남 반도체</h4><p class="c-p"><span class="c-k">종목</span>남광토건 · 동양파일 · 강동씨앤엘 · 남화토건</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>원문은 &#x27;일부 충족&#x27;으로만 묶음. 종목별 구분은 판단 불가. -0.5~<span style="color:#7dabf8;font-weight:700">-9.3%</span>, 95~111억, 위꼬리 마감</p></article>
+<article class="card hot"><h4 class="c-t">페스트·바이오</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>국제약품</strong> (21.4억 · 14시 45분) · 녹십자엠에스 · HLB바이오스텝 · HLB글로벌</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족 여부 원문 미기재. 대금 1,539억 · 1,082억 · 390억(5일 <span style="color:#ef4444;font-weight:700">+68.5%</span>) · 178억</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>대양금속 (<span style="color:#ef4444;font-weight:700">+18.9%</span>, D+3) · 에스티아이 (<span style="color:#ef4444;font-weight:700">+10.4%</span>, D+6)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>충족 여부 원문 미기재. 오늘 상승 재료 미확인 / 미상</p></article>
+<article class="card hot"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>브릴스 (<span style="color:#7dabf8;font-weight:700">-6.8%</span>, 1,033억) · 큐리언트 (<span style="color:#7dabf8;font-weight:700">-7.3%</span>) · 🔥 <strong>동양고속</strong> (33.4억 · 9시 12분) (<span style="color:#7dabf8;font-weight:700">-16.8%</span>)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>충족 여부 원문 미기재. 급등 뒤 되밀린 종목</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (오늘은 정보지 미수집)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>세코닉스·삼화전기 재료의 발행 시각</strong>: 기사·공시가 12:31 충족보다 늦으면 주가가 먼저 움직인 것으로 확정합니다.</li>
+<li><strong>종가 유지 여부</strong>: 세코닉스 3,670원, 삼화전기 29,650원 위에서 버티고, 자율주행·전장 쪽 다른 종목이 <span style="color:#ef4444;font-weight:700">+5%</span> 이상 붙으면 진짜입니다. 시가부터 밀리거나 한 종목만 움직이면 개별주 2개로 다시 분류합니다.</li>
+<li><strong>반도체 대형주 반등 여부</strong>: 반등하면 오늘 비반도체 부품주로 돈이 돈 순환매가 꺼질 수 있습니다.</li>
+<li><strong>금호전기 시가</strong>: 오늘 종가 11,010원을 지키는지 봅니다. 또 착공·투자 확정 같은 &#x27;단계 상승&#x27; 뉴스가 나오는지 확인합니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-10-13 (화) [장마감]</h1>
+<p>기준일: 2026-10-13 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<blockquote><p>📰 이 리포트에는 정보지 교차 절이 없습니다. 오늘은 정보지를 수집하지 않은 날이라 뉴스와 주가만으로 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 돈이 가장 많이 몰린 곳은 <strong>호남 반도체 테마(금호전기·서산·금호건설 등)</strong>입니다. 하지만 10/12에 시작해 오늘이 이틀째라서 <strong>D+0이 아닙니다.</strong> 시장 전체 돈도 바이오(페스트 테마, 10/07 시작)와 보안(라온시큐어, 10/06 시작) 같은 이미 진행 중인 테마에 머물렀습니다. 오늘 처음 같이 움직인 묶음은 <strong>세코닉스와 삼화전기, 자동차 전장 부품 2종목뿐</strong>입니다. 그런데 거래대금이 100억~197억으로 작아서 <strong>약한 D+0</strong>입니다. 오늘은 확실한 D+0 테마가 없는 날로 봅니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>후보 1. 자동차 전장 부품 (자율주행 카메라·전장 부품) — <code>추정</code>, 확신도 중하</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>삼화전기</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+18.8</span><span class="chip"><i>거래대금(억)</i><strong>197</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘 충족</i>21봉 (13:31)</span><span class="chip"><i>이전 충족</i>없음</span><span class="chip"><i>첫흐름</i>미확인 (18일 전 <span style="color:#ef4444;font-weight:700">+17%</span>)</span><span class="chip"><i>직전최대대비</i>2.3배</span><span class="chip"><i>직전5일누적%</i>-7.9</span></div></article>
+<article class="card"><h4 class="c-t">세코닉스</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.4</span><span class="chip"><i>거래대금(억)</i>100</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘 충족</i>11봉 (12:31)</span><span class="chip"><i>이전 충족</i>없음</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>직전최대대비</i><strong>33.5배</strong></span><span class="chip"><i>직전5일누적%</i>-2.4</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 두 종목 모두 이전 충족이 없고 D+0입니다. <strong>오늘(10/13)이 시작일</strong>입니다.</li>
+<li>다만 삼화전기는 10/01에 G2 신호가 36회 나왔습니다. 첫흐름도 <code>미확인</code>이라 완전한 첫날이라고 단정하지 않습니다.</li>
+<li><strong>대장주 / 후발주</strong>: 거래대금 기준으로 <strong>삼화전기(197억)가 대장 후보</strong>입니다.</li>
+<li>세코닉스는 대금은 절반이지만 직전최대대비가 33.5배입니다. 평소 거의 거래가 없던 종목에 처음 돈이 들어왔다는 뜻이고, 신선도는 세코닉스가 더 높습니다.</li>
+<li>순서는 세코닉스가 먼저입니다(12:31 충족 → 삼화전기 13:31).</li>
+<li><strong>두 종목을 한 테마로 묶기는 아직 약합니다.</strong></li>
+<li>문서상 사전테마는 둘 다 &#x27;자동차&#x27;입니다.</li>
+<li>하지만 실제 사업은 다릅니다. 세코닉스는 차량용 카메라 렌즈, 삼화전기는 콘덴서(전장용 하이브리드캡, AI 서버용 S-cap)를 만듭니다 (웹: 아시아경제, 2024년 기사).</li>
+<li>같이 움직인 3번째 종목도 표 안에 없습니다. <strong>근거 부족 — 테마라기보다 &#x27;반도체 대형주 급락 날 비(非)반도체 부품주 동반 상승&#x27;일 수 있습니다.</strong></li>
+<li><strong>추정 재료</strong></li>
+<li>세코닉스: 오늘 12.98% 상승, 3,655원이라는 기사가 있습니다. 차량용 광학부품 성장성 재평가, 엔비디아 기반 자율주행 플랫폼 확대와 현대차그룹 협력 수혜가 이유로 나옵니다 (웹: 잡포스트). 비슷한 시기 &quot;엔비디아 자율주행 로보택시 주목, 11%대 강세&quot; 기사도 있습니다 (웹: 국제뉴스). 다만 <strong>두 기사 모두 발행 시각은 확인하지 못했습니다.</strong> 문서에는 당일 뉴스가 &#x27;없음&#x27;이므로 주가가 먼저 움직였을 가능성이 있습니다.</li>
+<li>웹 숫자와 문서 숫자가 다릅니다. 문서 기준(정본)은 <span style="color:#ef4444;font-weight:700">+13.4%</span>, 종가 3,670원입니다. 웹 숫자는 장중이나 KRX 시점 값으로 보입니다.</li>
+<li>삼화전기: &quot;폭락장서 삼화전기 13%대 급등…반도체주와 엇갈린 흐름&quot;이라는 제목의 기사를 찾았습니다 (웹: 남도일보). 상승 이유가 적힌 본문과 발행 시각은 확인하지 못했습니다. → <code>재료 미상 — 확인 필요</code></li>
+<li><strong>재료 단계</strong></li>
+<li>세코닉스: 기대(08/14 &quot;자율주행 카메라 등 추진, 수익성 개선 노려&quot;) → 기대(오늘 리서치 성장성 재평가). <strong>같은 단계가 반복된 재탕이라 신선도가 낮습니다.</strong> 그런데도 대금이 33.5배로 늘어서, 시장이 &#x27;오늘 처음 인정한&#x27; 모양새입니다.</li>
+<li>삼화전기: 문서에 3개월 재료 이력이 없습니다. <strong>주가 선행으로 추정</strong>합니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 신호</li>
+<li>두 종목이 오늘 종가(세코닉스 3,670원, 삼화전기 29,650원) 위에서 버팁니다.</li>
+<li>자율주행·전장 쪽 다른 종목(카메라 모듈, 라이다 등)이 같이 <span style="color:#ef4444;font-weight:700">+5%</span> 이상 붙습니다.</li>
+<li>엔비디아·현대차 자율주행 관련 기사가 새로 나옵니다.</li>
+<li>❌ 아닌 신호</li>
+<li>반도체 대형주가 반등하면서 두 종목이 시가부터 밀립니다(순환매가 끝났다는 뜻).</li>
+<li>동반 종목 없이 한 종목만 움직입니다. 그러면 개별주 2개로 다시 분류합니다.</li>
+</ul>
+<blockquote><p>그 밖의 오늘 첫흐름 종목은 D+0 테마로 올리지 않았습니다.</p></blockquote>
+<blockquote><p>- <strong>하이퍼코퍼레이션</strong>(★첫흐름): 대금이 26억뿐인 단독 움직임이라 ④ 개별주로 분류했습니다.</p></blockquote>
+<blockquote><p>- <strong>HC보광산업</strong>(★첫흐름): 호남 반도체 테마의 2일차 후발주라 ③으로 분류했습니다.</p></blockquote>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<p><strong>호남 반도체 (레미콘·건설·광주 자산주) — D+1, 테마 시작 10/12</strong></p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>금호전기</strong></h4><p class="c-p"><span class="c-k">메모</span><strong>대장주(대금 1위).</strong> 고가 <span style="color:#ef4444;font-weight:700">+26.2%</span>에서 종가위치 9%로 크게 밀림</p><div class="c-c"><span class="chip"><i>등락%</i>-0.5</span><span class="chip"><i>대금(억)</i><strong>4,211</strong></span><span class="chip"><i>오늘 충족</i>18봉</span><span class="chip"><i>이전 충족</i>10/12 · 09/18</span></div></article>
+<article class="card"><h4 class="c-t">금호건설</h4><p class="c-p"><span class="c-k">메모</span>대금 2위, 하락 마감</p><div class="c-c"><span class="chip"><i>등락%</i>-11.3</span><span class="chip"><i>대금(억)</i>2,067</span><span class="chip"><i>오늘 충족</i>–</span><span class="chip"><i>이전 충족</i>10/12</span></div></article>
+<article class="card"><h4 class="c-t">서산</h4><p class="c-p"><span class="c-k">메모</span>이틀 연속 상한가, 종가위치 100%</p><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>884</span><span class="chip"><i>오늘 충족</i>8봉</span><span class="chip"><i>이전 충족</i>09/03 · 10/12 G2</span></div></article>
+<article class="card"><h4 class="c-t">광주신세계</h4><p class="c-p"><span class="c-k">메모</span>고점 대비 <span style="color:#7dabf8;font-weight:700">-13%</span></p><div class="c-c"><span class="chip"><i>등락%</i>+0.3</span><span class="chip"><i>대금(억)</i>464</span><span class="chip"><i>오늘 충족</i>22봉</span><span class="chip"><i>이전 충족</i>10/12</span></div></article>
+<article class="card"><h4 class="c-t">유신</h4><p class="c-p"><span class="c-k">메모</span>10/12 상한가</p><div class="c-c"><span class="chip"><i>등락%</i>-5.1</span><span class="chip"><i>대금(억)</i>415</span><span class="chip"><i>오늘 충족</i>–</span><span class="chip"><i>이전 충족</i>–</span></div></article>
+<article class="card"><h4 class="c-t">일신방직</h4><p class="c-p"><span class="c-k">메모</span>프리장에서 고점을 찍고 계속 밀림</p><div class="c-c"><span class="chip"><i>등락%</i>-2.1</span><span class="chip"><i>대금(억)</i>232</span><span class="chip"><i>오늘 충족</i>7봉</span><span class="chip"><i>이전 충족</i>미확인</span></div></article>
+<article class="card"><h4 class="c-t">HC보광산업</h4><p class="c-p"><span class="c-k">메모</span><strong>후발주.</strong> 10/12에 이미 <span style="color:#ef4444;font-weight:700">+12.6%</span></p><div class="c-c"><span class="chip"><i>등락%</i>+9.9</span><span class="chip"><i>대금(억)</i>163</span><span class="chip"><i>오늘 충족</i>13봉 ★첫흐름</span><span class="chip"><i>이전 충족</i>–</span></div></article>
+<article class="card"><h4 class="c-t">남광토건 · 동양파일 · 강동씨앤엘 · 남화토건</h4><p class="c-p"><span class="c-k">메모</span>위꼬리 마감</p><div class="c-c"><span class="chip"><i>등락%</i>-0.5 ~ -9.3</span><span class="chip"><i>대금(억)</i>95~111</span><span class="chip"><i>오늘 충족</i>일부 충족</span><span class="chip"><i>이전 충족</i>10/12 등</span></div></article>
+</div>
+<ul>
+<li><strong>재료</strong></li>
+<li>최태원 회장이 &#x27;호남 반도체 팹&#x27; 철회설을 진화하며 &quot;최대한 빨리&quot;라고 말한 것이 계기입니다 (문서: 10/12 기사).</li>
+<li>오늘 서산은 전날 상한가에 이어 29% 올랐고, 이틀 연속 급등이라는 보도가 있습니다 (웹: 남도일보, 한국경제).</li>
+<li>이 테마는 이미 6월에도 &quot;호남 반도체 클러스터 추진에 광주·전남 상장사 급등&quot;으로 한 차례 터졌습니다 (웹: 한국경제 2026-06-26).</li>
+<li><strong>재료 단계</strong>: 기대(06월·08/13 &quot;최대 수혜주&quot;) → 기대(10/12 &quot;속도&quot;) — <strong>재탕입니다.</strong> 착공 시점과 투자 실행안은 아직 확정되지 않았습니다 (웹: 한국경제).</li>
+<li><strong>판단</strong></li>
+<li>대장 금호전기가 고가 <span style="color:#ef4444;font-weight:700">+26%</span>에서 보합으로 밀렸습니다(종가위치 9%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-10%</span>). 서산만 상한가를 지켰습니다. <strong>2일차에 분화가 시작된 것</strong>으로 봅니다.</li>
+<li>신규 진입은 하지 않습니다. 대장의 대금이 유지되면서 눌리는지만 관찰합니다.</li>
+<li>웹 숫자와 문서 숫자가 다릅니다. 웹은 HC보광산업이 &quot;이틀 연속 12%대&quot;라고 하지만, 문서 정본은 오늘 <span style="color:#ef4444;font-weight:700">+9.9%</span>(고가 <span style="color:#ef4444;font-weight:700">+25.8%</span>)입니다.</li>
+</ul>
+<p><strong>페스트·진단·바이오 — 테마 시작 10/07 (D+3~4)</strong></p>
+<ul>
+<li>대장은 <strong>국제약품</strong>(1,539억, D+3, 10/07·10/08 충족)이고, 녹십자엠에스(1,082억), HLB바이오스텝(390억, 5일 누적 <span style="color:#ef4444;font-weight:700">+68.5%</span>), HLB글로벌(178억)이 같이 움직였습니다.</li>
+<li>국제약품에는 오너 3세 승계 기사가 따로 붙어 있습니다.</li>
+<li>후반부입니다. 제외합니다.</li>
+</ul>
+<p><strong>보안 (금융권 AI 해킹) — 테마 시작 10/06</strong></p>
+<ul>
+<li>라온시큐어가 2,685억, 5일 누적 <span style="color:#ef4444;font-weight:700">+47.6%</span>, 10/07 충족에 이어 오늘 2봉 충족했습니다. 당일 뉴스는 없습니다.</li>
+<li>진행 중이라 눌림만 봅니다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>하이퍼코퍼레이션</strong> <span style="color:#ef4444;font-weight:700">+30.0%</span>, 26억 — 문서에서 D+26으로 나오고 ★첫흐름입니다.</li>
+<li>사전테마는 &#x27;신약&#x27;으로 붙어 있지만, 실제 재료 이력은 미용기기(큐비스트)와 에코백스 유통입니다. <strong>사전 분류가 틀린 것으로 봅니다.</strong></li>
+<li>재료 미상입니다. 웹에서도 확인되지 않았습니다. 대금이 너무 작습니다.</li>
+<li><strong>대양금속</strong> <span style="color:#ef4444;font-weight:700">+18.9%</span>, D+3 — 니켈 가격 관련 이력이 있습니다 (웹: 아시아경제, 4월 기사). 오늘 상승 재료는 확인되지 않았습니다.</li>
+<li><strong>에스티아이</strong> <span style="color:#ef4444;font-weight:700">+10.4%</span>, D+6 — 반도체 대형주가 약했던 날 HBM 장비주가 따로 오른 움직임입니다. 재료 미상입니다.</li>
+<li><strong>브릴스</strong> <span style="color:#7dabf8;font-weight:700">-6.8%</span>, 1,033억 · <strong>큐리언트</strong> <span style="color:#7dabf8;font-weight:700">-7.3%</span>(장 후반 ADC 협력 기사) · <strong>동양고속</strong> <span style="color:#7dabf8;font-weight:700">-16.8%</span> — 급등 뒤 되밀린 종목들입니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 자동차 전장 부품(세코닉스·삼화전기) — 단, 2종목뿐이고 대금이 작은 약한 D+0 (추정)</li>
+<li>그 테마의 대장주 (거래대금 최대): 삼화전기 197억 (신선도는 세코닉스 ★첫흐름·직전최대 33.5배가 더 높음)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 없음 (세코닉스는 기대→기대 재탕, 삼화전기는 이력 없음 = 주가 선행)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: HC보광산업(호남 반도체 2일차, ★첫흐름이지만 대금 163억), 강동씨앤엘·동양파일·남광토건</li>
+<li>같이 볼 종목: 세코닉스, 삼화전기 + 내일 붙을 자율주행 카메라·전장 부품주</li>
+<li>진행중이라 눌림만 볼 종목: 금호전기(호남 반도체 대장, 4,211억)·서산, 국제약품, 라온시큐어</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>세코닉스·삼화전기 오늘 상승의 기사·공시 발행 시각 (12:31 충족보다 늦으면 주가 선행 확정)</li>
+<li>반도체 대형주가 반등하는지 — 반등하면 오늘의 비반도체 부품주 순환매가 꺼질 수 있음</li>
+<li>호남 반도체 대장 금호전기가 시가에 오늘 종가 11,010원을 지키는지, 그리고 착공·투자 확정 같은 &#x27;단계 상승&#x27; 뉴스가 나오는지</li>
+</ol>
+<p>```</p>
+<p>Sources:</p>
+<ul>
+<li>[잡포스트 — 세코닉스 12.98% 상승…차량용 광학부품 성장성 재평가](https://job-post.co.kr/news/articleView.html?idxno=232054)</li>
+<li>[국제뉴스 — &#x27;엔비디아 자율주행 로보택시 주목&#x27; 세코닉스 11%대 강세](https://www.gukjenews.com/news/articleView.html?idxno=3289209)</li>
+<li>[남도일보 — 폭락장서 삼화전기 13%대 급등…반도체주와 엇갈린 흐름](https://www.namdonews.com/news/articleView.html?idxno=925980)</li>
+<li>[아시아경제 — 삼화전기 특징주(2024)](https://www.asiae.co.kr/article/2024051310155722520)</li>
+<li>[남도일보 — 서산, 최태원發 &#x27;호남 반도체&#x27; 속도전 기대에 29%](https://www.namdonews.com/news/articleView.html?idxno=925946)</li>
+<li>[한국경제 — 호남 반도체 속도전…테마주 이틀 연속 불기둥](https://www.hankyung.com/article/202610139199i)</li>
+<li>[한국경제 — 호남 반도체 클러스터 추진에 광주·전남 상장사 급등(06/26)](https://www.hankyung.com/article/202606260548i)</li>
+<li>[아시아경제 — 대양금속](https://view.asiae.co.kr/article/2026042116254671629)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-13 22:05
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
