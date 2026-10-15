@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-15 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-15</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-15_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-15 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 10회 · ⚠ 정보지를 수집하지 않은 날이라 주가·거래대금과 뉴스로만 판단했습니다. · ⚠ <code>★첫흐름</code> 0개(수식충족 5종목 모두 이전충족 있음)</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>원문에는 지수·수급 수치가 없습니다. 대상 8종목은 서로 다른 재료로 각자 움직였습니다. 2종목 이상이 함께 튄 동시성 테마는 찾지 못했습니다(근거 부족). <strong>신규 점화 없음</strong> (동시성 테마 기준). 단독 후보로는 듀켐바이오(대금이 직전 최대의 5.1배라 실질 D+0 가능성)와 양지사(재료 미상, 주가 선행 추정)가 있습니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 4종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>라온시큐어</strong> — 최대 <strong>56.8억</strong> · <strong>9시 34분</strong> · 20억↑ 봉 23개 · 피지컬AI 보안</li>
+<li>🔥 <strong>에스엠벡셀</strong> — 최대 <strong>52.9억</strong> · <strong>14시 53분</strong> · 20억↑ 봉 2개 · 저궤도 위성 배터리</li>
+<li>🔥 <strong>대한제강</strong> — 최대 <strong>44.5억</strong> · <strong>8시 03분 NXT 프리</strong> · 20억↑ 봉 7개 · 알래스카 LNG</li>
+<li>🔥 <strong>듀켐바이오</strong> — 최대 <strong>32.6억</strong> · <strong>14시 36분</strong> · 20억↑ 봉 1개 · 치매 진단(아밀로이드 PET) — 단독</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<ul>
+<li>기준가까지 10% 안쪽인 종목 없음</li>
+</ul>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 세코닉스(<span style="color:#ef4444;font-weight:700">+17%</span>) · 도화엔지니어링(<span style="color:#ef4444;font-weight:700">+19%</span>) · 남화산업(<span style="color:#ef4444;font-weight:700">+20%</span>) · 리메드(<span style="color:#ef4444;font-weight:700">+64%</span>)</li>
+<li>오늘 끝남: SAMG엔터 미체결 · 인벤티지랩 미체결 · 케이씨텍 미체결 · 제주항공 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span></li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 61회 · 익절 <strong>31%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.75%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+107%</span></li>
+<li>실시간만: 1회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-2%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 21회 33% · 업황 17회 35% · 정책 31회 10% · 따라가기 17회 18% · 자본 5회 0% · 사건 2회 50% · 모름 16회 25%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<ul>
+<li>기준가까지 10% 넘게 남은 3종목: 본느 · 희림 · 넥스틸</li>
+<li>제외: 듀켐바이오(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>오늘 끝남: 대원제약 미체결 · 신풍제약 미체결 · 위메이드맥스 미체결 · 한국화장품제조 미체결 · 에스엠벡셀 <strong>익절</strong> <span style="color:#ef4444;font-weight:700">+10.0%</span></li>
+<li>재충족 급등 제외: 59회 · 익절 <strong>27%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.15%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+68%</span> (실시간 아직 없음) · 급등: 10회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-22%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">치매 진단(아밀로이드 PET) <code>단독</code></h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>키썬라(도나네맙) 국내 허가 임박, 이르면 11월 결정 예상</p><p class="c-p"><span class="c-k">판단</span>1순위 단독 후보, 확정 단계(식약처 허가)는 아님</p><div class="c-c"><span class="chip"><i>수식충족</i>듀켐바이오</span><span class="chip"><i>정보지</i>미수집</span><span class="chip"><i>신선도</i>D+10 표시, 실질 D+0 가능성</span></div></article>
+<article class="card"><h4 class="c-t">품절주 수급 <code>추정·재료 미상</code></h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>당일 공시·재료 기사 미확인, 대주주 89% 품절주 해석</p><p class="c-p"><span class="c-k">판단</span>개별 수급, 테마로 따라가기엔 근거 부족</p><div class="c-c"><span class="chip"><i>수식충족</i>양지사</span><span class="chip"><i>정보지</i>미수집</span><span class="chip"><i>신선도</i>D+0 (등락률 기준)</span></div></article>
+<article class="card"><h4 class="c-t">저궤도 위성 배터리</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>기술 확보 (10/14 기사)</p><p class="c-p"><span class="c-k">판단</span>진행 중, 눌림 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span><span class="chip"><i>신선도</i>D+1</span></div></article>
+<article class="card"><h4 class="c-t">알래스카 LNG</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>투자 기대 (재탕)</p><p class="c-p"><span class="c-k">판단</span>진행 중, 눌림 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span><span class="chip"><i>신선도</i>10/01 시작</span></div></article>
+<article class="card"><h4 class="c-t">피지컬AI 보안</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>국책과제 주관기관 선정</p><p class="c-p"><span class="c-k">판단</span>후반부</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span><span class="chip"><i>신선도</i>D+6</span></div></article>
+<article class="card"><h4 class="c-t">고속터미널 재개발</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>이전 사이클, 10월 급등 원인 미확인</p><p class="c-p"><span class="c-k">판단</span>제외</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<blockquote><p>원문은 &quot;수식충족 5종목&quot;이라고 했지만, 오늘 충족봉이 표기된 종목은 아래 2개뿐입니다. 나머지 3종목은 원문에서 특정할 수 없습니다.</p></blockquote>
+<h3>치매 진단(아밀로이드 PET) — 단독</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>듀켐바이오</strong><br><strong>32.6억</strong><br><strong>14시 36분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/17 에 이미 충족 / 대금 30일 1위·직전최대 5.1배·전일 102배 / 직전5일 <span style="color:#7dabf8;font-weight:700">-6.4%</span>(선반영 없음) / 주가가 뉴스(09:26)보다 약 1시간 선행</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17</span><span class="chip"><i>충족봉</i>11봉 (08:25)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>784억</span></div></article>
+</div>
+<h3>개별 (품절주 수급 추정)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">양지사</h4><p class="c-p"><span class="c-k">근거</span>10/13 에 이미 충족(당시 <span style="color:#ef4444;font-weight:700">+4.9%</span>) / 등락률 기준 30일 만의 첫 급등 / 대금 30일 1위·직전최대 4.3배 / 재료 미상</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/13</span><span class="chip"><i>충족봉</i>16봉 (09:09)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>295억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<blockquote><p>원문에 오늘 충족봉이 표기되지 않은 종목들입니다. 수식 충족 여부는 원문으로 판단할 수 없습니다.</p></blockquote>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">저궤도 위성 배터리</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>에스엠벡셀</strong><br><strong>52.9억</strong><br><strong>14시 53분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족봉 미표기 / 이전충족 09/08·09/09·10/08·10/14 / <span style="color:#ef4444;font-weight:700">+18.2%</span>·1,381억(대금 1위) / 종가 3,155(고가 대비 <span style="color:#7dabf8;font-weight:700">-9.1%</span>, ★눌림)</p></article>
+<article class="card hot"><h4 class="c-t">알래스카 LNG</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>대한제강</strong><br><strong>44.5억</strong><br><strong>8시 03분</strong><br>NXT 프리</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족봉 미표기 / 이전충족 10/01·10/14 / <span style="color:#ef4444;font-weight:700">+9.5%</span>·805억 / 뉴스(07:56)가 포착(08:06)보다 먼저</p></article>
+<article class="card hot"><h4 class="c-t">피지컬AI 보안</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>라온시큐어</strong><br><strong>56.8억</strong><br><strong>9시 34분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족봉 미표기 / 이전충족 10/07·10/13 등 / <span style="color:#ef4444;font-weight:700">+10.4%</span>·2,731억이지만 직전최대 0.9배 / 5일 <span style="color:#ef4444;font-weight:700">+21.8%</span></p></article>
+<article class="card"><h4 class="c-t">고속터미널 재개발</h4><p class="c-p"><span class="c-k">종목</span>천일고속</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘 충족봉 미표기 / 이전충족 10/07·10/12 / 고가 <span style="color:#ef4444;font-weight:700">+20.1%</span> → 종가 <span style="color:#7dabf8;font-weight:700">-1.8%</span> / 5일 <span style="color:#ef4444;font-weight:700">+59.8%</span>, 제외</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>토마토시스템</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>투자경고 해제 반등 / <span style="color:#ef4444;font-weight:700">+13.8%</span>·188억 / 직전최대 0.2배 / D+12</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>하이퍼코퍼레이션</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>110억 유증·최대주주 교체로 사흘째 / <span style="color:#ef4444;font-weight:700">+29.8%</span>·16억(대금 부족, 제외) / D+1</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (정보지 미수집일)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>듀켐바이오</strong>: 1분봉 대금 20억 이상이 이어지고 종가 8,970 위를 지키면 진짜입니다. 시초에 대금 없이 갭하락해 VWAP 아래로 밀리면 아닙니다.</li>
+<li><strong>치매 테마 확장</strong>: 키썬라 식약처 허가 관련 새 보도·일정이 나오는지, 다른 치매 진단·치료주가 같이 움직이는지 봅니다. 혼자만 오르면 아닙니다.</li>
+<li><strong>양지사</strong>: DART 조회공시·지분 변동 유무를 봅니다. 유통주식이 196억 규모라 상한가 잔량이 유지되면 이어질 수 있고, 시초에 잔량이 풀리며 대금이 터지면 하루짜리일 가능성이 큽니다.</li>
+<li><strong>에스엠벡셀</strong>: 위성 배터리 수주·공급 계약(확정 단계) 공시가 나오면 실질 신규로 재평가합니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-10-15 (목) [장마감]</h1>
+<p>기준일: 2026-10-15 (목) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 10회</p></blockquote>
+<blockquote><p>⚠ 이 리포트에는 <code>📰 정보지 교차</code> 절이 없습니다. 정보지는 수집하지 않은 날이므로 주가·거래대금과 뉴스로만 판단했습니다.</p></blockquote>
+<blockquote><p>⚠ <code>★첫흐름</code> 종목은 0개입니다. 수식충족 5종목은 모두 <code>이전충족</code>이 있습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 대상 8종목은 <strong>서로 다른 재료로 각자 움직였습니다.</strong> 2종목 이상이 같은 성격으로 함께 튄 묶음, 즉 원칙 2의 동시성 테마는 <strong>찾지 못했습니다(근거 부족).</strong> 새 돈이 가장 뚜렷하게 들어온 종목은 <strong>듀켐바이오</strong>입니다. 치매약 &#x27;키썬라&#x27; 국내 허가 기대로 직전 최대 대금의 5.1배가 들어왔습니다. <strong>양지사</strong>는 D+0 표시가 붙은 유일한 종목이지만 재료가 없는 품절주 수급으로 보입니다. 에스엠벡셀·대한제강·라온시큐어는 이미 진행 중인 사이클이 다시 뛴 것입니다.</p>
+<hr>
+<h2>② D+0 후보 (테마로 확정되지 않음 — 단독 후보 2개)</h2>
+<h3>후보 1. 치매 진단(아밀로이드 PET) — 키썬라 허가 기대 <code>단독</code></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">듀켐바이오</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i><strong>784</strong></span><span class="chip"><i>D+N</i>D+10</span><span class="chip"><i>오늘충족</i>11봉 (08:25)</span><span class="chip"><i>이전충족</i>09/17</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong></li>
+<li>이 종목의 직전 급등일은 09/29, 이전충족은 09/17입니다. 그래서 표시는 D+10입니다.</li>
+<li>하지만 대금이 30일 중 1위이고, 직전 최대 대금의 <strong>5.1배</strong>, 전일 대금의 102배입니다. 직전5일 누적은 <span style="color:#7dabf8;font-weight:700">-6.4%</span>로 선반영도 없습니다.</li>
+<li>따라서 <strong>오늘 성격이 다른 자금이 처음 들어온 날</strong>로 봅니다. 사실상 새 사이클의 첫날(실질 D+0)일 가능성이 높습니다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>같이 움직인 치매 관련주가 리포트에 없어서 테마 안의 대장주는 판정할 수 없습니다(근거 부족).</li>
+<li><strong>주가와 뉴스 중 무엇이 먼저였나</strong></li>
+<li>08:25에 <span style="color:#ef4444;font-weight:700">+13.5%</span>로 포착됐습니다. 첫 기사는 09:26(버즈)과 09:44(조선비즈)입니다.</li>
+<li><strong>주가가 약 1시간 앞섰습니다.</strong></li>
+<li><strong>추정 재료</strong></li>
+<li>키썬라(도나네맙)의 국내 품목허가가 임박했고, 이르면 11월에 허가 여부가 결정될 것으로 예상됩니다 (웹: 데일리팜).</li>
+<li>키썬라를 쓰려면 투약 전에 아밀로이드 PET 검사가 필요합니다. 듀켐바이오는 국내 아밀로이드 PET 진단제 시장의 94% 이상을 차지합니다 (웹: 메디컬타임즈).</li>
+<li><strong>재료 단계</strong>: 기대(10/13 &quot;경쟁에 웃는&quot;) → 기대·임박(10/15)</li>
+<li>아직 &#x27;허가 확정&#x27;은 아니고, 같은 단계 안에서 강도만 올라갔습니다.</li>
+<li>다만 대금 5.1배가 받쳐주므로, 시장은 이 재료를 새 재료로 인정한 것으로 봅니다.</li>
+<li><strong>진짜 단계 상승은 식약처 허가가 나오는 날입니다.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>진짜인 경우</li>
+<li>1분봉 대금 20억 이상이 이어지면서 오늘 종가 8,970 위를 지킨다.</li>
+<li>다른 치매 관련주(진단·치료 쪽)가 같이 움직여 테마로 확장된다.</li>
+<li>아닌 경우</li>
+<li>시초에 대금 없이 갭하락하고 VWAP 아래로 밀린다.</li>
+<li>혼자만 오른 것으로 끝난다.</li>
+</ul>
+<h3>후보 2. 품절주 수급 — 양지사 <code>추정 · 재료 미상</code></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">양지사</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>거래대금(억)</i><strong>295</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>16봉 (09:09)</span><span class="chip"><i>이전충족</i>10/13</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong></li>
+<li>10/13에 수식 충족이 있었지만, 그날 등락은 <span style="color:#ef4444;font-weight:700">+4.9%</span>였습니다.</li>
+<li>등락률 기준으로는 오늘이 30일 만의 첫 급등(D+0)이고, 대금도 30일 1위, 직전 최대의 4.3배입니다.</li>
+<li><strong>대장주 / 후발주</strong>: 같이 움직인 종목이 없어서 <strong>개별주 성격</strong>입니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>당일 공시나 재료 기사는 확인되지 않았습니다. 웹에 나온 기사는 시세만 전하는 자동 기사(09:54, 웹: 중앙이코노미뉴스)뿐입니다.</li>
+<li>대주주 지분이 89%인 품절주에 수급이 몰렸다는 해석은 있습니다 (웹: 데일리머니).</li>
+<li>결론: <strong>재료 미상 — 주가 선행 추정.</strong> 원인은 확인되지 않았습니다.</li>
+<li><strong>재료 단계</strong>: 이력 없음(10/07 창립 50주년 기사 1건뿐) — 주가 선행 추정입니다.</li>
+<li><strong>확인할 것</strong></li>
+<li>DART에 조회공시 요구나 대주주 지분 변동이 올라오는지.</li>
+<li>다른 저유통 품절주가 같이 움직이는지.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>유통주식이 196억 규모에 불과합니다. 상한가 잔량이 유지되면 이어질 수 있습니다.</li>
+<li>시초에 잔량이 풀리면서 대금이 터지면 하루짜리 수급일 가능성이 큽니다.</li>
+<li>테마로 따라가기에는 근거가 부족합니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>에스엠벡셀</strong></h4><p class="c-p"><span class="c-k">재료</span>저궤도 위성용 배터리 기술 확보 (10/14 기사)</p><p class="c-p"><span class="c-k">판단</span>오늘 대금 1위로 가장 큰 돈이 들어왔지만, 재료는 10/14에 나와 이틀째입니다. 종가 3,155는 고가에서 <span style="color:#7dabf8;font-weight:700">-9.1%</span>이고 ★눌림 표시가 있습니다. 단계는 &quot;기술 확보·시험 통과&quot;로 아직 수주(확정)가 아닙니다. 우주 배터리 관련 웹 기사는 찾지 못했습니다(웹에서도 확인 안 됨).</p><div class="c-c"><span class="chip"><i>등락% / 대금(억)</i>+18.2 / <strong>1,381</strong></span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>이전충족</i>09/08·09/09·10/08·10/14</span></div></article>
+<article class="card"><h4 class="c-t"><strong>대한제강</strong></h4><p class="c-p"><span class="c-k">재료</span>알래스카 LNG 투자 기대</p><p class="c-p"><span class="c-k">판단</span>10/01에 시작해 10/14에 다시 불붙었습니다. 07:56 애프터마켓 리뷰 기사가 08:06 포착보다 먼저 나와 <strong>뉴스가 앞선 경우</strong>입니다. 재료 단계는 기대→기대로 재탕입니다.</p><div class="c-c"><span class="chip"><i>등락% / 대금(억)</i>+9.5 / 805</span><span class="chip"><i>이전충족</i>10/01·10/14</span></div></article>
+<article class="card"><h4 class="c-t">라온시큐어</h4><p class="c-p"><span class="c-k">재료</span>피지컬AI 보안 국책과제 주관기관 선정</p><p class="c-p"><span class="c-k">판단</span>절대 대금은 가장 크지만 직전 최대의 0.9배라 새 자금은 아닙니다. 과제 &#x27;선정&#x27;은 확정 단계 재료지만 D+6, 5일 누적 <span style="color:#ef4444;font-weight:700">+21.8%</span>로 후반부입니다.</p><div class="c-c"><span class="chip"><i>등락% / 대금(억)</i>+10.4 / 2,731</span><span class="chip"><i>D+N</i>D+6</span><span class="chip"><i>이전충족</i>10/07·10/13 등</span></div></article>
+<article class="card"><h4 class="c-t">천일고속</h4><p class="c-p"><span class="c-k">재료</span>고속터미널 재개발 (이전 사이클)</p><p class="c-p"><span class="c-k">판단</span>장중 고가 <span style="color:#ef4444;font-weight:700">+20.1%</span>에서 종가가 <span style="color:#7dabf8;font-weight:700">-1.8%</span>로 밀렸고, 5일 누적이 <span style="color:#ef4444;font-weight:700">+59.8%</span>입니다. <strong>제외</strong>합니다. 이번 10월 급등 원인은 웹에서도 확인 안 됨(검색 결과는 2025년 고터 재개발 기사뿐).</p><div class="c-c"><span class="chip"><i>등락% / 대금(억)</i>-1.8 / 472</span><span class="chip"><i>이전충족</i>10/07·10/12</span></div></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>토마토시스템</strong> (<span style="color:#ef4444;font-weight:700">+13.8%</span>, 188억, D+12): 투자경고 해제로 오른 반등입니다. 대금이 직전 최대의 0.2배에 그쳤습니다. 테마가 아닙니다.</li>
+<li><strong>하이퍼코퍼레이션</strong> (<span style="color:#ef4444;font-weight:700">+29.8%</span>, 16억, D+1): 110억 유상증자와 최대주주 교체로 사흘째 올랐습니다. 대금이 16억뿐이라 매매 대상에서 제외합니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 동시성 테마 없음(근거 부족) → 단독 후보 1순위 듀켐바이오(치매 진단·키썬라 허가 기대, 대금 직전최대 5.1배)</li>
+<li>그 테마의 대장주 (거래대금 최대): 듀켐바이오 784억 (같이 움직인 종목 없음)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 확정 단계로 올라간 종목 없음 / 듀켐바이오는 &#x27;기대→허가 임박&#x27;으로 강도만 상승, 대금 기준 실질 D+0 가능성</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 해당 없음 (같이 움직인 묶음이 없음). 양지사는 후발주가 아니라 재료 미상 개별 수급</li>
+<li>같이 볼 종목: 양지사(품절주 수급, 재료 미상), 다른 치매 진단·치료 관련주의 동반 여부</li>
+<li>진행중이라 눌림만 볼 종목: 에스엠벡셀(D+1, 대금 1,381억), 대한제강(알래스카 LNG, 10/01~), 라온시큐어(D+6)</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>키썬라 식약처 허가 관련 새 보도·일정, 그리고 치매 관련주가 같이 움직이는지</li>
+<li>양지사 DART 공시(조회공시·지분 변동) 유무와 시초 상한가 잔량</li>
+<li>에스엠벡셀 위성 배터리의 수주·공급 계약(확정 단계) 공시 여부 — 나오면 실질 신규로 재평가</li>
+</ol>
+<p>```</p>
+<p>Sources:</p>
+<ul>
+<li>[양지사 주가, 10월 15일 장중 5,800원 22.11% 상승 - 중앙이코노미뉴스](https://www.joongangenews.com/news/articleView.html?idxno=555182)</li>
+<li>[양지사 6170원 상한가 안착 - 데일리머니](http://www.thedailymoney.com/news/articleView.html?idxno=1146903)</li>
+<li>[알츠하이머 치료옵션 추가…릴리 &#x27;키썬라&#x27; 허가 임박 - 데일리팜](https://dailypharm.com/user/news/343319)</li>
+<li>[듀켐바이오 1분기 영업이익 87.5% 급증 - 메디컬타임즈](https://www.medicaltimes.com/Main/News/NewsView.html?ID=1168754)</li>
+<li>[천일고속 9연속 상한가 - 헤럴드경제(2025)](https://www.heraldk.com/article/2025120418115151461)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-15 21:15
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
