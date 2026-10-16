@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-16 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-16</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-16_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-16 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>코스피가 8거래일 만에 반등해 <span style="color:#ef4444;font-weight:700">+2.1%</span>, 코스닥은 <span style="color:#ef4444;font-weight:700">+4.46%</span>로 마감했습니다. 12시 55분쯤 코스닥 매수 사이드카도 나왔습니다(웹: 뉴스핌·서울신문). 새 테마가 점화됐다기보다 급락 뒤 크게 반발한 날입니다. D+0으로 찍힌 반도체·바이오 종목은 대부분 직전 5일 누적 -20~<span style="color:#7dabf8;font-weight:700">-35%</span>에서 반발한 종목입니다. 오늘은 정보지를 수집하지 않아 뉴스·주가·웹으로만 판단했습니다. 신규에 가장 가까운 것은 큐리옥스바이오시스템(★첫흐름·D+0·대금 30일 1위) 하나뿐이고, 강한 D+0 테마는 없습니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 8종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>엘앤씨바이오</strong> — 최대 <strong>97.7억</strong> · <strong>14시 27분</strong> · 20억↑ 봉 3개 · 의료기기·인체조직</li>
+<li>🔥 <strong>HT로보틱스</strong> — 최대 <strong>79.7억</strong> · <strong>9시 06분</strong> · 20억↑ 봉 20개 · 배터리·ESS</li>
+<li>🔥 <strong>한선엔지니어링</strong> — 최대 <strong>40.7억</strong> · <strong>9시 10분</strong> · 20억↑ 봉 10개 · 강관·LNG</li>
+<li>🔥 <strong>리브스메드</strong> — 최대 <strong>37.8억</strong> · <strong>13시 12분</strong> · 20억↑ 봉 3개 · 의료기기·수술로봇</li>
+<li>🔥 <strong>서산</strong> — 최대 <strong>34.9억</strong> · <strong>9시 41분</strong> · 20억↑ 봉 6개 · 건설·레미콘</li>
+<li>🔥 <strong>우리로</strong> — 최대 <strong>32.2억</strong> · <strong>14시 52분</strong> · 20억↑ 봉 3개 · 광반도체</li>
+<li>🔥 <strong>펩트론</strong> — 최대 <strong>29.8억</strong> · <strong>9시 34분</strong> · 20억↑ 봉 1개 · 바이오</li>
+<li>🔥 <strong>에코앤드림</strong> — 최대 <strong>24.4억</strong> · <strong>13시 34분</strong> · 20억↑ 봉 1개 · 배터리·ESS</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>큐리옥스바이오시스템</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/16</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>70,800</strong></span><span class="chip"><i>손절 -2%</i>69,400</span><span class="chip"><i>익절 +10%</i>77,900</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+4.0%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+<article class="card"><h4 class="c-t">2</h4><div class="c-c"><span class="chip"><i>종목</i><strong>세코닉스</strong></span><span class="chip"><i>첫흐름</i>10/13</span><span class="chip"><i>다음 날</i>D+4</span><span class="chip"><i>기준가 (매수)</i><strong>3,890</strong></span><span class="chip"><i>손절 -2%</i>3,810</span><span class="chip"><i>익절 +10%</i>4,280</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+7.2%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 도화엔지니어링(<span style="color:#ef4444;font-weight:700">+14%</span>) · 남화산업(<span style="color:#ef4444;font-weight:700">+15%</span>) · 리메드(<span style="color:#ef4444;font-weight:700">+44%</span>)</li>
+<li>제외: 대양금속(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 한스바이오메드(급등 <span style="color:#ef4444;font-weight:700">+24%</span>)</li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 61회 · 익절 <strong>31%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.75%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+107%</span></li>
+<li>실시간만: 1회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-2%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 21회 33% · 업황 17회 35% · 정책 31회 10% · 따라가기 17회 18% · 자본 5회 0% · 사건 2회 50% · 모름 16회 25%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>넥스틸</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/14</span><span class="chip"><i>다음 날</i>D+3</span><span class="chip"><i>기준가 (매수)</i><strong>14,040</strong></span><span class="chip"><i>손절 -2%</i>13,760</span><span class="chip"><i>익절 +10%</i>15,440</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+9.0%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남은 1종목: 희림</li>
+<li>오늘 끝남: 본느 미체결 · 듀켐바이오 선돌파</li>
+<li>재충족 급등 제외: 59회 · 익절 <strong>27%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.15%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+68%</span> (실시간 아직 없음) · 급등: 10회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-22%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">의료기기·수술로봇 + 인체조직 (<code>추정</code> 묶음)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>당일 기사는 웹에서도 확인 안 됨(주가 선행). 美 국채금리 하락으로 바이오가 반등(매경 17:43 ⚠)</p><p class="c-p"><span class="c-k">신선도</span>낮음 (10/01에 시작한 사이클이 다시 불붙음)</p><p class="c-p"><span class="c-k">판단</span>최우선이지만 확신도 &#x27;중하&#x27;. 순수 D+0은 큐리옥스 하나</p><div class="c-c"><span class="chip"><i>수식충족</i>사전테마 &#x27;의료&#x27; 3/4 (75% ★)</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+<article class="card"><h4 class="c-t">반도체 소재·검사 (&#x27;D+0 표시&#x27;)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>지수 반등(리노공업·원익IPS 동반 상승)</p><p class="c-p"><span class="c-k">신선도</span>반발</p><p class="c-p"><span class="c-k">판단</span>⚠ 가짜 D+0일 가능성 높음. 선익시스템만 예외</p><div class="c-c"><span class="chip"><i>수식충족</i>사전테마 &#x27;반도체&#x27; 1/15 (7%)</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+<article class="card"><h4 class="c-t">배터리 전구체·ESS 부품</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>10:44 &quot;전구체 역대 최대 출하 목표&quot;(포착 08:23보다 늦음)</p><p class="c-p"><span class="c-k">신선도</span>진행 중</p><p class="c-p"><span class="c-k">판단</span>10/14 시작, D+2. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 표기 없음</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+<article class="card"><h4 class="c-t">강관·LNG 기자재</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>10/14 &quot;백악관 알래스카 LNG 언급&quot;. 오늘 새 기사는 확인 안 됨</p><p class="c-p"><span class="c-k">신선도</span>재탕 (기대→기대)</p><p class="c-p"><span class="c-k">판단</span>10/14 시작, D+2. 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>대양금속 ★첫흐름</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+<article class="card"><h4 class="c-t">건설·레미콘</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>–</p><p class="c-p"><span class="c-k">신선도</span>후반부</p><p class="c-p"><span class="c-k">판단</span>10/13 시작, D+3, 5일 <span style="color:#ef4444;font-weight:700">+29.9%</span></p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 표기 없음</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+<article class="card"><h4 class="c-t">광반도체</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>우리로 228억 수주 공시(단계 3)</p><p class="c-p"><span class="c-k">신선도</span>사이클 여러 번 돎</p><p class="c-p"><span class="c-k">판단</span>09/09~, D+8</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 표기 없음</span><span class="chip"><i>정보지</i>수집 안 함</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<p>원문에 종목 코드가 없어 종목명만 적었습니다.</p>
+<h3>의료기기·수술로봇</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">큐리옥스바이오시스템</h4><p class="c-p"><span class="c-k">근거</span>D+0 / 대금 30일 1위 / 5일 <span style="color:#7dabf8;font-weight:700">-1.1%</span> / 유일한 순수 D+0. 오늘 재료는 확인 안 됨(주가 선행으로 추정)</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★14봉 (09:34 포착)</span><span class="chip"><i>등락%</i>+18.4</span><span class="chip"><i>대금</i>316억</span></div></article>
+<article class="card"><h4 class="c-t">한스바이오메드</h4><p class="c-p"><span class="c-k">근거</span>D+11 / 직전 급등일 09/29 / 5일 <span style="color:#7dabf8;font-weight:700">-27.0%</span>로 반발 성격 / 대금이 작아 후발주로 판정 / 재료는 재탕</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★9봉 (09:31 포착)</span><span class="chip"><i>등락%</i>+23.9</span><span class="chip"><i>대금</i>110억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>리브스메드</strong><br><strong>37.8억</strong><br><strong>13시 12분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/01에 이미 충족 / D+9 / 대금 30일 1위로 축 대장 후보 / &#x27;스타크&#x27; 허가가 나오면 그날이 실질 D+0</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/01</span><span class="chip"><i>충족봉</i>★4봉</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>473억</span></div></article>
+</div>
+<h3>강관·LNG 기자재</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">대양금속</h4><p class="c-p"><span class="c-k">근거</span>★첫흐름이지만 5일 <span style="color:#ef4444;font-weight:700">+37.6%</span> / 사이클 후발주(대장은 한선엔지니어링) / 재료는 확인 안 됨</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문에 미기재</span><span class="chip"><i>등락%</i>원문에 미기재</span><span class="chip"><i>대금</i>277억</span></div></article>
+</div>
+<h3>반도체 소재·검사</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">네오셈</h4><p class="c-p"><span class="c-k">근거</span>10/02에 이미 충족 / 5일 <span style="color:#7dabf8;font-weight:700">-23.3%</span> / 15시대 2봉뿐이라 첫흐름 아님 / 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/02, 09/23</span><span class="chip"><i>충족봉</i>★2봉 (15:17)</span><span class="chip"><i>등락%</i>+12.6</span><span class="chip"><i>대금</i>154억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">명신산업</h4><p class="c-p"><span class="c-k">근거</span>09/04에 이미 충족 / 정규장이 아닌 애프터 점화 / 대금 30일 3위 / 원인은 웹에서도 확인 안 됨 / 동반 종목 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/04</span><span class="chip"><i>충족봉</i>★11봉 (<strong>17:31 애프터</strong>)</span><span class="chip"><i>등락%</i>+15.6</span><span class="chip"><i>대금</i>261억</span></div></article>
+<article class="card"><h4 class="c-t">카카오게임즈</h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인 / 재료 재탕 / 고점 대비 <span style="color:#7dabf8;font-weight:700">-8%</span>, 종가위치 40%라 제외</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인(29일전 <span style="color:#ef4444;font-weight:700">+18%</span>)</span><span class="chip"><i>충족봉</i>★충족·★눌림 (봉수 미기재)</span><span class="chip"><i>등락%</i>+4.3</span><span class="chip"><i>대금</i>원문에 미기재</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<p>원문에 오늘 충족 표시가 없는 종목들입니다.</p>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">의료기기·인체조직</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>엘앤씨바이오</strong><br><strong>97.7억</strong><br><strong>14시 27분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 –. 이전충족 10/12, D+4, 대금 1,078억(30일 2위). 유상증자라는 자체 재료가 있어 같은 테마인지는 <code>근거 부족</code></p></article>
+<article class="card"><h4 class="c-t">의료기기</h4><p class="c-p"><span class="c-k">종목</span>큐리오시스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 –. 대금 10억(30일 17위), 5일 <span style="color:#7dabf8;font-weight:700">-32.1%</span>, 후발주</p></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">종목</span>엠케이전자</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 –. 이전충족 09/22, 5일 <span style="color:#7dabf8;font-weight:700">-32.0%</span>, 대금 209억으로 반발</p></article>
+<article class="card"><h4 class="c-t">반도체</h4><p class="c-p"><span class="c-k">종목</span>엘티씨</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 –. 5일 <span style="color:#7dabf8;font-weight:700">-28.2%</span>, 대금 116억으로 반발</p></article>
+<article class="card"><h4 class="c-t">반도체(디스플레이)</h4><p class="c-p"><span class="c-k">종목</span>선익시스템</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>오늘충족 –. 다만 5일 <span style="color:#7dabf8;font-weight:700">-0.7%</span>, 대금 30일 1위, 직전최대 1.15배로 완전 신규 자금의 모양. 단독이고 재료 미상</p></article>
+<article class="card hot"><h4 class="c-t">배터리·ESS</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>HT로보틱스</strong><br><strong>79.7억</strong><br><strong>9시 06분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대장(2,739억). 이전충족 10/14·09/22~23. 회전율 216%, 5일 <span style="color:#ef4444;font-weight:700">+31%</span>로 과열권</p></article>
+<article class="card hot"><h4 class="c-t">배터리·ESS</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>에코앤드림</strong> (24.4억 · 13시 34분) / 서진시스템</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>에코앤드림 535억(이전충족 09/30, 5일 <span style="color:#ef4444;font-weight:700">+0.1%</span>로 덜 오름) / 서진시스템 607억(D+12)</p></article>
+<article class="card hot"><h4 class="c-t">강관·LNG</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>한선엔지니어링</strong> (40.7억 · 9시 10분) / 화성밸브</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>한선엔지니어링 1,393억(이전충족 10/14, VWAP 아래·종가위치 58%) / 화성밸브 254억(이전충족 09/30)</p></article>
+<article class="card hot"><h4 class="c-t">건설·레미콘</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>서산</strong><br><strong>34.9억</strong><br><strong>9시 41분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>858억, D+3, 5일 <span style="color:#ef4444;font-weight:700">+29.9%</span></p></article>
+<article class="card hot"><h4 class="c-t">광반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>우리로</strong><br><strong>32.2억</strong><br><strong>14시 52분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>1,011억, D+8, 228억 수주 공시</p></article>
+<article class="card hot"><h4 class="c-t">바이오</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>펩트론</strong><br><strong>29.8억</strong><br><strong>9시 34분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0이지만 이전충족 10/08, 5일 <span style="color:#7dabf8;font-weight:700">-33.5%</span>로 반발</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>TS트릴리온</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+30%</span>이지만 대금 24억이라 매매 대상 밖. 데이터센터 &#x27;추진&#x27; 기사(08:40~08:50)라 기대 단계</p></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">종목</span>자이언트스텝·한국비티비</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>대금 3~4억으로 의미 없음</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (오늘은 정보지를 수집하지 않은 날)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>코스닥 반등이 이어지는지</strong>: 되밀리면 오늘 D+0 표시가 붙은 반도체·바이오는 전부 반발로 확정합니다.</li>
+<li><strong>큐리옥스·리브스메드</strong></li>
+<li>진짜로 볼 신호: 지수가 쉬는 날에도 시가 위에서 버팁니다. 큐리옥스 대금이 158억(오늘 316억의 절반) 이상이거나 허가·수주 공시가 나옵니다.</li>
+<li>아닌 신호: 코스닥과 함께 <span style="color:#7dabf8;font-weight:700">-5%</span> 이상 빠집니다.</li>
+<li><strong>큐리옥스·선익시스템</strong>: 시초 30분 동안 오늘 대금의 1/3 이상을 받으며 시가 위에서 버티는지 봅니다.</li>
+<li><strong>명신산업 애프터 급등의 원인</strong>: 밤사이 테슬라 관련 뉴스나 아침 공시가 있는지, 대금이 이어지는지 봅니다.</li>
+<li><strong>한스바이오메드</strong>: 대금이 10억대로 줄면 제외합니다. <strong>반도체 검사주</strong>는 지수가 보합일 때도 오르면 섹터 순환으로 재평가합니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<p>웹 검색 11회를 마쳤고, 지금 리포트를 정리하고 있습니다.</p>
+<h1>당일 수급·테마 브리핑 — 2026-10-16 (금) [장마감]</h1>
+<p>기준일: 2026-10-16 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<blockquote><p>📰 정보지 교차 절 없음 → 오늘은 정보지를 수집하지 않은 날입니다. 뉴스·주가·웹으로만 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘은 <strong>새 테마가 점화된 날이라기보다 지수가 급락한 뒤 크게 반발한 날</strong>입니다. 코스피는 8거래일 만에 반등해 <span style="color:#ef4444;font-weight:700">+2.1%</span>, 코스닥은 <span style="color:#ef4444;font-weight:700">+4.46%</span>로 마감했고, 낮 12시 55분쯤 코스닥 매수 사이드카도 나왔습니다(웹: 뉴스핌·서울신문). D+0으로 찍힌 11종목 가운데 반도체·바이오 종목은 대부분 <strong>직전5일누적이 -20~<span style="color:#7dabf8;font-weight:700">-35%</span>인 반발 종목</strong>이라 신규 테마로 보면 안 됩니다. 신규에 가장 가까운 것은 <strong>의료기기 묶음의 큐리옥스바이오시스템(★첫흐름·D+0·대금 30일 1위)</strong> 하나입니다. 배터리·ESS(HT로보틱스·에코앤드림)와 강관·LNG(한선엔지니어링·대양금속)는 <strong>10/14에 시작해 오늘 D+2</strong>인 진행 중 테마입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>후보 1. 의료기기·수술로봇 + 인체조직(스킨부스터) — <code>추정</code> 묶음</h3>
+<p>사전테마 &#x27;의료&#x27;에서 충족 3/4로 충족률 75%(★)입니다. 오늘 실제로 살아 있는 묶음은 이것 하나입니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">엘앤씨바이오 (인체조직·피부 ECM)</h4><div class="c-c"><span class="chip"><i>등락%</i>+21.3</span><span class="chip"><i>거래대금(억)</i><strong>1,078</strong></span><span class="chip"><i>D+N</i>D+4</span><span class="chip"><i>오늘충족</i>–</span><span class="chip"><i>이전충족</i>10/12</span><span class="chip"><i>5일누적</i>+5.0</span><span class="chip"><i>30일순위</i>2</span></div></article>
+<article class="card"><h4 class="c-t"><strong>리브스메드</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>거래대금(억)</i><strong>473</strong></span><span class="chip"><i>D+N</i>D+9</span><span class="chip"><i>오늘충족</i>★4봉</span><span class="chip"><i>이전충족</i><strong>10/01</strong></span><span class="chip"><i>5일누적</i>-12.0</span><span class="chip"><i>30일순위</i>1</span></div></article>
+<article class="card"><h4 class="c-t"><strong>큐리옥스바이오시스템</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+18.4</span><span class="chip"><i>거래대금(억)</i>316</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★14봉 <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>5일누적</i>-1.1</span><span class="chip"><i>30일순위</i>1</span></div></article>
+<article class="card"><h4 class="c-t"><strong>한스바이오메드</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+23.9</span><span class="chip"><i>거래대금(억)</i>110</span><span class="chip"><i>D+N</i>D+11</span><span class="chip"><i>오늘충족</i>★9봉 ★첫흐름</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>5일누적</i>-27.0</span><span class="chip"><i>30일순위</i>1</span></div></article>
+<article class="card"><h4 class="c-t">큐리오시스</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>거래대금(억)</i>10</span><span class="chip"><i>D+N</i>D+10</span><span class="chip"><i>오늘충족</i>–</span><span class="chip"><i>이전충족</i>–</span><span class="chip"><i>5일누적</i>-32.1</span><span class="chip"><i>30일순위</i>17</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong>: 가장 이른 이전충족은 리브스메드 <strong>10/01</strong>, 한스바이오메드의 직전 급등일은 09/29입니다. 묶음 전체로 보면 <strong>D+0이 아니라 10/01에 시작한 사이클이 오늘 다시 불붙은 것</strong>입니다. 오늘이 진짜 D+0인 종목은 큐리옥스 하나입니다.</li>
+<li><strong>대장주 / 후발주</strong>:</li>
+<li>수술로봇·장비 쪽 대장 후보는 <strong>리브스메드</strong>입니다. 대금 473억으로 이 축에서 가장 크고, 10/01에 먼저 충족했습니다.</li>
+<li><strong>큐리옥스</strong>는 대금이 316억으로 리브스메드보다 작지만 30일 대금 1위이고, 이력상 오늘이 첫 충족입니다. 이 축에서 신규로 볼 만한 유일한 종목입니다.</li>
+<li>한스바이오메드(110억)와 큐리오시스(10억)는 <strong>후발주</strong>로 판정합니다. 한스는 ★첫흐름이지만 대금이 작고, 5일 <span style="color:#7dabf8;font-weight:700">-27%</span> 뒤의 반발 성격이 강합니다.</li>
+<li>인체조직 쪽은 엘앤씨바이오(1,078억)가 돈이 가장 큽니다. 다만 자체 재료(유상증자 청약 완료)가 있어 의료기기와 같은 테마인지는 <code>근거 부족</code>입니다.</li>
+<li><strong>추정 재료</strong>:</li>
+<li>★첫흐름 3종목(대양금속·한스바이오메드·큐리옥스)의 당일 기사·공시를 찾았지만 <strong>웹에서도 확인 안 됨</strong>입니다. 포착 시각(큐리옥스 09:34, 한스 09:31)보다 앞선 기사가 없으니 <strong>주가 선행</strong>에 해당합니다.</li>
+<li>다만 같은 날 &quot;美 국채금리 하락에 모처럼 웃은 韓 바이오株&quot;(문서: 매일경제 17:43 ⚠) 기사가 있고, 바이오·반도체가 함께 오른 지수 반등일이었습니다(웹: 뉴스핌). 그래서 <strong>헬스케어 전반의 반발에 얹힌 움직임일 가능성</strong>을 먼저 의심해야 합니다.</li>
+<li>확인할 것:</li>
+<li>큐리옥스: 10/06 &#x27;CRO 첫 주문&#x27;의 후속 수주 공시가 나오는지</li>
+<li>리브스메드: &#x27;스타크&#x27; 식약처 품목허가 결과가 나오는지</li>
+<li><strong>재료 단계</strong>:</li>
+<li>큐리옥스: 확정(08/14 5억 수주) → 확정(10/06 톱5 CRO 첫 주문). 같은 단계가 이어지는 것이라 실질 신규 근거로는 약하고, 오늘은 뉴스가 없어 주가가 앞선 것으로 추정합니다.</li>
+<li>리브스메드: 협의·신청(08/10 품목허가 신청) → 기대(10/07 &quot;첫 술식이 중요&quot;). 단계 상승이 없습니다. <strong>허가가 나오면 그날이 단계 3, 실질 D+0</strong>입니다.</li>
+<li>한스바이오메드: 실적·출시 기사만 반복돼 재탕이고 신선도가 낮습니다.</li>
+<li><strong>다음 거래일 확인 조건</strong>:</li>
+<li>✅ 진짜로 볼 신호: 지수가 쉬는 날에도 큐리옥스와 리브스메드가 <strong>시가 위에서 버팁니다.</strong> 그리고 큐리옥스 대금이 오늘(316억)의 절반 이상 유지되거나, 허가·수주 공시가 나옵니다.</li>
+<li>❌ 아닌 신호: 코스닥이 되밀릴 때 같이 <span style="color:#7dabf8;font-weight:700">-5%</span> 이상 빠지면 지수 반발이었던 것입니다. 한스바이오메드는 10억대 대금으로 줄면 제외합니다.</li>
+</ul>
+<h3>후보 2. 반도체 소재·검사 &#x27;D+0 표시&#x27; 묶음 — ⚠ 가짜 D+0일 가능성 높음</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">엠케이전자</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>거래대금(억)</i>209</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>–</span><span class="chip"><i>이전충족</i>09/22</span><span class="chip"><i>5일누적</i>-32.0</span></div></article>
+<article class="card"><h4 class="c-t">네오셈</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.6</span><span class="chip"><i>거래대금(억)</i>154</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>★2봉(15:17)</span><span class="chip"><i>이전충족</i><strong>10/02</strong>, 09/23</span><span class="chip"><i>5일누적</i>-23.3</span></div></article>
+<article class="card"><h4 class="c-t">엘티씨</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.8</span><span class="chip"><i>거래대금(억)</i>116</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>–</span><span class="chip"><i>이전충족</i>–</span><span class="chip"><i>5일누적</i>-28.2</span></div></article>
+<article class="card"><h4 class="c-t">선익시스템 (디스플레이)</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>거래대금(억)</i>205</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>–</span><span class="chip"><i>이전충족</i>–</span><span class="chip"><i>5일누적</i>-0.7</span></div></article>
+</div>
+<ul>
+<li><strong>판단</strong>:</li>
+<li>같은 섹터에서 엑시콘·인텍플러스·오킨스·티에프이·디아이·ISC·HPSP가 일제히 +8~<span style="color:#ef4444;font-weight:700">+22%</span> 올랐습니다. 그런데 사전테마 &#x27;반도체&#x27;(15종목) 가운데 오늘 충족은 1종목(7%)뿐이고, 거의 전부 <strong>전일 -12~<span style="color:#7dabf8;font-weight:700">-18%</span> 급락 직후의 반등</strong>입니다.</li>
+<li>이것은 테마가 아니라 지수 반등입니다(웹: 뉴스핌 &quot;바이오·반도체株 강세&quot;, 리노공업·원익IPS 동반 상승).</li>
+<li>D+0 표시는 &quot;30일 동안 <span style="color:#ef4444;font-weight:700">+10%</span> 상승일이 없었다&quot;는 뜻일 뿐, 신규 자금이 들어왔다는 근거가 되지 못합니다. 대금 30일 순위는 3~11위이고 직전최대대비는 0.4~0.9배입니다.</li>
+<li>네오셈은 이미 10/02에 충족했고 오늘 충족도 15:17 2봉짜리라 <strong>첫흐름이 아닙니다.</strong></li>
+<li><strong>예외로 볼 종목은 선익시스템</strong>입니다. 5일누적 <span style="color:#7dabf8;font-weight:700">-0.7%</span>로 선반영이 없고, 대금 30일 1위·직전최대 1.15배·30일 급등일수 0이라 반발이 아닌 <strong>완전 신규 자금</strong>의 모양입니다. 다만 동반 종목이 없어 테마로 묶을 근거가 없습니다. 재료 미상이고 확인이 필요합니다(OLED 증착장비 수주 공시 여부).</li>
+<li><strong>재료 단계</strong>: 이력 없음 또는 반발입니다. <code>근거 부족</code>.</li>
+<li><strong>다음 거래일 확인 조건</strong>: 지수가 보합일 때도 반도체 검사주가 오르면 그때 섹터 순환으로 재평가합니다. 지수를 따라 되밀리면 무시합니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰용</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>배터리 전구체·ESS 부품</strong></h4><p class="c-p"><span class="c-k">대장 (대금 최대)</span><strong>HT로보틱스</strong> 2,739억 (이전충족 10/14·09/22~23)</p><p class="c-p"><span class="c-k">같이 움직인 종목</span>에코앤드림 535억 (이전충족 09/30), 서진시스템 607억 (D+12)</p><p class="c-p"><span class="c-k">상태</span>D+2. HT로보틱스는 회전율 216%, 5일누적 <span style="color:#ef4444;font-weight:700">+31%</span>로 과열권입니다. 에코앤드림은 5일 <span style="color:#ef4444;font-weight:700">+0.1%</span>로 덜 오른 상태라 관찰합니다.</p><div class="c-c"><span class="chip"><i>시작일</i><strong>10/14</strong></span></div></article>
+<article class="card"><h4 class="c-t"><strong>강관·LNG 기자재</strong></h4><p class="c-p"><span class="c-k">대장 (대금 최대)</span><strong>한선엔지니어링</strong> 1,393억 (이전충족 10/14)</p><p class="c-p"><span class="c-k">같이 움직인 종목</span>대양금속 277억 (★첫흐름이지만 5일 <span style="color:#ef4444;font-weight:700">+37.6%</span>), 화성밸브 254억 (이전충족 09/30)</p><p class="c-p"><span class="c-k">상태</span>D+2. 대양금속은 이 사이클의 <strong>후발주</strong>입니다. 한선엔지니어링은 VWAP 아래·종가위치 58%로 힘이 빠졌습니다.</p><div class="c-c"><span class="chip"><i>시작일</i><strong>10/14</strong></span></div></article>
+<article class="card"><h4 class="c-t">건설·레미콘</h4><p class="c-p"><span class="c-k">대장 (대금 최대)</span>서산 858억</p><p class="c-p"><span class="c-k">같이 움직인 종목</span>–</p><p class="c-p"><span class="c-k">상태</span>D+3, 5일 <span style="color:#ef4444;font-weight:700">+29.9%</span>. 후반부입니다.</p><div class="c-c"><span class="chip"><i>시작일</i>10/13</span></div></article>
+<article class="card"><h4 class="c-t">광반도체</h4><p class="c-p"><span class="c-k">대장 (대금 최대)</span>우리로 1,011억</p><p class="c-p"><span class="c-k">같이 움직인 종목</span>엑스게이트 (같이 안 감)</p><p class="c-p"><span class="c-k">상태</span>D+8. 오늘 228억 수주 공시가 있어 단계 3 재료이지만 사이클은 이미 여러 번 돌았습니다.</p><div class="c-c"><span class="chip"><i>시작일</i>09/09~</span></div></article>
+</div>
+<ul>
+<li>배터리·ESS 재료 단계:</li>
+<li>HT로보틱스: 확정(09/02 &quot;4분기 첫 공급 확정&quot;) → 실적 반영 성격(10/15 &quot;ESS 엔드플레이트 200만개 돌파&quot;). 단계는 올라갔지만 10/14부터 주가가 이미 반영 중입니다.</li>
+<li>에코앤드림: 확정(09/23 177억 수주) → 기대(10/15 &quot;내년 최대 출하 전망&quot;). 단계 상승이 아닙니다.</li>
+<li>오늘 10:44 &quot;내년 전구체 역대 최대 출하 목표에 16%↑&quot; 보도(문서: 뉴스 버즈)는 포착 시각 08:23보다 늦습니다. <strong>주가가 먼저 움직였습니다.</strong></li>
+<li>강관·LNG 재료 단계: 기대(10/14 &quot;美 백악관 알래스카 LNG 언급&quot;, 문서 재료 이력)에서 바뀐 것이 없습니다. 웹에서도 오늘 새 기사는 확인 안 됨입니다. 기대 → 기대이므로 <strong>재탕</strong>입니다.</li>
+<li>오늘 바이오 반등(알테오젠 2,113억, 펩트론, 올릭스 등)은 미국 금리 하락에 따른 섹터 반등입니다. 펩트론은 D+0이지만 이전충족이 10/08이고 5일누적 <span style="color:#7dabf8;font-weight:700">-33.5%</span>라 <strong>반발</strong>로 봅니다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>명신산업</strong> (<span style="color:#ef4444;font-weight:700">+15.6%</span>, 261억, <strong>D+0</strong>, 대금 30일 3위, ★11봉 충족 <strong>17:31 애프터</strong>, 이전충족 09/04)</li>
+<li>정규장이 끝난 뒤 애프터에서 따로 튀었습니다. 장 마감 후 재료가 있었을 가능성이 있습니다. 웹에서도 확인 안 됨입니다.</li>
+<li>재료 이력은 09/21 &quot;테슬라 픽 … 사이버캡·옵티머스&quot; 하나뿐입니다(기대 단계).</li>
+<li>확인할 것: 밤사이 테슬라 관련 뉴스, 내일 아침 공시. 동반 종목이 없어 테마가 아닌 개별주입니다. 내일 대금이 이어지는지가 관건입니다.</li>
+<li><strong>TS트릴리온</strong> (<span style="color:#ef4444;font-weight:700">+30%</span>, 24억, D+0): 2.3조 천안 AI 데이터센터 공동개발 추진 기사가 08:40~08:50에 나왔습니다(문서 기준). 뉴스가 먼저인 재료 상한가이고, 단계는 &#x27;추진&#x27;이라 기대 단계입니다. 대금이 24억이라 매매 대상 밖입니다.</li>
+<li><strong>자이언트스텝·한국비티비</strong> (콘텐츠, 대금 3~4억): 대금이 너무 작아 의미가 없습니다.</li>
+<li><strong>카카오게임즈</strong> (★충족·★눌림 표시, <span style="color:#ef4444;font-weight:700">+4.3%</span>): 신작 &#x27;도깨비의세계&#x27; 흥행 재료가 반복되는 재탕입니다. 첫흐름은 &#x27;미확인(29일전 <span style="color:#ef4444;font-weight:700">+18%</span>)&#x27;입니다. 고점 대비 <span style="color:#7dabf8;font-weight:700">-8%</span>로 밀려 종가위치 40%라 제외합니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 의료기기·수술로봇 (단, 지수 반발일이라 확신도 &#x27;중하&#x27;). 강한 D+0 테마는 오늘 없음</li>
+<li>그 테마의 대장주 (거래대금 최대): 리브스메드 473억 (10/01 선충족). 인체조직 쪽은 엘앤씨바이오 1,078억</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 뚜렷한 종목 없음. 리브스메드는 &#x27;스타크&#x27; 허가가 나오면 실질 D+0 / HT로보틱스는 확정→실적으로 올랐지만 이미 D+2</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 대양금속(강관·LNG, 대장은 한선엔지니어링), 한스바이오메드(대금 110억), 네오셈(10/02 선충족, 15시대 2봉)</li>
+<li>같이 볼 종목: 큐리옥스바이오시스템(유일한 순수 D+0), 선익시스템(선반영 없는 신규 자금, 단독), 명신산업(애프터 단독 점화), 에코앤드림(ESS 테마 내 5일 <span style="color:#ef4444;font-weight:700">+0.1%</span>로 덜 오른 종목)</li>
+<li>진행중이라 눌림만 볼 종목: HT로보틱스·에코앤드림·서진시스템(배터리·ESS, 10/14~) / 한선엔지니어링·화성밸브(LNG, 10/14~) / 우리로·서산·엘앤씨바이오</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>코스닥 반등이 이어지는지 — 되밀리면 오늘 D+0 표시 반도체·바이오는 전부 반발로 확정</li>
+<li>명신산업 애프터 급등의 원인(테슬라 관련 뉴스·공시)과 큐리옥스·리브스메드 수주·허가 공시 여부</li>
+<li>큐리옥스·선익시스템이 시초 30분 동안 오늘 대금의 1/3 이상을 받으며 시가 위에서 버티는지</li>
+</ol>
+<p>```</p>
+<hr>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>[코스닥, 5%대 급등에 &#x27;매수 사이드카&#x27;…바이오·반도체株 강세 (뉴스핌)](https://www.newspim.com/news/view/20261016000911)</li>
+<li>[[마감시황] 코스피, 8거래일 만에 반등해 5660선 회복…코스닥 4%대 ↑ (뉴스핌)](https://www.newspim.com/news/view/20261016001249)</li>
+<li>[코스피 2%대 상승, 8거래일만 반등...코스닥은 매수 사이드카 (서울신문)](https://www.seoul.co.kr/news/economy/2026/10/16/20261016500242)</li>
+<li>[코스피, 급락후 반발매수에 2.1%↑ (세계일보)](https://www.segye.com/newsView/20261016514567)</li>
+<li>[코스피 2%·코스닥 4% 반등 (전자신문)](https://www.etnews.com/20261016000278)</li>
+<li>[HT로보틱스 관련 (MTN, 10/13)](https://news.mtn.co.kr/article/2026101322471596591)</li>
+<li>[한스바이오메드, 셀르디엠·바운스 안착으로 실적 회복기 진입 (머니투데이)](https://www.mt.co.kr/stock/2026/09/11/2026091108453030666)</li>
+<li>[큐리옥스바이오시스템즈 5억원대 수주 (한국경제)](https://www.hankyung.com/article/202608141219i)</li>
+<li>[리브스메드 스타크 기대 급등 (한국경제, 07/31)](https://www.hankyung.com/article/2026073185651)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-16 23:17
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
