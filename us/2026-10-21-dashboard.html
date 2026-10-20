@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-21 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;width:1280px;padding:28px 34px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.hd h1{font-size:30px}.hd .s{color:#9aa0a6;font-size:16px}
+.cards{display:flex;gap:14px;margin-bottom:12px}
+.card{flex:1;background:#1a1d24;border-radius:12px;padding:14px 18px}
+.card .n{color:#9aa0a6;font-size:15px}.card .v{font-size:28px;font-weight:700;margin-top:4px}
+.card .c{font-size:20px;font-weight:700}
+.up{color:#22c55e}.dn{color:#ef4444}
+.strip{background:#1a1d24;border-radius:10px;padding:10px 16px;font-size:15px;color:#e8eaed;margin-bottom:14px;display:flex;gap:26px;flex-wrap:wrap}
+.strip b{color:#9aa0a6;font-weight:400;margin-right:6px}
+.one{font-size:22px;font-weight:700;line-height:1.45;background:#1a1d24;border-left:5px solid #22c55e;border-radius:10px;padding:14px 18px;margin-bottom:14px}
+.grid{display:flex;gap:14px}
+.box{background:#1a1d24;border-radius:12px;padding:14px 18px;flex:1}
+.box h3{font-size:16px;color:#9aa0a6;margin-bottom:10px}
+.box li{font-size:15.5px;line-height:1.5;margin:0 0 7px 18px}
+.bar{margin-bottom:9px;font-size:14px}.bar .t{display:flex;justify-content:space-between;margin-bottom:3px}
+.bar .bg{background:#2a2e37;border-radius:5px;height:10px}.bar .fg{height:10px;border-radius:5px}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.bd{background:#252933;border-radius:7px;padding:5px 9px;font-size:14px}
+.ft{color:#9aa0a6;font-size:13px;margin-top:12px}
+</style></head><body>
+<div class="hd"><h1>2026-10-21 (수) 미국장 브리핑 <span class="s">· 10/20(화) 세션</span></h1><div class="s">수집 채널 7/16</div></div>
+<div class="cards">
+<div class="card"><div class="n">S&amp;P 500</div><div class="v">7,712.57</div><div class="c up">+0.28%</div></div>
+<div class="card"><div class="n">나스닥 종합</div><div class="v">26,424.82</div><div class="c dn">-0.02%</div></div>
+<div class="card"><div class="n">다우존스</div><div class="v">52,495.88</div><div class="c up">+1.02%</div></div>
+</div>
+<div class="strip"><span><b>10년물</b>5.12% (-3bp)</span><span><b>2년물</b>4.79% (+2bp)</span><span><b>달러인덱스</b>101.71 (-0.26%)</span><span><b>WTI 11월물</b>$101.79 (-1.80%)</span><span><b>VIX</b>17.31 (-6.13%)</span><span><b>러셀2000</b>+1.65%</span></div>
+<div class="one">기술주는 제자리, 돈은 우량주·헬스케어로 — 다우 +1.02%·동일가중 S&amp;P +1.15%인데 나스닥 -0.02%. 미-이란 타협안 보도에 WTI 9일 만에 하락, 장 마감 후 스페이스X 호실적.</div>
+<div class="grid">
+<div class="box" style="flex:1.35"><h3>핵심 포인트</h3><ul>
+<li><b>로테이션:</b> 헬스케어 XLV +2.37%·금융 +1.20%·유틸리티 +1.26% vs MAGS -0.37%·SOX -0.29%. 1조 달러 기업 중 아마존·테슬라만 상승</li>
+<li><b>실적 엇갈림:</b> 3M +5.78%·노스롭 +4.57% vs GM -6.84%·GE에어로 -3.67%(호실적에도 하락)</li>
+<li><b>AI 자금줄 공포 지속:</b> 한국 AI 데이터센터 엘리스 상장 첫날 급락, 빅테크 CDS 7월 대비 4배(방송 발언)</li>
+<li><b>주택 급랭:</b> 9월 잠정주택판매 -7.3%(예상 -0.5%), 지수 66.0 — 2001년 집계 이후 최저</li>
+<li><b>오늘 밤:</b> 메타·테슬라·램리서치·IBM·TI 실적 (10/21 장 마감 후)</li>
+</ul></div>
+<div class="box"><h3>채널 합의도</h3>
+<div class="bar"><div class="t"><span>AI 인프라 자금 조달 우려</span><span>5/7</span></div><div class="bg"><div class="fg" style="width:71%;background:#ef4444"></div></div></div>
+<div class="bar"><div class="t"><span>기술주 → 비기술 로테이션</span><span>3/7</span></div><div class="bg"><div class="fg" style="width:43%;background:#22c55e"></div></div></div>
+<div class="bar"><div class="t"><span>이번 주 실적이 분수령</span><span>4/7</span></div><div class="bg"><div class="fg" style="width:57%;background:#9aa0a6"></div></div></div>
+<div class="bar"><div class="t"><span>미-이란 합의 = 금리 하락 촉매</span><span>1/7</span></div><div class="bg"><div class="fg" style="width:14%;background:#22c55e"></div></div></div>
+<h3 style="margin-top:12px">종목</h3><div class="badges">
+<span class="bd">3M <span class="up">+5.78%</span></span><span class="bd">NOC <span class="up">+4.57%</span></span><span class="bd">GWRE <span class="up">+7.08%</span></span><span class="bd">CRWV <span class="up">+1.65%</span></span><span class="bd">TSLA <span class="up">+1.54%</span></span><span class="bd">GM <span class="dn">-6.84%</span></span><span class="bd">GE <span class="dn">-3.67%</span></span><span class="bd">LRCX <span class="dn">-3.21%</span></span><span class="bd">NFLX <span class="dn">-1.66%</span></span><span class="bd">META <span class="dn">-1.59%</span></span><span class="bd">SNDK <span class="dn">-0.42%</span></span><span class="bd">SPCX 시간외 <span class="up">+4%대</span></span>
+</div></div>
+</div>
+<div class="ft">수집: Tier1 연합인포맥스·미주은·소수몽키·IBD·Yahoo·Bloomberg Tech / Tier2 Meet Kevin · 자막 429로 다수 음성 전사 · 원문 2026-10-21_미국장_브리핑.md</div>
+</body></html>
