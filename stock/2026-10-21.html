@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-21 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-21</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-21_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-21 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>📰 오늘은 정보지를 수집하지 않은 날로 보고, 뉴스와 주가만으로 판단했습니다. 종목 코드는 원문에 없어 종목명만 적었습니다.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>코스피가 3%가량 반등했습니다(뉴스1 16:06). 외국인이 한 달 만에 SK하이닉스를 순매수했고, 반도체 소부장과 낙폭이 컸던 종목이 일제히 올랐습니다. 다만 이 종목들은 대부분 <code>D+N = -</code>이고 5일 누적이 -10~<span style="color:#7dabf8;font-weight:700">-30%</span>여서, 새 테마가 아니라 <strong>지수 반등</strong>으로 봅니다. 오늘 새로 점화된 것은 <strong>AI 데이터센터 &#x27;수주 확정&#x27;(혜인·서한, 둘 다 ★첫흐름·상한가)</strong>과 <strong>새내기주 동시 반등(<code>추정</code>)</strong>입니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 6종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>빅웨이브로보틱스</strong> — 최대 <strong>46.3억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 11개 · 새내기주 동시 반등 추정</li>
+<li>🔥 <strong>혜인</strong> — 최대 <strong>45.4억</strong> · <strong>13시 02분</strong> · 20억↑ 봉 2개 · AI 데이터센터 &#x27;수주 확정&#x27;</li>
+<li>🔥 <strong>SK</strong> — 최대 <strong>43.9억</strong> · <strong>11시 14분</strong> · 20억↑ 봉 4개 · 개별</li>
+<li>🔥 <strong>명신산업</strong> — 최대 <strong>39.8억</strong> · <strong>14시 31분</strong> · 20억↑ 봉 9개 · 개별</li>
+<li>🔥 <strong>대한광통신</strong> — 최대 <strong>31.9억</strong> · <strong>10시 40분</strong> · 20억↑ 봉 5개 · AI 데이터센터</li>
+<li>🔥 <strong>서한</strong> — 최대 <strong>29.9억</strong> · <strong>14시 57분</strong> · 20억↑ 봉 1개 · AI 데이터센터 &#x27;수주 확정&#x27;</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>전진건설로봇</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/21</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>37,500</strong></span><span class="chip"><i>손절 -2%</i>36,750</span><span class="chip"><i>익절 +10%</i>41,250</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+1.5%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 카나프테라퓨틱스(<span style="color:#ef4444;font-weight:700">+11%</span>) · 휴니드(<span style="color:#ef4444;font-weight:700">+16%</span>) · DGI(<span style="color:#ef4444;font-weight:700">+17%</span>)</li>
+<li>제외: 한스바이오메드(급등 <span style="color:#ef4444;font-weight:700">+24%</span>) · 혜인(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 서한(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · SK(정책)</li>
+<li>오늘 끝남: 앤로보틱스 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 에브리봇 선돌파 · 에스팀 선돌파</li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 62회 · 익절 <strong>31%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.68%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+104%</span></li>
+<li>실시간만: 2회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-4%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 21회 33% · 업황 17회 35% · 정책 31회 10% · 따라가기 18회 17% · 자본 5회 0% · 사건 2회 50% · 모름 16회 25%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>코리아써키트</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/20</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>79,300</strong></span><span class="chip"><i>손절 -2%</i>77,700</span><span class="chip"><i>익절 +10%</i>87,200</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+9.5%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>빅텍</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/20</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>3,445</strong></span><span class="chip"><i>손절 -2%</i>3,375</span><span class="chip"><i>익절 +10%</i>3,790</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+7.7%</span></span><span class="chip"><i>재료</i>자기호재</span></div></article>
+<article class="card"><h4 class="c-t"><strong>티로보틱스</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/20</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>14,170</strong></span><span class="chip"><i>손절 -2%</i>13,890</span><span class="chip"><i>익절 +10%</i>15,590</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+5.4%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>현대약품</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/20</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>8,150</strong></span><span class="chip"><i>손절 -2%</i>7,990</span><span class="chip"><i>익절 +10%</i>8,960</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+6.8%</span></span><span class="chip"><i>재료</i>자기호재</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남은 2종목: 나노팀 · 삼익제약</li>
+<li>제외: 레몬헬스케어(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>오늘 끝남: 넥스틸 미체결 · 플리토 선돌파</li>
+<li>재충족 급등 제외: 59회 · 익절 <strong>27%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.15%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+68%</span> (실시간 아직 없음) · 급등: 10회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-22%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">AI 데이터센터 &#x27;수주 확정&#x27;</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>혜인: 포항 AI DC에 463억 비상발전기 공급(이데일리 15:35) / 서한: 삼성역 엣지 AI DC 수주(헤럴드경제 06:07). 두 기사 모두 웹에서는 확인 안 됨</p><p class="c-p"><span class="c-k">수식충족</span>혜인·서한 ★첫흐름</p><p class="c-p"><span class="c-k">신선도</span>묶음은 D+0, 큰 테마는 09/09부터 진행(대한광통신 D+19)</p><p class="c-p"><span class="c-k">판단</span>최우선 D+0, 재료가 &#x27;확정&#x27; 단계로 올라감</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">새내기주 동시 반등 <code>추정</code></h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>재료 미상 — 확인 필요(지수 반등일에 낙폭 큰 새내기주로 수급이 몰린 것으로 추정)</p><p class="c-p"><span class="c-k">수식충족</span>빅웨이브 ★(첫흐름 미확인)·글로벌테크 ★(10/14 이미 충족) / 멜콘·엘리스 미충족</p><p class="c-p"><span class="c-k">신선도</span>오늘 시작</p><p class="c-p"><span class="c-k">판단</span>같이 볼 종목. 대금 1,000억 이상이 동시에 몰림</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">로봇</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>재료 미상</p><p class="c-p"><span class="c-k">수식충족</span>앤로보틱스·에브리봇은 10/20에 충족</p><p class="c-p"><span class="c-k">신선도</span>D+1(10/20 시작)</p><p class="c-p"><span class="c-k">판단</span>진행 중, 눌림만 관찰</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">반도체 소부장 반등</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>지수·SK하이닉스 반등(외국인이 한 달 만에 순매수)</p><p class="c-p"><span class="c-k">수식충족</span>원문에 표기 없음</p><p class="c-p"><span class="c-k">신선도</span><code>D+N = -</code> 위주, 5일 -8~<span style="color:#7dabf8;font-weight:700">-30%</span></p><p class="c-p"><span class="c-k">판단</span>신규 재료 없는 기술적 반등</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">엔터·콘텐츠</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>자이언트스텝 조회공시 답변 &quot;중요정보 없음&quot;(16:17)</p><p class="c-p"><span class="c-k">수식충족</span>에스팀은 10/20에 충족</p><p class="c-p"><span class="c-k">신선도</span>D+1</p><p class="c-p"><span class="c-k">판단</span>후반부</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">우주</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문에 없음</p><p class="c-p"><span class="c-k">수식충족</span>LK삼양 D+2</p><p class="c-p"><span class="c-k">신선도</span>진행 중</p><p class="c-p"><span class="c-k">판단</span>진행 중</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">진단·의료</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>공통 재료 없음</p><p class="c-p"><span class="c-k">수식충족</span>원문에 표기 없음</p><p class="c-p"><span class="c-k">신선도</span>–</p><p class="c-p"><span class="c-k">판단</span>테마로 보기엔 근거 부족</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>SK 지주사 이슈 / 명신산업 미국 자회사 상장 철회 / 푸드나무 경영권 인수 / DGI 거래재개 추정</p><p class="c-p"><span class="c-k">수식충족</span>SK·DGI ★첫흐름</p><p class="c-p"><span class="c-k">신선도</span>–</p><p class="c-p"><span class="c-k">판단</span>테마 아님</p><div class="c-c"><span class="chip"><i>정보지</i>미수집</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>AI 데이터센터 &#x27;수주 확정&#x27;</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>혜인</strong><br><strong>45.4억</strong><br><strong>13시 02분</strong></h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 2.6배 / 묶음 대장(서한의 2배). 주가가 기사보다 2시간 반 먼저 움직임. 실질 D+0 가능성 높음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★24봉 12:58</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>234억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>서한</strong><br><strong>29.9억</strong><br><strong>14시 57분</strong></h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 7.3배 / 실질 D+0. 늦게 충족해 후발주로 판정. 기사가 먼저, 주가는 오후 늦게 반응</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★24봉 14:46</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>120억</span></div></article>
+<article class="card"><h4 class="c-t">빛샘전자</h4><p class="c-p"><span class="c-k">근거</span>10/14에 이미 충족, D+0 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/14 외 5</span><span class="chip"><i>충족봉</i>★10봉</span><span class="chip"><i>등락%</i>+5.2</span><span class="chip"><i>대금</i>394억</span></div></article>
+</div>
+<h3>새내기주 동시 반등 <code>추정</code></h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>빅웨이브로보틱스</strong><br><strong>46.3억</strong><br><strong>9시 02분</strong></h4><p class="c-p"><span class="c-k">근거</span>첫흐름 미확인(확신도 낮음) / D+1 / 30일 고가 대비 <span style="color:#7dabf8;font-weight:700">-64.5%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인(11일 전)</span><span class="chip"><i>충족봉</i>★13봉</span><span class="chip"><i>등락%</i>+14.1</span><span class="chip"><i>대금</i>1,137억</span></div></article>
+<article class="card"><h4 class="c-t">글로벌테크놀로지</h4><p class="c-p"><span class="c-k">근거</span>10/14에 이미 충족 / 30일 고가 대비 <span style="color:#7dabf8;font-weight:700">-74.7%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/14</span><span class="chip"><i>충족봉</i>★2봉</span><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금</i>251억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>SK</strong><br><strong>43.9억</strong><br><strong>11시 14분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0. 주가가 뉴스(특구법 16:30·얼라인 18:12)보다 먼저 움직임. 동반 종목 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>11:16</span><span class="chip"><i>등락%</i>+12.3</span><span class="chip"><i>대금</i>1,572억</span></div></article>
+<article class="card"><h4 class="c-t">DGI</h4><p class="c-p"><span class="c-k">근거</span>약 4년 거래정지 뒤 오늘 거래재개일로 추정(10일 등락 0.0, 직전 봉 0개). 테마 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>원문에 없음</span><span class="chip"><i>등락%</i>+11.2</span><span class="chip"><i>대금</i>원문에 없음</span></div></article>
+<article class="card"><h4 class="c-t">전진건설로봇</h4><p class="c-p"><span class="c-k">근거</span>프리마켓에 단독으로 움직임. 사전테마는 &#x27;건설 재건&#x27;이고 AI DC 재료가 없어 같은 테마로 묶을 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★8봉 08:08</span><span class="chip"><i>등락%</i>+6.8</span><span class="chip"><i>대금</i>129억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>명신산업</strong><br><strong>39.8억</strong><br><strong>14시 31분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+2. 미국 자회사 나스닥 상장 철회. 뉴스(10:12)가 먼저 나옴</p><div class="c-c"><span class="chip"><i>첫흐름</i>원문에 없음</span><span class="chip"><i>충족봉</i>14:42</span><span class="chip"><i>등락%</i>원문에 없음</span><span class="chip"><i>대금</i>1,855억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">AI 데이터센터</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>대한광통신</strong><br><strong>31.9억</strong><br><strong>10시 40분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G2 11회). D+19로 이미 진행 중인 대장. 대금 1,743억이지만 30일 13위, 직전최대 0.2배라 새 자금 아님</p></article>
+<article class="card"><h4 class="c-t">새내기주 <code>추정</code></h4><p class="c-p"><span class="c-k">종목</span>엘리스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G2 580회). 10/20 상장(2일차), 전일 <span style="color:#7dabf8;font-weight:700">-31.9%</span> → 상한가. 직전 누적봉이 2,000개 미만이라 지표 신뢰 낮음</p></article>
+<article class="card"><h4 class="c-t">새내기주 <code>추정</code></h4><p class="c-p"><span class="c-k">종목</span>멜콘</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. 문서 데이터가 5일치뿐이라 직전 누적봉 부족 경고</p></article>
+</div>
+<p>※ 로봇·반도체 소부장·엔터·진단 종목은 원문에 오늘 충족 여부가 표기되어 있지 않습니다(테마 요약 참조). 푸드나무(1,058억, 전일 대비 83배, 경영권 인수 M&amp;A 개별주)도 마찬가지입니다.</p>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음(오늘은 정보지를 수집하지 않음)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>혜인 463억 계약의 DART 공시 시각</strong>: 12:58보다 앞서면 뉴스 선행, 뒤면 주가 선행입니다(웹에서는 확인 안 됨).</li>
+<li><strong>혜인·서한 갭과 대금</strong>: 상한가 이후 갭을 지키고 대금이 오늘(234억·120억) 이상 붙으면 진짜입니다. 시가 갭이 메워지고 대금이 절반 이하로 줄면 1회성 수주 공시입니다.</li>
+<li><strong>확산 여부</strong>: 다른 데이터센터 전력·건설주가 함께 오르면 진짜입니다. 대한광통신만 혼자 강하면 이미 진행 중인 광통신 테마입니다.</li>
+<li><strong>새내기주</strong>: 엘리스가 공모가 90,500원 근처까지 이어 가고 멜콘과 함께 대금을 유지하면 테마로 인정합니다. 어느 한쪽만 남으면 개별 반등입니다.</li>
+<li><strong>SK</strong>: 얼라인 이슈 후속 보도를 확인합니다. 장 마감 후 18:12 기사라 내일 반영됩니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 브리핑 — 2026-10-21 (수) [장마감]</h1>
+<p>기준일: 2026-10-21 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<blockquote><p>📰 정보지 교차 절이 없습니다. 오늘은 정보지를 수집하지 않은 날로 보고, 뉴스와 주가만으로 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>코스피가 3%가량 반등한 날입니다(문서 뉴스: 뉴스1 16:06). 반도체 소부장과 낙폭이 컸던 종목이 일제히 튀었지만, 대부분 <code>D+N = -</code>이고 5일 누적이 -10~<span style="color:#7dabf8;font-weight:700">-30%</span>라서 <strong>새 테마가 아니라 지수 반등</strong>입니다. 새로 점화된 것으로 볼 만한 묶음은 둘입니다. 하나는 <strong>AI 데이터센터 수주가 확정된 혜인·서한</strong>으로, 둘 다 ★첫흐름에 상한가입니다. 다른 하나는 <strong>대금 1,000억 이상이 동시에 몰린 새내기주(엘리스·멜콘·빅웨이브로보틱스)</strong>입니다. 로봇(앤로보틱스·에브리봇·빅웨이브)은 10/20에 먼저 충족해서 <strong>오늘은 D+1</strong>입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. AI 데이터센터 인프라 &#x27;수주 확정&#x27;(전력설비·건설)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">대한광통신 (광케이블)</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.1</span><span class="chip"><i>대금(억)</i><strong>1,743</strong></span><span class="chip"><i>D+N</i>D+19</span><span class="chip"><i>오늘충족</i>미충족(G2 11)</span><span class="chip"><i>이전충족</i>10/07 외 3 (최초 09/09)</span><span class="chip"><i>첫흐름</i>–</span></div></article>
+<article class="card"><h4 class="c-t"><strong>혜인</strong> (비상발전기)</h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+30.0</strong></span><span class="chip"><i>대금(억)</i><strong>234</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>★24봉 12:58</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">빛샘전자 (통신장비)</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.2</span><span class="chip"><i>대금(억)</i>394</span><span class="chip"><i>D+N</i>–</span><span class="chip"><i>오늘충족</i>★10봉</span><span class="chip"><i>이전충족</i>10/14 외 5</span><span class="chip"><i>첫흐름</i>–</span></div></article>
+<article class="card"><h4 class="c-t"><strong>서한</strong> (건설)</h4><div class="c-c"><span class="chip"><i>등락%</i><strong>+29.9</strong></span><span class="chip"><i>대금(억)</i>120</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★24봉 14:46</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span></div></article>
+<article class="card"><h4 class="c-t">전진건설로봇 (참고)</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.8</span><span class="chip"><i>대금(억)</i>129</span><span class="chip"><i>D+N</i>–</span><span class="chip"><i>오늘충족</i>★8봉 08:08</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>첫흐름</i>★첫흐름</span></div></article>
+</div>
+<p><strong>테마 시작일 추정</strong></p>
+<ul>
+<li>&#x27;AI 데이터센터&#x27;라는 큰 테마는 대한광통신이 09/09에 충족한 뒤로 이미 한 달 넘게 진행 중입니다.</li>
+<li>오늘 새로 생긴 것은 그 안의 <strong>&#x27;수주 확정&#x27; 하위 묶음(혜인·서한)</strong>입니다. 혜인은 10/16과 10/19에도 <span style="color:#ef4444;font-weight:700">+13%</span>, <span style="color:#ef4444;font-weight:700">+12%</span> 올랐지만, 오늘이 수식상 첫 충족입니다.</li>
+</ul>
+<p><strong>대장주 / 후발주</strong></p>
+<ul>
+<li>테마 전체에서 돈이 가장 큰 종목은 <strong>대한광통신(1,743억)</strong>입니다. 다만 D+19라서 이미 진행 중인 대장입니다.</li>
+<li>미국 하이퍼스케일러용 2차 물량 공급 개시 버즈가 11:59에 처음 떴습니다(6건/5채널).</li>
+<li>30일 대금순위 13위, 직전최대 대비 0.2배라서 새 자금은 아닙니다.</li>
+<li>수주 확정 묶음 안의 대장은 <strong>혜인</strong>입니다. 대금 234억으로 서한의 2배이고, 12:58에 먼저 충족했습니다.</li>
+<li><strong>서한은 후발주</strong>로 판정합니다. 14:46에 늦게 충족했고, 대금은 120억입니다.</li>
+<li>전진건설로봇은 사전테마가 &#x27;건설 재건&#x27;으로 같지만, 08:08 프리마켓에 단독으로 움직였고 AI 데이터센터 재료도 없습니다. 같은 테마로 묶기에는 <strong>근거가 부족</strong>합니다.</li>
+</ul>
+<p><strong>추정 재료</strong></p>
+<ul>
+<li>혜인: 포항 AI 데이터센터에 463억 원 규모 비상발전기 공급(문서: 이데일리 15:35).</li>
+<li>주가 포착이 12:58이라 <strong>주가가 기사보다 2시간 반 앞섰습니다.</strong></li>
+<li>기사는 장중 공시를 뒤따라 썼을 가능성이 있습니다(문서: 서울경제 &#x27;기업 공시 [10월 21일]&#x27;).</li>
+<li>웹에서는 463억 계약 기사를 찾지 못했습니다(웹에서도 확인 안 됨). 대신 10/15에 &quot;AI 데이터센터 비상발전기 선점&quot; 리포트 성격의 기사가 있었다는 것만 확인됐습니다(웹: 아시아경제).</li>
+<li>서한: 삼성역 엣지 AI 데이터센터 수주(문서: 헤럴드경제 06:07).</li>
+<li><strong>기사가 먼저 나왔고, 주가는 오후 늦게 반응했습니다.</strong></li>
+<li>웹에서는 이 기사를 찾지 못했습니다(웹에서도 확인 안 됨).</li>
+</ul>
+<p><strong>재료 단계</strong></p>
+<ul>
+<li>혜인: 기대(10/15 &quot;선점 기대&quot;) → <strong>확정(10/21 463억 공급)</strong>. 단계가 올라갔고, 대금 30일 1위·직전최대 2.6배가 받쳐 줍니다. <strong>실질 D+0 가능성이 높습니다.</strong></li>
+<li>서한: 기대(10/19 &quot;짓는다&quot;) → 협의(10/20 우선협상자 선정, 1,296억) → <strong>확정(10/21 수주)</strong>. 단계가 올라갔고, 대금 30일 1위·직전최대 7.3배입니다. <strong>실질 D+0입니다.</strong></li>
+</ul>
+<p><strong>다음 거래일 확인 조건</strong></p>
+<ul>
+<li>✅ 진짜인 경우</li>
+<li>혜인·서한이 상한가 이후 갭을 지키고, 대금이 오늘 이상 붙습니다.</li>
+<li>다른 데이터센터 전력·건설주로 동반 확산됩니다.</li>
+<li>❌ 아닌 경우</li>
+<li>시가 갭이 메워지고 대금이 절반 이하로 줄어듭니다. 그러면 개별 수주 공시 1회성입니다.</li>
+<li>대한광통신만 혼자 강하면 이미 진행 중인 광통신 테마로 봅니다.</li>
+</ul>
+<h3>🥈 2. 새내기주 동시 반등 <code>추정</code></h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">멜콘</h4><div class="c-c"><span class="chip"><i>등락%</i>+27.4</span><span class="chip"><i>대금(억)</i><strong>1,214</strong></span><span class="chip"><i>D+N</i>D+4</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>비고</i>문서 데이터가 5일치뿐, 직전 누적봉 부족 경고</span></div></article>
+<article class="card"><h4 class="c-t">엘리스</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>1,195</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족(G2 580)</span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>비고</i>상장 2일차, 전일 <span style="color:#7dabf8;font-weight:700">-31.9%</span> → 상한가</span></div></article>
+<article class="card"><h4 class="c-t">빅웨이브로보틱스</h4><div class="c-c"><span class="chip"><i>등락%</i>+14.1</span><span class="chip"><i>대금(억)</i>1,137</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>★13봉</span><span class="chip"><i>이전충족</i>미확인(11일 전)</span><span class="chip"><i>비고</i>30일 고가 대비 <span style="color:#7dabf8;font-weight:700">-64.5%</span></span></div></article>
+<article class="card"><h4 class="c-t">글로벌테크놀로지</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금(억)</i>251</span><span class="chip"><i>D+N</i>–</span><span class="chip"><i>오늘충족</i>★2봉</span><span class="chip"><i>이전충족</i>10/14</span><span class="chip"><i>비고</i>30일 고가 대비 <span style="color:#7dabf8;font-weight:700">-74.7%</span></span></div></article>
+</div>
+<ul>
+<li><strong>시작일</strong>: 오늘이 시작입니다. 엘리스는 <strong>10/20에 코스닥에 상장했고 공모가는 9만500원</strong>입니다(웹: SBS Biz). 상장 2일차에 상한가로 돌아섰습니다(문서: 한국일보 16:55 &quot;엘리스도 상한가 반전&quot;).</li>
+<li><strong>대장주</strong>: 멜콘(1,214억)과 엘리스(1,195억)가 비슷합니다. 엘리스는 충족 이력 없이 G2만 580회 나왔습니다. 다만 직전 누적봉이 2,000개 미만이라 지표 신뢰가 낮습니다.</li>
+<li><strong>추정 재료</strong>: 재료 미상 — 확인 필요합니다. 지수가 반등한 날 낙폭이 컸던 새내기주로 수급이 몰린 것으로 추정합니다.</li>
+<li>확인할 것: 상장일, 공모가 대비 위치, 보호예수 해제 일정.</li>
+<li><strong>재료 단계</strong>: 이력 없음 — 주가 선행 추정입니다.</li>
+<li><strong>다음 거래일 확인 조건</strong>: 엘리스가 공모가(90,500원) 근처까지 이어 가고, 멜콘과 엘리스가 함께 대금을 유지하면 테마로 인정합니다. 어느 한쪽만 남으면 개별 반등입니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상) — 눌림 관찰만</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>로봇</strong></h4><p class="c-p"><span class="c-k">종목(대금순)</span>HT로보틱스 3,454억(D+3, 5일 <span style="color:#ef4444;font-weight:700">+53.5%</span>, 09/22부터 충족) · 빅웨이브 1,137억 · 앤로보틱스 590억(D+0이지만 <strong>10/20 충족</strong>) · 에브리봇 312억(D+0이지만 <strong>10/20 충족</strong>)</p><p class="c-p"><span class="c-k">판정</span>테마 시작일은 <strong>10/20</strong>, 오늘은 D+1입니다. 대장은 HT로보틱스지만 사전테마가 &#x27;배터리 부품&#x27;이라 같은 성격인지는 근거 부족입니다. 재료 미상입니다.</p></article>
+<article class="card"><h4 class="c-t">반도체 소부장 반등</h4><p class="c-p"><span class="c-k">종목(대금순)</span>두산테스나 1,446억 · 케이씨텍 478 · 뉴파워프라즈마 478 · 한양디지텍 310 · 예스티 271 · 코미코 259</p><p class="c-p"><span class="c-k">판정</span>5일 누적 -8~<span style="color:#7dabf8;font-weight:700">-30%</span>, <code>D+N = -</code> 위주입니다. 신규 재료가 아니라 <strong>지수와 SK하이닉스 반등에 따른 기술적 반등</strong>입니다(문서 뉴스: 외국인이 한 달 만에 SK하이닉스 순매수).</p></article>
+<article class="card"><h4 class="c-t">엔터·콘텐츠</h4><p class="c-p"><span class="c-k">종목(대금순)</span>에스팀 346억(D+1, 10/20 충족) · 자이언트스텝 139억(D+1, 5일 <span style="color:#ef4444;font-weight:700">+54.7%</span>)</p><p class="c-p"><span class="c-k">판정</span>자이언트스텝은 조회공시에 &quot;중요정보 없음&quot;으로 답했습니다(버즈 16:17). 후반부입니다.</p></article>
+<article class="card"><h4 class="c-t">우주</h4><p class="c-p"><span class="c-k">종목(대금순)</span>LK삼양(D+2) · 에이치브이엠</p><p class="c-p"><span class="c-k">판정</span>진행 중입니다.</p></article>
+<article class="card"><h4 class="c-t">진단·의료</h4><p class="c-p"><span class="c-k">종목(대금순)</span>나노엔텍 390억(<strong>순매수 <span style="color:#7dabf8;font-weight:700">-16%</span></strong>) · 레메디(이전충족 4회) · 레몬헬스케어 223억(D+0, 이전충족 09/28) · 큐리옥스(D+3)</p><p class="c-p"><span class="c-k">판정</span>공통 재료가 없습니다. 테마로 보기에는 근거 부족입니다.</p></article>
+</div>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>SK (<span style="color:#ef4444;font-weight:700">+12.3%</span>, 1,572억, D+0, ★첫흐름 11:16)</strong>: 혼자 움직인 대형 지주사입니다. 충족 시점(11:16)이 아래 뉴스보다 모두 앞서서 <strong>주가가 뉴스보다 먼저 움직였습니다.</strong> 동반 종목이 없어서 테마가 아닌 개별주로 분류합니다.</li>
+<li>초광역특구법의 &#x27;SK 맞춤&#x27; 특례(문서: 한겨레 16:30)</li>
+<li>얼라인의 SK 지분 공개와 &quot;지주사 할인 해소&quot; 요구(문서: 한국경제 18:12)</li>
+<li>웨스팅하우스 지분 투자 검토 보도는 웹에서도 확인됩니다(웹: 토요경제).</li>
+<li><strong>명신산업 (1,855억, D+2)</strong>: 미국 자회사 나스닥 상장 철회(중복상장 반대)라는 재료입니다. 버즈는 10:12, 충족은 14:42라서 뉴스가 먼저였습니다.</li>
+<li><strong>푸드나무 (1,058억, 전일 대비 83배)</strong>: 하한가 2번 뒤 그린하버가 355억에 경영권을 인수한다는 재료입니다(버즈 12:24). M&amp;A 개별주입니다.</li>
+<li><strong>DGI (<span style="color:#ef4444;font-weight:700">+11.2%</span>, ★첫흐름)</strong>: 2021년 3월부터 감사의견 거절로 <strong>약 4년간 거래가 정지됐던</strong> 종목입니다(웹: 딜사이트). 문서상 최근 10일 등락이 모두 0.0이고 직전 봉이 0개라서 <strong>오늘이 거래재개일로 추정</strong>합니다. 테마가 아닙니다.</li>
+<li><strong>지투지바이오 (D+1)</strong>: 중국 제약사와 손잡았다는 재료입니다. <strong>디케이락 (D+11)</strong>은 재료 미상입니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: AI 데이터센터 인프라 &#x27;수주 확정&#x27;(혜인·서한) — 둘 다 ★첫흐름 + 상한가 + 대금 30일 1위</li>
+<li>그 테마의 대장주 (거래대금 최대): 테마 전체는 대한광통신 1,743억(D+19, 진행 중) / 수주 확정 묶음은 혜인 234억</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 혜인(기대→확정 463억), 서한(기대→협의→확정)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 서한(14:46 충족, 120억), 에브리봇·앤로보틱스(로봇은 10/20 시작)</li>
+<li>같이 볼 종목: 엘리스·멜콘(새내기주 동시 대금 1,000억↑), SK(D+0 개별·지주사), 빛샘전자</li>
+<li>진행중이라 눌림만 볼 종목: HT로보틱스, 빅웨이브로보틱스, 대한광통신, 명신산업, 에스팀, 자이언트스텝, 지투지바이오</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>혜인 463억 계약의 DART 공시 시각 — 12:58 포착보다 앞서면 뉴스 선행, 뒤면 주가 선행 (웹에서는 확인 안 됨)</li>
+<li>혜인·서한 상한가 잔량과 NXT 프리마켓 갭 유지, 그리고 다른 데이터센터 전력·건설주로의 확산 여부</li>
+<li>엘리스·멜콘 동반 강세 지속 여부와 SK의 얼라인 이슈 후속 보도 (장 마감 후 18:12 기사라 내일 반영)</li>
+</ol>
+<p>```</p>
+<p><strong>웹 출처</strong></p>
+<ul>
+<li>[SBS Biz — 엘리스그룹 코스닥 신규 상장…20일 거래 개시](https://biz.sbs.co.kr/amp/article/20000340482)</li>
+<li>[딜사이트 — DGI 거래재개 관련](https://dealsite.co.kr/articles/137449)</li>
+<li>[아시아경제 — 혜인 AI 데이터센터 비상발전기 (10/15)](https://core.asiae.co.kr/article/2026101509464626720)</li>
+<li>[토요경제 — SK그룹 웨스팅하우스 투자 검토](https://sateconomy.co.kr/news/view/1065590401111905)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-22 00:10
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
