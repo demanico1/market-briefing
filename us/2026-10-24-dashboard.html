@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-24 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 36px;width:1280px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.hd h1{font-size:30px}.hd .s{color:#9aa0a6;font-size:16px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.idx .n{color:#9aa0a6;font-size:15px}.idx .v{font-size:30px;font-weight:700;margin-top:4px}.idx .c{font-size:20px;font-weight:700;margin-top:2px}
+.up{color:#22c55e}.dn{color:#ef4444}
+.macro{display:flex;gap:28px;font-size:16px;color:#9aa0a6}.macro b{color:#e8eaed;margin-left:6px}
+.one{font-size:22px;line-height:1.5;font-weight:600}
+.pts li{margin:0 0 8px 20px;font-size:16px;line-height:1.45}
+.t{color:#9aa0a6;font-size:14px;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.bar{display:flex;align-items:center;margin-bottom:9px;font-size:14px}
+.bar .l{width:130px;color:#9aa0a6}.bar .tr{flex:1;background:#2a2e37;border-radius:6px;height:16px;overflow:hidden}
+.bar .f{height:100%;border-radius:6px}.bar .p{width:56px;text-align:right}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bd{background:#252932;border-radius:8px;padding:7px 11px;font-size:14px}.bd b{margin-left:6px}
+.ft{color:#9aa0a6;font-size:13px;margin-top:6px}
+</style></head><body>
+<div class="hd"><h1>2026-10-24 (토) 미국장 브리핑 <span style="font-size:18px;color:#9aa0a6">· 10/23(금) 세션</span></h1><div class="s">수집 채널 8/16</div></div>
+<div class="row">
+<div class="card idx"><div class="n">S&amp;P 500</div><div class="v">7,623.68</div><div class="c dn">-0.52%</div></div>
+<div class="card idx"><div class="n">나스닥 종합</div><div class="v">25,955.34</div><div class="c dn">-0.21%</div></div>
+<div class="card idx"><div class="n">다우존스</div><div class="v">52,215.16</div><div class="c dn">-1.23%</div></div>
+<div class="card idx"><div class="n">필라델피아 반도체</div><div class="v">10,779.46</div><div class="c up">+0.44%</div></div>
+</div>
+<div class="card macro" style="margin-bottom:14px"><span>미 10년물<b>5.00% (+4bp)</b></span><span>달러인덱스<b>101.75</b></span><span>WTI 12월물<b class="up">$103.27 +3.82%</b></span><span>브렌트 12월물<b class="up">$116.72 +3.14%</b></span><span>VIX<b>19.45</b></span><span>금<b class="dn">~$4,010 -1.24%</b></span></div>
+<div class="card" style="margin-bottom:14px"><div class="one">기술주 투매가 멎자 이번엔 우량주가 팔렸다 — "이번 주말 이란 공격 가능" 발언에 브렌트 6개월 최고, 다우 -1.23%</div></div>
+<div class="row">
+<div class="card" style="flex:1.5"><div class="t">핵심 포인트</div><ul class="pts">
+<li>다우 구성 종목 대부분 2% 안팎 하락 — 아멕스 -3.65%(인력 5% 감원), 코카콜라 -2.76%, P&amp;G -2.12%</li>
+<li>전날 피난처였던 필수소비재 XLP -1.92% ↔ 에너지 XLE +2.60%만 강세, 기술 XLK +0.49%</li>
+<li>반도체 하루 반등(SOX +0.44%, 마이크론 +2.46%) — 주간으로는 SOX -3.21%</li>
+<li>소프트웨어 피난: IGV +1.72%, 크라우드스트라이크 +8.25%</li>
+<li>미시간대 기대인플레 1년 4.7%·5년 3.5% 5월 이후 최고 — 10년물 5.00% 복귀, 금 4,000달러 이탈</li>
+</ul></div>
+<div class="card"><div class="t">채널 톤 합의도 (8채널)</div>
+<div class="bar"><span class="l">신중·방어</span><span class="tr"><span class="f" style="width:50%;display:block;background:#9aa0a6"></span></span><span class="p">4/8</span></div>
+<div class="bar"><span class="l">강세·저가매수</span><span class="tr"><span class="f" style="width:37.5%;display:block;background:#22c55e"></span></span><span class="p">3/8</span></div>
+<div class="bar"><span class="l">위험회피</span><span class="tr"><span class="f" style="width:12.5%;display:block;background:#ef4444"></span></span><span class="p">1/8</span></div>
+<div class="ft">강세: 미트 케빈·미주은·인포맥스(문홍철) / 신중: IBD·야후·블룸버그·ZipTrader / 위험회피: 로스 캐머런</div>
+</div></div>
+<div class="card" style="margin-bottom:10px"><div class="t">종목</div><div class="badges">
+<span class="bd">CRWD<b class="up">+8.25%</b></span><span class="bd">AXP<b class="dn">-3.65%</b></span><span class="bd">BE<b class="dn">-11.24%</b></span><span class="bd">MU<b class="up">+2.46%</b></span><span class="bd">AMD<b class="up">+1.74%</b></span><span class="bd">INTC<b class="up">+1.72%</b></span><span class="bd">MSFT<b class="up">+0.66%</b></span><span class="bd">AAPL<b class="dn">-0.14%</b></span><span class="bd">NVDA<b class="dn">-0.59%</b></span><span class="bd">META<b class="dn">-0.96%</b></span><span class="bd">TSLA<b class="dn">-0.63%</b></span><span class="bd">CRWV<b class="dn">-2.46%</b></span><span class="bd">KO<b class="dn">-2.76%</b></span><span class="bd">XOM<b class="up">+2.79%</b></span><span class="bd">CVX<b class="up">+2.88%</b></span>
+</div></div>
+<div class="ft">수집: Tier1 6/8 (인포맥스·미주은·IBD·야후·블룸버그·ZipTrader) · Tier2 2/8 (Meet Kevin·Ross Cameron) · 영어 자막 429 → 음성 전사 우회 · 원문: 2026-10-24_미국장_브리핑.md</div>
+</body></html>
