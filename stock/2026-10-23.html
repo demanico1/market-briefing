@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-23 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-23</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-23_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-23 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<h2>오늘장 요약</h2>
+<p>원문에는 지수·수급 정보가 없습니다. 이날은 정보지를 수집하지 않아 뉴스·텔레그램 버즈와 주가만으로 판단했습니다(웹 확인 11회). 오세훈 테마는 크게 움직였지만 이벤트가 끝나는 날이었습니다. 방산(김정은 사망설)은 대장 빅텍이 1,849억 거래되고도 저가 근처에서 마감해 돈이 빠지는 모습으로 보입니다. <strong>오늘 새로 점화된 테마는 우주항공(컨텍·AP위성)입니다.</strong> 두 종목 모두 30일 만에 처음 <span style="color:#ef4444;font-weight:700">+10%</span> 넘게 마감했고, 대금도 30일 1위입니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 3종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>진양홀딩스</strong> — 최대 <strong>34.3억</strong> · <strong>14시 16분</strong> · 20억↑ 봉 2개 · 오세훈 테마 (이벤트형 · 신규 아님)</li>
+<li>🔥 <strong>진양산업</strong> — 최대 <strong>25.4억</strong> · <strong>14시 13분</strong> · 20억↑ 봉 2개 · 오세훈 테마 (이벤트형 · 신규 아님)</li>
+<li>🔥 <strong>지투지바이오</strong> — 최대 <strong>20.2억</strong> · <strong>14시 50분</strong> · 20억↑ 봉 1개 · 바이오</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>메타케어</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/23</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>1,379</strong></span><span class="chip"><i>손절 -2%</i>1,351</span><span class="chip"><i>익절 +10%</i>1,517</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+2.2%</span></span><span class="chip"><i>재료</i>모름</span></div></article>
+<article class="card"><h4 class="c-t">2</h4><div class="c-c"><span class="chip"><i>종목</i><strong>AP위성</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/23</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>8,800</strong></span><span class="chip"><i>손절 -2%</i>8,620</span><span class="chip"><i>익절 +10%</i>9,680</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+7.3%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 카나프테라퓨틱스(<span style="color:#ef4444;font-weight:700">+20%</span>) · DGI(<span style="color:#ef4444;font-weight:700">+35%</span>)</li>
+<li>제외: 서한(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · SK(정책) · 진양홀딩스(정책)</li>
+<li>오늘 끝남: 한스바이오메드 미체결 · 휴니드 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 혜인 선돌파 · 전진건설로봇 선돌파</li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 63회 · 익절 <strong>30%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.62%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+102%</span></li>
+<li>실시간만: 3회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-7%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 22회 32% · 업황 17회 35% · 정책 31회 10% · 따라가기 18회 17% · 자본 5회 0% · 사건 2회 50% · 모름 16회 25%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<ul>
+<li>기준가까지 10% 넘게 남은 9종목: 나노팀 · 코리아써키트 · 삼익제약 · 티로보틱스 · 현대약품 · 신풍제약 · 바이오니아 · 샌즈랩 · 모니터랩</li>
+<li>제외: 진양산업(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 진양폴리(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 진양화학(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 컨텍(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>오늘 끝남: 빅텍 <strong>익절</strong> <span style="color:#ef4444;font-weight:700">+10.0%</span> · 레몬헬스케어 선돌파</li>
+<li>재충족 급등 제외: 60회 · 익절 <strong>28%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.30%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+78%</span> (실시간 1회 · 익절 <strong>100%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+9.75%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+10%</span>) · 급등: 10회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-22%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">우주항공(위성·우주 광통신)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>10:11 컨텍, 국내 최초 우주 광통신 데이터 수신 실증 성공(한국경제TV)</p><p class="c-p"><span class="c-k">신선도</span>실질 D+0 (섹터 기준으로는 10/02·10/19에 이은 세 번째 파동)</p><p class="c-p"><span class="c-k">판단</span>1순위. 단 컨텍은 AP위성의 모회사라 계열사 동반 강세에 가까움</p><div class="c-c"><span class="chip"><i>수식충족</i>AP위성·컨텍</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">오세훈 테마</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>14:00 오세훈 시장 2심 무죄 선고(1심 벌금 1,000만원 파기)</p><p class="c-p"><span class="c-k">신선도</span>신규 아님 (진양은 09/17, 고속은 10/07·10/12에 이미 점화)</p><p class="c-p"><span class="c-k">판단</span>2순위. 이벤트가 끝난 재료 소멸형이라 추격 금지, 관찰만</p><div class="c-c"><span class="chip"><i>수식충족</i>진양 4사·고속 2사</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">바이오(임상·기술수출 기대)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>재료가 제각각(기술수출 기대 / FC705 2a상 결과 / 재료 미상)</p><p class="c-p"><span class="c-k">신선도</span>혼재</p><p class="c-p"><span class="c-k">판단</span>3순위. 추정이며 하나의 테마로 묶기엔 근거 부족</p><div class="c-c"><span class="chip"><i>수식충족</i>와이바이오·메타케어·퓨쳐켐</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">방산·대북</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>김정은 사망설(10/19 영국·미국 매체 보도)</p><p class="c-p"><span class="c-k">신선도</span>D+3 안팎(10/19~10/20 시작)</p><p class="c-p"><span class="c-k">판단</span>눌림만 관찰. 북한이 공개 활동 사진을 내 재료 소멸 위험 큼</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 오늘 충족 여부 기재 없음</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">로봇 / 보안 / 기타</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>보안은 10/06 해킹 사태 재료 재탕</p><p class="c-p"><span class="c-k">신선도</span>앤로보틱스 D+2, 모니터랩 D+12, 도우인시스 D+5</p><p class="c-p"><span class="c-k">판단</span>진행 중, 눌림 관찰용</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 오늘 충족 여부 기재 없음</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+<article class="card"><h4 class="c-t">개별</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>아이패밀리에스씨 공개매수(일본 마루베니 계열) / 에이전트AI 대표이사 변경</p><p class="c-p"><span class="c-k">판단</span>아이패밀리에스씨는 공개매수가가 상단이라 추적 제외, 에이전트AI(대금 15억)는 개별 이슈</p><div class="c-c"><span class="chip"><i>수식충족</i>원문에 기재 없음</span><span class="chip"><i>정보지</i>미수집</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>우주항공</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">AP위성</h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 7.1배 / 직전 5일 <span style="color:#ef4444;font-weight:700">+6.9%</span> / D+0 / 당일 자체 공시·기사 미확인, 컨텍 재료가 번진 것으로 추정</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★23봉 (11:32)</span><span class="chip"><i>등락%</i>+17.1</span><span class="chip"><i>대금</i>355억</span></div></article>
+<article class="card"><h4 class="c-t">컨텍</h4><p class="c-p"><span class="c-k">근거</span>10/02에 이미 충족 / 대금 30일 1위, 직전최대 2.7배 / 직전 5일 <span style="color:#ef4444;font-weight:700">+5.0%</span> / 재료 주인공(뉴스 10:11 → 포착 10:32, 뉴스가 먼저)</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/02 외 1</span><span class="chip"><i>충족봉</i>★13봉 (10:32)</span><span class="chip"><i>등락%</i>+29.9 (상한가)</span><span class="chip"><i>대금</i>192억</span></div></article>
+</div>
+<h3>오세훈 테마 (이벤트형 · 신규 아님)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>진양홀딩스</strong><br><strong>34.3억</strong><br><strong>14시 16분</strong></h4><p class="c-p"><span class="c-k">근거</span>대금 30일 1위 / 직전최대 92배 / 종가위치 23%, 위꼬리가 긴 분배형 / 테마 자체는 신규 아님</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★30봉 (14:12)</span><span class="chip"><i>등락%</i>+4.6 (고가 +26.0)</span><span class="chip"><i>대금</i>543억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>진양산업</strong><br><strong>25.4억</strong><br><strong>14시 13분</strong></h4><p class="c-p"><span class="c-k">근거</span>09/17에 이미 충족 / 30일 1위, 직전최대 3.3배 / 선고 전 기대감 매수</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17</span><span class="chip"><i>충족봉</i>★41봉 (12:10)</span><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금</i>225억</span></div></article>
+<article class="card"><h4 class="c-t">진양폴리</h4><p class="c-p"><span class="c-k">근거</span>09/17에 이미 충족 / D+22 / 30일 1위, 직전최대 6.4배 / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17</span><span class="chip"><i>충족봉</i>★11봉 (14:13)</span><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금</i>138억</span></div></article>
+<article class="card"><h4 class="c-t">진양화학</h4><p class="c-p"><span class="c-k">근거</span>09/18에 이미 충족 / D+11 / 30일 3위, 직전최대 0.9배 / 후발, 선고 전 포착</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/18 외 1</span><span class="chip"><i>충족봉</i>★29봉 (11:27)</span><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금</i>70억</span></div></article>
+<article class="card"><h4 class="c-t">천일고속</h4><p class="c-p"><span class="c-k">근거</span>10/12에 이미 충족 / 30일 5위, 직전최대 0.3배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/12 외 1</span><span class="chip"><i>충족봉</i>★2봉 (14:28)</span><span class="chip"><i>등락%</i>+3.4 (고가 +23.9)</span><span class="chip"><i>대금</i>187억</span></div></article>
+<article class="card"><h4 class="c-t">동양고속</h4><p class="c-p"><span class="c-k">근거</span>10/12에 이미 충족 / 30일 6위, 직전최대 0.2배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/12 외 1</span><span class="chip"><i>충족봉</i>★1봉 (14:29)</span><span class="chip"><i>등락%</i>+1.1 (고가 +26.1)</span><span class="chip"><i>대금</i>200억</span></div></article>
+</div>
+<h3>바이오 (추정 · 근거 부족)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">와이바이오로직스</h4><p class="c-p"><span class="c-k">근거</span>D+0이지만 직전 5일 <span style="color:#ef4444;font-weight:700">+28.9%</span>로 이미 선반영 / 당일 뉴스 미확인 / 11/04~08 SITC 발표 예정(재료 단계 &#x27;기대&#x27;)</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★4봉 (08:22)</span><span class="chip"><i>등락%</i>+16.3</span><span class="chip"><i>대금</i>118억</span></div></article>
+<article class="card"><h4 class="c-t">메타케어</h4><p class="c-p"><span class="c-k">근거</span>대금 2.8억이라 의미 없음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>★4봉</span><span class="chip"><i>등락%</i>+3.1</span><span class="chip"><i>대금</i>2.8억</span></div></article>
+<article class="card"><h4 class="c-t">퓨쳐켐</h4><p class="c-p"><span class="c-k">근거</span>09/17에 이미 충족 / D+17 / 직전최대 0.7배, 30일 2위로 대금 미흡 / 주가가 텔레그램 첫 보도(15:08)보다 27분 먼저 움직임</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/17</span><span class="chip"><i>충족봉</i>★29봉 (14:41)</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>162억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">우주항공</h4><p class="c-p"><span class="c-k">종목</span>켄코아에어로스페이스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#7dabf8;font-weight:700">-0.7%</span> (고가 +12.9) / 대금 246억, 30일 7위, 직전최대 0.3배 / G2 6회 / 이전충족 10/19 외 5 / 장중에만 따라 오른 동반 매수로 보임</p></article>
+<article class="card"><h4 class="c-t">우주항공</h4><p class="c-p"><span class="c-k">종목</span>LK삼양</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+4.8%</span> (고가 +20.0) / 대금 208억, 30일 2위, 직전최대 0.9배 / 직전 5일 <span style="color:#ef4444;font-weight:700">+22.0%</span> / 이전충족 10/19 외 1</p></article>
+<article class="card"><h4 class="c-t">우주항공</h4><p class="c-p"><span class="c-k">종목</span>루미르</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#7dabf8;font-weight:700">-0.2%</span> / 대금 3.7억, 30일 10위 / 충족 여부 원문에 &#x27;-&#x27;로만 표기</p></article>
+<article class="card hot"><h4 class="c-t">바이오</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>지투지바이오</strong><br><strong>20.2억</strong><br><strong>14시 50분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+20.4%</span> / 대금 1,460억 / D+2 / 이전충족 10/19 외 2 / 빅파마 기술수출 기대</p></article>
+</div>
+<p>※ 방산(빅텍·휴니드·스페코·한일단조), 로봇(앤로보틱스), 보안(모니터랩·샌즈랩), 기타(도우인시스·폴라리스AI 등)는 원문에 오늘 충족 여부가 없어 위 두 표에서 뺐습니다.</p>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<p>해당 없음 (이날 정보지 미수집)</p>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>AP위성 지지:</strong> 8,200원(문서 세션종가)을 지키며 장 초반 대금 1위를 이어가면 진짜입니다. VWAP(종가보다 1.2% 아래)를 회복하지 못하면 아닙니다.</li>
+<li><strong>컨텍 갭:</strong> 상한가 뒤 갭을 띄우고 그 갭을 메우지 않으면 진짜입니다.</li>
+<li><strong>우주주 확산:</strong> 켄코아·LK삼양·쎄트렉아이가 같이 플러스로 가면 진짜입니다. 두 종목만 움직이고 나머지가 마이너스면 계열사 단발로 등급을 낮춥니다.</li>
+<li><strong>오세훈 테마:</strong> 상한가 잔량을 유지하고 진양홀딩스가 3,160원 위에서 대금을 다시 받으면 이어집니다. 시초가 갭 뒤 바로 밀리는 이벤트 종료형이 더 흔하니 추격하지 않습니다.</li>
+<li><strong>주말 뉴스:</strong> 우주 광통신 후속 기사(정부 과제·수주 연계)가 나오는지, 김정은 공개 활동 보도로 방산이 꺼지는지 확인합니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 D+0 테마 브리핑 — 2026-10-23 (금) 장마감</h1>
+<p>기준일: 2026-10-23 (금) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<blockquote><p>📰 정보지 교차 절이 없습니다. 이날은 정보지를 수집하지 않은 것으로 보고, 뉴스·텔레그램 버즈와 주가만으로 판단했습니다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>새로 점화된 쪽은 <strong>우주항공(컨텍·AP위성)</strong>입니다. 두 종목 모두 30일 만에 처음 <span style="color:#ef4444;font-weight:700">+10%</span> 넘게 오른 날(D+0)이고, 거래대금도 30일 중 1위입니다. 직전 5일 동안은 거의 오르지 않았고(+5~7%), 같은 업종의 LK삼양·켄코아도 장중에 고가 +13~20%까지 따라 올랐습니다. <strong>오세훈 테마(진양 4개사 + 천일·동양고속)</strong>도 오늘 크게 움직였지만, 이미 09/17에 한 번 터진 테마입니다. 오늘은 2심 무죄 선고(14:00)라는 이벤트가 끝나는 날이었습니다. <strong>방산(김정은 사망설)</strong>은 10/19~10/22에 시작된 D+1~3짜리입니다. 오늘 대장주 빅텍이 1,849억이 거래되고도 저가 근처에서 마감해, 돈이 빠져나가는 모습으로 보입니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1순위. 우주항공 — 위성·우주 광통신</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>AP위성</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+17.1</span><span class="chip"><i>대금(억)</i><strong>355</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★23봉 (11:32) <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / <strong>7.1배</strong></span><span class="chip"><i>5일누적</i>+6.9</span></div></article>
+<article class="card"><h4 class="c-t">컨텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9 (상한가)</span><span class="chip"><i>대금(억)</i>192</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★13봉 (10:32)</span><span class="chip"><i>이전충족</i>10/02 외 1</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 2.7배</span><span class="chip"><i>5일누적</i>+5.0</span></div></article>
+<article class="card"><h4 class="c-t">켄코아에어로스페이스</h4><div class="c-c"><span class="chip"><i>등락%</i>-0.7 (고가 +12.9)</span><span class="chip"><i>대금(억)</i>246</span><span class="chip"><i>오늘충족</i>미충족 (G2 6회)</span><span class="chip"><i>이전충족</i>10/19 외 5</span><span class="chip"><i>30일순위 / 직전최대</i>7위 / 0.3배</span><span class="chip"><i>5일누적</i>+11.9</span></div></article>
+<article class="card"><h4 class="c-t">LK삼양</h4><div class="c-c"><span class="chip"><i>등락%</i>+4.8 (고가 +20.0)</span><span class="chip"><i>대금(억)</i>208</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>10/19 외 1</span><span class="chip"><i>30일순위 / 직전최대</i>2위 / 0.9배</span><span class="chip"><i>5일누적</i>+22.0</span></div></article>
+<article class="card"><h4 class="c-t">루미르</h4><div class="c-c"><span class="chip"><i>등락%</i>-0.2</span><span class="chip"><i>대금(억)</i>3.7</span><span class="chip"><i>30일순위 / 직전최대</i>10위</span><span class="chip"><i>5일누적</i>+5.0</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong></li>
+<li>우주 섹터는 10/02와 10/19에 이미 한 번씩 충족이 있었습니다(컨텍·LK삼양·켄코아).</li>
+<li>하지만 30일 안에 <span style="color:#ef4444;font-weight:700">+10%</span> 넘게 마감한 날은 <strong>컨텍·AP위성 모두 오늘이 처음</strong>입니다.</li>
+<li>정리하면 섹터 순환의 세 번째 파동이지만, <strong>두 대장 종목 기준으로는 실질적인 D+0</strong>입니다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>대금 기준 대장은 <strong>AP위성(355억)</strong>입니다. 직전 30일 최대 대금의 7.1배이고, 오늘이 첫 충족(★첫흐름)입니다.</li>
+<li>컨텍은 오늘 재료의 주인공이고 상한가로 마감했지만, 대금은 AP위성의 절반 수준입니다.</li>
+<li>켄코아·LK삼양은 장중에만 따라 올랐다가 밀렸습니다. 재료와 직접 상관없는 동반 매수로 보입니다.</li>
+<li>⚠ 컨텍은 AP위성을 인수한 모회사입니다(웹: 머니투데이·더벨). 두 종목이 같이 움직인 것을 넓은 테마의 증거로 보기보다는 <strong>계열사 동반 강세</strong>에 가깝습니다. 넓은 테마로 확인되려면 내일 다른 우주주까지 붙는지 봐야 합니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>문서: 10:11 「컨텍, 국내 최초 우주 광통신 초고속 데이터 수신 실증 성공」(한국경제TV).</li>
+<li>컨텍은 뉴스가 나온 뒤인 10:32에 포착됐습니다 → <strong>뉴스가 먼저</strong>입니다.</li>
+<li>AP위성은 11:32 포착이고, 당일 자체 공시나 기사가 확인되지 않습니다. 장 마감 분석 기사도 &quot;직접 뒷받침하는 공시 없이 급등&quot;이라고 적었습니다(웹: 재경일보). 컨텍 재료가 계열사로 번진 것으로 추정합니다.</li>
+<li>웹 기사는 컨텍 대금을 약 179억으로 적었지만 문서는 192억입니다(NXT 포함). AP위성 KRX 종가는 8,310원(<span style="color:#ef4444;font-weight:700">+18.71%</span>)으로 나오는데(웹: 재경일보), 문서 세션종가는 8,200원(<span style="color:#ef4444;font-weight:700">+17.1%</span>)입니다. <strong>정본은 문서 숫자</strong>입니다.</li>
+<li><strong>재료 단계</strong>: 협력·논의(08/06 루마니아, 09/14 프랑스, 09/18 태국 등 MOU·협력) → <strong>실증 성공(10/23)</strong></li>
+<li>기술이 실제로 확인된 단계로 올라갔습니다. 단계 상승이고, <strong>실질적으로 신규 재료</strong>입니다.</li>
+<li>대금도 30일 1위로 받쳐 주므로 D+0으로 인정합니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 진짜인 경우</li>
+<li>AP위성이 오늘 종가 근처(8,200원)를 지키면서 장 초반 대금 상위를 유지합니다.</li>
+<li>컨텍이 상한가 마감 뒤 갭을 띄우고, 그 갭을 메우지 않습니다.</li>
+<li>켄코아·LK삼양·쎄트렉아이 같은 다른 우주주가 같이 플러스로 갑니다.</li>
+<li>❌ 아닌 경우</li>
+<li>컨텍·AP위성 두 종목만 움직이고 나머지 우주주는 마이너스입니다(계열사 단발).</li>
+<li>AP위성이 오늘 VWAP(종가 기준 <span style="color:#7dabf8;font-weight:700">-1.2%</span> 아래)를 회복하지 못합니다.</li>
+</ul>
+<h3>🥈 2순위. 오세훈 테마 — 2심 무죄 (이벤트형 · 신규 아님)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>진양홀딩스</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+4.6 (고가 +26.0)</span><span class="chip"><i>대금(억)</i><strong>543</strong></span><span class="chip"><i>오늘충족</i>★30봉 (14:12) <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / <strong>92배</strong></span></div></article>
+<article class="card"><h4 class="c-t">진양산업</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금(억)</i>225</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★41봉 (12:10)</span><span class="chip"><i>이전충족</i>09/17</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 3.3배</span></div></article>
+<article class="card"><h4 class="c-t">천일고속</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.4 (고가 +23.9)</span><span class="chip"><i>대금(억)</i>187</span><span class="chip"><i>오늘충족</i>★2봉 (14:28)</span><span class="chip"><i>이전충족</i>10/12 외 1</span><span class="chip"><i>30일순위 / 직전최대</i>5위 / 0.3배</span></div></article>
+<article class="card"><h4 class="c-t">동양고속</h4><div class="c-c"><span class="chip"><i>등락%</i>+1.1 (고가 +26.1)</span><span class="chip"><i>대금(억)</i>200</span><span class="chip"><i>오늘충족</i>★1봉 (14:29)</span><span class="chip"><i>이전충족</i>10/12 외 1</span><span class="chip"><i>30일순위 / 직전최대</i>6위 / 0.2배</span></div></article>
+<article class="card"><h4 class="c-t">진양폴리</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금(억)</i>138</span><span class="chip"><i>D+N</i>D+22</span><span class="chip"><i>오늘충족</i>★11봉 (14:13)</span><span class="chip"><i>이전충족</i>09/17</span><span class="chip"><i>30일순위 / 직전최대</i>1위 / 6.4배</span></div></article>
+<article class="card"><h4 class="c-t">진양화학</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.8 (상한가)</span><span class="chip"><i>대금(억)</i>70</span><span class="chip"><i>D+N</i>D+11</span><span class="chip"><i>오늘충족</i>★29봉 (11:27)</span><span class="chip"><i>이전충족</i>09/18 외 1</span><span class="chip"><i>30일순위 / 직전최대</i>3위 / 0.9배</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정</strong></li>
+<li>진양 3개사는 이미 <strong>09/17</strong>에 충족했습니다.</li>
+<li>고속 2종목(서울고터 재개발)은 10/07·10/12에 먼저 터졌습니다.</li>
+<li>오늘은 같은 테마가 이벤트를 맞은 날이지, <strong>새 테마의 D+0이 아닙니다</strong>.</li>
+<li>사전테마 분류는 &#x27;여행 운수&#x27;인 고속 2종목도 14:28~14:29에 같이 튀었습니다. 오늘은 오세훈 테마로 함께 묶는 것이 맞습니다. 웹 기사도 &quot;&#x27;학연&#x27; 뛰고 &#x27;재개발&#x27; 날았다&quot;라고 정리했습니다(웹: 한국일보).</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>대금 기준 대장은 <strong>진양홀딩스(543억, 평소의 92배)</strong>입니다.</li>
+<li>그러나 장중에 <span style="color:#ef4444;font-weight:700">+26%</span>까지 갔다가 <span style="color:#ef4444;font-weight:700">+4.6%</span>로 마감했습니다(종가위치 23%). <strong>대금은 최대지만 위꼬리가 긴 분배형</strong>입니다.</li>
+<li>상한가로 마감한 진양산업·폴리·화학은 대금이 작은 품절형입니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>서울고법 형사7부가 1심 벌금 1,000만원 판결을 깨고 무죄를 선고했습니다(웹: 파이낸셜뉴스·뉴시스). 선고 시각은 14:00 생중계였습니다(웹: SBS Biz·경향).</li>
+<li>진양 회장이 오 시장과 고려대 동문이라 묶인 테마입니다(웹: 한국금융신문).</li>
+<li><strong>주가 선행 확인</strong>: 진양화학 11:27, 진양산업 12:10 포착으로 <strong>선고 전에 기대감 매수가 먼저 들어왔습니다</strong>. 14:12~14:29의 일제 포착은 선고 직후입니다.</li>
+<li><strong>재료 단계</strong>: 기대(선고 대기) → 확정(무죄)</li>
+<li>단계는 올랐지만 <strong>정치 이벤트가 끝난 것</strong>이라 재료 소멸형입니다. 실질 D+0 가능성은 낮게 봅니다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ 상한가 잔량을 유지한 채 시작하고, 진양홀딩스가 3,160원 위에서 대금을 다시 받습니다.</li>
+<li>❌ 시초가 갭 이후 바로 밀리는 전형적인 이벤트 종료형입니다. 이 경우가 더 흔합니다. <strong>추격하지 말고 관찰만</strong> 합니다.</li>
+</ul>
+<h3>🥉 3순위. 바이오 임상·기술수출 기대 (추정 · 근거 부족)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">지투지바이오</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.4</span><span class="chip"><i>대금(억)</i><strong>1,460</strong></span><span class="chip"><i>D+N</i>D+2</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>10/19 외 2</span></div></article>
+<article class="card"><h4 class="c-t">퓨쳐켐</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>162</span><span class="chip"><i>D+N</i>D+17</span><span class="chip"><i>오늘충족</i>★29봉 (14:41)</span><span class="chip"><i>이전충족</i>09/17</span></div></article>
+<article class="card"><h4 class="c-t">와이바이오로직스</h4><div class="c-c"><span class="chip"><i>등락%</i>+16.3</span><span class="chip"><i>대금(억)</i>118</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★4봉 (08:22) <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">메타케어</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.1</span><span class="chip"><i>대금(억)</i>2.8</span><span class="chip"><i>오늘충족</i>★4봉 <strong>★첫흐름</strong></span><span class="chip"><i>이전충족</i>없음</span></div></article>
+</div>
+<ul>
+<li>재료가 제각각이라 하나의 테마로 묶기에는 <strong>근거가 부족</strong>합니다.</li>
+<li>지투지: 빅파마 기술수출 기대</li>
+<li>퓨쳐켐: FC705 미국 2a상 결과</li>
+<li>와이바이오: 재료 미상</li>
+<li><strong>와이바이오로직스</strong></li>
+<li>D+0이고 ★첫흐름이지만 직전 5일 누적이 <span style="color:#ef4444;font-weight:700">+28.9%</span>라 이미 선반영됐습니다.</li>
+<li>당일 뉴스는 웹에서도 확인되지 않습니다.</li>
+<li>관련 일정으로는 11/04~08 미국 면역항암학회(SITC)에서 멀티앱카인 포스터 2건 발표와 기술이전 파트너링 계획이 있습니다(웹: 바이오스펙테이터 등). 재료 단계는 &#x27;기대&#x27;입니다.</li>
+<li><strong>퓨쳐켐 — 주가가 뉴스보다 먼저 움직인 사례</strong></li>
+<li>14:41에 <span style="color:#7dabf8;font-weight:700">-0.1%</span> 상태에서 포착됐고, 텔레그램 첫 보도는 15:08로 27분 늦습니다.</li>
+<li>재료 단계는 기대(08/20 &quot;톱라인 10월 공개&quot;) → 결과 공개입니다. <strong>단계 상승</strong>입니다.</li>
+<li>다만 직전최대대비 0.7배, 30일 2위라 대금이 받쳐 주지 않습니다. 실질 D+0으로 보기에는 약합니다.</li>
+<li>메타케어는 대금 2.8억으로 의미가 없습니다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (D+1 이상 · 눌림 관찰용)</h2>
+<ul>
+<li><strong>방산·대북 (김정은 사망설)</strong></li>
+<li>사망설은 10/19 영국·미국 매체 보도로 확산됐습니다(웹: 주간경향).</li>
+<li>충족 이력: 휴니드 10/19, 한일단조 10/20, 빅텍·스페코 10/22. <strong>테마 시작은 10/19~10/20, 오늘은 D+3 안팎</strong>입니다.</li>
+<li>대장 <strong>빅텍(1,849억, 회전율 232%)</strong>은 장중 <span style="color:#ef4444;font-weight:700">+21%</span>까지 갔다가 <span style="color:#7dabf8;font-weight:700">-3.1%</span>로 마감했습니다(종가위치 5%). 고점에서 물량을 넘기는 모습입니다.</li>
+<li>스페코만 상한가로 마감했고(09:42 상한가, 웹: 뉴스핌), 대금은 131억으로 작은 후발주입니다.</li>
+<li>북한 측은 김정은의 10/19 공개 활동 사진을 공개했습니다(웹: 주간경향). 재료가 꺼질 위험이 큽니다.</li>
+<li><strong>로봇</strong> — 앤로보틱스 D+2, 910억, 10/20·10/21 충족.</li>
+<li><strong>보안</strong> — 모니터랩 D+12, 샌즈랩. 10/06 해킹 사태 재료의 재탕이고 둘 다 눌림으로 마감했습니다.</li>
+<li><strong>기타</strong> — 도우인시스 D+5, 폴라리스AI(10/21부터 3일 연속 충족, 눌림). 빅웨이브로보틱스·자이언트스텝은 하락했습니다.</li>
+</ul>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>아이패밀리에스씨</strong> <span style="color:#ef4444;font-weight:700">+29.9%</span>, 점상한가</li>
+<li>07:51 공개매수신고서 공시(문서 텔레그램 버즈)로 시작됐습니다. 일본 마루베니 계열의 공개매수입니다.</li>
+<li>공개매수가가 사실상 주가 상단이 되는 구조라 추적 대상에서 제외합니다.</li>
+<li><strong>에이전트AI</strong> <span style="color:#ef4444;font-weight:700">+29.9%</span>, 2연상</li>
+<li>대금 15억, 15:22 대표이사 변경 공시. 개별 이슈입니다.</li>
+<li><strong>신풍제약·바이오니아</strong> — 프리장에서 반짝 오른 뒤 저가로 마감했습니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 우주항공(위성·우주 광통신) — 컨텍·AP위성 동시 D+0, 대금 30일 1위, 직전5일 +5~7%</li>
+<li>그 테마의 대장주 (거래대금 최대): AP위성 355억 (★첫흐름, 직전최대 7.1배) / 재료 주인공은 컨텍(상한가)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 컨텍(협력·MOU → 실증 성공), 퓨쳐켐(톱라인 예고 → 2a상 결과, 단 대금 미흡)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 스페코(방산, 대금 131억 vs 빅텍 1,849억), 진양화학·진양폴리(오세훈, 대금 70·138억 vs 진양홀딩스 543억)</li>
+<li>같이 볼 종목: 켄코아에어로스페이스·LK삼양(장중 고가 +13~20%, 미충족 후발 후보), 루미르</li>
+<li>진행중이라 눌림만 볼 종목: 빅텍·휴니드·스페코·한일단조(방산 D+3), 앤로보틱스(D+2), 지투지바이오(D+2), 진양 4사·고속 2사(이벤트 종료형)</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>AP위성이 8,200원(문서 세션종가)을 지키며 장 초반 대금 1위를 이어가는지 + 컨텍이 상한가 뒤 갭을 지키는지</li>
+<li>켄코아·LK삼양 등 다른 우주주가 같이 붙는지 — 안 붙으면 계열사 단발로 등급을 낮춘다</li>
+<li>주말 사이 우주 광통신 후속 기사(정부 과제·수주 연계)가 나오는지, 북한 김정은 공개 활동 보도로 방산이 꺼지는지</li>
+</ol>
+<p>```</p>
+<p>Sources:</p>
+<ul>
+<li>[파이낸셜뉴스 — 오세훈 항소심 무죄에 테마주 무더기 상한가](https://www.fnnews.com/news/202610231520101621)</li>
+<li>[뉴시스 — 오세훈 항소심 무죄…진양화학 등 테마주 무더기 &#x27;上&#x27;](https://nwww.newsis.com/view/NISX20261023_0003838762)</li>
+<li>[한국금융신문 — 오세훈 무죄에 테마주 급등](https://www.fntimes.com/html/view.php?ud=2026102316432495582a735e27af_18)</li>
+<li>[한국일보 — 오세훈 무죄, 테마주 줄줄이 불기둥… &#x27;학연&#x27; 뛰고 &#x27;재개발&#x27; 날았다](https://www.hankookilbo.com/news/article/A2026102310230005820)</li>
+<li>[SBS Biz — 오세훈, 운명의 항소심 &#x27;생중계&#x27;](https://biz.sbs.co.kr/amp/article/20000341108)</li>
+<li>[주간경향 — 23일 오세훈 항소심 선고 생중계](https://weekly.khan.co.kr/article/202610201909001)</li>
+<li>[재경일보 — 컨텍 상한가 마감](https://news.jkn.co.kr/post/1044614)</li>
+<li>[재경일보 — AP위성 18%대 급등 8310원 마감](https://news.jkn.co.kr/post/1044619)</li>
+<li>[머니투데이(더벨) — 이성희 컨텍·AP위성 대표 인터뷰](https://www.mt.co.kr/stock/2025/12/24/2025122411209624730)</li>
+<li>[뉴스핌 — 김정은 행방 논란에 방산株 급등…스페코 상한가](https://www.newspim.com/news/view/20261023000290)</li>
+<li>[주간경향 — 또 퍼진 김정은 사망설](https://weekly.khan.co.kr/article/202610201353011)</li>
+<li>[바이오스펙테이터 — 와이바이오로직스 SITC 발표](https://www.biospectator.com/news/view/30123)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-24 04:22
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
