@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-25 한국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:26px 34px;width:1280px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.hd h1{font-size:28px}.hd .s{color:#9aa0a6;font-size:15px}
+.banner{background:#2a1f12;border:1px solid #f59e0b;color:#fbbf24;border-radius:10px;padding:9px 14px;font-size:15px;margin-bottom:12px}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1.25fr 1fr}
+.card{background:#1a1d24;border-radius:12px;padding:13px 16px}
+.lbl{color:#9aa0a6;font-size:13px;margin-bottom:4px}
+.big{font-size:25px;font-weight:700}.up{color:#ef4444}.dn{color:#3b82f6}.mut{color:#9aa0a6;font-size:13px;margin-top:3px}
+.one{font-size:21px;font-weight:700;line-height:1.45;margin:12px 0;padding:14px 18px;background:#1a1d24;border-left:5px solid #f59e0b;border-radius:10px}
+h2{font-size:16px;color:#fbbf24;margin-bottom:8px}
+ul{padding-left:18px}li{font-size:14.5px;line-height:1.5;margin-bottom:5px}
+.bar{display:flex;height:24px;border-radius:6px;overflow:hidden;margin:6px 0}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.badge{display:inline-block;background:#262a33;border-radius:8px;padding:5px 10px;margin:3px 4px 3px 0;font-size:13.5px}
+.badge b{margin-left:4px}
+.tag{display:inline-block;background:#3a2a10;color:#fbbf24;border-radius:6px;padding:1px 7px;font-size:12px;margin-left:6px}
+.ft{color:#9aa0a6;font-size:12.5px;margin-top:12px}
+</style></head><body>
+<div class="hd"><h1>2026-10-25 (일) 한국장 브리핑</h1><div class="s">수집 채널 3/13 · 영상 5편</div></div>
+<div class="banner">🛑 일요일 휴장 — 지수·수급·환율은 직전 거래일(10/23 금) 종가 및 지난주 주간 집계 기준</div>
+<div class="grid g4">
+<div class="card"><div class="lbl">코스피 (10/23 종가)</div><div class="big up">5,550.30</div><div class="mut"><span class="up">+0.30%</span> · 주간 <span class="dn">-2.08%</span></div></div>
+<div class="card"><div class="lbl">코스닥 (10/23 종가)</div><div class="big dn">751.69</div><div class="mut"><span class="dn">-1.62%</span> · 주간 <span class="dn">-5.42%</span></div></div>
+<div class="card"><div class="lbl">코스피200 야간선물 (10/23 밤)</div><div class="big dn">-0.19%</div><div class="mut">월요일 갭 ≈ 중립</div></div>
+<div class="card"><div class="lbl">주간 수급 (10/19~23)</div><div style="font-size:15px;line-height:1.55">외국인 <b class="dn">-7,199억</b><br>개인 <b class="dn">-1조1,021억</b> · 기관 <b class="up">+4,190억</b></div></div>
+</div>
+<div class="card" style="margin-top:12px;font-size:14.5px">매크로: 원/달러 1,324.6원(10/23) · 5주 연속 하락, 주중 저점 1,321.20원 · 미 10년물 4.996%(주간 -7.9bp) · 2년물 4.686% · FOMC 10월 동결 확률 90.0% · VKOSPI 52.05</div>
+<div class="one">주말 이란 재공습은 없었다 — 미군 공격안은 '11/3 중간선거 뒤'로. 월요일 출발은 중립(야간선물 -0.19%), 승부처는 28~29일 하이닉스·삼성 실적과 FOMC.</div>
+<div class="grid g2">
+<div class="card"><h2>핵심 포인트</h2><ul>
+<li><b>공습 시점이 밀렸다:</b> 중부사령부가 선거 후 이란 공격안을 국방장관에 보고(더힐). 트럼프는 "선거 전엔 공격 안 해". 리스크가 사라진 게 아니라 일주일 뒤로 밀린 것</li>
+<li><b>골드만, 코스피 목표 1만2천→9천:</b> 그래도 "60% 이상 상승 여력". 선행 PER 약 4배, 18개 증시 중 2006년 이후 최저(블룸버그)</li>
+<li><b>정정:</b> 어제의 EWY +1.48%는 목요일 뉴욕 종가 대비 수치다. 금요일 한국 반등이 이미 반영돼 있다. 금요일 한국 종가 대비 갭은 야간선물 -0.19%</li>
+<li><b>개인은 레버리지로 반등 베팅:</b> 단일종목 레버리지 3,154억 순매수 전환(7월 규제 후 처음). 외국인은 레버리지·곱버스 양쪽 매수</li>
+<li><b>원화 5주 연속 강세:</b> 2분기 경상흑자 1,166억$로 독일+일본 합계를 처음 넘었다</li>
+</ul></div>
+<div class="card"><h2>채널 톤 <span class="tag">n=3 · 참고용</span></h2>
+<div class="bar"><div style="width:100%;background:#3b82f6">약세 3</div></div>
+<div class="mut">이효석(신중·구조적) · 돌팬티(10/23 촬영) · 전황(원칙). 소수몽키는 라이브 진행중이라 제외</div>
+<h2 style="margin-top:12px">종목 · 섹터</h2>
+<span class="badge">SK하이닉스 <b>고점 대비 -56%</b> · 28일 실적</span>
+<span class="badge">삼성전자 <b>29일 컨콜</b></span>
+<span class="badge">삼성E&A <b>외국인 +2,983억</b> ★복수</span>
+<span class="badge">LIG D&A <b class="dn">-1.55%</b> 지정취소 검토</span>
+<span class="badge">신규주 엘리스</span>
+<span class="badge">포스코 11/2 파업</span>
+</div>
+</div>
+<div class="card" style="margin-top:12px"><h2>이번 주 관전 포인트</h2><ul>
+<li>27일(화) 이스라엘 총선 · 한은 3Q GDP 속보치(8월 전망 0.3%, 시장 0.5~1.0%)</li>
+<li>28일 SK하이닉스 실적(컨센 77.1조) → 29일 새벽 FOMC(워시의 12월 인상 힌트) → 29일 삼성전자 컨콜 · 알파벳·MS·아마존 FCF</li>
+<li>29일 美 3Q GDP·9월 PCE, ECB · 29~30일 BOJ · 30일 산업활동동향 · 11/3 미 중간선거 = 중동 리스크 재개 기점</li>
+</ul></div>
+<div class="ft">수집: 이효석아카데미 3 · 돌팬티 1 · 전황 1 | 영상없음(휴장): 만쥬·주덕·창원개미·홍인기·김단테(결혼)·고라니·주린이놀이터·김혜산·주린희 | 소수몽키 라이브 진행중 | 출처: 연합뉴스·연합인포맥스·야후</div>
+</body></html>
