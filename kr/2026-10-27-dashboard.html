@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-10-27 한국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 36px;width:1280px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.hd h1{font-size:30px}.hd .s{color:#9aa0a6;font-size:16px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.lbl{color:#9aa0a6;font-size:14px;margin-bottom:6px}
+.big{font-size:30px;font-weight:700}.dn{color:#3b82f6}.up{color:#ef4444}
+.sub{font-size:15px;color:#9aa0a6;margin-top:4px}
+.one{font-size:22px;font-weight:600;line-height:1.5}
+ul{padding-left:20px}li{font-size:15.5px;line-height:1.6;margin-bottom:3px}
+.bar{display:flex;height:26px;border-radius:6px;overflow:hidden;margin:8px 0 6px}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:7px}
+.b{background:#252a33;border-radius:16px;padding:5px 11px;font-size:14px}
+.b em{font-style:normal;font-weight:700;margin-left:4px}
+.ft{color:#9aa0a6;font-size:13px;margin-top:4px}
+</style></head><body>
+<div class="hd"><h1>2026-10-27 (화) 한국장 브리핑</h1><div class="s">수집 채널 8/13 · 영상 9편</div></div>
+
+<div class="row">
+ <div class="card"><div class="lbl">KOSPI</div><div class="big up">5,638.34</div><div class="sub"><span class="up">▲168.87 (+3.09%)</span> · 장중 매수 사이드카(10:13)</div></div>
+ <div class="card"><div class="lbl">KOSDAQ</div><div class="big up">743.83</div><div class="sub"><span class="up">▲16.62 (+2.29%)</span> · 4거래일 만에 상승</div></div>
+ <div class="card" style="flex:1.4"><div class="lbl">코스피 수급 (정규장 마감, 연합뉴스)</div>
+  <div style="display:flex;gap:18px;font-size:18px;font-weight:700;white-space:nowrap"><div>외국인 <span class="up">+5,910억</span></div><div>기관 <span class="up">+2,820억</span></div><div>개인 <span class="dn">-9,490억</span></div></div>
+  <div class="sub">코스닥: 외국인 +245억 · 기관 +1,500억 · 개인 -1,660억</div></div>
+</div>
+
+<div class="card" style="margin-bottom:14px"><div class="lbl">매크로</div><div style="font-size:16px">원/달러 1,323.7원(+0.6) · 국고 3년 3.758%(-3.1bp, 2개월래 최저) / 10년 4.032%(-4.2bp) · 3분기 GDP +1.0%(예상 0.89%) · 필라델피아반도체 +2.8%</div></div>
+
+<div class="card" style="margin-bottom:14px"><div class="lbl">오늘의 한 줄</div><div class="one">앤트로픽 상장신청서(S-1)가 'AI는 돈을 번다'를 숫자로 보여주자 삼전닉스가 4~5% 뛰며 코스피가 하루 만에 3% 되돌렸다. 시선은 내일 SK하이닉스 실적·주주환원으로 옮겨간다.</div></div>
+
+<div class="row">
+ <div class="card" style="flex:1.5"><div class="lbl">핵심 포인트</div><ul>
+  <li>외국인 2거래일 매도 끊고 +5,910억 — 삼성전자만 2,208억 순매수, SK하이닉스는 410억 순매도</li>
+  <li>장중 +4.9%(5,700선)까지 갔다가 개인 매도에 +3.09%로 마감</li>
+  <li>앤트로픽: 컴퓨팅 1달러당 매출 0.4→2.1달러(유안타) · 2분기 첫 영업흑자</li>
+  <li>S-1 위험요인에 "HBM 공급 부족" 명시 — 하이닉스·삼성·마이크론 직접 거론</li>
+  <li>주가 반등에도 국고채 금리 하락 — 외국인 국채선물 매수가 주도</li>
+ </ul></div>
+ <div class="card"><div class="lbl">채널 방향성 (시황 5채널)</div>
+  <div class="bar"><div style="width:40%;background:#ef4444">강세 2</div><div style="width:40%;background:#4b5563">중립 2</div><div style="width:20%;background:#3b82f6">신중 1</div></div>
+  <div class="ft">강세: 이효석·전황 / 중립: 김단테·소수몽키 / 신중: 주덕<br>집계 제외: 김혜산(원칙)·주린희(종목 카탈로그)·만쥬(강의 홍보)</div>
+  <div class="lbl" style="margin-top:12px">내일 관전 포인트</div><ul>
+  <li>SK하이닉스 실적·추가 주주환원 (채널 발언 기준 28일)</li>
+  <li>FOMC(27~28일, 동결 유력) · 빅테크 실적</li>
+ </ul></div>
+</div>
+
+<div class="card"><div class="lbl">종목 (등락률은 야후 종가 검증)</div><div class="badges">
+ <span class="b">SK하이닉스<em class="up">+5.18%</em></span><span class="b">삼성전자<em class="up">+4.23%</em></span><span class="b">SK스퀘어<em class="up">+7.67%</em></span><span class="b">삼성전기<em class="up">+7.42%</em></span><span class="b">SK텔레콤<em class="up">+1.94%</em></span>
+ <span class="b">멜콘<em class="up">+29.97%</em></span><span class="b">나무가<em class="up">+29.96%</em></span><span class="b">캠시스<em class="up">+29.83%</em></span><span class="b">액스비스<em class="up">+29.88%</em></span><span class="b">샌즈랩<em class="up">+23.87%</em></span><span class="b">엠씨넥스<em class="up">+22.22%</em></span><span class="b">알멕<em class="up">+14.31%</em></span><span class="b">에코앤드림<em class="up">+12.81%</em></span>
+</div></div>
+<div class="ft" style="margin-top:10px">수집 8/13 채널 9편 · 영상없음: 창원개미·돌팬티·홍인기·고라니주식·주린이놀이터 · 소수몽키 라이브는 멤버십 전용</div>
+</body></html>
