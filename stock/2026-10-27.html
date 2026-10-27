@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-27 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-27</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-27_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-27 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>원문에 종목코드가 없어 종목명만 적었습니다.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>원문에는 지수·수급 수치가 없습니다. 돈이 가장 많이 몰린 곳은 반도체 소부장(앤트로픽 IPO)이었지만, 정보지에 9일째 나온 진행 중 테마입니다. 전선·전력설비는 사실상 제일일렉트릭 혼자 움직였습니다. 오늘 새로 점화된 테마는 <strong>현대차 &#x27;아틀라스&#x27; 공급망(로봇 부품·카메라모듈)</strong> 하나입니다. 다만 재료는 10/26 장 마감 후 보도됐고 나무가는 10/26 애프터마켓에서 먼저 충족했습니다. 그래서 <strong>엄밀히는 D+1이고, 정규장 기준으로는 첫날</strong>입니다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 4종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>나무가</strong> — 최대 <strong>64.9억</strong> · <strong>8시 08분 NXT 프리</strong> · 20억↑ 봉 7개 · 현대차 &#x27;아틀라스&#x27; 공급망</li>
+<li>🔥 <strong>RF머트리얼즈</strong> — 최대 <strong>41.2억</strong> · <strong>10시 40분</strong> · 20억↑ 봉 9개 · 광통신 (진행 중)</li>
+<li>🔥 <strong>비에이치</strong> — 최대 <strong>33.8억</strong> · <strong>8시 10분 NXT 프리</strong> · 20억↑ 봉 2개 · 현대차 &#x27;아틀라스&#x27; 공급망</li>
+<li>🔥 <strong>녹십자웰빙</strong> — 최대 <strong>25.5억</strong> · <strong>15시 03분</strong> · 20억↑ 봉 1개 · 개별</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>비에이치</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>18,400</strong></span><span class="chip"><i>손절 -2%</i>18,030</span><span class="chip"><i>익절 +10%</i>20,250</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+3.1%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">2</h4><div class="c-c"><span class="chip"><i>종목</i><strong>엠씨넥스</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>21,900</strong></span><span class="chip"><i>손절 -2%</i>21,450</span><span class="chip"><i>익절 +10%</i>24,100</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+4.5%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">3</h4><div class="c-c"><span class="chip"><i>종목</i><strong>제일일렉트릭</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>7,410</strong></span><span class="chip"><i>손절 -2%</i>7,260</span><span class="chip"><i>익절 +10%</i>8,150</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+6.3%</span></span><span class="chip"><i>재료</i>업황</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): RF머트리얼즈(<span style="color:#ef4444;font-weight:700">+20%</span>) · DGI(<span style="color:#ef4444;font-weight:700">+62%</span>)</li>
+<li>제외: 서한(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 진양홀딩스(정책)</li>
+<li>보유 중: SK 494,500 체결(10/27 D+4) → 오늘 마지막가 <span style="color:#ef4444;font-weight:700">+3.3%</span></li>
+<li>오늘 끝남: 알트 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span></li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 66회 · 익절 <strong>30%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.63%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+107%</span></li>
+<li>실시간만: 6회 · 익절 <strong>17%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-0.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-2%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 36회 · 익절 <strong>8%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-1.19%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-43%</span></li>
+<li>재료별 익절 비율: 자기호재 22회 32% · 업황 17회 35% · 정책 31회 10% · 따라가기 19회 16% · 자본 5회 0% · 사건 2회 50% · 모름 18회 28%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>보원케미칼</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/27</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>3,595</strong></span><span class="chip"><i>손절 -2%</i>3,525</span><span class="chip"><i>익절 +10%</i>3,955</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+6.5%</span></span><span class="chip"><i>재료</i>자기호재</span></div></article>
+<article class="card"><h4 class="c-t"><strong>심텍</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/27</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>124,500</strong></span><span class="chip"><i>손절 -2%</i>122,000</span><span class="chip"><i>익절 +10%</i>137,000</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+4.0%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>모니터랩</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/23</span><span class="chip"><i>다음 날</i>D+3</span><span class="chip"><i>기준가 (매수)</i><strong>3,430</strong></span><span class="chip"><i>손절 -2%</i>3,360</span><span class="chip"><i>익절 +10%</i>3,775</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+8.9%</span></span><span class="chip"><i>재료</i>사건</span></div></article>
+<article class="card"><h4 class="c-t"><strong>파수AI</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/26</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>4,550</strong></span><span class="chip"><i>손절 -2%</i>4,460</span><span class="chip"><i>익절 +10%</i>5,000</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+7.2%</span></span><span class="chip"><i>재료</i>미분류</span></div></article>
+<article class="card"><h4 class="c-t"><strong>로보티즈</strong></h4><div class="c-c"><span class="chip"><i>재충족</i>10/26</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>256,000</strong></span><span class="chip"><i>손절 -2%</i>251,000</span><span class="chip"><i>익절 +10%</i>281,500</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+1.2%</span></span><span class="chip"><i>재료</i>미분류</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남은 3종목: 신풍제약 · 바이오니아 · 녹십자웰빙</li>
+<li>제외: 액스비스(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 티에프이(급등 <span style="color:#ef4444;font-weight:700">+24%</span>)</li>
+<li>오늘 끝남: 코리아써키트 미체결 · 삼익제약 미체결 · 티로보틱스 미체결 · 현대약품 미체결 · 샌즈랩 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 해치텍 <strong>익절</strong> <span style="color:#ef4444;font-weight:700">+10.0%</span> · 루닛 선돌파 · 뷰노 선돌파 · 한국피아이엠 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 원익홀딩스 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span></li>
+<li>재충족 급등 제외: 64회 · 익절 <strong>28%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.26%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+81%</span> (실시간 5회 · 익절 <strong>40%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+2.55%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+13%</span>) · 급등: 11회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-25%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">현대차 &#x27;아틀라스&#x27; 공급망</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>아틀라스 부품 공급망 공개 보도(10/26 장후, 공시 아닌 언론 보도)</p><p class="c-p"><span class="c-k">수식충족</span>나무가·엠씨넥스·비에이치·알트·우림피티에스·아이엘</p><div class="c-c"><span class="chip"><i>정보지</i>오늘 처음</span><span class="chip"><i>신선도</i>엄밀히 D+1 / 정규장 첫날</span><span class="chip"><i>판단</i>최우선 D+0 테마, 대장 나무가</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력설비</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>AI 데이터센터 전력기기 수요 기대(개별 공시·수주는 웹에서도 확인 안 됨)</p><p class="c-p"><span class="c-k">수식충족</span>제일일렉트릭</p><div class="c-c"><span class="chip"><i>정보지</i>오늘 처음</span><span class="chip"><i>신선도</i>제일일렉트릭 D+0, 섹터는 재점화</span><span class="chip"><i>판단</i>약한 D+0, 개별주에 가까움</span></div></article>
+<article class="card"><h4 class="c-t">반도체 소부장</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>앤트로픽 IPO + 삼전·닉스 주주환원 기대</p><p class="c-p"><span class="c-k">수식충족</span>(원문 진행 중 분류)</p><div class="c-c"><span class="chip"><i>정보지</i>9일째</span><span class="chip"><i>신선도</i>진행 중</span><span class="chip"><i>판단</i>눌림만 관찰</span></div></article>
+<article class="card"><h4 class="c-t">보안</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>앤트로픽 내부망 침투 이슈(PHP 취약점 테마의 연장)</p><p class="c-p"><span class="c-k">수식충족</span>케이사인(17:02)</p><div class="c-c"><span class="chip"><i>정보지</i>5일째</span><span class="chip"><i>신선도</i>진행 중</span><span class="chip"><i>판단</i>눌림만 관찰</span></div></article>
+<article class="card"><h4 class="c-t">광통신</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>당일 원인은 웹에서도 확인 안 됨(10/26 목표가 상향 기사)</p><p class="c-p"><span class="c-k">수식충족</span>RF머트리얼즈</p><div class="c-c"><span class="chip"><i>신선도</i>진행형</span><span class="chip"><i>판단</i>고점 물량 출회 모양</span></div></article>
+<article class="card"><h4 class="c-t">2차전지</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>에코앤드림 유미코아 173억 공급계약(재탕)</p><div class="c-c"><span class="chip"><i>신선도</i>D+7 / D+28</span><span class="chip"><i>판단</i>진행 중</span></div></article>
+<article class="card"><h4 class="c-t">대북</h4><div class="c-c"><span class="chip"><i>정보지</i>2일째</span><span class="chip"><i>신선도</i>좋은사람들 D+1</span><span class="chip"><i>판단</i>진행 중</span></div></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>현대차 &#x27;아틀라스&#x27; 공급망</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">엠씨넥스</h4><p class="c-p"><span class="c-k">근거</span>D+0 / 대금 30일 1위 / 직전최대 18.5배 / 실질 D+0 인정, 단 대금이 나무가의 55%라 <strong>2등주(후발)</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>12봉(08:08)</span><span class="chip"><i>등락%</i>+19.4</span><span class="chip"><i>대금</i>359억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>비에이치</strong><br><strong>33.8억</strong><br><strong>8시 10분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span>종가위치 53 / VWAP <span style="color:#7dabf8;font-weight:700">-1.1%</span> / 08:10 고점 후 밀림 / 발주 보도 웹 미확인 → 근거 부족</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>13봉(08:06)</span><span class="chip"><i>등락%</i>+8.1</span><span class="chip"><i>대금</i>429억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>나무가</strong><br><strong>64.9억</strong><br><strong>8시 08분</strong><br>NXT 프리</h4><p class="c-p"><span class="c-k">근거</span><strong>10/26 에 이미 충족(애프터)</strong> → D+1 / 30일 대금 1위 / 고가 마감 / VWAP <span style="color:#ef4444;font-weight:700">+2.8%</span> / <strong>대장</strong></p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/26(16:16) 외 2</span><span class="chip"><i>충족봉</i>6봉(08:12)</span><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금</i>657억</span></div></article>
+<article class="card"><h4 class="c-t">알트</h4><p class="c-p"><span class="c-k">근거</span><strong>10/26 에 이미 충족</strong> → D+1 / 정보지 &#x27;(추정)&#x27; / 후발</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/26</span><span class="chip"><i>충족봉</i>7봉</span><span class="chip"><i>등락%</i>+12.3</span><span class="chip"><i>대금</i>234억</span></div></article>
+<article class="card"><h4 class="c-t">우림피티에스</h4><p class="c-p"><span class="c-k">근거</span><strong>첫흐름 미확인</strong> / D+0 표시 / 30일 1위 / 직전최대 6.0배 / 장 후반 후발 / 주가 선행 추정</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인(26일전)</span><span class="chip"><i>충족봉</i>14봉(14:29)</span><span class="chip"><i>등락%</i>+18.2</span><span class="chip"><i>대금</i>155억</span></div></article>
+<article class="card"><h4 class="c-t">아이엘</h4><p class="c-p"><span class="c-k">근거</span><strong>첫흐름 미확인</strong> / D+0 표시 / 30일 1위 / 장 후반 후발 / 재탕 성격</p><div class="c-c"><span class="chip"><i>첫흐름</i>미확인(24일전)</span><span class="chip"><i>충족봉</i>6봉(15:19)</span><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>대금</i>49억</span></div></article>
+</div>
+<h3>전선·전력설비</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">제일일렉트릭</h4><p class="c-p"><span class="c-k">등락%</span>+16.8(NXT 세션 종가 기준, KRX 종가는 <span style="color:#ef4444;font-weight:700">+14.57%</span>)</p><p class="c-p"><span class="c-k">근거</span>D+0 / 전일 대비 112배 / 직전최대 9.6배 / 다른 종목은 30일 대금 22~30위라 동시성 약함</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>34봉(10:06)</span><span class="chip"><i>대금</i>367억</span></div></article>
+</div>
+<h3>광통신 (진행 중)</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>RF머트리얼즈</strong><br><strong>41.2억</strong><br><strong>10시 40분</strong></h4><p class="c-p"><span class="c-k">근거</span>30일 1위 / 10:37 고가 직후 <span style="color:#7dabf8;font-weight:700">-20.4%</span> / 종가위치 17 / 진행 중 테마라 눌림 관찰용</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>등락%</i>-4.0</span><span class="chip"><i>대금</i>1,259억</span></div></article>
+</div>
+<h3>보안 (진행 중)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">케이사인</h4><div class="c-c"><span class="chip"><i>충족봉</i>17:02 충족</span><span class="chip"><i>근거</i>충족 후 <span style="color:#7dabf8;font-weight:700">-9.8%</span> 밀림</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>녹십자웰빙</strong><br><strong>25.5억</strong><br><strong>15시 03분</strong></h4><p class="c-p"><span class="c-k">근거</span>충족 후 <span style="color:#7dabf8;font-weight:700">-9.6%</span> / 순매수 -25억 / 톡신 기사는 관련성 불명확 → 약한 신호</p><div class="c-c"><span class="chip"><i>충족봉</i>15:08 충족</span><span class="chip"><i>등락%</i>+0.5</span><span class="chip"><i>대금</i>163억</span></div></article>
+</div>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">현대차 &#x27;아틀라스&#x27; 공급망</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G2 50) / 대금 13억 / <span style="color:#ef4444;font-weight:700">+30.0%</span>는 18:42 <strong>애프터</strong> 상한가 기준</p><div class="c-c"><span class="chip"><i>종목</i>씨티알모빌리티</span></div></article>
+<article class="card"><h4 class="c-t">현대차 &#x27;아틀라스&#x27; 공급망</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>점상한가(시=고=저=종 7,050) → 매물이 없어 대금 5.8억, 대금으로 판단할 수 없음</p><div class="c-c"><span class="chip"><i>종목</i>캠시스</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력설비</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+6.4%</span> / 258억 / 독일 1,150억 수주 공시에도 30일 대금 27위 → 시장이 인정하지 않음</p><div class="c-c"><span class="chip"><i>종목</i>대한전선</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력설비</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+3.2%</span> / 336억, 동반 약함</p><div class="c-c"><span class="chip"><i>종목</i>지엔씨에너지</span></div></article>
+<article class="card"><h4 class="c-t">전선·전력설비</h4><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span><span style="color:#ef4444;font-weight:700">+5.1%</span> / 211억, 동반 약함(이전충족 09/18)</p><div class="c-c"><span class="chip"><i>종목</i>일진전기</span></div></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">현대차 &#x27;아틀라스&#x27; 공급망</h4><p class="c-p"><span class="c-k">정보지 사유</span>&quot;아틀라스 1만대 부품 발주&quot; — <strong>웹에서 확인 안 됨</strong></p><div class="c-c"><span class="chip"><i>종목</i>씨티알모빌리티·비에이치</span></div></article>
+<article class="card"><h4 class="c-t">하닉 주주환원</h4><p class="c-p"><span class="c-k">정보지 사유</span>&#x27;오늘 처음&#x27;으로 언급됐지만 스캐너에 수집 안 됨 → <strong>근거 부족</strong></p><div class="c-c"><span class="chip"><i>종목</i>SK스퀘어·SK</span></div></article>
+</div>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li>나무가·캠시스 시초가와 첫 30분 대금을 봅니다. 나무가가 갭 이후에도 대금 1위를 지키고 엠씨넥스가 따라붙으면 진짜입니다. 시가 고점 후 장대음봉으로 밀리면 아닙니다.</li>
+<li>캠시스는 상한가 잠김이 풀린 뒤에도 대금이 실리며 버티면 진짜입니다. 후발(우림피티에스·아이엘·알트)만 돌면 아닙니다.</li>
+<li>현대차·보스턴다이내믹스 측 공식 확인이나 공시가 나오는지, 비에이치·씨티알 &#x27;1만대 발주&#x27; 보도가 사실인지 확인합니다. 보도 부인이 나오면 아닙니다.</li>
+<li>제일일렉트릭이 고가 7,410원을 돌파하고 전선 대형주 대금이 30일 상위로 올라오면 진짜입니다. 혼자 시가에 털리면 개별주로 강등합니다.</li>
+<li>SK하이닉스 실적(10/28)이 나옵니다. 반도체로 돈이 다시 쏠리면 로봇 테마 대금이 분산될 위험이 있습니다.</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 D+0 브리핑 — 2026-10-27 (화) [장마감]</h1>
+<p>기준일: 2026-10-27 (화) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 날짜 기준</p>
+<blockquote><p>🌐 웹 확인 11회</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>오늘 새로 터진 테마는 <strong>현대차 &#x27;아틀라스&#x27; 공급망(로봇 부품·카메라모듈)</strong> 하나입니다. 나무가·엠씨넥스·비에이치·우림피티에스·아이엘·캠시스·씨티알모빌리티가 같은 재료로 함께 올랐습니다. 단, 재료는 <strong>어제(10/26) 장 마감 후 보도</strong>됐고 나무가는 어제 애프터마켓에서 먼저 충족했습니다. 그래서 오늘은 엄밀히 D+1이고, <strong>정규장 기준으로는 첫날</strong>입니다. 반도체 소부장(앤트로픽 IPO)은 돈이 가장 컸지만 정보지에 9일째 나온 <strong>진행 중 테마</strong>입니다. 전선·전력설비는 정보지에 오늘 처음 나왔지만 사실상 제일일렉트릭 혼자 움직였습니다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. 휴머노이드 로봇 — 현대차 &#x27;아틀라스&#x27; 공급망 (카메라모듈·부품)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>나무가</strong></h4><p class="c-p"><span class="c-k">비고</span>30일 대금 1위, 고가 마감</p><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i><strong>657</strong></span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>★6봉(08:12)</span><span class="chip"><i>이전충족</i><strong>10/26(16:16)</strong>외2</span></div></article>
+<article class="card"><h4 class="c-t">비에이치</h4><p class="c-p"><span class="c-k">비고</span>종가위치 53, VWAP <span style="color:#7dabf8;font-weight:700">-1.1%</span></p><div class="c-c"><span class="chip"><i>등락%</i>+8.1</span><span class="chip"><i>대금(억)</i>429</span><span class="chip"><i>오늘충족</i>★첫흐름 13봉(08:06)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t"><strong>엠씨넥스</strong></h4><p class="c-p"><span class="c-k">비고</span>30일 1위, 직전최대 <strong>18.5배</strong></p><div class="c-c"><span class="chip"><i>등락%</i>+19.4</span><span class="chip"><i>대금(억)</i>359</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★첫흐름 12봉(08:08)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">알트</h4><p class="c-p"><span class="c-k">비고</span>정보지 &#x27;(추정)&#x27;</p><div class="c-c"><span class="chip"><i>등락%</i>+12.3</span><span class="chip"><i>대금(억)</i>234</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>★7봉</span><span class="chip"><i>이전충족</i>10/26</span></div></article>
+<article class="card"><h4 class="c-t">우림피티에스</h4><p class="c-p"><span class="c-k">비고</span>30일 1위, 직전최대 6.0배</p><div class="c-c"><span class="chip"><i>등락%</i>+18.2</span><span class="chip"><i>대금(억)</i>155</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★14봉(14:29)</span><span class="chip"><i>이전충족</i>없음(미확인 26일전)</span></div></article>
+<article class="card"><h4 class="c-t">아이엘</h4><p class="c-p"><span class="c-k">비고</span>30일 1위</p><div class="c-c"><span class="chip"><i>등락%</i>+14.6</span><span class="chip"><i>대금(억)</i>49</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★6봉(15:19)</span><span class="chip"><i>이전충족</i>없음(미확인 24일전)</span></div></article>
+<article class="card"><h4 class="c-t">씨티알모빌리티</h4><p class="c-p"><span class="c-k">비고</span>18:42 애프터 상한가</p><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>13</span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>미충족(G2 50)</span></div></article>
+<article class="card"><h4 class="c-t">캠시스</h4><p class="c-p"><span class="c-k">비고</span><strong>점상한가(시=고=저=종 7,050)</strong> → 매물이 없어 대금이 작음</p><div class="c-c"><span class="chip"><i>등락%</i>+29.8</span><span class="chip"><i>대금(억)</i>5.8</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">현대모비스</h4><p class="c-p"><span class="c-k">비고</span>액추에이터 담당이라고 하는데 30일 대금 30위로 반응 없음</p><div class="c-c"><span class="chip"><i>등락%</i>+2.3</span><span class="chip"><i>대금(억)</i>556</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 10/26 장 마감 후.</strong></li>
+<li>문서: 나무가가 10/26 16:16(애프터)에 이미 충족했습니다. 정보지C도 &quot;어제 장마감 후 아틀라스 공급망 공개&quot;라고 적었습니다.</li>
+<li>웹: 10/26 전자신문 「아틀라스 관절 현대모비스, 심장은 삼성SDI·LG엔솔」 (웹: 전자신문), 「나무가, 애프터마켓 20% 급등」 (웹: 뉴스핌).</li>
+<li>정리하면 정보지 기준 &#x27;오늘 처음&#x27;이고, 정규장 기준 첫날이며, 엄밀히는 D+1입니다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li><strong>대장 = 나무가.</strong> 테마 안에서 대금이 가장 크고(657억), 가장 먼저 충족했고(10/26), 고가 마감·VWAP <span style="color:#ef4444;font-weight:700">+2.8%</span>입니다.</li>
+<li><strong>엠씨넥스는 ★첫흐름 D+0이지만 대금이 나무가의 55%라서 2등주(후발)로 봅니다.</strong> 그래도 직전최대 18.5배라 새 돈의 질은 이 테마에서 가장 좋습니다.</li>
+<li>비에이치: 대금은 2위지만 등락 <span style="color:#ef4444;font-weight:700">+8.1%</span>에 위꼬리가 깁니다. 08:10 고점 이후 내내 밀려 시장이 덜 인정한 모양입니다.</li>
+<li>우림피티에스·아이엘은 장 후반(14:29·15:19)에 충족한 <strong>후발주</strong>입니다.</li>
+<li>캠시스는 점상한가라서 대금으로 판단할 수 없습니다. 내일 잠김이 풀릴 때 대금을 봐야 합니다.</li>
+<li><strong>추정 재료</strong></li>
+<li>아틀라스 부품 공급망 공개 (웹: 전자신문).</li>
+<li>나무가는 얼굴 메인 카메라, 캠시스는 손 카메라를 공급하고, 액추에이터는 현대모비스, 배터리는 삼성SDI·LG엔솔이 맡는 것으로 <strong>&quot;알려졌다&quot;</strong> 수준의 보도입니다 (웹: 전자신문 10/27).</li>
+<li>액추에이터가 제조원가의 60%라는 분석도 있습니다 (웹: 한국경제 10/27).</li>
+<li>우림피티에스는 &quot;보스턴다이내믹스에 정밀감속기 개발품을 납품 중&quot;이라는 과거 보도가 있습니다 (웹: 2025년 12월 아틀라스 관련주 기사).</li>
+<li>정보지의 &quot;씨티알·비에이치 아틀라스 1만대 부품 발주&quot;는 <strong>웹에서 확인 안 됨</strong>.</li>
+<li>엠씨넥스·비에이치의 08시대 포착은 뉴스(10/26 저녁) 뒤에 나온 것입니다. <strong>주가가 뉴스보다 먼저 움직인 건 아닙니다.</strong></li>
+<li><strong>재료 단계</strong></li>
+<li>나무가: 기대(09/16 &quot;로봇 확장&quot;) → 고객 명시 보도(10/27 아틀라스 메인 카메라). <strong>단계 상승, 실질 신규 재료.</strong> 단 공시가 아닌 언론 보도입니다.</li>
+<li>엠씨넥스: 기대(08/18 &quot;로봇 센서 정조준&quot;) → 공급망 참여 보도(10/27). <strong>단계 상승. 대금 30일 1위·18.5배가 받쳐 줘서 실질 D+0으로 인정합니다.</strong></li>
+<li>비에이치: 기대(08/11 &quot;삼성 로봇 참여 기대&quot;) → 발주 보도(정보지만, 웹 미확인). <strong>근거 부족.</strong></li>
+<li>아이엘: 확정(08/26 휴머노이드 30대 납품, 다른 고객) → 오늘 기사 없음. <strong>재탕 성격.</strong></li>
+<li>우림피티에스: 문서 이력 없음. <strong>주가 선행 추정.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>진짜라면:</li>
+<li>나무가가 갭 이후에도 대금 1위를 지킵니다.</li>
+<li>엠씨넥스가 나무가 대금을 따라붙습니다.</li>
+<li>캠시스 상한가 잠김이 풀린 뒤에도 대금이 실리며 버팁니다.</li>
+<li>현대차·보스턴다이내믹스 측 공식 확인이나 공시가 나옵니다.</li>
+<li>아니라면:</li>
+<li>나무가·캠시스가 시가 고점 후 장대음봉으로 밀립니다.</li>
+<li>후발(우림·아이엘·알트)만 돌아갑니다.</li>
+<li>보도 부인이 나옵니다.</li>
+</ul>
+<h3>🥈 2. 전선·전력설비 (AI 데이터센터 전력망) — 약한 D+0</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>제일일렉트릭</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+16.8</span><span class="chip"><i>대금(억)</i><strong>367</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>★첫흐름 34봉(10:06)</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">대한전선</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.4</span><span class="chip"><i>대금(억)</i>258</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/22외1</span></div></article>
+<article class="card"><h4 class="c-t">지엔씨에너지</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.2</span><span class="chip"><i>대금(억)</i>336</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">일진전기</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.1</span><span class="chip"><i>대금(억)</i>211</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/18</span></div></article>
+<article class="card"><h4 class="c-t">LS / 제룡전기</h4><div class="c-c"><span class="chip"><i>등락%</i>+3.6 / +3.9</span><span class="chip"><i>대금(억)</i>253 / 33</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정:</strong> 제일일렉트릭은 오늘이 첫 충족입니다. 대한전선·일진전기는 09/18~22에 충족한 적이 있어서 섹터 전체로는 재점화입니다.</li>
+<li><strong>대장주:</strong> 제일일렉트릭. 대금이 가장 크고, 전일 대비 112배, 직전최대 9.6배입니다. 다른 종목은 30일 대금 순위가 22~30위라서 <strong>동시성이 약하고 개별주에 가깝습니다.</strong></li>
+<li><strong>추정 재료</strong></li>
+<li>AI 데이터센터발 전력기기 수요 기대 (웹: 잡포스트).</li>
+<li>웹 기사는 KRX 종가 <span style="color:#ef4444;font-weight:700">+14.57%</span>·6,840원·354억이고, 문서는 NXT 세션 종가 <span style="color:#ef4444;font-weight:700">+16.8%</span>·6,970원·367억입니다. 문서를 정본으로 씁니다.</li>
+<li>제일일렉트릭 개별 공시·수주는 <strong>웹에서도 확인 안 됨.</strong></li>
+<li>대한전선은 독일 1,150억 수주 공시(확정)가 있는데도 <span style="color:#ef4444;font-weight:700">+6.4%</span>, 30일 대금 27위라서 <strong>시장이 인정하지 않았습니다.</strong></li>
+<li><strong>재료 단계:</strong> 이력 없음 → 기대 단계. 주가 선행 추정.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>진짜라면: 제일일렉트릭이 고가 7,410원을 돌파하고, 전선 대형주 대금이 30일 상위로 올라옵니다.</li>
+<li>아니라면: 제일일렉트릭 혼자 시가에 털리고 섹터 동반이 없습니다. 이 경우 개별주로 강등합니다.</li>
+</ul>
+<blockquote><p>세 번째 D+0 후보는 없습니다. 나머지 D+0 표시 종목(마이크로컨텍솔·한솔테크닉스·로체시스템즈·삼양엔씨켐·케이씨)은 반도체 반등장에서 10%를 넘은 것일 뿐입니다. 테마가 9일째라 신규가 아닙니다.</p></blockquote>
+<hr>
+<h2>③ 진행 중 테마 (눌림 관찰용)</h2>
+<ul>
+<li><strong>반도체 소부장 (앤트로픽 IPO + 삼전·닉스 주주환원 기대) — 정보지 9일째</strong></li>
+<li>대장은 <strong>심텍 2,209억</strong>입니다. D+21, 이전충족 09/22. 그다음이 코리아써키트 1,561억, 네오셈 870억(30일 1위, 2.2배), 티에프이 647억(30일 1위)입니다.</li>
+<li>10/16 급등 묶음이 D+7입니다.</li>
+<li>내일 SK하이닉스 실적이 분수령입니다 (문서: 머니투데이).</li>
+<li><strong>보안 — 5일째</strong></li>
+<li>샌즈랩 714억 D+1(10/23 충족), 안랩 804억 D+10, 케이사인(17:02 충족 후 <span style="color:#7dabf8;font-weight:700">-9.8%</span> 밀림)입니다.</li>
+<li>앤트로픽 내부망 침투 이슈는 정보지상 &#x27;오늘 처음&#x27;이지만 PHP 취약점 테마의 연장입니다.</li>
+<li><strong>광통신 — 진행형</strong></li>
+<li>RF머트리얼즈는 ★첫흐름에 1,259억(30일 1위)이 들어왔습니다. 하지만 10:37 고가 직후 <span style="color:#7dabf8;font-weight:700">-20.4%</span> 급락했고 등락 <span style="color:#7dabf8;font-weight:700">-4.0%</span>, 종가위치 17입니다. <strong>고점에서 물량이 쏟아진 모양</strong>입니다.</li>
+<li>당일 원인은 웹에서도 확인 안 됨. 10/26에 목표가 상향 기사가 있었습니다.</li>
+<li>빛과전자·대한광통신·빛샘전자는 이미 10/07~10/22에 충족했습니다.</li>
+<li><strong>2차전지</strong></li>
+<li>에코앤드림: 유미코아 173억 공급계약이 있었지만 09/23 177억 수주와 같은 단계의 반복(확정→확정)이라 <strong>재탕</strong>입니다. D+7입니다.</li>
+<li>액스비스는 D+28입니다.</li>
+<li><strong>대북:</strong> 좋은사람들 D+1, 인디에프(10/26 충족)입니다. 정보지 2일째입니다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>브릴스</strong> 757억 <span style="color:#ef4444;font-weight:700">+8.4%</span>: 10/26에 <span style="color:#ef4444;font-weight:700">+23.6%</span>로 사실상 D+1입니다. 첫흐름은 미확인(9일 전 <span style="color:#ef4444;font-weight:700">+14%</span>)입니다. 재료 미상이고 웹에서도 확인 안 됨.</li>
+<li><strong>녹십자웰빙</strong> 163억 <span style="color:#ef4444;font-weight:700">+0.5%</span>: 15:08 충족 후 <span style="color:#7dabf8;font-weight:700">-9.6%</span> 밀렸고 순매수 -25억입니다. 함께 걸린 톡신 기사는 본문만 언급이라 관련성이 불명확합니다. 약한 신호입니다.</li>
+<li><strong>보원케미칼</strong> D+11: 태블릿PC 소재 공급 기사(11:22)가 있습니다. 시총 376억짜리 단발입니다.</li>
+<li><strong>이지트로닉스</strong>(6.3억)·대원(31억, 195배)·웹스(1.8억): D+0이지만 대금이 너무 작습니다. 대원은 &#x27;시총 미달&#x27; 테마로 분류됩니다.</li>
+<li><strong>멜콘</strong>(422억 상한가, D+4, 재료 미상), <strong>글로벌테크놀로지</strong>(D+18), <strong>엠에스바이오·엘리스</strong>(신규 상장 종목): 테마 밖입니다.</li>
+<li><strong>SK스퀘어·SK</strong>: 정보지상 &#x27;오늘 처음&#x27;(하닉 주주환원)이지만 스캐너에 수집되지 않았습니다. 정보지 숫자는 정본이 아니므로 <strong>근거 부족</strong>으로 둡니다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 현대차 &#x27;아틀라스&#x27; 공급망(로봇 부품·카메라모듈) — 10/26 장후 시작, 오늘 정규장 첫날</li>
+<li>그 테마의 대장주 (거래대금 최대): 나무가 657억 (10/26 애프터 선충족, 고가 마감)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 엠씨넥스(로봇 기대→아틀라스 공급망 보도, 대금 18.5배), 나무가(휴머노이드 공급→아틀라스 명시)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 엠씨넥스(첫흐름이지만 대금 2~3위), 우림피티에스·아이엘(장 후반 충족), 알트</li>
+<li>같이 볼 종목: 캠시스(점상, 잠김 풀린 뒤 대금), 씨티알모빌리티, 비에이치(발주 보도 진위), 제일일렉트릭(전력설비 단독 D+0)</li>
+<li>진행중이라 눌림만 볼 종목: 심텍·네오셈·티에프이(반도체), 샌즈랩(보안), RF머트리얼즈(광통신), 에코앤드림</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>나무가·캠시스 시초가와 첫 30분 대금 — 대장이 대금 1위를 지키는지, 엠씨넥스가 따라붙는지</li>
+<li>현대차·보스턴다이내믹스 공식 확인 또는 공시 / 비에이치·씨티알 &#x27;1만대 발주&#x27; 보도 진위</li>
+<li>SK하이닉스 실적(10/28) — 반도체 쪽으로 돈이 다시 쏠리면 로봇 테마 대금이 분산될 위험</li>
+</ol>
+<p>```</p>
+<p>Sources:</p>
+<ul>
+<li>[전자신문 — 현대차 &#x27;아틀라스&#x27; 공급망 공개에 관련주 급등…나무가·캠시스 30% 가까이 상승](https://www.etnews.com/20261027000385)</li>
+<li>[전자신문 — 아틀라스 관절 현대모비스, 심장은 삼성SDI·LG엔솔](https://www.etnews.com/20261026000283)</li>
+<li>[뉴스핌 — 나무가, 애프터마켓 20% 급등](https://www.newspim.com/news/view/20261026001166)</li>
+<li>[이투데이 — 아틀라스 공급망 윤곽에 나무가·캠시스 상한가](https://www.etoday.co.kr/news/view/2640698)</li>
+<li>[한국경제 — 아틀라스가 소집한 K부품 군단](https://www.hankyung.com/article/2026102786921)</li>
+<li>[잡포스트 — 제일일렉트릭 14.57% 상승](https://www.job-post.co.kr/news/articleView.html?idxno=234855)</li>
+<li>[뉴시스 — 아틀라스 CES 2026 관련 보도](https://www.newsis.com/view/NISX20251223_0003451528)</li>
+<li>[파이낸셜뉴스 — 아틀라스 관련주 보도](https://www.fnnews.com/news/202512241121248106)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-27 23:36
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
