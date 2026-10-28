@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>2026-10-28 종목 브리핑</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ── 종목 브리핑 (자체 스타일 · site.css 에 의존하지 않음) ── */
+:root{--stk:#f59e0b}
+.tag.stk{color:var(--stk);border-color:#4a3a1a}
+.stk article h1{border-bottom-color:var(--stk)}
+.stk article h2{border-left-color:var(--stk)}
+
+/* 카드 — 표를 대신한다.
+   짧은 사실(칩)과 긴 산문(문단)을 분리해서, 화면 폭에 기대지 않고
+   어디서든 같은 구조로 읽히게 한다. */
+.stk .cards{margin:16px 0;display:grid;gap:10px}
+.stk .card{background:#161920;border:1px solid #262a33;border-radius:12px;
+  padding:14px 16px;border-left:3px solid var(--stk)}
+.stk .card .c-t{font-size:17px;font-weight:800;color:#f3f4f6;margin:0 0 8px;
+  letter-spacing:-.3px;line-height:1.35}
+.stk .card .c-p{margin:0 0 8px;font-size:15px;line-height:1.65;color:#d5d9df}
+.stk .card .c-p .c-k{display:block;font-size:11.5px;font-weight:700;
+  color:var(--stk);letter-spacing:.4px;margin-bottom:2px;text-transform:none}
+.stk .card .c-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stk .card .chip{display:inline-flex;align-items:baseline;gap:6px;
+  background:#1e222b;border:1px solid #2b3039;border-radius:7px;
+  padding:5px 10px;font-size:13.5px;color:#e2e5ea;line-height:1.45}
+.stk .card .chip i{font-style:normal;font-size:11px;font-weight:700;
+  color:#8b919b;white-space:nowrap}
+
+/* 넓은 화면에서는 카드를 2열로 — 세로로 늘어지는 것을 막는다 */
+@media (min-width:760px){
+  .stk .cards{grid-template-columns:1fr 1fr}
+  .stk .cards:has(.card:only-child){grid-template-columns:1fr}
+}
+
+/* 남아 있는 작은 표는 좁은 화면에서만 카드로 편다 */
+@media (max-width:640px){
+  .stk article .tw{border:none;margin:14px 0}
+  .stk article table{background:none;font-size:14px}
+  .stk article thead{display:none}
+  .stk article table,.stk article tbody,.stk article tr,.stk article td{
+    display:block;width:100%}
+  .stk article tr{background:#161920;border:1px solid #262a33;border-radius:10px;
+    padding:10px 12px;margin-bottom:10px}
+  .stk article td{border:none;padding:4px 0;display:flex;gap:10px;
+    align-items:baseline;line-height:1.5}
+  .stk article td::before{content:attr(data-l);flex:0 0 5em;color:#8b919b;
+    font-size:11.5px;font-weight:700}
+  .stk article td:first-child{display:block;font-size:16px;font-weight:700;
+    padding:0 0 6px;margin-bottom:6px;border-bottom:1px solid #262a33}
+  .stk article td:first-child::before{display:none}
+  .stk .card{padding:12px 13px}
+  .stk .card .c-t{font-size:16px}
+}
+
+/* 요약 상자 — 함장요약 이미지에 들어가는 것과 **같은 글**이다.
+   이미지를 올리지 않는 대신, 페이지를 열면 이것부터 보이게 한다. */
+.stk .sum{background:#14171d;border:1px solid #2b3039;border-top:3px solid var(--stk);
+  border-radius:14px;padding:2px 20px 10px;margin:18px 0 20px}
+/* 상세 분석 — 접어 둔다. 필요할 때만 펼친다 */
+.stk details.more{border:1px solid #262a33;border-radius:12px;margin:0 0 20px;
+  background:#12151b}
+.stk details.more>summary{cursor:pointer;list-style:none;padding:14px 18px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stk details.more>summary::-webkit-details-marker{display:none}
+.stk details.more>summary::before{content:"▶";color:var(--stk);font-size:12px;
+  display:inline-block;transition:transform .15s}
+.stk details.more[open]>summary::before{transform:rotate(90deg)}
+.stk details.more[open]>summary{border-bottom:1px solid #262a33}
+.stk details.more .m-t{font-size:18px;font-weight:800;color:#f3f4f6}
+.stk details.more .m-s{font-size:13px;color:#9aa0a6}
+.stk details.more .more-b{padding:0 18px 12px}
+/* 🔥 최강 테마 1분봉 20억↑ (scanner/d0amount.py) */
+.stk article h2.hot{color:#fb923c;border-left-color:#f97316}
+.stk .card.hot{border-left-color:#f97316;background:#241a12;border-color:#5a3a1a}
+.stk .card.hot .c-t{color:#fdba74}
+.stk article tr.hot td{background:#241a12}
+
+/* 함장요약 버튼 — 공용 아카이브에서 들어온 사람이 요약 페이지를 찾는 유일한 길 */
+.stk a.sumlink{display:block;margin:16px 0 0;
+  padding:13px 16px;border-radius:12px;background:#1f1a10;border:1px solid #4a3a1a;
+  color:var(--stk);font-weight:800;font-size:16px;text-decoration:none;line-height:1.4}
+.stk a.sumlink small{display:block;font-weight:500;color:#c9a55a;font-size:13px;margin-top:2px}
+.stk a.sumlink:hover{background:#2a2213}
+@media (max-width:640px){
+  .stk .sum{padding:2px 13px 8px}
+  .stk details.more>summary{padding:12px 13px}
+  .stk details.more .more-b{padding:0 13px 10px}
+}
+</style>
+</head><body class="stk">
+<header class="top"><div class="wrap">
+  <a class="home" href="../index.html">← 아카이브</a>
+  <span class="tag stk">종목</span>
+  <span class="dt">2026-10-28</span>
+</div></header>
+<div class="wrap"><article>
+<a class="sumlink" href="2026-10-28_요약.html">🖼 함장요약 보기<small>이미지와 같은 모양 · 한 장으로 훑어보기</small></a>
+<section class="sum" id="summary">
+<h1>오늘의 브리핑</h1>
+<p>기준일: 2026-10-28 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 기준일로 했다</p>
+<blockquote><p>오늘(10/28) 기사·공시는 웹에서 하나도 직접 확인하지 못했다. 뉴스 시각은 문서·정보지 값을 썼다. 원문에 종목코드가 없어 종목명만 적었다.</p></blockquote>
+<h2>오늘장 요약</h2>
+<p>SK하이닉스 실적(3분기 영업익 83조, 100조 주주환원)으로 코스피가 <span style="color:#ef4444;font-weight:700">+6.6%</span> 오른 <strong>지수 장세</strong>라 거의 모든 종목이 함께 올랐다. 그 안에서 새로 돈이 들어온 곳은 두 군데다. 레인보우로보틱스로 30일 최대 대금이 처음 들어온 <strong>로봇(피지컬AI)</strong>, 그리고 삼성전기 실적(12:01) 이후 매수세가 번진 <strong>MLCC·기판</strong>이다. 보안·광통신은 진행 중 테마가 다시 오른 것이고, 가비아·케이아이엔엑스는 M&amp;A 이벤트로 움직였다.</p>
+<h2 class="hot">🔥 1분봉 20억↑ — 16종목</h2>
+<blockquote><p>자동 계산 · 1분봉 대금 = (고가+저가)/2 × 거래량 · 09:00·15:30 동시호가봉 제외 · 요약에 나온 종목 전부</p></blockquote>
+<ul>
+<li>🔥 <strong>SK하이닉스</strong> — 최대 <strong>1615.3억</strong> · <strong>9시 59분</strong> · 20억↑ 봉 556개 · AI반도체</li>
+<li>🔥 <strong>삼성전자</strong> — 최대 <strong>985.2억</strong> · <strong>10시 24분</strong> · 20억↑ 봉 515개 · AI반도체</li>
+<li>🔥 <strong>삼성전기</strong> — 최대 <strong>368.3억</strong> · <strong>9시 15분</strong> · 20억↑ 봉 327개 · MLCC</li>
+<li>🔥 <strong>빛과전자</strong> — 최대 <strong>213.9억</strong> · <strong>10시 57분</strong> · 20억↑ 봉 16개 · 보안·광통신 (원문에 충족봉 미기재)</li>
+<li>🔥 <strong>SK스퀘어</strong> — 최대 <strong>159.0억</strong> · <strong>9시 59분</strong> · 20억↑ 봉 213개 · AI반도체</li>
+<li>🔥 <strong>원익홀딩스</strong> — 최대 <strong>62.2억</strong> · <strong>9시 40분</strong> · 20억↑ 봉 19개 · 로봇</li>
+<li>🔥 <strong>HD현대마린엔진</strong> — 최대 <strong>56.2억</strong> · <strong>13시 17분</strong> · 20억↑ 봉 16개 · 개별</li>
+<li>🔥 <strong>대한광통신</strong> — 최대 <strong>55.0억</strong> · <strong>9시 02분</strong> · 20억↑ 봉 14개 · 보안·광통신 (원문에 충족봉 미기재)</li>
+<li>🔥 <strong>디아이</strong> — 최대 <strong>53.7억</strong> · <strong>9시 03분</strong> · 20억↑ 봉 9개 · AI반도체·MLCC·기판</li>
+<li>🔥 <strong>현대오토에버</strong> — 최대 <strong>53.4억</strong> · <strong>10시 19분</strong> · 20억↑ 봉 1개 · 로봇</li>
+<li>🔥 <strong>로보티즈</strong> — 최대 <strong>52.1억</strong> · <strong>9시 33분</strong> · 20억↑ 봉 28개 · 로봇</li>
+<li>🔥 <strong>엑스게이트</strong> — 최대 <strong>36.0억</strong> · <strong>9시 01분</strong> · 20억↑ 봉 3개 · 보안·광통신 (원문에 충족봉 미기재)</li>
+<li>🔥 <strong>ISC</strong> — 최대 <strong>25.3억</strong> · <strong>10시 08분</strong> · 20억↑ 봉 1개 · AI반도체</li>
+<li>🔥 <strong>레인보우로보틱스</strong> — 최대 <strong>24.4억</strong> · <strong>9시 40분</strong> · 20억↑ 봉 2개 · 로봇</li>
+<li>🔥 <strong>해성디에스</strong> — 최대 <strong>21.8억</strong> · <strong>9시 47분</strong> · 20억↑ 봉 1개 · AI반도체·MLCC·기판</li>
+<li>🔥 <strong>한라캐스트</strong> — 최대 <strong>20.1억</strong> · <strong>9시 25분</strong> · 20억↑ 봉 1개 · 로봇</li>
+</ul>
+<h2>🎯 첫흐름 매수 후보</h2>
+<blockquote><p>자동 계산 · ★첫흐름 충족일 정규장 고가에 D+1~D+5 매수를 걸어 둔다 · <strong>체결 전에 한 번이라도 기준가를 넘으면(애프터·프리마켓·시가 갭) 그 종목은 끝</strong> · 손절 <span style="color:#7dabf8;font-weight:700">-2%</span> · 익절 <span style="color:#ef4444;font-weight:700">+10%</span> (9/14부터 애프터마켓 20:00 까지 판정) · 한 번 손절되면 끝 · 첫흐름일 <span style="color:#ef4444;font-weight:700">+20%</span>↑(급등) · 재료 정책·자본이면 제외 · 마지막가 = 그날 20:00 직전 가격 · <strong>매수 권유가 아니라 연구 중인 규칙의 기록</strong></p></blockquote>
+<p><strong>다음 거래일 걸어 둘 종목</strong> — 기준가까지 가까운 순 · HTS 감시주문 20개 기준</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">1</h4><div class="c-c"><span class="chip"><i>종목</i><strong>레인보우로보틱스</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>409,000</strong></span><span class="chip"><i>손절 -2%</i>401,000</span><span class="chip"><i>익절 +10%</i>450,000</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+0.5%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">2</h4><div class="c-c"><span class="chip"><i>종목</i><strong>비에이치</strong></span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>18,400</strong></span><span class="chip"><i>손절 -2%</i>18,030</span><span class="chip"><i>익절 +10%</i>20,250</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+2.7%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">3</h4><div class="c-c"><span class="chip"><i>종목</i><strong>현대무벡스</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>18,840</strong></span><span class="chip"><i>손절 -2%</i>18,460</span><span class="chip"><i>익절 +10%</i>20,700</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+2.7%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">4</h4><div class="c-c"><span class="chip"><i>종목</i><strong>이랜시스</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>5,840</strong></span><span class="chip"><i>손절 -2%</i>5,720</span><span class="chip"><i>익절 +10%</i>6,420</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+3.7%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t">5</h4><div class="c-c"><span class="chip"><i>종목</i><strong>제일일렉트릭</strong></span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>7,410</strong></span><span class="chip"><i>손절 -2%</i>7,260</span><span class="chip"><i>익절 +10%</i>8,150</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+5.1%</span></span><span class="chip"><i>재료</i>업황</span></div></article>
+<article class="card"><h4 class="c-t">6</h4><div class="c-c"><span class="chip"><i>종목</i><strong>원익</strong> 🆕</span><span class="chip"><i>첫흐름</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>8,200</strong></span><span class="chip"><i>손절 -2%</i>8,040</span><span class="chip"><i>익절 +10%</i>9,020</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+6.8%</span></span><span class="chip"><i>재료</i>업황</span></div></article>
+<article class="card"><h4 class="c-t">7</h4><div class="c-c"><span class="chip"><i>종목</i><strong>엠씨넥스</strong></span><span class="chip"><i>첫흐름</i>10/27</span><span class="chip"><i>다음 날</i>D+2</span><span class="chip"><i>기준가 (매수)</i><strong>21,900</strong></span><span class="chip"><i>손절 -2%</i>21,450</span><span class="chip"><i>익절 +10%</i>24,100</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+8.1%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남음 (생략): 휴림에이텍(<span style="color:#ef4444;font-weight:700">+11%</span>) · HD현대마린엔진(<span style="color:#ef4444;font-weight:700">+12%</span>) · 이글루(<span style="color:#ef4444;font-weight:700">+13%</span>) · 워트(<span style="color:#ef4444;font-weight:700">+15%</span>) · RF머트리얼즈(<span style="color:#ef4444;font-weight:700">+20%</span>)</li>
+<li>제외: 진양홀딩스(정책) · 한국알콜(자본) · 가비아(급등·자본 <span style="color:#ef4444;font-weight:700">+26%</span>) · 해성디에스(급등 <span style="color:#ef4444;font-weight:700">+21%</span>) · 피앤에스로보틱스(급등 <span style="color:#ef4444;font-weight:700">+30%</span>) · 제닉스로보틱스(급등 <span style="color:#ef4444;font-weight:700">+20%</span>)</li>
+<li>오늘 끝남: 서한 미체결 · SK <strong>익절</strong> <span style="color:#ef4444;font-weight:700">+10.0%</span> · DGI 미체결</li>
+</ul>
+<p><strong>누적 성적</strong> (<span style="color:#7dabf8;font-weight:700">-2%</span> / <span style="color:#ef4444;font-weight:700">+10%</span> · 비용 0.25% 뺌)</p>
+<ul>
+<li>규칙 통과 전체: 66회 · 익절 <strong>30%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.63%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+107%</span></li>
+<li>실시간만: 6회 · 익절 <strong>17%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-0.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-2%</span></li>
+<li>제외된 것 (확인용) — 급등: 16회 · 익절 <strong>19%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.14%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+2%</span> · 정책·자본: 37회 · 익절 <strong>11%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-0.89%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-33%</span></li>
+<li>재료별 익절 비율: 자기호재 22회 32% · 업황 17회 35% · 정책 32회 12% · 따라가기 19회 16% · 자본 5회 0% · 사건 2회 50% · 모름 18회 28%</li>
+</ul>
+<p><strong>참고: 오래 쉬었다 재충족</strong> (이전 충족 11~29거래일 전) — 같은 규칙(급등만 제외, 재료 필터 없음)으로 성적만 쌓는 중, 아직 후보 아님</p>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>한라캐스트</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>12,000</strong></span><span class="chip"><i>손절 -2%</i>11,760</span><span class="chip"><i>익절 +10%</i>13,200</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+4.8%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>한켐</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>10,080</strong></span><span class="chip"><i>손절 -2%</i>9,880</span><span class="chip"><i>익절 +10%</i>11,090</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+7.7%</span></span><span class="chip"><i>재료</i>업황</span></div></article>
+<article class="card"><h4 class="c-t"><strong>에스피지</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>90,700</strong></span><span class="chip"><i>손절 -2%</i>88,900</span><span class="chip"><i>익절 +10%</i>99,800</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+1.6%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>현대오토에버</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>362,500</strong></span><span class="chip"><i>손절 -2%</i>355,000</span><span class="chip"><i>익절 +10%</i>399,000</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+3.1%</span></span><span class="chip"><i>재료</i>따라가기</span></div></article>
+<article class="card"><h4 class="c-t"><strong>드림시큐리티</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>2,590</strong></span><span class="chip"><i>손절 -2%</i>2,540</span><span class="chip"><i>익절 +10%</i>2,850</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+5.3%</span></span><span class="chip"><i>재료</i>사건</span></div></article>
+<article class="card"><h4 class="c-t"><strong>티엘비</strong> 🆕</h4><div class="c-c"><span class="chip"><i>재충족</i>10/28</span><span class="chip"><i>다음 날</i>D+1</span><span class="chip"><i>기준가 (매수)</i><strong>42,700</strong></span><span class="chip"><i>손절 -2%</i>41,850</span><span class="chip"><i>익절 +10%</i>46,950</span><span class="chip"><i>마지막가→기준가</i><span style="color:#ef4444;font-weight:700">+0.6%</span></span><span class="chip"><i>재료</i>업황</span></div></article>
+</div>
+<ul>
+<li>기준가까지 10% 넘게 남은 5종목: 신풍제약 · 바이오니아 · 녹십자웰빙 · 코스모로보틱스 · 머큐리</li>
+<li>제외: 안랩(급등 <span style="color:#ef4444;font-weight:700">+20%</span>) · 에스피소프트(급등 <span style="color:#ef4444;font-weight:700">+30%</span>)</li>
+<li>보유 중: 심텍 124,500 체결(10/28 D+1) → 오늘 마지막가 <span style="color:#ef4444;font-weight:700">+3.7%</span></li>
+<li>오늘 끝남: 모니터랩 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 파수AI <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 로보티즈 선돌파 · 보원케미칼 <strong>손절</strong> <span style="color:#7dabf8;font-weight:700">-2.0%</span> · 액스비스 선돌파 · 티에프이 선돌파</li>
+<li>재충족 급등 제외: 67회 · 익절 <strong>27%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+1.10%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+74%</span> (실시간 8회 · 익절 <strong>25%</strong> · 1회 평균 <strong><span style="color:#ef4444;font-weight:700">+0.75%</span></strong> · 합 <span style="color:#ef4444;font-weight:700">+6%</span>) · 급등: 11회 · 익절 <strong>0%</strong> · 1회 평균 <strong><span style="color:#7dabf8;font-weight:700">-2.25%</span></strong> · 합 <span style="color:#7dabf8;font-weight:700">-25%</span></li>
+</ul>
+<h2>📊 테마 요약</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">로봇(피지컬AI·휴머노이드)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>매디슨 황 방한·이재용 로봇 현장 방문(어제 17:14), 4월에도 방한한 반복 이벤트</p><p class="c-p"><span class="c-k">정보지</span><code>로봇</code> 6일째, <code>로봇 테마(매디슨 황)</code> 오늘 첫 등장</p><p class="c-p"><span class="c-k">신선도</span>중간(재탕)</p><p class="c-p"><span class="c-k">판단</span>최우선. 테마 시작 10/26(추정)이라 실질 D+2, 레인보우가 핵심</p><div class="c-c"><span class="chip"><i>수식충족</i>레인보우 D+0 ★, 로보티즈 10/26 선충족</span></div></article>
+<article class="card"><h4 class="c-t">AI반도체→MLCC·기판</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>하이닉스 실적 공시(08:29~08:32), 삼성전기 영업익 6,910억 역대 최대(12:01)</p><p class="c-p"><span class="c-k">정보지</span><code>반도체</code> 9일째, <code>반도체/콘덴서</code>·<code>MLCC</code> 오늘 처음</p><p class="c-p"><span class="c-k">신선도</span>실적 반영(4단계), MLCC는 실질 신규 가능성</p><p class="c-p"><span class="c-k">판단</span>반도체 전체 D+1(10/27 시작 추정), MLCC 중소형 대금은 30일 6~10위로 아직 인정 부족</p><div class="c-c"><span class="chip"><i>수식충족</i>원익·해성디에스 ★, 대형주는 미충족</span></div></article>
+<article class="card"><h4 class="c-t">M&amp;A(맥쿼리–가비아·케이아이엔엑스)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>맥쿼리·얼라인 합의, 공개매수 발표(대량보유 공시 07:49)</p><p class="c-p"><span class="c-k">정보지</span>에스피소프트 연상</p><p class="c-p"><span class="c-k">신선도</span>확정(분쟁→무산→합의)</p><p class="c-p"><span class="c-k">판단</span>공개매수가 5.3만원이 상단을 막음(종가 50,500원, 차이 약 5%). D+2~3 추적에는 맞지 않음</p><div class="c-c"><span class="chip"><i>수식충족</i>가비아 ★ D+0</span></div></article>
+<article class="card"><h4 class="c-t">보안(금융권 해킹)</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>10/06부터 이어진 금융권 해킹</p><p class="c-p"><span class="c-k">신선도</span>재탕</p><p class="c-p"><span class="c-k">판단</span>10/23 시작, 진행 중이라 눌림만 관찰</p><div class="c-c"><span class="chip"><i>수식충족</i>이글루 ★(후발)</span></div></article>
+<article class="card"><h4 class="c-t">광통신·AI인프라</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>빛과전자 미국 광트랜시버 초도 양산 수주(09:33)</p><p class="c-p"><span class="c-k">신선도</span>빛과전자만 확정 단계로 오름</p><p class="c-p"><span class="c-k">판단</span>10/02 이후 반복, 대금이 받쳐주지 않아 실질 D+0 아님</p><div class="c-c"><span class="chip"><i>수식충족</i>이전충족 위주</span></div></article>
+<article class="card"><h4 class="c-t">카메라모듈</h4><p class="c-p"><span class="c-k">재료(핵심 뉴스)</span>원문 미기재</p><p class="c-p"><span class="c-k">신선도</span>후반부</p><p class="c-p"><span class="c-k">판단</span>직전 5일 +40~54%, 종가위치 10~18%라 제외</p></article>
+</div>
+<h2>★ 수식 충족 종목 — 우리 수식으로 검증된 것</h2>
+<h3>로봇</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>레인보우로보틱스</strong><br><strong>24.4억</strong><br><strong>9시 40분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0, 대금 30일 1위, 직전 최대의 1.6배, 직전 5일 <span style="color:#7dabf8;font-weight:700">-4.8%</span>. 새로 합류한 2번 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>20봉</span><span class="chip"><i>등락%</i>+15.8</span><span class="chip"><i>대금</i>1,136억</span></div></article>
+<article class="card"><h4 class="c-t">휴림에이텍</h4><p class="c-p"><span class="c-k">근거</span>후발주, 종가가 고점 대비 <span style="color:#7dabf8;font-weight:700">-9.8%</span>, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-6.6%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>14봉</span><span class="chip"><i>등락%</i>+17.2</span><span class="chip"><i>대금</i>71억</span></div></article>
+<article class="card"><h4 class="c-t">제닉스로보틱스</h4><p class="c-p"><span class="c-k">근거</span>후발주, 대금 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>8봉</span><span class="chip"><i>등락%</i>+20.5</span><span class="chip"><i>대금</i>69억</span></div></article>
+<article class="card"><h4 class="c-t">현대무벡스</h4><p class="c-p"><span class="c-k">근거</span>후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>7봉</span><span class="chip"><i>등락%</i>+5.8</span><span class="chip"><i>대금</i>158억</span></div></article>
+<article class="card"><h4 class="c-t">이랜시스</h4><p class="c-p"><span class="c-k">근거</span>후발주, 대금 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>6봉</span><span class="chip"><i>등락%</i>+6.2</span><span class="chip"><i>대금</i>48억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>로보티즈</strong><br><strong>52.1억</strong><br><strong>9시 33분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/26에 이미 충족. 테마 내 대금 1위 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/26</span><span class="chip"><i>충족봉</i>14봉</span><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>대금</i>2,565억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>원익홀딩스</strong><br><strong>62.2억</strong><br><strong>9시 40분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/26에 이미 충족, D+27</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/26외2</span><span class="chip"><i>충족봉</i>30봉</span><span class="chip"><i>등락%</i>+18.1</span><span class="chip"><i>대금</i>1,878억</span></div></article>
+<article class="card"><h4 class="c-t">에스피지</h4><p class="c-p"><span class="c-k">근거</span>09/15에 이미 충족, D+27</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/15</span><span class="chip"><i>충족봉</i>13봉</span><span class="chip"><i>등락%</i>+10.5</span><span class="chip"><i>대금</i>683억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>한라캐스트</strong><br><strong>20.1억</strong><br><strong>9시 25분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/02에 이미 충족, D+27</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/02</span><span class="chip"><i>충족봉</i>27봉</span><span class="chip"><i>등락%</i>+16.7</span><span class="chip"><i>대금</i>432억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>현대오토에버</strong><br><strong>53.4억</strong><br><strong>10시 19분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/01에 이미 충족</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/01</span><span class="chip"><i>충족봉</i>3봉</span><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금</i>436억</span></div></article>
+</div>
+<h3>AI반도체·MLCC·기판</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">원익</h4><p class="c-p"><span class="c-k">근거</span>D+0, 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>19봉</span><span class="chip"><i>등락%</i>+10.0</span><span class="chip"><i>대금</i>152억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>해성디에스</strong><br><strong>21.8억</strong><br><strong>9시 47분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+26, 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>4봉</span><span class="chip"><i>등락%</i>+20.9</span><span class="chip"><i>대금</i>290억</span></div></article>
+<article class="card"><h4 class="c-t">한켐</h4><p class="c-p"><span class="c-k">근거</span>09/29에 이미 충족. 직전 최대의 0.2배, 포착 13:41(뉴스 이후)</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/29</span><span class="chip"><i>충족봉</i>22봉</span><span class="chip"><i>등락%</i>+15.4</span><span class="chip"><i>대금</i>271억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>디아이</strong><br><strong>53.7억</strong><br><strong>9시 03분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/01에 이미 충족, D+17</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/01</span><span class="chip"><i>충족봉</i>6봉</span><span class="chip"><i>등락%</i>+17.6</span><span class="chip"><i>대금</i>1,605억</span></div></article>
+<article class="card"><h4 class="c-t">티엘비</h4><p class="c-p"><span class="c-k">근거</span>09/22에 이미 충족, D+1</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/22</span><span class="chip"><i>충족봉</i>6봉</span><span class="chip"><i>등락%</i>+11.3</span><span class="chip"><i>대금</i>571억</span></div></article>
+</div>
+<h3>M&amp;A(가비아)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">가비아</h4><p class="c-p"><span class="c-k">근거</span>D+0, 30일 1위, 직전 최대의 5.6배, 전일의 83배. 첫 충족 08:17(프리장)</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>16봉</span><span class="chip"><i>등락%</i>+25.9</span><span class="chip"><i>대금</i>271억</span></div></article>
+<article class="card"><h4 class="c-t">에스피소프트</h4><p class="c-p"><span class="c-k">근거</span>10/06에 이미 충족, D+15. 정보지 기준 케이아이엔엑스 연상 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/06외3</span><span class="chip"><i>충족봉</i>6봉</span><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금</i>67억</span></div></article>
+</div>
+<h3>보안·광통신 (원문에 충족봉 미기재)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t">이글루</h4><p class="c-p"><span class="c-k">근거</span>보안 후발주</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>42억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>엑스게이트</strong><br><strong>36.0억</strong><br><strong>9시 01분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/26에 이미 충족</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/26</span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>1,138억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>빛과전자</strong><br><strong>213.9억</strong><br><strong>10시 57분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/22에 이미 충족. 30일 5위, 직전 최대의 0.4배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/22</span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>1,519억</span></div></article>
+<article class="card hot"><h4 class="c-t">🔥 <strong>대한광통신</strong><br><strong>55.0억</strong><br><strong>9시 02분</strong></h4><p class="c-p"><span class="c-k">근거</span>10/07에 이미 충족, D+5. 광통신 대장</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 10/07</span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>1,931억</span></div></article>
+</div>
+<h3>개별</h3>
+<div class="cards">
+<article class="card hot"><h4 class="c-t">🔥 <strong>HD현대마린엔진</strong><br><strong>56.2억</strong><br><strong>13시 17분</strong></h4><p class="c-p"><span class="c-k">근거</span>D+0, 30일 1위, 직전 최대의 5.3배. 실적 13:19 → 포착 13:23. 고점 대비 <span style="color:#7dabf8;font-weight:700">-10.7%</span>, 종가위치 49%. 603억 실적은 웹 미확인</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>1,100억</span></div></article>
+<article class="card"><h4 class="c-t">워트</h4><p class="c-p"><span class="c-k">근거</span>직전 최대의 13.5배, 30일 1위. <strong>재료 미상(주가 선행 추정)</strong>, 종가위치 30%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-6.9%</span></p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>329억</span></div></article>
+<article class="card"><h4 class="c-t">한국알콜</h4><p class="c-p"><span class="c-k">근거</span>D+0, 자사주 42억 공시(14:48) → 포착 14:55. 공시는 웹 미확인</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>미기재</span></div></article>
+<article class="card"><h4 class="c-t">피앤에스로보틱스</h4><p class="c-p"><span class="c-k">근거</span>D+0, 재활로봇 수주 기사 09:02 → 포착 09:17. 대금 작음</p><div class="c-c"><span class="chip"><i>첫흐름</i><strong>★첫흐름</strong></span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>미기재</span><span class="chip"><i>대금</i>38억</span></div></article>
+<article class="card"><h4 class="c-t">서울반도체</h4><p class="c-p"><span class="c-k">근거</span>09/22에 이미 충족. 포착 17:45(NXT 구간)로 기사(20:01)보다 먼저 움직임. 직전 최대의 0.3배</p><div class="c-c"><span class="chip"><i>첫흐름</i>이전충족 09/22</span><span class="chip"><i>충족봉</i>미기재</span><span class="chip"><i>등락%</i>+30</span><span class="chip"><i>대금</i>219억</span></div></article>
+</div>
+<ul>
+<li>재탕형(이전충족 다수, 충족봉 미기재): 리브스메드(D+8)·삼익제약·에스엠벡셀·액스비스·삼기에너지솔루션즈. 삼기에너지솔루션즈는 종가위치 7%로 특히 약함</li>
+</ul>
+<h2>○ 조건검색에만 걸린 종목 (수식 미충족)</h2>
+<div class="cards">
+<article class="card"><h4 class="c-t">로봇</h4><p class="c-p"><span class="c-k">종목</span>두산로보틱스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G2 45). <span style="color:#ef4444;font-weight:700">+8.0%</span>, 216억</p></article>
+<article class="card hot"><h4 class="c-t">AI반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>SK하이닉스</strong><br><strong>1615.3억</strong><br><strong>9시 59분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>D+0이지만 직전 5일 <span style="color:#ef4444;font-weight:700">+12.7%</span>라 강한 D+0 조건에 안 맞음. 101,900억</p></article>
+<article class="card hot"><h4 class="c-t">AI반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>삼성전자</strong><br><strong>985.2억</strong><br><strong>10시 24분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <span style="color:#ef4444;font-weight:700">+10.4%</span>, 74,557억</p></article>
+<article class="card hot"><h4 class="c-t">MLCC</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>삼성전기</strong><br><strong>368.3억</strong><br><strong>9시 15분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. <span style="color:#ef4444;font-weight:700">+9.5%</span>, 21,029억. MLCC 대장</p></article>
+<article class="card hot"><h4 class="c-t">AI반도체</h4><p class="c-p"><span class="c-k">종목</span>🔥 <strong>SK스퀘어</strong><br><strong>159.0억</strong><br><strong>9시 59분</strong></p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족, D+1. <span style="color:#ef4444;font-weight:700">+13.0%</span>, 15,286억</p></article>
+<article class="card"><h4 class="c-t">AI반도체</h4><p class="c-p"><span class="c-k">종목</span>티에프이</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G1 4). 10/27에 이미 충족</p></article>
+<article class="card hot"><h4 class="c-t">AI반도체</h4><p class="c-p"><span class="c-k">종목</span>피에스케이홀딩스 / 🔥 <strong>ISC</strong> (25.3억 · 10시 08분)</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족, D+0. 777억 / 604억</p></article>
+<article class="card"><h4 class="c-t">MLCC</h4><p class="c-p"><span class="c-k">종목</span>샘씨엔에스 / 아모텍</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족. 300억(D+8) / 154억(D+17, 09/22 이전충족)</p></article>
+<article class="card"><h4 class="c-t">M&amp;A</h4><p class="c-p"><span class="c-k">종목</span>케이아이엔엑스</p><p class="c-p"><span class="c-k">왜 미충족으로 보이나</span>미충족(G2 307). <span style="color:#ef4444;font-weight:700">+30.0%</span>, 41억. 공개매수가 확인 필요</p></article>
+</div>
+<h2>📰 정보지 종목 (⚠ 수식 검증 안 함)</h2>
+<p>⚠ 아래 종목들은 정보지가 언급한 것으로, 우리 1분봉 수식으로 검증하지 않았습니다.</p>
+<div class="cards">
+<article class="card"><h4 class="c-t">로봇(휴머노이드) 부품</h4><p class="c-p"><span class="c-k">정보지 사유</span>보스턴다이내믹스 아틀라스 1만대 생산·부품 공급망(오늘 첫 등장). 정보지에는 있지만 조건검색에 걸리지 않은 후발 후보</p><div class="c-c"><span class="chip"><i>종목</i>종목명 원문 미기재</span></div></article>
+</div>
+<ul>
+<li>성호전자는 MLCC &#x27;같이 볼 종목&#x27;으로만 언급됐다. 조건검색 표에 없고, 정보지 출처인지도 원문에 적혀 있지 않다.</li>
+</ul>
+<h2>🔍 내일 확인할 것</h2>
+<ul>
+<li><strong>지수:</strong> 삼성전자 실적·주주환원 발표와 밤사이 FOMC·미 반도체주 흐름을 본다. 오늘이 지수 장세라 이게 무너지면 전 테마가 같이 꺾인다. 발표 뒤 대형주가 &#x27;재료 소멸&#x27; 음봉이면 반도체는 지수형 테마로 보고 접는다.</li>
+<li><strong>레인보우:</strong> 시가 407,000원 위에서 시작하고 대금 1,000억 이상을 유지하며 로보티즈·원익홀딩스가 함께 버티면 진짜다. VWAP(약 39.5만 추정) 아래로 밀리거나 소형 후발주가 <span style="color:#7dabf8;font-weight:700">-10%</span> 이상 빠지면 1일 반짝이다.</li>
+<li><strong>MLCC 중소형(한켐·아모텍·샘씨엔에스):</strong> 2일차 대금이 늘면 &#x27;반도체/콘덴서&#x27;를 신규 테마로 올린다. 줄면 삼성전기 실적 하루 이벤트로 정리한다.</li>
+<li><strong>가비아:</strong> 공개매수 조건 공시(가격·기간)를 확인한다. 가격이 5.3만원이면 차익 여지가 거의 없어 제외한다.</li>
+<li><strong>워트:</strong> DART 당일 공시와 액침냉각·데이터센터 기사로 재료를 확인한다(현재 재료 미상).</li>
+</ul>
+</section>
+<details class="more" id="detail">
+<summary><span class="m-t">📋 상세 분석</span><span class="m-s">종목별 근거·데이터 확인 · 눌러서 펼치기</span></summary>
+<div class="more-b">
+<h1>당일 수급·테마 분석 — 2026-10-28 (수) [장마감]</h1>
+<p>기준일: 2026-10-28 (수) — 모든 &#x27;오늘&#x27;·D+N·첫흐름 판정은 이 기준일로 했다</p>
+<blockquote><p>🌐 웹 검색 10회. 오늘(10/28) 나온 기사와 공시는 검색 결과에 아직 잡히지 않아 <strong>하나도 직접 확인하지 못했다.</strong> 웹에서 찾은 것은 과거 맥락(재료 이력)뿐이다. 오늘 뉴스의 시각은 전부 문서와 정보지에 적힌 값을 썼다.</p></blockquote>
+<hr>
+<h2>① 오늘 한 줄 결론</h2>
+<p>SK하이닉스 실적 발표(3분기 영업익 83조, 100조 주주환원)로 코스피가 <span style="color:#ef4444;font-weight:700">+6.6%</span> 오른 <strong>지수 장세</strong>였다(문서: MBC 17:59). 그래서 거의 모든 종목이 함께 올랐다. 그 안에서 <strong>새로 돈이 들어온 곳은 두 군데</strong>다.</p>
+<ul>
+<li><strong>로봇(피지컬AI):</strong> 레인보우로보틱스에 30일 중 가장 많은 돈이 처음 들어왔다.</li>
+<li><strong>MLCC·기판:</strong> 삼성전기 실적(12:01) 이후 이 업종으로 매수세가 번졌다.</li>
+</ul>
+<p>보안과 광통신은 이미 진행 중인 테마가 다시 오른 것이다. 가비아·케이아이엔엑스는 M&amp;A 이벤트로 움직였다.</p>
+<hr>
+<h2>② D+0 후보 테마</h2>
+<h3>🥇 1. 로봇 — 피지컬AI·휴머노이드 2차 확산 (매디슨 황 방한)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>로보티즈</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+9.4</span><span class="chip"><i>대금(억)</i><strong>2,565</strong></span><span class="chip"><i>오늘충족</i>14봉</span><span class="chip"><i>이전충족</i><strong>10/26</strong></span></div></article>
+<article class="card"><h4 class="c-t">원익홀딩스</h4><div class="c-c"><span class="chip"><i>등락%</i>+18.1</span><span class="chip"><i>대금(억)</i>1,878</span><span class="chip"><i>D+N</i>D+27</span><span class="chip"><i>오늘충족</i>30봉</span><span class="chip"><i>이전충족</i><strong>10/26</strong>외2</span></div></article>
+<article class="card"><h4 class="c-t"><strong>레인보우로보틱스</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+15.8</span><span class="chip"><i>대금(억)</i><strong>1,136</strong></span><span class="chip"><i>D+N</i><strong>D+0</strong></span><span class="chip"><i>오늘충족</i>20봉 ★첫흐름</span><span class="chip"><i>이전충족</i>없음</span></div></article>
+<article class="card"><h4 class="c-t">에스피지</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.5</span><span class="chip"><i>대금(억)</i>683</span><span class="chip"><i>D+N</i>D+27</span><span class="chip"><i>오늘충족</i>13봉</span><span class="chip"><i>이전충족</i>09/15</span></div></article>
+<article class="card"><h4 class="c-t">현대오토에버</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금(억)</i>436</span><span class="chip"><i>오늘충족</i>3봉</span><span class="chip"><i>이전충족</i>10/01</span></div></article>
+<article class="card"><h4 class="c-t">한라캐스트</h4><div class="c-c"><span class="chip"><i>등락%</i>+16.7</span><span class="chip"><i>대금(억)</i>432</span><span class="chip"><i>D+N</i>D+27</span><span class="chip"><i>오늘충족</i>27봉</span><span class="chip"><i>이전충족</i>10/02</span></div></article>
+<article class="card"><h4 class="c-t">두산로보틱스</h4><div class="c-c"><span class="chip"><i>등락%</i>+8.0</span><span class="chip"><i>대금(억)</i>216</span><span class="chip"><i>오늘충족</i>미충족(G2 45)</span></div></article>
+<article class="card"><h4 class="c-t">현대무벡스</h4><div class="c-c"><span class="chip"><i>등락%</i>+5.8</span><span class="chip"><i>대금(억)</i>158</span><span class="chip"><i>오늘충족</i>7봉 ★첫흐름</span></div></article>
+<article class="card"><h4 class="c-t">휴림에이텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.2</span><span class="chip"><i>대금(억)</i>71</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>14봉 ★첫흐름</span></div></article>
+<article class="card"><h4 class="c-t">제닉스로보틱스</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.5</span><span class="chip"><i>대금(억)</i>69</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>8봉 ★첫흐름</span></div></article>
+<article class="card"><h4 class="c-t">이랜시스</h4><div class="c-c"><span class="chip"><i>등락%</i>+6.2</span><span class="chip"><i>대금(억)</i>48</span><span class="chip"><i>오늘충족</i>6봉 ★첫흐름</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 10/26.</strong> 로보티즈와 원익홀딩스가 10/26에 이미 충족했다. 같은 날 &quot;젠슨황이 시연한 로봇 효과…로보티즈 불기둥&quot; 기사도 있었다. 정보지의 <code>로봇</code> 테마도 6일째 등장 중이다. 그래서 <strong>테마 전체로는 실질 D+2</strong>다.</li>
+<li>다만 레인보우는 D+0이고, 30일 중 대금 1위에 직전 최대의 1.6배, 직전 5일 누적 <span style="color:#7dabf8;font-weight:700">-4.8%</span>다. <strong>대형 자금이 처음 들어온 날</strong>이다.</li>
+<li>정보지의 <code>로봇 테마(매디슨 황)</code>는 오늘 처음 등장했다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>대장주는 <strong>로보티즈</strong>다. 테마 내 대금이 가장 크고 10/26에 먼저 충족했다.</li>
+<li>레인보우는 <strong>새로 합류한 2번 대장</strong>이다. 대형주가 D+0이라 다음 거래일 확인 가치가 가장 크다.</li>
+<li>제닉스로보틱스(69억), 휴림에이텍(71억), 이랜시스(48억), 현대무벡스는 <strong>후발주</strong>다. 오늘 처음 충족했지만 대금이 작다. 휴림에이텍은 종가가 고점보다 <span style="color:#7dabf8;font-weight:700">-9.8%</span>, VWAP보다 <span style="color:#7dabf8;font-weight:700">-6.6%</span>로 이미 밀렸다.</li>
+<li>피앤에스로보틱스는 재활로봇 수주라는 별도 개별 재료가 있어 ④로 뺐다.</li>
+<li><strong>추정 재료:</strong> 정보지의 &quot;매디슨 황 방한·이재용 회장 로봇 개발 현장 방문&quot;(어제 17:14)과 &quot;피지컬AI 기대&quot;(문서: 뉴스1 16:25)다. 레인보우 포착은 09:09로, <strong>뉴스가 먼저</strong>였다(전날 장 마감 후 보도).</li>
+<li>매디슨 황은 4월에도 방한해 국내 대기업과 피지컬AI 협력을 논의했다(웹: 파이낸셜뉴스, 뉴시스). <strong>처음 있는 이벤트가 아니라 반복</strong>이다.</li>
+<li><strong>재료 단계:</strong> 기대 → 기대(방한·협력 기대). <strong>재탕 성격이고 신선도는 중간</strong>이다.</li>
+<li>다만 정보지가 따로 짚은 &quot;보스턴다이내믹스 아틀라스 1만대 생산·부품 공급망&quot;이 오늘 처음 등장했다. 이 재료가 확정 단계로 이어지면 새 재료가 된다.</li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ <strong>진짜 신호:</strong> 레인보우 대금 1,000억 이상 유지, 407,000원 위에서 시작. 로보티즈와 원익홀딩스가 함께 버티기. 정보지 <code>로봇(휴머노이드) 부품</code> 쪽 종목이 움직이기 시작.</li>
+<li>❌ <strong>아님:</strong> 지수가 되돌릴 때 레인보우가 VWAP(약 39.5만 추정 — 문서에 VWAP 대비 <span style="color:#ef4444;font-weight:700">+2.9%</span>만 있음) 아래로 밀리기. 소형 후발주부터 <span style="color:#7dabf8;font-weight:700">-10%</span> 이상 빠지면 이벤트성 1일 반짝이다.</li>
+</ul>
+<h3>🥈 2. AI 반도체 실적 → MLCC·기판·검사 확산 (SK하이닉스·삼성전기 실적)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>SK하이닉스</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+12.4</span><span class="chip"><i>대금(억)</i><strong>101,900</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">삼성전자</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.4</span><span class="chip"><i>대금(억)</i>74,557</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t"><strong>삼성전기</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+9.5</span><span class="chip"><i>대금(억)</i><strong>21,029</strong></span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">SK스퀘어</h4><div class="c-c"><span class="chip"><i>등락%</i>+13.0</span><span class="chip"><i>대금(억)</i>15,286</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">디아이</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.6</span><span class="chip"><i>대금(억)</i>1,605</span><span class="chip"><i>D+N</i>D+17</span><span class="chip"><i>오늘충족</i>6봉</span><span class="chip"><i>이전충족</i>10/01</span></div></article>
+<article class="card"><h4 class="c-t">피에스케이홀딩스</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.1</span><span class="chip"><i>대금(억)</i>777</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">티에프이</h4><div class="c-c"><span class="chip"><i>등락%</i>+11.3</span><span class="chip"><i>대금(억)</i>769</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>미충족(G1 4)</span><span class="chip"><i>이전충족</i><strong>10/27</strong></span></div></article>
+<article class="card"><h4 class="c-t">ISC</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.2</span><span class="chip"><i>대금(억)</i>604</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">티엘비</h4><div class="c-c"><span class="chip"><i>등락%</i>+11.3</span><span class="chip"><i>대금(억)</i>571</span><span class="chip"><i>D+N</i>D+1</span><span class="chip"><i>오늘충족</i>6봉</span><span class="chip"><i>이전충족</i>09/22</span></div></article>
+<article class="card"><h4 class="c-t">샘씨엔에스</h4><div class="c-c"><span class="chip"><i>등락%</i>+12.1</span><span class="chip"><i>대금(억)</i>300</span><span class="chip"><i>D+N</i>D+8</span><span class="chip"><i>오늘충족</i>미충족</span></div></article>
+<article class="card"><h4 class="c-t">해성디에스</h4><div class="c-c"><span class="chip"><i>등락%</i>+20.9</span><span class="chip"><i>대금(억)</i>290</span><span class="chip"><i>D+N</i>D+26</span><span class="chip"><i>오늘충족</i>4봉 ★첫흐름</span></div></article>
+<article class="card"><h4 class="c-t">한켐</h4><div class="c-c"><span class="chip"><i>등락%</i>+15.4</span><span class="chip"><i>대금(억)</i>271</span><span class="chip"><i>D+N</i>D+25</span><span class="chip"><i>오늘충족</i>22봉</span><span class="chip"><i>이전충족</i>09/29</span></div></article>
+<article class="card"><h4 class="c-t">아모텍</h4><div class="c-c"><span class="chip"><i>등락%</i>+17.5</span><span class="chip"><i>대금(억)</i>154</span><span class="chip"><i>D+N</i>D+17</span><span class="chip"><i>오늘충족</i>미충족</span><span class="chip"><i>이전충족</i>09/22</span></div></article>
+<article class="card"><h4 class="c-t">원익</h4><div class="c-c"><span class="chip"><i>등락%</i>+10.0</span><span class="chip"><i>대금(억)</i>152</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>19봉 ★첫흐름</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 10/27.</strong> 티에프이가 10/27에 충족했고, SK스퀘어(+11.3)와 하이닉스(+7.8)도 10/27부터 올랐다. 그래서 <strong>반도체 전체는 D+1</strong>이다. 정보지 <code>반도체</code>도 9일째다.</li>
+<li>반면 정보지 <code>반도체/콘덴서</code>와 <code>MLCC</code>는 <strong>오늘 처음</strong> 나왔다. 삼성전기 실적이 12:01에 나왔고, 한켐 포착은 13:41이라 <strong>뉴스 이후</strong> 움직였다.</li>
+<li><strong>대장주 / 후발주</strong></li>
+<li>대장주는 <strong>SK하이닉스</strong>(10조)다. MLCC 쪽만 보면 대장은 <strong>삼성전기</strong>(2.1조)다.</li>
+<li>한켐(271억, 직전 최대의 0.2배), 아모텍, 원익(152억)은 <strong>후발주</strong>다.</li>
+<li>하이닉스는 D+0이지만 직전 5일 누적이 <span style="color:#ef4444;font-weight:700">+12.7%</span>라서 &#x27;강한 D+0&#x27; 조건(직전 5일 낮음)에 맞지 않는다.</li>
+<li><strong>추정 재료:</strong> SK하이닉스 3분기 영업익 83.3조와 100조 주주환원이 08:29~08:32 공시됐다(문서: 뉴스 버즈). 삼성전기 3분기 영업익 6,910억(역대 최대)과 &quot;4분기 MLCC·FCBGA 수급 더 빠듯&quot; 컨콜 내용이 나왔다(문서: 조선비즈 14:03).</li>
+<li><strong>재료 단계:</strong> 기대 → <strong>실적 반영(4단계)</strong>. 단계가 올랐다. MLCC와 기판 쪽은 <strong>실질 신규 재료</strong>일 가능성이 있다.</li>
+<li>다만 MLCC 중소형주는 대금이 30일 6~10위에 그쳤다. <strong>시장이 아직 충분히 인정하지 않았다.</strong></li>
+<li><strong>다음 거래일 확인 조건</strong></li>
+<li>✅ <strong>진짜 신호:</strong> 삼성전자 실적·주주환원 발표 후 반도체 대형주가 추가로 오르거나 버티기. 그 상태에서 MLCC 중소형주(한켐·아모텍·샘씨엔에스·성호전자)의 대금이 오늘보다 늘어나기.</li>
+<li>❌ <strong>아님:</strong> 삼성전자 발표 이후 &#x27;재료 소멸&#x27;로 대형주가 음봉. 이 경우 지수형 테마로 보고 접는다.</li>
+</ul>
+<h3>🥉 3. 맥쿼리–가비아·케이아이엔엑스 합의 (M&amp;A 이벤트)</h3>
+<div class="cards">
+<article class="card"><h4 class="c-t"><strong>가비아</strong></h4><div class="c-c"><span class="chip"><i>등락%</i>+25.9</span><span class="chip"><i>대금(억)</i><strong>271</strong></span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>16봉 ★첫흐름</span></div></article>
+<article class="card"><h4 class="c-t">에스피소프트</h4><div class="c-c"><span class="chip"><i>등락%</i>+29.9</span><span class="chip"><i>대금(억)</i>67</span><span class="chip"><i>D+N</i>D+15</span><span class="chip"><i>오늘충족</i>6봉</span><span class="chip"><i>이전충족</i>10/06외3</span></div></article>
+<article class="card"><h4 class="c-t">케이아이엔엑스</h4><div class="c-c"><span class="chip"><i>등락%</i>+30.0</span><span class="chip"><i>대금(억)</i>41</span><span class="chip"><i>D+N</i>D+0</span><span class="chip"><i>오늘충족</i>미충족(G2 307)</span></div></article>
+</div>
+<ul>
+<li><strong>테마 시작일 추정: 오늘(D+0).</strong> 가비아 대금은 30일 1위로 직전 최대의 5.6배, 전일의 83배다.</li>
+<li><strong>대장주 / 후발주:</strong> 가비아가 대장이다. 에스피소프트는 케이아이엔엑스 관련 연상주(정보지)라 후발주다.</li>
+<li><strong>추정 재료:</strong> 맥쿼리와 얼라인이 합의하고 공개매수를 발표했다(문서: 서울경제 18:01, 블로터 18:07, 뉴스 버즈 10:02). 가비아 첫 충족은 08:17(프리장)이다. 대량보유 공시는 07:49 → <strong>공시가 먼저</strong>였다.</li>
+<li><strong>재료 단계:</strong> 분쟁(7~9월) → 무산(09/23) → <strong>합의(10/28)</strong>. 단계가 올라간 확정 재료다.</li>
+<li>단, <strong>공개매수가가 주가 상단을 막는다.</strong> 정보지 기준 주당 5.3만원에 거래되는데 가비아 종가는 50,500원이다. 차이가 약 5%뿐이라 <strong>D+2~3 추적 매매에는 맞지 않는다.</strong></li>
+<li>케이아이엔엑스 공개매수가는 확인 필요다(문서·웹 모두 없음).</li>
+<li><strong>다음 거래일 확인 조건:</strong> 공개매수 조건 공시(가격·기간) 확인. 가격이 5.3만원이면 차익 여지가 거의 없어 제외한다.</li>
+</ul>
+<hr>
+<h2>③ 진행 중 테마 (눌림 관찰용)</h2>
+<ul>
+<li><strong>보안(금융권 해킹 확산) — D+1 이상.</strong></li>
+<li>이번 파동은 10/23(샌즈랩·모니터랩 충족)에 시작했다. 바탕 재료는 10/06부터 이어진 금융권 해킹이고, 10월 초부터 해킹 사고가 연이어 보도됐다(웹: CEO스코어데일리 10/08).</li>
+<li>대장은 <strong>안랩</strong>(2,687억, D+1)이다. 다음은 샌즈랩(1,306억, 5일 <span style="color:#ef4444;font-weight:700">+37.5%</span>로 과열), 엑스게이트(1,138억, 10/26 충족)다.</li>
+<li>재료 단계: 해킹 기대 → 기대로 <strong>재탕</strong>이다. 안랩 실적(<span style="color:#ef4444;font-weight:700">+39%</span>)만 실적 반영 단계다.</li>
+<li>이글루(★첫흐름, 42억)는 후발주다.</li>
+<li><strong>광통신·AI 인프라 — 10/02 이후 반복.</strong></li>
+<li>대장은 대금 기준 <strong>대한광통신</strong>(1,931억, D+5, 10/07 충족)이다. 빛과전자(1,519억, 10/22 충족)와 빛샘전자(969억)가 뒤를 잇는다.</li>
+<li><strong>빛과전자는 재료 단계가 올랐다.</strong> 2024년에는 공급망 선도사업자 선정과 미국 샘플 요청 단계였다(웹: 아시아경제·머니투데이 2024-08-20). 오늘은 &quot;미국 광트랜시버 초도 양산 수주&quot;(문서: 머니투데이 09:33)로 확정 단계다.</li>
+<li>다만 빛과전자 대금은 30일 5위, 직전 최대의 0.4배다. <strong>대금이 받쳐주지 않아 실질 D+0으로 보지 않는다.</strong></li>
+<li><strong>카메라모듈(나무가·캠시스·엠씨넥스):</strong> 직전 5일 누적이 +40~54%이고 오늘 종가가 저점권(종가위치 10~18%)이다. 후반부라 제외한다.</li>
+<li><strong>멜콘:</strong> 4,359억, D+1, 직전 5일 <span style="color:#ef4444;font-weight:700">+32.6%</span>다. 재료 미상이고 진행 중이다.</li>
+</ul>
+<hr>
+<h2>④ 개별주</h2>
+<ul>
+<li><strong>HD현대마린엔진 ★첫흐름 D+0</strong> (1,100억, 30일 대금 1위, 직전 최대의 5.3배)</li>
+<li>3분기 영업익 603억이 13:19에 나왔고, 포착은 13:23이다 → <strong>뉴스 직후</strong> 움직였다.</li>
+<li>재료 단계는 수주 반복 → <strong>실적 반영</strong>으로 올랐다. 다만 한화엔진(<span style="color:#ef4444;font-weight:700">+3.4%</span>)이 따라오지 않아 개별주다.</li>
+<li>종가가 고점보다 <span style="color:#7dabf8;font-weight:700">-10.7%</span>이고 종가위치 49%라 오후 매수세가 약했다.</li>
+<li>오늘 603억 실적은 웹에서 확인되지 않았다. 웹에는 작년 3분기 수치만 있다.</li>
+<li><strong>서울반도체 D+0</strong> (<span style="color:#ef4444;font-weight:700">+30%</span>, 219억)</li>
+<li>재료는 희토류가 필요 없는 LED 세계 최초 개발이다. 포착은 17:45(NXT), 기사는 20:01(문서: 한국경제)이라 <strong>주가가 기사보다 먼저</strong> 움직였다.</li>
+<li>다만 9/22에 이미 충족한 적이 있고, 대금은 직전 최대의 0.3배다.</li>
+<li><strong>워트 ★첫흐름</strong> (329억, 직전 최대의 13.5배, 30일 1위)</li>
+<li><strong>재료 미상 — 주가 선행 추정.</strong> 반도체 액침냉각(AI 데이터센터) 업종으로 묶이는 것으로 보이나 근거는 부족하다. 웹에서도 확인되지 않았다.</li>
+<li>확인할 것: DART 당일 공시, 액침냉각·데이터센터 관련 기사.</li>
+<li>종가위치 30%, VWAP 대비 <span style="color:#7dabf8;font-weight:700">-6.9%</span>로 마감이 약하다.</li>
+<li><strong>한국알콜 ★첫흐름 D+0:</strong> 42억 규모 자사주 취득 공시(정보지 14:48) 후 14:55에 포착됐다. 뉴스 이후 움직였다. 이 공시는 웹에서 확인되지 않았다.</li>
+<li><strong>피앤에스로보틱스 ★첫흐름 D+0:</strong> 재활로봇 수주 기사가 09:02, 포착이 09:17이다. 대금이 38억으로 작다.</li>
+<li><strong>기타:</strong> 리브스메드(D+8), 삼익제약, 에스엠벡셀, 액스비스, 삼기에너지솔루션즈는 이전충족이 많은 재탕형이다. 삼기에너지솔루션즈는 종가위치 7%로 특히 약하다.</li>
+</ul>
+<hr>
+<h2>⑤ 결론</h2>
+<p>```</p>
+<ul>
+<li>최우선 D+0 테마: 로봇(피지컬AI·휴머노이드 2차 확산) — 테마 자체는 10/26 시작이라 실질 D+2. 대형 자금이 새로 들어온 레인보우가 핵심</li>
+<li>그 테마의 대장주 (거래대금 최대): 로보티즈 2,565억(10/26 선충족) / 새로 합류한 2번 대장: 레인보우로보틱스 1,136억(D+0, 30일 1위)</li>
+<li>재료 단계가 올라간 종목 (실질 신규): 가비아(합의 확정, 단 공개매수가가 상단을 막음), HD현대마린엔진(실적 반영), 빛과전자(수주 확정, 대금 부족), 삼성전기·MLCC군(실적 반영)</li>
+<li>오늘 잡혔지만 후발주로 판단되는 종목: 제닉스로보틱스·휴림에이텍·이랜시스·현대무벡스(로봇), 한켐·원익·해성디에스(반도체), 이글루(보안), 에스피소프트(가비아 연상)</li>
+<li>같이 볼 종목: 원익홀딩스·에스피지(로봇), 삼성전기·아모텍·샘씨엔에스·성호전자(MLCC), 정보지 &#x27;아틀라스 부품&#x27; 쪽(정보지에는 있지만 조건검색에 안 걸린 후발 후보)</li>
+<li>진행중이라 눌림만 볼 종목: 안랩·엑스게이트·샌즈랩(보안), 대한광통신·빛과전자·빛샘전자(광통신), SK스퀘어·티에프이(반도체 D+1)</li>
+<li>내일 장 시작 전 확인할 세 가지:</li>
+</ul>
+<ol>
+<li>삼성전자 실적·주주환원 발표 내용과 밤사이 FOMC·미 반도체주 흐름 — 오늘이 지수 장세라 이게 무너지면 전 테마가 같이 꺾인다</li>
+<li>레인보우 시가가 407,000원 위인지, 장 초반 30분 대금이 오늘 페이스(1,000억대)를 이어가는지, 로보티즈가 함께 버티는지</li>
+<li>MLCC 중소형주(한켐·아모텍·샘씨엔에스) 2일차 대금이 늘어나는지 — 늘면 &#x27;반도체/콘덴서&#x27;를 신규 테마로 올리고, 줄면 삼성전기 실적 하루 이벤트로 정리</li>
+</ol>
+<p>```</p>
+<p><strong>출처 (웹)</strong></p>
+<ul>
+<li>[파이낸셜뉴스 — 매디슨 황 4월 방한](https://www.fnnews.com/news/202604291535297964)</li>
+<li>[뉴시스 — 매디슨 황 방한·네이버 협력(4/28)](https://www.newsis.com/view/NISX20260428_0003609922)</li>
+<li>[CEO스코어데일리 — 금융권 해킹 비상대응(10/08)](https://ceoscoredaily.com/page/view/2026100814221783971)</li>
+<li>[머니투데이 — 빛과전자 공급망안정화 선도사업자(2024)](https://www.mt.co.kr/stock/2024/08/20/2024082015239641636)</li>
+<li>[아시아경제 — 빛과전자 25G 파장가변 광트랜시버(2024)](https://view.asiae.co.kr/article/2024082015090615596)</li>
+</ul>
+</div>
+</details>
+<hr>
+<p style="color:#9aa0a6;font-size:13px">
+자동 생성물입니다. 1분봉 수식 검증 결과와 당일 정보지를 정리한 것이며,
+투자 권유가 아닙니다. 생성 2026-10-29 00:00
+</p>
+</article></div>
+<script>
+(function(){var d=document.getElementById('detail');if(!d)return;
+function o(){if(location.hash==='#detail'){d.open=true;d.scrollIntoView();}}
+o();window.addEventListener('hashchange',o);})();
+</script>
+</body></html>
