@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>한국장 브리핑 2026-10-31</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;width:1280px;padding:22px 28px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.hd h1{font-size:28px}.hd .m{color:#9aa0a6;font-size:15px}
+.ban{background:#1e293b;border-left:4px solid #3b82f6;padding:9px 14px;border-radius:6px;font-size:15px;margin-bottom:12px}
+.row{display:grid;gap:12px;margin-bottom:12px}
+.r4{grid-template-columns:repeat(4,1fr)}.r2{grid-template-columns:1fr 1fr}
+.c{background:#1a1d24;border-radius:10px;padding:13px 15px}
+.l{color:#9aa0a6;font-size:13px;margin-bottom:4px}.v{font-size:25px;font-weight:700}.s{font-size:13px;color:#9aa0a6;margin-top:3px}
+.up{color:#ef4444}.dn{color:#3b82f6}
+.one{font-size:21px;font-weight:700;line-height:1.45;background:#1a1d24;border-radius:10px;padding:15px 18px;margin-bottom:12px}
+h2{font-size:16px;margin-bottom:8px;color:#e8eaed}
+ul{padding-left:18px}li{font-size:14.5px;line-height:1.5;margin-bottom:4px}
+.bar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:6px 0;font-size:12px;font-weight:700}
+.bar div{display:flex;align-items:center;justify-content:center}
+.badge{display:inline-block;background:#2a2f3a;border-radius:6px;padding:5px 9px;margin:3px 4px 3px 0;font-size:13.5px}
+.tag{background:#374151;color:#9aa0a6;border-radius:4px;padding:1px 6px;font-size:11px;margin-left:6px}
+.ft{color:#9aa0a6;font-size:12.5px;margin-top:4px}
+</style></head><body>
+<div class="hd"><h1>2026-10-31 (토) 한국장 브리핑</h1><div class="m">수집 채널 4/13 · 5편 · 21:00 정규 실행</div></div>
+<div class="ban">🟦 <b>토요일 휴장</b> — 지수·수급·환율은 <b>10/30(금) 종가 기준</b>. 다음 거래일 11/2(월)</div>
+
+<div class="row r4">
+ <div class="c"><div class="l">코스피 (10/30)</div><div class="v dn">5,730.74</div><div class="s"><span class="dn">−3.48%</span> · 주간 <span class="up">+3.25%</span></div></div>
+ <div class="c"><div class="l">코스닥 (10/30)</div><div class="v dn">724.38</div><div class="s"><span class="dn">−3.83%</span> · 주간 <span class="dn">−3.63%</span></div></div>
+ <div class="c"><div class="l">EWY 금요일 밤</div><div class="v dn">−5.52%</div><div class="s">SK하이닉스 ADR <span class="dn">−7.95%</span></div></div>
+ <div class="c"><div class="l">필라델피아 반도체</div><div class="v dn">−7.20%</div><div class="s">인텔 <span class="dn">−28.58%</span> · 나스닥 <span class="dn">−2.86%</span></div></div>
+</div>
+<div class="row r2">
+ <div class="c"><div class="l">수급 (유가증권, 10/30)</div><div class="s" style="font-size:16px;color:#e8eaed">외국인 <b class="dn">−1조6,168억</b> · 개인 <b class="up">+6,198억</b> · 기관 <b class="up">+7,432억</b></div></div>
+ <div class="c"><div class="l">매크로</div><div class="s" style="font-size:15px;color:#e8eaed">NDF 1,332.80원(−0.55원) · 美10년 4.929% · 브렌트 $117.64 · 中 PMI 49.3</div></div>
+</div>
+
+<div class="one">금요일 코스피 −3.48%는 알파벳 쇼크까지만 반영했다. 금요일 밤 인텔 −28.58% · 반도체지수 −7.20% · EWY −5.52%가 월요일 출발선이다.</div>
+
+<div class="row r2">
+ <div class="c"><h2>핵심 포인트</h2><ul>
+  <li><b>2차 충격:</b> 인텔 가이던스 미달 → 1974년 이후 최악, AMD −10.88%, 엔비디아 −4.22%</li>
+  <li><b>원화는 안정:</b> NDF 1,332.80원 — EWY 낙폭은 거의 주가 요인</li>
+  <li><b>토요일 신규 재료:</b> 中 10월 제조업 PMI 49.3(신규 수출주문 48.7), 오픈AI 투자 유치 목표 300억→200억$</li>
+  <li><b>연준 매파 발언</b>(로건 “최소 2회 인상”)에도 12월 인상 확률 80%→72.4%</li>
+  <li><b>채널 합의:</b> AI 투자는 '현금흐름 검증' 국면, 지금은 방어 우선</li>
+ </ul></div>
+ <div class="c"><h2>채널 톤 합의도 <span class="tag">n=4 · 참고용</span></h2>
+  <div class="bar"><div style="width:75%;background:#3b82f6">약세 3</div><div style="width:25%;background:#6b7280">중립 1</div></div>
+  <div class="s">약세: 김단테 · 홍인기 · 만쥬(브이로그) / 중립: 이효석(단기 부담·장기 낙관)<br>시황 채널 7곳 휴장 부재 · 주린희·교육편 제외</div>
+  <h2 style="margin-top:12px">주간 강세 주도주 <span class="tag">주린희 주간편 제목 · 야후 검증</span></h2>
+  <span class="badge">안랩 <b class="up">+50.6%</b></span><span class="badge">한화비전 <b class="up">+32.6%</b></span><span class="badge">SK스퀘어 <b class="up">+15.7%</b></span><span class="badge">로보티즈 <b class="up">+13.8%</b></span><span class="badge">SK하이닉스 <b class="up">+11.0%</b></span><span class="badge">인텔리빅스 신규상장 <b class="up">공모가比 +244%</b></span>
+ </div>
+</div>
+
+<div class="c" style="margin-bottom:10px"><h2>다음 거래일(11/2 월) 관전 포인트</h2><ul>
+ <li>반도체 투톱 시가 — SKHY −7.95%를 얼마나 반영하나 · 주간 강세 3축(반도체·보안·로봇)이 갈라지나</li>
+ <li>中 PMI 위축 첫 반영(화학·철강·기계) · 美 중간선거 현지 11/3 · 美 고용지표 11/6</li>
+ <li>코스닥 IPO: 영광 11/2 · 래블업 11/3 · 이에스티 11/4</li>
+</ul></div>
+<div class="ft">수집: 이효석아카데미 2 · 김단테 1 · 홍인기 1 · 만쥬 1 | 멤버십 전용 제목만: 주린희 주간편 · 소수몽키 | 영상없음(휴장): 주덕 · 창원개미 · 고라니 · 주린이놀이터 · 돌팬티 · 전황 · 김혜산</div>
+</body></html>
