@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-11-06 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;padding:28px 36px;width:1280px}
+.h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.h h1{font-size:30px}.h .s{color:#9aa0a6;font-size:16px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.idx .n{color:#9aa0a6;font-size:15px}.idx .v{font-size:30px;font-weight:700;margin-top:4px}.idx .c{font-size:22px;font-weight:700;margin-top:2px}
+.dn{color:#ef4444}.up{color:#22c55e}
+.macro{display:flex;gap:26px;font-size:16px;color:#9aa0a6}.macro b{color:#e8eaed}
+.one{font-size:22px;line-height:1.5;font-weight:600}
+.pts li{margin:0 0 8px 20px;font-size:16px;line-height:1.45}
+.lbl{color:#9aa0a6;font-size:14px;margin-bottom:10px}
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:14px}
+.bar .t{width:260px}.bar .g{flex:1;background:#2a2e37;border-radius:6px;height:14px}.bar .f{height:14px;border-radius:6px;background:#60a5fa}.bar .p{width:40px;text-align:right;color:#9aa0a6}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.b{background:#232733;border-radius:8px;padding:6px 10px;font-size:14px}
+.foot{color:#9aa0a6;font-size:13px;margin-top:6px}
+</style></head><body>
+<div class="h"><h1>2026-11-06 (금) 미국장 브리핑 <span style="font-size:18px;color:#9aa0a6">· 11/5(목) 세션</span></h1><div class="s">수집 채널 7/16</div></div>
+<div class="row">
+<div class="card idx"><div class="n">S&amp;P500</div><div class="v">7,353.73</div><div class="c dn">-4.36%</div></div>
+<div class="card idx"><div class="n">나스닥 종합</div><div class="v">24,315.00</div><div class="c dn">-5.52%</div></div>
+<div class="card idx"><div class="n">다우</div><div class="v">51,523.06</div><div class="c dn">-3.44%</div></div>
+<div class="card idx"><div class="n">필리 반도체</div><div class="v">9,011.14</div><div class="c dn">-12.25%</div></div>
+</div>
+<div class="card macro" style="margin-bottom:14px"><span>10년물 <b>4.84%</b> (-6bp)</span><span>2년물 <b>4.46%</b> (-12bp)</span><span>달러인덱스 <b>101.597</b> (+0.09%)</span><span>WTI <b>90.52달러</b> (+2.72%)</span><span>VIX <b>28.18</b> (+69.66%)</span><span>12월 인상확률 <b>68.7%</b> (전일 82.7%)</span></div>
+<div class="card" style="margin-bottom:14px"><div class="one">AI 규제 공포에 필리 반도체 -12.25% — 2020년 3월 이후 최대 낙폭. 새 재료 없이 가치주·금융주까지 같이 팔렸다.</div></div>
+<div class="row">
+<div class="card" style="flex:1.25"><div class="lbl">핵심 포인트</div><ul class="pts">
+<li>민주당 데이터센터 규제 공포 — 다우·필리 지수 구성 종목 30개가 모두 하락</li>
+<li>마이크론 -17.46%, AMD -17.26%, 엔비디아 -9.26%. 애플(-1.53%)·알파벳·아마존은 선방</li>
+<li>테슬라 -10.77%, 스페이스X -9.05% — 선거 최대 패자</li>
+<li>국채 강세: 2년물 -12bp. 신용 스프레드는 차분 — "청산성 투매" 진단</li>
+<li>IBD: 나스닥 200일선 이탈, "떨어지는 단두대 잡지 말라"</li>
+</ul></div>
+<div class="card"><div class="lbl">채널 합의도</div>
+<div class="bar"><span class="t">실적 아닌 정치·포지셔닝 문제</span><div class="g"><div class="f" style="width:86%"></div></div><span class="p">6/7</span></div>
+<div class="bar"><span class="t">규제는 기존 DC·하이퍼스케일러에 유리</span><div class="g"><div class="f" style="width:57%"></div></div><span class="p">4/7</span></div>
+<div class="bar"><span class="t">테슬라·스페이스X 최대 패자</span><div class="g"><div class="f" style="width:43%"></div></div><span class="p">3/7</span></div>
+<div class="bar"><span class="t">지금은 매수 기회</span><div class="g"><div class="f" style="width:57%;background:#f59e0b"></div></div><span class="p">4/7</span></div>
+<div class="bar"><span class="t">follow-through 전 관망</span><div class="g"><div class="f" style="width:29%;background:#ef4444"></div></div><span class="p">2/7</span></div>
+</div></div>
+<div class="card" style="margin-bottom:10px"><div class="lbl">종목</div><div class="badges">
+<span class="b">MU <span class="dn">-17.46%</span></span><span class="b">AMD <span class="dn">-17.26%</span></span><span class="b">SNDK <span class="dn">-22.26%</span></span><span class="b">NVDA <span class="dn">-9.26%</span></span><span class="b">AVGO <span class="dn">-10.43%</span></span><span class="b">TSM <span class="dn">-10.78%</span></span><span class="b">TSLA <span class="dn">-10.77%</span></span><span class="b">SPCX <span class="dn">-9.05%</span></span><span class="b">CRWV <span class="dn">-9.83%</span></span><span class="b">AAPL <span class="dn">-1.53%</span></span><span class="b">GS <span class="dn">-6.36%</span></span><span class="b">APP <span class="up">+31.04%</span></span><span class="b">COST <span class="up">+1.83%</span></span><span class="b">GLD <span class="up">+0.81%</span></span>
+</div></div>
+<div class="foot">수집: 연합인포맥스 · 미주은 · IBD · Yahoo Finance · Bloomberg Technology · ZipTrader · The Chart Guys (Tier 2 영어 자막 429) · 원문: 2026-11-06_미국장_브리핑.md</div>
+</body></html>
