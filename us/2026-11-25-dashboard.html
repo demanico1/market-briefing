@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+addEventListener('DOMContentLoaded',function(){
+  var b=document.body,W=b.offsetWidth||1920,cs=getComputedStyle(b);
+  var w=document.createElement('div');
+  w.style.cssText='width:'+W+'px;box-sizing:border-box;padding:'+cs.padding+';transform-origin:0 0';
+  while(b.firstChild)w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.width='auto';b.style.height='auto';b.style.padding='0';b.style.overflow='hidden';
+  function f(){var s=Math.min(1,document.documentElement.clientWidth/W);
+    w.style.transform='scale('+s+')';
+    b.style.height=(w.scrollHeight*s)+'px';}
+  addEventListener('resize',f);f();
+});
+</script><meta charset="utf-8"><title>2026-11-25 미국장 브리핑</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1115;color:#e8eaed;font-family:-apple-system,"Malgun Gothic","Segoe UI",sans-serif;width:1280px;padding:28px 36px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.hd h1{font-size:30px}.hd .s{color:#9aa0a6;font-size:16px}
+.row{display:flex;gap:14px;margin-bottom:14px}
+.card{background:#1a1d24;border-radius:12px;padding:16px 20px;flex:1}
+.idx .n{color:#9aa0a6;font-size:15px}.idx .v{font-size:30px;font-weight:700;margin-top:4px}.idx .c{font-size:20px;font-weight:700}
+.up{color:#22c55e}.dn{color:#ef4444}
+.macro{background:#1a1d24;border-radius:12px;padding:11px 20px;font-size:15px;color:#9aa0a6;margin-bottom:14px}
+.macro b{color:#e8eaed;margin-right:4px}.macro span{margin-right:22px}
+.one{font-size:23px;font-weight:700;line-height:1.45;background:#1a1d24;border-left:5px solid #ef4444;border-radius:10px;padding:16px 20px;margin-bottom:14px}
+h2{font-size:17px;color:#9aa0a6;margin-bottom:10px}
+ul{padding-left:20px}li{font-size:16px;line-height:1.55;margin-bottom:6px}
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:15px}
+.bar .l{width:92px;color:#9aa0a6}.bar .t{flex:1;background:#262a33;border-radius:6px;height:20px;overflow:hidden}
+.bar .f{height:100%}.bar .p{width:110px;font-size:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.b{background:#262a33;border-radius:8px;padding:6px 10px;font-size:14px}
+.ft{color:#9aa0a6;font-size:13px;margin-top:4px}
+</style></head><body>
+<div class="hd"><h1>2026-11-25 (수) 미국장 브리핑 <span style="font-size:18px;color:#9aa0a6">· 11/24(화) 세션</span></h1><div class="s">수집 채널 8/16</div></div>
+<div class="row">
+<div class="card idx"><div class="n">S&amp;P500</div><div class="v">7,201.09</div><div class="c dn">-0.50%</div></div>
+<div class="card idx"><div class="n">나스닥 종합</div><div class="v">23,733.54</div><div class="c dn">-1.48%</div></div>
+<div class="card idx"><div class="n">다우</div><div class="v">50,018.70</div><div class="c up">+0.85%</div></div>
+<div class="card idx"><div class="n">필라델피아 반도체</div><div class="v">8,832.50</div><div class="c dn">-7.88%</div></div>
+</div>
+<div class="macro"><span><b>미10년물</b>4.91% (-1bp)</span><span><b>달러인덱스</b>103.83 (-0.47%)</span><span><b>WTI 1월물</b>$81.68 (+1.88%)</span><span><b>VIX</b>26.36 (-0.98%)</span><span><b>12월 25bp 인상 확률</b>97.4%</span></div>
+<div class="one">'젠슨 황 랠리' 하루 만에 절반 반납 — 반도체 -7.9%, 엔비디아 -5.9%, 마이크론 -11%. 그러나 다우는 50,000선 위 마감, 헬스케어·바이오·소매로 순환</div>
+<div class="row">
+<div class="card" style="flex:1.35"><h2>핵심 포인트</h2><ul>
+<li>메모리·네오클라우드 직격: 마이크론 -11.0%, 샌디스크 -11.1%, 코어위브 -11.9%, SK하이닉스 ADR -9.9%</li>
+<li>실적 좋아도 판다: HPE -16.3%, ADI -17.4%, 델 -11.8% (장 마감 후 AI 잔고 1,323억 달러, 시간외 +2.5%)</li>
+<li>순환: 기술 -2.77% ↔ 헬스케어 +2.88%, XBI +6.6%, 타깃 +4.7%</li>
+<li>앤트로픽 $81.90 (-6.5%), 공모가 $83 하회 · 소비자신뢰 103.3 (예상 92.5)</li>
+<li>IBD: 반등 시도 2일차, 팔로스루 데이 대기 · 오늘 밤 10월 PCE, USTR 관세</li>
+</ul></div>
+<div class="card"><h2>채널 톤 합의도 (8채널)</h2>
+<div class="bar"><div class="l">약세</div><div class="t"><div class="f" style="width:37.5%;background:#ef4444"></div></div><div class="p">3 (37.5%)</div></div>
+<div class="bar"><div class="l">중립·경계</div><div class="t"><div class="f" style="width:50%;background:#9aa0a6"></div></div><div class="p">4 (50%)</div></div>
+<div class="bar"><div class="l">분할매수</div><div class="t"><div class="f" style="width:12.5%;background:#3b82f6"></div></div><div class="p">1 (12.5%)</div></div>
+<div class="bar"><div class="l">강세</div><div class="t"><div class="f" style="width:0%;background:#22c55e"></div></div><div class="p">0</div></div>
+<h2 style="margin-top:14px">종목</h2>
+<div class="badges">
+<span class="b">NVDA <span class="dn">-5.86%</span></span><span class="b">MU <span class="dn">-11.01%</span></span><span class="b">AMD <span class="dn">-8.86%</span></span><span class="b">HPE <span class="dn">-16.31%</span></span><span class="b">DELL <span class="dn">-11.83%</span></span><span class="b">ADI <span class="dn">-17.37%</span></span><span class="b">CRWV <span class="dn">-11.85%</span></span><span class="b">앤트로픽 <span class="dn">-6.54%</span></span><span class="b">TGT <span class="up">+4.68%</span></span><span class="b">LLY <span class="up">+3.15%</span></span><span class="b">AAPL <span class="up">+1.43%</span></span><span class="b">XBI <span class="up">+6.56%</span></span>
+</div></div>
+</div>
+<div class="ft">수집: 연합인포맥스·미주은·소수몽키·IBD·Yahoo Finance·Bloomberg Technology · Meet Kevin·Ricky Gutierrez (8/16) — 원문: 2026-11-25_미국장_브리핑.md</div>
+</body></html>
